@@ -521,7 +521,7 @@ function renderInline(text: string): React.ReactNode[] {
       parts.push(<strong key={key++}>{match[1]}</strong>);
     } else {
       parts.push(
-        <a key={key++} href={match[3]} className="text-[#78B159] underline hover:text-[#5d9040]">
+        <a key={key++} href={match[3]} className="text-[#F5A623] underline hover:text-[#D4850A]">
           {match[2]}
         </a>
       );
@@ -545,7 +545,7 @@ function renderBody(body: string) {
       <div key={`table-${elements.length}`} className="overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-[#314A37] text-white">
+            <tr className="bg-[#7B3F00] text-white">
               {tableHeader.map((h, i) => (
                 <th key={i} className="px-4 py-2 text-left font-semibold">{renderInline(h)}</th>
               ))}
@@ -592,13 +592,13 @@ function renderBody(body: string) {
       elements.push(<hr key={i} className="my-8 border-gray-200" />);
     } else if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="text-2xl font-bold text-[#314A37] mt-10 mb-4">
+        <h2 key={i} className="text-2xl font-bold text-[#7B3F00] mt-10 mb-4">
           {line.slice(3)}
         </h2>
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="text-xl font-bold text-[#314A37] mt-8 mb-3">
+        <h3 key={i} className="text-xl font-bold text-[#7B3F00] mt-8 mb-3">
           {line.slice(4)}
         </h3>
       );
@@ -632,13 +632,13 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero image */}
       <div className="relative h-64 md:h-96 w-full">
         <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-[#314A37]/60" />
+        <div className="absolute inset-0 bg-[#7B3F00]/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-          <span className="bg-[#78B159] text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          <span className="bg-[#F5A623] text-xs font-semibold px-3 py-1 rounded-full mb-4">
             {post.category}
           </span>
           <h1 className="text-3xl md:text-4xl font-bold max-w-3xl leading-tight mb-3">
@@ -652,7 +652,7 @@ export default async function BlogPostPage({
 
       {/* Article */}
       <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow px-8 py-10 mt-[-2rem] relative z-10 mb-16">
-        <p className="text-lg text-gray-500 leading-relaxed mb-8 border-l-4 border-[#78B159] pl-4">
+        <p className="text-lg text-gray-500 leading-relaxed mb-8 border-l-4 border-[#F5A623] pl-4">
           {post.excerpt}
         </p>
         <div className="prose-like">{renderBody(post.body)}</div>
@@ -662,14 +662,14 @@ export default async function BlogPostPage({
       <div className="text-center pb-12">
         <Link
           href={`/${locale}/blog`}
-          className="text-[#78B159] hover:underline text-sm font-medium"
+          className="text-[#F5A623] hover:underline text-sm font-medium"
         >
           ← Back to all articles
         </Link>
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

@@ -6,19 +6,19 @@ import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 import React from "react";
 
 const styles = StyleSheet.create({
-  page: { padding: 40, fontFamily: "Helvetica", backgroundColor: "#F5F7FA" },
-  header: { marginBottom: 20, borderBottom: "2 solid #314A37", paddingBottom: 10 },
-  title: { fontSize: 24, fontFamily: "Helvetica-Bold", color: "#314A37" },
+  page: { padding: 40, fontFamily: "Helvetica", backgroundColor: "#FDFAF2" },
+  header: { marginBottom: 20, borderBottom: "2 solid #7B3F00", paddingBottom: 10 },
+  title: { fontSize: 24, fontFamily: "Helvetica-Bold", color: "#7B3F00" },
   subtitle: { fontSize: 11, color: "#666", marginTop: 4 },
   section: { marginBottom: 16 },
-  dayTitle: { fontSize: 14, fontFamily: "Helvetica-Bold", color: "#314A37", marginBottom: 4 },
+  dayTitle: { fontSize: 14, fontFamily: "Helvetica-Bold", color: "#7B3F00", marginBottom: 4 },
   menuName: { fontSize: 12, fontFamily: "Helvetica-Bold", color: "#333", marginBottom: 2 },
   row: { flexDirection: "row", justifyContent: "space-between", marginBottom: 2 },
   label: { fontSize: 10, color: "#555" },
   value: { fontSize: 10, color: "#333", fontFamily: "Helvetica-Bold" },
   divider: { borderBottom: "1 solid #ddd", marginVertical: 8 },
   shoppingSection: { marginTop: 20 },
-  shoppingTitle: { fontSize: 16, fontFamily: "Helvetica-Bold", color: "#314A37", marginBottom: 10 },
+  shoppingTitle: { fontSize: 16, fontFamily: "Helvetica-Bold", color: "#7B3F00", marginBottom: 10 },
   catTitle: { fontSize: 12, fontFamily: "Helvetica-Bold", color: "#555", marginBottom: 4, marginTop: 8 },
   ingredient: { fontSize: 10, color: "#333", marginLeft: 10, marginBottom: 2 },
 });
@@ -45,7 +45,7 @@ function PdfDocument({ planData, shoppingList }: PdfDocProps) {
       React.createElement(
         View,
         { style: styles.header },
-        React.createElement(Text, { style: styles.title }, "🥝 Aussie Lunchbox Plan"),
+        React.createElement(Text, { style: styles.title }, "🦘 Aussie Lunchbox Plan"),
         React.createElement(Text, { style: styles.subtitle }, "Your weekly lunchbox meal plan")
       ),
       ...planData.map((item) =>

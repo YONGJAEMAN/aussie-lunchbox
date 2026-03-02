@@ -5,17 +5,17 @@ export default async function HomePage() {
   const locale = await getLocale();
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
       <section
         className="flex flex-col items-center justify-center text-center py-24 px-4"
-        style={{ background: "linear-gradient(135deg, #E8F5E9 0%, #F5F7FA 100%)" }}
+        style={{ background: "linear-gradient(135deg, #FFF4DE 0%, #FDFAF2 100%)" }}
       >
-        <h1 className="text-5xl font-bold text-[#314A37] mb-4">Aussie Lunchbox</h1>
+        <h1 className="text-5xl font-bold text-[#7B3F00] mb-4">Aussie Lunchbox</h1>
         <p className="text-xl text-gray-600 mb-8 max-w-xl">Fresh Ideas for Happy Kids</p>
         <Link
           href={`/${locale}/planner`}
-          className="bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg"
+          className="bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg"
         >
           ✨ START PLANNING NOW ✨
         </Link>
@@ -23,7 +23,7 @@ export default async function HomePage() {
 
       {/* Features */}
       <section className="max-w-5xl mx-auto py-16 px-4">
-        <h2 className="text-3xl font-bold text-center text-[#314A37] mb-12">
+        <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">
           🌟 Why Aussie Lunchbox?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,7 +37,7 @@ export default async function HomePage() {
               className="bg-white rounded-2xl shadow p-8 text-center hover:-translate-y-1 transition-transform"
             >
               <div className="text-5xl mb-4">{f.icon}</div>
-              <h3 className="font-bold text-[#314A37] text-xl mb-2">{f.title}</h3>
+              <h3 className="font-bold text-[#7B3F00] text-xl mb-2">{f.title}</h3>
               <p className="text-gray-500">{f.desc}</p>
             </div>
           ))}
@@ -47,25 +47,25 @@ export default async function HomePage() {
       {/* Testimonials */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[#314A37] mb-8">
+          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-8">
             💬 What Parents Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <blockquote className="bg-[#E8F5E9] p-6 rounded-xl text-gray-700 italic">
+            <blockquote className="bg-[#FFF4DE] p-6 rounded-xl text-gray-700 italic">
               &ldquo;This app saved my mornings! No more arguing about what to pack.&rdquo;
-              <footer className="mt-2 font-bold text-[#314A37] not-italic">— Sarah J., Sydney</footer>
+              <footer className="mt-2 font-bold text-[#7B3F00] not-italic">— Sarah J., Sydney</footer>
             </blockquote>
-            <blockquote className="bg-[#E8F5E9] p-6 rounded-xl text-gray-700 italic">
+            <blockquote className="bg-[#FFF4DE] p-6 rounded-xl text-gray-700 italic">
               &ldquo;Love the shopping list feature. Makes Sunday groceries a breeze.&rdquo;
-              <footer className="mt-2 font-bold text-[#314A37] not-italic">— Mike T., Melbourne</footer>
+              <footer className="mt-2 font-bold text-[#7B3F00] not-italic">— Mike T., Melbourne</footer>
             </blockquote>
-            <blockquote className="bg-[#E8F5E9] p-6 rounded-xl text-gray-700 italic">
+            <blockquote className="bg-[#FFF4DE] p-6 rounded-xl text-gray-700 italic">
               &ldquo;My daughter has a nut allergy and this planner makes it so easy to stay safe.&rdquo;
-              <footer className="mt-2 font-bold text-[#314A37] not-italic">— Emma R., Brisbane</footer>
+              <footer className="mt-2 font-bold text-[#7B3F00] not-italic">— Emma R., Brisbane</footer>
             </blockquote>
-            <blockquote className="bg-[#E8F5E9] p-6 rounded-xl text-gray-700 italic">
+            <blockquote className="bg-[#FFF4DE] p-6 rounded-xl text-gray-700 italic">
               &ldquo;The price estimates help me keep the lunchbox budget under control every week.&rdquo;
-              <footer className="mt-2 font-bold text-[#314A37] not-italic">— Lisa K., Perth</footer>
+              <footer className="mt-2 font-bold text-[#7B3F00] not-italic">— Lisa K., Perth</footer>
             </blockquote>
           </div>
         </div>
@@ -74,10 +74,10 @@ export default async function HomePage() {
       {/* Blog preview */}
       <section className="max-w-5xl mx-auto py-16 px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-[#314A37]">📖 Lunchbox Tips</h2>
+          <h2 className="text-3xl font-bold text-[#7B3F00]">📖 Lunchbox Tips</h2>
           <Link
             href={`/${locale}/blog`}
-            className="text-[#78B159] text-sm font-semibold hover:underline"
+            className="text-[#F5A623] text-sm font-semibold hover:underline"
           >
             View all articles →
           </Link>
@@ -108,10 +108,10 @@ export default async function HomePage() {
               href={`/${locale}/blog/${post.slug}`}
               className="bg-white rounded-2xl shadow p-6 hover:shadow-md hover:-translate-y-0.5 transition-all"
             >
-              <span className="inline-block bg-[#E8F5E9] text-[#314A37] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              <span className="inline-block bg-[#FFF4DE] text-[#7B3F00] text-xs font-semibold px-3 py-1 rounded-full mb-3">
                 {post.category}
               </span>
-              <h3 className="font-bold text-[#314A37] mb-2 leading-snug">{post.title}</h3>
+              <h3 className="font-bold text-[#7B3F00] mb-2 leading-snug">{post.title}</h3>
               <p className="text-sm text-gray-500 leading-relaxed">{post.excerpt}</p>
             </Link>
           ))}
@@ -119,7 +119,7 @@ export default async function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

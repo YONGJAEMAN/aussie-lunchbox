@@ -63,7 +63,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href={`/${currentLocale}`} className="flex items-center gap-2">
           <span className="text-2xl">🦘</span>
-          <span className="font-bold text-[#314A37] text-lg hidden sm:block">Aussie Lunchbox</span>
+          <span className="font-bold text-[#7B3F00] text-lg hidden sm:block">Aussie Lunchbox</span>
         </Link>
 
         {/* Desktop Nav Links */}
@@ -74,8 +74,8 @@ export default function Navbar() {
               href={`/${currentLocale}${link.href}`}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 isActive(link.href)
-                  ? "bg-[#E8F5E9] text-[#314A37]"
-                  : "text-gray-600 hover:text-[#314A37] hover:bg-gray-50"
+                  ? "bg-[#FFF4DE] text-[#7B3F00]"
+                  : "text-gray-600 hover:text-[#7B3F00] hover:bg-gray-50"
               }`}
             >
               {link.label}
@@ -93,7 +93,7 @@ export default function Navbar() {
                 onClick={() => switchLocale(loc.code)}
                 className={`px-3 py-1.5 font-medium transition-colors ${
                   currentLocale === loc.code
-                    ? "bg-[#78B159] text-white"
+                    ? "bg-[#F5A623] text-white"
                     : "text-gray-500 hover:bg-gray-100"
                 }`}
               >
@@ -107,7 +107,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <Link
                 href={`/${currentLocale}/account`}
-                className="text-sm text-[#314A37] font-medium hover:underline"
+                className="text-sm text-[#7B3F00] font-medium hover:underline"
               >
                 👤 {user.email?.split("@")[0]}
               </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
           ) : (
             <Link
               href={`/${currentLocale}/account`}
-              className="bg-[#78B159] hover:bg-[#314A37] text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+              className="bg-[#F5A623] hover:bg-[#7B3F00] text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
             >
               Log In
             </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isActive(link.href)
-                  ? "bg-[#E8F5E9] text-[#314A37]"
+                  ? "bg-[#FFF4DE] text-[#7B3F00]"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -171,7 +171,7 @@ export default function Navbar() {
                   onClick={() => { switchLocale(loc.code); setMenuOpen(false); }}
                   className={`px-3 py-1.5 font-medium transition-colors ${
                     currentLocale === loc.code
-                      ? "bg-[#78B159] text-white"
+                      ? "bg-[#F5A623] text-white"
                       : "text-gray-500 hover:bg-gray-100"
                   }`}
                 >
@@ -190,7 +190,7 @@ export default function Navbar() {
               <Link
                 href={`/${currentLocale}/account`}
                 onClick={() => setMenuOpen(false)}
-                className="bg-[#78B159] text-white text-sm font-semibold px-4 py-2 rounded-full"
+                className="bg-[#F5A623] text-white text-sm font-semibold px-4 py-2 rounded-full"
               >
                 Log In
               </Link>

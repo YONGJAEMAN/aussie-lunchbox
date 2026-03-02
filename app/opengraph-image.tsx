@@ -10,7 +10,7 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)",
+          background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)",
           width: "100%",
           height: "100%",
           display: "flex",

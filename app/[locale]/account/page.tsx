@@ -72,16 +72,16 @@ export default function AccountPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#F5F7FA] flex items-center justify-center">
+      <main className="min-h-screen bg-[#FDFAF2] flex items-center justify-center">
         <div className="text-gray-400">Loading...</div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
         <h1 className="text-4xl font-bold mb-3">👤 My Account</h1>
         <p className="text-lg opacity-90">Manage your profile, preferences, and saved plans.</p>
       </section>
@@ -93,7 +93,7 @@ export default function AccountPage() {
             {/* Profile card */}
             <div className="bg-white rounded-2xl shadow p-8">
               <div className="flex items-center gap-5 mb-6">
-                <div className="w-16 h-16 bg-[#E8F5E9] rounded-full flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 bg-[#FFF4DE] rounded-full flex items-center justify-center text-3xl">
                   {user.user_metadata?.avatar_url ? (
                     <img
                       src={user.user_metadata.avatar_url}
@@ -105,7 +105,7 @@ export default function AccountPage() {
                   )}
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[#314A37]">
+                  <h2 className="text-xl font-bold text-[#7B3F00]">
                     {user.user_metadata?.full_name ?? user.email?.split("@")[0]}
                   </h2>
                   <p className="text-gray-500 text-sm">{user.email}</p>
@@ -117,15 +117,15 @@ export default function AccountPage() {
 
               <div className="border-t border-gray-100 pt-5 flex justify-around text-center">
                 <div>
-                  <p className="text-2xl font-bold text-[#314A37]">Free</p>
+                  <p className="text-2xl font-bold text-[#7B3F00]">Free</p>
                   <p className="text-xs text-gray-400 mt-1">Plan</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#314A37]">–</p>
+                  <p className="text-2xl font-bold text-[#7B3F00]">–</p>
                   <p className="text-xs text-gray-400 mt-1">Saved Plans</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#314A37]">–</p>
+                  <p className="text-2xl font-bold text-[#7B3F00]">–</p>
                   <p className="text-xs text-gray-400 mt-1">Favourites</p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function AccountPage() {
             <div className="bg-white rounded-2xl shadow p-6 space-y-3">
               <Link
                 href={`/${locale}/planner`}
-                className="block w-full text-center bg-[#78B159] hover:bg-[#314A37] text-white font-semibold py-3 rounded-xl transition-colors"
+                className="block w-full text-center bg-[#F5A623] hover:bg-[#7B3F00] text-white font-semibold py-3 rounded-xl transition-colors"
               >
                 🍱 Go to Planner
               </Link>
@@ -153,11 +153,11 @@ export default function AccountPage() {
             {/* Why join */}
             <div className="bg-white rounded-2xl shadow p-8 text-center">
               <div className="text-5xl mb-4">👋</div>
-              <h2 className="text-2xl font-bold text-[#314A37] mb-2">Welcome, Guest!</h2>
+              <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">Welcome, Guest!</h2>
               <p className="text-gray-500 mb-6 leading-relaxed">
                 Log in to save your favourite recipes and weekly meal plans permanently.
               </p>
-              <div className="bg-[#E8F5E9] rounded-xl p-4 text-left text-sm text-[#314A37] space-y-1">
+              <div className="bg-[#FFF4DE] rounded-xl p-4 text-left text-sm text-[#7B3F00] space-y-1">
                 <p className="font-semibold mb-2">Why Join?</p>
                 <p>✨ Save Weekly Plans</p>
                 <p>❤️ Track Favourite Recipes</p>
@@ -174,7 +174,7 @@ export default function AccountPage() {
                     key={mode}
                     onClick={() => { setAuthMode(mode); setAuthError(""); setAuthSuccess(""); }}
                     className={`flex-1 py-2.5 text-sm font-semibold transition-colors ${
-                      authMode === mode ? "bg-[#78B159] text-white" : "text-gray-500 hover:bg-gray-50"
+                      authMode === mode ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"
                     }`}
                   >
                     {mode === "login" ? "Log In" : "Sign Up"}
@@ -210,21 +210,21 @@ export default function AccountPage() {
                   placeholder="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                 />
                 <input
                   type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                 />
                 {authError && <p className="text-red-500 text-sm">{authError}</p>}
                 {authSuccess && <p className="text-green-600 text-sm">{authSuccess}</p>}
                 <button
                   type="submit"
                   disabled={authLoading}
-                  className="w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
+                  className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
                 >
                   {authLoading ? "Please wait..." : authMode === "login" ? "Log In" : "Create Account"}
                 </button>
@@ -235,7 +235,7 @@ export default function AccountPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

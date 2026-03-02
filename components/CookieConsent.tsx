@@ -30,7 +30,7 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-[#314A37] text-white shadow-2xl"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-[#7B3F00] text-white shadow-2xl"
     >
       <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm leading-relaxed flex-1">
@@ -53,7 +53,7 @@ export default function CookieConsent() {
           </button>
           <button
             onClick={accept}
-            className="px-5 py-2 text-sm bg-[#78B159] hover:bg-[#5d9040] rounded-lg font-semibold transition-colors"
+            className="px-5 py-2 text-sm bg-[#F5A623] hover:bg-[#D4850A] rounded-lg font-semibold transition-colors"
           >
             Accept
           </button>

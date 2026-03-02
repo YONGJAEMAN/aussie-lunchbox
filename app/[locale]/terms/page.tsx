@@ -10,23 +10,23 @@ export default async function TermsPage() {
   const locale = await getLocale();
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
         <h1 className="text-4xl font-bold mb-3">Terms and Conditions</h1>
         <p className="text-lg opacity-90">Last Updated: February 2026</p>
       </section>
 
       <section className="max-w-3xl mx-auto py-16 px-4">
         <div className="bg-white rounded-2xl shadow p-10 prose prose-gray max-w-none">
-          <h2 className="text-xl font-bold text-[#314A37] mt-0">1. Introduction</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00] mt-0">1. Introduction</h2>
           <p className="text-gray-600 leading-relaxed">
             Welcome to <strong>Aussie Lunchbox Planner</strong>. By accessing our website and using our
             services, you agree to be bound by these Terms and Conditions. If you do not agree with
             any part of these terms, please do not use our services.
           </p>
 
-          <h2 className="text-xl font-bold text-[#314A37]">2. Use of Service</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">2. Use of Service</h2>
           <p className="text-gray-600 leading-relaxed">
             Aussie Lunchbox Planner provides automated lunchbox meal planning and grocery list generation.
           </p>
@@ -35,21 +35,21 @@ export default async function TermsPage() {
             <li>You agree not to misuse or attempt to disrupt our services.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#314A37]">3. Intellectual Property</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">3. Intellectual Property</h2>
           <p className="text-gray-600 leading-relaxed">
             The content, layout, design, data, libraries, and graphics on this website are protected
             by Australia and international intellectual property laws. Content is owned by Kiwi
             Lunchbox Planner unless otherwise stated (e.g., third-party recipes or images).
           </p>
 
-          <h2 className="text-xl font-bold text-[#314A37]">4. User Accounts</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">4. User Accounts</h2>
           <p className="text-gray-600 leading-relaxed">
             To access certain features, you may need to register an account. You are responsible for
             maintaining the confidentiality of your account credentials and for all activities that
             occur under your account.
           </p>
 
-          <h2 className="text-xl font-bold text-[#314A37]">5. Limitation of Liability</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">5. Limitation of Liability</h2>
           <p className="text-gray-600 leading-relaxed">
             To the maximum extent permitted by law, Aussie Lunchbox Planner shall not be liable for any
             indirect, incidental, special, or consequential damages arising out of or in connection
@@ -63,7 +63,7 @@ export default async function TermsPage() {
             </li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#314A37]">6. Disclaimer regarding Food and Health</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">6. Disclaimer regarding Food and Health</h2>
           <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-4">
             <p className="text-yellow-800 font-semibold text-sm">
               ⚠️ Crucial: This application provides suggestions for meal plans. It is{" "}
@@ -78,16 +78,16 @@ export default async function TermsPage() {
             </li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#314A37]">7. Changes to Terms</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">7. Changes to Terms</h2>
           <p className="text-gray-600 leading-relaxed">
             We reserve the right to modify these terms at any time. We will notify users of any
             significant changes by posting the new terms on this site.
           </p>
 
-          <h2 className="text-xl font-bold text-[#314A37]">8. Contact</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">8. Contact</h2>
           <p className="text-gray-600 leading-relaxed">
             For any questions regarding these Terms, please contact us at{" "}
-            <a href="mailto:aussielunchboxplanner@gmail.com" className="text-[#78B159] hover:underline">
+            <a href="mailto:aussielunchboxplanner@gmail.com" className="text-[#F5A623] hover:underline">
               aussielunchboxplanner@gmail.com
             </a>
             .
@@ -96,7 +96,7 @@ export default async function TermsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

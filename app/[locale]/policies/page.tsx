@@ -10,9 +10,9 @@ export default function PoliciesPage() {
   const [tab, setTab] = useState<"privacy" | "disclaimer">("privacy");
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
         <h1 className="text-4xl font-bold mb-3">Privacy Policy & Disclaimer</h1>
         <p className="text-lg opacity-90">Your trust and safety are our top priorities.</p>
       </section>
@@ -23,7 +23,7 @@ export default function PoliciesPage() {
           <button
             onClick={() => setTab("privacy")}
             className={`flex-1 py-3.5 text-sm font-semibold transition-colors ${
-              tab === "privacy" ? "bg-[#78B159] text-white" : "text-gray-500 hover:bg-gray-50"
+              tab === "privacy" ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"
             }`}
           >
             🔒 Privacy Policy
@@ -31,7 +31,7 @@ export default function PoliciesPage() {
           <button
             onClick={() => setTab("disclaimer")}
             className={`flex-1 py-3.5 text-sm font-semibold transition-colors ${
-              tab === "disclaimer" ? "bg-[#78B159] text-white" : "text-gray-500 hover:bg-gray-50"
+              tab === "disclaimer" ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"
             }`}
           >
             ⚠️ Disclaimer
@@ -41,14 +41,14 @@ export default function PoliciesPage() {
         <div className="bg-white rounded-2xl shadow p-10">
           {tab === "privacy" ? (
             <div className="prose prose-gray max-w-none">
-              <h2 className="text-2xl font-bold text-[#314A37] mt-0">Privacy Policy</h2>
+              <h2 className="text-2xl font-bold text-[#7B3F00] mt-0">Privacy Policy</h2>
               <p className="text-sm text-gray-400 mb-6">Effective Date: February 11, 2026</p>
               <p className="text-gray-600 leading-relaxed">
                 At <strong>Aussie Lunchbox Planner</strong>, we are committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, and safeguard your information.
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">1. Information We Collect</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">1. Information We Collect</h3>
               <ul className="text-gray-600 space-y-2">
                 <li>
                   <strong>Personal Information:</strong> When you sign up, we may collect your name and
@@ -64,14 +64,14 @@ export default function PoliciesPage() {
                 </li>
               </ul>
 
-              <h3 className="text-lg font-bold text-[#314A37]">2. How We Use Your Information</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">2. How We Use Your Information</h3>
               <ul className="text-gray-600 space-y-1">
                 <li>To provide and maintain the Service.</li>
                 <li>To customize your meal plans based on your preferences.</li>
                 <li>To communicate with you regarding updates or support.</li>
               </ul>
 
-              <h3 className="text-lg font-bold text-[#314A37]">3. Advertising (Google AdSense)</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">3. Advertising (Google AdSense)</h3>
               <p className="text-gray-600 leading-relaxed">
                 We use <strong>Google AdSense</strong> to display advertisements on this website.
                 Google AdSense uses cookies (including the DoubleClick cookie) to serve ads based on
@@ -81,7 +81,7 @@ export default function PoliciesPage() {
                   href="https://adssettings.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#78B159] hover:underline"
+                  className="text-[#F5A623] hover:underline"
                 >
                   Google Ads Settings
                 </a>
@@ -90,14 +90,14 @@ export default function PoliciesPage() {
                   href="https://policies.google.com/technologies/partner-sites"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#78B159] hover:underline"
+                  className="text-[#F5A623] hover:underline"
                 >
                   Google&apos;s Privacy &amp; Terms
                 </a>
                 .
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">4. Analytics (Google Analytics)</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">4. Analytics (Google Analytics)</h3>
               <p className="text-gray-600 leading-relaxed">
                 We use <strong>Google Analytics 4</strong> to collect anonymous usage statistics
                 (pages visited, session duration, device type). This data helps us improve the
@@ -107,30 +107,30 @@ export default function PoliciesPage() {
                   href="https://tools.google.com/dlpage/gaoptout"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#78B159] hover:underline"
+                  className="text-[#F5A623] hover:underline"
                 >
                   Google Analytics Opt-out Browser Add-on
                 </a>
                 .
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">5. Other Third-Party Services</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">5. Other Third-Party Services</h3>
               <p className="text-gray-600 leading-relaxed">
                 We also use Supabase for authentication and database storage, and Resend for
                 transactional emails. These services operate under their own privacy policies. We
                 do not sell your personal data to advertisers.
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">6. Data Security</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">6. Data Security</h3>
               <p className="text-gray-600 leading-relaxed">
                 We implement reasonable security measures to protect your data. However, no method of
                 transmission over the Internet is 100% secure.
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">7. Contact Us</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">7. Contact Us</h3>
               <p className="text-gray-600 leading-relaxed">
                 If you have questions about this Privacy Policy, please contact us at{" "}
-                <a href="mailto:aussielunchboxplanner@gmail.com" className="text-[#78B159] hover:underline">
+                <a href="mailto:aussielunchboxplanner@gmail.com" className="text-[#F5A623] hover:underline">
                   aussielunchboxplanner@gmail.com
                 </a>
                 .
@@ -138,7 +138,7 @@ export default function PoliciesPage() {
             </div>
           ) : (
             <div className="prose prose-gray max-w-none">
-              <h2 className="text-2xl font-bold text-[#314A37] mt-0">⚠️ Medical & Allergy Disclaimer</h2>
+              <h2 className="text-2xl font-bold text-[#7B3F00] mt-0">⚠️ Medical & Allergy Disclaimer</h2>
 
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
                 <p className="text-red-700 font-semibold text-sm">
@@ -149,13 +149,13 @@ export default function PoliciesPage() {
                 </p>
               </div>
 
-              <h3 className="text-lg font-bold text-[#314A37]">1. Not Medical Advice</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">1. Not Medical Advice</h3>
               <p className="text-gray-600 leading-relaxed">
                 Always consult with a qualified healthcare professional or nutritionist before making
                 drastic changes to your diet, especially if you have underlying health conditions.
               </p>
 
-              <h3 className="text-lg font-bold text-[#314A37]">2. Food Allergies & Intolerances</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">2. Food Allergies & Intolerances</h3>
               <ul className="text-gray-600 space-y-2">
                 <li>
                   While we provide filters for common allergens (e.g., &ldquo;Nut-free&rdquo;,
@@ -173,7 +173,7 @@ export default function PoliciesPage() {
                 </li>
               </ul>
 
-              <h3 className="text-lg font-bold text-[#314A37]">3. Accuracy of Information</h3>
+              <h3 className="text-lg font-bold text-[#7B3F00]">3. Accuracy of Information</h3>
               <ul className="text-gray-600 space-y-2">
                 <li>
                   Nutritional values are automatic estimates based on generic databases and may not
@@ -197,7 +197,7 @@ export default function PoliciesPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

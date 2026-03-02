@@ -182,11 +182,11 @@ export default function PlannerPage() {
     .reduce((sum, item) => sum + (item.price ?? 0) * (PORTION_FACTORS[item.name] ?? DEFAULT_PORTION) * item.count, 0);
 
   return (
-    <div className="min-h-screen bg-[#F5F7FA] flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[#FDFAF2] flex flex-col lg:flex-row">
       {/* Sidebar */}
       <aside className="w-full lg:w-80 bg-white border-r border-gray-100 p-6 flex-shrink-0">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-bold text-[#314A37]">🥝 {t("sidebar_header")}</h2>
+          <h2 className="text-lg font-bold text-[#7B3F00]">🦘 {t("sidebar_header")}</h2>
           {user ? (
             <button
               onClick={() => supabase.auth.signOut()}
@@ -197,7 +197,7 @@ export default function PlannerPage() {
           ) : (
             <button
               onClick={() => setShowAuth(true)}
-              className="text-xs bg-[#78B159] text-white px-3 py-1 rounded-full hover:bg-[#314A37] transition-colors"
+              className="text-xs bg-[#F5A623] text-white px-3 py-1 rounded-full hover:bg-[#7B3F00] transition-colors"
             >
               {t("login")}
             </button>
@@ -218,8 +218,8 @@ export default function PlannerPage() {
                 }
                 className={`px-3 py-1 rounded-full text-xs border transition-colors ${
                   allergies.includes(a)
-                    ? "bg-[#78B159] text-white border-[#78B159]"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#78B159]"
+                    ? "bg-[#F5A623] text-white border-[#F5A623]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-[#F5A623]"
                 }`}
               >
                 {a}
@@ -260,7 +260,7 @@ export default function PlannerPage() {
             value={leftover}
             onChange={(e) => setLeftover(e.target.value)}
             placeholder={t("leftovers_placeholder")}
-            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 focus:outline-none focus:border-[#78B159]"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 focus:outline-none focus:border-[#F5A623]"
           />
         </details>
 
@@ -281,7 +281,7 @@ export default function PlannerPage() {
         <button
           onClick={handleGenerate}
           disabled={generating}
-          className="w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors mt-4 disabled:opacity-60"
+          className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors mt-4 disabled:opacity-60"
         >
           {generating ? t("generating") : t("generate_btn")}
         </button>
@@ -289,7 +289,7 @@ export default function PlannerPage() {
 
       {/* Main Content */}
       <main className="flex-1 p-6 lg:p-10 overflow-y-auto">
-        <h1 className="text-3xl font-bold text-[#314A37] mb-2">{t("title")}</h1>
+        <h1 className="text-3xl font-bold text-[#7B3F00] mb-2">{t("title")}</h1>
         <p className="text-gray-500 mb-8">{t("subtitle")}</p>
 
         {error && (
@@ -302,7 +302,7 @@ export default function PlannerPage() {
         {/* Plan Grid */}
         {planData.length > 0 && (
           <>
-            <h2 className="text-xl font-bold text-[#314A37] mb-4">📅 {t("weekly_plan")}</h2>
+            <h2 className="text-xl font-bold text-[#7B3F00] mb-4">📅 {t("weekly_plan")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
               {planData.map((item) => (
                 <div key={item.day} className="bg-white rounded-2xl shadow overflow-hidden flex flex-col">
@@ -317,7 +317,7 @@ export default function PlannerPage() {
 
                   <div className="p-4 flex flex-col flex-1">
                     <div className="flex items-start justify-between mb-1">
-                      <h3 className="font-bold text-[#314A37] text-base leading-tight">{item.menuName}</h3>
+                      <h3 className="font-bold text-[#7B3F00] text-base leading-tight">{item.menuName}</h3>
                       <button
                         onClick={() => toggleFavorite(item.menuName)}
                         className="text-xl ml-2 flex-shrink-0"
@@ -327,7 +327,7 @@ export default function PlannerPage() {
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs text-gray-400 font-medium">{item.day}</span>
-                      <span className="text-xs bg-[#E8F5E9] text-[#314A37] px-2 py-0.5 rounded-full">{item.category}</span>
+                      <span className="text-xs bg-[#FFF4DE] text-[#7B3F00] px-2 py-0.5 rounded-full">{item.category}</span>
                     </div>
                     <p className="text-sm text-gray-500 mb-3 line-clamp-2">{item.description}</p>
 
@@ -339,10 +339,10 @@ export default function PlannerPage() {
                     )}
 
                     <div className="mt-auto flex items-center justify-between">
-                      <span className="font-bold text-[#314A37]">{item.estCost}</span>
+                      <span className="font-bold text-[#7B3F00]">{item.estCost}</span>
                       <button
                         onClick={() => setActiveRecipe(item)}
-                        className="text-sm bg-[#E8F5E9] text-[#314A37] px-3 py-1.5 rounded-lg hover:bg-[#78B159] hover:text-white transition-colors"
+                        className="text-sm bg-[#FFF4DE] text-[#7B3F00] px-3 py-1.5 rounded-lg hover:bg-[#F5A623] hover:text-white transition-colors"
                       >
                         {t("view_recipe")}
                       </button>
@@ -355,13 +355,13 @@ export default function PlannerPage() {
             {/* Export & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
-                <h3 className="font-bold text-[#314A37] mb-3">📥 {t("download_pdf")}</h3>
+                <h3 className="font-bold text-[#7B3F00] mb-3">📥 {t("download_pdf")}</h3>
                 <div className="flex-1 flex flex-col justify-end">
                   {pdfBlob ? (
                     <a
                       href={URL.createObjectURL(pdfBlob)}
                       download="aussie_lunchbox_plan.pdf"
-                      className="block w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl text-center transition-colors"
+                      className="block w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl text-center transition-colors"
                     >
                       ⬇️ {t("download_pdf")}
                     </a>
@@ -372,19 +372,19 @@ export default function PlannerPage() {
               </div>
 
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
-                <h3 className="font-bold text-[#314A37] mb-3">✉️ Email to yourself</h3>
+                <h3 className="font-bold text-[#7B3F00] mb-3">✉️ Email to yourself</h3>
                 <div className="flex-1 flex flex-col justify-end">
                   <input
                     type="email"
                     value={emailAddr}
                     onChange={(e) => setEmailAddr(e.target.value)}
                     placeholder={t("email_placeholder")}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm mb-3 focus:outline-none focus:border-[#78B159]"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm mb-3 focus:outline-none focus:border-[#F5A623]"
                   />
                   <button
                     onClick={handleSendEmail}
                     disabled={sending || !pdfBlob}
-                    className="w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
+                    className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
                   >
                     {sending ? "Sending..." : t("email_btn")}
                   </button>
@@ -395,9 +395,9 @@ export default function PlannerPage() {
 
             {/* Shopping List */}
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-[#314A37]">{t("shopping_list")}</h2>
+              <h2 className="text-xl font-bold text-[#7B3F00]">{t("shopping_list")}</h2>
               {totalCost > 0 && (
-                <span className="bg-[#E8F5E9] text-[#314A37] font-bold px-4 py-1.5 rounded-full text-sm">
+                <span className="bg-[#FFF4DE] text-[#7B3F00] font-bold px-4 py-1.5 rounded-full text-sm">
                   Est. Total: ${totalCost.toFixed(2)}
                 </span>
               )}
@@ -410,7 +410,7 @@ export default function PlannerPage() {
               </div>
               {Object.entries(catItems).map(([cat, items]) => (
                 <div key={cat}>
-                  <div className="px-5 py-2 bg-[#F5F7FA] border-b border-gray-100">
+                  <div className="px-5 py-2 bg-[#FDFAF2] border-b border-gray-100">
                     <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
                       {CATEGORY_EMOJIS[cat] ?? "🛒"} {cat}
                     </span>
@@ -442,7 +442,7 @@ export default function PlannerPage() {
                                 </span>
                               </div>
                               {totalItemCost !== undefined && (
-                                <div className="text-sm font-bold text-[#314A37]">
+                                <div className="text-sm font-bold text-[#7B3F00]">
                                   ${totalItemCost.toFixed(2)}
                                   <span className="text-xs font-normal text-gray-400 ml-1">portion</span>
                                 </div>
@@ -462,7 +462,7 @@ export default function PlannerPage() {
         {planData.length === 0 && !generating && (
           <div className="flex flex-col items-center justify-center py-24 text-center">
             <div className="text-7xl mb-4">🥗</div>
-            <h2 className="text-2xl font-bold text-[#314A37] mb-2">Ready to plan?</h2>
+            <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">Ready to plan?</h2>
             <p className="text-gray-500 max-w-sm">
               Set your preferences in the sidebar and click Generate Plan to get started!
             </p>
@@ -499,7 +499,7 @@ export default function PlannerPage() {
                 </button>
               </div>
             ) : (
-              <div className="relative w-full h-32 bg-gradient-to-br from-[#E8F5E9] to-[#F5F7FA] rounded-t-2xl flex items-center justify-center">
+              <div className="relative w-full h-32 bg-gradient-to-br from-[#FFF4DE] to-[#FDFAF2] rounded-t-2xl flex items-center justify-center">
                 <span className="text-6xl">🥗</span>
                 <button
                   onClick={() => setActiveRecipe(null)}
@@ -512,15 +512,15 @@ export default function PlannerPage() {
 
             <div className="p-6">
               {/* Title & badges */}
-              <h2 className="text-xl font-bold text-[#314A37] mb-2">{activeRecipe.menuName}</h2>
+              <h2 className="text-xl font-bold text-[#7B3F00] mb-2">{activeRecipe.menuName}</h2>
               <div className="flex flex-wrap gap-2 mb-5">
-                <span className="bg-[#E8F5E9] text-[#314A37] text-xs font-semibold px-3 py-1 rounded-full">📅 {activeRecipe.day}</span>
-                <span className="bg-[#E8F5E9] text-[#314A37] text-xs font-semibold px-3 py-1 rounded-full">💰 {activeRecipe.estCost}</span>
+                <span className="bg-[#FFF4DE] text-[#7B3F00] text-xs font-semibold px-3 py-1 rounded-full">📅 {activeRecipe.day}</span>
+                <span className="bg-[#FFF4DE] text-[#7B3F00] text-xs font-semibold px-3 py-1 rounded-full">💰 {activeRecipe.estCost}</span>
                 <span className="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full">🔥 {activeRecipe.nutrition.calories} kcal</span>
               </div>
 
               {/* Ingredients */}
-              <h3 className="font-bold text-[#314A37] mb-2">📝 {t("ingredients")}</h3>
+              <h3 className="font-bold text-[#7B3F00] mb-2">📝 {t("ingredients")}</h3>
               <ul className="mb-5 space-y-1">
                 {activeRecipe.rawIngredients.map((ing) => (
                   <li key={ing} className="flex items-center gap-2 text-sm text-gray-700">
@@ -531,16 +531,16 @@ export default function PlannerPage() {
               </ul>
 
               {/* Instructions — parsed into steps */}
-              <h3 className="font-bold text-[#314A37] mb-3">👩‍🍳 Instructions</h3>
+              <h3 className="font-bold text-[#7B3F00] mb-3">👩‍🍳 Instructions</h3>
               <RecipeInstructions text={activeRecipe.instructions} />
 
               {/* Snacks */}
               {activeRecipe.snacks && activeRecipe.snacks.length > 0 && (
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <h3 className="font-bold text-[#314A37] mb-2">🍎 Snacks</h3>
+                  <h3 className="font-bold text-[#7B3F00] mb-2">🍎 Snacks</h3>
                   <div className="flex flex-wrap gap-2">
                     {activeRecipe.snacks.map((s) => (
-                      <span key={s.name} className="bg-[#E8F5E9] text-[#314A37] text-xs font-medium px-3 py-1.5 rounded-full">
+                      <span key={s.name} className="bg-[#FFF4DE] text-[#7B3F00] text-xs font-medium px-3 py-1.5 rounded-full">
                         {getIngredientEmoji(s.name)} {s.name}
                       </span>
                     ))}
@@ -550,7 +550,7 @@ export default function PlannerPage() {
 
               <button
                 onClick={() => setActiveRecipe(null)}
-                className="mt-6 w-full bg-[#E8F5E9] text-[#314A37] font-bold py-3 rounded-xl hover:bg-[#78B159] hover:text-white transition-colors"
+                className="mt-6 w-full bg-[#FFF4DE] text-[#7B3F00] font-bold py-3 rounded-xl hover:bg-[#F5A623] hover:text-white transition-colors"
               >
                 {t("close")}
               </button>
@@ -595,7 +595,7 @@ const RecipeInstructions = memo(function RecipeInstructions({ text }: { text?: s
         if (s.type === "step") {
           return (
             <div key={i} className="flex gap-3 items-start">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#78B159] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">
                 {s.num}
               </span>
               <p className="text-sm text-gray-700 leading-relaxed">{s.content}</p>

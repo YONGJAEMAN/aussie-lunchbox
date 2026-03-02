@@ -26,9 +26,9 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
         <h1 className="text-4xl font-bold mb-3">📬 Contact Aussie Lunchbox</h1>
         <p className="text-lg opacity-90 max-w-xl mx-auto">
           We&apos;d love to hear from you! Whether you have a question, feedback, or a partnership inquiry.
@@ -40,7 +40,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left: contact info */}
           <div>
-            <h2 className="text-2xl font-bold text-[#314A37] mb-4">Get in Touch</h2>
+            <h2 className="text-2xl font-bold text-[#7B3F00] mb-4">Get in Touch</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               If you have any questions about our meal plans, recipes, or how to use the planner,
               please drop us a message.
@@ -66,7 +66,7 @@ export default function ContactPage() {
 
           {/* Right: contact form */}
           <div className="bg-white rounded-2xl shadow p-8">
-            <h2 className="text-2xl font-bold text-[#314A37] mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-[#7B3F00] mb-6">Send us a Message</h2>
             {status === "success" ? (
               <div className="bg-green-50 border border-green-200 text-green-700 rounded-xl p-6 text-center">
                 <div className="text-4xl mb-3">✅</div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     type="text"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                     placeholder="jane@example.com"
                   />
                 </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <select
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors bg-white"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
                   >
                     <option>General Inquiry</option>
                     <option>Technical Support</option>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={5}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors resize-none"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors resize-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
+                  className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
@@ -135,7 +135,7 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

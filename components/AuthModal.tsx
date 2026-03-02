@@ -50,7 +50,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-[#314A37]">Join Aussie Lunchbox</h2>
+          <h2 className="text-xl font-bold text-[#7B3F00]">Join Aussie Lunchbox</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">×</button>
         </div>
 
@@ -78,13 +78,13 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         <div className="flex rounded-xl border border-gray-200 mb-4 overflow-hidden">
           <button
             onClick={() => setTab("login")}
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${tab === "login" ? "bg-[#78B159] text-white" : "text-gray-500 hover:bg-gray-50"}`}
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${tab === "login" ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"}`}
           >
             Log In
           </button>
           <button
             onClick={() => setTab("signup")}
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${tab === "signup" ? "bg-[#78B159] text-white" : "text-gray-500 hover:bg-gray-50"}`}
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${tab === "signup" ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"}`}
           >
             Sign Up
           </button>
@@ -96,7 +96,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
             required
           />
           <input
@@ -104,7 +104,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
             required
           />
           {tab === "signup" && (
@@ -113,7 +113,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
               placeholder="Confirm Password"
               value={confirmPwd}
               onChange={(e) => setConfirmPwd(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
               required
             />
           )}
@@ -121,7 +121,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
+            className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
           >
             {loading ? "..." : tab === "login" ? "Log In" : "Sign Up"}
           </button>

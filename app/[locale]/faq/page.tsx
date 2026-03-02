@@ -74,11 +74,11 @@ export default function FAQPage() {
   const locale = (params?.locale as string) ?? "en";
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
       <section
         className="text-white text-center py-16 px-4"
-        style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}
+        style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}
       >
         <h1 className="text-4xl font-bold mb-3">Frequently Asked Questions</h1>
         <p className="text-lg opacity-90 max-w-xl mx-auto">
@@ -96,11 +96,11 @@ export default function FAQPage() {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 aria-expanded={openIndex === i}
               >
-                <span className="font-semibold text-[#314A37] text-sm md:text-base leading-snug">
+                <span className="font-semibold text-[#7B3F00] text-sm md:text-base leading-snug">
                   {item.q}
                 </span>
                 <span
-                  className={`text-[#78B159] text-xl shrink-0 transition-transform duration-200 ${
+                  className={`text-[#F5A623] text-xl shrink-0 transition-transform duration-200 ${
                     openIndex === i ? "rotate-45" : ""
                   }`}
                 >
@@ -117,14 +117,14 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions CTA */}
-        <div className="mt-12 bg-[#314A37] text-white rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-[#7B3F00] text-white rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-2">Still have questions?</h2>
           <p className="text-sm opacity-80 mb-5">
             Can&apos;t find the answer you&apos;re looking for? Send us a message — we&apos;d love to help.
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-block bg-[#78B159] hover:bg-[#5d9040] px-7 py-3 rounded-full font-semibold text-sm transition-colors"
+            className="inline-block bg-[#F5A623] hover:bg-[#D4850A] px-7 py-3 rounded-full font-semibold text-sm transition-colors"
           >
             Contact Us →
           </Link>
@@ -132,7 +132,7 @@ export default function FAQPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.

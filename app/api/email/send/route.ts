@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     const { error } = await resend.emails.send({
       from: "Aussie Lunchbox <noreply@aussielunchbox.com.au>",
       to: [to],
-      subject: subject ?? "Your Aussie Lunchbox Plan 🥝",
+      subject: subject ?? "Your Aussie Lunchbox Plan 🦘",
       text: emailBody ?? "Here is your weekly lunchbox plan!",
       attachments: [
         {

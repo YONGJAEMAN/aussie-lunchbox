@@ -11,10 +11,10 @@ export default async function AboutPage() {
   const locale = await getLocale();
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA]">
+    <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
-        <h1 className="text-4xl font-bold mb-3">🥝 About Aussie Lunchbox</h1>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
+        <h1 className="text-4xl font-bold mb-3">🦘 About Aussie Lunchbox</h1>
         <p className="text-lg opacity-90 max-w-xl mx-auto">
           Making school lunches easier, healthier, and stress-free for Australian families.
         </p>
@@ -24,7 +24,7 @@ export default async function AboutPage() {
       <section className="max-w-5xl mx-auto py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
           <div className="md:col-span-3 bg-white rounded-2xl shadow p-8">
-            <h2 className="text-2xl font-bold text-[#78B159] mb-4">👋 Kia Ora!</h2>
+            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">👋 Kia Ora!</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               Welcome to <strong>Aussie Lunchbox Planner</strong>, your trusted partner in simplifying
               school mornings for Australia families.
@@ -53,7 +53,7 @@ export default async function AboutPage() {
       {/* Why Choose Us */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[#314A37] mb-12">Why Choose Us?</h2>
+          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">Why Choose Us?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -74,10 +74,10 @@ export default async function AboutPage() {
             ].map((f) => (
               <div
                 key={f.title}
-                className="bg-[#F5F7FA] rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform"
+                className="bg-[#FDFAF2] rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform"
               >
                 <div className="text-5xl mb-4">{f.icon}</div>
-                <h3 className="font-bold text-[#314A37] text-xl mb-3">{f.title}</h3>
+                <h3 className="font-bold text-[#7B3F00] text-xl mb-3">{f.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -88,14 +88,14 @@ export default async function AboutPage() {
       {/* Community CTA */}
       <section className="py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold text-[#314A37] mb-4">Join Our Community</h3>
+          <h3 className="text-2xl font-bold text-[#7B3F00] mb-4">Join Our Community</h3>
           <p className="text-gray-600 mb-8 leading-relaxed">
             We are constantly improving based on your feedback. Together, let&apos;s make healthy
             eating the easy choice for our tamariki.
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="bg-[#78B159] hover:bg-[#314A37] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
+            className="bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
           >
             Start Planning Now
           </Link>
@@ -103,7 +103,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#314A37] text-white py-8 px-4">
+      <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
             © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
