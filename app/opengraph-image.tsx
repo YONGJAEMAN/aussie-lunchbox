@@ -23,7 +23,7 @@ export default function OGImage() {
       >
         {/* Logo & Title */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "24px" }}>
-          <span style={{ fontSize: "80px" }}>🥝</span>
+          <span style={{ fontSize: "80px" }}>🦘</span>
           <span style={{ fontSize: "72px", fontWeight: "bold", color: "white", letterSpacing: "-2px" }}>
             Aussie Lunchbox
           </span>

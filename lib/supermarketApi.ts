@@ -7,14 +7,15 @@ import priceCacheRaw from "@/data/price_cache.json";
 type CacheEntry = { timestamp: number; data: PriceInfo };
 const PRICE_CACHE = priceCacheRaw as Record<string, CacheEntry>;
 
+// AU fallback prices (AUD) used when Woolworths API is unavailable
 const FALLBACK_PRICES: Record<string, number> = {
-  Bread: 3.50, Marmite: 6.00, Cheese: 12.00, Butter: 8.50,
-  Croissant: 4.00, Ham: 5.50, "Chicken Breast": 14.00, Lettuce: 4.00, Mayo: 6.50,
-  "Sushi Rice": 4.50, Seaweed: 3.00, "Canned Tuna": 2.50, Cucumber: 3.00,
-  Eggs: 9.00, Milk: 3.50, Spinach: 4.00, Pastry: 5.00,
-  Pasta: 2.00, Pesto: 6.00, "Cherry Tomatoes": 4.50, "Olive Oil": 10.00,
-  Apple: 0.80, Carrot: 0.50, Hummus: 5.00,
-  Yoghurt: 6.50, Muesli: 7.00, Crackers: 3.00, Tortilla: 4.50,
+  Bread: 4.00, Vegemite: 6.50, Cheese: 13.00, Butter: 9.00,
+  Croissant: 4.50, Ham: 6.00, "Chicken Breast": 15.00, Lettuce: 4.50, Mayo: 7.00,
+  "Sushi Rice": 5.00, Seaweed: 3.50, "Canned Tuna": 2.80, Cucumber: 3.50,
+  Eggs: 9.50, Milk: 3.80, Spinach: 4.50, Pastry: 5.50,
+  Pasta: 2.50, Pesto: 6.50, "Cherry Tomatoes": 5.00, "Olive Oil": 11.00,
+  Apple: 0.90, Carrot: 0.60, Hummus: 5.50,
+  Yoghurt: 7.00, Muesli: 8.00, Crackers: 3.50, Tortilla: 5.00,
 };
 
 function getEmoji(name: string): string {
@@ -38,9 +39,7 @@ function getFallbackData(name: string): PriceInfo {
 }
 
 function findInCache(name: string): PriceInfo | null {
-  // Exact match
   if (PRICE_CACHE[name]) return PRICE_CACHE[name].data;
-  // Case-insensitive partial match
   const lower = name.toLowerCase();
   const key = Object.keys(PRICE_CACHE).find((k) => k.toLowerCase() === lower);
   if (key) return PRICE_CACHE[key].data;
@@ -58,38 +57,38 @@ export async function fetchIngredientPrice(name: string): Promise<PriceInfo> {
   const cached = findInCache(name);
   if (cached) return { ...cached, image: getEmoji(name) };
 
-  // Live fallback (with 3s timeout) if not in cache
+  // Live fallback: Woolworths AU search API
   try {
-    const url = `https://www.woolworths.com.au/api/v1/products?target=search&search=${encodeURIComponent(name)}`;
+    const url = `https://www.woolworths.com.au/apis/ui/Search/products?searchTerm=${encodeURIComponent(name)}&pageNumber=1&pageSize=5&sortType=TraderRelevance`;
     const res = await fetch(url, {
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(4000),
       headers: {
-        "User-Agent": "Mozilla/5.0",
-        "Accept": "application/json",
-        "X-Requested-With": "OnlineShopping.WebApp",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-AU,en;q=0.9",
+        "Referer": "https://www.woolworths.com.au/",
       },
       next: { revalidate: 86400 },
     });
     if (!res.ok) return getFallbackData(name);
     const data = await res.json();
-    const items = data?.products?.items;
-    if (items?.length > 0) {
-      const item = items[0];
-      const price = item?.price?.salePrice;
+    // Woolworths API response: { Products: [{ Products: [{ Name, Price, SalePrice }] }] }
+    const product = data?.Products?.[0]?.Products?.[0];
+    if (product) {
+      const price = product.SalePrice ?? product.Price;
       return {
-        price: price ? parseFloat(price) : 5.0,
+        price: price ? parseFloat(String(price)) : 5.0,
         image: getEmoji(name),
-        name: item?.name ?? name,
+        name: product.Name ?? name,
         source: "Woolworths AU",
       };
     }
   } catch {
-    // fallthrough
+    // fallthrough to fallback
   }
   return getFallbackData(name);
 }
 
 export async function fetchBatchPrices(ingredients: string[]): Promise<PriceInfo[]> {
-  // Most ingredients will be served from the weekly cache (synchronous, no network)
   return Promise.all(ingredients.map((ing) => fetchIngredientPrice(ing)));
 }
