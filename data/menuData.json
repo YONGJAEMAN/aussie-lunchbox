@@ -1,0 +1,919 @@
+{
+  "MENU_DATA": {
+    "en": [
+      {
+        "name": "Ham & Cheese Croissant",
+        "category": "Sandwich",
+        "ingredients": [
+          "Croissant",
+          "Ham",
+          "Cheese",
+          "Cucumber"
+        ],
+        "image": "/assets/ham_croissant.png",
+        "instructions": "**Method:**\n1. Slice the croissant open lengthwise without cutting all the way through.\n2. Layer with folded ham slices and cheese.\n3. Add thin cucumber slices for crunch.\n4. Optional: warm in the oven at 160°C for 5 minutes before packing.\n5. Wrap in foil to keep fresh.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chicken Wrap",
+        "category": "Sandwich",
+        "ingredients": [
+          "Tortilla",
+          "Chicken",
+          "Lettuce",
+          "Mayo"
+        ],
+        "image": "/assets/chicken_wrap.png",
+        "instructions": "**Method:**\n1. Lay the tortilla flat on a clean surface.\n2. Spread mayo or hummus across the centre, leaving 4cm at each edge.\n3. Add shredded or sliced chicken, shredded lettuce, and cucumber slices.\n4. Fold in the left and right edges about 3cm.\n5. Roll up tightly from the bottom, pressing as you go.\n6. Cut in half diagonally and wrap in baking paper.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Turkey Club Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Turkey",
+          "Lettuce",
+          "Tomato",
+          "Mayo"
+        ],
+        "image": "/assets/club_sandwich.png",
+        "instructions": "**Method:**\n1. Lightly toast all three slices of bread.\n2. Spread mayo on one side of two slices.\n3. Layer the first slice with turkey slices and tomato.\n4. Add the second slice of bread, then layer with lettuce and mayo.\n5. Top with the third slice.\n6. Secure with toothpicks and cut diagonally into quarters.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Bagel & Cream Cheese",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bagel",
+          "Cream Cheese"
+        ],
+        "image": "/assets/bagel_cream_cheese.png",
+        "instructions": "**Method:**\n1. Slice the bagel in half horizontally with a serrated knife.\n2. Spread a generous layer of cream cheese on both cut sides.\n3. Optional: add sliced cucumber or smoked salmon.\n4. Press halves together and wrap in baking paper.\n5. Keep chilled until lunchtime.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Smoked Salmon Bagel",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bagel",
+          "Smoked Salmon",
+          "Cream Cheese"
+        ],
+        "image": "/assets/salmon_cream_cheese_bagel.png",
+        "instructions": "**Method:**\n1. Slice the bagel in half horizontally.\n2. Spread cream cheese evenly on both cut sides.\n3. Layer the bottom half with smoked salmon slices.\n4. Add thin cucumber rounds and a squeeze of lemon juice.\n5. Press together and wrap in baking paper.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Egg Salad Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Boiled Eggs",
+          "Mayo",
+          "Lettuce"
+        ],
+        "image": "/assets/egg_salad_sandwich.png",
+        "instructions": "**Method:**\n1. Hard-boil eggs for 10 minutes, then cool in ice water.\n2. Peel and chop eggs roughly.\n3. Mix with mayo, a pinch of salt, and ground pepper.\n4. Optional: add a dash of mustard for extra flavour.\n5. Spread generously on bread slices.\n6. Add a lettuce leaf, sandwich together, and cut in half.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Tuna Mayo Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Canned Tuna",
+          "Mayo",
+          "Cucumber"
+        ],
+        "image": "/assets/tuna_mayo_sandwich.png",
+        "instructions": "**Method:**\n1. Drain canned tuna well and break up any large chunks.\n2. Mix tuna with mayo until creamy. Season with salt and pepper.\n3. Optional: stir in finely diced celery for extra crunch.\n4. Spread on one slice of bread.\n5. Add lettuce or cucumber and top with the second slice.\n6. Cut in half and wrap.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Roast Beef Roll",
+        "category": "Sandwich",
+        "ingredients": [
+          "Roll",
+          "Roast Beef",
+          "Mustard",
+          "Rocket"
+        ],
+        "image": "/assets/roast_beef_roll.png",
+        "instructions": "**Method:**\n1. Slice the roll open lengthwise.\n2. Spread mustard or mayo generously on both cut sides.\n3. Layer with thin slices of roast beef.\n4. Add lettuce, tomato, and any desired condiments.\n5. Press together firmly and wrap in foil.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chicken Pesto Panini",
+        "category": "Sandwich",
+        "ingredients": [
+          "Ciabatta",
+          "Chicken",
+          "Pesto",
+          "Mozzarella"
+        ],
+        "image": "/assets/chicken_pesto_panini.png",
+        "instructions": "**Method:**\n1. Slice ciabatta in half lengthwise.\n2. Spread pesto generously on both cut sides.\n3. Layer with cooked chicken strips and sliced mozzarella.\n4. Press in a sandwich press for 3–4 minutes until golden and cheese melts.\n5. Cool slightly, cut in half, and wrap.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": false,
+        "is_egg_free": true
+      },
+      {
+        "name": "Veggie Wrap",
+        "category": "Sandwich",
+        "ingredients": [
+          "Tortilla",
+          "Hummus",
+          "Carrot",
+          "Spinach"
+        ],
+        "image": "/assets/veggie_wrap.png",
+        "instructions": "**Method:**\n1. Lay tortilla flat on a clean surface.\n2. Spread hummus across the centre, leaving 4cm at each edge.\n3. Layer with capsicum strips, cucumber, baby spinach, and avocado slices.\n4. Fold in left and right edges, then roll up from the bottom.\n5. Cut in half and wrap in baking paper.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "BLT Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Bacon",
+          "Lettuce",
+          "Tomato"
+        ],
+        "image": "/assets/blt_sandwich.png",
+        "instructions": "**Method:**\n1. Cook bacon in a pan until crispy (3–4 min per side). Drain on paper towels.\n2. Toast bread slices lightly.\n3. Spread mayo on both slices of toast.\n4. Layer with bacon, lettuce leaves, and tomato slices.\n5. Press together, cut diagonally, and wrap.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Marmite & Cheese Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Marmite",
+          "Cheese",
+          "Butter"
+        ],
+        "image": "/assets/marmite_sandwich.png",
+        "instructions": "**Method:**\n1. Butter both slices of bread evenly.\n2. Spread a thin, even layer of Marmite on one slice (a little goes a long way!).\n3. Add sliced cheese on top of the Marmite.\n4. Press slices together and cut into halves or quarters.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Peanut Butter Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Peanut Butter"
+        ],
+        "image": "/assets/peanut_butter_sandwich.png",
+        "instructions": "**Method:**\n1. Spread a generous layer of peanut butter on one slice of bread.\n2. Optional: add banana slices, honey, or a sprinkle of granola for extra flavour.\n3. Top with the second slice and press gently.\n4. Cut in half and wrap.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": false,
+        "is_egg_free": true
+      },
+      {
+        "name": "Jam Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Jam",
+          "Butter"
+        ],
+        "image": "/assets/jam_sandwich.png",
+        "instructions": "**Method:**\n1. Butter both slices of bread.\n2. Spread your favourite jam generously on one buttered slice.\n3. Press slices together and cut into triangles.\n4. Wrap in baking paper or place in a container.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Mac 'n Cheese",
+        "category": "Hot",
+        "ingredients": [
+          "Macaroni",
+          "Cheese Sauce",
+          "Milk"
+        ],
+        "image": "/assets/macaroni_cheese.png",
+        "instructions": "**Thermos Tip:**\n1. Cook macaroni in salted boiling water until al dente. Drain.\n2. In the same pot, melt butter over medium heat. Add flour and stir for 1 minute.\n3. Gradually add milk, stirring constantly until the sauce thickens (3–4 min).\n4. Add cheese and stir until smooth and creamy. Season well.\n5. Mix through the drained pasta.\n6. Pre-heat thermos with boiling water for 5 minutes, then tip out.\n7. Pack mac 'n cheese immediately into the hot thermos — it will stay warm for hours.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Fried Rice",
+        "category": "Hot",
+        "ingredients": [
+          "Rice",
+          "Egg",
+          "Peas",
+          "Ham/Bacon",
+          "Soy Sauce"
+        ],
+        "image": "/assets/fried_rice.png",
+        "instructions": "**Thermos Tip:**\n1. Cook rice the night before and refrigerate (cold rice fries better).\n2. Heat a wok or large pan on high. Add oil.\n3. Crack in eggs and scramble quickly for 30 seconds.\n4. Add the cold rice, breaking up any clumps with a spatula.\n5. Stir in peas, corn, and any chopped vegetables.\n6. Drizzle with soy sauce and toss vigorously for 2 minutes until piping hot.\n7. Pre-heat thermos with boiling water, then pack immediately.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Teriyaki Chicken & Rice",
+        "category": "Hot",
+        "ingredients": [
+          "Chicken Thigh",
+          "Teriyaki Sauce",
+          "Rice",
+          "Broccoli"
+        ],
+        "image": "/assets/teriyaki_chicken.png",
+        "instructions": "**Thermos Tip:**\n1. Marinate chicken thighs in teriyaki sauce for at least 10 minutes.\n2. Pan-fry on medium-high heat for 6–8 minutes per side until cooked through.\n3. Rest for 2 minutes, then slice into strips.\n4. Steam broccoli for 3–4 minutes until bright green.\n5. Cook rice according to packet instructions.\n6. Layer rice, chicken slices, and broccoli.\n7. Pre-heat thermos with boiling water, tip out, and pack immediately.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Mini Meatballs",
+        "category": "Hot",
+        "ingredients": [
+          "Mince",
+          "Breadcrumbs",
+          "Tomato Sauce"
+        ],
+        "image": "/assets/meatballs.png",
+        "instructions": "**Thermos Tip:**\n1. Combine beef mince with breadcrumbs, egg, garlic, and spices in a bowl.\n2. Roll into balls about 3cm in diameter.\n3. Bake at 200°C for 15–18 minutes until golden and cooked through.\n4. Warm tomato sauce in a pan. Add cooked meatballs and coat well.\n5. Pre-heat thermos with boiling water, tip out, and pack meatballs hot.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Spaghetti Bolognese",
+        "category": "Hot",
+        "ingredients": [
+          "Spaghetti",
+          "Beef Mince",
+          "Tomato Sauce"
+        ],
+        "image": "/assets/spaghetti_bolognese.jpg",
+        "instructions": "**Thermos Tip:**\n1. Brown beef mince in a pan with oil over high heat (4–5 min).\n2. Drain excess fat if needed.\n3. Add tomato paste and tomato sauce. Stir well.\n4. Simmer on low for 10 minutes. Season with salt and herbs.\n5. Cook spaghetti until al dente. Drain.\n6. Toss pasta through the sauce.\n7. Pre-heat thermos with boiling water, tip out, and pack immediately.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Butter Chicken & Rice",
+        "category": "Hot",
+        "ingredients": [
+          "Chicken",
+          "Butter Chicken Sauce",
+          "Rice"
+        ],
+        "image": "/assets/butter_chicken___rice.jpg",
+        "instructions": "**Thermos Tip:**\n1. Cut chicken into bite-sized pieces.\n2. Heat butter chicken sauce in a pan over medium heat.\n3. Add chicken pieces and stir to coat.\n4. Simmer for 12–15 minutes until chicken is cooked through and sauce thickens.\n5. Cook rice as per packet instructions.\n6. Pre-heat thermos with boiling water, tip out, then layer rice and butter chicken.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Vegetable Curry",
+        "category": "Hot",
+        "ingredients": [
+          "Chickpeas",
+          "Potato",
+          "Coconut Milk",
+          "Curry Paste",
+          "Rice"
+        ],
+        "image": "/assets/vegetable_curry.jpg",
+        "instructions": "**Thermos Tip:**\n1. Heat oil in a pot. Add curry paste and stir for 1 minute until fragrant.\n2. Add chopped vegetables (potato, peas, capsicum) and stir to coat in paste.\n3. Pour in coconut milk and bring to a gentle simmer.\n4. Cook for 12–15 minutes until vegetables are tender.\n5. Season with salt and a squeeze of lemon.\n6. Serve over steamed rice and pack hot in a pre-warmed thermos.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chicken Satay",
+        "category": "Hot",
+        "ingredients": [
+          "Chicken Skewers",
+          "Peanut Sauce",
+          "Rice"
+        ],
+        "image": "/assets/chicken_satay.jpg",
+        "instructions": "**Packing Tip:**\n1. Cut chicken into strips and marinate in teriyaki or satay sauce for 15 minutes.\n2. Thread onto wooden skewers (pre-soaked in water).\n3. Grill or pan-fry for 3–4 minutes per side until cooked through and lightly charred.\n4. Pack peanut sauce separately in a small sealed container.\n5. Pack skewers in a container with a side of rice or steamed veggies.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": false,
+        "is_egg_free": true
+      },
+      {
+        "name": "Pizza Muffins",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Milk",
+          "Cheese",
+          "Ham",
+          "Tomato Paste"
+        ],
+        "image": "/assets/pizza_muffins.png",
+        "instructions": "**Bake:**\n1. Preheat oven to 180°C. Grease a 12-hole muffin tin.\n2. Whisk together flour, eggs, milk, and a pinch of salt in a bowl.\n3. Fold in grated cheese and your choice of fillings (ham, capsicum, olives).\n4. Pour batter into muffin holes, filling ¾ full.\n5. Bake for 18–20 minutes until golden and a skewer comes out clean.\n6. Cool for 5 minutes before removing. Pack once fully cooled.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Sausage Rolls",
+        "category": "Baking",
+        "ingredients": [
+          "Sausage Meat",
+          "Puff Pastry",
+          "Egg (glaze)"
+        ],
+        "image": "/assets/sausage_rolls.png",
+        "instructions": "**Bake:**\n1. Mix sausage meat with herbs, garlic, and salt in a bowl.\n2. Roll out puff pastry on a floured surface. Cut into rectangles.\n3. Place a sausage-shaped portion of meat along one edge.\n4. Roll pastry tightly around the meat. Press seam to seal.\n5. Brush top with egg glaze and score with a knife every 2cm.\n6. Bake at 200°C for 22–25 minutes until golden and crispy.\n7. Cool before packing in a container.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Bacon & Egg Pie",
+        "category": "Baking",
+        "ingredients": [
+          "Bacon",
+          "Eggs",
+          "Pastry",
+          "Cheese"
+        ],
+        "image": "/assets/bacon_egg_pie.png",
+        "instructions": "**Bake:**\n1. Preheat oven to 190°C. Line a baking dish with puff pastry, pressing into corners.\n2. Lay bacon strips in an even layer over the pastry base.\n3. Carefully crack eggs over the bacon, spacing them out evenly.\n4. Season with salt and pepper.\n5. Cover with a pastry lid. Press edges to seal and trim excess.\n6. Brush top with egg glaze and poke a few steam holes.\n7. Bake for 25–30 minutes until golden. Cool before slicing and packing.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Mini Spinach Quiche",
+        "category": "Baking",
+        "ingredients": [
+          "Spinach",
+          "Eggs",
+          "Cream/Milk",
+          "Feta",
+          "Pastry Cases"
+        ],
+        "image": "/assets/mini_quiche.png",
+        "instructions": "**Bake:**\n1. Preheat oven to 180°C. Press pastry cases into a greased mini muffin tin.\n2. Wilt spinach in a hot pan for 1–2 minutes. Squeeze out excess liquid.\n3. Beat eggs with milk, grated cheese, salt, and pepper.\n4. Stir in the cooled spinach.\n5. Spoon the egg mixture into pastry cases, filling ¾ full.\n6. Bake for 15–18 minutes until set and lightly golden on top.\n7. Cool before removing from tin.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Cheese Scones",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Butter",
+          "Milk",
+          "Cheese"
+        ],
+        "image": "/assets/cheese_scones.jpg",
+        "instructions": "**Bake:**\n1. Preheat oven to 200°C. Line a baking tray with paper.\n2. Sift flour into a bowl. Rub in cold butter until mixture resembles breadcrumbs.\n3. Mix in grated cheese and a pinch of salt.\n4. Gradually add milk and stir to form a soft dough — do not over-mix.\n5. Pat dough out to 3cm thick on a lightly floured surface.\n6. Cut into rounds with a cutter or glass.\n7. Bake for 12–15 minutes until risen and golden. Cool on a rack.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Banana Bread",
+        "category": "Baking",
+        "ingredients": [
+          "Ripe Bananas",
+          "Flour",
+          "Butter",
+          "Sugar",
+          "Egg"
+        ],
+        "image": "/assets/banana_bread.png",
+        "instructions": "**Bake:**\n1. Preheat oven to 175°C. Grease and line a loaf tin.\n2. Mash very ripe bananas in a large bowl until smooth.\n3. Stir in melted butter, sugar, egg, and milk.\n4. Sift flour into the bowl and fold in gently — stop when just combined.\n5. Optional: add cocoa for a chocolate version.\n6. Pour batter into the prepared tin.\n7. Bake for 45–50 minutes until a skewer inserted in the centre comes out clean.\n8. Cool in tin for 10 minutes before turning out.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Sushi Rolls",
+        "category": "Cold",
+        "ingredients": [
+          "Sushi Rice",
+          "Nori",
+          "Tuna/Chicken/Avocado",
+          "Mayo"
+        ],
+        "image": "/assets/sushi_rolls.png",
+        "instructions": "**Method:**\n1. Cook sushi rice according to packet. Season with rice vinegar while still warm.\n2. Place a nori sheet on a bamboo mat or clean teatowel, shiny side down.\n3. Spread rice evenly across the nori, leaving a 2cm strip at the top edge.\n4. Lay fillings (tuna, avocado, cucumber) in a strip across the centre.\n5. Lift the mat edge nearest to you and roll firmly, pressing as you go.\n6. Wet the bare nori strip to seal the roll.\n7. Use a wet sharp knife to cut into 6–8 pieces.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Rice Paper Rolls",
+        "category": "Cold",
+        "ingredients": [
+          "Rice Paper",
+          "Rice Noodles",
+          "Chicken/Tofu",
+          "Herbs"
+        ],
+        "image": "/assets/rice_paper_rolls.png",
+        "instructions": "**Method:**\n1. Soak rice paper sheets in warm water one at a time for 15 seconds until pliable.\n2. Lay flat on a clean, damp surface.\n3. Place a small bundle of rice noodles across the lower third.\n4. Add sliced chicken or tofu, cucumber strips, and fresh herbs.\n5. Fold in the left and right sides of the rice paper.\n6. Roll firmly from the bottom, keeping it tight.\n7. Serve with a dipping sauce packed separately.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Pasta Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Pasta spirals",
+          "Pesto/Mayo",
+          "Corn",
+          "Peas"
+        ],
+        "image": "/assets/pasta_salad.png",
+        "instructions": "**Method:**\n1. Cook pasta spirals in salted boiling water until al dente. Drain.\n2. Rinse under cold water to cool and stop cooking.\n3. Dice capsicum, cucumber, cherry tomatoes, and olives.\n4. Toss cooled pasta with vegetables and pesto or mayo.\n5. Add feta or tuna for extra protein if desired.\n6. Season with salt and pepper. Refrigerate until packing.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": false,
+        "is_egg_free": false
+      },
+      {
+        "name": "Greek Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Cucumber",
+          "Tomato",
+          "Feta",
+          "Olives"
+        ],
+        "image": "/assets/greek_salad.png",
+        "instructions": "**Method:**\n1. Dice cucumber, tomato, and capsicum into chunky 2cm pieces.\n2. Halve cherry tomatoes and slice red onion thinly.\n3. Toss everything together with olive oil and lemon dressing.\n4. Add pitted olives.\n5. Crumble feta cheese generously over the top.\n6. Pack dressing separately in a small container to keep salad fresh.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Yoghurt & Muesli",
+        "category": "Cold",
+        "ingredients": [
+          "Yoghurt",
+          "Muesli (Nut-free)",
+          "Berries"
+        ],
+        "image": "/assets/yoghurt_muesli.png",
+        "instructions": "**Method:**\n1. Spoon yoghurt into a leak-proof container.\n2. Pack muesli separately in a small zip-lock bag or container.\n3. Pack fresh berries, banana slices, or seasonal fruit on the side.\n4. Combine just before eating to keep muesli crunchy.\n5. Add a drizzle of honey if desired.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Vegan Burrito Bowl",
+        "category": "Cold",
+        "ingredients": [
+          "Rice",
+          "Black Beans",
+          "Corn",
+          "Salsa",
+          "Avocado"
+        ],
+        "image": "/assets/vegan_burrito_bowl.png",
+        "instructions": "**Method:**\n1. Cook rice and season with a little salt and lime juice while warm.\n2. Warm black beans in a pan with cumin and paprika (2–3 min).\n3. Dice avocado and toss with a squeeze of lemon to prevent browning.\n4. Slice capsicum and sauté for 2–3 minutes or use raw.\n5. Layer rice, beans, capsicum, corn, and avocado in a container.\n6. Top with salsa and fresh herbs. Serve at room temperature.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chickpea Salad Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Chickpeas",
+          "Vegan Mayo",
+          "Celery"
+        ],
+        "image": "/assets/chickpea_salad_sandwich.png",
+        "instructions": "**Method:**\n1. Drain and rinse chickpeas. Transfer to a bowl.\n2. Mash roughly with a fork, leaving about half with some texture.\n3. Mix in vegan mayo, mustard, diced celery, and spices (cumin, paprika).\n4. Season with salt and pepper to taste.\n5. Spread on bread with a lettuce leaf.\n6. Top with the second slice, press gently, and cut in half.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "GF Pasta with Tomato Sauce",
+        "category": "Hot",
+        "ingredients": [
+          "GF Pasta",
+          "Tomato Sauce",
+          "Basil"
+        ],
+        "image": "/assets/gf_pasta.png",
+        "instructions": "**Thermos Tip:**\n1. Cook GF pasta in well-salted boiling water as per packet instructions.\n2. Drain and rinse briefly under hot water.\n3. In the same pot, warm tomato sauce over medium heat.\n4. Add dried herbs (oregano, basil) and a pinch of garlic.\n5. Toss pasta through sauce until well coated.\n6. Optional: top with parmesan.\n7. Pre-heat thermos with boiling water, tip out, and pack immediately.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Tofu Stir-fry",
+        "category": "Hot",
+        "ingredients": [
+          "Tofu",
+          "Broccoli",
+          "Carrot",
+          "Soy Sauce",
+          "Rice"
+        ],
+        "image": "/assets/tofu_stirfry.png",
+        "instructions": "**Thermos Tip:**\n1. Press tofu between paper towels for 10 minutes to remove moisture. Cube into 2cm pieces.\n2. Heat oil in a wok on high heat until smoking.\n3. Add tofu and fry without stirring for 2 minutes, then toss. Cook until golden on all sides (5 min total).\n4. Add sliced vegetables (capsicum, broccoli, carrot) and stir-fry 3 minutes.\n5. Drizzle with soy sauce and teriyaki sauce. Toss to coat.\n6. Serve over steamed rice. Pack hot in a pre-warmed thermos.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Veggie Sticks & Hummus Box",
+        "category": "Cold",
+        "ingredients": [
+          "Carrot",
+          "Cucumber",
+          "Hummus",
+          "GF Crackers"
+        ],
+        "image": "/assets/hummus_box.png",
+        "instructions": "**Method:**\n1. Wash and peel carrots and capsicum.\n2. Cut into even sticks about 8–10cm long and 1cm wide.\n3. Trim celery and cut to the same length.\n4. Spoon hummus generously into a small dip container with a lid.\n5. Arrange veggie sticks around the hummus container in a lunchbox.\n6. Add GF crackers or rice crackers on the side.\n7. Store chilled until lunchtime.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Dairy-Free Chicken Pesto Pasta",
+        "category": "Cold",
+        "ingredients": [
+          "Pasta",
+          "Chicken",
+          "Dairy-Free Pesto",
+          "Cherry Tomatoes"
+        ],
+        "image": "/assets/df_chicken_pesto.png",
+        "instructions": "**Method:**\n1. Cook pasta in salted boiling water until al dente. Drain and rinse.\n2. Grill or pan-fry chicken breast over medium-high heat (6–8 min per side). Rest, then slice.\n3. Toss warm pasta with dairy-free pesto and a drizzle of olive oil.\n4. Mix through chicken slices.\n5. Season with salt and pepper.\n6. Serve warm or cold — works great as a packed lunch either way.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": false,
+        "is_egg_free": true
+      },
+      {
+        "name": "Egg-Free Mayo Chicken Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Chicken",
+          "Vegan Mayo",
+          "Lettuce"
+        ],
+        "image": "/assets/chicken_mayo.png",
+        "instructions": "**Method:**\n1. Poach chicken breast in simmering water for 12–15 minutes until cooked. Cool and shred.\n2. Mix shredded chicken with vegan mayo until well combined.\n3. Season with salt, pepper, and chopped herbs.\n4. Spread mixture on one slice of bread with a lettuce leaf.\n5. Top with the second slice, press, and cut in half.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Falafel Wrap",
+        "category": "Sandwich",
+        "ingredients": [
+          "Tortilla",
+          "Falafel",
+          "Hummus",
+          "Cucumber"
+        ],
+        "image": "/assets/falafel_wrap.png",
+        "instructions": "**Method:**\n1. If using store-bought falafel, heat in oven at 180°C for 8–10 minutes until crispy.\n2. Lay tortilla flat on a clean surface.\n3. Spread hummus across the centre.\n4. Add falafel pieces, rocket leaves, sliced cucumber, and diced tomato.\n5. Drizzle with lemon dressing.\n6. Fold in the sides and roll up tightly from the bottom.\n7. Cut in half and wrap in baking paper.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Quinoa Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Quinoa",
+          "Cucumber",
+          "Tomato",
+          "Lemon Dressing"
+        ],
+        "image": "/assets/quinoa_salad.png",
+        "instructions": "**Method:**\n1. Rinse quinoa under cold running water to remove bitterness.\n2. Cook in 1.5× volume of water or stock for 12 minutes until water is absorbed. Cool.\n3. Dice capsicum, cucumber, and halve cherry tomatoes.\n4. Toss cooled quinoa with vegetables and lemon dressing.\n5. Add drained chickpeas for extra protein.\n6. Crumble feta on top if desired.\n7. Season and refrigerate until packing.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Sausage & Mash (GF)",
+        "category": "Hot",
+        "ingredients": [
+          "GF Sausages",
+          "Potato",
+          "Peas"
+        ],
+        "image": "/assets/sausage_mash.png",
+        "instructions": "**Thermos Tip:**\n1. Peel potatoes and cut into even cubes. Boil in salted water for 15–18 minutes until tender.\n2. Drain thoroughly. Add butter and warm cream or milk.\n3. Mash vigorously until smooth and fluffy. Season generously.\n4. Grill or pan-fry GF sausages for 8–10 minutes, turning regularly until golden.\n5. Steam peas for 2–3 minutes.\n6. Pre-heat thermos with boiling water, tip out, and layer in mash, sausages, and peas.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      }
+    ]
+  },
+  "SNACK_DATA": {
+    "Fruit & Veg": [
+      {
+        "name": "Apple Slices",
+        "ingredients": [
+          "Apple"
+        ]
+      },
+      {
+        "name": "Carrot Sticks",
+        "ingredients": [
+          "Carrot"
+        ]
+      },
+      {
+        "name": "Cherry Tomatoes",
+        "ingredients": [
+          "Cherry Tomatoes"
+        ]
+      },
+      {
+        "name": "Grapes",
+        "ingredients": [
+          "Grapes"
+        ]
+      },
+      {
+        "name": "Mandarin",
+        "ingredients": [
+          "Mandarin"
+        ]
+      },
+      {
+        "name": "Cucumber Sticks",
+        "ingredients": [
+          "Cucumber"
+        ]
+      },
+      {
+        "name": "Banana",
+        "ingredients": [
+          "Banana"
+        ]
+      },
+      {
+        "name": "Pear",
+        "ingredients": [
+          "Pear"
+        ]
+      },
+      {
+        "name": "Capsicum Strips",
+        "ingredients": [
+          "Capsicum"
+        ]
+      }
+    ],
+    "Protein & Dairy": [
+      {
+        "name": "Cheese Cubes",
+        "ingredients": [
+          "Cheese Block"
+        ]
+      },
+      {
+        "name": "Yoghurt Pot",
+        "ingredients": [
+          "Yoghurt"
+        ]
+      },
+      {
+        "name": "Boiled Egg",
+        "ingredients": [
+          "Egg"
+        ]
+      },
+      {
+        "name": "Hummus & Veg",
+        "ingredients": [
+          "Hummus",
+          "Carrot"
+        ]
+      },
+      {
+        "name": "Cheese Stick",
+        "ingredients": [
+          "Cheese Stick"
+        ]
+      }
+    ],
+    "Savoury Crunch": [
+      {
+        "name": "Rice Crackers",
+        "ingredients": [
+          "Rice Crackers"
+        ]
+      },
+      {
+        "name": "Pretzels",
+        "ingredients": [
+          "Pretzels"
+        ]
+      },
+      {
+        "name": "Roasted Chickpeas",
+        "ingredients": [
+          "Chickpeas",
+          "Spices"
+        ]
+      },
+      {
+        "name": "Rice Wheels",
+        "ingredients": [
+          "Rice Wheels"
+        ]
+      }
+    ],
+    "Sweet Treat": [
+      {
+        "name": "Bliss Balls",
+        "ingredients": [
+          "Dates",
+          "Cocoa",
+          "Coconut"
+        ]
+      },
+      {
+        "name": "Mini Muffin",
+        "ingredients": [
+          "Muffin"
+        ]
+      },
+      {
+        "name": "Oat Cookie",
+        "ingredients": [
+          "Oat Cookie"
+        ]
+      },
+      {
+        "name": "Dried Apricots",
+        "ingredients": [
+          "Dried Apricots"
+        ]
+      }
+    ]
+  }
+}

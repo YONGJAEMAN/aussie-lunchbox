@@ -1,0 +1,1019 @@
+{
+    "Apple": {
+        "timestamp": 1772013997.558291,
+        "data": {
+            "price": 4.0,
+            "image": "https://assets.woolworths.com.au/images/2010/155003.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit apples royal gala",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cheese Block": {
+        "timestamp": 1772014354.0413928,
+        "data": {
+            "price": 12.49,
+            "image": "https://assets.woolworths.com.au/images/2010/375240.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths cheese cheddar everyday",
+            "source": "Countdown NZ"
+        }
+    },
+    "Beef Mince": {
+        "timestamp": 1772014354.041343,
+        "data": {
+            "price": 16.9,
+            "image": "https://assets.woolworths.com.au/images/2010/42246.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths nz beef mince grass fed 5% fat",
+            "source": "Countdown NZ"
+        }
+    },
+    "Roast Beef": {
+        "timestamp": 1772014354.041447,
+        "data": {
+            "price": 5.0,
+            "image": "https://assets.woolworths.com.au/images/2010/68708.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths shaved roast beef wafer thin",
+            "source": "Countdown NZ"
+        }
+    },
+    "Bagel": {
+        "timestamp": 1772014354.0425081,
+        "data": {
+            "price": 4.7,
+            "image": "https://assets.woolworths.com.au/images/2010/6020138.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "abe's bagels high protein low carb",
+            "source": "Countdown NZ"
+        }
+    },
+    "Spices": {
+        "timestamp": 1772014354.042279,
+        "data": {
+            "price": 3.0,
+            "image": "https://assets.woolworths.com.au/images/2010/139067.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "farrah's spice mix smoky chipotle",
+            "source": "Countdown NZ"
+        }
+    },
+    "Sausage Meat": {
+        "timestamp": 1772014354.042965,
+        "data": {
+            "price": 7.3,
+            "image": "https://assets.woolworths.com.au/images/2010/71172.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths beef sausage meat ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cucumber": {
+        "timestamp": 1772014354.0424252,
+        "data": {
+            "price": 2.95,
+            "image": "https://assets.woolworths.com.au/images/2010/281455.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable cucumbers telegraph",
+            "source": "Countdown NZ"
+        }
+    },
+    "Herbs": {
+        "timestamp": 1772014354.042219,
+        "data": {
+            "price": 6.19,
+            "image": "https://assets.woolworths.com.au/images/2010/476796.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "gourmet garden fresh vegetable mixed herbs lightly dried",
+            "source": "Countdown NZ"
+        }
+    },
+    "GF Sausages": {
+        "timestamp": 1772014354.042685,
+        "data": {
+            "price": 12.0,
+            "image": "https://assets.woolworths.com.au/images/2010/290735.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "hellers sausages precooked gluten free",
+            "source": "Countdown NZ"
+        }
+    },
+    "Chicken/Tofu": {
+        "timestamp": 1772014355.0464,
+        "data": {
+            "price": 5.0,
+            "image": "",
+            "name": "Cartology-Default Content-Search CIG",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pasta": {
+        "timestamp": 1772014355.135621,
+        "data": {
+            "price": 3.89,
+            "image": "https://assets.woolworths.com.au/images/2010/6020734.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "melissa pasta peppa pig",
+            "source": "Countdown NZ"
+        }
+    },
+    "Avocado": {
+        "timestamp": 1772014354.969283,
+        "data": {
+            "price": 2.95,
+            "image": "https://assets.woolworths.com.au/images/2010/354360.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh avocado pre-ripened",
+            "source": "Countdown NZ"
+        }
+    },
+    "Peanut Butter": {
+        "timestamp": 1772014355.320548,
+        "data": {
+            "price": 7.49,
+            "image": "https://assets.woolworths.com.au/images/2010/198589.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "forty thieves super food butter chocolate, nuts & seeds",
+            "source": "Countdown NZ"
+        }
+    },
+    "Hummus": {
+        "timestamp": 1772014355.1566238,
+        "data": {
+            "price": 4.5,
+            "image": "https://assets.woolworths.com.au/images/2010/744146.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "lisas hummus caramelized onion",
+            "source": "Countdown NZ"
+        }
+    },
+    "Spaghetti": {
+        "timestamp": 1772014355.1627111,
+        "data": {
+            "price": 6.49,
+            "image": "https://assets.woolworths.com.au/images/2010/266023.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "watties spaghetti in tomato sauce ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Coconut Milk": {
+        "timestamp": 1772014355.527849,
+        "data": {
+            "price": 4.5,
+            "image": "https://assets.woolworths.com.au/images/2010/171176.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "alpro soy milk coconut barista",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pasta spirals": {
+        "timestamp": 1772014355.135807,
+        "data": {
+            "price": 1.79,
+            "image": "https://assets.woolworths.com.au/images/2010/346833.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths pasta spirals",
+            "source": "Countdown NZ"
+        }
+    },
+    "Bacon": {
+        "timestamp": 1772014356.314069,
+        "data": {
+            "price": 21.8,
+            "image": "https://assets.woolworths.com.au/images/2010/238731.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "beehive streaky bacon ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Sushi Rice": {
+        "timestamp": 1772014358.0317938,
+        "data": {
+            "price": 3.89,
+            "image": "https://assets.woolworths.com.au/images/2010/781400.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "mama san sushi rice ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Milk": {
+        "timestamp": 1772014357.1588008,
+        "data": {
+            "price": 3.1,
+            "image": "https://assets.woolworths.com.au/images/2010/265579.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "anchor uht milk lite blue",
+            "source": "Countdown NZ"
+        }
+    },
+    "Potato": {
+        "timestamp": 1772014358.66692,
+        "data": {
+            "price": 3.8,
+            "image": "https://assets.woolworths.com.au/images/2010/147120.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable potatoes white washed",
+            "source": "Countdown NZ"
+        }
+    },
+    "Eggs": {
+        "timestamp": 1772014357.6139688,
+        "data": {
+            "price": 7.9,
+            "image": "https://assets.woolworths.com.au/images/2010/352492.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "henergy eggs cage free size 6",
+            "source": "Countdown NZ"
+        }
+    },
+    "Berries": {
+        "timestamp": 1772014358.30528,
+        "data": {
+            "price": 4.0,
+            "image": "https://assets.woolworths.com.au/images/2010/169792.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit blueberries ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Mayo": {
+        "timestamp": 1772014355.64414,
+        "data": {
+            "price": 7.25,
+            "image": "https://assets.woolworths.com.au/images/2010/304977.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "best foods mayonnaise real",
+            "source": "Countdown NZ"
+        }
+    },
+    "Falafel": {
+        "timestamp": 1772014358.920297,
+        "data": {
+            "price": 6.5,
+            "image": "https://assets.woolworths.com.au/images/2010/6032174.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "leader falafel ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cream Cheese": {
+        "timestamp": 1772014356.813374,
+        "data": {
+            "price": 4.9,
+            "image": "https://assets.woolworths.com.au/images/2010/753052.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "anchor cream cheese original",
+            "source": "Countdown NZ"
+        }
+    },
+    "Croissant": {
+        "timestamp": 1772014359.681823,
+        "data": {
+            "price": 11.99,
+            "image": "https://assets.woolworths.com.au/images/2010/242165.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "paneton ready to bake croissants 300g",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pesto/Mayo": {
+        "timestamp": 1772014359.308515,
+        "data": {
+            "price": 5.85,
+            "image": "https://assets.woolworths.com.au/images/2010/3466.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "barilla pesto alla genovese",
+            "source": "Countdown NZ"
+        }
+    },
+    "Macaroni": {
+        "timestamp": 1772014361.129809,
+        "data": {
+            "price": 2.99,
+            "image": "https://assets.woolworths.com.au/images/2010/728012.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "diamond pasta macaroni",
+            "source": "Countdown NZ"
+        }
+    },
+    "Capsicum": {
+        "timestamp": 1772014360.6448882,
+        "data": {
+            "price": 2.25,
+            "image": "https://assets.woolworths.com.au/images/2010/281197.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable capsicum red",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rice Paper": {
+        "timestamp": 1772014362.662142,
+        "data": {
+            "price": 3.4,
+            "image": "https://assets.woolworths.com.au/images/2010/752365.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "valcom rice paper ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Grapes": {
+        "timestamp": 1772014356.091733,
+        "data": {
+            "price": 8.0,
+            "image": "https://assets.woolworths.com.au/images/2010/247942.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths grapes green",
+            "source": "Countdown NZ"
+        }
+    },
+    "Vegan Mayo": {
+        "timestamp": 1772014363.4190662,
+        "data": {
+            "price": 7.49,
+            "image": "https://assets.woolworths.com.au/images/2010/334374.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "best foods vegan mayonnaise ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Salsa": {
+        "timestamp": 1772014356.900873,
+        "data": {
+            "price": 4.75,
+            "image": "https://assets.woolworths.com.au/images/2010/231416.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "old el paso chunky salsa dip mild",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tuna/Chicken/Avocado": {
+        "timestamp": 1772014360.287485,
+        "data": {
+            "price": 5.8,
+            "image": "https://assets.woolworths.com.au/images/2010/481088.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "smitten kitten dry cat food chicken & tuna",
+            "source": "Countdown NZ"
+        }
+    },
+    "Lettuce": {
+        "timestamp": 1772014364.757159,
+        "data": {
+            "price": 4.5,
+            "image": "https://assets.woolworths.com.au/images/2010/154340.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable lettuce traditional iceberg",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rice Noodles": {
+        "timestamp": 1772014365.248725,
+        "data": {
+            "price": 1.99,
+            "image": "https://assets.woolworths.com.au/images/2010/313632.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "erawan rice noodles pad thai",
+            "source": "Countdown NZ"
+        }
+    },
+    "Butter": {
+        "timestamp": 1772014355.328203,
+        "data": {
+            "price": 7.29,
+            "image": "https://assets.woolworths.com.au/images/2010/827847.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths butter salted",
+            "source": "Countdown NZ"
+        }
+    },
+    "Ham": {
+        "timestamp": 1772014365.930735,
+        "data": {
+            "price": 3.8,
+            "image": "https://assets.woolworths.com.au/images/2010/71651.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths ham shaved sandwich",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cherry Tomatoes": {
+        "timestamp": 1772014360.100682,
+        "data": {
+            "price": 4.0,
+            "image": "https://assets.woolworths.com.au/images/2010/58643.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths fresh tomatoes cherry",
+            "source": "Countdown NZ"
+        }
+    },
+    "Butter Chicken Sauce": {
+        "timestamp": 1772014362.134687,
+        "data": {
+            "price": 5.75,
+            "image": "https://assets.woolworths.com.au/images/2010/580621.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "pataks recipe base butter chicken mild",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rice": {
+        "timestamp": 1772014366.228914,
+        "data": {
+            "price": 3.95,
+            "image": "https://assets.woolworths.com.au/images/2010/231636.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "sunrice basmati rice ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cheese Stick": {
+        "timestamp": 1772014355.372604,
+        "data": {
+            "price": 5.95,
+            "image": "https://assets.woolworths.com.au/images/2010/388120.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths cheese snack everyday sticks",
+            "source": "Countdown NZ"
+        }
+    },
+    "Peas": {
+        "timestamp": 1772014368.443959,
+        "data": {
+            "price": 2.0,
+            "image": "https://assets.woolworths.com.au/images/2010/229251.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths frozen baby peas ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Mince": {
+        "timestamp": 1772014369.421624,
+        "data": {
+            "price": 9.0,
+            "image": "https://assets.woolworths.com.au/images/2010/6006007.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths pork & beef mince ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Turkey": {
+        "timestamp": 1772014370.20306,
+        "data": {
+            "price": 7.8,
+            "image": "https://assets.woolworths.com.au/images/2010/251464.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "macro free range nz chicken mince breast",
+            "source": "Countdown NZ"
+        }
+    },
+    "Egg (glaze)": {
+        "timestamp": 1772014369.9040792,
+        "data": {
+            "price": 4.9,
+            "image": "https://assets.woolworths.com.au/images/2010/257305.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths balsamic glaze ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tortilla": {
+        "timestamp": 1772014368.8307462,
+        "data": {
+            "price": 5.5,
+            "image": "https://assets.woolworths.com.au/images/2010/525659.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "farrah's taco tortillas small",
+            "source": "Countdown NZ"
+        }
+    },
+    "Chicken Thigh": {
+        "timestamp": 1772014370.957153,
+        "data": {
+            "price": 25.99,
+            "image": "https://assets.woolworths.com.au/images/2010/57005.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths nz chicken thighs skinless boneless",
+            "source": "Countdown NZ"
+        }
+    },
+    "Boiled Eggs": {
+        "timestamp": 1772014371.3630989,
+        "data": {
+            "price": 7.9,
+            "image": "https://assets.woolworths.com.au/images/2010/352492.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "henergy eggs cage free size 6",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pastry": {
+        "timestamp": 1772014367.280904,
+        "data": {
+            "price": 11.99,
+            "image": "https://assets.woolworths.com.au/images/2010/241203.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "paneton ready to bake mixed pastry selection 300g",
+            "source": "Countdown NZ"
+        }
+    },
+    "Quinoa": {
+        "timestamp": 1772014361.674598,
+        "data": {
+            "price": 7.3,
+            "image": "https://assets.woolworths.com.au/images/2010/717631.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "macro organic quinoa tri colour",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tofu": {
+        "timestamp": 1772014363.7572632,
+        "data": {
+            "price": 5.7,
+            "image": "https://assets.woolworths.com.au/images/2010/23038.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "macro firm tofu ",
+            "source": "Countdown NZ"
+        }
+    },
+    "GF Crackers": {
+        "timestamp": 1772014371.852685,
+        "data": {
+            "price": 5.0,
+            "image": "https://assets.woolworths.com.au/images/2010/612774.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "arnotts jatz crackers gluten free",
+            "source": "Countdown NZ"
+        }
+    },
+    "GF Pasta": {
+        "timestamp": 1772014372.720895,
+        "data": {
+            "price": 5.39,
+            "image": "https://assets.woolworths.com.au/images/2010/276287.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "buontempo pasta spirals gluten free",
+            "source": "Countdown NZ"
+        }
+    },
+    "Dairy-Free Pesto": {
+        "timestamp": 1772014364.1662898,
+        "data": {
+            "price": 8.79,
+            "image": "https://assets.woolworths.com.au/images/2010/758672.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "veesey vegan fresh pesto chilled dairy free",
+            "source": "Countdown NZ"
+        }
+    },
+    "Flour": {
+        "timestamp": 1772014373.7255821,
+        "data": {
+            "price": 2.0,
+            "image": "https://assets.woolworths.com.au/images/2010/265266.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths plain flour ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Mozzarella": {
+        "timestamp": 1772014373.1149812,
+        "data": {
+            "price": 11.29,
+            "image": "https://assets.woolworths.com.au/images/2010/387505.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths mozzarella cheese grated",
+            "source": "Countdown NZ"
+        }
+    },
+    "Ciabatta": {
+        "timestamp": 1772014374.671974,
+        "data": {
+            "price": 5.4,
+            "image": "https://assets.woolworths.com.au/images/2010/6042479.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths ciabatta pocket",
+            "source": "Countdown NZ"
+        }
+    },
+    "Black Beans": {
+        "timestamp": 1772014375.235233,
+        "data": {
+            "price": 1.2,
+            "image": "https://assets.woolworths.com.au/images/2010/663581.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths beans black no added salt",
+            "source": "Countdown NZ"
+        }
+    },
+    "Ham/Bacon": {
+        "timestamp": 1772014374.749356,
+        "data": {
+            "price": 7.0,
+            "image": "https://assets.woolworths.com.au/images/2010/310221.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "hellers bacon bits cooked strips",
+            "source": "Countdown NZ"
+        }
+    },
+    "Nori": {
+        "timestamp": 1772014376.315254,
+        "data": {
+            "price": 3.0,
+            "image": "https://assets.woolworths.com.au/images/2010/781391.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "mama san sushi seaweed ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Celery": {
+        "timestamp": 1772014376.7770271,
+        "data": {
+            "price": 3.49,
+            "image": "https://assets.woolworths.com.au/images/2010/313057.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable celery half",
+            "source": "Countdown NZ"
+        }
+    },
+    "Carrot": {
+        "timestamp": 1772014363.144381,
+        "data": {
+            "price": 2.75,
+            "image": "https://assets.woolworths.com.au/images/2010/135344.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable carrots ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Coconut": {
+        "timestamp": 1772014374.280899,
+        "data": {
+            "price": 3.49,
+            "image": "https://assets.woolworths.com.au/images/2010/6015740.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "macro coconut desiccated",
+            "source": "Countdown NZ"
+        }
+    },
+    "Mandarin": {
+        "timestamp": 1772014376.537104,
+        "data": {
+            "price": 10.0,
+            "image": "https://assets.woolworths.com.au/images/2010/185754.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit mandarins imported",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pear": {
+        "timestamp": 1772014373.9301279,
+        "data": {
+            "price": 5.45,
+            "image": "https://assets.woolworths.com.au/images/2010/115330.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit pears packham green",
+            "source": "Countdown NZ"
+        }
+    },
+    "Peanut Sauce": {
+        "timestamp": 1772014378.970689,
+        "data": {
+            "price": 4.5,
+            "image": "https://assets.woolworths.com.au/images/2010/776360.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "f whitlock & sons peanut satay chunky sauce ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Roll": {
+        "timestamp": 1772014379.549228,
+        "data": {
+            "price": 3.8,
+            "image": "https://assets.woolworths.com.au/images/2010/324762.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths bread rolls dinner",
+            "source": "Countdown NZ"
+        }
+    },
+    "Breadcrumbs": {
+        "timestamp": 1772014377.9464052,
+        "data": {
+            "price": 2.4,
+            "image": "https://assets.woolworths.com.au/images/2010/6020501.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "gerry's bread crumbs fine white",
+            "source": "Countdown NZ"
+        }
+    },
+    "Basil": {
+        "timestamp": 1772014379.9159338,
+        "data": {
+            "price": 4.49,
+            "image": "https://assets.woolworths.com.au/images/2010/133631.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh herb basil living plant",
+            "source": "Countdown NZ"
+        }
+    },
+    "Canned Tuna": {
+        "timestamp": 1772014372.2872262,
+        "data": {
+            "price": 1.39,
+            "image": "https://assets.woolworths.com.au/images/2010/476700.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths tuna in spring water",
+            "source": "Countdown NZ"
+        }
+    },
+    "Smoked Salmon": {
+        "timestamp": 1772014381.083284,
+        "data": {
+            "price": 7.5,
+            "image": "https://assets.woolworths.com.au/images/2010/390141.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "ocean blue smoked salmon natural",
+            "source": "Countdown NZ"
+        }
+    },
+    "Ripe Bananas": {
+        "timestamp": 1772014380.798203,
+        "data": {
+            "price": 5.29,
+            "image": "https://assets.woolworths.com.au/images/2010/866112.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit bananas organic fair trade",
+            "source": "Countdown NZ"
+        }
+    },
+    "Corn": {
+        "timestamp": 1772014375.852264,
+        "data": {
+            "price": 1.5,
+            "image": "https://assets.woolworths.com.au/images/2010/149374.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh vegetable sweet corn ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Curry Paste": {
+        "timestamp": 1772014381.476971,
+        "data": {
+            "price": 7.95,
+            "image": "https://assets.woolworths.com.au/images/2010/866199.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "the spice tailor sauce kit indonesian rendang",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rocket": {
+        "timestamp": 1772014378.634607,
+        "data": {
+            "price": 3.3,
+            "image": "https://assets.woolworths.com.au/images/2010/259428.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths fresh salad baby rocket mini bag",
+            "source": "Countdown NZ"
+        }
+    },
+    "Muesli (Nut-free)": {
+        "timestamp": 1772014379.223674,
+        "data": {
+            "price": 5.5,
+            "image": "https://assets.woolworths.com.au/images/2010/129778.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "mother earth nuts about gluten free nut bar dark choc",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pretzels": {
+        "timestamp": 1772014366.957715,
+        "data": {
+            "price": 3.49,
+            "image": "https://assets.woolworths.com.au/images/2010/311974.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths pretzels twists",
+            "source": "Countdown NZ"
+        }
+    },
+    "Egg": {
+        "timestamp": 1772014382.082927,
+        "data": {
+            "price": 7.9,
+            "image": "https://assets.woolworths.com.au/images/2010/352492.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "henergy eggs cage free size 6",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rice Crackers": {
+        "timestamp": 1772014377.230643,
+        "data": {
+            "price": 2.0,
+            "image": "https://assets.woolworths.com.au/images/2010/35231.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fantastic rice crackers original",
+            "source": "Countdown NZ"
+        }
+    },
+    "Oat Cookie": {
+        "timestamp": 1772014365.649073,
+        "data": {
+            "price": 4.7,
+            "image": "https://assets.woolworths.com.au/images/2010/365804.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "arnotts snack right biscuits oaty bites cocoa & oat",
+            "source": "Countdown NZ"
+        }
+    },
+    "Broccoli": {
+        "timestamp": 1772014383.766092,
+        "data": {
+            "price": 6.95,
+            "image": "https://assets.woolworths.com.au/images/2010/6052109.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "brocco boost broccoli sprouts ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Chicken Skewers": {
+        "timestamp": 1772014381.784458,
+        "data": {
+            "price": 9.0,
+            "image": "https://assets.woolworths.com.au/images/2010/275969.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths cook nz chicken kebabs satay",
+            "source": "Countdown NZ"
+        }
+    },
+    "Jam": {
+        "timestamp": 1772014382.8038,
+        "data": {
+            "price": 6.0,
+            "image": "https://assets.woolworths.com.au/images/2010/6011257.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "barker's jam strawberry",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pastry Cases": {
+        "timestamp": 1772014384.753837,
+        "data": {
+            "price": 6.15,
+            "image": "https://assets.woolworths.com.au/images/2010/763596.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths shortcrust pastry 1kg",
+            "source": "Countdown NZ"
+        }
+    },
+    "Banana": {
+        "timestamp": 1772014386.3193128,
+        "data": {
+            "price": 3.75,
+            "image": "https://assets.woolworths.com.au/images/2010/133211.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh fruit bananas yellow loose",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cream/Milk": {
+        "timestamp": 1772014386.79851,
+        "data": {
+            "price": 7.4,
+            "image": "https://assets.woolworths.com.au/images/2010/6020133.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "puhoi valley milk & cream blend half & half",
+            "source": "Countdown NZ"
+        }
+    },
+    "Spinach": {
+        "timestamp": 1772014385.167317,
+        "data": {
+            "price": 6.99,
+            "image": "https://assets.woolworths.com.au/images/2010/384925.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "farrah's wraps garden spinach",
+            "source": "Countdown NZ"
+        }
+    },
+    "Marmite": {
+        "timestamp": 1772014387.298126,
+        "data": {
+            "price": 4.49,
+            "image": "https://assets.woolworths.com.au/images/2010/79628.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "sanitarium marmite yeast spread ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Feta": {
+        "timestamp": 1772014383.406819,
+        "data": {
+            "price": 5.95,
+            "image": "https://assets.woolworths.com.au/images/2010/486016.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "mainland feta cheese creamy",
+            "source": "Countdown NZ"
+        }
+    },
+    "Teriyaki Sauce": {
+        "timestamp": 1772014380.4190369,
+        "data": {
+            "price": 5.29,
+            "image": "https://assets.woolworths.com.au/images/2010/234226.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "kikkoman teriyaki sauce thick",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tomato": {
+        "timestamp": 1772014388.74705,
+        "data": {
+            "price": 4.95,
+            "image": "https://assets.woolworths.com.au/images/2010/149681.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "fresh tomatoes loose",
+            "source": "Countdown NZ"
+        }
+    },
+    "Chicken": {
+        "timestamp": 1772014387.090341,
+        "data": {
+            "price": 15.4,
+            "image": "https://assets.woolworths.com.au/images/2010/73034.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths nz chicken breast skinless boneless",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cheese Sauce": {
+        "timestamp": 1772014388.094017,
+        "data": {
+            "price": 3.8,
+            "image": "https://assets.woolworths.com.au/images/2010/680702.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "leggo's pasta bake pasta sauce three cheese",
+            "source": "Countdown NZ"
+        }
+    },
+    "Soy Sauce": {
+        "timestamp": 1772014385.976779,
+        "data": {
+            "price": 4.1,
+            "image": "https://assets.woolworths.com.au/images/2010/270415.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "highmark soy sauce golden",
+            "source": "Countdown NZ"
+        }
+    },
+    "Pesto": {
+        "timestamp": 1772014390.478981,
+        "data": {
+            "price": 5.29,
+            "image": "https://assets.woolworths.com.au/images/2010/274396.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "villa mediterranean basil pesto chunky dip ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Olives": {
+        "timestamp": 1772014389.287551,
+        "data": {
+            "price": 6.99,
+            "image": "https://assets.woolworths.com.au/images/2010/562008.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "the olive lady olives pitted due",
+            "source": "Countdown NZ"
+        }
+    },
+    "Lemon Dressing": {
+        "timestamp": 1772014385.557751,
+        "data": {
+            "price": 5.5,
+            "image": "https://assets.woolworths.com.au/images/2010/804996.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "barkers mustard & herb dressing ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Sugar": {
+        "timestamp": 1772014391.303951,
+        "data": {
+            "price": 3.44,
+            "image": "https://assets.woolworths.com.au/images/2010/656882.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths white sugar ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Chickpeas": {
+        "timestamp": 1772014392.5925682,
+        "data": {
+            "price": 1.2,
+            "image": "https://assets.woolworths.com.au/images/2010/259399.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths chickpeas no added salt",
+            "source": "Countdown NZ"
+        }
+    },
+    "Rice Wheels": {
+        "timestamp": 1772014393.052382,
+        "data": {
+            "price": 5.0,
+            "image": "https://assets.woolworths.com.au/images/2010/117875.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "healtheries snack rice wheels burger",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tomato Paste": {
+        "timestamp": 1772014393.816075,
+        "data": {
+            "price": 2.8,
+            "image": "https://assets.woolworths.com.au/images/2010/34004.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "essentials tomato paste ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Yoghurt": {
+        "timestamp": 1772014393.460823,
+        "data": {
+            "price": 5.45,
+            "image": "https://assets.woolworths.com.au/images/2010/941176.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "yoplait vigueur dairy food classic choc",
+            "source": "Countdown NZ"
+        }
+    },
+    "Muffin": {
+        "timestamp": 1772014390.885368,
+        "data": {
+            "price": 7.0,
+            "image": "https://assets.woolworths.com.au/images/2010/607875.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths muffins banana minis",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cheese": {
+        "timestamp": 1772014394.130642,
+        "data": {
+            "price": 5.95,
+            "image": "https://assets.woolworths.com.au/images/2010/486016.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "mainland feta cheese creamy",
+            "source": "Countdown NZ"
+        }
+    },
+    "Cocoa": {
+        "timestamp": 1772014384.4833322,
+        "data": {
+            "price": 8.0,
+            "image": "https://assets.woolworths.com.au/images/2010/267413.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "cadbury baking cocoa powder bournville",
+            "source": "Countdown NZ"
+        }
+    },
+    "Tomato Sauce": {
+        "timestamp": 1772014384.118349,
+        "data": {
+            "price": 1.79,
+            "image": "https://assets.woolworths.com.au/images/2010/312185.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths tomato sauce ",
+            "source": "Countdown NZ"
+        }
+    },
+    "Dates": {
+        "timestamp": 1772014388.398474,
+        "data": {
+            "price": 3.89,
+            "image": "https://assets.woolworths.com.au/images/2010/274750.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "cinderella camel dates pitted",
+            "source": "Countdown NZ"
+        }
+    },
+    "Dried Apricots": {
+        "timestamp": 1772014391.941489,
+        "data": {
+            "price": 4.75,
+            "image": "https://assets.woolworths.com.au/images/2010/6015751.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "macro apricots whole dried",
+            "source": "Countdown NZ"
+        }
+    },
+    "Bread": {
+        "timestamp": 1772014389.7703831,
+        "data": {
+            "price": 3.99,
+            "image": "https://assets.woolworths.com.au/images/2010/275560.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "natures fresh toast bread white",
+            "source": "Countdown NZ"
+        }
+    },
+    "Puff Pastry": {
+        "timestamp": 1772014387.671666,
+        "data": {
+            "price": 7.8,
+            "image": "https://assets.woolworths.com.au/images/2010/18366.jpg?impolicy=wowcdxwbjbx&w=200&h=200",
+            "name": "woolworths puff pastry 1kg",
+            "source": "Countdown NZ"
+        }
+    }
+}
