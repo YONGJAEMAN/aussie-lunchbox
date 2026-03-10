@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Aussie Lunchbox — Automated Blog Post Generator
- * Calls Claude API to generate a new Australian lunchbox blog post,
+ * Calls Google Gemini API to generate a new Australian lunchbox blog post,
  * then inserts it into blog/page.tsx, blog/[slug]/page.tsx, and sitemap.ts.
  *
  * Usage: node scripts/generate-blog-post.mjs
- * Requires: ANTHROPIC_API_KEY environment variable
+ * Requires: GOOGLE_API_KEY environment variable
  */
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -40,7 +40,8 @@ function todayDate() {
 }
 
 async function generatePost(existingSlugs) {
-  const client = new Anthropic();
+  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const prompt = `You are a content writer for Aussie Lunchbox (aussielunchbox.com.au), a school lunchbox planner for Australian families.
 
@@ -82,14 +83,9 @@ Choose a topic that fills a gap not covered by the existing posts. Think about:
 
 Return ONLY the JSON object.`;
 
-  console.log("🤖 Calling Claude API...");
-  const response = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 4096,
-    messages: [{ role: "user", content: prompt }],
-  });
-
-  const text = response.content[0].text.trim();
+  console.log("🤖 Calling Gemini API...");
+  const result = await model.generateContent(prompt);
+  const text = result.response.text().trim();
   const json = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   return JSON.parse(json);
 }
@@ -147,8 +143,8 @@ function insertIntoSitemap(slug) {
 }
 
 async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error("❌ ANTHROPIC_API_KEY is not set");
+  if (!process.env.GOOGLE_API_KEY) {
+    console.error("❌ GOOGLE_API_KEY is not set");
     process.exit(1);
   }
 

@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate new blog post
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node scripts/generate-blog-post.mjs
 
       - name: Commit and push new post
@@ -44,5 +44,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "🤖 자동 블로그 포스트 추가 ($(date '+%Y-%m-%d'))"
-            git push origin master
+            git push origin main
           fi
