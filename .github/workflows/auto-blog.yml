@@ -1,0 +1,48 @@
+name: Weekly Blog Post Generator
+
+on:
+  # 매주 월요일 오전 8시 AEST (일요일 22:00 UTC)
+  schedule:
+    - cron: "0 22 * * 0"
+  # 수동 실행 가능
+  workflow_dispatch:
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate new blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-blog-post.mjs
+
+      - name: Commit and push new post
+        run: |
+          git config user.name "Aussie Lunchbox Bot"
+          git config user.email "bot@aussielunchbox.com.au"
+          git add app/[locale]/blog/page.tsx \
+                  "app/[locale]/blog/[slug]/page.tsx" \
+                  app/sitemap.ts
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 자동 블로그 포스트 추가 ($(date '+%Y-%m-%d'))"
+            git push origin master
+          fi

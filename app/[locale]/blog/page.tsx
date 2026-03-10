@@ -65,6 +65,146 @@ const POSTS: Post[] = [
     image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80",
     category: "Parenting Tips",
   },
+  {
+    slug: "sunday-meal-prep-lunchbox-guide",
+    title: "Sunday Meal Prep: Pack 5 School Lunches in 30 Minutes",
+    excerpt:
+      "Spending just 30 minutes on Sunday can mean stress-free school mornings all week. Here's our step-by-step guide to lunchbox meal prep for Australian families.",
+    date: "January 20, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    category: "Meal Prep",
+  },
+  {
+    slug: "dairy-free-school-lunches-australia",
+    title: "Dairy-Free School Lunches Australian Kids Will Actually Eat",
+    excerpt:
+      "Whether your child has a dairy allergy or intolerance, packing a delicious, dairy-free lunchbox is easier than you think. Here are our top ideas using ingredients from Woolworths and Coles.",
+    date: "January 14, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
+    category: "Allergy Friendly",
+  },
+  {
+    slug: "vegetarian-lunchbox-ideas-australia",
+    title: "10 Vegetarian Lunchbox Ideas for Australian School Kids",
+    excerpt:
+      "Going meat-free at lunchtime? These plant-based lunchbox ideas are protein-rich, filling, and totally kid-approved — perfect for vegetarian families across Australia.",
+    date: "January 7, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80",
+    category: "Recipes",
+  },
+  {
+    slug: "high-protein-lunchbox-ideas",
+    title: "High-Protein Lunchbox Ideas for Active & Growing Kids",
+    excerpt:
+      "Active kids need more protein to fuel their bodies and support healthy growth. Discover easy, high-protein lunchbox ideas that keep kids energised through afternoon sport.",
+    date: "December 30, 2025",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&q=80",
+    category: "Nutrition",
+  },
+  {
+    slug: "waste-free-lunchbox-guide-australia",
+    title: "The Zero-Waste Lunchbox Guide for Australian Families",
+    excerpt:
+      "Australia generates thousands of tonnes of lunchbox waste each year. Here's how to pack a delicious, nutritious lunch with zero single-use plastic — and save money doing it.",
+    date: "December 22, 2025",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
+    category: "Sustainability",
+  },
+  {
+    slug: "best-lunchbox-containers-australia",
+    title: "Best Lunchbox Containers for Australian Schools in 2026",
+    excerpt:
+      "The right container keeps food fresh, prevents leaks, and makes packing easier. We've tested the most popular lunchbox containers available in Australia — here's what we found.",
+    date: "December 15, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&q=80",
+    category: "Gear & Tips",
+  },
+  {
+    slug: "woolworths-vs-coles-lunchbox-budget",
+    title: "Woolworths vs Coles: Which Is Cheaper for School Lunches?",
+    excerpt:
+      "We compared the price of a full week's worth of lunchbox ingredients at both major Australian supermarkets. The results might surprise you.",
+    date: "December 8, 2025",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1583263086011-8d01b6b2b9c6?w=800&q=80",
+    category: "Budget",
+  },
+  {
+    slug: "rainbow-lunchbox-guide",
+    title: "The Rainbow Lunchbox: How to Pack Every Colour",
+    excerpt:
+      "Eating a rainbow of colours ensures kids get a wide range of vitamins and minerals. Learn how to build a colourful, nutritious lunchbox that kids love to open.",
+    date: "December 1, 2025",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&q=80",
+    category: "Nutrition",
+  },
+  {
+    slug: "thermos-hot-lunch-ideas-australia",
+    title: "Thermos Lunch Ideas: Hot Meals for Cold Australian School Days",
+    excerpt:
+      "When the Melbourne cold snap hits or the Canberra frost arrives, a hot thermos lunch can be a game-changer. Here are our favourite warm lunchbox ideas for Australian winters.",
+    date: "November 24, 2025",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80",
+    category: "Recipes",
+  },
+  {
+    slug: "multicultural-lunchbox-ideas-australia",
+    title: "Multicultural Lunchbox Ideas Celebrating Australia's Diversity",
+    excerpt:
+      "Australia is one of the world's most multicultural nations. Celebrate our rich food culture with lunchbox ideas inspired by Indigenous, Asian, Mediterranean, and Pacific Island flavours.",
+    date: "November 17, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    category: "Recipes",
+  },
+  {
+    slug: "lunchbox-ideas-by-age-australia",
+    title: "Lunchbox Ideas by Age: From 5-Year-Olds to Teenagers",
+    excerpt:
+      "A 6-year-old and a 14-year-old have very different nutritional needs and taste preferences. Here's your complete age-by-age guide to packing the right lunchbox for every stage.",
+    date: "November 10, 2025",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+    category: "Parenting Tips",
+  },
+  {
+    slug: "summer-lunchbox-ideas-australia",
+    title: "Summer Lunchbox Ideas for Hot Australian School Days",
+    excerpt:
+      "Australian summers can be brutal, and a warm lunchbox isn't appetising. Here's how to pack fresh, cool, and safe lunches that survive the heat and keep kids energised.",
+    date: "November 3, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&q=80",
+    category: "Seasonal",
+  },
+  {
+    slug: "kids-make-own-lunchbox",
+    title: "Let Kids Pack Their Own Lunchbox: A Practical Guide",
+    excerpt:
+      "When children help pack their own lunches, they're far more likely to actually eat them. Here's how to set up a simple lunchbox station that gives kids independence while keeping nutrition on track.",
+    date: "October 27, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80",
+    category: "Parenting Tips",
+  },
+  {
+    slug: "school-canteen-vs-packed-lunch",
+    title: "School Canteen vs Packed Lunch: The Complete Comparison",
+    excerpt:
+      "Should you pack lunch every day or let your kids buy from the canteen? We break down the cost, nutrition, and convenience of both options to help Australian parents decide.",
+    date: "October 20, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80",
+    category: "Gear & Tips",
+  },
 ];
 
 export default async function BlogPage({

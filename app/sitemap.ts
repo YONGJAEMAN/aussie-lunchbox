@@ -16,10 +16,24 @@ const STATIC_ROUTES = [
 
 const BLOG_SLUGS = [
   "5-healthy-lunchbox-ideas-for-nz-kids",
-  "nut-free-school-lunches-new-zealand",
+  "nut-free-school-lunches-australia",
   "gluten-free-lunchbox-tips",
   "budget-friendly-lunchbox-ideas",
   "getting-kids-to-eat-healthy-lunches",
+  "sunday-meal-prep-lunchbox-guide",
+  "dairy-free-school-lunches-australia",
+  "vegetarian-lunchbox-ideas-australia",
+  "high-protein-lunchbox-ideas",
+  "waste-free-lunchbox-guide-australia",
+  "best-lunchbox-containers-australia",
+  "woolworths-vs-coles-lunchbox-budget",
+  "rainbow-lunchbox-guide",
+  "thermos-hot-lunch-ideas-australia",
+  "multicultural-lunchbox-ideas-australia",
+  "lunchbox-ideas-by-age-australia",
+  "summer-lunchbox-ideas-australia",
+  "kids-make-own-lunchbox",
+  "school-canteen-vs-packed-lunch",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
