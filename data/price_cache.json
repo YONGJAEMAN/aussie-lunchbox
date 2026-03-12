@@ -1,1 +1,1028 @@
-{}
+{
+  "Croissant": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6000252.jpg",
+      "name": "Sara Lee Sandwich Croissant",
+      "source": "Woolworths AU"
+    }
+  },
+  "Ham": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 24,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/129693.jpg",
+      "name": "D'Orsogna Champagne Leg Ham Shaved From The Deli",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cheese": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/118215.jpg",
+      "name": "Made With Plants Shredded Mozzarella Dairy Free",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cucumber": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.24,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/137130.jpg",
+      "name": "Lebanese Cucumbers",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tortilla": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/333915.jpg",
+      "name": "Mission Original Tortillas",
+      "source": "Woolworths AU"
+    }
+  },
+  "Chicken": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 8.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/710953.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Breast Fillet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Lettuce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/154340.jpg",
+      "name": "Iceberg Lettuce",
+      "source": "Woolworths AU"
+    }
+  },
+  "Mayo": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/925716.jpg",
+      "name": "Praise Traditional Mayo",
+      "source": "Woolworths AU"
+    }
+  },
+  "Bread": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 7.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/165306.jpg",
+      "name": "Tip Top The One Gluten Free White Bread Loaf Sandwich Bakery",
+      "source": "Woolworths AU"
+    }
+  },
+  "Turkey": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 27,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/027316.jpg",
+      "name": "Ingham's Turkey Breast Shaved From The Deli",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tomato": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 0.76,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/134034.jpg",
+      "name": "Gourmet Tomato",
+      "source": "Woolworths AU"
+    }
+  },
+  "Bagel": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/270580.jpg",
+      "name": "Abe's Bagels The Natural Bagels",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cream Cheese": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/213014.jpg",
+      "name": "Philadelphia Sweet Chilli Cream Cheese Pourover Tub",
+      "source": "Woolworths AU"
+    }
+  },
+  "Smoked Salmon": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 19,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/365407.jpg",
+      "name": "Ocean Blue Smoked Salmon",
+      "source": "Woolworths AU"
+    }
+  },
+  "Boiled Eggs": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 14.37,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1121425999.jpg",
+      "name": "Microwave Oven Egg Steamer Boiled Egg Artifact Boiled Egg Mini Household Special Heating Box",
+      "source": "Woolworths AU"
+    }
+  },
+  "Canned Tuna": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/178886.jpg",
+      "name": "Essentials Tuna Chunks In Spring Water",
+      "source": "Woolworths AU"
+    }
+  },
+  "Roll": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/809965.jpg",
+      "name": "Woolworths Pane Di Casa White Roll",
+      "source": "Woolworths AU"
+    }
+  },
+  "Roast Beef": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6008998.jpg",
+      "name": "Barossa Fine Foods Saltbush Crusted Smoked Beef",
+      "source": "Woolworths AU"
+    }
+  },
+  "Mustard": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/237995.jpg",
+      "name": "Your Condiment Co Wholegrain Mustard Wholegrain Mustard",
+      "source": "Woolworths AU"
+    }
+  },
+  "Rocket": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/054900.jpg",
+      "name": "Woolworths Baby Leaf Rocket",
+      "source": "Woolworths AU"
+    }
+  },
+  "Ciabatta": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/125496.jpg",
+      "name": "Woolworths Plain Ciabatta Rolls",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pesto": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/753340.jpg",
+      "name": "Woolworths Pesto Basil",
+      "source": "Woolworths AU"
+    }
+  },
+  "Mozzarella": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/118215.jpg",
+      "name": "Made With Plants Shredded Mozzarella Dairy Free",
+      "source": "Woolworths AU"
+    }
+  },
+  "Hummus": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/299265.jpg",
+      "name": "Pilpel Dip Hummous",
+      "source": "Woolworths AU"
+    }
+  },
+  "Carrot": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 0.35,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/135344.jpg",
+      "name": "Carrot Fresh",
+      "source": "Woolworths AU"
+    }
+  },
+  "Spinach": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/524322.jpg",
+      "name": "Woolworths Baby Leaf Spinach",
+      "source": "Woolworths AU"
+    }
+  },
+  "Bacon": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 15,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/071841.jpg",
+      "name": "D'Orsogna Shortcut Bacon From the Deli",
+      "source": "Woolworths AU"
+    }
+  },
+  "Marmite": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/079628.jpg",
+      "name": "Sanitarium Marmite Spread",
+      "source": "Woolworths AU"
+    }
+  },
+  "Butter": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/504592.jpg",
+      "name": "Westgold Butter Salted Salted",
+      "source": "Woolworths AU"
+    }
+  },
+  "Peanut Butter": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/754776.jpg",
+      "name": "Pic's Peanut Butter Smooth",
+      "source": "Woolworths AU"
+    }
+  },
+  "Jam": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.15,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6064445.jpg",
+      "name": "The Real Jam Co. Strawberry",
+      "source": "Woolworths AU"
+    }
+  },
+  "Macaroni": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/346837.jpg",
+      "name": "Woolworths Pasta Macaroni",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cheese Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/757571.jpg",
+      "name": "Gravox Cheese Sauce Mix CHEESE",
+      "source": "Woolworths AU"
+    }
+  },
+  "Milk": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/109361.jpg",
+      "name": "Australia's Own Full Cream Long Life Milk UHT",
+      "source": "Woolworths AU"
+    }
+  },
+  "Rice": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 27,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/803520.jpg",
+      "name": "Sunrice Jasmine Fragrant Rice",
+      "source": "Woolworths AU"
+    }
+  },
+  "Egg": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/165367.jpg",
+      "name": "Woolworths 12 Extra Large Cage Free Eggs",
+      "source": "Woolworths AU"
+    }
+  },
+  "Peas": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6005985.jpg",
+      "name": "Birds Eye Australian Grown Garden Peas",
+      "source": "Woolworths AU"
+    }
+  },
+  "Ham/Bacon": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/324925.jpg",
+      "name": "Spam Ham With Real Bacon",
+      "source": "Woolworths AU"
+    }
+  },
+  "Soy Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/095064.jpg",
+      "name": "Maggi Seasoning Sauce",
+      "source": "Woolworths AU"
+    }
+  },
+  "Chicken Thigh": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 15.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/077038.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Thigh Fillet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Teriyaki Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/182267.jpg",
+      "name": "MasterFoods Teriyaki Chicken Stir Fry Recipe Base",
+      "source": "Woolworths AU"
+    }
+  },
+  "Broccoli": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.28,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/134681.jpg",
+      "name": "Fresh Broccoli",
+      "source": "Woolworths AU"
+    }
+  },
+  "Mince": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 8.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/922070.jpg",
+      "name": "V2 Plant Protein Mince",
+      "source": "Woolworths AU"
+    }
+  },
+  "Breadcrumbs": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/879124.jpg",
+      "name": "Essentials Breadcrumbs",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tomato Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/230519.jpg",
+      "name": "Woolworths Tomato Sauce Squeeze",
+      "source": "Woolworths AU"
+    }
+  },
+  "Spaghetti": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/624768.jpg",
+      "name": "Heinz Canned Spaghetti Pasta In Tomato Sauce",
+      "source": "Woolworths AU"
+    }
+  },
+  "Beef Mince": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 11.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/577860.jpg",
+      "name": "Woolworths Heart Smart Extra Lean Beef Mince",
+      "source": "Woolworths AU"
+    }
+  },
+  "Butter Chicken Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/825513.jpg",
+      "name": "MasterFoods Butter Chicken Cooking Sauce",
+      "source": "Woolworths AU"
+    }
+  },
+  "Chickpeas": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/907050.jpg",
+      "name": "Woolworths Chickpeas",
+      "source": "Woolworths AU"
+    }
+  },
+  "Potato": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6001953.jpg",
+      "name": "Potato Utopia Duck Fat Roast Potatoes",
+      "source": "Woolworths AU"
+    }
+  },
+  "Coconut Milk": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/694751.jpg",
+      "name": "Essentials Coconut Milk",
+      "source": "Woolworths AU"
+    }
+  },
+  "Curry Paste": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/717669.jpg",
+      "name": "Ayam Thai Yellow Curry Paste",
+      "source": "Woolworths AU"
+    }
+  },
+  "Chicken Skewers": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 10,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/907241.jpg",
+      "name": "Woolworths 12 Chicken Kebabs Honey Soy",
+      "source": "Woolworths AU"
+    }
+  },
+  "Peanut Sauce": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/026995.jpg",
+      "name": "Taylor's Simmer Sauce Peanut Satay",
+      "source": "Woolworths AU"
+    }
+  },
+  "Flour": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/033282.jpg",
+      "name": "Essentials Plain Flour",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tomato Paste": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/034004.jpg",
+      "name": "Essentials Tomato Paste",
+      "source": "Woolworths AU"
+    }
+  },
+  "Sausage Meat": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/109099.jpg",
+      "name": "Woolworths Aussie Beef Gluten Free Sausage Mince",
+      "source": "Woolworths AU"
+    }
+  },
+  "Puff Pastry": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/018366.jpg",
+      "name": "Woolworths Puff Pastry Sheets",
+      "source": "Woolworths AU"
+    }
+  },
+  "Egg (glaze)": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 45,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1106134325.jpg",
+      "name": "Egg Party by BS Toys - Classic Egg n Spoon Game",
+      "source": "Woolworths AU"
+    }
+  },
+  "Eggs": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/165367.jpg",
+      "name": "Woolworths 12 Extra Large Cage Free Eggs",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pastry": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/096492.jpg",
+      "name": "Pampas Puff Pastry 6 Sheets",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cream/Milk": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 26.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1123821977.jpg",
+      "name": "Diploma Full Cream Milk Powder 900g",
+      "source": "Woolworths AU"
+    }
+  },
+  "Feta": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/452083.jpg",
+      "name": "Woolworths Greek Style Fetta",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pastry Cases": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.85,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/157943.jpg",
+      "name": "Woolworths Vol Au Vents",
+      "source": "Woolworths AU"
+    }
+  },
+  "Ripe Bananas": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 20.99,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1126198545.jpg",
+      "name": "Paw Play Rubber/Rope Banana Scented Rugby Ball 38cm Pet Dog Toy Jumbo Black",
+      "source": "Woolworths AU"
+    }
+  },
+  "Sugar": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/005743.jpg",
+      "name": "Essentials White Sugar",
+      "source": "Woolworths AU"
+    }
+  },
+  "Sushi Rice": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/251758.jpg",
+      "name": "Sunrice Japanese Style Sushi Rice",
+      "source": "Woolworths AU"
+    }
+  },
+  "Nori": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/185395.jpg",
+      "name": "Obento Japanese Yaki Nori For Sushi",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tuna/Chicken/Avocado": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.5,
+      "image": "",
+      "name": "Tuna/Chicken/Avocado",
+      "source": "Est. (Fallback)"
+    }
+  },
+  "Rice Paper": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/121531.jpg",
+      "name": "Pandaroo Ingredients Rice Paper Spring Roll",
+      "source": "Woolworths AU"
+    }
+  },
+  "Rice Noodles": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/125623.jpg",
+      "name": "Pandaroo Thai Rice Noodles",
+      "source": "Woolworths AU"
+    }
+  },
+  "Chicken/Tofu": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 22.88,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1120183259.jpg",
+      "name": "Avi One Chicken Toy Glockenspiel 12.5x69cm (55719)",
+      "source": "Woolworths AU"
+    }
+  },
+  "Herbs": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/781403.jpg",
+      "name": "Gourmet Garden Parsley Lightly Dried Sachet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pasta spirals": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/346833.jpg",
+      "name": "Woolworths Pasta Spirals",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pesto/Mayo": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/820827.jpg",
+      "name": "Sirena Tuna & Pesto Mayo Snacking Mayonnaise",
+      "source": "Woolworths AU"
+    }
+  },
+  "Corn": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/149374.jpg",
+      "name": "Corn Sweet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Olives": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/310250.jpg",
+      "name": "Woolworths Kalamata Pitted Olives In Italian Vinegar",
+      "source": "Woolworths AU"
+    }
+  },
+  "Yoghurt": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 0.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6010295.jpg",
+      "name": "Woolworths Vanilla Yoghurt Pouch Vanilla",
+      "source": "Woolworths AU"
+    }
+  },
+  "Muesli (Nut-free)": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 10.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1125990611.jpg",
+      "name": "Honest to Goodness Natural Muesli Fruit & Nut 500g",
+      "source": "Woolworths AU"
+    }
+  },
+  "Berries": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/169792.jpg",
+      "name": "Blueberries Punnet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Black Beans": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/907377.jpg",
+      "name": "Woolworths Black Beans",
+      "source": "Woolworths AU"
+    }
+  },
+  "Salsa": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/220157.jpg",
+      "name": "Edgell Snack Time Black Beans Charred & Capsicum With Zesty Salsa",
+      "source": "Woolworths AU"
+    }
+  },
+  "Avocado": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/186910.jpg",
+      "name": "Avocado Shepard",
+      "source": "Woolworths AU"
+    }
+  },
+  "Vegan Mayo": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/136649.jpg",
+      "name": "Praise 99% Fat Free Squeeze Mayonnaise",
+      "source": "Woolworths AU"
+    }
+  },
+  "Celery": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/135918.jpg",
+      "name": "Celery Fresh Whole",
+      "source": "Woolworths AU"
+    }
+  },
+  "GF Pasta": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/346833.jpg",
+      "name": "Woolworths Pasta Spirals",
+      "source": "Woolworths AU"
+    }
+  },
+  "Basil": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/133621.jpg",
+      "name": "Woolworths Green Basil Bunch",
+      "source": "Woolworths AU"
+    }
+  },
+  "Tofu": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/023038.jpg",
+      "name": "Macro Firm Tofu",
+      "source": "Woolworths AU"
+    }
+  },
+  "GF Crackers": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.5,
+      "image": "",
+      "name": "GF Crackers",
+      "source": "Est. (Fallback)"
+    }
+  },
+  "Pasta": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/346833.jpg",
+      "name": "Woolworths Pasta Spirals",
+      "source": "Woolworths AU"
+    }
+  },
+  "Dairy-Free Pesto": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/190944.jpg",
+      "name": "Barilla Basil Pesto Vegan Pasta Sauce",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cherry Tomatoes": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/149620.jpg",
+      "name": "Woolworths Cherry Tomatoes Punnet",
+      "source": "Woolworths AU"
+    }
+  },
+  "Falafel": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.55,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/345092.jpg",
+      "name": "Yumi's Original Falafel Balls",
+      "source": "Woolworths AU"
+    }
+  },
+  "Quinoa": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/717631.jpg",
+      "name": "Macro Organic Quinoa Tri Colour",
+      "source": "Woolworths AU"
+    }
+  },
+  "Lemon Dressing": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/710191.jpg",
+      "name": "Birch & Waite Greek Lemon Dressing",
+      "source": "Woolworths AU"
+    }
+  },
+  "GF Sausages": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 27.63,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/1121193345.jpg",
+      "name": "JOYBUY Sausage filling machine, Sausage stuffer, Sausage filling funnel, Filling tube, Sausage stuffer",
+      "source": "Woolworths AU"
+    }
+  },
+  "Apple": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/229891.jpg",
+      "name": "Jiva Xtreme Tonic Immunity Sour Apple",
+      "source": "Woolworths AU"
+    }
+  },
+  "Grapes": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/138801.jpg",
+      "name": "White Seedless Grapes Bag Approx. 900g",
+      "source": "Woolworths AU"
+    }
+  },
+  "Mandarin": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/756336.jpg",
+      "name": "Woolworths Mandarin In Syrup",
+      "source": "Woolworths AU"
+    }
+  },
+  "Banana": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 0.81,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/133211.jpg",
+      "name": "Cavendish Bananas",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pear": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 0.98,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/145762.jpg",
+      "name": "Fresh William Bartlett Pear",
+      "source": "Woolworths AU"
+    }
+  },
+  "Capsicum": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 1.98,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/135306.jpg",
+      "name": "Red Capsicum",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cheese Block": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/072546.jpg",
+      "name": "Philadelphia Original Cream Cheese Twin Block",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cheese Stick": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/453303.jpg",
+      "name": "Woolworths Natural Cheese Sticks",
+      "source": "Woolworths AU"
+    }
+  },
+  "Rice Crackers": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/956027.jpg",
+      "name": "Sakata Rice Crackers Plain Snack",
+      "source": "Woolworths AU"
+    }
+  },
+  "Pretzels": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/247119.jpg",
+      "name": "Macy and Tailor Classic Pretzels",
+      "source": "Woolworths AU"
+    }
+  },
+  "Spices": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/251020.jpg",
+      "name": "Woolworths Garlic Powder",
+      "source": "Woolworths AU"
+    }
+  },
+  "Rice Wheels": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/117875.jpg",
+      "name": "Healtheries Rice Wheels Burger Multipack Gluten Free Lunchbox Snacks",
+      "source": "Woolworths AU"
+    }
+  },
+  "Dates": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/661766.jpg",
+      "name": "Olina's Bakehouse Artisan Crackers Biscuits Date & Apricot",
+      "source": "Woolworths AU"
+    }
+  },
+  "Cocoa": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 7.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/267413.jpg",
+      "name": "Cadbury Baking Bournville Cocoa Powder",
+      "source": "Woolworths AU"
+    }
+  },
+  "Coconut": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/241243.jpg",
+      "name": "Golden Days Fruit Apricot Coconut Slice",
+      "source": "Woolworths AU"
+    }
+  },
+  "Muffin": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/224737.jpg",
+      "name": "Woolworths English Muffins",
+      "source": "Woolworths AU"
+    }
+  },
+  "Oat Cookie": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/6059965.jpg",
+      "name": "Arnott's Cookies Fruit & Oat",
+      "source": "Woolworths AU"
+    }
+  },
+  "Dried Apricots": {
+    "timestamp": 1773305472880,
+    "data": {
+      "price": 8.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/medium/018158.jpg",
+      "name": "Woolworths Apricot Dried",
+      "source": "Woolworths AU"
+    }
+  }
+}
