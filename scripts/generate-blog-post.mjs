@@ -43,7 +43,7 @@ async function generatePost(existingSlugs) {
   const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-  const prompt = `You are a content writer for Aussie Lunchbox (aussielunchbox.com.au), a school lunchbox planner for Australian families.
+  const prompt = `You are a content writer for Aussie Lunchbox (aussielunchbox.com), a school lunchbox planner for Australian families.
 
 Generate a NEW blog post that is NOT any of these existing slugs:
 ${existingSlugs.map((s) => `- ${s}`).join("\n")}
