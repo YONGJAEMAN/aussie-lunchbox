@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export default async function HomePage() {
@@ -7,15 +8,20 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
-      <section
-        className="flex flex-col items-center justify-center text-center py-24 px-4"
-        style={{ background: "linear-gradient(135deg, #FFF4DE 0%, #FDFAF2 100%)" }}
-      >
-        <h1 className="text-5xl font-bold text-[#7B3F00] mb-4">Aussie Lunchbox</h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-xl">Fresh Ideas for Happy Kids</p>
+      <section className="relative flex flex-col items-center justify-center text-center py-32 px-4 overflow-hidden min-h-[480px]">
+        <Image
+          src="/assets/kiwi_lunchbox_hero_bg.png"
+          alt="Aussie Lunchbox hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#7B3F00]/55" />
+        <h1 className="relative z-10 text-5xl font-bold text-white mb-4 drop-shadow-lg">Aussie Lunchbox</h1>
+        <p className="relative z-10 text-xl text-white/90 mb-8 max-w-xl drop-shadow">Fresh Ideas for Happy Kids</p>
         <Link
           href={`/${locale}/planner`}
-          className="bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg"
+          className="relative z-10 bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg"
         >
           ✨ START PLANNING NOW ✨
         </Link>
