@@ -4,8 +4,11 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { POSTS, BLOG_CARDS } from "@/content/posts";
 import { BRAND } from "@/lib/brand";
+import AdUnit from "@/components/AdUnit";
 
 const BASE_URL = BRAND.SITE_URL;
+const SLOT_LEADERBOARD = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD ?? "";
+const SLOT_RECTANGLE = process.env.NEXT_PUBLIC_ADSENSE_SLOT_RECTANGLE ?? "";
 
 export async function generateStaticParams() {
   return Object.keys(POSTS).flatMap((slug) =>
@@ -183,6 +186,12 @@ export default async function BlogPostPage({
   const others = BLOG_CARDS.filter(p => p.slug !== slug && p.category !== post.category);
   const relatedPosts = [...sameCat, ...others].slice(0, 3);
 
+  const isNamedAuthor = author !== "Aussie Lunchbox Team";
+  const reviewedDate = post.lastReviewed ? new Date(`1 ${post.lastReviewed}`) : null;
+  const dateModified = reviewedDate && !isNaN(reviewedDate.getTime())
+    ? reviewedDate.toISOString()
+    : new Date(post.date).toISOString();
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -190,12 +199,10 @@ export default async function BlogPostPage({
     description: post.excerpt,
     image: post.image,
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
-    author: {
-      "@type": "Organization",
-      name: "Aussie Lunchbox Editorial Team",
-      url: `${BASE_URL}/en/about`,
-    },
+    dateModified,
+    author: isNamedAuthor
+      ? { "@type": "Person", name: author, url: `${BASE_URL}/en/about` }
+      : { "@type": "Organization", name: "Aussie Lunchbox Editorial Team", url: `${BASE_URL}/en/about` },
     publisher: {
       "@type": "Organization",
       name: "Aussie Lunchbox",
@@ -239,9 +246,11 @@ export default async function BlogPostPage({
       </div>
 
       {/* Ad slot: leaderboard — top of content (728×90 / 320×50 mobile) */}
-      <div className="max-w-3xl mx-auto px-4 mt-4 flex justify-center" aria-label="Advertisement">
-        {/* INSERT GOOGLE ADSENSE LEADERBOARD CODE HERE */}
-      </div>
+      {SLOT_LEADERBOARD && (
+        <div className="max-w-3xl mx-auto px-4 mt-4" aria-label="Advertisement">
+          <AdUnit slot={SLOT_LEADERBOARD} format="horizontal" />
+        </div>
+      )}
 
       {/* Article */}
       <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow px-8 py-10 mt-4 relative z-10">
@@ -279,9 +288,11 @@ export default async function BlogPostPage({
         </p>
 
         {/* Ad slot: mid-article rectangle (336×280) */}
-        <div className="my-8 flex justify-center" aria-label="Advertisement">
-          {/* INSERT GOOGLE ADSENSE RECTANGLE CODE HERE */}
-        </div>
+        {SLOT_RECTANGLE && (
+          <div className="my-8" aria-label="Advertisement">
+            <AdUnit slot={SLOT_RECTANGLE} format="rectangle" />
+          </div>
+        )}
 
         {/* Body */}
         <div className="prose-like">{renderBody(post.body)}</div>
@@ -312,9 +323,11 @@ export default async function BlogPostPage({
       </article>
 
       {/* Ad slot: after-article rectangle (336×280) */}
-      <div className="max-w-3xl mx-auto px-4 my-8 flex justify-center" aria-label="Advertisement">
-        {/* INSERT GOOGLE ADSENSE RECTANGLE CODE HERE */}
-      </div>
+      {SLOT_RECTANGLE && (
+        <div className="max-w-3xl mx-auto px-4 my-8" aria-label="Advertisement">
+          <AdUnit slot={SLOT_RECTANGLE} format="rectangle" />
+        </div>
+      )}
 
       {/* Related posts */}
       {relatedPosts.length > 0 && (

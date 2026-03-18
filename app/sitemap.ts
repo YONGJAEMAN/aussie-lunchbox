@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { BLOG_SLUGS } from "@/content/posts";
+import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { BRAND } from "@/lib/brand";
 
 const BASE_URL = BRAND.SITE_URL;
@@ -30,9 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const slug of BLOG_SLUGS) {
+      const post = POSTS[slug];
+      const reviewDate = post.lastReviewed ? new Date(`1 ${post.lastReviewed}`) : null;
+      const publishDate = new Date(post.date);
+      const lastModified = reviewDate && !isNaN(reviewDate.getTime()) ? reviewDate : publishDate;
       entries.push({
         url: `${BASE_URL}/${locale}/blog/${slug}`,
-        lastModified: new Date(),
+        lastModified,
         changeFrequency: "monthly",
         priority: 0.6,
       });

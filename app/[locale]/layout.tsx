@@ -83,9 +83,29 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Aussie Lunchbox",
+    url: BASE_URL,
+    logo: `${BASE_URL}/aussie_lunchbox_logo.png`,
+    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists with Woolworths & Coles prices.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "aussielunchboxplanner@gmail.com",
+    },
+    sameAs: [],
+  };
+
   return (
     <html lang={locale}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}

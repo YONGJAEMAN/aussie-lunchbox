@@ -10,6 +10,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}/policies`;
   return {
+    title: "Privacy Policy & Disclaimer | Aussie Lunchbox",
+    description:
+      "Read the Aussie Lunchbox privacy policy, including how we use Google AdSense, Google Analytics, Supabase, and how we handle your data under Australian law.",
     alternates: {
       canonical,
       languages: {

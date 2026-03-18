@@ -9,7 +9,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}/contact`;
+  // title+description added
   return {
+    title: "Contact Us | Aussie Lunchbox",
+    description:
+      "Get in touch with the Aussie Lunchbox team — questions about meal plans, allergy filters, recipe suggestions, or content corrections. We respond within 48 hours.",
     alternates: {
       canonical,
       languages: {

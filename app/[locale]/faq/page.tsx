@@ -94,8 +94,25 @@ const FAQ_ITEMS: FAQItem[] = [
 export default async function FAQPage() {
   const locale = await getLocale();
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-[#FDFAF2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section
         className="text-white text-center py-16 px-4"
