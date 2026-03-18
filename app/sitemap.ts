@@ -15,7 +15,7 @@ const STATIC_ROUTES = [
 ];
 
 const BLOG_SLUGS = [
-  "5-healthy-lunchbox-ideas-for-nz-kids",
+  "5-healthy-lunchbox-ideas-for-au-kids",
   "nut-free-school-lunches-australia",
   "gluten-free-lunchbox-tips",
   "budget-friendly-lunchbox-ideas",

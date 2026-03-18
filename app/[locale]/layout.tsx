@@ -21,35 +21,26 @@ export async function generateMetadata({
 
   const titles: Record<string, string> = {
     en: "Aussie Lunchbox — Stress-Free School Lunches for Australian Families",
-    ko: "키위 런치박스 — 뉴질랜드 가족을 위한 간편한 도시락 플래너",
-    zh: "Aussie Lunchbox — 新西兰家庭轻松搭配学校午餐",
+    ko: "오지 런치박스 — 호주 가족을 위한 간편한 도시락 플래너",
+    zh: "Aussie Lunchbox — 澳洲家庭轻松搭配学校午餐",
   };
   const descriptions: Record<string, string> = {
     en: "Plan your kids' weekly school lunchbox in seconds. Healthy Australian menus, shopping lists, allergy filters, and price estimates from Woolworths & Coles.",
-    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 뉴질랜드 메뉴, 쇼핑 목록, 알레르기 필터, 카운트다운 가격 정보를 제공합니다.",
-    zh: "几秒内规划孩子一周的学校午餐盒。提供健康的新西兰菜单、购物清单、过敏原过滤器和超市价格估算。",
+    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 호주 메뉴, 쇼핑 목록, 알레르기 필터, 울워스 & 콜스 가격 정보를 제공합니다.",
+    zh: "几秒内规划孩子一周的学校午餐盒。提供健康的澳洲菜单、购物清单、过敏原过滤器和超市价格估算。",
   };
 
   const title = titles[locale] ?? titles.en;
   const description = descriptions[locale] ?? descriptions.en;
-  const canonical = `${BASE_URL}/${locale}`;
 
   return {
     title,
     description,
     metadataBase: new URL(BASE_URL),
-    alternates: {
-      canonical,
-      languages: {
-        en: `${BASE_URL}/en`,
-        ko: `${BASE_URL}/ko`,
-        "zh-CN": `${BASE_URL}/zh`,
-      },
-    },
     openGraph: {
       title,
       description,
-      url: canonical,
+      url: `${BASE_URL}/${locale}`,
       siteName: "Aussie Lunchbox",
       locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : "en_AU",
       type: "website",

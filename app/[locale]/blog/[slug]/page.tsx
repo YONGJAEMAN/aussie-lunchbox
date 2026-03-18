@@ -17,7 +17,7 @@ interface PostContent {
 }
 
 const POSTS: Record<string, PostContent> = {
-  "5-healthy-lunchbox-ideas-for-nz-kids": {
+  "5-healthy-lunchbox-ideas-for-au-kids": {
     title: "5 Healthy Lunchbox Ideas for Australian Kids",
     excerpt:
       "Struggling to come up with fresh lunchbox ideas every week? Here are five nutritious, kid-approved lunches using ingredients easily found at Woolworths or Coles.",
@@ -1505,15 +1505,25 @@ export async function generateMetadata({
   const post = POSTS[slug];
   if (!post) return {};
 
+  const canonical = `${BASE_URL}/${locale}/blog/${slug}`;
+
   return {
     title: `${post.title} | Aussie Lunchbox Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${BASE_URL}/en/blog/${slug}`,
+        ko: `${BASE_URL}/ko/blog/${slug}`,
+        "zh-CN": `${BASE_URL}/zh/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: new Date(post.date).toISOString(),
-      url: `${BASE_URL}/${locale}/blog/${slug}`,
+      url: canonical,
       images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
     },
   };

@@ -2,10 +2,29 @@ import Link from "next/link";
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About Us - Aussie Lunchbox",
-  description: "Making school lunches easier, healthier, and stress-free for Australian families.",
-};
+const BASE_URL = "https://www.aussielunchbox.com.au";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const canonical = `${BASE_URL}/${locale}/about`;
+  return {
+    title: "About Us - Aussie Lunchbox",
+    description: "Making school lunches easier, healthier, and stress-free for Australian families.",
+    alternates: {
+      canonical,
+      languages: {
+        en: `${BASE_URL}/en/about`,
+        ko: `${BASE_URL}/ko/about`,
+        "zh-CN": `${BASE_URL}/zh/about`,
+      },
+    },
+    openGraph: { url: canonical },
+  };
+}
 
 export default async function AboutPage() {
   const locale = await getLocale();

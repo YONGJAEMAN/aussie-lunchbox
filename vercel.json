@@ -1,5 +1,19 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "aussielunchbox.com" }],
+      "destination": "https://www.aussielunchbox.com.au/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.aussielunchbox.com" }],
+      "destination": "https://www.aussielunchbox.com.au/$1",
+      "permanent": true
+    }
+  ]
 }

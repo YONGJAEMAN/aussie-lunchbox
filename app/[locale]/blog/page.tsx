@@ -1,8 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
+const BASE_URL = "https://www.aussielunchbox.com.au";
 const SUPPORTED_LOCALES = ["en", "ko", "zh"];
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const canonical = `${BASE_URL}/${locale}/blog`;
+  return {
+    title: "Lunchbox Tips & Recipes Blog | Aussie Lunchbox",
+    description: "Practical lunchbox tips, AU-friendly recipes, allergy guides, and budget ideas for Australian school families.",
+    alternates: {
+      canonical,
+      languages: {
+        en: `${BASE_URL}/en/blog`,
+        ko: `${BASE_URL}/ko/blog`,
+        "zh-CN": `${BASE_URL}/zh/blog`,
+      },
+    },
+    openGraph: { url: canonical },
+  };
+}
 
 interface Post {
   slug: string;
@@ -16,7 +40,7 @@ interface Post {
 
 const POSTS: Post[] = [
   {
-    slug: "5-healthy-lunchbox-ideas-for-nz-kids",
+    slug: "5-healthy-lunchbox-ideas-for-au-kids",
     title: "5 Healthy Lunchbox Ideas for Australian Kids",
     excerpt:
       "Struggling to come up with fresh lunchbox ideas every week? Here are five nutritious, kid-approved lunches using ingredients easily found at Woolworths or Coles.",
