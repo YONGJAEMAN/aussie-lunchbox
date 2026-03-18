@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Aussie Lunchbox <noreply@aussielunchbox.com.au>",
+      from: "Aussie Lunchbox <noreply@aussielunchbox.com>",
       to: [to],
       subject: subject ?? "Your Aussie Lunchbox Plan 🦘",
       text: emailBody ?? "Here is your weekly lunchbox plan!",

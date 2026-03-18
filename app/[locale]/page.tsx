@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com.au";
+const BASE_URL = "https://www.aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -13,6 +13,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}`;
   return {
+    title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
+    description:
+      "Generate a personalised week of healthy Australian school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
     alternates: {
       canonical,
       languages: {
@@ -21,7 +24,13 @@ export async function generateMetadata({
         "zh-CN": `${BASE_URL}/zh`,
       },
     },
-    openGraph: { url: canonical },
+    openGraph: {
+      url: canonical,
+      title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
+      description:
+        "Generate a personalised week of healthy Australian school lunches in seconds.",
+      images: [{ url: `${BASE_URL}/aussie_lunchbox_logo.png`, width: 1200, height: 630 }],
+    },
   };
 }
 

@@ -66,7 +66,7 @@ export default function OGImage() {
 
         {/* URL */}
         <p style={{ position: "absolute", bottom: "32px", color: "rgba(255,255,255,0.6)", fontSize: "20px" }}>
-          aussielunchbox.com.au
+          aussielunchbox.com
         </p>
       </div>
     ),

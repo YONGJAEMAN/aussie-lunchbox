@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com.au";
+const BASE_URL = "https://www.aussielunchbox.com";
 
 export async function generateMetadata({
   params,

@@ -1,8 +1,31 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { getLocale } from "next-intl/server";
+import type { Metadata } from "next";
+
+const BASE_URL = "https://www.aussielunchbox.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const canonical = `${BASE_URL}/${locale}/faq`;
+  return {
+    title: "FAQ – Aussie Lunchbox | Frequently Asked Questions",
+    description:
+      "Answers to common questions about the Aussie Lunchbox planner — allergies, dietary restrictions, shopping lists, PDF export, and more.",
+    alternates: {
+      canonical,
+      languages: {
+        en: `${BASE_URL}/en/faq`,
+        ko: `${BASE_URL}/ko/faq`,
+        "zh-CN": `${BASE_URL}/zh/faq`,
+      },
+    },
+    openGraph: { url: canonical },
+  };
+}
 
 interface FAQItem {
   q: string;
@@ -16,7 +39,7 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     q: "How does the meal plan generator work?",
-    a: "Our planner selects a balanced mix of 5 lunch menus for the week from our curated database of NZ-friendly recipes. It prioritises variety across categories (Sandwich, Hot, Baking, Cold) and applies any allergy or dietary filters you've set. You can also add fridge leftovers or favourite ingredients to influence the selection.",
+    a: "Our planner selects a balanced mix of 5 lunch menus for the week from our curated database of Australian-friendly recipes. It prioritises variety across categories (Sandwich, Hot, Baking, Cold) and applies any allergy or dietary filters you've set. You can also add fridge leftovers or favourite ingredients to influence the selection.",
   },
   {
     q: "Can I filter for allergies or dietary requirements?",
@@ -68,10 +91,8 @@ const FAQ_ITEMS: FAQItem[] = [
   },
 ];
 
-export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const params = useParams();
-  const locale = (params?.locale as string) ?? "en";
+export default async function FAQPage() {
+  const locale = await getLocale();
 
   return (
     <main className="min-h-screen bg-[#FDFAF2]">
@@ -86,33 +107,23 @@ export default function FAQPage() {
         </p>
       </section>
 
-      {/* FAQ accordion */}
+      {/* FAQ accordion — uses <details>/<summary> for Google-crawlable content */}
       <section className="max-w-3xl mx-auto px-4 py-16">
         <div className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl shadow overflow-hidden">
-              <button
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                aria-expanded={openIndex === i}
-              >
+            <details key={i} className="bg-white rounded-2xl shadow overflow-hidden group">
+              <summary className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors cursor-pointer list-none">
                 <span className="font-semibold text-[#7B3F00] text-sm md:text-base leading-snug">
                   {item.q}
                 </span>
-                <span
-                  className={`text-[#F5A623] text-xl shrink-0 transition-transform duration-200 ${
-                    openIndex === i ? "rotate-45" : ""
-                  }`}
-                >
+                <span className="text-[#F5A623] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
                   +
                 </span>
-              </button>
-              {openIndex === i && (
-                <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
-                  {item.a}
-                </div>
-              )}
-            </div>
+              </summary>
+              <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                {item.a}
+              </div>
+            </details>
           ))}
         </div>
 

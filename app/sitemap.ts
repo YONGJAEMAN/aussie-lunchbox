@@ -1,7 +1,9 @@
 import { MetadataRoute } from "next";
+import { BLOG_SLUGS } from "@/content/posts";
+import { BRAND } from "@/lib/brand";
 
-const BASE_URL = "https://www.aussielunchbox.com.au";
-const LOCALES = ["en", "ko", "zh"];
+const BASE_URL = BRAND.SITE_URL;
+const LOCALES = [...BRAND.LOCALES];
 
 const STATIC_ROUTES = [
   "",
@@ -12,28 +14,6 @@ const STATIC_ROUTES = [
   "/terms",
   "/faq",
   "/blog",
-];
-
-const BLOG_SLUGS = [
-  "5-healthy-lunchbox-ideas-for-au-kids",
-  "nut-free-school-lunches-australia",
-  "gluten-free-lunchbox-tips",
-  "budget-friendly-lunchbox-ideas",
-  "getting-kids-to-eat-healthy-lunches",
-  "sunday-meal-prep-lunchbox-guide",
-  "dairy-free-school-lunches-australia",
-  "vegetarian-lunchbox-ideas-australia",
-  "high-protein-lunchbox-ideas",
-  "waste-free-lunchbox-guide-australia",
-  "best-lunchbox-containers-australia",
-  "woolworths-vs-coles-lunchbox-budget",
-  "rainbow-lunchbox-guide",
-  "thermos-hot-lunch-ideas-australia",
-  "multicultural-lunchbox-ideas-australia",
-  "lunchbox-ideas-by-age-australia",
-  "summer-lunchbox-ideas-australia",
-  "kids-make-own-lunchbox",
-  "school-canteen-vs-packed-lunch",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

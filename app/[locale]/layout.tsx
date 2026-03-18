@@ -9,7 +9,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/CookieConsent";
 
-const BASE_URL = "https://www.aussielunchbox.com.au";
+const BASE_URL = "https://www.aussielunchbox.com";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
 export async function generateMetadata({

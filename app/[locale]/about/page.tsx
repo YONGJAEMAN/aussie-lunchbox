@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com.au";
+const BASE_URL = "https://www.aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -100,6 +100,49 @@ export default async function AboutPage() {
                 <p className="text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Editorial Standards — E-E-A-T */}
+      <section className="max-w-5xl mx-auto py-16 px-4">
+        <h2 className="text-2xl font-bold text-[#7B3F00] mb-8 text-center">Our Editorial Standards</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-2xl shadow p-6">
+            <div className="text-2xl mb-3">📝</div>
+            <h3 className="font-bold text-[#7B3F00] mb-2">Written by parents &amp; food writers</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              All blog content is written by Australian parents, home cooks, and food writers with lived experience packing school lunches. We don&apos;t publish content without human review and editorial oversight.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow p-6">
+            <div className="text-2xl mb-3">🏥</div>
+            <h3 className="font-bold text-[#7B3F00] mb-2">Aligned with Australian dietary guidelines</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Nutrition information is reviewed against the{" "}
+              <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                Australian Dietary Guidelines
+              </a>
+              . We cite reputable sources and clearly label opinion vs. fact.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow p-6">
+            <div className="text-2xl mb-3">🔄</div>
+            <h3 className="font-bold text-[#7B3F00] mb-2">Reviewed &amp; updated regularly</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              We review articles when guidelines change, when new research becomes available, or when reader feedback indicates an update is needed. Each article shows its publication date.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow p-6">
+            <div className="text-2xl mb-3">✉️</div>
+            <h3 className="font-bold text-[#7B3F00] mb-2">Corrections policy</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              We take accuracy seriously. If you spot an error in any of our content, please{" "}
+              <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
+                contact us
+              </Link>{" "}
+              and we will review and correct it promptly.
+            </p>
           </div>
         </div>
       </section>
