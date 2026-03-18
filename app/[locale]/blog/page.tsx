@@ -47,9 +47,38 @@ export default async function BlogPage({
         style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}
       >
         <h1 className="text-4xl font-bold mb-3">Lunchbox Tips & Ideas</h1>
-        <p className="text-lg opacity-90 max-w-xl mx-auto">
+        <p className="text-lg opacity-90 max-w-xl mx-auto mb-2">
           Practical advice, healthy recipes, and inspiration for Australian school lunches.
         </p>
+        <p className="text-sm opacity-75 max-w-2xl mx-auto mb-8">
+          18 guides covering recipes, allergy-safe meals, budget tips, and AU seasonal produce — written for Aussie families.
+        </p>
+        {/* Category filter bar — decorative/informational */}
+        <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+          {[
+            { label: "All", active: true },
+            { label: "Recipes", active: false },
+            { label: "Allergy Friendly", active: false },
+            { label: "Budget", active: false },
+            { label: "Nutrition", active: false },
+            { label: "Meal Prep", active: false },
+            { label: "Seasonal", active: false },
+            { label: "Parenting Tips", active: false },
+            { label: "Sustainability", active: false },
+            { label: "Gear & Tips", active: false },
+          ].map((cat) => (
+            <span
+              key={cat.label}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium cursor-default select-none ${
+                cat.active
+                  ? "bg-[#F5A623] text-white"
+                  : "bg-white text-[#7B3F00]"
+              }`}
+            >
+              {cat.label}
+            </span>
+          ))}
+        </div>
       </section>
 
       {/* Posts grid */}

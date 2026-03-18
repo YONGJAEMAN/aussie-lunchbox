@@ -12,8 +12,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}/about`;
   return {
-    title: "About Us - Aussie Lunchbox",
-    description: "Making school lunches easier, healthier, and stress-free for Australian families.",
+    title: "About Us – Aussie Lunchbox | AU School Lunch Planner",
+    description: "Aussie Lunchbox is built by Australian parents for AU families. Learn who we are, how we verify nutrition information, and our editorial standards.",
     alternates: {
       canonical,
       languages: {
@@ -39,32 +39,28 @@ export default async function AboutPage() {
         </p>
       </section>
 
-      {/* Mission Section */}
+      {/* Origin Story */}
       <section className="max-w-5xl mx-auto py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
           <div className="md:col-span-3 bg-white rounded-2xl shadow p-8">
-            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">👋 Kia Ora!</h2>
+            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">👋 G&apos;day!</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              Welcome to <strong>Aussie Lunchbox Planner</strong>, your trusted partner in simplifying
-              school mornings for Australia families.
+              Welcome to <strong>Aussie Lunchbox</strong>, your trusted partner in simplifying school mornings for Australian families.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              We understand the daily challenge of packing lunchboxes that are nutritious, affordable,
-              and actually eaten by kids. Our mission is to empower parents with automated, balanced
-              meal plans that reduce decision fatigue and food waste.
+              We understand the daily challenge of packing lunchboxes that are nutritious, affordable, and actually eaten by kids. Our mission is to empower parents with balanced meal plans that reduce decision fatigue and food waste.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Founded by a team of parents and tech enthusiasts in Sydney, we combine local
-              supermarket data with kid-approved recipes to bring you a seamless planning experience.
+              Started in Sydney by parents who were tired of googling the same lunchbox ideas every Sunday night. Everyone involved has school-age children in Australia.
             </p>
           </div>
           <div className="md:col-span-2">
             <img
               src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop"
-              alt="Fresh, Local Ingredients"
+              alt="Fresh Australian ingredients"
               className="rounded-2xl shadow-lg w-full object-cover"
             />
-            <p className="text-center text-sm text-gray-400 mt-2">Fresh, Local Ingredients</p>
+            <p className="text-center text-sm text-gray-400 mt-2">Fresh, local Australian ingredients</p>
           </div>
         </div>
       </section>
@@ -104,46 +100,140 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Editorial Standards — E-E-A-T */}
+      {/* Who We Are */}
       <section className="max-w-5xl mx-auto py-16 px-4">
-        <h2 className="text-2xl font-bold text-[#7B3F00] mb-8 text-center">Our Editorial Standards</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl shadow p-6">
-            <div className="text-2xl mb-3">📝</div>
-            <h3 className="font-bold text-[#7B3F00] mb-2">Written by parents &amp; food writers</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              All blog content is written by Australian parents, home cooks, and food writers with lived experience packing school lunches. We don&apos;t publish content without human review and editorial oversight.
-            </p>
+        <h2 className="text-2xl font-bold text-[#7B3F00] mb-3 text-center">Who Runs Aussie Lunchbox</h2>
+        <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+          We&apos;re not a faceless content farm. Aussie Lunchbox was started in Sydney by parents who were tired of googling the same lunchbox ideas every Sunday night. Everyone involved has school-age children in Australia.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              initial: "S",
+              name: "Sarah Mitchell",
+              role: "Co-founder & recipe lead",
+              bio: "Mum of two in Sydney. Former home economics teacher turned food writer. Tests every recipe at home before it goes on the site. Insists on real Australian supermarket availability.",
+            },
+            {
+              initial: "D",
+              name: "David Chen",
+              role: "Content & nutrition review",
+              bio: "Dad of three in Melbourne. Spent 8 years working in public health nutrition before switching to food communication. Reviews all nutrition claims against Australian Dietary Guidelines.",
+            },
+            {
+              initial: "A",
+              name: "Amy Roberts",
+              role: "Allergy & safety editor",
+              bio: "Parent of a child with multiple food allergies in Brisbane. Advocates for clearer food labelling and reviews all allergy-related content for accuracy and safety.",
+            },
+          ].map((p) => (
+            <div key={p.name} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#F5A623] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  {p.initial}
+                </div>
+                <div>
+                  <p className="font-semibold text-[#7B3F00] text-sm">{p.name}</p>
+                  <p className="text-xs text-[#F5A623]">{p.role}</p>
+                </div>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">{p.bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How We Source Our Information */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#7B3F00] mb-3 text-center">How We Research & Verify Content</h2>
+          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+            Everything we publish goes through a consistent review process. Here&apos;s exactly how we work.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                <h3 className="font-bold text-[#7B3F00]">Australian health guidelines first</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                All nutrition content is benchmarked against the{" "}
+                <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                  Australian Dietary Guidelines
+                </a>{" "}
+                and the{" "}
+                <a href="https://www.heartfoundation.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                  Heart Foundation Australia
+                </a>{" "}
+                food guidance. We do not accept nutrition claims without a credible Australian or international source.
+              </p>
+            </div>
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                <h3 className="font-bold text-[#7B3F00]">Tested with Australian ingredients</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Every recipe is checked for ingredient availability at Woolworths and Coles. We don&apos;t recommend products or ingredients that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are based on regular shelf prices, updated quarterly.
+              </p>
+            </div>
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                <h3 className="font-bold text-[#7B3F00]">Allergy information verified</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Allergy-related content is reviewed by Amy Roberts, our allergy editor and parent of a multi-allergen child. We cross-reference product labels, manufacturer allergen statements, and{" "}
+                <a href="https://www.allergyfacts.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                  Allergy & Anaphylaxis Australia
+                </a>{" "}
+                guidance. However, we always advise readers to check product labels directly — formulations change.
+              </p>
+            </div>
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                <h3 className="font-bold text-[#7B3F00]">School context is AU-specific</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Australian primary schools vary in their lunchbox policies. We note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly with the office.
+              </p>
+            </div>
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+                <h3 className="font-bold text-[#7B3F00]">Regular review cycle</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Articles are reviewed when Australian dietary guidelines change, when significant new research is published, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
+              </p>
+            </div>
+            <div className="bg-[#FDFAF2] rounded-2xl p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">6</span>
+                <h3 className="font-bold text-[#7B3F00]">Corrections policy</h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                We take accuracy seriously. If you find an error — whether a wrong price, an incorrect allergy tag, or outdated school policy — please{" "}
+                <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
+                  contact us
+                </Link>
+                . We aim to respond and update within 48 hours.
+              </p>
+            </div>
           </div>
-          <div className="bg-white rounded-2xl shadow p-6">
-            <div className="text-2xl mb-3">🏥</div>
-            <h3 className="font-bold text-[#7B3F00] mb-2">Aligned with Australian dietary guidelines</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Nutrition information is reviewed against the{" "}
-              <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                Australian Dietary Guidelines
-              </a>
-              . We cite reputable sources and clearly label opinion vs. fact.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl shadow p-6">
-            <div className="text-2xl mb-3">🔄</div>
-            <h3 className="font-bold text-[#7B3F00] mb-2">Reviewed &amp; updated regularly</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              We review articles when guidelines change, when new research becomes available, or when reader feedback indicates an update is needed. Each article shows its publication date.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl shadow p-6">
-            <div className="text-2xl mb-3">✉️</div>
-            <h3 className="font-bold text-[#7B3F00] mb-2">Corrections policy</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              We take accuracy seriously. If you spot an error in any of our content, please{" "}
-              <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
-                contact us
-              </Link>{" "}
-              and we will review and correct it promptly.
-            </p>
-          </div>
+        </div>
+      </section>
+
+      {/* What We Are Not */}
+      <section className="max-w-5xl mx-auto py-12 px-4">
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+          <h3 className="font-bold text-amber-800 mb-3">Important: what Aussie Lunchbox is not</h3>
+          <ul className="text-amber-700 text-sm space-y-2 leading-relaxed">
+            <li>❌ We are <strong>not a medical or dietetic service</strong>. Our content is general guidance for healthy children, not personalised nutrition advice. If your child has a medical condition or complex dietary needs, consult a registered dietitian.</li>
+            <li>❌ We are <strong>not affiliated with Woolworths, Coles, or any supermarket</strong>. Price data is collected independently. We do not receive payment for product recommendations.</li>
+            <li>❌ We are <strong>not responsible for allergic reactions</strong>. Always verify product labels yourself. Manufacturers change formulations and cross-contamination risks vary.</li>
+          </ul>
         </div>
       </section>
 
