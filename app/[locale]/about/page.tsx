@@ -242,8 +242,7 @@ export default async function AboutPage() {
         <div className="max-w-2xl mx-auto">
           <h3 className="text-2xl font-bold text-[#7B3F00] mb-4">Join Our Community</h3>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            We are constantly improving based on your feedback. Together, let&apos;s make healthy
-            eating the easy choice for our tamariki.
+            We are constantly improving based on your feedback. Together, let&apos;s make healthy eating the easy choice for Australian kids.
           </p>
           <Link
             href={`/${locale}/planner`}
