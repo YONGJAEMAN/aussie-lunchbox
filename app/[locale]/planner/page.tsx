@@ -460,12 +460,111 @@ export default function PlannerPage() {
         )}
 
         {planData.length === 0 && !generating && (
-          <div className="flex flex-col items-center justify-center py-24 text-center">
-            <div className="text-7xl mb-4">🥗</div>
-            <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">Ready to plan?</h2>
-            <p className="text-gray-500 max-w-sm">
-              Set your preferences in the sidebar and click Generate Plan to get started!
-            </p>
+          <div>
+            {/* Desktop: subtle pointer to sidebar button */}
+            <div className="hidden lg:flex items-center gap-2 mb-5 bg-[#FFF4DE] border border-[#F5A623]/30 rounded-xl px-4 py-3 text-sm text-[#7B3F00]">
+              <span className="text-lg">👈</span>
+              <span>Set any dietary filters on the left, then click <strong>Generate Plan</strong> to get your personalised week of lunches.</span>
+            </div>
+            {/* Mobile: button-style CTA */}
+            <button
+              onClick={handleGenerate}
+              className="lg:hidden w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-4 rounded-xl transition-colors mb-5 text-lg"
+            >
+              ✨ Generate My Lunch Plan
+            </button>
+            <div className="flex flex-col items-center justify-center py-6 text-center mb-4">
+              <div className="text-6xl mb-4">🥗</div>
+              <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">Your personalised lunch plan starts here</h2>
+              <p className="text-gray-500 max-w-sm text-sm mb-5">
+                Tell us your family&apos;s dietary needs and we&apos;ll generate a full 5-day school lunch plan — with ingredients, estimated costs, and a printable shopping list.
+              </p>
+              <ol className="text-left text-sm space-y-2 max-w-xs w-full">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+                  <span className="text-gray-600"><span className="hidden lg:inline">Set allergy filters in the left panel</span><span className="lg:hidden">Tap the filter icons above to set dietary needs</span></span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+                  <span className="text-gray-600">Click <strong className="text-[#7B3F00]">Generate Plan</strong> — takes about 5 seconds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">3</span>
+                  <span className="text-gray-600">Download as PDF or email yourself the shopping list</span>
+                </li>
+              </ol>
+            </div>
+
+            {/* Sample plan preview */}
+            <div className="bg-white rounded-2xl shadow p-6 mb-6">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Example — what your plan looks like</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3 mb-5">
+                {[
+                  { day: "Monday", menu: "Vegemite & Cheese Scrolls", cost: "$1.80", tag: "Baking", cal: "380 kcal", image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Tuesday", menu: "Chicken Rice Paper Rolls", cost: "$2.80", tag: "Cold", cal: "320 kcal", image: "https://images.unsplash.com/photo-1562802378-063ec186a863?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Wednesday", menu: "Pesto Pasta Salad", cost: "$2.10", tag: "Cold", cal: "290 kcal", image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Thursday", menu: "Mini Quiches", cost: "$2.50", tag: "Hot", cal: "310 kcal", image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Friday", menu: "Homemade Sushi Rolls", cost: "$3.20", tag: "Cold", cal: "340 kcal", image: "https://images.unsplash.com/photo-1617196034183-421b4040d609?w=400&q=75&auto=format&fit=crop" },
+                ].map((d) => (
+                  <div key={d.day} className="bg-[#FDFAF2] rounded-xl overflow-hidden flex flex-col">
+                    <div className="h-24 overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={d.image} alt={d.menu} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                    <div className="p-3 flex flex-col gap-1 flex-1">
+                      <p className="text-xs font-bold text-[#F5A623]">{d.day}</p>
+                      <p className="text-sm font-semibold text-[#7B3F00] leading-tight">{d.menu}</p>
+                      <div className="flex items-center gap-1.5 mt-auto pt-1">
+                        <span className="text-xs bg-[#FFF4DE] text-[#7B3F00] px-2 py-0.5 rounded-full">{d.tag}</span>
+                        <span className="text-xs text-gray-400">{d.cal}</span>
+                      </div>
+                      <p className="text-sm font-bold text-[#7B3F00]">{d.cost}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-gray-100 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
+                <div className="text-gray-500">
+                  Est. weekly cost: <strong className="text-[#7B3F00]">~$12.40</strong>
+                  <span className="mx-2 text-gray-300">·</span>
+                  Avg: <strong className="text-[#7B3F00]">328 kcal/day</strong>
+                </div>
+                <div className="text-xs text-gray-400 bg-gray-50 rounded-lg px-3 py-2">
+                  🛒 Shopping list: 14 items · 4 categories
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 mb-6 px-1">
+              <span className="inline-flex items-center gap-1.5 bg-green-50 border border-green-200 text-green-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+                ✅ Allergy-safe by default
+              </span>
+              <span className="text-xs text-gray-400">Nut-free, dairy-free, gluten-free, and vegan filters available — applied to every meal in the plan.</span>
+            </div>
+
+            {/* Sample shopping list preview */}
+            <div className="bg-white rounded-2xl shadow p-6">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Example — shopping list</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { cat: "🥩 Meat & Seafood", items: ["Chicken breast", "Smoked salmon"] },
+                  { cat: "🥦 Produce", items: ["Cucumber", "Avocado", "Spinach leaves", "Cherry tomatoes"] },
+                  { cat: "🧀 Dairy & Eggs", items: ["Cheddar cheese", "Eggs (×4)"] },
+                  { cat: "🍞 Bakery & Pantry", items: ["Rice paper wrappers", "Pasta (penne)", "Nori sheets"] },
+                ].map((section) => (
+                  <div key={section.cat}>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">{section.cat}</p>
+                    <ul className="space-y-1">
+                      {section.items.map((item) => (
+                        <li key={item} className="text-sm text-gray-600 flex items-center gap-2">
+                          <span className="w-4 h-4 border border-gray-200 rounded flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </main>
