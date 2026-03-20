@@ -31,6 +31,13 @@ export async function generateMetadata({
         "Generate a personalised week of healthy Australian school lunches in seconds.",
       images: [{ url: `${BASE_URL}/aussie_lunchbox_logo.png`, width: 1200, height: 630 }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
+      description:
+        "Generate a personalised week of healthy Australian school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
+      images: [`${BASE_URL}/aussie_lunchbox_logo.png`],
+    },
   };
 }
 
@@ -160,18 +167,18 @@ export default async function HomePage() {
             {[
               {
                 icon: "📅",
-                title: "Sunday 10-Minute Prep",
-                desc: "Parents use it the night before the school week to generate a full plan. No thinking required on Monday morning.",
+                title: "Sunday Evening, Done",
+                desc: "Open the planner on Sunday, hit Generate, and you're sorted before the kids' bedtime. No Monday morning scramble, no forgotten lunchbox.",
               },
               {
                 icon: "🚫🥜",
-                title: "Allergy-Safe Confidence",
-                desc: "Nut-free and dairy-free filters apply across the entire plan. Every meal, every ingredient, checked.",
+                title: "Allergy Filters That Actually Work",
+                desc: "Select nut-free, dairy-free, gluten-free, or vegan — every meal in the generated plan respects your filters. No manual ingredient checking.",
               },
               {
                 icon: "💵",
                 title: "Under $3 Per Lunch",
-                desc: "Built-in Woolworths & Coles price estimates let families track the weekly lunchbox budget before buying anything.",
+                desc: "Woolworths and Coles price estimates are built in. See your full weekly lunchbox cost before you shop.",
               },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl shadow p-8 text-center hover:-translate-y-1 transition-transform">
@@ -198,13 +205,13 @@ export default async function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              slug: "5-healthy-lunchbox-ideas-for-nz-kids",
+              slug: "5-healthy-lunchbox-ideas-for-au-kids",
               title: "5 Healthy Lunchbox Ideas for Australian Kids",
               excerpt: "Quick, nutritious, and kid-approved meals using ingredients from Woolworths.",
               category: "Recipes",
             },
             {
-              slug: "nut-free-school-lunches-new-zealand",
+              slug: "nut-free-school-lunches-australia",
               title: "Nut-Free School Lunches: A Complete Guide",
               excerpt: "How to pack safe, delicious lunches that comply with your school's nut-free policy.",
               category: "Allergy Friendly",

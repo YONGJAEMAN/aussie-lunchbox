@@ -57,8 +57,8 @@ export default async function TermsPage() {
           <h2 className="text-xl font-bold text-[#7B3F00]">3. Intellectual Property</h2>
           <p className="text-gray-600 leading-relaxed">
             The content, layout, design, data, libraries, and graphics on this website are protected
-            by Australia and international intellectual property laws. Content is owned by Kiwi
-            Lunchbox Planner unless otherwise stated (e.g., third-party recipes or images).
+            by Australia and international intellectual property laws. Content is owned by Aussie
+            Lunchbox unless otherwise stated (e.g., third-party recipes or images).
           </p>
 
           <h2 className="text-xl font-bold text-[#7B3F00]">4. User Accounts</h2>

@@ -500,11 +500,11 @@ export default function PlannerPage() {
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Example — what your plan looks like</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3 mb-5">
                 {[
-                  { day: "Monday", menu: "Vegemite & Cheese Scrolls", cost: "$1.80", tag: "Baking", cal: "380 kcal", image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=400&q=75&auto=format&fit=crop" },
-                  { day: "Tuesday", menu: "Chicken Rice Paper Rolls", cost: "$2.80", tag: "Cold", cal: "320 kcal", image: "https://images.unsplash.com/photo-1562802378-063ec186a863?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Monday", menu: "Vegemite & Cheese Scrolls", cost: "$1.80", tag: "Baking", cal: "380 kcal", image: "https://images.unsplash.com/photo-1484723091739-30990c78b4f3?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Tuesday", menu: "Chicken Rice Paper Rolls", cost: "$2.80", tag: "Cold", cal: "320 kcal", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=75&auto=format&fit=crop" },
                   { day: "Wednesday", menu: "Pesto Pasta Salad", cost: "$2.10", tag: "Cold", cal: "290 kcal", image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=75&auto=format&fit=crop" },
-                  { day: "Thursday", menu: "Mini Quiches", cost: "$2.50", tag: "Hot", cal: "310 kcal", image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=75&auto=format&fit=crop" },
-                  { day: "Friday", menu: "Homemade Sushi Rolls", cost: "$3.20", tag: "Cold", cal: "340 kcal", image: "https://images.unsplash.com/photo-1617196034183-421b4040d609?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Thursday", menu: "Mini Quiches", cost: "$2.50", tag: "Hot", cal: "310 kcal", image: "https://images.unsplash.com/photo-1540189549336-e6e99eb4b5b?w=400&q=75&auto=format&fit=crop" },
+                  { day: "Friday", menu: "Homemade Sushi Rolls", cost: "$3.20", tag: "Cold", cal: "340 kcal", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=75&auto=format&fit=crop" },
                 ].map((d) => (
                   <div key={d.day} className="bg-[#FDFAF2] rounded-xl overflow-hidden flex flex-col">
                     <div className="h-24 overflow-hidden">
