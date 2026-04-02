@@ -30,20 +30,23 @@ export default async function AboutPage() {
   const locale = await getLocale();
 
   return (
-    <main className="min-h-screen bg-[#FDFAF2]">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
-        <h1 className="text-4xl font-bold mb-3">🦘 About Aussie Lunchbox</h1>
-        <p className="text-lg opacity-90 max-w-xl mx-auto">
+      <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">Our Story</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
+          About Aussie Lunchbox
+        </h1>
+        <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
           Making school lunches easier, healthier, and stress-free for Australian families.
         </p>
       </section>
 
       {/* Origin Story */}
-      <section className="max-w-5xl mx-auto py-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-          <div className="md:col-span-3 bg-white rounded-2xl shadow p-8">
-            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">👋 G&apos;day!</h2>
+      <section className="max-w-5xl mx-auto py-20 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+          <div className="md:col-span-3 bg-[#FFF8EE] rounded-3xl p-10">
+            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">G&apos;day!</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               Welcome to <strong>Aussie Lunchbox</strong>, your trusted partner in simplifying school mornings for Australian families.
             </p>
@@ -58,7 +61,7 @@ export default async function AboutPage() {
             <img
               src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop"
               alt="Fresh Australian ingredients"
-              className="rounded-2xl shadow-lg w-full object-cover"
+              className="rounded-3xl shadow-lg w-full object-cover"
             />
             <p className="text-center text-sm text-gray-400 mt-2">Fresh, local Australian ingredients</p>
           </div>
@@ -66,9 +69,10 @@ export default async function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-white py-16 px-4">
+      <section className="bg-[#FFF8EE] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">Why Choose Us?</h2>
+          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">Why Us</p>
+          <h2 className="text-3xl font-extrabold text-center text-[#1a1a1a] mb-12">Why Choose Us?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -84,15 +88,12 @@ export default async function AboutPage() {
               {
                 icon: "🥗",
                 title: "Nutritionally Balanced",
-                desc: "Our algorithms ensure a mix of protein, fresh produce, and treats, aligned with Ministry of Health guidelines for active kids.",
+                desc: "Our algorithms ensure a mix of protein, fresh produce, and treats, aligned with Australian Dietary Guidelines for active kids.",
               },
             ].map((f) => (
-              <div
-                key={f.title}
-                className="bg-[#FDFAF2] rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform"
-              >
+              <div key={f.title} className="bg-white rounded-3xl p-8 text-center shadow-sm hover:-translate-y-1 transition-transform">
                 <div className="text-5xl mb-4">{f.icon}</div>
-                <h3 className="font-bold text-[#7B3F00] text-xl mb-3">{f.title}</h3>
+                <h3 className="font-bold text-[#1a1a1a] text-xl mb-3">{f.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -101,9 +102,10 @@ export default async function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="max-w-5xl mx-auto py-16 px-4">
-        <h2 className="text-2xl font-bold text-[#7B3F00] mb-3 text-center">Who Runs Aussie Lunchbox</h2>
-        <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+      <section className="max-w-5xl mx-auto py-20 px-4">
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">The Team</p>
+        <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">Who Runs Aussie Lunchbox</h2>
+        <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           We&apos;re not a faceless content farm. Aussie Lunchbox was started in Sydney by parents who were tired of googling the same lunchbox ideas every Sunday night. Everyone involved has school-age children in Australia.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -127,13 +129,13 @@ export default async function AboutPage() {
               bio: "Parent of a child with multiple food allergies in Brisbane. Advocates for clearer food labelling and reviews all allergy-related content for accuracy and safety.",
             },
           ].map((p) => (
-            <div key={p.name} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-3">
+            <div key={p.name} className="bg-[#FFF8EE] rounded-3xl p-7 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#F5A623] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#7B3F00] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                   {p.initial}
                 </div>
                 <div>
-                  <p className="font-semibold text-[#7B3F00] text-sm">{p.name}</p>
+                  <p className="font-semibold text-[#1a1a1a] text-sm">{p.name}</p>
                   <p className="text-xs text-[#F5A623]">{p.role}</p>
                 </div>
               </div>
@@ -144,90 +146,103 @@ export default async function AboutPage() {
       </section>
 
       {/* How We Source Our Information */}
-      <section className="bg-white py-16 px-4">
+      <section className="bg-[#FFF8EE] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#7B3F00] mb-3 text-center">How We Research & Verify Content</h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">How We Research & Verify Content</h2>
+          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
             Everything we publish goes through a consistent review process. Here&apos;s exactly how we work.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                <h3 className="font-bold text-[#7B3F00]">Australian health guidelines first</h3>
+            {[
+              {
+                num: "1",
+                title: "Australian health guidelines first",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    All nutrition content is benchmarked against the{" "}
+                    <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                      Australian Dietary Guidelines
+                    </a>{" "}
+                    and the{" "}
+                    <a href="https://www.heartfoundation.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                      Heart Foundation Australia
+                    </a>{" "}
+                    food guidance. We do not accept nutrition claims without a credible Australian or international source.
+                  </p>
+                ),
+              },
+              {
+                num: "2",
+                title: "Tested with Australian ingredients",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Every recipe is checked for ingredient availability at Woolworths and Coles. We don&apos;t recommend products or ingredients that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are based on regular shelf prices, updated quarterly.
+                  </p>
+                ),
+              },
+              {
+                num: "3",
+                title: "Allergy information verified",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Allergy-related content is reviewed by Amy Roberts, our allergy editor and parent of a multi-allergen child. We cross-reference product labels, manufacturer allergen statements, and{" "}
+                    <a href="https://www.allergyfacts.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
+                      Allergy & Anaphylaxis Australia
+                    </a>{" "}
+                    guidance. However, we always advise readers to check product labels directly — formulations change.
+                  </p>
+                ),
+              },
+              {
+                num: "4",
+                title: "School context is AU-specific",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Australian primary schools vary in their lunchbox policies. We note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly with the office.
+                  </p>
+                ),
+              },
+              {
+                num: "5",
+                title: "Regular review cycle",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Articles are reviewed when Australian dietary guidelines change, when significant new research is published, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
+                  </p>
+                ),
+              },
+              {
+                num: "6",
+                title: "Corrections policy",
+                content: (
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    We take accuracy seriously. If you find an error — whether a wrong price, an incorrect allergy tag, or outdated school policy — please{" "}
+                    <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
+                      contact us
+                    </Link>
+                    . We aim to respond and update within 48 hours.
+                  </p>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.num} className="bg-white rounded-3xl p-7 shadow-sm">
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="bg-[#7B3F00] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {item.num}
+                  </span>
+                  <h3 className="font-bold text-[#1a1a1a]">{item.title}</h3>
+                </div>
+                {item.content}
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                All nutrition content is benchmarked against the{" "}
-                <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                  Australian Dietary Guidelines
-                </a>{" "}
-                and the{" "}
-                <a href="https://www.heartfoundation.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                  Heart Foundation Australia
-                </a>{" "}
-                food guidance. We do not accept nutrition claims without a credible Australian or international source.
-              </p>
-            </div>
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                <h3 className="font-bold text-[#7B3F00]">Tested with Australian ingredients</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Every recipe is checked for ingredient availability at Woolworths and Coles. We don&apos;t recommend products or ingredients that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are based on regular shelf prices, updated quarterly.
-              </p>
-            </div>
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-                <h3 className="font-bold text-[#7B3F00]">Allergy information verified</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Allergy-related content is reviewed by Amy Roberts, our allergy editor and parent of a multi-allergen child. We cross-reference product labels, manufacturer allergen statements, and{" "}
-                <a href="https://www.allergyfacts.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                  Allergy & Anaphylaxis Australia
-                </a>{" "}
-                guidance. However, we always advise readers to check product labels directly — formulations change.
-              </p>
-            </div>
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
-                <h3 className="font-bold text-[#7B3F00]">School context is AU-specific</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Australian primary schools vary in their lunchbox policies. We note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly with the office.
-              </p>
-            </div>
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
-                <h3 className="font-bold text-[#7B3F00]">Regular review cycle</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Articles are reviewed when Australian dietary guidelines change, when significant new research is published, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
-              </p>
-            </div>
-            <div className="bg-[#FDFAF2] rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#F5A623] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">6</span>
-                <h3 className="font-bold text-[#7B3F00]">Corrections policy</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                We take accuracy seriously. If you find an error — whether a wrong price, an incorrect allergy tag, or outdated school policy — please{" "}
-                <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
-                  contact us
-                </Link>
-                . We aim to respond and update within 48 hours.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* What We Are Not */}
       <section className="max-w-5xl mx-auto py-12 px-4">
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+        <div className="bg-amber-50 border border-amber-200 rounded-3xl p-7">
           <h3 className="font-bold text-amber-800 mb-3">Important: what Aussie Lunchbox is not</h3>
           <ul className="text-amber-700 text-sm space-y-2 leading-relaxed">
             <li>❌ We are <strong>not a medical or dietetic service</strong>. Our content is general guidance for healthy children, not personalised nutrition advice. If your child has a medical condition or complex dietary needs, consult a registered dietitian.</li>
@@ -238,15 +253,15 @@ export default async function AboutPage() {
       </section>
 
       {/* Community CTA */}
-      <section className="py-16 px-4 text-center">
+      <section className="bg-[#7B3F00] py-20 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold text-[#7B3F00] mb-4">Join Our Community</h3>
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <h3 className="text-3xl font-extrabold text-white mb-4">Join Our Community</h3>
+          <p className="text-white/80 mb-8 leading-relaxed">
             We are constantly improving based on your feedback. Together, let&apos;s make healthy eating the easy choice for Australian kids.
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
+            className="bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
           >
             Start Planning Now
           </Link>
@@ -254,15 +269,43 @@ export default async function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#7B3F00] text-white py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
-          </p>
-          <div className="flex gap-4 text-sm opacity-75">
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
+      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">AL</span>
+                </div>
+                <span className="font-bold">Aussie Lunchbox</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Product</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Company</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Legal</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
           </div>
         </div>
       </footer>

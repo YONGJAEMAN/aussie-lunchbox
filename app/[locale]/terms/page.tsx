@@ -29,23 +29,26 @@ export default async function TermsPage() {
   const locale = await getLocale();
 
   return (
-    <main className="min-h-screen bg-[#FDFAF2]">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
-        <h1 className="text-4xl font-bold mb-3">Terms and Conditions</h1>
-        <p className="text-lg opacity-90">Last Updated: February 2026</p>
+      <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">Legal</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
+          Terms and Conditions
+        </h1>
+        <p className="text-gray-500 text-lg">Last Updated: February 2026</p>
       </section>
 
-      <section className="max-w-3xl mx-auto py-16 px-4">
-        <div className="bg-white rounded-2xl shadow p-10 prose prose-gray max-w-none">
-          <h2 className="text-xl font-bold text-[#7B3F00] mt-0">1. Introduction</h2>
+      <section className="max-w-3xl mx-auto py-20 px-4">
+        <div className="bg-[#FFF8EE] rounded-3xl p-10 prose prose-gray max-w-none">
+          <h2 className="text-xl font-bold text-[#1a1a1a] mt-0">1. Introduction</h2>
           <p className="text-gray-600 leading-relaxed">
             Welcome to <strong>Aussie Lunchbox Planner</strong>. By accessing our website and using our
             services, you agree to be bound by these Terms and Conditions. If you do not agree with
             any part of these terms, please do not use our services.
           </p>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">2. Use of Service</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">2. Use of Service</h2>
           <p className="text-gray-600 leading-relaxed">
             Aussie Lunchbox Planner provides automated lunchbox meal planning and grocery list generation.
           </p>
@@ -54,21 +57,21 @@ export default async function TermsPage() {
             <li>You agree not to misuse or attempt to disrupt our services.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">3. Intellectual Property</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">3. Intellectual Property</h2>
           <p className="text-gray-600 leading-relaxed">
             The content, layout, design, data, libraries, and graphics on this website are protected
             by Australia and international intellectual property laws. Content is owned by Aussie
             Lunchbox unless otherwise stated (e.g., third-party recipes or images).
           </p>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">4. User Accounts</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">4. User Accounts</h2>
           <p className="text-gray-600 leading-relaxed">
             To access certain features, you may need to register an account. You are responsible for
             maintaining the confidentiality of your account credentials and for all activities that
             occur under your account.
           </p>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">5. Limitation of Liability</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">5. Limitation of Liability</h2>
           <p className="text-gray-600 leading-relaxed">
             To the maximum extent permitted by law, Aussie Lunchbox Planner shall not be liable for any
             indirect, incidental, special, or consequential damages arising out of or in connection
@@ -82,9 +85,9 @@ export default async function TermsPage() {
             </li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">6. Disclaimer regarding Food and Health</h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-4">
-            <p className="text-yellow-800 font-semibold text-sm">
+          <h2 className="text-xl font-bold text-[#1a1a1a]">6. Disclaimer regarding Food and Health</h2>
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-4">
+            <p className="text-amber-800 font-semibold text-sm">
               ⚠️ Crucial: This application provides suggestions for meal plans. It is{" "}
               <strong>not</strong> a substitute for professional medical or nutritional advice.
             </p>
@@ -97,13 +100,13 @@ export default async function TermsPage() {
             </li>
           </ul>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">7. Changes to Terms</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">7. Changes to Terms</h2>
           <p className="text-gray-600 leading-relaxed">
             We reserve the right to modify these terms at any time. We will notify users of any
             significant changes by posting the new terms on this site.
           </p>
 
-          <h2 className="text-xl font-bold text-[#7B3F00]">8. Contact</h2>
+          <h2 className="text-xl font-bold text-[#1a1a1a]">8. Contact</h2>
           <p className="text-gray-600 leading-relaxed">
             For any questions regarding these Terms, please contact us at{" "}
             <a href="mailto:aussielunchboxplanner@gmail.com" className="text-[#F5A623] hover:underline">
@@ -115,15 +118,43 @@ export default async function TermsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#7B3F00] text-white py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
-          </p>
-          <div className="flex gap-4 text-sm opacity-75">
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
+      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">AL</span>
+                </div>
+                <span className="font-bold">Aussie Lunchbox</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Product</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Company</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Legal</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
           </div>
         </div>
       </footer>

@@ -216,7 +216,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <main className="min-h-screen bg-[#FDFAF2]">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -253,7 +253,7 @@ export default async function BlogPostPage({
       )}
 
       {/* Article */}
-      <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow px-8 py-10 mt-4 relative z-10">
+      <article className="max-w-3xl mx-auto bg-white rounded-3xl shadow px-8 py-10 mt-4 relative z-10">
 
         {/* Author byline — E-E-A-T signal */}
         <div className="flex items-start gap-4 mb-6 pb-6 border-b border-gray-100">
@@ -299,7 +299,7 @@ export default async function BlogPostPage({
 
         {/* E-E-A-T: editorial note */}
         <div className="mt-10 pt-6 border-t border-gray-100">
-          <div className="bg-[#FDFAF2] rounded-xl p-5">
+          <div className="bg-[#FFF8EE] rounded-2xl p-5">
             <p className="text-xs font-semibold text-[#7B3F00] uppercase tracking-wide mb-2">About this article</p>
             <p className="text-sm text-gray-600 leading-relaxed">
               This article was written and reviewed by the Aussie Lunchbox editorial team — parents, home cooks, and nutrition-conscious writers based in Australia. We aim to provide practical, evidence-based lunchbox guidance aligned with the{" "}
@@ -340,7 +340,7 @@ export default async function BlogPostPage({
               <Link
                 key={related.slug}
                 href={`/${locale}/blog/${related.slug}`}
-                className="bg-white rounded-2xl shadow overflow-hidden hover:shadow-lg transition-shadow group"
+                className="bg-[#FFF8EE] rounded-3xl overflow-hidden hover:shadow-lg transition-shadow group"
               >
                 <div className="relative h-36 overflow-hidden">
                   <Image
@@ -366,39 +366,67 @@ export default async function BlogPostPage({
       )}
 
       {/* CTA + internal links */}
-      <section className="bg-white border-t border-gray-100 py-12 px-4">
+      <section className="bg-[#7B3F00] py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#7B3F00] mb-3">
+          <h2 className="text-2xl font-extrabold text-white mb-3">
             Ready to plan your week?
           </h2>
-          <p className="text-gray-500 mb-6">
+          <p className="text-white/80 mb-8">
             Use our free planner to generate a personalised week of healthy Australian school lunches in seconds.
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="inline-block bg-[#F5A623] hover:bg-[#D4850A] text-white font-semibold px-8 py-3 rounded-full transition-colors mb-6"
+            className="inline-block bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold px-10 py-4 rounded-full transition-colors shadow-lg mb-8"
           >
             Try the Planner →
           </Link>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#F5A623]">
-            <Link href={`/${locale}/blog`} className="hover:underline">← All articles</Link>
-            <Link href={`/${locale}/faq`} className="hover:underline">FAQs</Link>
-            <Link href={`/${locale}/about`} className="hover:underline">About us</Link>
-            <Link href={`/${locale}/contact`} className="hover:underline">Contact</Link>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
+            <Link href={`/${locale}/blog`} className="hover:text-white transition-colors">← All articles</Link>
+            <Link href={`/${locale}/faq`} className="hover:text-white transition-colors">FAQs</Link>
+            <Link href={`/${locale}/about`} className="hover:text-white transition-colors">About us</Link>
+            <Link href={`/${locale}/contact`} className="hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#7B3F00] text-white py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
-          </p>
-          <div className="flex gap-4 text-sm opacity-75">
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
+      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">AL</span>
+                </div>
+                <span className="font-bold">Aussie Lunchbox</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Product</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Company</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Legal</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
           </div>
         </div>
       </footer>

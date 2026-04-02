@@ -108,36 +108,37 @@ export default async function FAQPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FDFAF2]">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+
       {/* Hero */}
-      <section
-        className="text-white text-center py-16 px-4"
-        style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}
-      >
-        <h1 className="text-4xl font-bold mb-3">Frequently Asked Questions</h1>
-        <p className="text-lg opacity-90 max-w-xl mx-auto">
+      <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">Help Centre</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
           Everything you need to know about Aussie Lunchbox Planner.
         </p>
       </section>
 
-      {/* FAQ accordion — uses <details>/<summary> for Google-crawlable content */}
-      <section className="max-w-3xl mx-auto px-4 py-16">
+      {/* FAQ accordion */}
+      <section className="max-w-3xl mx-auto px-4 py-20">
         <div className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
-            <details key={i} className="bg-white rounded-2xl shadow overflow-hidden group">
-              <summary className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors cursor-pointer list-none">
-                <span className="font-semibold text-[#7B3F00] text-sm md:text-base leading-snug">
+            <details key={i} className="bg-[#FFF8EE] rounded-3xl overflow-hidden group">
+              <summary className="w-full text-left px-7 py-5 flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors cursor-pointer list-none">
+                <span className="font-semibold text-[#1a1a1a] text-sm md:text-base leading-snug">
                   {item.q}
                 </span>
                 <span className="text-[#F5A623] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+              <div className="px-7 pb-6 text-gray-600 text-sm leading-relaxed border-t border-orange-100 pt-4">
                 {item.a}
               </div>
             </details>
@@ -145,14 +146,14 @@ export default async function FAQPage() {
         </div>
 
         {/* Still have questions CTA */}
-        <div className="mt-12 bg-[#7B3F00] text-white rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-2">Still have questions?</h2>
-          <p className="text-sm opacity-80 mb-5">
+        <div className="mt-12 bg-[#7B3F00] text-white rounded-3xl p-10 text-center">
+          <h2 className="text-2xl font-extrabold mb-2">Still have questions?</h2>
+          <p className="text-white/80 text-sm mb-6">
             Can&apos;t find the answer you&apos;re looking for? Send us a message — we&apos;d love to help.
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-block bg-[#F5A623] hover:bg-[#D4850A] px-7 py-3 rounded-full font-semibold text-sm transition-colors"
+            className="inline-block bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white px-8 py-3 rounded-full font-bold text-sm transition-colors"
           >
             Contact Us →
           </Link>
@@ -160,15 +161,43 @@ export default async function FAQPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#7B3F00] text-white py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
-          </p>
-          <div className="flex gap-4 text-sm opacity-75">
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
+      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">AL</span>
+                </div>
+                <span className="font-bold">Aussie Lunchbox</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Product</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Company</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">Legal</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
           </div>
         </div>
       </footer>
