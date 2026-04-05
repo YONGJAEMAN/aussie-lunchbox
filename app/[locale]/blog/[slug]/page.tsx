@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { POSTS, BLOG_CARDS } from "@/content/posts";
 import { BRAND } from "@/lib/brand";
 import AdUnit from "@/components/AdUnit";
@@ -179,6 +180,8 @@ export default async function BlogPostPage({
   const post = POSTS[slug];
   if (!post) notFound();
 
+  const t = await getTranslations();
+
   const author = post.author ?? "Aussie Lunchbox Team";
 
   // Related posts: same category first, then fill from others
@@ -231,7 +234,7 @@ export default async function BlogPostPage({
             href={`/${locale}/blog`}
             className="text-xs text-white/70 hover:text-white mb-2 transition-colors"
           >
-            ← Blog
+            &larr; {t("blog_post_back")}
           </Link>
           <span className="bg-[#F5A623] text-xs font-semibold px-3 py-1 rounded-full mb-4">
             {post.category}
@@ -264,13 +267,13 @@ export default async function BlogPostPage({
             <p className="text-sm font-semibold text-[#7B3F00]">{author}</p>
             <p className="text-xs text-gray-400">{post.date} · {post.readTime}</p>
             <p className="text-xs text-gray-400 mt-0.5">
-              Reviewed by the{" "}
+              {t("blog_post_reviewed_by")}{" "}
               <Link href={`/${locale}/about`} className="text-[#F5A623] hover:underline">
-                Aussie Lunchbox editorial team
+                {t("blog_post_editorial_team")}
               </Link>
-              {" "}· Content follows{" "}
+              {" "}&middot; {t("blog_post_content_follows")}{" "}
               <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                Australian Dietary Guidelines
+                {t("blog_post_nz_guidelines")}
               </a>
             </p>
           </div>
@@ -300,22 +303,22 @@ export default async function BlogPostPage({
         {/* E-E-A-T: editorial note */}
         <div className="mt-10 pt-6 border-t border-gray-100">
           <div className="bg-[#FFF8EE] rounded-2xl p-5">
-            <p className="text-xs font-semibold text-[#7B3F00] uppercase tracking-wide mb-2">About this article</p>
+            <p className="text-xs font-semibold text-[#7B3F00] uppercase tracking-wide mb-2">{t("blog_post_about_article")}</p>
             <p className="text-sm text-gray-600 leading-relaxed">
-              This article was written and reviewed by the Aussie Lunchbox editorial team — parents, home cooks, and nutrition-conscious writers based in Australia. We aim to provide practical, evidence-based lunchbox guidance aligned with the{" "}
+              {t("blog_post_about_desc")}{" "}
               <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                Australian Dietary Guidelines
+                {t("blog_post_nz_guidelines")}
               </a>
-              . If you spot an error or have a suggestion, please{" "}
+              . {t("blog_post_spot_error")}{" "}
               <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
-                contact us
+                {t("blog_post_contact_us")}
               </Link>
               .
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3 text-xs text-gray-400">
-              <span>Published: {post.date}</span>
-              <Link href={`/${locale}/about`} className="text-[#F5A623] hover:underline">Editorial standards →</Link>
-              <Link href={`/${locale}/policies`} className="text-[#F5A623] hover:underline">Privacy & disclaimer →</Link>
+              <span>{t("blog_post_published")}: {post.date}</span>
+              <Link href={`/${locale}/about`} className="text-[#F5A623] hover:underline">{t("blog_post_editorial_standards")}</Link>
+              <Link href={`/${locale}/policies`} className="text-[#F5A623] hover:underline">{t("blog_post_privacy_disclaimer")}</Link>
             </div>
           </div>
         </div>
@@ -333,7 +336,7 @@ export default async function BlogPostPage({
       {relatedPosts.length > 0 && (
         <section className="max-w-5xl mx-auto px-4 pb-12">
           <h2 className="text-xl font-bold text-[#7B3F00] mb-6">
-            More {post.category} articles
+            {t("blog_post_more_articles", { category: post.category })}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {relatedPosts.map((related) => (
@@ -369,22 +372,22 @@ export default async function BlogPostPage({
       <section className="bg-[#7B3F00] py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-extrabold text-white mb-3">
-            Ready to plan your week?
+            {t("blog_post_cta_title")}
           </h2>
           <p className="text-white/80 mb-8">
-            Use our free planner to generate a personalised week of healthy Australian school lunches in seconds.
+            {t("blog_post_cta_desc")}
           </p>
           <Link
             href={`/${locale}/planner`}
             className="inline-block bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold px-10 py-4 rounded-full transition-colors shadow-lg mb-8"
           >
-            Try the Planner →
+            {t("blog_post_cta_btn")}
           </Link>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
-            <Link href={`/${locale}/blog`} className="hover:text-white transition-colors">← All articles</Link>
-            <Link href={`/${locale}/faq`} className="hover:text-white transition-colors">FAQs</Link>
-            <Link href={`/${locale}/about`} className="hover:text-white transition-colors">About us</Link>
-            <Link href={`/${locale}/contact`} className="hover:text-white transition-colors">Contact</Link>
+            <Link href={`/${locale}/blog`} className="hover:text-white transition-colors">&larr; {t("blog_post_all_articles")}</Link>
+            <Link href={`/${locale}/faq`} className="hover:text-white transition-colors">{t("blog_post_faqs")}</Link>
+            <Link href={`/${locale}/about`} className="hover:text-white transition-colors">{t("blog_post_about_us")}</Link>
+            <Link href={`/${locale}/contact`} className="hover:text-white transition-colors">{t("blog_post_contact")}</Link>
           </div>
         </div>
       </section>
@@ -400,33 +403,33 @@ export default async function BlogPostPage({
                 </div>
                 <span className="font-bold">Aussie Lunchbox</span>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Product</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
-                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
-                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Company</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
-                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Legal</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
-                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
               </div>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
+            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </footer>

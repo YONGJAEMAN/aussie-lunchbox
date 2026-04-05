@@ -5,11 +5,13 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
+import { useTranslations } from "next-intl";
 
 export default function AccountPage() {
   const params = useParams();
   const locale = (params.locale as string) ?? "en";
   const router = useRouter();
+  const t = useTranslations();
 
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -59,7 +61,7 @@ export default function AccountPage() {
     } else {
       const { error } = await supabase.auth.signUp({ email, password });
       if (error) setAuthError(error.message);
-      else setAuthSuccess("Check your email to confirm your account!");
+      else setAuthSuccess(t("account_confirm_email"));
     }
     setAuthLoading(false);
   }
@@ -73,7 +75,7 @@ export default function AccountPage() {
   if (loading) {
     return (
       <main className="min-h-screen bg-[#FDFAF2] flex items-center justify-center">
-        <div className="text-gray-400">Loading...</div>
+        <div className="text-gray-400">{t("account_loading")}</div>
       </main>
     );
   }
@@ -82,8 +84,8 @@ export default function AccountPage() {
     <main className="min-h-screen bg-[#FDFAF2]">
       {/* Hero */}
       <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)" }}>
-        <h1 className="text-4xl font-bold mb-3">👤 My Account</h1>
-        <p className="text-lg opacity-90">Manage your profile, preferences, and saved plans.</p>
+        <h1 className="text-4xl font-bold mb-3">👤 {t("account_title")}</h1>
+        <p className="text-lg opacity-90">{t("account_subtitle")}</p>
       </section>
 
       <section className="max-w-lg mx-auto py-16 px-4">
@@ -110,23 +112,23 @@ export default function AccountPage() {
                   </h2>
                   <p className="text-gray-500 text-sm">{user.email}</p>
                   <span className="inline-block mt-1 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
-                    Active Member
+                    {t("account_active_member")}
                   </span>
                 </div>
               </div>
 
               <div className="border-t border-gray-100 pt-5 flex justify-around text-center">
                 <div>
-                  <p className="text-2xl font-bold text-[#7B3F00]">Free</p>
-                  <p className="text-xs text-gray-400 mt-1">Plan</p>
+                  <p className="text-2xl font-bold text-[#7B3F00]">{t("account_plan_free")}</p>
+                  <p className="text-xs text-gray-400 mt-1">{t("account_plan_label")}</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-[#7B3F00]">–</p>
-                  <p className="text-xs text-gray-400 mt-1">Saved Plans</p>
+                  <p className="text-xs text-gray-400 mt-1">{t("account_saved_plans")}</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-[#7B3F00]">–</p>
-                  <p className="text-xs text-gray-400 mt-1">Favourites</p>
+                  <p className="text-xs text-gray-400 mt-1">{t("account_favourites")}</p>
                 </div>
               </div>
             </div>
@@ -137,13 +139,13 @@ export default function AccountPage() {
                 href={`/${locale}/planner`}
                 className="block w-full text-center bg-[#F5A623] hover:bg-[#7B3F00] text-white font-semibold py-3 rounded-xl transition-colors"
               >
-                🍱 Go to Planner
+                🍱 {t("account_go_planner")}
               </Link>
               <button
                 onClick={handleSignOut}
                 className="w-full border border-red-300 text-red-500 hover:bg-red-50 font-semibold py-3 rounded-xl transition-colors"
               >
-                Sign Out
+                {t("account_sign_out")}
               </button>
             </div>
           </div>
@@ -153,15 +155,15 @@ export default function AccountPage() {
             {/* Why join */}
             <div className="bg-white rounded-2xl shadow p-8 text-center">
               <div className="text-5xl mb-4">👋</div>
-              <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">Welcome, Guest!</h2>
+              <h2 className="text-2xl font-bold text-[#7B3F00] mb-2">{t("account_welcome")}</h2>
               <p className="text-gray-500 mb-6 leading-relaxed">
-                Log in to save your favourite recipes and weekly meal plans permanently.
+                {t("account_welcome_desc")}
               </p>
               <div className="bg-[#FFF4DE] rounded-xl p-4 text-left text-sm text-[#7B3F00] space-y-1">
-                <p className="font-semibold mb-2">Why Join?</p>
-                <p>✨ Save Weekly Plans</p>
-                <p>❤️ Track Favourite Recipes</p>
-                <p>📩 Email Plans to Yourself</p>
+                <p className="font-semibold mb-2">{t("account_why_join")}</p>
+                <p>✨ {t("account_save_plans_feature")}</p>
+                <p>❤️ {t("account_track_favs_feature")}</p>
+                <p>📩 {t("account_email_plans_feature")}</p>
               </div>
             </div>
 
@@ -177,7 +179,7 @@ export default function AccountPage() {
                       authMode === mode ? "bg-[#F5A623] text-white" : "text-gray-500 hover:bg-gray-50"
                     }`}
                   >
-                    {mode === "login" ? "Log In" : "Sign Up"}
+                    {mode === "login" ? t("login") : t("signup")}
                   </button>
                 ))}
               </div>
@@ -194,7 +196,7 @@ export default function AccountPage() {
                   <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
                   <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
                 </svg>
-                Continue with Google
+                {t("login_with_google")}
               </button>
 
               <div className="flex items-center gap-3 text-gray-300 text-sm mb-4">
@@ -207,14 +209,14 @@ export default function AccountPage() {
               <form onSubmit={handleEmailAuth} className="space-y-3">
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder={t("account_email_placeholder")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                 />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder={t("account_password_placeholder")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
@@ -226,7 +228,7 @@ export default function AccountPage() {
                   disabled={authLoading}
                   className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
                 >
-                  {authLoading ? "Please wait..." : authMode === "login" ? "Log In" : "Create Account"}
+                  {authLoading ? t("account_please_wait") : authMode === "login" ? t("login") : t("account_create_account")}
                 </button>
               </form>
             </div>
@@ -238,12 +240,12 @@ export default function AccountPage() {
       <footer className="bg-[#7B3F00] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
+            {t("footer_copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4 text-sm opacity-75">
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
+            <Link href={`/${locale}/terms`} className="hover:opacity-100">{t("footer_terms")}</Link>
+            <Link href={`/${locale}/policies`} className="hover:opacity-100">{t("footer_privacy")}</Link>
+            <Link href={`/${locale}/contact`} className="hover:opacity-100">{t("footer_contact")}</Link>
           </div>
         </div>
       </footer>

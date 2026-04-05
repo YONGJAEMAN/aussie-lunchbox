@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.aussielunchbox.com";
@@ -43,6 +43,7 @@ export async function generateMetadata({
 
 export default async function HomePage() {
   const locale = await getLocale();
+  const t = await getTranslations();
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
@@ -73,26 +74,26 @@ export default async function HomePage() {
           priority
         />
         <div className="absolute inset-0 bg-[#7B3F00]/55" />
-        <h1 className="relative z-10 text-5xl font-bold text-white mb-4 drop-shadow-lg">Aussie Lunchbox</h1>
-        <p className="relative z-10 text-xl text-white/90 mb-8 max-w-xl drop-shadow">Fresh Ideas for Happy Kids</p>
+        <h1 className="relative z-10 text-5xl font-bold text-white mb-4 drop-shadow-lg">{t("home_hero_title")}</h1>
+        <p className="relative z-10 text-xl text-white/90 mb-8 max-w-xl drop-shadow">{t("home_hero_subtitle")}</p>
         <Link
           href={`/${locale}/planner`}
           className="relative z-10 bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg"
         >
-          ✨ START PLANNING NOW ✨
+          {t("home_cta")}
         </Link>
       </section>
 
       {/* Features */}
       <section className="max-w-5xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">
-          🌟 Why Aussie Lunchbox?
+          {t("home_why")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: "🍱", title: "Nutritious Menus", desc: "Balanced meals approved by nutrition guidelines." },
-            { icon: "🛒", title: "Smart Shopping", desc: "Auto-generated shopping lists with smooth categorization." },
-            { icon: "⏱️", title: "Save Time", desc: "Plan your entire week of lunches in under 1 minute." },
+            { icon: "🍱", title: t("home_feat1_title"), desc: t("home_feat1_desc") },
+            { icon: "🛒", title: t("home_feat2_title"), desc: t("home_feat2_desc") },
+            { icon: "⏱️", title: t("home_feat3_title"), desc: t("home_feat3_desc") },
           ].map((f) => (
             <div
               key={f.title}
@@ -109,12 +110,12 @@ export default async function HomePage() {
       {/* How it works */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">How It Works</h2>
+          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-12">{t("home_how_heading")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              { step: "1", title: "Set your filters", desc: "Choose allergy filters, excluded ingredients, or add fridge leftovers. Takes 30 seconds." },
-              { step: "2", title: "Generate your plan", desc: "Get a balanced 5-day school lunch plan with recipes, ingredients, and estimated costs." },
-              { step: "3", title: "Shop & pack with ease", desc: "Download a categorised shopping list as a PDF or email it to yourself." },
+              { step: "1", title: t("home_step1_title"), desc: t("home_step1_desc") },
+              { step: "2", title: t("home_step2_title"), desc: t("home_step2_desc") },
+              { step: "3", title: t("home_step3_title"), desc: t("home_step3_desc") },
             ].map((s) => (
               <div key={s.step} className="text-center">
                 <div className="w-12 h-12 rounded-full bg-[#F5A623] text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
@@ -128,7 +129,7 @@ export default async function HomePage() {
 
           {/* Sample plan preview */}
           <div className="bg-[#FDFAF2] rounded-2xl p-6">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Example weekly plan</p>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">{t("home_example_label")}</p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {[
                 { day: "Mon", menu: "Vegemite & Cheese Scrolls", cost: "$1.80", tag: "Baking" },
@@ -146,12 +147,12 @@ export default async function HomePage() {
               ))}
             </div>
             <div className="mt-4 flex items-center justify-between text-sm">
-              <span className="text-gray-500">Est. weekly cost: <strong className="text-[#7B3F00]">~$12.40</strong></span>
+              <span className="text-gray-500">{t("home_example_cost")} <strong className="text-[#7B3F00]">~$12.40</strong></span>
               <Link
                 href={`/${locale}/planner`}
                 className="text-[#F5A623] font-semibold hover:underline"
               >
-                Generate your own →
+                {t("home_example_generate")} →
               </Link>
             </div>
           </div>
@@ -161,24 +162,24 @@ export default async function HomePage() {
       {/* How AU Families Use It */}
       <section className="bg-[#FDFAF2] py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-3">How Aussie Families Use It</h2>
-          <p className="text-center text-gray-500 mb-10 max-w-xl mx-auto text-sm">Real use cases from parents planning school lunches across Australia.</p>
+          <h2 className="text-3xl font-bold text-center text-[#7B3F00] mb-3">{t("home_usecases_heading")}</h2>
+          <p className="text-center text-gray-500 mb-10 max-w-xl mx-auto text-sm">{t("home_usecases_label")}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: "📅",
-                title: "Sunday Evening, Done",
-                desc: "Open the planner on Sunday, hit Generate, and you're sorted before the kids' bedtime. No Monday morning scramble, no forgotten lunchbox.",
+                title: t("home_usecase1_title"),
+                desc: t("home_usecase1_desc"),
               },
               {
                 icon: "🚫🥜",
-                title: "Allergy Filters That Actually Work",
-                desc: "Select nut-free, dairy-free, gluten-free, or vegan — every meal in the generated plan respects your filters. No manual ingredient checking.",
+                title: t("home_usecase2_title"),
+                desc: t("home_usecase2_desc"),
               },
               {
                 icon: "💵",
-                title: "Under $3 Per Lunch",
-                desc: "Woolworths and Coles price estimates are built in. See your full weekly lunchbox cost before you shop.",
+                title: t("home_usecase3_title"),
+                desc: t("home_usecase3_desc"),
               },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl shadow p-8 text-center hover:-translate-y-1 transition-transform">
@@ -194,12 +195,12 @@ export default async function HomePage() {
       {/* Blog preview */}
       <section className="max-w-5xl mx-auto py-16 px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-[#7B3F00]">📖 Lunchbox Tips</h2>
+          <h2 className="text-3xl font-bold text-[#7B3F00]">📖 {t("home_blog_heading")}</h2>
           <Link
             href={`/${locale}/blog`}
             className="text-[#F5A623] text-sm font-semibold hover:underline"
           >
-            View all articles →
+            {t("home_blog_view_all")} →
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -238,19 +239,56 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="bg-[#7B3F00] py-16 px-4 text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">{t("home_cta_heading")}</h2>
+        <p className="text-white/80 mb-8 max-w-xl mx-auto">{t("home_cta_desc")}</p>
+        <Link
+          href={`/${locale}/planner`}
+          className="bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
+        >
+          {t("home_start_planning")}
+        </Link>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-[#7B3F00] text-white py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.
-          </p>
-          <div className="flex gap-6 text-sm opacity-75">
-            <Link href={`/${locale}/blog`} className="hover:opacity-100">Blog</Link>
-            <Link href={`/${locale}/faq`} className="hover:opacity-100">FAQ</Link>
-            <Link href={`/${locale}/about`} className="hover:opacity-100">About</Link>
-            <Link href={`/${locale}/contact`} className="hover:opacity-100">Contact</Link>
-            <Link href={`/${locale}/terms`} className="hover:opacity-100">Terms</Link>
-            <Link href={`/${locale}/policies`} className="hover:opacity-100">Privacy</Link>
+      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">AL</span>
+                </div>
+                <span className="font-bold">Aussie Lunchbox</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </footer>

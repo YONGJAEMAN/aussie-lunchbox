@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { BLOG_CARDS } from "@/content/posts";
 import { BRAND } from "@/lib/brand";
 
@@ -38,21 +39,34 @@ export default async function BlogPage({
   const { locale } = await params;
   if (!SUPPORTED_LOCALES.includes(locale)) notFound();
 
-  const categories = ["All", "Recipes", "Allergy Friendly", "Budget", "Nutrition", "Meal Prep", "Seasonal", "Parenting Tips", "Sustainability", "Gear & Tips"];
+  const t = await getTranslations();
+
+  const categories = [
+    t("blog_cat_all"),
+    t("blog_cat_recipes"),
+    t("blog_cat_allergy"),
+    t("blog_cat_budget"),
+    t("blog_cat_nutrition"),
+    t("blog_cat_meal_prep"),
+    t("blog_cat_seasonal"),
+    t("blog_cat_parenting"),
+    t("blog_cat_sustainability"),
+    t("blog_cat_gear"),
+  ];
 
   return (
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">The Blog</p>
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">{t("blog_section_label")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
-          Lunchbox Tips & Ideas
+          {t("blog_title")}
         </h1>
         <p className="text-gray-500 text-lg max-w-xl mx-auto mb-2 leading-relaxed">
-          Practical advice, healthy recipes, and inspiration for Australian school lunches.
+          {t("blog_subtitle")}
         </p>
         <p className="text-sm text-gray-400 max-w-2xl mx-auto mb-10">
-          18 guides covering recipes, allergy-safe meals, budget tips, and AU seasonal produce — written for Aussie families.
+          {t("blog_count")}
         </p>
         {/* Category filter bar */}
         <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
@@ -110,16 +124,16 @@ export default async function BlogPage({
       {/* CTA */}
       <section className="bg-[#7B3F00] py-20 px-4 text-center">
         <h2 className="text-3xl font-extrabold text-white mb-3">
-          Ready to Plan Your Week?
+          {t("blog_cta_title")}
         </h2>
         <p className="text-white/80 mb-8 max-w-md mx-auto">
-          Use our free planner to generate a week of healthy lunches in seconds.
+          {t("blog_cta_desc")}
         </p>
         <Link
           href={`/${locale}/planner`}
           className="inline-block bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold px-10 py-4 rounded-full transition-colors shadow-lg"
         >
-          Try the Planner →
+          {t("blog_cta_btn")}
         </Link>
       </section>
 
@@ -134,33 +148,33 @@ export default async function BlogPage({
                 </div>
                 <span className="font-bold">Aussie Lunchbox</span>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Product</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
-                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
-                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Company</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
-                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Legal</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
-                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
               </div>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
+            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.aussielunchbox.com";
@@ -28,17 +28,18 @@ export async function generateMetadata({
 
 export default async function AboutPage() {
   const locale = await getLocale();
+  const t = await getTranslations();
 
   return (
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">Our Story</p>
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_our_story")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
-          About Aussie Lunchbox
+          {t("about_title")}
         </h1>
         <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-          Making school lunches easier, healthier, and stress-free for Australian families.
+          {t("about_subtitle")}
         </p>
       </section>
 
@@ -46,15 +47,15 @@ export default async function AboutPage() {
       <section className="max-w-5xl mx-auto py-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
           <div className="md:col-span-3 bg-[#FFF8EE] rounded-3xl p-10">
-            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">G&apos;day!</h2>
+            <h2 className="text-2xl font-bold text-[#F5A623] mb-4">{t("about_greeting")}</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              Welcome to <strong>Aussie Lunchbox</strong>, your trusted partner in simplifying school mornings for Australian families.
+              {t("about_intro")}
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              We understand the daily challenge of packing lunchboxes that are nutritious, affordable, and actually eaten by kids. Our mission is to empower parents with balanced meal plans that reduce decision fatigue and food waste.
+              {t("about_mission1")}
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Started in Sydney by parents who were tired of googling the same lunchbox ideas every Sunday night. Everyone involved has school-age children in Australia.
+              {t("about_mission2")}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -63,7 +64,7 @@ export default async function AboutPage() {
               alt="Fresh Australian ingredients"
               className="rounded-3xl shadow-lg w-full object-cover"
             />
-            <p className="text-center text-sm text-gray-400 mt-2">Fresh, local Australian ingredients</p>
+            <p className="text-center text-sm text-gray-400 mt-2">{t("about_img_caption")}</p>
           </div>
         </div>
       </section>
@@ -71,24 +72,24 @@ export default async function AboutPage() {
       {/* Why Choose Us */}
       <section className="bg-[#FFF8EE] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">Why Us</p>
-          <h2 className="text-3xl font-extrabold text-center text-[#1a1a1a] mb-12">Why Choose Us?</h2>
+          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>
+          <h2 className="text-3xl font-extrabold text-center text-[#1a1a1a] mb-12">{t("about_why_title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: "🚀",
-                title: "Streamlined Mornings",
-                desc: "Generate a complete weekly plan in seconds. Say goodbye to the morning rush and hello to organized, stress-free starts to your day.",
+                title: t("about_feat1_title"),
+                desc: t("about_feat1_desc"),
               },
               {
                 icon: "🌿",
-                title: "Sustainable & Local",
-                desc: "We prioritize seasonal ingredients accessible in Australian supermarkets to help you reduce food miles and minimize waste.",
+                title: t("about_feat2_title"),
+                desc: t("about_feat2_desc"),
               },
               {
                 icon: "🥗",
-                title: "Nutritionally Balanced",
-                desc: "Our algorithms ensure a mix of protein, fresh produce, and treats, aligned with Australian Dietary Guidelines for active kids.",
+                title: t("about_feat3_title"),
+                desc: t("about_feat3_desc"),
               },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-3xl p-8 text-center shadow-sm hover:-translate-y-1 transition-transform">
@@ -103,10 +104,10 @@ export default async function AboutPage() {
 
       {/* Who We Are */}
       <section className="max-w-5xl mx-auto py-20 px-4">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">The Team</p>
-        <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">Who Runs Aussie Lunchbox</h2>
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_the_team")}</p>
+        <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">{t("about_team_title")}</h2>
         <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-          We&apos;re not a faceless content farm. Aussie Lunchbox was started in Sydney by parents who were tired of googling the same lunchbox ideas every Sunday night. Everyone involved has school-age children in Australia.
+          {t("about_team_desc")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
@@ -148,10 +149,10 @@ export default async function AboutPage() {
       {/* How We Source Our Information */}
       <section className="bg-[#FFF8EE] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
-          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">How We Research & Verify Content</h2>
+          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_editorial")}</p>
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">{t("about_editorial_title")}</h2>
           <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-            Everything we publish goes through a consistent review process. Here&apos;s exactly how we work.
+            {t("about_editorial_desc")}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
@@ -243,7 +244,7 @@ export default async function AboutPage() {
       {/* What We Are Not */}
       <section className="max-w-5xl mx-auto py-12 px-4">
         <div className="bg-amber-50 border border-amber-200 rounded-3xl p-7">
-          <h3 className="font-bold text-amber-800 mb-3">Important: what Aussie Lunchbox is not</h3>
+          <h3 className="font-bold text-amber-800 mb-3">{t("about_important_title")}</h3>
           <ul className="text-amber-700 text-sm space-y-2 leading-relaxed">
             <li>❌ We are <strong>not a medical or dietetic service</strong>. Our content is general guidance for healthy children, not personalised nutrition advice. If your child has a medical condition or complex dietary needs, consult a registered dietitian.</li>
             <li>❌ We are <strong>not affiliated with Woolworths, Coles, or any supermarket</strong>. Price data is collected independently. We do not receive payment for product recommendations.</li>
@@ -255,15 +256,15 @@ export default async function AboutPage() {
       {/* Community CTA */}
       <section className="bg-[#7B3F00] py-20 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-3xl font-extrabold text-white mb-4">Join Our Community</h3>
+          <h3 className="text-3xl font-extrabold text-white mb-4">{t("about_community_title")}</h3>
           <p className="text-white/80 mb-8 leading-relaxed">
-            We are constantly improving based on your feedback. Together, let&apos;s make healthy eating the easy choice for Australian kids.
+            {t("about_community_desc")}
           </p>
           <Link
             href={`/${locale}/planner`}
             className="bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
           >
-            Start Planning Now
+            {t("about_start_btn")}
           </Link>
         </div>
       </section>
@@ -279,33 +280,33 @@ export default async function AboutPage() {
                 </div>
                 <span className="font-bold">Aussie Lunchbox</span>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">Free school lunch planner for Australian families.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Product</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">Planner</Link>
-                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">Blog</Link>
-                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">FAQ</Link>
+                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
+                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
+                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Company</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">About</Link>
-                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">Contact</Link>
+                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
+                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
               </div>
             </div>
             <div>
-              <p className="font-semibold text-sm mb-4">Legal</p>
+              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
               <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">Terms</Link>
-                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">Privacy</Link>
+                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
+                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
               </div>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Aussie Lunchbox — The Lunch Planner for Australian Families.</p>
+            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </footer>
