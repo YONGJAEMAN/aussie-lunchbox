@@ -2,12 +2,13 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "redirects": [
+  "headers": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "aussielunchbox.com" }],
-      "destination": "https://www.aussielunchbox.com/$1",
-      "permanent": true
+      "source": "/ads.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ]
 }
