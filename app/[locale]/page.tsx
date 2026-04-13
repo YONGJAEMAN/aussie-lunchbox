@@ -239,6 +239,40 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ── Testimonials ── */}
+      <section className="bg-[#FFF8EE] py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_testimonials_label")}</p>
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-12">{t("home_testimonials_heading")}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { text: t("home_testimonial1_text"), name: t("home_testimonial1_name") },
+              { text: t("home_testimonial2_text"), name: t("home_testimonial2_name") },
+              { text: t("home_testimonial3_text"), name: t("home_testimonial3_name") },
+            ].map((item) => (
+              <div key={item.name} className="bg-white rounded-3xl p-8 text-left shadow-sm">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;{item.text}&rdquo;</p>
+                <p className="text-sm font-semibold text-[#7B3F00]">— {item.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Nutrition Commitment ── */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto bg-[#FFF4DE] rounded-3xl p-10 md:p-14 text-center">
+          <p className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_commitment_label")}</p>
+          <h2 className="text-3xl font-extrabold text-[#7B3F00] mb-4">{t("home_commitment_heading")}</h2>
+          <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl mx-auto">
+            {t("home_commitment_desc")}
+          </p>
+          <Link href={`/${locale}/about`} className="text-[#7B3F00] font-semibold text-sm hover:underline">
+            {t("home_commitment_link")}
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#7B3F00] py-16 px-4 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">{t("home_cta_heading")}</h2>

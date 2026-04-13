@@ -36,20 +36,25 @@ export default async function FAQPage() {
   const locale = await getLocale();
   const t = await getTranslations();
 
-  const faqItems: FAQItem[] = Array.from({ length: 14 }, (_, i) => ({
-    q: t(`faq_q${i + 1}`),
-    a: t(`faq_a${i + 1}`),
-  }));
+  const FAQ_CATEGORIES = [
+    { label: t("faq_cat_getting_started"), keys: [1, 2, 7, 8, 10, 13, 15, 16] },
+    { label: t("faq_cat_allergies"), keys: [3, 4, 9, 17, 18, 19] },
+    { label: t("faq_cat_budget"), keys: [5, 20, 21, 22] },
+    { label: t("faq_cat_nutrition"), keys: [6, 23, 24, 25] },
+    { label: t("faq_cat_technical"), keys: [11, 12, 14, 26, 27, 28, 29, 30] },
+  ];
+
+  const ALL_FAQ_KEYS = FAQ_CATEGORIES.flatMap((c) => c.keys);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqItems.map((item) => ({
+    mainEntity: ALL_FAQ_KEYS.map((n) => ({
       "@type": "Question",
-      name: item.q,
+      name: t(`faq_q${n}`),
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.a,
+        text: t(`faq_a${n}`),
       },
     })),
   };
@@ -72,23 +77,30 @@ export default async function FAQPage() {
         </p>
       </section>
 
-      {/* FAQ accordion */}
+      {/* FAQ accordion by category */}
       <section className="max-w-3xl mx-auto px-4 py-20">
-        <div className="space-y-3">
-          {faqItems.map((item, i) => (
-            <details key={i} className="bg-[#FFF8EE] rounded-3xl overflow-hidden group">
-              <summary className="w-full text-left px-7 py-5 flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors cursor-pointer list-none">
-                <span className="font-semibold text-[#1a1a1a] text-sm md:text-base leading-snug">
-                  {item.q}
-                </span>
-                <span className="text-[#F5A623] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <div className="px-7 pb-6 text-gray-600 text-sm leading-relaxed border-t border-orange-100 pt-4">
-                {item.a}
+        <div className="space-y-10">
+          {FAQ_CATEGORIES.map((cat) => (
+            <div key={cat.label}>
+              <h2 className="text-xl font-bold text-[#7B3F00] mb-4">{cat.label}</h2>
+              <div className="space-y-3">
+                {cat.keys.map((n) => (
+                  <details key={n} className="bg-[#FFF8EE] rounded-3xl overflow-hidden group">
+                    <summary className="w-full text-left px-7 py-5 flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors cursor-pointer list-none">
+                      <span className="font-semibold text-[#1a1a1a] text-sm md:text-base leading-snug">
+                        {t(`faq_q${n}`)}
+                      </span>
+                      <span className="text-[#F5A623] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-7 pb-6 text-gray-600 text-sm leading-relaxed border-t border-orange-100 pt-4">
+                      {t(`faq_a${n}`)}
+                    </div>
+                  </details>
+                ))}
               </div>
-            </details>
+            </div>
           ))}
         </div>
 

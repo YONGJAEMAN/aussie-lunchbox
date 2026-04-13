@@ -96,11 +96,22 @@ export default async function LocaleLayout({
       contactType: "customer support",
       email: "aussielunchboxplanner@gmail.com",
     },
-    sameAs: [],
+    sameAs: [
+      "https://www.facebook.com/aussielunchbox",
+      "https://www.instagram.com/aussielunchbox",
+      "https://www.pinterest.com/aussielunchbox",
+    ],
   };
 
   return (
     <html lang={locale}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079938386322416"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -111,13 +122,6 @@ export default async function LocaleLayout({
           {children}
           <CookieConsent />
         </NextIntlClientProvider>
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079938386322416"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         {GA_ID && (
           <>
             <Script

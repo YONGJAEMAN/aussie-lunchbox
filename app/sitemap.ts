@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_SLUGS, POSTS } from "@/content/posts";
+import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { BRAND } from "@/lib/brand";
 
 const BASE_URL = BRAND.SITE_URL;
@@ -14,6 +15,7 @@ const STATIC_ROUTES = [
   "/terms",
   "/faq",
   "/blog",
+  "/guides",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -36,6 +38,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const lastModified = reviewDate && !isNaN(reviewDate.getTime()) ? reviewDate : publishDate;
       entries.push({
         url: `${BASE_URL}/${locale}/blog/${slug}`,
+        lastModified,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+
+    for (const slug of GUIDE_SLUGS) {
+      const guide = GUIDES[slug];
+      const reviewDate = guide.lastReviewed ? new Date(`1 ${guide.lastReviewed}`) : null;
+      const publishDate = new Date(guide.date);
+      const lastModified = reviewDate && !isNaN(reviewDate.getTime()) ? reviewDate : publishDate;
+      entries.push({
+        url: `${BASE_URL}/${locale}/guides/${slug}`,
         lastModified,
         changeFrequency: "monthly",
         priority: 0.6,

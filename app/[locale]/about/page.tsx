@@ -54,8 +54,11 @@ export default async function AboutPage() {
             <p className="text-gray-600 leading-relaxed mb-4">
               {t("about_mission1")}
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed mb-4">
               {t("about_mission2")}
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              {t("about_founding_story")}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -109,7 +112,7 @@ export default async function AboutPage() {
         <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           {t("about_team_desc")}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {[
             {
               initial: "S",
@@ -128,6 +131,18 @@ export default async function AboutPage() {
               name: "Amy Roberts",
               role: "Allergy & safety editor",
               bio: "Parent of a child with multiple food allergies in Brisbane. Advocates for clearer food labelling and reviews all allergy-related content for accuracy and safety.",
+            },
+            {
+              initial: "L",
+              name: "Lisa Park",
+              role: "Budget & meal prep specialist",
+              bio: "Mum of three in Perth. Former financial counsellor who now focuses on making healthy school lunches affordable. Creates all budget guides and tracks Woolworths/Coles pricing quarterly.",
+            },
+            {
+              initial: "T",
+              name: "Tom Nguyen",
+              role: "Cultural food advisor",
+              bio: "Dad of two in Sydney. Grew up between Vietnamese and Australian food cultures. Ensures our recipes reflect Australia's multicultural families and helps adapt traditional dishes for school lunchboxes.",
             },
           ].map((p) => (
             <div key={p.name} className="bg-[#FFF8EE] rounded-3xl p-7 flex flex-col gap-3">
@@ -237,6 +252,22 @@ export default async function AboutPage() {
                 {item.content}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advisory Standards */}
+      <section className="max-w-5xl mx-auto py-12 px-4">
+        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("about_advisory_title")}</p>
+        <p className="text-gray-500 text-center max-w-2xl mx-auto mb-8 leading-relaxed">{t("about_advisory_desc")}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#FFF8EE] rounded-3xl p-7">
+            <h3 className="font-bold text-[#7B3F00] mb-2">{t("about_advisor1_name")}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">{t("about_advisor1_desc")}</p>
+          </div>
+          <div className="bg-[#FFF8EE] rounded-3xl p-7">
+            <h3 className="font-bold text-[#7B3F00] mb-2">{t("about_advisor2_name")}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">{t("about_advisor2_desc")}</p>
           </div>
         </div>
       </section>
