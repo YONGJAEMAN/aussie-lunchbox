@@ -10,7 +10,7 @@ export default function ContactPage() {
   const locale = (params.locale as string) ?? "en";
   const t = useTranslations();
 
-  const [form, setForm] = useState({ name: "", email: "", subject: "General Inquiry", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [loading, setLoading] = useState(false);
 
@@ -21,9 +21,22 @@ export default function ContactPage() {
       return;
     }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
-    setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -101,7 +114,7 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-1">{t("contact_subject_label")}</label>
                   <select
-                    value={form.subject}
+                    value={form.subject || t("contact_subject_general")}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     className="w-full border border-orange-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
                   >
@@ -163,6 +176,7 @@ export default function ContactPage() {
                 <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
                 <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
                 <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
+                <Link href={`/${locale}/guides`} className="block hover:text-white transition-colors">{t("nav_guides")}</Link>
               </div>
             </div>
             <div>

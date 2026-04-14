@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const params = useParams();
   const locale = (params?.locale as string) ?? "en";
+  const t = useTranslations();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -34,13 +36,12 @@ export default function CookieConsent() {
     >
       <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm leading-relaxed flex-1">
-          🍪 We use cookies to improve your experience and to display relevant ads via{" "}
-          <strong>Google AdSense</strong>. By clicking &ldquo;Accept&rdquo;, you consent to our use of cookies.{" "}
+          🍪 {t("cookie_message")}{" "}
           <Link
             href={`/${locale}/policies`}
             className="underline hover:text-[#A8D88A] whitespace-nowrap"
           >
-            Learn more
+            {t("cookie_learn_more")}
           </Link>
           .
         </p>
@@ -49,13 +50,13 @@ export default function CookieConsent() {
             onClick={decline}
             className="px-4 py-2 text-sm border border-white/40 rounded-lg hover:bg-white/10 transition-colors"
           >
-            Decline
+            {t("cookie_decline")}
           </button>
           <button
             onClick={accept}
             className="px-5 py-2 text-sm bg-[#F5A623] hover:bg-[#D4850A] rounded-lg font-semibold transition-colors"
           >
-            Accept
+            {t("cookie_accept")}
           </button>
         </div>
       </div>

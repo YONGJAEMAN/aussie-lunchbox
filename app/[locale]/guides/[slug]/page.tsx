@@ -36,6 +36,8 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/guides/${slug}`,
         en: `${BASE_URL}/en/guides/${slug}`,
+        ko: `${BASE_URL}/ko/guides/${slug}`,
+        "zh-CN": `${BASE_URL}/zh/guides/${slug}`,
       },
     },
     openGraph: {
@@ -210,7 +212,7 @@ export default async function GuideDetailPage({
       "@type": "Organization",
       name: "Aussie Lunchbox",
       url: BASE_URL,
-      logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.ico` },
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/kiwi_lunchbox_logo.png` },
     },
     mainEntityOfPage: {
       "@type": "WebPage",

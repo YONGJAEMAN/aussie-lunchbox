@@ -46,7 +46,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${BASE_URL}/og-image.png`,
+          url: `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: "Aussie Lunchbox – Australian School Lunch Planner",
@@ -57,7 +57,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${BASE_URL}/og-image.png`],
+      images: [`${BASE_URL}/opengraph-image`],
     },
     robots: {
       index: true,
@@ -89,18 +89,14 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: "Aussie Lunchbox",
     url: BASE_URL,
-    logo: `${BASE_URL}/aussie_lunchbox_logo.png`,
+    logo: `${BASE_URL}/assets/kiwi_lunchbox_logo.png`,
     description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists with Woolworths & Coles prices.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "aussielunchboxplanner@gmail.com",
+      email: "aussielunchbox@gmail.com",
     },
-    sameAs: [
-      "https://www.facebook.com/aussielunchbox",
-      "https://www.instagram.com/aussielunchbox",
-      "https://www.pinterest.com/aussielunchbox",
-    ],
+    sameAs: [],
   };
 
   return (

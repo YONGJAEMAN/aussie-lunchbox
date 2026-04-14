@@ -36,6 +36,8 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/blog/${slug}`,
         en: `${BASE_URL}/en/blog/${slug}`,
+        ko: `${BASE_URL}/ko/blog/${slug}`,
+        "zh-CN": `${BASE_URL}/zh/blog/${slug}`,
       },
     },
     openGraph: {
@@ -210,7 +212,7 @@ export default async function BlogPostPage({
       "@type": "Organization",
       name: "Aussie Lunchbox",
       url: BASE_URL,
-      logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.ico` },
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/kiwi_lunchbox_logo.png` },
     },
     mainEntityOfPage: {
       "@type": "WebPage",

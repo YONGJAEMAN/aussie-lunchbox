@@ -1,27 +1,3 @@
-import type { Metadata } from "next";
-
-const BASE_URL = "https://www.aussielunchbox.com";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/faq`;
-  return {
-    alternates: {
-      canonical,
-      languages: {
-        en: `${BASE_URL}/en/faq`,
-        ko: `${BASE_URL}/ko/faq`,
-        "zh-CN": `${BASE_URL}/zh/faq`,
-      },
-    },
-    openGraph: { url: canonical },
-  };
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
