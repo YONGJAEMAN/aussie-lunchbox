@@ -463,5 +463,17 @@
   "about_advisor2_name": "Heart Foundation Australia",
   "about_advisor2_desc": "We reference Heart Foundation Australia's recommendations for children's heart-healthy eating patterns, particularly around reducing sodium and saturated fats in school lunches.",
   "about_founding_story": "It started in 2025 when three of us — all parents at the same Sydney primary school — realised we were spending Sunday evenings doing the exact same thing: searching for lunchbox ideas, checking prices at Woolworths, and trying to remember which kid had which allergy. We built Aussie Lunchbox to solve our own problem first. The tool worked so well for our families that we decided to open it up to everyone.",
-  "about_founding_story_continued": "Since then, we've grown to a small team of parents, writers, and one very persistent spreadsheet enthusiast across Sydney, Melbourne, and Brisbane. Every recipe is tested in a real kitchen, every price is checked at a real supermarket, and every allergy tag is verified against real product labels."
+  "about_founding_story_continued": "Since then, we've grown to a small team of parents, writers, and one very persistent spreadsheet enthusiast across Sydney, Melbourne, and Brisbane. Every recipe is tested in a real kitchen, every price is checked at a real supermarket, and every allergy tag is verified against real product labels.",
+
+  "share_title": "Share Plan",
+  "share_copy_list": "Copy Shopping List",
+  "share_copied": "Copied!",
+  "share_native": "Share",
+  "share_whatsapp": "WhatsApp",
+  "share_facebook": "Facebook",
+  "share_copy_link": "Copy Link",
+  "share_link_copied": "Link copied!",
+  "share_plan_text": "Check out this week's school lunchbox plan!",
+  "planner_restored": "Your last plan has been restored.",
+  "planner_restore_dismiss": "Dismiss"
 }

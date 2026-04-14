@@ -50,6 +50,13 @@ export default function PlannerPage() {
   // Recipe modal
   const [activeRecipe, setActiveRecipe] = useState<PlanItem | null>(null);
 
+  // Restored plan state
+  const [restored, setRestored] = useState(false);
+
+  // Share state
+  const [listCopied, setListCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+
   // Saved favorites from DB
   const [dbFavorites, setDbFavorites] = useState<string[]>([]);
 
@@ -84,6 +91,23 @@ export default function PlannerPage() {
       .then(({ data }) => setDbFavorites(data?.map((r) => r.name) ?? []));
   }, [user]);
 
+  // Restore last plan from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("lunchbox-plan");
+      if (saved && planData.length === 0) {
+        const parsed = JSON.parse(saved);
+        const age = Date.now() - (parsed.generatedAt ?? 0);
+        if (age < 24 * 60 * 60 * 1000) {
+          setPlanData(parsed.planData ?? []);
+          setShoppingList(parsed.shoppingList ?? []);
+          setPrices(parsed.prices ?? {});
+          setRestored(true);
+        }
+      }
+    } catch {}
+  }, []);
+
   async function handleGenerate() {
     setGenerating(true);
     setError("");
@@ -108,6 +132,16 @@ export default function PlannerPage() {
       setShoppingList(data.shoppingList);
       setPrices(data.prices ?? {});
       if (data.warning) setWarning(data.warning);
+
+      // Save to localStorage for offline access
+      try {
+        localStorage.setItem("lunchbox-plan", JSON.stringify({
+          planData: data.planData,
+          shoppingList: data.shoppingList,
+          prices: data.prices ?? {},
+          generatedAt: Date.now(),
+        }));
+      } catch {}
 
       // Auto-generate PDF
       const pdfRes = await fetch("/api/plans/export-pdf", {
@@ -154,6 +188,47 @@ export default function PlannerPage() {
     } finally {
       setSending(false);
     }
+  }
+
+  async function handleCopyList() {
+    const items = Object.entries(ingredientCounts)
+      .map(([ing, count]) => `${getIngredientEmoji(ing)} ${ing}${count > 1 ? ` ×${count}` : ""}`)
+      .join("\n");
+    const text = `🛒 ${t("shopping_list")}\n\n${items}`;
+    await navigator.clipboard.writeText(text);
+    setListCopied(true);
+    setTimeout(() => setListCopied(false), 2000);
+  }
+
+  async function handleNativeShare() {
+    const shareData: ShareData = {
+      title: t("share_plan_text"),
+      text: `${t("share_plan_text")}\n\n🛒 ${t("shopping_list")}:\n${shoppingList.slice(0, 10).join(", ")}${shoppingList.length > 10 ? "..." : ""}`,
+    };
+
+    if (pdfBlob && navigator.canShare?.({ files: [new File([pdfBlob], "plan.pdf", { type: "application/pdf" })] })) {
+      shareData.files = [new File([pdfBlob], "aussie_lunchbox_plan.pdf", { type: "application/pdf" })];
+    }
+
+    try {
+      await navigator.share(shareData);
+    } catch {}
+  }
+
+  function handleWhatsAppShare() {
+    const items = shoppingList.slice(0, 15).join(", ");
+    const text = `${t("share_plan_text")} 🦘\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://www.aussielunchbox.com/en/planner`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+  }
+
+  function handleFacebookShare() {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.aussielunchbox.com/en/planner")}`, "_blank", "width=600,height=400");
+  }
+
+  async function handleCopyLink() {
+    await navigator.clipboard.writeText("https://www.aussielunchbox.com/en/planner");
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 2000);
   }
 
   // Shopping list summary
@@ -298,6 +373,12 @@ export default function PlannerPage() {
         {warning && (
           <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 rounded-xl p-4 mb-6">{warning}</div>
         )}
+        {restored && (
+          <div className="bg-blue-50 border border-blue-200 text-blue-700 rounded-xl p-4 mb-6 flex items-center justify-between">
+            <span>📱 {t("planner_restored")}</span>
+            <button onClick={() => setRestored(false)} className="text-blue-400 hover:text-blue-600 text-sm font-medium">{t("planner_restore_dismiss")}</button>
+          </div>
+        )}
 
         {/* Plan Grid */}
         {planData.length > 0 && (
@@ -352,8 +433,8 @@ export default function PlannerPage() {
               ))}
             </div>
 
-            {/* Export & Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            {/* Export, Share & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
                 <h3 className="font-bold text-[#7B3F00] mb-3">📥 {t("download_pdf")}</h3>
                 <div className="flex-1 flex flex-col justify-end">
@@ -372,6 +453,37 @@ export default function PlannerPage() {
               </div>
 
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
+                <h3 className="font-bold text-[#7B3F00] mb-3">📤 {t("share_title")}</h3>
+                <div className="flex-1 flex flex-col gap-2 justify-end">
+                  <button
+                    onClick={handleCopyList}
+                    className="w-full bg-[#FFF8EE] text-[#7B3F00] font-bold py-3 rounded-xl hover:bg-[#F5A623] hover:text-white transition-colors"
+                  >
+                    {listCopied ? `✅ ${t("share_copied")}` : `📋 ${t("share_copy_list")}`}
+                  </button>
+                  {typeof navigator !== "undefined" && !!navigator.share && (
+                    <button
+                      onClick={handleNativeShare}
+                      className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors"
+                    >
+                      📤 {t("share_native")}
+                    </button>
+                  )}
+                  <div className="flex gap-2 mt-1">
+                    <button onClick={handleWhatsAppShare} className="flex-1 bg-[#25D366] text-white font-bold py-2 rounded-xl text-sm hover:opacity-90 transition-opacity">
+                      {t("share_whatsapp")}
+                    </button>
+                    <button onClick={handleFacebookShare} className="flex-1 bg-[#1877F2] text-white font-bold py-2 rounded-xl text-sm hover:opacity-90 transition-opacity">
+                      {t("share_facebook")}
+                    </button>
+                    <button onClick={handleCopyLink} className="flex-1 bg-gray-100 text-gray-700 font-bold py-2 rounded-xl text-sm hover:bg-gray-200 transition-colors">
+                      {linkCopied ? `✅` : `🔗`}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
                 <h3 className="font-bold text-[#7B3F00] mb-3">✉️ Email to yourself</h3>
                 <div className="flex-1 flex flex-col justify-end">
                   <input
@@ -386,7 +498,7 @@ export default function PlannerPage() {
                     disabled={sending || !pdfBlob}
                     className="w-full bg-[#F5A623] hover:bg-[#7B3F00] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
                   >
-                    {sending ? "Sending..." : t("email_btn")}
+                    {sending ? t("planner_sending") : t("email_btn")}
                   </button>
                   {emailMsg && <p className="text-sm mt-2 text-gray-600">{emailMsg}</p>}
                 </div>

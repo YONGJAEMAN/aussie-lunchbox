@@ -463,5 +463,17 @@
   "about_advisor2_name": "澳大利亚心脏基金会",
   "about_advisor2_desc": "我们参考澳大利亚心脏基金会关于儿童心脏健康饮食模式的建议，特别是关于减少学校午餐中的钠和饱和脂肪。",
   "about_founding_story": "这一切始于2025年，当时我们三个人——同一所悉尼小学的家长——发现每个周日晚上都在做同样的事情：搜索午餐盒创意、查看Woolworths的价格、试图记住哪个孩子对什么过敏。我们创建了Aussie Lunchbox来解决自己的问题。这个工具对我们家庭的效果非常好，于是我们决定向所有人开放。",
-  "about_founding_story_continued": "此后，我们发展成为一个由家长、作者和一位非常执着的电子表格爱好者组成的小团队，分布在悉尼、墨尔本和布里斯班。每个食谱都在真实的厨房中测试，每个价格都在真实的超市中核实，每个过敏标签都根据真实的产品标签验证。"
+  "about_founding_story_continued": "此后，我们发展成为一个由家长、作者和一位非常执着的电子表格爱好者组成的小团队，分布在悉尼、墨尔本和布里斯班。每个食谱都在真实的厨房中测试，每个价格都在真实的超市中核实，每个过敏标签都根据真实的产品标签验证。",
+
+  "share_title": "分享计划",
+  "share_copy_list": "复制购物清单",
+  "share_copied": "已复制！",
+  "share_native": "分享",
+  "share_whatsapp": "WhatsApp",
+  "share_facebook": "Facebook",
+  "share_copy_link": "复制链接",
+  "share_link_copied": "链接已复制！",
+  "share_plan_text": "看看这周的学校午餐计划！",
+  "planner_restored": "您的上次计划已恢复。",
+  "planner_restore_dismiss": "关闭"
 }

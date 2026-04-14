@@ -463,5 +463,17 @@
   "about_advisor2_name": "Heart Foundation Australia",
   "about_advisor2_desc": "아동의 심장 건강 식단 패턴에 대한 Heart Foundation Australia의 권장 사항을 참조하며, 특히 학교 도시락의 나트륨과 포화 지방 줄이기에 중점을 둡니다.",
   "about_founding_story": "2025년, 같은 시드니 초등학교에 다니는 자녀를 둔 세 명의 부모가 일요일 저녁마다 똑같은 일을 하고 있다는 것을 깨달으면서 시작되었습니다: 도시락 아이디어 검색, Woolworths 가격 확인, 어떤 아이에게 어떤 알레르기가 있는지 기억하려 애쓰기. 먼저 우리 자신의 문제를 해결하기 위해 Aussie Lunchbox를 만들었습니다. 이 도구가 우리 가족에게 너무 잘 작동해서 모두에게 공개하기로 결정했습니다.",
-  "about_founding_story_continued": "그 이후로 시드니, 멜버른, 브리즈번에 걸쳐 부모, 작가, 그리고 끈질긴 스프레드시트 매니아 한 명으로 구성된 소규모 팀으로 성장했습니다. 모든 레시피는 실제 주방에서 테스트하고, 모든 가격은 실제 슈퍼마켓에서 확인하며, 모든 알레르기 태그는 실제 제품 라벨과 대조하여 검증합니다."
+  "about_founding_story_continued": "그 이후로 시드니, 멜버른, 브리즈번에 걸쳐 부모, 작가, 그리고 끈질긴 스프레드시트 매니아 한 명으로 구성된 소규모 팀으로 성장했습니다. 모든 레시피는 실제 주방에서 테스트하고, 모든 가격은 실제 슈퍼마켓에서 확인하며, 모든 알레르기 태그는 실제 제품 라벨과 대조하여 검증합니다.",
+
+  "share_title": "플랜 공유",
+  "share_copy_list": "쇼핑 리스트 복사",
+  "share_copied": "복사됨!",
+  "share_native": "공유하기",
+  "share_whatsapp": "왓츠앱",
+  "share_facebook": "페이스북",
+  "share_copy_link": "링크 복사",
+  "share_link_copied": "링크 복사됨!",
+  "share_plan_text": "이번 주 도시락 식단을 확인해보세요!",
+  "planner_restored": "마지막 플랜이 복원되었습니다.",
+  "planner_restore_dismiss": "닫기"
 }
