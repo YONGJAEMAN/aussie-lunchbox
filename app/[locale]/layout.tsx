@@ -92,7 +92,7 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: "Aussie Lunchbox",
     url: BASE_URL,
-    logo: `${BASE_URL}/assets/kiwi_lunchbox_logo.png`,
+    logo: `${BASE_URL}/opengraph-image`,
     description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists with Woolworths & Coles prices.",
     contactPoint: {
       "@type": "ContactPoint",

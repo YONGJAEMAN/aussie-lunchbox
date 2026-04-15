@@ -16,6 +16,7 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
+        "x-default": `${BASE_URL}/en/terms`,
         en: `${BASE_URL}/en/terms`,
         ko: `${BASE_URL}/ko/terms`,
         "zh-CN": `${BASE_URL}/zh/terms`,

@@ -15,7 +15,7 @@ export const POSTS: Record<string, Post> = {
     title: "Woolworths vs Coles: Which Is Cheaper for School Lunches?",
     excerpt: "We compared the price of a full week's worth of lunchbox ingredients at both major Australian supermarkets. The results might surprise you.",
     date: "December 8, 2025",
-    readTime: "6 min read",
+    readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1583263086011-8d01b6b2b9c6?w=1200&q=80",
     category: "Budget",
     author: "Tom Wilson",
@@ -60,6 +60,172 @@ Woolworths and Coles together account for around 65% of Australia's grocery mark
 
 ---
 
+## Category-by-Category Detailed Comparison
+
+### Bread and Bakery
+
+| Item | Woolworths | Coles | Savings |
+|---|---|---|---|
+| White bread loaf (700g) | $2.40 | $2.40 | Tie |
+| Wholemeal bread loaf (700g) | $3.50 | $3.40 | Coles by $0.10 |
+| Wraps 8-pack (white) | $2.80 | $3.00 | Woolworths by $0.20 |
+| Mini pita bread 8-pack | $3.20 | $3.50 | Woolworths by $0.30 |
+| Crumpets 6-pack | $3.00 | $2.80 | Coles by $0.20 |
+| English muffins 6-pack | $3.50 | $3.60 | Woolworths by $0.10 |
+
+Woolworths wins on wraps, pita, and English muffins. Coles takes wholemeal bread and crumpets. If your child has wraps most days, Woolworths saves you about a dollar per month on that single item alone.
+
+### Fruit
+
+| Item | Woolworths | Coles | Savings |
+|---|---|---|---|
+| Bananas (1kg) | $3.50 | $3.90 | Woolworths by $0.40 |
+| Apples, Royal Gala (1kg) | $4.50 | $4.50 | Tie |
+| Mandarins (1kg) | $4.00 | $4.50 | Woolworths by $0.50 |
+| Grapes, green seedless (500g) | $5.00 | $4.80 | Coles by $0.20 |
+| Strawberries punnet (250g) | $3.50 | $3.50 | Tie |
+| Watermelon (per kg, whole) | $1.50 | $1.50 | Tie |
+
+Woolworths generally offers better prices on bananas and mandarins — two of the most popular school lunchbox fruits in Australia. Coles tends to be marginally cheaper on grapes and stone fruit.
+
+### Snacks
+
+| Item | Woolworths | Coles | Savings |
+|---|---|---|---|
+| Rice crackers (100g) | $2.20 | $2.50 | Woolworths by $0.30 |
+| Muesli bars 6-pack (homebrand) | $3.50 | $3.80 | Woolworths by $0.30 |
+| Popcorn multi-pack (6 bags) | $3.00 | $2.80 | Coles by $0.20 |
+| Sultanas (500g) | $4.00 | $3.80 | Coles by $0.20 |
+| Fruit straps (8-pack) | $3.50 | $3.50 | Tie |
+
+Woolworths wins on crackers and muesli bars, while Coles edges ahead on popcorn and dried fruit. The difference per item is small, but if you buy five to six snack products weekly, these margins accumulate.
+
+### Dairy
+
+| Item | Woolworths | Coles | Savings |
+|---|---|---|---|
+| Cheese block, tasty (500g) | $6.50 | $6.50 | Tie |
+| Greek yoghurt tub (1kg) | $5.50 | $5.00 | Coles by $0.50 |
+| Cheese slices 12-pack | $3.80 | $3.60 | Coles by $0.20 |
+| Cream cheese tub (250g) | $3.50 | $3.50 | Tie |
+| Babybel mini cheese (6-pack) | $6.00 | $5.80 | Coles by $0.20 |
+
+Coles consistently edges ahead on dairy. If your child eats yoghurt five days a week, the $0.50 saving on a 1kg tub translates to roughly $2 per month.
+
+### Protein
+
+| Item | Woolworths | Coles | Savings |
+|---|---|---|---|
+| Shaved ham (200g) | $4.00 | $3.80 | Coles by $0.20 |
+| Tinned tuna 4-pack (95g each) | $5.80 | $6.00 | Woolworths by $0.20 |
+| Free-range eggs (12-pack) | $5.50 | $5.80 | Woolworths by $0.30 |
+| Chicken breast (per kg) | $10.00 | $10.00 | Tie |
+| Peanut butter (375g) | $3.00 | $2.80 | Coles by $0.20 |
+| Hummus tub (200g) | $3.00 | $3.50 | Woolworths by $0.50 |
+
+The protein category is a genuine split. Woolworths wins on eggs, tuna, and hummus; Coles wins on ham and peanut butter. Buying protein from both stores based on price gives the best result.
+
+---
+
+## Weekly, Monthly, and Annual Budget Simulation
+
+### One Child
+
+| Shopping Strategy | Weekly | Monthly (4 wks) | Annual (40 school wks) |
+|---|---|---|---|
+| All Woolworths | $22.50 | $90.00 | $900.00 |
+| All Coles | $21.00 | $84.00 | $840.00 |
+| Cherry-pick both stores | $19.50 | $78.00 | $780.00 |
+| Cherry-pick both + specials | $16.00 | $64.00 | $640.00 |
+
+### Two Children
+
+| Shopping Strategy | Weekly | Monthly (4 wks) | Annual (40 school wks) |
+|---|---|---|---|
+| All Woolworths | $38.00 | $152.00 | $1,520.00 |
+| All Coles | $35.50 | $142.00 | $1,420.00 |
+| Cherry-pick both stores | $33.00 | $132.00 | $1,320.00 |
+| Cherry-pick both + specials | $27.00 | $108.00 | $1,080.00 |
+
+The numbers are clear: families with two children who shop strategically across both stores and take advantage of weekly half-price specials can save over **$400 per year** compared to shopping at a single store without a plan.
+
+---
+
+## The ALDI Alternative
+
+No lunchbox budget comparison is complete without mentioning ALDI, Australia's third-largest supermarket chain. ALDI operates a fundamentally different model — a smaller range of predominantly own-brand products, no loyalty programs, and consistently lower base prices.
+
+### Why ALDI Is 10-20% Cheaper
+
+ALDI keeps costs low through several strategies that the big two cannot easily replicate:
+
+- **Limited range**: ALDI stocks roughly 1,500 core products compared to 20,000+ at Woolworths or Coles. Fewer products means lower warehousing, logistics, and shelf-stocking costs.
+- **Predominantly own-brand**: Over 90% of ALDI products are exclusive own-label brands. Without the marketing budgets and brand premiums of name-brand products, these items are priced lower.
+- **Smaller stores**: ALDI stores are physically smaller and more efficient to operate, with lower rent and fewer staff per store.
+- **No online shopping**: ALDI does not offer home delivery or click-and-collect for groceries, eliminating an entire cost layer.
+
+### ALDI Lunchbox Staple Prices (March 2026)
+
+| Item | ALDI Price | Woolworths | Coles |
+|---|---|---|---|
+| White bread loaf | $1.89 | $2.40 | $2.40 |
+| Cheese block (500g) | $5.49 | $6.50 | $6.50 |
+| Greek yoghurt (1kg) | $4.49 | $5.50 | $5.00 |
+| Rice crackers (100g) | $1.79 | $2.20 | $2.50 |
+| Free-range eggs (12) | $4.99 | $5.50 | $5.80 |
+
+For families near an ALDI store, buying staples there and topping up fresh produce at Woolworths or Coles is the most cost-effective approach. A family of two children could save an additional $150-200 per year by making ALDI their primary lunchbox shop.
+
+---
+
+## Seasonal Price Variation Tips
+
+Fruit and vegetable prices fluctuate dramatically with the seasons. Understanding these cycles helps you avoid overpaying:
+
+### Summer (December to February)
+- **Buy**: Watermelon ($1.00-1.50/kg), stone fruit (nectarines, peaches at $4-6/kg), berries, mangoes, corn, tomatoes, zucchini
+- **Avoid**: Citrus fruit (off-season, imported, expensive), apples (cold storage stock, higher price)
+
+### Autumn (March to May)
+- **Buy**: Apples ($3-4/kg at harvest), pears, pumpkin, broccoli, sweet potato, mandarins (start of season)
+- **Avoid**: Berries (prices surge as season ends), stone fruit (disappearing from shelves)
+
+### Winter (June to August)
+- **Buy**: Citrus (oranges, lemons, mandarins at their cheapest), cauliflower, cabbage, leafy greens, kiwifruit
+- **Avoid**: Tomatoes (hothouse-grown, expensive and tasteless), capsicum (prices double)
+
+### Spring (September to November)
+- **Buy**: Strawberries ($2-3/punnet at peak), asparagus, peas, early-season stone fruit
+- **Avoid**: Pumpkin (end of season, declining quality), citrus (prices rising as season ends)
+
+By building your lunchbox fruit around whatever is cheapest that week, you can reduce your fresh produce spend by 20-30% without any loss of quality or variety.
+
+---
+
+## Smart Budget Hacks
+
+### 1. Master the Own-Brand Swap
+Woolworths Essentials and Coles Homebrand products are manufactured in the same factories as many name-brand equivalents. For staples like bread, cheese, crackers, pasta, and tinned goods, the quality difference is negligible. Committing to own-brand for your top ten lunchbox staples saves $5-8 per week.
+
+### 2. Buy in Bulk When Half-Price
+Both Woolworths and Coles rotate their half-price specials on a roughly six-week cycle. When cheese blocks, tinned tuna, or muesli bars hit half price, buy four to six weeks' worth. Non-perishable items store easily; cheese and bread freeze well.
+
+### 3. Freeze Everything You Can
+Bread, cheese, yoghurt pouches, cooked muffins, scrolls, and bliss balls all freeze beautifully. A chest freezer (available second-hand from $100-150 on Facebook Marketplace) pays for itself within a few months through bulk-buy savings.
+
+### 4. Use Leftovers Strategically
+Cook an extra 30% at dinner specifically for tomorrow's lunchbox. Roast chicken becomes chicken sandwiches, spaghetti bolognese becomes pasta salad, fried rice becomes a thermos lunch. This approach costs virtually nothing extra and eliminates morning prep time.
+
+### 5. Join Loyalty Programs
+Woolworths Everyday Rewards and Coles Flybuys are free to join and provide genuine savings:
+- **Everyday Rewards**: Earn 1 point per dollar spent, with regular bonus point offers on lunchbox staples. Points convert to dollars off your shop or Qantas points.
+- **Flybuys**: Earn 1 point per dollar at Coles, 2 points per dollar on Coles Mastercard. Redeem for $10 off every 2,000 points or convert to store credit.
+
+### 6. Download Both Apps
+The Woolworths and Coles apps show weekly specials, allow you to build shopping lists, and offer digital coupon savings. Spending five minutes on Wednesday evening (when new catalogues drop) comparing both apps can save $5-10 on that week's lunchbox shop.
+
+---
+
 ## Smart Shopping Tips
 
 1. **Buy own-brand for staples**: Near-identical quality at significant savings.
@@ -74,6 +240,8 @@ Woolworths and Coles together account for around 65% of Australia's grocery mark
 
 For pure price savings, **Coles edges ahead** on lunchbox staples. But the biggest savings come from **buying own-brand products, shopping seasonally, and avoiding pre-packaged snacks**.
 
+The smartest families in Australia do not commit to a single supermarket. They cherry-pick the best prices from Woolworths, Coles, and ALDI, stock up during half-price cycles, and build their lunchboxes around whatever seasonal produce is cheapest that week. This approach can reduce your annual lunchbox spend by $400 or more per child — money that is better spent on school uniforms, excursions, and family experiences.
+
 ---
 
 ## Let Us Handle the Planning
@@ -85,7 +253,7 @@ For pure price savings, **Coles edges ahead** on lunchbox staples. But the bigge
     title: "School Canteen vs Packed Lunch: The Complete Comparison",
     excerpt: "Should you pack lunch every day or let your kids buy from the canteen? We break down the cost, nutrition, and convenience of both options to help Australian parents decide.",
     date: "October 20, 2025",
-    readTime: "5 min read",
+    readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
     category: "Gear & Tips",
     author: "Sophie Anderson",
@@ -93,6 +261,30 @@ For pure price savings, **Coles edges ahead** on lunchbox staples. But the bigge
 ## The Canteen Debate
 
 Most Australian parents use a mix of both — packed lunch on most days, canteen as an occasional treat or convenience.
+
+---
+
+## State-by-State Canteen Policies
+
+Australian school canteens are governed by state-specific healthy eating frameworks. Understanding what your state requires helps you evaluate whether the canteen at your child's school is genuinely healthy or simply compliant on paper.
+
+### NSW: Healthy School Canteen Strategy
+New South Wales uses a traffic-light classification system. **Green** items (nutritious, everyday choices) should make up at least 75% of the menu. **Amber** items (moderate nutritional value) can appear in limited quantities. **Red** items (confectionery, deep-fried foods, soft drinks) should not be sold more than twice per term. In practice, enforcement varies significantly between schools — some run exemplary canteens while others interpret the guidelines loosely.
+
+### VIC: School Canteens and Other School Food Services Policy
+Victoria aligns its canteen policy with the NHMRC Australian Dietary Guidelines rather than using a colour-coded system. Schools must demonstrate that their menus reflect the five food groups. Nutrition Australia Vic Division offers free menu assessments, and schools that participate generally have higher-quality canteen offerings.
+
+### QLD: Smart Choices — Healthy Food and Drink Supply Strategy
+Queensland's Smart Choices strategy uses a traffic-light system similar to NSW. Green items should dominate, amber items are permitted in moderation, and red items are restricted to a maximum of four school events per year approved by the principal. Queensland's tropical climate adds a hydration emphasis — water must be the primary drink option, and sugar-sweetened beverages are strongly discouraged.
+
+### WA: Healthy Food and Drink in Public Schools Policy
+Western Australia has one of the strictest canteen policies nationally. At least 60% of menu items must be green category. Deep-fried foods are completely prohibited (not just limited). Sugar-sweetened drinks including fruit juice with added sugar are banned. WA also requires pricing equity — healthy options should not cost more than less healthy alternatives.
+
+### SA: Right Bite — Healthy Food and Drink Supply Strategy
+South Australia's Right Bite framework is one of the more structured state approaches, requiring canteens to actively promote healthy eating and restrict access to high-fat, high-sugar, and high-salt foods.
+
+### TAS, NT, ACT
+These jurisdictions generally follow national guidelines with local adaptations. Smaller school communities often have more flexible, individually tailored approaches to canteen management.
 
 ---
 
@@ -108,6 +300,34 @@ Annual cost: **$600–$1,000 per child**
 
 **Packed lunch saves $800–$1,400 per child per year.**
 
+### Detailed Weekly Cost Analysis
+
+Here is what a typical week looks like for each approach:
+
+**Canteen — 5 days per week:**
+
+| Day | Typical Order | Estimated Cost |
+|---|---|---|
+| Monday | Pasta bolognese + water | $7.50 |
+| Tuesday | Chicken wrap + fruit box | $8.50 |
+| Wednesday | Sushi 3-pack + plain milk | $9.00 |
+| Thursday | Toasted sandwich + yoghurt | $7.00 |
+| Friday | Pizza slice + juice + muesli bar | $10.00 |
+| **Weekly total** | | **$42.00** |
+
+**Packed lunch — 5 days per week:**
+
+| Day | Contents | Estimated Cost |
+|---|---|---|
+| Monday | Vegemite sandwich, apple, yoghurt, crackers | $3.20 |
+| Tuesday | Ham wrap, carrot sticks, banana, cheese | $3.80 |
+| Wednesday | Pasta salad, mandarin, muesli bar | $3.50 |
+| Thursday | Cheese sandwich, cucumber, grapes, bliss ball | $3.00 |
+| Friday | Tuna wrap, cherry tomatoes, watermelon | $4.00 |
+| **Weekly total** | | **$17.50** |
+
+**Weekly difference: $24.50** — that is over $1,000 per year for a single child.
+
 ---
 
 ## Nutrition Comparison
@@ -117,6 +337,18 @@ Most Australian school canteens operate under the **Fresh Tastes @ School** or s
 
 ### Packed Lunch
 Nutrition is entirely in your control — which is both the opportunity and the responsibility. A well-packed lunchbox can be more nutritious than most canteen meals.
+
+### Detailed Nutritional Comparison
+
+| Metric | Typical Canteen Meal | Well-Packed Lunch | Notes |
+|---|---|---|---|
+| Calories | 450-650 kcal | 350-500 kcal | Canteen portions tend to be larger |
+| Sodium | 600-900mg | 300-500mg | Canteen meals often use commercial sauces |
+| Added sugar | 10-20g | 5-10g | Canteen drinks are a major sugar source |
+| Fibre | 3-5g | 5-8g | Packed lunches include more whole fruit and veg |
+| Protein | 12-18g | 10-15g | Comparable when packed lunch includes protein |
+
+The biggest nutritional concern with canteen meals is sodium. A single canteen pasta bolognese can contain 700-800mg of sodium — nearly half of a child's recommended daily intake (aged 4-8: 1,400mg/day). Packed lunches using fresh ingredients and minimal sauces typically deliver 40-50% less sodium.
 
 **Verdict: Tied** — both can be excellent or poor depending on what's chosen.
 
@@ -145,9 +377,64 @@ Nutrition is entirely in your control — which is both the opportunity and the 
 
 ---
 
-## The Best of Both Worlds
+## Canteen Ordering Systems in Australian Schools
+
+Most Australian schools now use online ordering platforms rather than cash. The three most common systems are:
+
+- **Flexischools** — the most widely used platform across Australia. Parents load credit, children order ahead, and the canteen prepares food for collection at lunch. Available as a mobile app and website.
+- **Qkr! by Mastercard** — popular in NSW and VIC. Works similarly to Flexischools with a simple app interface.
+- **Munch Monitor** — growing in popularity, particularly in QLD and WA. Offers nutritional information alongside menu items.
+
+All three platforms allow parents to set daily spending limits, view what their child ordered, and in some cases restrict which menu categories are available. This gives parents a level of control that was impossible with the old cash-in-an-envelope system.
+
+---
+
+## The Best of Both Worlds: The Hybrid Strategy
 
 Most families pack lunch 3–4 days per week and use the canteen 1–2 days. This balances cost savings, nutritional control, and convenience.
+
+### The 4:1 Strategy (4 packed, 1 canteen)
+
+This is the most popular approach among budget-conscious Australian families:
+- **Monday to Thursday**: Packed lunch from home
+- **Friday**: Canteen day (treat day, end-of-week reward)
+- **Weekly cost**: ~$17.50 (packed) + ~$8.50 (canteen) = **$26.00**
+- **Annual cost**: ~$1,040 per child
+- **Annual savings vs all-canteen**: ~$800 per child
+
+### The 3:2 Strategy (3 packed, 2 canteen)
+
+A more flexible option for families with less prep time:
+- **Monday, Wednesday, Thursday**: Packed lunch
+- **Tuesday, Friday**: Canteen day
+- **Weekly cost**: ~$10.50 (packed) + ~$17.00 (canteen) = **$27.50**
+- **Annual cost**: ~$1,100 per child
+- **Annual savings vs all-canteen**: ~$560 per child
+
+---
+
+## What Real Parents Do: Three Scenarios
+
+### Scenario 1: Sarah, Two Kids in Primary School (Sydney)
+Sarah packs lunch four days a week and allows one canteen day on Fridays. She batch-cooks muffins and scrolls on Sundays and uses a simple five-day rotation. Her weekly lunchbox spend per child is about $18 including the canteen day. She saves approximately $1,600 per year across both children compared to daily canteen use.
+
+### Scenario 2: Marcus, One Child in High School (Brisbane)
+Marcus gives his Year 8 daughter a weekly canteen budget of $20 for two canteen days and packs lunch on the other three. His daughter has learned to choose the healthier canteen options and manages her own ordering via the Flexischools app. Weekly cost: about $24 total.
+
+### Scenario 3: Priya, Three Kids Across Two Schools (Melbourne)
+With three children, Priya cannot afford daily canteen for everyone. She uses a strict packed-lunch-only approach for the primary school kids (where the canteen is average quality) and allows her eldest one canteen day per week at the high school (which has an excellent program). Total weekly spend for three children: about $55.
+
+---
+
+## Annual Savings Calculator
+
+| Number of Children | All Canteen (annual) | 4:1 Hybrid (annual) | All Packed (annual) | Max Savings |
+|---|---|---|---|---|
+| 1 child | $1,680 | $1,040 | $700 | $980 |
+| 2 children | $3,360 | $2,080 | $1,400 | $1,960 |
+| 3 children | $5,040 | $3,120 | $2,100 | $2,940 |
+
+These figures assume 40 school weeks per year. For families with three children, the difference between all-canteen and all-packed is nearly **$3,000 per year** — enough to cover a family holiday, a term of swimming lessons for all three kids, or a significant contribution to savings.
 
 ---
 
@@ -162,7 +449,7 @@ Most families pack lunch 3–4 days per week and use the canteen 1–2 days. Thi
       "We compared prices of 25 common lunchbox staples at Woolworths and Coles to help Australian parents find the best value. Here are the results.",
     date: "March 25, 2026",
     lastReviewed: "April 2026",
-    readTime: "7 min read",
+    readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80",
     category: "Budget",
     author: "David Chen",
@@ -234,7 +521,98 @@ We compared the regular (non-sale) prices of 25 common lunchbox ingredients at b
 
 ---
 
-## The Real Money Saver: Weekly Specials
+## Additional Items: Frozen Foods, Tinned Goods, and Sauces
+
+Our original comparison covered 25 items, but many families rely on frozen foods, tinned goods, and condiments for lunchbox prep. Here are 15 more items to round out the picture:
+
+### Frozen Foods
+
+| Item | Woolworths | Coles | Winner |
+|------|-----------|-------|--------|
+| Frozen fish fingers 12-pack | $4.50 | $4.20 | Coles |
+| Frozen puff pastry 6 sheets | $4.80 | $5.00 | Woolworths |
+| Frozen mixed vegetables (1kg) | $3.20 | $3.00 | Coles |
+| Frozen corn kernels (1kg) | $3.00 | $2.80 | Coles |
+| Frozen chicken nuggets (400g) | $5.00 | $4.80 | Coles |
+
+Coles dominates the frozen foods category. Their homebrand frozen range is consistently 10-15% cheaper than Woolworths on like-for-like products. If your lunchbox routine involves frozen peas, corn, or fish fingers, Coles is the clear choice.
+
+### Tinned Goods
+
+| Item | Woolworths | Coles | Winner |
+|------|-----------|-------|--------|
+| Tinned chickpeas (400g) | $1.00 | $1.10 | Woolworths |
+| Tinned baked beans (420g) | $1.20 | $1.10 | Coles |
+| Tinned corn kernels (420g) | $1.30 | $1.20 | Coles |
+| Tinned diced tomatoes (400g) | $0.90 | $1.00 | Woolworths |
+| Tinned salmon (210g) | $3.50 | $3.80 | Woolworths |
+
+Woolworths edges ahead on tinned chickpeas, tomatoes, and salmon — all useful for batch-cooking lunchbox staples like hummus, pasta sauces, and salmon patties. Coles wins on baked beans and corn.
+
+### Sauces and Dressings
+
+| Item | Woolworths | Coles | Winner |
+|------|-----------|-------|--------|
+| Tomato sauce (500ml) | $2.50 | $2.50 | Tie |
+| Mayonnaise (500g) | $3.50 | $3.20 | Coles |
+| Soy sauce (250ml) | $2.00 | $2.20 | Woolworths |
+| Sweet chilli sauce (275ml) | $2.80 | $2.60 | Coles |
+| Honey (500g) | $6.00 | $6.50 | Woolworths |
+
+Sauces and condiments are a mixed bag. Woolworths is cheaper on soy sauce and honey (useful for marinades and bliss balls), while Coles wins on mayo and sweet chilli sauce.
+
+---
+
+## Seasonal Price Trends by Term
+
+Lunchbox staple prices do not remain static throughout the school year. Understanding term-by-term trends helps you time your purchases:
+
+### Term 1 (Late January – March)
+- **Cheapest**: Summer fruit (watermelon, stone fruit, grapes), salad vegetables (tomatoes, cucumber, capsicum), corn
+- **Most expensive**: Citrus fruit (off-season), apples (cold storage stock)
+- **Strategy**: Build lunchboxes around fresh summer fruit and salad-based meals. This is the cheapest term for fresh produce.
+
+### Term 2 (April – June)
+- **Cheapest**: Apples and pears (autumn harvest), pumpkin, broccoli, sweet potato, mandarins
+- **Most expensive**: Berries (season ending), stone fruit (disappearing)
+- **Strategy**: Transition to hearty, warm lunchbox meals. Pumpkin soup in a thermos, apple slices with cheese, broccoli muffins. Stock up on apples — they store for weeks in the crisper.
+
+### Term 3 (July – September)
+- **Cheapest**: Citrus (oranges, mandarins, lemons at their lowest), cauliflower, cabbage, leafy greens
+- **Most expensive**: Tomatoes, capsicum, most summer vegetables
+- **Strategy**: Citrus becomes your lunchbox hero. Mandarin segments are the easiest school snack. Avoid buying tomatoes at $8-10/kg — use tinned tomatoes for cooking and skip fresh until spring.
+
+### Term 4 (October – December)
+- **Cheapest**: Strawberries (spring peak), asparagus, peas, early-season mangoes
+- **Most expensive**: Pumpkin (end of season), winter citrus (prices rising)
+- **Strategy**: Strawberry season means cheap, delicious fruit for lunchboxes. As temperatures rise, shift back to cold lunches and use frozen water bottles as ice packs.
+
+---
+
+## Own-Brand Deep Dive: Woolworths vs Coles Store Brands
+
+Both supermarkets operate multi-tier own-brand strategies that can be confusing for parents. Here is how they compare:
+
+### Woolworths Brand Tiers
+- **Woolworths Essentials**: The budget range. Minimal packaging, lowest prices. Quality is basic but perfectly adequate for pantry staples.
+- **Woolworths (mid-range)**: The standard homebrand. Good quality, competitive pricing. This is the sweet spot for most families.
+- **Woolworths Macro Organic**: The premium organic range. Higher prices, lower sodium and sugar, organic certification. Best for items where the nutritional difference matters (yoghurt, ham, snack bars).
+
+### Coles Brand Tiers
+- **Coles (basic homebrand)**: Equivalent to Woolworths Essentials. Budget pricing, reliable quality for staples.
+- **Coles Simply**: A newer mid-tier range focusing on simple, recognisable ingredients.
+- **Coles Nature's Kitchen**: The premium range, equivalent to Woolworths Macro. Focuses on natural ingredients, lower processing, and cleaner labels.
+- **Coles Organic**: A smaller organic-certified range, mainly in fresh produce and dairy.
+
+### Which Tier Should You Buy?
+
+For most lunchbox staples — bread, butter, pasta, rice, crackers, tinned goods — the budget and mid-tier options from either store are nutritionally identical to premium ranges. Save your premium budget for three categories where the difference genuinely matters: **processed deli meats** (lower sodium in premium), **yoghurt** (40% less sugar in premium), and **snack bars** (significantly better fibre and protein ratios).
+
+---
+
+## "Best of Both Worlds" Weekly Shopping Strategy
+
+### The Real Money Saver: Weekly Specials
 
 Both Woolworths and Coles run weekly specials (catalogues change every Wednesday). This is where the genuine savings are. Here's our strategy:
 
@@ -243,9 +621,7 @@ Both Woolworths and Coles run weekly specials (catalogues change every Wednesday
 3. **Stock up** — When a non-perishable staple hits half price, buy 4–6 weeks' worth.
 4. **Use a price book** — Keep a simple note on your phone listing the regular and half-price points for your top 10 lunchbox items. Only buy when at or near the lowest price.
 
----
-
-## Sample "Best of Both" Weekly Shop
+### Sample "Best of Both" Weekly Shop
 
 Here's what a strategic weekly lunchbox shop might look like, cherry-picking the best prices from each store:
 

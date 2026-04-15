@@ -157,6 +157,35 @@ Building nutritious lunchboxes does not have to be expensive. Here are practical
 
 ---
 
+## NHMRC Portion Guide: What One Serve Actually Looks Like
+
+The NHMRC Australian Dietary Guidelines define specific portion sizes for each food group, but many parents find the official descriptions confusing. Here is what one serve looks like in practical lunchbox terms:
+
+| Food Group | One Standard Serve | Lunchbox Example |
+| --- | --- | --- |
+| Grains | 1 slice bread, 1/2 cup cooked rice or pasta | One sandwich = 2 serves; one wrap = 1.5 serves |
+| Vegetables | 1/2 cup cooked veg, 1 cup raw salad | 8-10 carrot sticks, 6 cherry tomatoes, or a cup of salad |
+| Fruit | 1 medium piece, 1 cup diced, 30g dried | One apple, one banana, or a small container of watermelon cubes |
+| Dairy | 250ml milk, 40g hard cheese, 200g yoghurt | 2 cheese slices, a small yoghurt pouch, or a Babybel mini |
+| Protein | 65g cooked lean meat, 1 egg, 170g tofu | 3-4 slices shaved ham, one boiled egg, or 2 tablespoons hummus |
+
+Using this table, you can quickly assess whether your child's lunchbox meets the NHMRC targets for a midday meal.
+
+---
+
+## Australian Health Survey Data: Where Kids Fall Short
+
+The most recent Australian Health Survey conducted by the ABS reveals that the vast majority of Australian children do not meet the NHMRC recommended daily intakes:
+
+- Only **5% of children aged 4-8** eat the recommended serves of vegetables
+- Only **32% of children** meet the daily fruit intake target
+- **Over 35%** of children's daily energy intake comes from discretionary (junk) foods
+- The average Australian child consumes **almost double** the recommended daily sodium
+
+These statistics highlight why the school lunchbox is so important — it represents a real opportunity to close nutritional gaps. A well-designed lunchbox covering the key food groups can provide nearly half the day's vegetable and fruit intake, which is critical given how few children meet targets at other meals.
+
+---
+
 ## Common Nutritional Myths
 
 **Myth: Kids need juice for vitamin C.**
@@ -376,6 +405,29 @@ Even with perfect lunchbox management, accidental exposure can happen. Be prepar
 
 ---
 
+## ASCIA Guidelines: What Every Parent Should Know
+
+The Australasian Society of Clinical Immunology and Allergy (ASCIA) publishes the national guidelines that underpin school anaphylaxis management across Australia. Key elements include:
+
+### ASCIA Action Plans
+Every child with a diagnosed food allergy should have a current ASCIA Action Plan — a one-page document signed by the child's doctor that specifies the allergens, the symptoms to watch for, and the exact steps to take in an emergency (including when and how to administer adrenaline). These plans must be updated annually and whenever the child's allergy status changes.
+
+### School Anaphylaxis Policies by State
+- **Victoria** has the most prescriptive requirements under Ministerial Order 706, which mandates that all school staff complete anaphylaxis management training, schools develop individual management plans for every student at risk, and adrenaline autoinjectors are stored in designated, unlocked locations accessible to all trained staff.
+- **NSW** requires schools to develop an Anaphylaxis Health Care Plan for each student at risk and ensure staff are trained in emergency response, including EpiPen administration.
+- **Queensland** mandates that schools develop individual health plans and that at least one staff member on-site at all times has current anaphylaxis management training.
+- **WA, SA, TAS, NT, and ACT** follow similar frameworks with varying levels of legislative enforcement, but all require individual management plans and staff training.
+
+### EpiPen Management at School
+EpiPens (adrenaline autoinjectors) are the frontline treatment for anaphylaxis. Parents should ensure:
+- The school holds at least one in-date EpiPen for your child, stored in an easily accessible location (not locked)
+- Staff know where the EpiPen is kept and how to use it
+- A spare EpiPen is carried in your child's bag (for older children) or kept in the classroom
+- You check expiry dates at the start of every term — EpiPens typically expire 12-18 months after issue
+- You register with the **EpiClub** program (free in Australia) for expiry reminders and replacement notifications
+
+---
+
 ## Useful Australian Resources
 
 - [ASCIA — Australasian Society of Clinical Immunology and Allergy](https://www.allergy.org.au)
@@ -586,6 +638,29 @@ For those particularly tight weeks:
 
 ---
 
+## Loyalty Programs: Getting More From Every Dollar
+
+### Woolworths Everyday Rewards
+Woolworths' loyalty program is free to join and offers genuine savings for regular shoppers:
+- Earn **1 point per dollar** spent in-store and online
+- Regular **bonus points offers** on lunchbox staples — watch for 10x points events on bread, cheese, and snack items
+- Convert 2,000 points to a **$10 discount** off your next shop
+- Alternatively, convert points to **Qantas Frequent Flyer** points (1,000 Everyday Rewards points = 500 Qantas points)
+- The **Woolworths Everyday Extra** subscription ($7/month) provides 10% off one shop per month plus a free fruit piece for kids — worth it for families spending $200+ per month at Woolworths
+
+### Coles Flybuys
+Coles' loyalty program is equally accessible and offers a straightforward value proposition:
+- Earn **1 point per dollar** at Coles, and 2 points per dollar on a Coles Mastercard
+- Redeem **2,000 points for $10 off** your shop
+- Regular **bonus points events** on household staples, including lunchbox items
+- Link Flybuys to **Kmart and Target** for additional points on school lunchbox equipment (containers, water bottles, insulated bags)
+- Watch for **10x points events** which occasionally apply to entire categories like dairy or bakery
+
+### Price Matching
+Neither Woolworths nor Coles operates a formal price-match guarantee, but both stores monitor each other's pricing closely. If you spot a significant price difference on a staple item, check the competitor's app — they often match within days. Some families use apps like **Frugl** or **PriceHipster** to compare real-time prices across both stores and find the best deals each week.
+
+---
+
 ## Government Support
 
 If you are struggling financially, you may be eligible for:
@@ -764,6 +839,37 @@ When stone fruit, tomatoes, or citrus is dirt cheap:
 
 ---
 
+## Growing Regions: How State and Climate Affect What Is Available
+
+Australia's vast geography means seasonal availability differs significantly depending on where you live.
+
+### Queensland (Tropical/Subtropical)
+Queensland's warm climate means many fruits and vegetables are available earlier and for longer periods than in southern states. Mangoes, bananas, pineapple, and tropical fruit are grown locally, making them cheaper in QLD than in Victoria or Tasmania. However, cool-climate crops like apples, pears, and stone fruit are imported from southern states and may cost more. In North Queensland, backyard tropical fruit trees (mango, pawpaw, lychee) provide free lunchbox fruit for much of the year.
+
+### Victoria and Tasmania (Cool Temperate)
+These southern states have distinct seasons with cold winters. They are Australia's primary growing regions for apples, pears, berries, and stone fruit. During autumn harvest (March-May), Victorian families can access incredibly cheap apples and pears at farm gates and farmers' markets in the Yarra Valley, Goulburn Valley, and Mornington Peninsula. Winter brings excellent brassicas (broccoli, cauliflower, cabbage) at low prices.
+
+### Western Australia
+WA's diverse climate zones — from tropical Kimberley to temperate Perth to cool-climate Great Southern — mean the state produces a wide range of fruits and vegetables. Carnarvon produces early-season mangoes and bananas, while the South West is known for stone fruit and apples. Perth families benefit from a long growing season for salad vegetables and herbs.
+
+### South Australia
+The Riverland and Adelaide Hills are major growing regions. SA produces excellent citrus, stone fruit, and wine grapes. The Adelaide Central Market is one of the best produce markets in the country and a great source of affordable seasonal fruit and vegetables for lunchbox planning.
+
+---
+
+## Farmers' Markets: Why They Are Worth the Trip
+
+Farmers' markets operate in every major Australian city and many regional towns, typically on Saturday or Sunday mornings. For lunchbox planning, they offer several advantages:
+
+- **Price**: End-of-market discounts (last hour of trading) often result in 30-50% savings on seasonal produce
+- **Freshness**: Produce is typically picked within 24-48 hours, compared to supermarket stock that may have been in cold storage for weeks
+- **Variety**: You will find heritage tomato varieties, unusual apple cultivars, and specialty greens that never appear in supermarkets
+- **Education**: Children who visit markets develop a better understanding of where food comes from, making them more adventurous eaters
+
+Popular markets include the **Carriageworks Farmers Market** (Sydney), **Queen Victoria Market** (Melbourne), **Jan Powers Farmers Markets** (Brisbane), **Subiaco Farmers Market** (Perth), and **Adelaide Central Market** (Adelaide).
+
+---
+
 ## Where to Find the Best Seasonal Deals
 
 - **Woolworths & Coles** weekly specials often feature seasonal produce prominently
@@ -917,37 +1023,71 @@ Most primary schools and many high schools have canteens, increasingly with onli
 
 ---
 
-## State-by-State Differences
+## State-by-State Detailed Policies
 
-Food policies vary by state and even by individual school. Here is a general overview:
+Food policies vary by state and even by individual school. Here is a comprehensive overview of each state's framework:
 
 ### New South Wales
-- Strong focus on healthy canteen guidelines (NSW Healthy School Canteen Strategy)
-- Most schools are nut-aware at minimum
-- Many schools participate in the Crunch&Sip program (structured fruit/veg break)
+**Policy name**: NSW Healthy School Canteen Strategy
+- Uses a **traffic-light classification** system (Green, Amber, Red) for all food and drinks sold at school
+- Green items should make up at least **75% of the canteen menu**
+- Red items (confectionery, deep-fried foods, soft drinks) should not be sold more than **twice per term** for special events
+- The NSW Department of Education provides a free **Canteen Menu Planning Tool** that helps canteen managers classify items — parents can access this same tool online
+- Most NSW schools participate in **Crunch&Sip** (a structured mid-morning fruit and vegetable break)
+- Nut policies vary by school but the vast majority of NSW primary schools are **nut-aware at minimum**, with many enforcing strict nut-free rules
+- The **Live Life Well @ School** program supports physical activity and healthy eating education across NSW public schools
 
 ### Victoria
-- VicHealth supports healthy eating programs in schools
-- Achievement Program encourages healthy food policies
-- Most schools have allergy management procedures under the Ministerial Order 706
+**Policy name**: School Canteens and Other School Food Services Policy
+- Aligns with the **NHMRC Australian Dietary Guidelines** rather than using a colour-coded system
+- Schools must demonstrate that canteen menus reflect the **five food groups**
+- The policy covers not just canteens but also **food at school events, fundraisers, and classroom activities**
+- **Nutrition Australia Vic Division** offers free professional menu assessments for school canteens
+- Allergy management is governed by **Ministerial Order 706**, one of the most prescriptive frameworks in Australia — it mandates staff anaphylaxis training, individual management plans for at-risk students, and specific EpiPen storage requirements
+- VicHealth's **Achievement Program** provides schools with a framework for implementing healthy food policies
+- The **Healthy Eating Advisory Service** (HEAS) provides free support to Victorian schools reviewing their food policies
 
 ### Queensland
-- Smart Choices — Healthy Food and Drink Supply Strategy applies to school canteens
-- Strong emphasis on water as the drink of choice
-- Many schools in tropical QLD have specific food safety considerations due to heat
+**Policy name**: Smart Choices — Healthy Food and Drink Supply Strategy
+- Uses a **three-tier colour system** (Green: Have Plenty, Amber: Select Carefully, Red: Limit) similar to NSW but with distinct criteria
+- Red items should **not be available more than four times per year**, and only for principal-approved special events
+- Particular emphasis on **hydration** due to tropical and subtropical climate — water must be the primary drink option
+- Schools are expected to ensure students have **access to clean drinking water throughout the day**
+- QLD's heat creates additional **food safety considerations** for both canteens and packed lunches — the Smart Choices strategy acknowledges this explicitly
+- Many QLD schools run **Tuckshop (canteen) volunteer programs** with specific training requirements under the strategy
 
 ### South Australia
-- Right Bite — Healthy Food and Drink Supply Strategy for SA schools
-- One of the more structured state approaches to school food policy
+**Policy name**: Right Bite — Healthy Food and Drink Supply Strategy
+- One of the **most structured** state approaches to school food policy
+- Categorises food and drinks as **Green (Fill the Menu)**, **Amber (Select Carefully)**, or **Red (Occasional)**
+- Applies to all food and drinks supplied or sold at school, including canteens, vending machines, fundraisers, and class events
+- SA schools receive support from **Wellbeing SA** for implementing the strategy
+- Unique to SA: the strategy explicitly addresses **portion sizes** appropriate for primary vs secondary school students
 
 ### Western Australia
-- Healthy Food and Drink in Public Schools policy
-- Traffic light system for canteen menus
-- Many schools have Crunch&Sip or similar programs
+**Policy name**: Healthy Food and Drink in Public Schools Policy
+- One of the **strictest canteen policies** in Australia
+- At least **60% of menu items** must be classified as green (healthy choices)
+- **Deep-fried foods are completely prohibited** — not just limited or classified as occasional
+- **Sugar-sweetened drinks** including fruit juice with added sugar are **banned**
+- **Energy drinks** are prohibited for all students regardless of age
+- Unique **pricing equity requirement**: healthy options should not cost significantly more than amber items, ensuring healthy eating is accessible regardless of family income
+- The Department of Education WA provides **approved product lists** specifying brand-name products that meet each classification
 
-### Tasmania, NT, ACT
-- Generally follow national guidelines with local adaptations
-- Smaller school communities often have more flexible, individual approaches
+### Tasmania
+- Follows the **Move Well Eat Well** program promoting healthy eating and physical activity in primary schools
+- Schools achieving Move Well Eat Well accreditation have demonstrated strong food policies and healthy canteen menus
+- Smaller school communities often have **more personalised approaches** to food policy
+
+### Northern Territory
+- Follows national guidelines with adaptations for **remote and Indigenous communities**
+- The **NT School Nutrition Program** supports schools in remote areas where access to fresh food is limited
+- Heat and distance from supply chains create unique food safety challenges
+
+### ACT
+- The **Fresh Tastes** program supports ACT schools in developing healthy food and drink policies
+- ACT schools are encouraged to align canteen menus with the Australian Dietary Guidelines
+- As a small jurisdiction, policy implementation is relatively consistent across schools
 
 ---
 
@@ -1134,21 +1274,49 @@ Good thermos brands available in Australia: Thermos (the original), Hydro Flask,
 
 ---
 
+## The FSANZ 2-Hour/4-Hour Rule in Detail
+
+Food Standards Australia New Zealand (FSANZ) has developed the 2-hour/4-hour rule as a practical framework for managing food safety outside of refrigeration. Understanding this rule in depth is essential for Australian parents, particularly during the warmer months.
+
+### How the Clock Works
+The clock starts the moment perishable food leaves temperature control (below 5°C or above 60°C). For a school lunchbox, this means:
+- If you pack the lunchbox at **7:00am** from the fridge and your child eats at **12:30pm**, the food has been in the danger zone for **5.5 hours** without an ice pack
+- With a quality ice pack in an insulated bag, the food may remain below 5°C for **3-4 hours**, meaning it enters the danger zone around **10:00-11:00am** — well within the safe window for a 12:30pm lunch
+- The timer is **cumulative** — if food was left on the bench for 30 minutes during packing, those 30 minutes count
+
+### What FSANZ Says About Specific Foods
+FSANZ provides specific guidance on common lunchbox items:
+- **Cooked rice**: One of the highest-risk lunchbox foods due to Bacillus cereus. Must be refrigerated within one hour of cooking and kept cold until eating
+- **Deli meats**: Should be kept below 5°C at all times. In temperatures above 30°C, even with an ice pack, limit deli meat sandwiches to mornings when the lunchbox is freshest
+- **Dairy**: Yoghurt, cream cheese, and soft cheeses are high risk. Hard cheeses (cheddar, Colby) are lower risk due to reduced moisture content
+- **Eggs**: Cooked eggs are moderate risk. Boiled eggs with intact shells are safer than peeled or chopped eggs
+
+---
+
 ## Special Considerations for Australian Climate
 
-Australia's climate presents unique food safety challenges:
+Australia's climate presents unique food safety challenges that go beyond what families in temperate countries need to worry about:
 
 ### Extreme Heat Days (35°C+)
 - Use **two ice packs** instead of one
 - Avoid high-risk items altogether — pack shelf-stable alternatives
 - Frozen fruit and yoghurt are your best friends
 - Consider packing a completely shelf-stable lunch: Vegemite sandwich, crackers, whole fruit, dried fruit, water
+- Pre-chill the insulated bag in the freezer for 30 minutes before packing
+- Pack sandwiches directly from the freezer — they act as their own ice pack and thaw by lunchtime
+
+### Australian Summer (December to February)
+Australian summers routinely deliver temperatures above 35°C in most capital cities, with inland areas regularly exceeding 40°C. During Terms 1 and 4, food safety should be your primary lunchbox concern:
+- Check the **Bureau of Meteorology forecast** the night before — if temperatures above 35°C are expected, plan a shelf-stable lunch
+- Ask your school whether lunchboxes are stored **indoors or outdoors** — bags left on an uncovered rack in direct sun can reach 50°C inside
+- **Frozen water bottles** serve double duty: they keep food cold and provide cold drinking water when your child needs it most
 
 ### Humidity (Tropical QLD, NT, Top End WA)
-- Humidity accelerates bacterial growth
+- Humidity accelerates bacterial growth — warm, moist conditions are ideal for pathogens
 - Use airtight containers to prevent moisture getting in
 - Insulated bags are essential, not optional
-- Check for mould in lunchboxes more frequently
+- Check for mould in lunchboxes more frequently — weekly vinegar washes are recommended in tropical climates
+- In Darwin, Cairns, and Townsville, parents should treat food safety as a year-round concern, not just a summer one
 
 ### School Camps and Excursions
 - Pack only low-risk foods unless refrigeration is confirmed
@@ -1372,6 +1540,34 @@ Pack Crunch&Sip items in a **separate, clearly labelled container** so your chil
 
 ---
 
+## Popular Australian Snack Swaps: Healthier Alternatives to Lunchbox Favourites
+
+Many classic Australian school snacks are high in sugar, salt, or saturated fat. Here are healthier swaps that kids still enjoy:
+
+| Popular Snack | The Problem | Healthier AU Alternative |
+| --- | --- | --- |
+| Tiny Teddies (25g pack) | 6.5g sugar per serve, minimal nutrition | Homemade banana oat cookies (recipe #31 above) — naturally sweet, no added sugar |
+| LCMs bars | Up to 9g sugar per bar, highly processed | Homemade muesli bars with oats, honey, and seeds — half the sugar, triple the fibre |
+| Roll-Ups fruit straps | 12g sugar per strap, virtually no fruit | Real dried fruit (apricots, apple rings) or homemade fruit leather blended from whole fruit |
+| Le Snak cheese and crackers | High sodium, processed cheese | Wholegrain crackers with real cheese slices and a few cherry tomatoes |
+| Shapes crackers (one box) | High sodium, artificial flavours | Rice crackers with hummus — lower sodium, more protein |
+
+### Vegemite-Based Snacks
+Vegemite is an Australian institution and a surprisingly good base for healthy snacks:
+- **Vegemite scrolls**: Spread Vegemite and grated cheese on puff pastry, roll, slice, and bake. Freeze extras.
+- **Vegemite rice cakes**: A smear of Vegemite on a rice cake with a thin slice of cheese. Takes 30 seconds to prepare.
+- **Vegemite and avocado mini toasts**: Spread Vegemite on mini toasts, top with mashed avocado. Protein, healthy fats, and B vitamins in one bite.
+
+### AU-Made Healthier Packaged Options
+When you do not have time to make snacks from scratch, these Australian brands offer better alternatives:
+- **Whole Kids** — organic fruit bars, veggie straws, and snack packs designed for school lunchboxes with lower sugar
+- **Healthy Crunch** — nut-free granola bars suitable for Australian school nut policies
+- **Carman's** — muesli bars with lower sugar options (look for the "protein" range)
+- **180 Degrees** — oat crackers and snack packs with recognisable ingredients
+- **Woolworths Macro Kids** — organic fruit pouches and snack bars with no artificial colours or flavours
+
+---
+
 ## Making Snack Prep Sustainable
 
 The key to consistent healthy snacking is making it easy on yourself:
@@ -1544,6 +1740,36 @@ Both major Australian supermarkets have expanded their plant-based ranges signif
 - **Vitasoy** — soy milk, oat milk, almond milk (check calcium fortification)
 - **Coles I'm Free From** — dairy-free, gluten-free range
 - **Inside Out** — plant-based yoghurt (mango and mixed berry flavours are popular with kids)
+
+---
+
+## Australian Plant-Based Brands Worth Knowing
+
+Australia has a thriving plant-based food industry with several homegrown brands that are particularly useful for school lunchboxes:
+
+### v2food
+Founded in Australia by CSIRO scientists, v2food produces plant-based mince, burgers, and sausages using Australian-grown ingredients. Their mince makes an excellent bolognese sauce for lunchbox pasta — cook a batch on Sunday and portion throughout the week. Available at Woolworths and Coles.
+
+### Fable Food Co
+An Australian brand that uses shiitake mushrooms as its base ingredient, creating a unique meaty texture without soy or gluten. Their pulled "pork" and braised "beef" products work well in lunchbox wraps and sandwiches. Available at selected Woolworths stores and independent grocers.
+
+### Nutty Bruce
+An Australian-made range of plant milks (almond, oat, coconut) that are activated and minimally processed. Their barista oat milk is popular for thermos hot chocolates in winter lunchboxes. Available at Woolworths, Coles, and independent stores.
+
+### Wattle Valley
+An Australian company producing premium dips and spreads, including several vegan options (hummus, beetroot dip, roasted capsicum dip). Their single-serve dip pots are lunchbox-friendly and available at both major supermarkets.
+
+### Made With Plants (Woolworths exclusive)
+Woolworths' own premium plant-based range includes nuggets, sausages, mince, and burger patties. The nuggets are particularly popular with children who are transitioning to plant-based eating — they closely mimic the taste and texture of traditional chicken nuggets. Priced competitively at around $6-8 per pack.
+
+### Alternative Dairy Co
+An Australian brand producing barista-quality oat and soy milks, available at both major supermarkets. Their products are reliably calcium-fortified, making them a solid choice for vegan children who need consistent calcium intake.
+
+### Tips for Finding Plant-Based Products
+- Check the **"Free From" or "Health Foods" aisle** at both Woolworths and Coles — this is where many plant-based products are shelved
+- The **refrigerated section near deli meats** often stocks plant-based alternatives like tofu, tempeh, and meat-free slices
+- **Woolworths online** and **Coles online** both allow filtering by "Plant Based" or "Vegan", making it easy to discover new products
+- **Asian grocery stores** (particularly in major cities) stock affordable tofu, tempeh, edamame, and plant-based sauces at significantly lower prices than supermarkets
 
 ---
 

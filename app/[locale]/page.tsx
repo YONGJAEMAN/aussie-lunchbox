@@ -19,6 +19,7 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
+        "x-default": `${BASE_URL}/en`,
         en: `${BASE_URL}/en`,
         ko: `${BASE_URL}/ko`,
         "zh-CN": `${BASE_URL}/zh`,
@@ -29,14 +30,14 @@ export async function generateMetadata({
       title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
       description:
         "Generate a personalised week of healthy Australian school lunches in seconds.",
-      images: [{ url: `${BASE_URL}/aussie_lunchbox_logo.png`, width: 1200, height: 630 }],
+      images: [{ url: `${BASE_URL}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
       description:
         "Generate a personalised week of healthy Australian school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
-      images: [`${BASE_URL}/aussie_lunchbox_logo.png`],
+      images: [`${BASE_URL}/opengraph-image`],
     },
   };
 }

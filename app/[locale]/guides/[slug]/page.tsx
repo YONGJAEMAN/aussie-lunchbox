@@ -212,7 +212,7 @@ export default async function GuideDetailPage({
       "@type": "Organization",
       name: "Aussie Lunchbox",
       url: BASE_URL,
-      logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/kiwi_lunchbox_logo.png` },
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/aussie_lunchbox_logo.png` },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
