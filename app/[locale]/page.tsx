@@ -206,22 +206,22 @@ export default async function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              slug: "5-healthy-lunchbox-ideas-for-au-kids",
-              title: "5 Healthy Lunchbox Ideas for Australian Kids",
-              excerpt: "Quick, nutritious, and kid-approved meals using ingredients from Woolworths.",
-              category: "Recipes",
-            },
-            {
-              slug: "nut-free-school-lunches-australia",
-              title: "Nut-Free School Lunches: A Complete Guide",
-              excerpt: "How to pack safe, delicious lunches that comply with your school's nut-free policy.",
-              category: "Allergy Friendly",
-            },
-            {
-              slug: "budget-friendly-lunchbox-ideas",
-              title: "Budget-Friendly Lunchbox Ideas Under $3",
-              excerpt: "Practical and nutritious lunchbox ideas without breaking the budget.",
+              slug: "school-canteen-vs-packed-lunch",
+              title: "School Canteen vs Packed Lunch: The Real Cost",
+              excerpt: "We break down the true cost of canteen orders versus home-packed lunches across Australian schools.",
               category: "Budget",
+            },
+            {
+              slug: "queensland-heat-safe-lunchbox-guide",
+              title: "Keeping Lunches Safe in Queensland Heat",
+              excerpt: "Essential food safety tips for packing lunchboxes in Australia's hottest climates.",
+              category: "Food Safety",
+            },
+            {
+              slug: "multicultural-australian-lunchbox-recipes",
+              title: "Multicultural Lunchbox Recipes for Aussie Kids",
+              excerpt: "From banh mi to kimbap — diverse lunchbox ideas celebrating Australia's food culture.",
+              category: "Recipes",
             },
           ].map((post) => (
             <Link
@@ -283,6 +283,69 @@ export default async function HomePage() {
         >
           {t("home_start_planning")}
         </Link>
+      </section>
+
+      {/* Australian School Lunch Rules */}
+      <section className="bg-[#FFF8EE] py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_guide_label")}</p>
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-8">{t("home_guide_heading")}</h2>
+          <div className="space-y-8 text-gray-600 leading-relaxed">
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_guide_rules_h")}</h3>
+              <p className="mb-3">{t("home_guide_rules_p1")}</p>
+              <p>{t("home_guide_rules_p2")}</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_guide_states_h")}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                <div className="bg-white rounded-xl p-4">
+                  <p className="font-bold text-[#7B3F00] text-sm mb-1">{t("home_guide_nsw")}</p>
+                  <p className="text-sm text-gray-500">{t("home_guide_nsw_desc")}</p>
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <p className="font-bold text-[#7B3F00] text-sm mb-1">{t("home_guide_vic")}</p>
+                  <p className="text-sm text-gray-500">{t("home_guide_vic_desc")}</p>
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <p className="font-bold text-[#7B3F00] text-sm mb-1">{t("home_guide_qld")}</p>
+                  <p className="text-sm text-gray-500">{t("home_guide_qld_desc")}</p>
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <p className="font-bold text-[#7B3F00] text-sm mb-1">{t("home_guide_wa")}</p>
+                  <p className="text-sm text-gray-500">{t("home_guide_wa_desc")}</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_guide_nutrition_h")}</h3>
+              <p className="mb-3">{t("home_guide_nutrition_p1")}</p>
+              <p>{t("home_guide_nutrition_p2")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Make the Most of Aussie Lunchbox */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_tips_label")}</p>
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-8">{t("home_tips_heading")}</h2>
+          <div className="space-y-8 text-gray-600 leading-relaxed">
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_tips_seasonal_h")}</h3>
+              <p>{t("home_tips_seasonal_p")}</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_tips_compare_h")}</h3>
+              <p>{t("home_tips_compare_p")}</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-3">{t("home_tips_family_h")}</h3>
+              <p>{t("home_tips_family_p")}</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}

@@ -1,15 +1,92 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import PolicyTabs from "@/components/PolicyTabs";
 
-export default function PoliciesPage() {
-  const params = useParams();
-  const locale = (params.locale as string) ?? "en";
-  const [tab, setTab] = useState<"privacy" | "disclaimer">("privacy");
-  const t = useTranslations();
+export default async function PoliciesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  const privacyContent = (
+    <div className="prose prose-gray max-w-none">
+      <h2 className="text-2xl font-bold text-[#1a1a1a] mt-0">{t("privacy_h")}</h2>
+      <p className="text-sm text-gray-400 mb-6">{t("privacy_effective")}</p>
+      <p className="text-gray-600 leading-relaxed">{t("privacy_intro")}</p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_1_h")}</h3>
+      <ul className="text-gray-600 space-y-2">
+        <li><strong>{t("privacy_1_li1_bold")}</strong> {t("privacy_1_li1")}</li>
+        <li><strong>{t("privacy_1_li2_bold")}</strong> {t("privacy_1_li2")}</li>
+        <li><strong>{t("privacy_1_li3_bold")}</strong> {t("privacy_1_li3")}</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_2_h")}</h3>
+      <ul className="text-gray-600 space-y-1">
+        <li>{t("privacy_2_li1")}</li>
+        <li>{t("privacy_2_li2")}</li>
+        <li>{t("privacy_2_li3")}</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_3_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">
+        {t("privacy_3_p")}{" "}
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_3_link1")}</a>. {t("privacy_3_mid")}{" "}
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_3_link2")}</a>.
+      </p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_4_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">
+        {t("privacy_4_p")}{" "}
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_4_link")}</a>.
+      </p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_5_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">{t("privacy_5_p")}</p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_6_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">{t("privacy_6_p")}</p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_7_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">
+        {t("privacy_7_p")}{" "}
+        <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#F5A623] hover:underline">{t("privacy_contact_email")}</a>.
+      </p>
+    </div>
+  );
+
+  const disclaimerContent = (
+    <div className="prose prose-gray max-w-none">
+      <h2 className="text-2xl font-bold text-[#1a1a1a] mt-0">{t("disclaimer_h")}</h2>
+
+      <div className="bg-red-50 border border-red-200 rounded-2xl p-4 mb-6">
+        <p className="text-red-700 font-semibold text-sm">{t("disclaimer_warning")}</p>
+      </div>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_1_h")}</h3>
+      <p className="text-gray-600 leading-relaxed">{t("disclaimer_1_p")}</p>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_2_h")}</h3>
+      <ul className="text-gray-600 space-y-2">
+        <li>{t("disclaimer_2_li1")}</li>
+        <li>{t("disclaimer_2_li2")}</li>
+        <li>{t("disclaimer_2_li3")}</li>
+        <li>{t("disclaimer_2_li4")}</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_3_h")}</h3>
+      <ul className="text-gray-600 space-y-2">
+        <li>{t("disclaimer_3_li1")}</li>
+        <li>{t("disclaimer_3_li2")}</li>
+      </ul>
+
+      <div className="bg-white border border-gray-200 rounded-2xl p-4 mt-6">
+        <p className="text-gray-600 text-sm leading-relaxed">{t("disclaimer_footer")}</p>
+      </div>
+    </div>
+  );
 
   return (
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
@@ -23,111 +100,12 @@ export default function PoliciesPage() {
       </section>
 
       <section className="max-w-3xl mx-auto py-20 px-4">
-        {/* Tabs */}
-        <div className="flex rounded-2xl overflow-hidden border border-orange-100 mb-8 bg-[#FFF8EE]">
-          <button
-            onClick={() => setTab("privacy")}
-            className={`flex-1 py-3.5 text-sm font-semibold transition-colors rounded-l-2xl ${
-              tab === "privacy" ? "bg-[#7B3F00] text-white" : "text-gray-500 hover:bg-orange-50"
-            }`}
-          >
-            🔒 {t("policies_tab_privacy")}
-          </button>
-          <button
-            onClick={() => setTab("disclaimer")}
-            className={`flex-1 py-3.5 text-sm font-semibold transition-colors rounded-r-2xl ${
-              tab === "disclaimer" ? "bg-[#7B3F00] text-white" : "text-gray-500 hover:bg-orange-50"
-            }`}
-          >
-            ⚠️ {t("policies_tab_disclaimer")}
-          </button>
-        </div>
-
-        <div className="bg-[#FFF8EE] rounded-3xl p-10">
-          {tab === "privacy" ? (
-            <div className="prose prose-gray max-w-none">
-              <h2 className="text-2xl font-bold text-[#1a1a1a] mt-0">{t("privacy_h")}</h2>
-              <p className="text-sm text-gray-400 mb-6">{t("privacy_effective")}</p>
-              <p className="text-gray-600 leading-relaxed">
-                {t("privacy_intro")}
-              </p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_1_h")}</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li><strong>{t("privacy_1_li1_bold")}</strong> {t("privacy_1_li1")}</li>
-                <li><strong>{t("privacy_1_li2_bold")}</strong> {t("privacy_1_li2")}</li>
-                <li><strong>{t("privacy_1_li3_bold")}</strong> {t("privacy_1_li3")}</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_2_h")}</h3>
-              <ul className="text-gray-600 space-y-1">
-                <li>{t("privacy_2_li1")}</li>
-                <li>{t("privacy_2_li2")}</li>
-                <li>{t("privacy_2_li3")}</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_3_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("privacy_3_p")}{" "}
-                <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_3_link1")}</a>. {t("privacy_3_mid")}{" "}
-                <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_3_link2")}</a>.
-              </p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_4_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("privacy_4_p")}{" "}
-                <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">{t("privacy_4_link")}</a>.
-              </p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_5_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("privacy_5_p")}
-              </p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_6_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">{t("privacy_6_p")}</p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_7_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("privacy_7_p")}{" "}
-                <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#F5A623] hover:underline">{t("privacy_contact_email")}</a>.
-              </p>
-            </div>
-          ) : (
-            <div className="prose prose-gray max-w-none">
-              <h2 className="text-2xl font-bold text-[#1a1a1a] mt-0">⚠️ {t("disclaimer_h")}</h2>
-
-              <div className="bg-red-50 border border-red-200 rounded-2xl p-4 mb-6">
-                <p className="text-red-700 font-semibold text-sm">
-                  {t("disclaimer_warning")}
-                </p>
-              </div>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_1_h")}</h3>
-              <p className="text-gray-600 leading-relaxed">{t("disclaimer_1_p")}</p>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_2_h")}</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>{t("disclaimer_2_li1")}</li>
-                <li>{t("disclaimer_2_li2")}</li>
-                <li>{t("disclaimer_2_li3")}</li>
-                <li>{t("disclaimer_2_li4")}</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#1a1a1a]">{t("disclaimer_3_h")}</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>{t("disclaimer_3_li1")}</li>
-                <li>{t("disclaimer_3_li2")}</li>
-              </ul>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-4 mt-6">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {t("disclaimer_footer")}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+        <PolicyTabs
+          privacyContent={privacyContent}
+          disclaimerContent={disclaimerContent}
+          privacyLabel={`🔒 ${t("policies_tab_privacy")}`}
+          disclaimerLabel={`⚠️ ${t("policies_tab_disclaimer")}`}
+        />
       </section>
 
       {/* Footer */}

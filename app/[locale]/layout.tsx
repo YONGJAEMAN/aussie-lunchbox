@@ -4,14 +4,12 @@ import { routing } from "@/i18n/routing";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Script from "next/script";
 import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/CookieConsent";
+import ConsentScripts from "@/components/ConsentScripts";
 
 const BASE_URL = "https://www.aussielunchbox.com";
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
-
 export async function generateMetadata({
   params,
 }: {
@@ -106,13 +104,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079938386322416"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body>
         <script
           type="application/ld+json"
@@ -123,22 +115,7 @@ export default async function LocaleLayout({
           {children}
           <CookieConsent />
         </NextIntlClientProvider>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', { anonymize_ip: true });
-              `}
-            </Script>
-          </>
-        )}
+        <ConsentScripts />
       </body>
     </html>
   );
