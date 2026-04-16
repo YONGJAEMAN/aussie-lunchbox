@@ -77,11 +77,12 @@ export default async function PlannerPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-      <section className="bg-white border-b border-gray-100">
+      <PlannerClient />
+      <section className="bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[#7B3F00] mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#7B3F00] mb-6">
             {t("planner_seo_title")}
-          </h1>
+          </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
             {t("planner_seo_intro")}
           </p>
@@ -106,17 +107,16 @@ export default async function PlannerPage({
 
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <div>
-              <h2 className="text-xl font-bold text-[#7B3F00] mb-2">{t("planner_seo_allergy_h")}</h2>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-2">{t("planner_seo_allergy_h")}</h3>
               <p>{t("planner_seo_allergy_p")}</p>
             </div>
             <div>
-              <h2 className="text-xl font-bold text-[#7B3F00] mb-2">{t("planner_seo_price_h")}</h2>
+              <h3 className="text-xl font-bold text-[#7B3F00] mb-2">{t("planner_seo_price_h")}</h3>
               <p>{t("planner_seo_price_p")}</p>
             </div>
           </div>
         </div>
       </section>
-      <PlannerClient />
     </>
   );
 }
