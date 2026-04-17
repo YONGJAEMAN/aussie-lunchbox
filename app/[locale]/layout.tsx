@@ -58,12 +58,11 @@ export async function generateMetadata({
       images: [`${BASE_URL}/opengraph-image`],
     },
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
+        index: false,
+        follow: false,
       },
     },
     other: {
