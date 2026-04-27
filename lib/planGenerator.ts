@@ -105,7 +105,7 @@ export async function buildWeeklyPlan(
   }
 
   const [priority, normal] = splitPriorityNormal(available, favorites, leftover);
-  let pool = [...shuffle(priority), ...shuffle(normal)];
+  const pool = [...shuffle(priority), ...shuffle(normal)];
 
   let warning: string | undefined;
   if (pool.length < 5) {
