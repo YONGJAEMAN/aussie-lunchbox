@@ -20,6 +20,7 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
+        "x-default": `${BASE_URL}/en/planner`,
         en: `${BASE_URL}/en/planner`,
         ko: `${BASE_URL}/ko/planner`,
         "zh-CN": `${BASE_URL}/zh/planner`,
