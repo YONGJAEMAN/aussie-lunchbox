@@ -1,9 +1,10 @@
 name: Weekly Price Update
 
 on:
-  # 매주 화요일 오전 8시 AEST (월요일 22:00 UTC)
+  # 매주 월요일 오전 8시 NZ 시간 (NZST 기준 UTC 일요일 20:00)
+  # 서머타임(NZDT, 10월~3월)에는 NZ 시간 09:00에 실행됨 — 운영상 무방
   schedule:
-    - cron: "0 22 * * 1"
+    - cron: "0 20 * * 0"
   workflow_dispatch:
 
 jobs:
