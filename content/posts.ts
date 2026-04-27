@@ -18,7 +18,7 @@ export const POSTS: Record<string, Post> = {
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1583263086011-8d01b6b2b9c6?w=1200&q=80",
     category: "Budget",
-    author: "Tom Wilson",
+    author: "Yong Jae Lee",
     body: `
 ## The Great Supermarket Showdown
 
@@ -256,7 +256,7 @@ The smartest families in Australia do not commit to a single supermarket. They c
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
     category: "Gear & Tips",
-    author: "Sophie Anderson",
+    author: "Yong Jae Lee",
     body: `
 ## The Canteen Debate
 
@@ -452,7 +452,7 @@ These figures assume 40 school weeks per year. For families with three children,
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80",
     category: "Budget",
-    author: "David Chen",
+    author: "Yong Jae Lee",
     body: `
 ## Why We Did This Comparison
 
@@ -676,10 +676,10 @@ Our planner builds weekly lunch menus around affordable, seasonal ingredients �
   "queensland-heat-safe-lunchbox-guide": {
     title: "Keeping Lunches Safe in Queensland Heat: A Complete Guide to Food Safety in Hot Climates",
     excerpt: "Essential food safety tips for packing lunchboxes when temperatures soar above 35 degrees. Covers the 2-hour/4-hour rule, best ice packs, and heat-proof meal ideas for Australian schools.",
-    date: "2026-04-10",
+    date: "March 28, 2026",
     lastReviewed: "April 2026",
     readTime: "7 min read",
-    author: "Dr. Sarah Chen",
+    author: "Yong Jae Lee",
     category: "Food Safety",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop",
     body: `
@@ -838,10 +838,10 @@ Our planner takes your location and the time of year into account when suggestin
   "australian-school-canteen-guidelines-2026": {
     title: "Australian School Canteen Guidelines 2026: What Every Parent Needs to Know",
     excerpt: "A comprehensive guide to school canteen regulations across NSW, Victoria, Queensland, and WA — plus how packed lunches compare on cost, nutrition, and convenience.",
-    date: "2026-04-10",
+    date: "April 2, 2026",
     lastReviewed: "April 2026",
     readTime: "8 min read",
-    author: "Emily Richards",
+    author: "Yong Jae Lee",
     category: "School Policy",
     image: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=1200&q=80&auto=format&fit=crop",
     body: `
@@ -981,10 +981,10 @@ Our planner generates five-day school lunch plans that respect your family's all
   "multicultural-australian-lunchbox-recipes": {
     title: "Multicultural Lunchbox Recipes for Aussie Kids: 8 Diverse Meals From Around the World",
     excerpt: "From Vietnamese banh mi to Korean kimbap — eight culturally diverse lunchbox recipes celebrating Australia's multicultural food landscape, each with cost estimates and allergy info.",
-    date: "2026-04-10",
+    date: "April 8, 2026",
     lastReviewed: "April 2026",
     readTime: "7 min read",
-    author: "Priya Sharma",
+    author: "Yong Jae Lee",
     category: "Recipes",
     image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80&auto=format&fit=crop",
     body: `
@@ -1249,10 +1249,10 @@ Our planner generates diverse weekly lunch plans using Australian supermarket in
   "woolworths-macro-vs-coles-branded-lunchbox-comparison": {
     title: "Woolworths Macro vs Coles Own Brand: A Complete Lunchbox Staples Comparison",
     excerpt: "We compared Woolworths Macro Organic, Coles Nature's Kitchen, and generic homebrand options across 20 common lunchbox items — pricing, nutrition, and best value picks.",
-    date: "2026-04-10",
+    date: "April 14, 2026",
     lastReviewed: "April 2026",
     readTime: "8 min read",
-    author: "James Mitchell",
+    author: "Yong Jae Lee",
     category: "Budget",
     image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=80&auto=format&fit=crop",
     body: `
@@ -1407,10 +1407,10 @@ Our planner generates weekly lunch plans and shopping lists with Woolworths and 
   "term-1-back-to-school-lunchbox-checklist-australia": {
     title: "Term 1 Back-to-School Lunchbox Checklist: Everything Australian Families Need",
     excerpt: "The complete back-to-school lunchbox preparation guide for Australian families — from equipment and pantry staples to first-week meal plans and getting kids involved.",
-    date: "2026-04-10",
+    date: "April 20, 2026",
     lastReviewed: "April 2026",
     readTime: "6 min read",
-    author: "Kate O'Brien",
+    author: "Yong Jae Lee",
     category: "Planning",
     image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=1200&q=80&auto=format&fit=crop",
     body: `

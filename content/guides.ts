@@ -15,12 +15,12 @@ export const GUIDES: Record<string, Guide> = {
     title: "The Complete Nutrition Guide for Australian School Lunches",
     excerpt:
       "Everything Australian parents need to know about packing nutritionally balanced school lunches, based on the NHMRC Australian Dietary Guidelines and real-world advice.",
-    date: "March 15, 2026",
-    lastReviewed: "April 2026",
+    date: "January 5, 2026",
+    lastReviewed: "February 2026",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80",
     category: "Nutrition",
-    author: "David Chen",
+    author: "Yong Jae Lee",
     body: `
 ## Why School Lunch Nutrition Matters
 
@@ -223,12 +223,12 @@ Ready to plan balanced lunchboxes for the whole week? [Try the Aussie Lunchbox P
     title: "Allergy Management for School Lunchboxes: An Australian Parent's Complete Guide",
     excerpt:
       "A comprehensive guide to managing food allergies in Australian school lunchboxes — from understanding labelling laws to practical nut-free, dairy-free, and egg-free alternatives.",
-    date: "March 15, 2026",
+    date: "January 22, 2026",
     lastReviewed: "April 2026",
     readTime: "14 min read",
     image: "https://images.unsplash.com/photo-1607532941433-304659e8198a?w=1200&q=80",
     category: "Allergy Friendly",
-    author: "Amy Roberts",
+    author: "Yong Jae Lee",
     body: `
 ## The Scale of Food Allergies in Australia
 
@@ -445,12 +445,12 @@ Need help planning allergy-friendly lunchboxes? [Try the Aussie Lunchbox Planner
     title: "Budget Lunchbox Planning: Feed Your Kids Well for Under $15/Week",
     excerpt:
       "Practical strategies for packing healthy, delicious school lunches on a tight budget — with shopping tips for Woolworths and Coles, batch cooking ideas, and weekly meal plans.",
-    date: "March 15, 2026",
-    lastReviewed: "April 2026",
+    date: "February 8, 2026",
+    lastReviewed: "March 2026",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80",
     category: "Budget",
-    author: "Sarah Mitchell",
+    author: "Yong Jae Lee",
     body: `
 ## The Real Cost of School Lunches in Australia
 
@@ -680,12 +680,12 @@ Start planning affordable, healthy lunchboxes today. [Try the Aussie Lunchbox Pl
     title: "Australian Seasonal Produce Calendar for School Lunches",
     excerpt:
       "A month-by-month guide to the cheapest, freshest Australian fruits and vegetables — with lunchbox ideas for every season.",
-    date: "March 15, 2026",
-    lastReviewed: "April 2026",
+    date: "February 19, 2026",
+    lastReviewed: "March 2026",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1200&q=80",
     category: "Seasonal",
-    author: "Sarah Mitchell",
+    author: "Yong Jae Lee",
     body: `
 ## Why Seasonal Produce Matters for School Lunches
 
@@ -888,12 +888,12 @@ Plan your seasonal lunchbox menu today. [Try the Aussie Lunchbox Planner →](/e
     title: "Understanding Your Australian School's Lunchbox Policy",
     excerpt:
       "A parent's guide to navigating school food policies across Australia — from nut-free rules and canteen guidelines to nude food days and sustainability initiatives.",
-    date: "March 15, 2026",
+    date: "March 5, 2026",
     lastReviewed: "April 2026",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80",
     category: "Parenting Tips",
-    author: "Amy Roberts",
+    author: "Yong Jae Lee",
     body: `
 ## Why Schools Have Lunchbox Policies
 
@@ -1113,12 +1113,12 @@ Want help packing a lunchbox that meets your school's policy? [Try the Aussie Lu
     title: "Food Safety for School Lunchboxes: Temperature, Storage & Packing",
     excerpt:
       "Keep your child's lunch safe from harmful bacteria with this comprehensive guide to lunchbox food safety, covering temperature control, storage tips, and safe packing methods.",
-    date: "March 15, 2026",
+    date: "March 18, 2026",
     lastReviewed: "April 2026",
     readTime: "11 min read",
     image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1200&q=80",
     category: "Gear & Tips",
-    author: "David Chen",
+    author: "Yong Jae Lee",
     body: `
 ## Why Lunchbox Food Safety Matters
 
@@ -1355,12 +1355,12 @@ Keep your kids' lunches safe and delicious. [Try the Aussie Lunchbox Planner →
     title: "The Complete Guide to Healthy School Snacks in Australia",
     excerpt:
       "Over 40 healthy snack ideas for Australian school kids — from no-bake bliss balls to savoury bites, with recipes, shopping lists, and tips for even the pickiest eaters.",
-    date: "March 15, 2026",
+    date: "April 1, 2026",
     lastReviewed: "April 2026",
     readTime: "13 min read",
     image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=1200&q=80",
     category: "Recipes",
-    author: "Sarah Mitchell",
+    author: "Yong Jae Lee",
     body: `
 ## Why Snacks Matter Just as Much as Lunch
 
@@ -1588,12 +1588,12 @@ Get snack ideas tailored to your family. [Try the Aussie Lunchbox Planner →](/
     title: "Vegetarian & Vegan School Lunches: A Complete Australian Guide",
     excerpt:
       "How to pack nutritionally complete vegetarian and vegan school lunches — with protein-rich recipes, essential nutrient advice, and practical tips for Australian families.",
-    date: "March 15, 2026",
+    date: "April 14, 2026",
     lastReviewed: "April 2026",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80",
     category: "Nutrition",
-    author: "David Chen",
+    author: "Yong Jae Lee",
     body: `
 ## Plant-Based Eating in Australian Schools
 

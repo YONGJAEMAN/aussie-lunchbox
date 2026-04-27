@@ -51,7 +51,6 @@
   "account": "My Account",
   "snacks": "Snacks",
   "day": "Day",
-
   "footer_copyright": "© {year} Aussie Lunchbox — The Lunch Planner for Australian Families.",
   "footer_terms": "Terms",
   "footer_privacy": "Privacy",
@@ -64,14 +63,8 @@
   "footer_legal_label": "Legal",
   "footer_tagline": "Free school lunch planner for Australian families.",
   "footer_support": "Support",
-
   "about_title": "🦘 About Aussie Lunchbox",
   "about_subtitle": "Built by Australian parents who got tired of the Sunday-night lunchbox scramble.",
-  "about_greeting": "👋 G'day!",
-  "about_intro": "Aussie Lunchbox Planner takes the guesswork out of school lunches so you can spend your mornings on what matters — not stressing over what goes in the lunchbox.",
-  "about_mission1": "Every morning, thousands of Australian families face the same question: what do I pack today? Between nut-free policies, fussy eaters, and rising grocery costs, it can feel impossible to get it right. That's exactly why we built this tool — to handle the planning so you don't have to.",
-  "about_mission2": "A group of Sydney parents turned their shared frustration into a free planner that pairs live Woolworths and Coles prices with recipes kids actually enjoy. No subscriptions, no upsells — just a genuinely useful tool.",
-  "about_img_caption": "Aussie-Grown Goodness",
   "about_why_title": "What Makes Us Different",
   "about_feat1_title": "One-Tap Weekly Plans",
   "about_feat1_desc": "Tell us your family's allergies and hit Generate. In five seconds flat, you'll have a full Monday-to-Friday lineup with recipes, ingredients, and a printable shopping list.",
@@ -82,12 +75,6 @@
   "about_community_title": "Stronger Together",
   "about_community_desc": "Thousands of Aussie parents already use the planner each week. Share your feedback, suggest recipes, and help us build something better for every family.",
   "about_start_btn": "Build My Lunchbox Plan",
-  "about_team_title": "Who Runs Aussie Lunchbox",
-  "about_team_desc": "Real parents, real kitchens, real supermarket runs. Aussie Lunchbox grew out of a shared Google Sheet between three families at a Sydney primary school. Every person on the team packs lunchboxes for their own kids.",
-  "about_editorial_title": "Our Editorial Process",
-  "about_editorial_desc": "No recipe goes live without being sourced, cooked, allergy-checked, and price-verified. Here is the exact process every piece of content follows.",
-  "about_important_title": "Important: what Aussie Lunchbox is not",
-
   "contact_title": "📬 Contact Aussie Lunchbox",
   "contact_subtitle": "Got a question, spotted a bug, or want to collaborate? Drop us a line — we read every message.",
   "contact_get_in_touch": "Reach Out",
@@ -113,7 +100,6 @@
   "contact_sending": "On its way...",
   "contact_editorial_title": "Content Corrections:",
   "contact_editorial_desc": "Spotted a mistake in an article or recipe? Let us know the title and the specific error — our editorial team reviews corrections within two business days.",
-
   "faq_title": "Frequently Asked Questions",
   "faq_subtitle": "Answers to the most common questions from Aussie parents using the planner.",
   "faq_still_title": "Can't find what you need?",
@@ -147,13 +133,11 @@
   "faq_a13": "The entire site is responsive. Generate plans, browse recipes, and download PDFs on any smartphone or tablet — no app install needed.",
   "faq_q14": "How fresh is the recipe collection?",
   "faq_a14": "New recipes land roughly every month after going through our full test-and-review process. Supermarket prices are refreshed every one to two weeks, and seasonal tweaks happen at the start of each school term.",
-
   "faq_cat_getting_started": "First Steps",
   "faq_cat_allergies": "Allergies & Safety",
   "faq_cat_budget": "Prices & Groceries",
   "faq_cat_nutrition": "Nutrition & Portions",
   "faq_cat_technical": "Account & Tech",
-
   "faq_q15": "Walk me through creating my first plan.",
   "faq_a15": "Open the Planner page — no account required. On the left sidebar (or tap the filter icon on mobile), set any allergy filters your family needs, exclude ingredients your child won't eat, and optionally type a fridge leftover you'd like to use up. Press 'Generate Plan' and within about five seconds you'll see a complete Monday-to-Friday lunchbox schedule. Each day shows a main meal with ingredients, Woolworths and Coles price estimates, and a snack suggestion. From there you can download everything as a single PDF or email the shopping list to yourself. The whole process takes under sixty seconds.",
   "faq_q16": "What if I don't like one of the suggested meals?",
@@ -186,7 +170,6 @@
   "faq_a29": "Generating a plan requires internet because it queries our recipe database and pricing API in real time. Once the plan exists, download it as a PDF and you're set — the file works completely offline. A popular routine: generate on Sunday evening, save the PDF, and refer to it all week, no Wi-Fi needed.",
   "faq_q30": "How frequently do new recipes appear?",
   "faq_a30": "Roughly every month we publish 3–5 new recipes, each having passed through sourcing at Australian supermarkets, allergy verification, a test cook by a team member, and editorial review. Woolworths and Coles prices update every one to two weeks. At the start of each school term (Terms 1–4, late January to mid-December) we also run a seasonal refresh to ensure the recipe mix reflects what's currently in stock and well-priced.",
-
   "terms_title": "Terms and Conditions",
   "terms_updated": "Last Updated: February 2026",
   "terms_1_h": "1. Introduction",
@@ -212,7 +195,6 @@
   "terms_8_h": "8. Contact",
   "terms_8_p": "Questions or concerns about these Terms can be directed to",
   "terms_contact_email": "aussielunchbox@gmail.com",
-
   "policies_title": "Privacy Policy & Disclaimer",
   "policies_subtitle": "How we handle your data and keep your family's information safe.",
   "policies_tab_privacy": "🔒 Privacy Policy",
@@ -259,7 +241,6 @@
   "disclaimer_3_li1": "Nutritional estimates are derived from the Australian Food Composition Database (FSANZ) and reflect standard serve sizes. They are approximations, not clinical measurements.",
   "disclaimer_3_li2": "Supermarket pricing is sourced from Woolworths and Coles and may fluctuate due to promotions, regional differences, or stock changes without prior notice.",
   "disclaimer_footer": "By continuing to use Aussie Lunchbox Planner, you confirm that you have read this disclaimer, understand its limitations, and accept full responsibility for how you apply the information provided.",
-
   "nav_home": "Home",
   "nav_planner": "Planner",
   "nav_blog": "Blog",
@@ -268,18 +249,15 @@
   "nav_contact": "Contact",
   "nav_sign_out": "Sign out",
   "nav_log_in": "Log In",
-
   "cookie_message": "Aussie Lunchbox uses cookies for site functionality and to show personalised ads through Google AdSense. Tap \"Accept\" to continue or \"Decline\" to browse without cookies.",
   "cookie_learn_more": "Learn more",
   "cookie_accept": "Accept",
   "cookie_decline": "Decline",
-
   "notfound_title": "Page not found",
   "notfound_desc": "This page doesn't exist. It may have been moved or the link might be incorrect.",
   "notfound_home": "Go to Homepage",
   "notfound_planner": "Open Planner",
   "notfound_blog": "Browse Articles",
-
   "account_title": "My Account",
   "account_subtitle": "Your profile, saved recipes, and weekly plans — all in one spot.",
   "account_loading": "Loading...",
@@ -301,7 +279,6 @@
   "account_please_wait": "Please wait...",
   "account_create_account": "Create Account",
   "account_confirm_email": "Check your email to confirm your account!",
-
   "planner_day_mon": "Monday",
   "planner_day_tue": "Tuesday",
   "planner_day_wed": "Wednesday",
@@ -337,7 +314,6 @@
   "planner_allergy_safe": "Allergy-safe by default",
   "planner_allergy_safe_desc": "Filter for nut-free, dairy-free, gluten-free, egg-free, or vegan — every recipe in your plan respects your family's needs.",
   "planner_est_total": "Est. Total:",
-
   "blog_section_label": "The Blog",
   "blog_title": "Lunchbox Tips & Ideas",
   "blog_subtitle": "Practical advice, healthy recipes, and inspiration for AU school lunches.",
@@ -355,15 +331,10 @@
   "blog_cat_parenting": "Parenting Tips",
   "blog_cat_sustainability": "Sustainability",
   "blog_cat_gear": "Gear & Tips",
-
-  "section_our_story": "Our Story",
   "section_why_us": "Why Us",
-  "section_the_team": "The Team",
-  "section_editorial": "Editorial Standards",
   "section_help_centre": "Help Centre",
   "section_legal": "Legal",
   "section_get_in_touch": "Get In Touch",
-
   "home_badge_free": "Free for AU Families",
   "home_heading_line1": "Lunch Planning",
   "home_heading_highlight": "Simplified.",
@@ -409,7 +380,6 @@
   "home_cta_heading": "Lunchbox Sorted in 30 Seconds",
   "home_cta_desc": "Thousands of Aussie parents already plan smarter. No sign-up required — just open the planner and go.",
   "home_footer_desc": "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists.",
-
   "blog_post_back": "Blog",
   "blog_post_published": "Published:",
   "blog_post_reviewed": "Reviewed:",
@@ -436,7 +406,6 @@
   "blog_post_faqs": "FAQs",
   "blog_post_about_us": "About us",
   "blog_post_contact": "Contact",
-
   "nav_guides": "Guides",
   "guides_section_label": "Parent Guides",
   "guides_title": "The Aussie Lunchbox Knowledge Base",
@@ -445,7 +414,6 @@
   "guides_cta_title": "Turn Knowledge Into Action",
   "guides_cta_desc": "Open the planner, apply what you've learned, and generate a week of healthy school lunches in seconds — completely free.",
   "guides_cta_btn": "Start Planning →",
-
   "home_testimonials_label": "Hear From Parents",
   "home_testimonials_heading": "What Aussie Families Are Saying",
   "home_testimonial1_text": "I'm a shift nurse and mornings are chaos. Now I open the planner on my day off, hit Generate, and the whole week is done. My girls love picking their favourite from the plan — it's become our little Sunday tradition.",
@@ -458,16 +426,7 @@
   "home_commitment_heading": "Backed by Science, Tested by Parents",
   "home_commitment_desc": "Every recipe on Aussie Lunchbox is developed following NHMRC Australian Dietary Guidelines and reviewed by our team of parent contributors. We test each meal with Australian supermarket ingredients, verify prices at Woolworths and Coles, and update our database every month. Our editorial standards are transparent — read them on our About page.",
   "home_commitment_link": "See our editorial process →",
-
-  "about_advisory_title": "Where Our Nutrition Advice Comes From",
-  "about_advisory_desc": "Aussie Lunchbox is not a medical or dietetic service. Our content is guided by Australia's most recognised public-health nutrition frameworks.",
-  "about_advisor1_name": "NHMRC Australian Dietary Guidelines",
-  "about_advisor1_desc": "Every recipe and weekly plan is cross-referenced with the Australian Dietary Guidelines issued by the National Health and Medical Research Council. These guidelines define the five food groups and recommended daily intakes for children aged 4–13, forming the backbone of our meal-balance logic.",
-  "about_advisor2_name": "FSANZ Food Standards Code",
-  "about_advisor2_desc": "Allergen labelling, nutritional panel interpretation, and safe-food-handling references throughout the site follow the Food Standards Code administered by Food Standards Australia New Zealand (FSANZ), ensuring our guidance reflects current Australian regulatory standards.",
-  "about_founding_story": "Back in 2025, three parents at the same Sydney primary school kept bumping into each other at Woolworths on Sunday afternoons — trolleys half-full, phones open to the same handful of recipe blogs, each one trying to dodge a different allergy. A shared frustration turned into a shared spreadsheet, the spreadsheet turned into a prototype, and Aussie Lunchbox was born. We opened it to the public the day our own kids gave the thumbs-up.",
   "about_founding_story_continued": "Today the team spans Sydney, Melbourne, and Brisbane — a handful of parents, a couple of writers, and one person who genuinely enjoys comparing Woolworths and Coles prices. Every recipe is cooked in a real kitchen before it goes live. Every price is verified at a real checkout. Every allergy tag is checked against the actual product label, not just the database entry.",
-
   "share_title": "Share Plan",
   "share_copy_list": "Copy Shopping List",
   "share_copied": "Copied!",
@@ -493,7 +452,6 @@
   "planner_seo_price_p": "Every ingredient in your shopping list displays a live Woolworths price and a Coles estimate, so you can compare before you leave the house. We show per-portion costs, not just packet prices, giving you a realistic view of what the week will actually cost. Most Aussie families prepare five days of nutritious school lunches for under $20.",
   "planner_seo_howto_name": "How to Build a Weekly School Lunch Plan",
   "planner_seo_howto_desc": "Open Aussie Lunchbox, set your allergy and dietary filters, and generate a personalised 5-day school lunch roster with recipes, a categorised shopping list, and live Australian supermarket pricing.",
-
   "home_guide_label": "Know the Rules",
   "home_guide_heading": "Australian School Lunch Rules You Should Know",
   "home_guide_rules_h": "Navigating School Food Policies",
