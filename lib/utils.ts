@@ -1,3 +1,39 @@
+// ─── References extraction ────────────────────────────────────────────────────
+// Pulls unique external links from markdown body for the auto-generated
+// "References" section at the bottom of articles (E-E-A-T signal).
+// If body has no inline links, falls back to a standard set of AU authority sources.
+
+export interface Reference {
+  text: string;
+  url: string;
+}
+
+const STANDARD_AU_REFERENCES: Reference[] = [
+  { text: "Australian Dietary Guidelines (Eat for Health)", url: "https://www.eatforhealth.gov.au/" },
+  { text: "Allergy & Anaphylaxis Australia", url: "https://allergyfacts.org.au/" },
+  { text: "National Heart Foundation of Australia", url: "https://www.heartfoundation.org.au/" },
+  { text: "Food Standards Australia New Zealand (FSANZ)", url: "https://www.foodstandards.gov.au/" },
+];
+
+export function extractReferences(body: string): Reference[] {
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const seen = new Map<string, string>();
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(body)) !== null) {
+    const text = match[1].trim();
+    const url = match[2].trim();
+    if (url.startsWith("http") && !seen.has(url)) {
+      seen.set(url, text);
+    }
+  }
+  return Array.from(seen.entries()).map(([url, text]) => ({ text, url }));
+}
+
+export function getReferences(body: string): Reference[] {
+  const extracted = extractReferences(body);
+  return extracted.length > 0 ? extracted : STANDARD_AU_REFERENCES;
+}
+
 // ─── Ingredient categories ────────────────────────────────────────────────────
 
 const INGREDIENT_CATEGORIES: Record<string, string[]> = {

@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { GUIDES, GUIDE_CARDS } from "@/content/guides";
+import { BLOG_CARDS } from "@/content/posts";
 import { BRAND } from "@/lib/brand";
+import { getReferences } from "@/lib/utils";
 import AdUnit from "@/components/AdUnit";
 
 const BASE_URL = BRAND.SITE_URL;
@@ -191,6 +193,13 @@ export default async function GuideDetailPage({
   const others = GUIDE_CARDS.filter(g => g.slug !== slug && g.category !== guide.category);
   const relatedGuides = [...sameCat, ...others].slice(0, 3);
 
+  // Cross-type related blog articles
+  const matchingPosts = BLOG_CARDS.filter(p => p.category === guide.category);
+  const otherPosts = BLOG_CARDS.filter(p => p.category !== guide.category);
+  const relatedArticles = [...matchingPosts, ...otherPosts].slice(0, 3);
+
+  const references = getReferences(guide.body);
+
   const isNamedAuthor = author !== "Aussie Lunchbox Team";
   const reviewedDate = guide.lastReviewed ? new Date(`1 ${guide.lastReviewed}`) : null;
   const dateModified = reviewedDate && !isNaN(reviewedDate.getTime())
@@ -302,6 +311,29 @@ export default async function GuideDetailPage({
         {/* Body */}
         <div className="prose-like">{renderBody(guide.body)}</div>
 
+        {/* References — auto-extracted from body links (E-E-A-T) */}
+        {references.length > 0 && (
+          <section className="mt-10 pt-6 border-t border-gray-100">
+            <h2 className="text-sm font-bold text-[#7B3F00] uppercase tracking-wide mb-3">
+              {t("blog_post_references")}
+            </h2>
+            <ol className="text-sm text-gray-600 space-y-2 list-decimal list-inside leading-relaxed">
+              {references.map((ref) => (
+                <li key={ref.url}>
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#F5A623] hover:underline break-words"
+                  >
+                    {ref.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
         {/* E-E-A-T: editorial note */}
         <div className="mt-10 pt-6 border-t border-gray-100">
           <div className="bg-[#FFF8EE] rounded-2xl p-5">
@@ -362,6 +394,42 @@ export default async function GuideDetailPage({
                   <p className="text-xs text-gray-400 mb-1">{related.date}</p>
                   <h3 className="text-sm font-bold text-[#7B3F00] leading-snug group-hover:text-[#F5A623] transition-colors line-clamp-2">
                     {related.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related blog articles — cross-type internal linking (E-E-A-T) */}
+      {relatedArticles.length > 0 && (
+        <section className="max-w-5xl mx-auto px-4 pb-12">
+          <h2 className="text-xl font-bold text-[#7B3F00] mb-6">
+            {t("blog_post_related_articles")}
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedArticles.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/${locale}/blog/${p.slug}`}
+                className="bg-[#FFF8EE] rounded-3xl overflow-hidden hover:shadow-lg transition-shadow group"
+              >
+                <div className="relative h-36 overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <span className="absolute top-2 left-2 bg-[#F5A623] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
+                    {p.category}
+                  </span>
+                </div>
+                <div className="p-4">
+                  <p className="text-xs text-gray-400 mb-1">{p.date}</p>
+                  <h3 className="text-sm font-bold text-[#7B3F00] leading-snug group-hover:text-[#F5A623] transition-colors line-clamp-2">
+                    {p.title}
                   </h3>
                 </div>
               </Link>
