@@ -26,7 +26,9 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        # npm ci는 lock 파일이 100% sync 안 되면 실패해서 가격 수집 자체가 멈춤.
+        # 가격 캐시만 갱신하는 가벼운 작업이라 install로 충분 (--no-save는 lock 변경 방지).
+        run: npm install --no-save --no-audit --no-fund
 
       - name: Fetch Woolworths AU prices
         run: node scripts/update_prices.mjs
