@@ -35,8 +35,11 @@ jobs:
 
       - name: Commit and push price cache
         run: |
-          git config user.name "Aussie Lunchbox Bot"
-          git config user.email "bot@aussielunchbox.com.au"
+          # GitHub Actions 표준 bot identity 사용
+          # 이 email은 GitHub이 자동으로 github-actions[bot] user와 매칭함 →
+          # Vercel Hobby plan에서 "committer not associated with GitHub user" 에러 방지
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/price_cache.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
