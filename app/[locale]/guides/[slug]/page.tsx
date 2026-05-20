@@ -38,8 +38,6 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/guides/${slug}`,
         en: `${BASE_URL}/en/guides/${slug}`,
-        ko: `${BASE_URL}/ko/guides/${slug}`,
-        "zh-CN": `${BASE_URL}/zh/guides/${slug}`,
       },
     },
     openGraph: {
@@ -200,11 +198,13 @@ export default async function GuideDetailPage({
 
   const references = getReferences(guide.body);
 
-  const isNamedAuthor = author !== "Aussie Lunchbox Team";
+  // Solo operator + dateModified guard (blog/[slug]와 동일 정책).
+  const authorName = author && author !== "Aussie Lunchbox Team" ? author : "Yong Jae Lee";
+
+  const publishedTime = new Date(guide.date).getTime();
   const reviewedDate = guide.lastReviewed ? new Date(`1 ${guide.lastReviewed}`) : null;
-  const dateModified = reviewedDate && !isNaN(reviewedDate.getTime())
-    ? reviewedDate.toISOString()
-    : new Date(guide.date).toISOString();
+  const reviewedTime = reviewedDate && !isNaN(reviewedDate.getTime()) ? reviewedDate.getTime() : 0;
+  const dateModified = new Date(Math.max(publishedTime, reviewedTime)).toISOString();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -214,9 +214,7 @@ export default async function GuideDetailPage({
     image: guide.image,
     datePublished: new Date(guide.date).toISOString(),
     dateModified,
-    author: isNamedAuthor
-      ? { "@type": "Person", name: author, url: `${BASE_URL}/en/about` }
-      : { "@type": "Organization", name: "Aussie Lunchbox Editorial Team", url: `${BASE_URL}/en/about` },
+    author: { "@type": "Person", name: authorName, url: `${BASE_URL}/about` },
     publisher: {
       "@type": "Organization",
       name: "Aussie Lunchbox",

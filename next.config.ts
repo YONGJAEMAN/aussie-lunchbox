@@ -33,6 +33,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // non-www → www 301 redirect (canonical 단일화)
+      // www가 canonical인데 non-www도 200 응답하면 duplicate content 신호 → AdSense 감점.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "aussielunchbox.com" }],
+        destination: "https://www.aussielunchbox.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withSerwist(withNextIntl(nextConfig));

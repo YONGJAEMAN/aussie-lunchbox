@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, memo } from "react";
+import { useState, useEffect, memo } from "react";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
 import { PlanItem, AllergyType, Locale, PriceInfo } from "@/lib/types";
@@ -13,8 +13,6 @@ const ALLERGY_OPTIONS: AllergyType[] = [
   "Nut Allergy", "Dairy Allergy", "Gluten Allergy",
   "Egg Allergy", "Vegetarian", "Vegan",
 ];
-
-const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 export default function PlannerClient() {
   const t = useTranslations();
@@ -29,7 +27,6 @@ export default function PlannerClient() {
   // Sidebar state
   const [allergies, setAllergies] = useState<AllergyType[]>([]);
   const [excluded, setExcluded] = useState<string[]>([]);
-  const [favorites, setFavorites] = useState<string[]>([]);
   const [leftover, setLeftover] = useState("");
   const [allIngredients, setAllIngredients] = useState<string[]>([]);
 
@@ -122,7 +119,7 @@ export default function PlannerClient() {
           locale,
           allergies,
           excludedIngredients: excluded,
-          favoriteIngredients: favorites,
+          favoriteIngredients: dbFavorites,
           fridgeLeftover: leftover,
         }),
       });

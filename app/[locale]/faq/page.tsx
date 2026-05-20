@@ -20,17 +20,10 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/faq`,
         en: `${BASE_URL}/en/faq`,
-        ko: `${BASE_URL}/ko/faq`,
-        "zh-CN": `${BASE_URL}/zh/faq`,
       },
     },
     openGraph: { url: canonical },
   };
-}
-
-interface FAQItem {
-  q: string;
-  a: string;
 }
 
 export default async function FAQPage() {

@@ -21,8 +21,6 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/about`,
         en: `${BASE_URL}/en/about`,
-        ko: `${BASE_URL}/ko/about`,
-        "zh-CN": `${BASE_URL}/zh/about`,
       },
     },
     openGraph: { url: canonical },

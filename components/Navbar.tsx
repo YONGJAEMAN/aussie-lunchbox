@@ -6,10 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 
+// AdSense 승인 단계: 언어 전환 버튼 단일화 (en만).
+// /ko, /zh 경로는 middleware에서 / (영어 root)로 redirect되므로 노출하지 않음.
+// 승인 후 다국어 운영 재개 시 ko/zh 항목 복원.
 const LOCALES = [
   { code: "en", label: "EN" },
-  { code: "ko", label: "한" },
-  { code: "zh", label: "中" },
 ];
 
 const NAV_LINKS = [
@@ -86,22 +87,24 @@ export default function Navbar() {
 
         {/* Right side: Locale switcher + Account */}
         <div className="hidden md:flex items-center gap-2">
-          {/* Locale switcher */}
-          <div className="flex items-center border border-gray-200 rounded-full overflow-hidden text-sm">
-            {LOCALES.map((loc) => (
-              <button
-                key={loc.code}
-                onClick={() => switchLocale(loc.code)}
-                className={`px-3 py-1.5 font-medium transition-colors ${
-                  currentLocale === loc.code
-                    ? "bg-[#F5A623] text-white"
-                    : "text-gray-500 hover:bg-gray-100"
-                }`}
-              >
-                {loc.label}
-              </button>
-            ))}
-          </div>
+          {/* Locale switcher — AdSense 승인 단계: 단일 항목이면 숨김 */}
+          {LOCALES.length > 1 && (
+            <div className="flex items-center border border-gray-200 rounded-full overflow-hidden text-sm">
+              {LOCALES.map((loc) => (
+                <button
+                  key={loc.code}
+                  onClick={() => switchLocale(loc.code)}
+                  className={`px-3 py-1.5 font-medium transition-colors ${
+                    currentLocale === loc.code
+                      ? "bg-[#F5A623] text-white"
+                      : "text-gray-500 hover:bg-gray-100"
+                  }`}
+                >
+                  {loc.label}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Account button */}
           {user ? (
@@ -165,21 +168,26 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
-            <div className="flex items-center border border-gray-200 rounded-full overflow-hidden text-sm">
-              {LOCALES.map((loc) => (
-                <button
-                  key={loc.code}
-                  onClick={() => { switchLocale(loc.code); setMenuOpen(false); }}
-                  className={`px-3 py-1.5 font-medium transition-colors ${
-                    currentLocale === loc.code
-                      ? "bg-[#F5A623] text-white"
-                      : "text-gray-500 hover:bg-gray-100"
-                  }`}
-                >
-                  {loc.label}
-                </button>
-              ))}
-            </div>
+            {/* Mobile Locale switcher — AdSense 승인 단계: 단일 항목이면 숨김 */}
+            {LOCALES.length > 1 ? (
+              <div className="flex items-center border border-gray-200 rounded-full overflow-hidden text-sm">
+                {LOCALES.map((loc) => (
+                  <button
+                    key={loc.code}
+                    onClick={() => { switchLocale(loc.code); setMenuOpen(false); }}
+                    className={`px-3 py-1.5 font-medium transition-colors ${
+                      currentLocale === loc.code
+                        ? "bg-[#F5A623] text-white"
+                        : "text-gray-500 hover:bg-gray-100"
+                    }`}
+                  >
+                    {loc.label}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div />
+            )}
             {user ? (
               <button
                 onClick={() => { handleSignOut(); setMenuOpen(false); }}

@@ -38,8 +38,6 @@ export async function generateMetadata({
       languages: {
         "x-default": `${BASE_URL}/en/blog/${slug}`,
         en: `${BASE_URL}/en/blog/${slug}`,
-        ko: `${BASE_URL}/ko/blog/${slug}`,
-        "zh-CN": `${BASE_URL}/zh/blog/${slug}`,
       },
     },
     openGraph: {
@@ -200,11 +198,17 @@ export default async function BlogPostPage({
 
   const references = getReferences(post.body);
 
-  const isNamedAuthor = author !== "Aussie Lunchbox Team";
+  // Aussie Lunchbox는 solo operator 사이트. author가 비어있거나 "team"이면
+  // 운영자 본인(Yong Jae Lee)으로 통일 — About 페이지 톤과 일치.
+  const authorName = author && author !== "Aussie Lunchbox Team" ? author : "Yong Jae Lee";
+
+  // dateModified 가드: lastReviewed가 publishDate보다 앞서면 schema 위반.
+  // 예: date "Feb 15", lastReviewed "February 2026" → "1 February 2026" = Feb 1.
+  // Math.max로 publishDate를 floor로 사용.
+  const publishedTime = new Date(post.date).getTime();
   const reviewedDate = post.lastReviewed ? new Date(`1 ${post.lastReviewed}`) : null;
-  const dateModified = reviewedDate && !isNaN(reviewedDate.getTime())
-    ? reviewedDate.toISOString()
-    : new Date(post.date).toISOString();
+  const reviewedTime = reviewedDate && !isNaN(reviewedDate.getTime()) ? reviewedDate.getTime() : 0;
+  const dateModified = new Date(Math.max(publishedTime, reviewedTime)).toISOString();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -214,9 +218,7 @@ export default async function BlogPostPage({
     image: post.image,
     datePublished: new Date(post.date).toISOString(),
     dateModified,
-    author: isNamedAuthor
-      ? { "@type": "Person", name: author, url: `${BASE_URL}/en/about` }
-      : { "@type": "Organization", name: "Aussie Lunchbox Editorial Team", url: `${BASE_URL}/en/about` },
+    author: { "@type": "Person", name: authorName, url: `${BASE_URL}/about` },
     publisher: {
       "@type": "Organization",
       name: "Aussie Lunchbox",

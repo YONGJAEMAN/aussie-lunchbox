@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { renderToBuffer, Document, Page, Text, View, StyleSheet, Font } from "@react-pdf/renderer";
+import { renderToBuffer, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import { PlanItem } from "@/lib/types";
 import { getIngredientCategory } from "@/lib/utils";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
