@@ -33,18 +33,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      // non-www → www 301 redirect (canonical 단일화)
-      // www가 canonical인데 non-www도 200 응답하면 duplicate content 신호 → AdSense 감점.
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "aussielunchbox.com" }],
-        destination: "https://www.aussielunchbox.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // 도메인 redirect는 Vercel platform이 이미 처리 (www → non-www 방향).
+  // next.config에서 반대 방향 (non-www → www) redirect를 추가하면 무한 루프 발생 →
+  // 도메인 redirect는 Vercel domains UI에서 통제하는 게 정석. 코드는 양쪽 모두 인식.
 };
 
 export default withSerwist(withNextIntl(nextConfig));
