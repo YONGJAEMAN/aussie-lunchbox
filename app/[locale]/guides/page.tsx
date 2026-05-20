@@ -118,6 +118,169 @@ export default async function GuidesPage({
         </div>
       </section>
 
+      {/* Editorial framework — how guides are researched */}
+      <section className="bg-[#FFF8EE] py-20 px-4">
+        <div className="max-w-3xl mx-auto prose prose-gray">
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">How these guides are researched</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Every guide on Aussie Lunchbox is written by{" "}
+            <Link href={`/${locale}/about`} className="text-[#F5A623] underline">Yong Jae Lee</Link>
+            , the solo operator of the site, and reviewed against publicly available
+            Australian Government, NHMRC, Heart Foundation, and state health-department
+            guidance before publishing. The aim is to translate dense official documents —
+            often 40 to 100 pages — into a parent-readable framework that survives a
+            Monday-morning lunchbox decision.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The sources I lean on most often:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+            <li>
+              <strong>National Health and Medical Research Council (NHMRC)</strong> —
+              <em>Australian Dietary Guidelines</em> (2013), <em>Australian Guide to
+              Healthy Eating</em>, and the <em>Nutrient Reference Values for Australia
+              and New Zealand</em>. These are the backbone of all age-band serving
+              recommendations.
+            </li>
+            <li>
+              <strong>Heart Foundation Australia</strong> — children&apos;s nutrition
+              resources, healthy eating fact sheets, and sodium / saturated fat
+              recommendations. Used wherever a guide discusses heart-healthy eating
+              patterns for school-age children.
+            </li>
+            <li>
+              <strong>Food Standards Australia New Zealand (FSANZ)</strong> — particularly
+              the <em>Food Standards Code Standard 1.2.3</em> and the <em>Plain English
+              Allergen Labelling (PEAL)</em> guidance that became mandatory in February
+              2024. Allergy guides on this site assume PEAL-format labels.
+            </li>
+            <li>
+              <strong>State Health Departments &amp; Healthy Canteen frameworks</strong> —
+              NSW Healthy School Canteen Strategy, Queensland Smart Choices Healthy Food
+              and Drink Supply Strategy, Victorian Healthy Choices guidelines, WA Healthy
+              Options program, SA Right Bite, Tasmania Move Well Eat Well, ACT Public
+              School Food and Drink Policy, and NT Healthy Eating Guidelines. These define
+              what schools serve and inform what counts as a healthy lunchbox.
+            </li>
+            <li>
+              <strong>Allergy &amp; Anaphylaxis Australia (A&amp;AA)</strong> and{" "}
+              <strong>ASCIA</strong> (Australasian Society of Clinical Immunology and
+              Allergy) — ASCIA Action Plans, school-policy guidance, and the prevalence
+              statistics quoted in the allergy guides.
+            </li>
+            <li>
+              <strong>Department of Education (Federal + State)</strong> — term dates,
+              healthy canteen programs, and the broader policy framework that informs
+              what schools accept in lunches.
+            </li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mt-12 mb-4">Editorial process for each guide</h3>
+          <ol className="list-decimal pl-6 text-gray-700 space-y-2 mb-6">
+            <li>
+              <strong>Topic selection</strong> — driven by recurring questions from parent
+              feedback (contact-form messages), gaps in the existing guide library, or
+              changes in Australian public health guidance (e.g., the PEAL allergen
+              labelling transition).
+            </li>
+            <li>
+              <strong>Source review</strong> — I work through the latest version of the
+              relevant NHMRC / FSANZ / state health document, plus any peer-reviewed
+              Australian-specific data referenced inside.
+            </li>
+            <li>
+              <strong>Drafting</strong> — guides aim for 1,500–3,000 words and translate
+              official guidance into practical decisions a parent can make at a
+              Woolworths or Coles aisle, or a kitchen counter.
+            </li>
+            <li>
+              <strong>Cross-check</strong> — facts that affect food safety, allergy, or
+              nutrient adequacy are re-verified against the source before publishing.
+              Any specific numerical threshold (sugar 15g per serve, sodium 400mg per
+              100g, iron 10mg per day, etc.) traces back to a named Australian source in
+              the References section.
+            </li>
+            <li>
+              <strong>Last-reviewed dating</strong> — each guide carries a publish date
+              and a last-reviewed date. Guides are reviewed annually at minimum, sooner
+              when the underlying guidance changes.
+            </li>
+            <li>
+              <strong>Corrections process</strong> — readers can flag errors through the{" "}
+              <Link href={`/${locale}/contact`} className="text-[#F5A623] underline">Contact page</Link>
+              . Verified corrections are applied within 48 hours and the last-reviewed
+              date is updated. Substantial factual corrections are noted in the article
+              footer.
+            </li>
+          </ol>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mt-12 mb-4">Who these guides are for</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Each guide is written for adults responsible for school-age children in
+            Australia. The default reader assumption is:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+            <li>You have a child between Foundation / Prep and Year 12 in an Australian school (government, Catholic, or independent).</li>
+            <li>You are the parent, caregiver, grandparent, or legal guardian who actually packs the lunchbox.</li>
+            <li>You are not looking for medical or allergy advice tailored to your child — for that, the right step is a GP visit, an Accredited Practising Dietitian (APD), or a clinical immunology/allergy specialist.</li>
+            <li>You are interested in <em>practical</em> decisions: which ingredient to choose, which day of the week to do prep, which supermarket has the better price this fortnight.</li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            If a guide drifts into territory that should be handled by a clinician (a
+            child with diagnosed coeliac, anaphylaxis, growth concerns, or a sensory
+            feeding condition), the guide says so explicitly and points to the right
+            professional. The site does not pretend to substitute for medical advice.
+          </p>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mt-12 mb-4">What each category covers</h3>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+            <li>
+              <strong>Nutrition</strong> — the five Australian food groups, age-band
+              serving guidance, Green/Amber/Red food classification under state healthy
+              canteen frameworks, and nutrient-specific deep dives (iron, calcium, protein).
+            </li>
+            <li>
+              <strong>Allergy &amp; intolerance</strong> — nut-free policies in Australian
+              schools, egg-free lunches, dairy alternatives, FSANZ PEAL label reading,
+              school policy navigation, and ASCIA Action Plan overview.
+            </li>
+            <li>
+              <strong>Budget &amp; supermarket</strong> — Woolworths vs Coles vs ALDI vs
+              IGA price tracking, batch-cooking economics, and seasonal price patterns
+              for Australian produce.
+            </li>
+            <li>
+              <strong>Seasonal produce</strong> — what is in season month-by-month in
+              Australia, state timing differences (QLD vs VIC vs WA), term-by-term
+              lunchbox themes, and storage strategies for the Australian climate.
+            </li>
+            <li>
+              <strong>Safety &amp; gear</strong> — Australian summer heat (35–40°C)
+              food safety, insulated bag comparisons, container material safety
+              (polypropylene / silicone / stainless steel), and dishwasher / microwave use.
+            </li>
+            <li>
+              <strong>Policy &amp; school environment</strong> — Department of Education
+              programmes, Healthy Heart Award equivalents, and the practical implications
+              of school food-policy letters most parents receive but never fully read.
+            </li>
+          </ul>
+
+          <p className="text-gray-700 leading-relaxed text-sm bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <strong>Editorial scope.</strong> Guides on this site are general
+            information, aligned with public Australian Government, NHMRC, and Heart
+            Foundation guidance. They are not personalised medical or dietary advice.
+            For specific concerns about your child&apos;s growth, allergies, nutrient
+            adequacy, or feeding behaviour, please consult your GP, paediatrician, or
+            an Accredited Practising Dietitian. See the{" "}
+            <Link href={`/${locale}/terms`} className="text-[#F5A623] underline">Terms</Link>
+            {" "}and{" "}
+            <Link href={`/${locale}/policies`} className="text-[#F5A623] underline">Privacy Policy</Link>
+            {" "}for the full disclaimer and data-handling overview.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#7B3F00] py-20 px-4 text-center">
         <h2 className="text-3xl font-extrabold text-white mb-3">

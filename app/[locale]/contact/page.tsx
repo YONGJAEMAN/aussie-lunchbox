@@ -157,6 +157,118 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* About the operator + scope of enquiry */}
+      <section className="max-w-5xl mx-auto px-4 pb-20">
+        <div className="prose prose-gray max-w-none">
+          <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">Who answers your email</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Every message sent through this page is read by <strong>Yong Jae Lee</strong>, the
+            solo operator of Aussie Lunchbox. There is no support team, no ticketing system,
+            and no virtual assistant in front of the inbox. Yong Jae is a Senior Product
+            Designer and a parent of school-age children — the same audience the site is
+            built for.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-8">
+            This direct line is part of what makes Aussie Lunchbox sustainable as a solo
+            project: feedback from real Australian parents shapes which articles get written
+            next, which allergy filters get refined, and which Woolworths and Coles prices
+            get checked most often. If you have already read the{" "}
+            <Link href={`/${locale}/about`} className="text-[#F5A623] underline">About page</Link>
+            {" "}and the{" "}
+            <Link href={`/${locale}/faq`} className="text-[#F5A623] underline">FAQ</Link>,
+            this email goes straight to me.
+          </p>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">What you can write about</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The contact form handles five common categories. Picking the right one helps
+            me reply faster:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-3 mb-8">
+            <li>
+              <strong>General questions about the planner</strong> — how it works, how to
+              save plans, why a particular menu was suggested, or how to interpret the
+              shopping list. These are usually answered within 24 hours AEST.
+            </li>
+            <li>
+              <strong>Content corrections</strong> — an incorrect ingredient measurement, a
+              broken external reference, an outdated Australian price, or a recipe step
+              that does not read clearly. Corrections are reviewed within 48 hours and the
+              article is updated with a new <code>lastReviewed</code> date. The original is
+              not silently overwritten — if a meaningful factual change is made, the change
+              is noted in the article footer.
+            </li>
+            <li>
+              <strong>Allergy-tagging errors</strong> — the most important category.
+              Aussie Lunchbox cross-references allergy tags against FSANZ
+              Plain English Allergen Labelling (PEAL) ingredient declarations, but
+              real-world ingredient changes by manufacturers can outpace site updates.
+              If you spot a tag that does not match the latest packaging, flag it and I
+              will update the database within 24 hours.
+            </li>
+            <li>
+              <strong>Advertising and partnership enquiries</strong> — Aussie Lunchbox is
+              monetised through Google AdSense only. The site does not currently accept
+              sponsored content, affiliate partnerships, or brand-sponsored articles. If
+              your enquiry is editorial-content related (a recipe collaboration or a
+              guest-author piece), that is welcome — sponsored placements are not.
+            </li>
+            <li>
+              <strong>Privacy and data enquiries</strong> — under the Australian Privacy
+              Act 1988 and the Australian Privacy Principles, you have a right to ask what
+              personal information Aussie Lunchbox holds about you and to request
+              correction or deletion. Email the contact form with the subject "Privacy
+              enquiry" and I will respond within 30 days as required by the Office of the
+              Australian Information Commissioner (OAIC). See the{" "}
+              <Link href={`/${locale}/policies`} className="text-[#F5A623] underline">Privacy Policy</Link>
+              {" "}for the full data-handling overview.
+            </li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Response times</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Aussie Lunchbox is operated from Australia. Typical reply windows:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
+            <li><strong>Planner / general questions:</strong> within 24 hours AEST, Monday–Friday.</li>
+            <li><strong>Allergy-tagging errors:</strong> within 24 hours, including weekends. This is the highest priority category.</li>
+            <li><strong>Content corrections:</strong> within 48 hours AEST, Monday–Friday.</li>
+            <li><strong>Advertising / partnership enquiries:</strong> within 5 working days.</li>
+            <li><strong>Privacy enquiries (Privacy Act 1988):</strong> up to 30 days per OAIC guidance.</li>
+            <li>Australian public holidays may extend the above windows. School holidays do not — the operator is a parent during school holidays too.</li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">What this contact form does not cover</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Three categories I cannot help with through this form:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+            <li>
+              <strong>Medical or dietary advice for an individual child.</strong> Articles
+              on Aussie Lunchbox follow public NHMRC (National Health and Medical Research
+              Council) and Department of Health guidance, but I am not a registered
+              dietitian or paediatric clinician. If your child has a diagnosed condition,
+              allergy with anaphylaxis risk, growth concern, or specific nutritional need,
+              talk to your GP, an accredited practising dietitian (APD), or contact{" "}
+              <strong>Healthdirect Australia (1800 022 222)</strong>.
+            </li>
+            <li>
+              <strong>Account or login issues for the planner.</strong> The planner uses
+              Supabase Auth — if you cannot sign in, use the password-reset flow on the
+              login page. Email recovery is not handled through this form because I do not
+              have direct access to user credentials.
+            </li>
+            <li>
+              <strong>Bulk content licensing or scraping requests.</strong> All
+              Aussie Lunchbox content is original and copyrighted to the operator. Use the{" "}
+              <Link href={`/${locale}/terms`} className="text-[#F5A623] underline">Terms</Link>
+              {" "}page for the licensing details, or email with the subject "Licensing"
+              and a clear use-case description.
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#1a1a1a] text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">

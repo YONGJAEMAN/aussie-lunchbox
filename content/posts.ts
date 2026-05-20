@@ -1585,6 +1585,847 @@ Generate a personalised 5-day school lunch plan in seconds. Set your allergy fil
 [Try the planner →](/en/planner)
 `,
   },
+  "australian-lunchbox-food-safety-summer-heat-fsanz": {
+    title: "Australian Lunchbox Food Safety: A Summer Heat Guide Based on FSANZ Standards",
+    excerpt:
+      "Australian summers routinely hit 35–40°C in NSW, VIC, QLD, and WA, and a school bag in the sun can easily reach 45°C+ by lunch. This guide translates FSANZ food safety standards into practical lunchbox rules — what spoils fastest, the 2-hour/4-hour rule, and how to pack with frozen drink bottles.",
+    date: "May 9, 2026",
+    lastReviewed: "May 2026",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1543362906-acfc16c67564?w=1200&q=80",
+    category: "Food Safety",
+    author: "Yong Jae Lee",
+    body: `
+The first week of Term 1, 2025, Sydney sat at 36°C every afternoon. I sent my kid off with a ham and cheese sandwich, an apple, and a yoghurt pouch, all packed in a regular insulated lunch bag. When the bag came home at 3:30pm, the yoghurt was warm to the touch and the sandwich had developed that slightly sour smell that means you should not eat it. I threw it out, and then I spent the next evening reading every FSANZ and state health department food safety document I could find — because if I am going to send food with my child for six hours in Australian summer heat, I want to know exactly which items are gambling with bacteria and which are safe.
+
+This guide is the version of that research I wish I had had before Term 1 started. Everything below is based on **FSANZ**, the **Australian Food Standards Code**, and **state health department** consumer guidance — not blogs, not opinion.
+
+---
+
+## Why Lunchbox Food Safety Matters More in Australia
+
+Australian Term 1 (late January – early April) and Term 4 (mid-October – mid-December) both fall in our warmest months. Sydney, Melbourne, Brisbane, Perth, and Adelaide all routinely hit 35°C+ in February, with regional inland temperatures reaching 40–45°C. Inside a school bag left in a classroom corner — or worse, hung outside on a hook — the air around the lunchbox often reaches 35–42°C.
+
+FSANZ&apos;s core principle: **bacteria multiply fastest between 5°C and 60°C**. They call this the **"temperature danger zone"**. Inside that range, the bacterial population in a moist, protein-rich food can roughly double every 20 minutes.
+
+The lunchbox problem: most school days last 5–6 hours. A regular insulated bag with no ice pack will sit comfortably inside the danger zone for almost the entire day. If your child eats lunch at 12:30pm — five hours after you packed it at 7:30am — and the food has been at 30°C the whole time in a 38°C summer day, it has had **15 doublings** of bacterial growth.
+
+For a healthy adult, this is mostly an unpleasant outcome. For young children, with smaller bodies and developing immune systems, food poisoning can mean dehydration, missed school, and a hospital visit. This is the YMYL ("your money or your life") angle that makes food safety worth treating seriously.
+
+---
+
+## The Three Rules FSANZ Wants Every Australian Parent to Know
+
+### Rule 1: Keep cold food at 5°C or below
+
+Anything dairy, meat, fish, or egg-based should leave home at fridge temperature.
+
+### Rule 2: Keep hot food at 60°C or above
+
+If you pack a hot thermos meal (pasta, soup, fried rice), it must go in **steaming hot from the stove** and into a pre-warmed insulated container.
+
+### Rule 3: The 2-hour / 4-hour rule
+
+FSANZ&apos;s published 2-hour / 4-hour rule says:
+- Food in the danger zone for **less than 2 hours total** is generally fine to eat.
+- Between 2 and 4 hours, eat immediately and do not reuse.
+- Over 4 hours, discard.
+
+In temperatures above 30°C (Australian summer afternoons), the safe window drops to **1 hour total**.
+
+---
+
+## The High-Risk Foods in an Australian Lunchbox
+
+### Highest risk (need active cold)
+
+- **Plain cooked rice** — supports *Bacillus cereus* growth at room temperature
+- **Cooked chicken, ham, turkey** — sliced deli meats are pasteurised but no longer sterile
+- **Boiled or scrambled eggs**
+- **Soft cheeses** (brie, ricotta, cottage cheese, cream cheese spreads)
+- **Yoghurt and yoghurt-based dressings**
+- **Tuna mayo, egg mayo, chicken mayo**
+
+### Medium risk (cold preferred, more forgiving)
+
+- **Hard cheeses** (cheddar, edam, tasty, parmesan)
+- **Plain cooked pasta**
+- **Hummus and bean dips** — lower pH slows growth
+- **Cut fruit with high water content** (rockmelon, watermelon, mango, pineapple)
+
+### Low risk (lunchbox-friendly at any reasonable temperature)
+
+- **Whole fresh fruit** (apple, banana, mandarin, pear, stone fruit)
+- **Hard vegetables** (carrot sticks, cucumber, capsicum, celery, snow peas)
+- **Crackers, rice cakes, breadsticks**
+- **Wholegrain bread with low-moisture fillings** (peanut butter where allowed, vegemite, tahini)
+- **Boiled eggs in shell**
+
+---
+
+## How to Pack: Australian-Specific Practical Routine
+
+### The night before
+
+1. Pack everything pre-prepared and put the assembled lunchbox in the fridge.
+2. Freeze a small drink bottle (250–330ml) — acts as both ice pack and drink.
+3. If using a Thermos, leave it on the bench.
+
+### The morning of
+
+4. Pull the lunchbox from the fridge. Drop the frozen bottle in alongside.
+5. If packing hot food: fill the Thermos with **freshly boiled water**, leave 1–2 minutes, tip out, add piping hot food, seal. Skipping pre-warm is the #1 reason hot Thermos meals end up lukewarm by lunch.
+6. Keep the bag in the coldest part of the kitchen until the child leaves.
+
+### At school
+
+7. Bag stays in the classroom, ideally in a shaded corner, not outside on a hook in summer.
+8. Frozen bottle should still feel cold-to-cool at lunch.
+
+### After school
+
+9. Anything uneaten high-risk food that has been out >2 hours — discard.
+
+---
+
+## What "Safe" Looks Like by Australian Temperature
+
+| Outside temp | Bag conditions | Cold pack required? | High-risk foods OK? |
+|--------------|----------------|---------------------|---------------------|
+| Below 20°C | Ordinary insulated bag | Optional | Yes, within 4 hours |
+| 20–28°C | Insulated bag | Strongly recommended | Yes, with cold pack |
+| 28–35°C (typical Term 1 afternoons) | Insulated bag + ice | Required | Only with frozen bottle + insulated bag |
+| 35°C and above (summer extreme) | Insulated bag + ice, kept indoors | Required | Avoid soft cheese, mayo, tuna salad; switch to hard cheese, peanut butter (where allowed), whole fruit |
+
+---
+
+## Cross-Contamination: The Hidden Risk
+
+### 1. The same knife for raw and cooked
+
+If you slice raw chicken on Sunday and use the same knife (rinsed but not washed with soap) to slice cucumber for Monday&apos;s lunchbox, you have transferred bacteria. Use **separate knives or boards** for raw meat.
+
+### 2. Reusing yesterday&apos;s lunchbox without washing
+
+**FSANZ&apos;s recommendation is to wash lunchboxes daily with hot soapy water** — silicone seals included. Once a week, run through the dishwasher&apos;s hot cycle.
+
+---
+
+## A Quick Daily Checklist
+
+- [ ] Did the lunchbox come from the fridge, not the bench?
+- [ ] Is there a cold source in the bag (frozen drink bottle or ice pack)?
+- [ ] If there is hot food in a Thermos, did I pre-warm with boiling water?
+- [ ] Is today over 30°C? If so, did I swap out the mayo-based items?
+- [ ] Is the lunchbox itself clean from yesterday, including the seals?
+
+---
+
+## References
+
+- Food Standards Australia New Zealand (FSANZ): *Food safety at home* and the *Australia New Zealand Food Standards Code* — [foodstandards.gov.au](https://www.foodstandards.gov.au/)
+- FSANZ: *The 2-hour / 4-hour rule*.
+- NSW Food Authority, Queensland Health, Vic Health: state-level consumer food safety guidance.
+- Heart Foundation Australia: *Healthy eating for children* — [heartfoundation.org.au](https://www.heartfoundation.org.au/)
+- NHMRC: *Australian Dietary Guidelines*, 2013.
+
+This article is informational and aligned with publicly available FSANZ and Australian state health department guidance. It is not medical advice. If your child has a specific food allergy or medical condition, talk to your GP or an Accredited Practising Dietitian.
+
+---
+
+## Plan Temperature-Safe Lunches Automatically
+
+The [Aussie Lunchbox Planner](/en/planner) factors heat-stability into its weekly suggestions.
+
+[Try the planner →](/en/planner)
+`,
+  },
+  "nhmrc-australian-dietary-guidelines-school-lunches-parent-translation": {
+    title: "NHMRC Australian Dietary Guidelines: A Parent's Practical Translation for School Lunches",
+    excerpt:
+      "The NHMRC Australian Dietary Guidelines and state Healthy Canteen frameworks separate school foods into Green, Amber, and Red tiers. Most parents have never read the full guidelines — here is what they actually mean for a Monday-morning lunchbox in plain English.",
+    date: "May 10, 2026",
+    lastReviewed: "May 2026",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80",
+    category: "Nutrition",
+    author: "Yong Jae Lee",
+    body: `
+The first time I sat down with the **NHMRC Australian Dietary Guidelines (2013)** and the **NSW Healthy School Canteen Strategy**, I had a printout in one hand and my kid&apos;s half-finished Up&Go in the other. Dozens of pages. And then — somewhere in the middle — the actual rule a parent needs: state healthy canteen frameworks generally **limit added sugar to under 15g per serve**. That is the kind of number I can use at the supermarket.
+
+This guide is the version of those documents I wish someone had handed me on day one. It pulls out the rules that decide what goes in an Australian school lunchbox.
+
+---
+
+## What These Guidelines Actually Are
+
+Two layered documents most Australian schools work from:
+
+1. **NHMRC Australian Dietary Guidelines (2013)** — foundational national-level dietary advice, including the <em>Australian Guide to Healthy Eating</em> plate.
+2. **State Healthy Canteen frameworks** — NSW Healthy School Canteen Strategy, Queensland Smart Choices, Victorian Healthy Choices, WA Healthy Options, SA Right Bite, Tasmania Move Well Eat Well, ACT Public School Food and Drink Policy, NT Healthy Eating Guidelines.
+
+Neither is legally binding on home-packed lunches. Both inform what schools *serve*, and most schools quietly use the same framework when talking to parents.
+
+---
+
+## The Traffic Light System: Green, Amber, Red
+
+### 🟢 Green — eat plenty
+
+Lunchbox-relevant Green items:
+- Whole or cut fresh fruit
+- Vegetables raw or lightly cooked
+- Wholegrain bread, wraps, rolls — at least 50% wholegrain by weight
+- Unsweetened plain milk
+- Plain water
+- Plain unsweetened yoghurt
+- Lean meat, fish, eggs, legumes
+- Cheese (cheddar, edam, tasty)
+- Plain unsalted nuts or seeds — *with the caveat that many Australian schools are nut-free*
+
+### 🟡 Amber — sometimes
+
+- Flavoured yoghurts within sugar limits
+- Wholegrain crackers and rice cakes with low salt
+- Reduced-salt processed meats (occasional)
+- Muesli bars within sugar limits (typically <15g added sugar per serve)
+- Plain popcorn (no butter, no sugar coating)
+- 100% fruit juice in small amounts (≤200ml)
+
+1–2 Amber items per day without contradicting the framework.
+
+### 🔴 Red — limit and avoid
+
+Foods state frameworks recommend schools **do not sell or provide**:
+- Lollies, chocolate bars, sweets
+- Sweet biscuits, doughnuts, slice
+- Chips, corn chips with added flavouring
+- Sugary drinks (cola, energy drinks, sports drinks)
+- Processed pastries (sausage rolls, party pies) daily
+- Hot chips, deep-fried foods
+- Sweetened flavoured milks above the threshold
+
+---
+
+## The Numerical Thresholds That Actually Matter
+
+### 1. Added sugar: under 15g per serve
+
+Look at the **nutrition information panel** "Sugars" per serve. Under 15g → Amber. Over → Red.
+
+### 2. Saturated fat: under 3g per serve (snacks)
+
+Catches fried, pastry-based, highly-processed items.
+
+### 3. Sodium (salt): under 400mg per 100g (most categories)
+
+Many "healthy-looking" wholegrain crackers exceed 600mg/100g. Bread is usually fine (~450mg/100g). Processed meats are nearly always above 1000mg/100g.
+
+---
+
+## Drinks
+
+- **Green**: plain water, plain milk
+- **Amber**: 100% fruit juice ≤200ml, unsweetened plant-based milk
+- **Red**: any added sugar — flavoured milk above threshold, cola, sports drinks, energy drinks
+
+**The only beverages that should regularly appear in an Australian school lunchbox are water and plain milk.**
+
+---
+
+## How This Maps to a Monday Lunchbox
+
+### Green-led example
+
+- **Main:** Wholegrain wrap with chicken, lettuce, cucumber, hummus
+- **Fruit:** 1 apple + 1 mandarin
+- **Vegetable:** Carrot sticks
+- **Snack:** Plain unsweetened Greek yoghurt with berries
+- **Drink:** Water bottle + small plain milk
+
+### Realistic Green/Amber blend (most Australian families)
+
+- **Main:** Wholegrain bread sandwich with cheese, cucumber, lettuce
+- **Fruit:** 1 banana
+- **Vegetable:** Cherry tomatoes
+- **Snack:** 1 muesli bar (under 15g sugar) + cheese cubes
+- **Drink:** Water bottle
+
+80% Green, 20% Amber, 0% Red.
+
+---
+
+## Common Misunderstandings
+
+### "Full-fat milk is bad for kids"
+No. NHMRC recommends full-fat dairy for children under 2, and either full-fat or reduced-fat for children over 2.
+
+### "Carbs are bad"
+The guidelines actively recommend **wholegrain carbohydrates** as a Green-tier staple.
+
+### "All snacks should be removed"
+No. Children need eating opportunities throughout the day.
+
+---
+
+## A Three-Step Weekly Audit
+
+Once a week:
+
+1. **Count the Green servings** — main + fruit + vegetable + drink most days.
+2. **Count the Amber items** — one per day fine; two is the upper limit.
+3. **Count the Red items** — zero most days; one or two per week for genuine treats.
+
+---
+
+## References
+
+- National Health and Medical Research Council (NHMRC): *Australian Dietary Guidelines*, 2013 — [eatforhealth.gov.au](https://www.eatforhealth.gov.au/)
+- NHMRC: *Australian Guide to Healthy Eating*
+- NSW Health: *Healthy School Canteen Strategy*
+- Queensland Health: *Smart Choices*
+- Victorian Department of Health: *Healthy Choices*
+- Heart Foundation Australia: *Healthy eating for children*.
+
+This article is informational. Not personalised medical or dietary advice. For specific concerns, consult your GP or an Accredited Practising Dietitian (APD).
+
+---
+
+## Plan Lunches That Align With the Australian Framework
+
+The [Aussie Lunchbox Planner](/en/planner) generates weekly menus that lean Green by default.
+
+[Try the planner →](/en/planner)
+`,
+  },
+  "australian-year-level-portion-guide-school-lunches": {
+    title: "Foundation vs Year 8: An Australian Year-Level Portion Guide for School Lunches",
+    excerpt:
+      "A five-year-old Foundation/Prep starter and an eleven-year-old Year 7 do not eat the same lunch — but most lunchbox advice treats them as one category. This guide breaks down NHMRC portion sizes by school year, with concrete lunchbox examples.",
+    date: "May 11, 2026",
+    lastReviewed: "May 2026",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1471943311424-646960669fbc?w=1200&q=80",
+    category: "Nutrition",
+    author: "Yong Jae Lee",
+    body: `
+My older kid started Year 4 in February. My younger one started Foundation in the same week. The morning of the first day I packed two identical-looking lunchboxes. The Year 4 came home empty. The Foundation came home with three quarters of the wrap untouched and a note from the teacher: "She told me she was full after two bites."
+
+That afternoon I went looking for Australian-specific portion guidance for school-age children. The relevant material is in the **NHMRC Australian Dietary Guidelines**, the **Australian Guide to Healthy Eating**, and the **Heart Foundation Australia** children&apos;s nutrition resources.
+
+---
+
+## Why Year Level Matters More Than Age Alone
+
+Australian school terminology varies by state (Foundation in VIC, Prep in QLD/TAS, Kindergarten in NSW/ACT, Pre-primary in WA, Reception in SA). Mapping onto NHMRC age bands:
+
+| Australian School Year | Approximate age | NHMRC age band |
+|------------------------|-----------------|----------------|
+| Foundation / Prep / Kindy | 5–6 years | 4–8 years |
+| Year 1–2 | 6–8 years | 4–8 years |
+| Year 3–4 | 8–10 years | 4–8 years (transitioning) |
+| Year 5–6 | 10–12 years | 9–11 years |
+| Year 7–8 | 12–14 years | 12–13 years |
+| Year 9–10 | 14–16 years | 14–18 years |
+| Year 11–12 | 16–18 years | 14–18 years |
+
+Portion needs roughly double from Foundation to Year 12.
+
+---
+
+## The Five Food Groups (Australian Framework)
+
+1. **Vegetables and legumes/beans**
+2. **Fruit**
+3. **Grain (cereal) foods** (wholegrain preferred)
+4. **Milk, yoghurt, cheese**
+5. **Lean meats, poultry, fish, eggs, nuts, seeds, legumes**
+
+### Foundation / Year 1–2 (ages 5–7)
+
+| Food group | Daily serves | Lunchbox target |
+|------------|--------------|-----------------|
+| Vegetables | 4.5 serves | 1 small serve |
+| Fruit | 1.5 serves | 1 small piece |
+| Grain foods | 4 serves | 1.5–2 small serves |
+| Dairy | 1.5–2 serves | 1 small serve |
+| Protein | 1.5 serves | About half a serve |
+
+### Year 3–4
+60–70% of an adult lunchbox.
+
+### Year 5–6
+Many children&apos;s appetites jump noticeably. Move to a full adult-sized lunchbox.
+
+### Year 7–8
+Daily energy requirements can reach 2200–2600 kcal/day.
+
+### Year 9+
+Essentially an adult meal plus a snack.
+
+---
+
+## Visual Portion Guide
+
+### Child&apos;s hand as a measuring tool (Heart Foundation Australia)
+
+| Item | Visual size |
+|------|-------------|
+| Protein | Their palm |
+| Carbohydrate | Their cupped hand |
+| Vegetables | Two cupped hands (raw) or one cupped hand (cooked) |
+| Fat | Their thumb tip |
+
+### Lunchbox volume rule
+
+| Year level | Lunchbox volume |
+|-----------|------------------|
+| Foundation / Year 1 | ~500ml |
+| Year 2–4 | ~700–800ml |
+| Year 5–6 | ~900–1000ml |
+| Year 7–8 | ~1000–1200ml |
+| Year 9+ | 1200ml+ |
+
+---
+
+## Example Lunchboxes
+
+### Foundation (5 years old)
+- Half a wholegrain sandwich (cheese + cucumber)
+- 1 small mandarin
+- 4 carrot sticks
+- 1 cheese cube
+- 2 plain crackers
+- Water bottle (350ml)
+
+Estimated 350–400 kcal.
+
+### Year 4 (8 years old)
+- Whole wholegrain wrap (chicken + lettuce + hummus)
+- 1 apple + grapes
+- Carrot sticks + cherry tomatoes
+- Small yoghurt pouch
+- 1 muesli bar
+- Water bottle (500ml)
+
+Estimated 550–650 kcal.
+
+### Year 7 (12 years old)
+- Two-slice sandwich with chicken, cheese, lettuce, tomato + small pasta salad
+- 1 apple + 1 banana
+- Cucumber sticks + capsicum
+- Plain Greek yoghurt + berries
+- Hummus + wholegrain crackers
+- Water bottle (750ml) + small plain milk
+
+Estimated 750–900 kcal.
+
+### Year 11 (16 years old)
+- Two wraps OR sandwich + pasta + protein
+- 2 pieces fruit
+- Two types vegetable
+- Yoghurt + small cheese
+- Substantial snack (banana bread, trail mix, or egg)
+- Water bottle (1L)
+
+Estimated 900–1100 kcal. Often supplemented from canteen.
+
+---
+
+## Common Mistakes
+
+### Sending too much to Foundation
+An over-full lunchbox signals overwhelming. Send less, but make it finishable.
+
+### Not scaling up at Year 5
+Lunchbox often stays Year 3-sized while the child&apos;s body grows. Hunger by 3pm.
+
+---
+
+## Picky Eaters
+
+NHMRC guidance on picky eating recommends:
+1. **Repeat exposure** — 10–15 times before acceptance
+2. **No bargaining or rewards**
+3. **Let them pack the lunchbox** from Year 3
+4. **Talk to your GP or APD** if intake is genuinely concerning
+
+---
+
+## Quick Year-Specific Audit
+
+- [ ] Lunchbox size appropriate for Year level?
+- [ ] Main matches palm + cupped hand combined?
+- [ ] Vegetables and fruit both present?
+- [ ] Dairy or alternative?
+- [ ] Protein source beyond bread?
+- [ ] Room for a snack?
+
+---
+
+## References
+
+- NHMRC: *Australian Dietary Guidelines* (2013) — [eatforhealth.gov.au](https://www.eatforhealth.gov.au/)
+- NHMRC: *Australian Guide to Healthy Eating*
+- NHMRC: *Nutrient Reference Values for Australia and New Zealand*
+- Heart Foundation Australia: *Children&apos;s nutrition* — [heartfoundation.org.au](https://www.heartfoundation.org.au/)
+- Department of Education (Federal and State): healthy canteen guidance.
+
+Informational only — not personalised dietary advice. For specific concerns, consult your GP, paediatrician, or an Accredited Practising Dietitian.
+
+---
+
+## Plan Lunches That Match Your Child&apos;s Year Level
+
+The [Aussie Lunchbox Planner](/en/planner) lets you set portion size by school year and auto-scales the weekly menu to match.
+
+[Try the planner →](/en/planner)
+`,
+  },
+  "australian-lunchbox-iron-calcium-protein-three-missed-nutrients": {
+    title: "Iron, Calcium, Protein: The Three Nutrients Most Missed in Australian School Lunchboxes",
+    excerpt:
+      "A bread-and-fruit lunchbox can hit the calorie target and still leave an Australian primary-school child short on iron, calcium, and protein — the three nutrients most flagged in NHMRC child nutrition reports.",
+    date: "May 12, 2026",
+    lastReviewed: "May 2026",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80",
+    category: "Nutrition",
+    author: "Yong Jae Lee",
+    body: `
+A standard "healthy" Australian lunchbox — wholegrain sandwich, apple, water bottle — looks fine on paper. It hits the calorie target for a Year 3 child. It passes the **NHMRC Australian Dietary Guidelines** test. And yet it can quietly leave a child short on three specific nutrients flagged repeatedly in Australian child nutrition surveys: **iron, calcium, and protein**.
+
+I learned this when our paediatrician asked: *what does your kid eat for protein at lunch, specifically?* I listed yesterday&apos;s lunchbox out loud and realised the only protein source was a thin scrape of butter on bread.
+
+---
+
+## What the Australian Data Says
+
+The most-cited sources are the **Australian Bureau of Statistics (ABS) Australian Health Survey: Nutrition First Results (2011–12)** and the **NHMRC Nutrient Reference Values for Australia and New Zealand**. Three nutrients fall below recommended intake repeatedly for Australian children aged 5–14:
+
+1. **Iron** — particularly girls Year 5+ and vegetarian/vegan children
+2. **Calcium** — particularly children who do not drink milk daily
+3. **Protein** — under-supplied in bread-and-fruit lunchboxes
+
+The lunchbox carries 30–40% of a typical Australian child&apos;s daily intake. If these are missing here, the rest of the day rarely compensates.
+
+---
+
+## Iron: The One Most Likely to Be Quietly Missing
+
+### NHMRC daily iron RDI
+
+| Age band | RDI |
+|----------|-----|
+| 4–8 years | 10 mg |
+| 9–13 years (boys/girls) | 8 mg |
+| 14–18 years (boys) | 11 mg |
+| 14–18 years (girls, menstruating) | **15 mg** |
+
+### Two types of iron
+
+- **Haem iron** (red meat, chicken, fish, eggs) — absorbed at 15–35%
+- **Non-haem iron** (legumes, leafy greens, wholegrains) — absorbed at 2–20%
+
+For vegetarian children, **strategic pairing with vitamin C** doubles non-haem iron absorption. A sandwich with hummus + a kiwifruit pairs iron with vitamin C far better than the same sandwich + a banana.
+
+### Iron-rich lunchbox foods
+
+| Food | Iron | Type |
+|------|------|------|
+| Lean beef in wrap (40g) | ~1.5 mg | Haem |
+| Boiled egg | ~1 mg | Haem |
+| Chicken thigh (40g) | ~0.7 mg | Haem |
+| Canned tuna (60g) | ~0.7 mg | Haem |
+| Hummus (2 tbsp) | ~1 mg | Non-haem |
+| Wholegrain bread (2 slices) | ~1.5 mg | Non-haem |
+| Kidney beans (¼ cup) | ~1 mg | Non-haem |
+| Dried apricots (4 halves) | ~0.8 mg | Non-haem |
+
+Aim for at least **2–3 mg of iron in the lunchbox itself**.
+
+### Vitamin C amplifiers (Australian-grown)
+
+Kiwifruit, oranges, strawberries, capsicum (red and yellow), tomatoes. **If today&apos;s main is plant-based protein, today&apos;s fruit or vegetable should be vitamin-C rich.**
+
+---
+
+## Calcium: The Bone-Window Nutrient
+
+### Daily calcium target
+
+| Age band | RDI |
+|----------|-----|
+| 4–8 years | 700 mg |
+| 9–11 years | 1000 mg |
+| 12–18 years | **1300 mg** |
+
+1300 mg/day for teenagers is roughly four full servings of dairy.
+
+### Lunchbox sources
+
+| Food | Calcium |
+|------|---------|
+| Plain milk (250ml) | ~290 mg |
+| Plain Greek yoghurt (150g) | ~200 mg |
+| Cheddar (20g) | ~150 mg |
+| Edam / tasty (20g) | ~140 mg |
+| Calcium-fortified soy/oat milk (250ml) | ~250 mg |
+| Almonds (15g) | ~40 mg *(nut-free schools excluded)* |
+| Tinned salmon with bones (60g) | ~150 mg |
+| Tofu (¼ block) | ~150 mg |
+
+**Include at least one dairy or calcium-fortified item every school day.**
+
+### Lactose-intolerant / dairy-avoiding
+
+Lactose-free milk (Liddells, Pauls Zymil, house-brand) keeps the calcium. Calcium-fortified plant milks (≥240 mg per 250ml) widely available.
+
+---
+
+## Protein: The One Bread-and-Fruit Lunchboxes Skip
+
+### Daily protein target
+
+| Age band | RDI |
+|----------|-----|
+| 4–8 years | 20 g |
+| 9–13 years (boys) | 40 g |
+| 9–13 years (girls) | 35 g |
+| 14–18 years (boys) | 65 g |
+| 14–18 years (girls) | 45 g |
+
+Lunchbox carries roughly 30–40% — so primary ~6–8g, upper primary ~12g, secondary ~18g+.
+
+### Protein per typical serving
+
+| Food | Protein |
+|------|---------|
+| Boiled egg | 6 g |
+| Chicken slice (40g) | 10 g |
+| Tuna (60g) | 13 g |
+| Cheddar (20g) | 5 g |
+| Plain Greek yoghurt (150g) | 12 g |
+| Wholegrain bread (2 slices) | 8 g |
+| Hummus (2 tbsp) | 2 g |
+| Cottage cheese (½ cup) | 14 g |
+| Kidney beans (¼ cup) | 4 g |
+| Tofu (¼ block) | 8 g |
+| Plain milk (250ml) | 8 g |
+
+### Protein-adequate lunchbox examples
+
+**Year 4 (target ~10–12g):**
+- Wholegrain wrap with 40g sliced chicken + hummus + cucumber + lettuce
+- 1 mandarin
+- Plain Greek yoghurt 100g
+- Small plain milk 250ml
+
+Total: **~28g** — comfortably over.
+
+**Vegetarian Year 4:**
+- Wholegrain wrap with hummus + falafel + lettuce + tomato (~10g)
+- 1 kiwifruit (vitamin C — boosts iron)
+- 1 boiled egg (6g)
+- Plain yoghurt 100g (6g)
+
+Total: ~22g protein + ~3mg iron + ~280mg calcium.
+
+---
+
+## Three-Nutrient Audit
+
+- **Iron**: at least one haem source, or two non-haem + vitamin C pairing
+- **Calcium**: dairy or fortified item every day
+- **Protein**: 8g primary, 12g upper primary, 18g secondary — distributed across multiple foods
+
+---
+
+## References
+
+- NHMRC: *Nutrient Reference Values for Australia and New Zealand* — [nrv.gov.au](https://www.nrv.gov.au/)
+- NHMRC: *Australian Dietary Guidelines* (2013)
+- Heart Foundation Australia — [heartfoundation.org.au](https://www.heartfoundation.org.au/)
+- Australian Bureau of Statistics: *Australian Health Survey: Nutrition First Results 2011–12*
+- Dietitians Australia.
+
+Informational only — not personalised medical/dietary advice. For deficiency suspicion, see your GP or an Accredited Practising Dietitian.
+
+---
+
+## Plan Lunches With the Three Nutrients in Mind
+
+The [Aussie Lunchbox Planner](/en/planner) flags iron, calcium, and protein totals for each generated week.
+
+[Try the planner →](/en/planner)
+`,
+  },
+  "fsanz-peal-allergen-labelling-australian-30-second-read": {
+    title: "FSANZ PEAL Allergen Labelling: How to Read an Australian Food Label in 30 Seconds",
+    excerpt:
+      "Since February 2024, all packaged food in Australia must declare allergens in Plain English Allergen Labelling (PEAL) format. This guide shows you what to look for, where to find it, and how to read 'contains' vs 'may contain' without standing in the supermarket aisle for 20 minutes.",
+    date: "May 13, 2026",
+    lastReviewed: "May 2026",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
+    category: "Allergy Friendly",
+    author: "Yong Jae Lee",
+    body: `
+The first month after my kid&apos;s nut allergy diagnosis, I spent more time in the Woolworths packaged-snack aisle than I did at home.
+
+Then in February 2024, **Plain English Allergen Labelling (PEAL)** became mandatory across Australia and New Zealand. The whole game changed. Allergens now appear in **a specific, standardised place on the label, in plain English, in bold**, and the differences between "contains" and "may contain" are defined by regulation.
+
+---
+
+## What PEAL Is
+
+**Plain English Allergen Labelling (PEAL)** is a 2021 amendment to **FSANZ Standard 1.2.3**, mandatory for all packaged food **sold in Australia from 25 February 2024**.
+
+Headline changes:
+
+1. **Declared allergens use the standardised plain-English name**.
+2. **The declaration appears in a Summary Statement** directly under the ingredient list, on the same panel, in **bold**.
+3. **"Contains" is regulated** — intentional ingredient.
+4. **"May contain"** statements are *voluntary* but follow industry best-practice.
+5. **Some allergens were renamed** for clarity.
+
+---
+
+## Mandatory Declared Allergens
+
+| Allergen group | Plain English term |
+|---------------|---------------------|
+| Peanut | "peanut" |
+| Tree nuts | each named individually: "almond", "cashew", "hazelnut", "pecan", "pistachio", "macadamia", "walnut", "Brazil nut", "pine nut" |
+| Milk | "milk" |
+| Egg | "egg" |
+| Fish | "fish" |
+| Crustacean | "crustacean" with type (prawn, crab) |
+| Mollusc | "mollusc" with type |
+| Wheat | "wheat" |
+| Gluten-containing cereals | "wheat", "rye", "barley", "oats", "spelt" |
+| Soybean | "soybean" |
+| Sesame | "sesame" |
+| Lupin | "lupin" |
+| Sulphites | "sulphites" when ≥10 mg/kg |
+
+**Tree nuts are now individually named.** Tree-nut allergies are often allergen-specific — a child allergic to cashew may tolerate almond.
+
+---
+
+## Where to Look
+
+### 1. In the ingredient list — bold
+
+> Ingredients: wheat flour, sugar, sunflower oil, **milk** solids, salt, raising agents...
+
+### 2. In the Summary Statement directly below
+
+> Ingredients: wheat flour, sugar, sunflower oil, milk solids, salt, raising agents, **may contain traces of peanut and tree nuts**.
+>
+> **Contains: wheat, milk.**
+
+The Summary Statement is the **30-second read**.
+
+---
+
+## "Contains" vs "May Contain"
+
+### "Contains [allergen]" — regulated, intentional
+
+The allergen is **deliberately in the product**. If your child is allergic, **unsafe**.
+
+### "May contain [allergen]" — voluntary, cross-contamination risk
+
+The allergen is **not an ingredient**, but the product is made in a facility where the allergen is also handled. Voluntary statement following **VITAL (Voluntary Incidental Trace Allergen Labelling)** guidance.
+
+- **Mild allergies/intolerances**: usually a manageable risk
+- **Anaphylactic allergies**: treat as **contains**
+
+ASCIA and Allergy & Anaphylaxis Australia both recommend anaphylactic patients avoid "may contain" products entirely. Make this decision *with your child&apos;s clinical immunology/allergy specialist*.
+
+---
+
+## 30-Second Scan Routine
+
+1. **Find the Summary Statement** (3s) — directly below ingredient list
+2. **Scan for your child&apos;s allergens** (5s) — listed in "Contains:"?
+3. **Check "may contain"** (5s) — apply risk tolerance
+4. **Sanity-check ingredient list** (10s) — skim for bold
+5. **Decision** (7s) — trolley or shelf
+
+---
+
+## Hidden Allergens
+
+### Wheat hidden as
+- Hydrolysed wheat protein, wheat starch, triticale
+
+### Milk hidden as
+- Whey, whey powder, casein, caseinates
+- Milk solids, milk solids non-fat
+- Ghee, butter
+
+### Egg hidden as
+- Albumen, egg white powder, globulin
+- Lysozyme (preservative in some cheeses, wines)
+
+### Soybean hidden as
+- Soy lecithin (E322) — common in chocolate, biscuits
+- Soya bean oil
+- TVP, edamame, miso, tempeh, tofu
+
+PEAL: even **soy lecithin** must trigger "Contains: soybean" if derived from soy.
+
+---
+
+## What PEAL Did Not Change
+
+### 1. Restaurants and unpackaged food
+Only **packaged food** at retail is subject. Restaurants, school canteens, bakeries — not.
+
+### 2. Imported products
+Imported packaged food at Australian retail **must comply with PEAL**.
+
+### 3. Allergen-free certification
+"Made in a nut-free facility" claims on the front — not regulated by PEAL. Follow ACCC consumer protection rules.
+
+---
+
+## Australian Lunchbox Decisions
+
+### For nut-free schools
+Scan for "peanut" and individually-named tree nuts. Check "may contain" — most Australian schools accept items with cross-contamination warnings, but check your school&apos;s policy.
+
+### For dairy-free children
+Watch for "milk". Many "vegetable-based" spreads still contain milk solids — PEAL bold formatting catches them.
+
+### For gluten-free (coeliac)
+"Contains: wheat, rye, barley, oats" should all be absent. **Coeliac Australia Endorsement Logo** is a stronger claim.
+
+---
+
+## References
+
+- Food Standards Australia New Zealand (FSANZ): *Standard 1.2.3* — [foodstandards.gov.au](https://www.foodstandards.gov.au/)
+- FSANZ: *Plain English Allergen Labelling (PEAL)* — mandatory 25 February 2024
+- VITAL Programme (Allergen Bureau)
+- Allergy & Anaphylaxis Australia (A&AA) — [allergyfacts.org.au](https://allergyfacts.org.au/)
+- ASCIA — [allergy.org.au](https://www.allergy.org.au/)
+- Coeliac Australia — endorsement logo and gluten-free standards
+- Australian Competition and Consumer Commission (ACCC)
+
+Informational only — not personalised medical/allergy advice. For diagnosed allergies and anaphylaxis management, always work with your child&apos;s clinical immunology/allergy specialist.
+
+---
+
+## Plan Allergy-Safe Lunches
+
+The [Aussie Lunchbox Planner](/en/planner) lets you tick allergens to avoid and filters the menu library accordingly.
+
+[Try the planner →](/en/planner)
+`,
+  },
 };
 export const BLOG_SLUGS = Object.keys(POSTS);
 
