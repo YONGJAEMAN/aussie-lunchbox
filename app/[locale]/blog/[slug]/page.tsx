@@ -28,7 +28,7 @@ export async function generateMetadata({
   const post = POSTS[slug];
   if (!post) return {};
 
-  const canonical = `${BASE_URL}/${locale}/blog/${slug}`;
+  const canonical = `${BASE_URL}/blog/${slug}`;
 
   return {
     title: `${post.title} | Aussie Lunchbox Blog`,
@@ -36,8 +36,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/blog/${slug}`,
-        en: `${BASE_URL}/en/blog/${slug}`,
+        "x-default": `${BASE_URL}/blog/${slug}`,
+        en: `${BASE_URL}/blog/${slug}`,
       },
     },
     openGraph: {
@@ -227,7 +227,7 @@ export default async function BlogPostPage({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/${locale}/blog/${slug}`,
+      "@id": `${BASE_URL}/blog/${slug}`,
     },
   };
 

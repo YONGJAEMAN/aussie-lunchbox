@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -11,7 +11,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}`;
+  const canonical = `${BASE_URL}`;
   return {
     title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
     description:
@@ -19,8 +19,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en`,
-        en: `${BASE_URL}/en`,
+        "x-default": `${BASE_URL}`,
+        en: `${BASE_URL}`,
       },
     },
     openGraph: {
@@ -52,7 +52,7 @@ export default async function HomePage() {
     description: "Free school lunch planner for Australian families.",
     potentialAction: {
       "@type": "SearchAction",
-      target: `${BASE_URL}/${locale}/blog?q={search_term_string}`,
+      target: `${BASE_URL}/blog?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };

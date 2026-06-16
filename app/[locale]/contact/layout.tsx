@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -8,7 +8,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/contact`;
+  const canonical = `${BASE_URL}/contact`;
   // title+description added
   return {
     title: "Contact Us | Aussie Lunchbox",
@@ -17,8 +17,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/contact`,
-        en: `${BASE_URL}/en/contact`,
+        "x-default": `${BASE_URL}/contact`,
+        en: `${BASE_URL}/contact`,
       },
     },
     openGraph: { url: canonical },

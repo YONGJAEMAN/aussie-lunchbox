@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -10,7 +10,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/faq`;
+  const canonical = `${BASE_URL}/faq`;
   return {
     title: "FAQ – Aussie Lunchbox | Frequently Asked Questions",
     description:
@@ -18,8 +18,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/faq`,
-        en: `${BASE_URL}/en/faq`,
+        "x-default": `${BASE_URL}/faq`,
+        en: `${BASE_URL}/faq`,
       },
     },
     openGraph: { url: canonical },

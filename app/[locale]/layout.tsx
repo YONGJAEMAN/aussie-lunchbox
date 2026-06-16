@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/CookieConsent";
 import ConsentScripts from "@/components/ConsentScripts";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 export async function generateMetadata({
   params,
 }: {
@@ -39,7 +39,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}/${locale}`,
+      url: `${BASE_URL}`,
       siteName: "Aussie Lunchbox",
       locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : "en_AU",
       type: "website",

@@ -1,5 +1,5 @@
 export const BRAND = {
-  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.aussielunchbox.com",
+  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL ?? "https://aussielunchbox.com",
   SITE_NAME: "Aussie Lunchbox",
   COUNTRY: "AU",
   OG_LOCALE: "en_AU",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 const PLANNER_TITLE = "Weekly Lunch Planner | Aussie Lunchbox";
 const PLANNER_DESC =
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/planner`;
+  const canonical = `${BASE_URL}/planner`;
 
   return {
     title: PLANNER_TITLE,
@@ -20,8 +20,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/planner`,
-        en: `${BASE_URL}/en/planner`,
+        "x-default": `${BASE_URL}/planner`,
+        en: `${BASE_URL}/planner`,
       },
     },
     openGraph: {

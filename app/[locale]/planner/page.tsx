@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import PlannerClient from "@/components/PlannerClient";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -10,7 +10,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/planner`;
+  const canonical = `${BASE_URL}/planner`;
 
   const titles: Record<string, string> = {
     en: "Lunch Planner — Aussie Lunchbox",
@@ -29,8 +29,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/planner`,
-        en: `${BASE_URL}/en/planner`,
+        "x-default": `${BASE_URL}/planner`,
+        en: `${BASE_URL}/planner`,
       },
     },
     openGraph: { url: canonical },

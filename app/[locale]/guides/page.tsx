@@ -15,15 +15,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/guides`;
+  const canonical = `${BASE_URL}/guides`;
   return {
     title: "Lunchbox Guides & Resources | Aussie Lunchbox",
     description: "In-depth guides for Australian school families — nutrition, allergies, budget planning, seasonal produce, food safety, and more.",
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/guides`,
-        en: `${BASE_URL}/en/guides`,
+        "x-default": `${BASE_URL}/guides`,
+        en: `${BASE_URL}/guides`,
       },
     },
     openGraph: { url: canonical },

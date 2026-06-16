@@ -214,16 +214,16 @@ export default function PlannerClient() {
 
   function handleWhatsAppShare() {
     const items = shoppingList.slice(0, 15).join(", ");
-    const text = `${t("share_plan_text")} 🦘\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://www.aussielunchbox.com/en/planner`;
+    const text = `${t("share_plan_text")} 🦘\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://aussielunchbox.com/en/planner`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   }
 
   function handleFacebookShare() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.aussielunchbox.com/en/planner")}`, "_blank", "width=600,height=400");
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://aussielunchbox.com/en/planner")}`, "_blank", "width=600,height=400");
   }
 
   async function handleCopyLink() {
-    await navigator.clipboard.writeText("https://www.aussielunchbox.com/en/planner");
+    await navigator.clipboard.writeText("https://aussielunchbox.com/en/planner");
     setLinkCopied(true);
     setTimeout(() => setLinkCopied(false), 2000);
   }

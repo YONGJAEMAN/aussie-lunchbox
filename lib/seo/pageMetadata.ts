@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/opengraph-image`;
 
 /**

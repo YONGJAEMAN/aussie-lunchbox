@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import PolicyTabs from "@/components/PolicyTabs";
 
-const BASE_URL = "https://www.aussielunchbox.com";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -11,7 +11,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/${locale}/policies`;
+  const canonical = `${BASE_URL}/policies`;
   return {
     title: "Privacy Policy & Disclaimer — Aussie Lunchbox",
     description:
@@ -19,8 +19,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/policies`,
-        en: `${BASE_URL}/en/policies`,
+        "x-default": `${BASE_URL}/policies`,
+        en: `${BASE_URL}/policies`,
       },
     },
     openGraph: { url: canonical },

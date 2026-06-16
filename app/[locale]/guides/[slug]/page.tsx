@@ -28,7 +28,7 @@ export async function generateMetadata({
   const guide = GUIDES[slug];
   if (!guide) return {};
 
-  const canonical = `${BASE_URL}/${locale}/guides/${slug}`;
+  const canonical = `${BASE_URL}/guides/${slug}`;
 
   return {
     title: `${guide.title} | Aussie Lunchbox Guides`,
@@ -36,8 +36,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        "x-default": `${BASE_URL}/en/guides/${slug}`,
-        en: `${BASE_URL}/en/guides/${slug}`,
+        "x-default": `${BASE_URL}/guides/${slug}`,
+        en: `${BASE_URL}/guides/${slug}`,
       },
     },
     openGraph: {
@@ -223,7 +223,7 @@ export default async function GuideDetailPage({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/${locale}/guides/${slug}`,
+      "@id": `${BASE_URL}/guides/${slug}`,
     },
   };
 
