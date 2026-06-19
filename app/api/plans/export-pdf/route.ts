@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { renderToBuffer, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
-import { PlanItem } from "@/lib/types";
 import { getIngredientCategory } from "@/lib/utils";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 import React from "react";
@@ -23,8 +22,17 @@ const styles = StyleSheet.create({
   ingredient: { fontSize: 10, color: "#333", marginLeft: 10, marginBottom: 2 },
 });
 
+// Only the fields the PDF actually renders — the request is sanitised down to this.
+interface PdfPlanItem {
+  day: string;
+  menuName: string;
+  rawIngredients: string[];
+  estCost: string;
+  nutrition: { calories: number; label: string };
+}
+
 interface PdfDocProps {
-  planData: PlanItem[];
+  planData: PdfPlanItem[];
   shoppingList: string[];
 }
 
@@ -101,12 +109,43 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
+  // Reject oversized bodies before parsing (cheap DoS guard).
+  if (Number(req.headers.get("content-length") ?? 0) > 256_000) {
+    return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+  }
+
   try {
     const body = await req.json();
-    const planData: PlanItem[] = Array.isArray(body.planData) ? body.planData.slice(0, 7) : [];
-    const shoppingList: string[] = Array.isArray(body.shoppingList)
-      ? body.shoppingList.slice(0, 200)
-      : [];
+    if (!Array.isArray(body?.planData) || body.planData.length === 0) {
+      return NextResponse.json({ error: "Missing or empty planData" }, { status: 400 });
+    }
+
+    // Sanitise every field to a bounded string/number so a malformed or hostile
+    // item can neither throw nor bloat the render.
+    const cap = (v: unknown, n: number): string =>
+      (typeof v === "string" ? v : String(v ?? "")).slice(0, n);
+    const planData: PdfPlanItem[] = body.planData
+      .slice(0, 7)
+      .map((it: Record<string, unknown>) => {
+        const nut = (it?.nutrition ?? {}) as Record<string, unknown>;
+        return {
+          day: cap(it?.day, 40),
+          menuName: cap(it?.menuName, 120),
+          rawIngredients: (Array.isArray(it?.rawIngredients) ? it.rawIngredients : [])
+            .slice(0, 40)
+            .map((g: unknown) => cap(g, 80)),
+          estCost: cap(it?.estCost, 24),
+          nutrition: {
+            calories: Number.isFinite(Number(nut.calories)) ? Number(nut.calories) : 0,
+            label: cap(nut.label, 24),
+          },
+        };
+      });
+    const rawShopping: unknown[] = Array.isArray(body?.shoppingList) ? body.shoppingList : [];
+    const shoppingList: string[] = rawShopping
+      .filter((s): s is string => typeof s === "string")
+      .slice(0, 200)
+      .map((s) => s.slice(0, 80));
 
     const docElement = PdfDocument({ planData, shoppingList });
     const buffer = await renderToBuffer(docElement);
