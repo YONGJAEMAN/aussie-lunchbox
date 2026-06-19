@@ -59,6 +59,11 @@ export default function AccountPage() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) setAuthError(error.message);
     } else {
+      if (password.length < 8) {
+        setAuthError("Password must be at least 8 characters.");
+        setAuthLoading(false);
+        return;
+      }
       const { error } = await supabase.auth.signUp({ email, password });
       if (error) setAuthError(error.message);
       else setAuthSuccess(t("account_confirm_email"));

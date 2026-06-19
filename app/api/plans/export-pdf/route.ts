@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "PDF generation failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("export-pdf error:", err);
+    return NextResponse.json({ error: "PDF generation failed" }, { status: 500 });
   }
 }

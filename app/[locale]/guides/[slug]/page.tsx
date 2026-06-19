@@ -71,8 +71,9 @@ function renderInline(text: string): React.ReactNode[] {
     if (match[1] !== undefined) {
       parts.push(<strong key={key++}>{match[1]}</strong>);
     } else {
+      const linkHref = /^(https?:|mailto:|\/|#)/i.test(match[3].trim()) ? match[3] : "#";
       parts.push(
-        <a key={key++} href={match[3]} className="text-[#F5A623] underline hover:text-[#D4850A]">
+        <a key={key++} href={linkHref} className="text-[#F5A623] underline hover:text-[#D4850A]">
           {match[2]}
         </a>
       );
@@ -231,7 +232,7 @@ export default async function GuideDetailPage({
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
       {/* Hero image */}

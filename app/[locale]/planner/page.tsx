@@ -73,7 +73,7 @@ export default async function PlannerPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd).replace(/</g, "\\u003c") }}
       />
       <PlannerClient />
       <section className="bg-white border-t border-gray-100">

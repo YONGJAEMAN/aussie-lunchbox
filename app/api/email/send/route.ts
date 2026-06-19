@@ -30,11 +30,35 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Recipient must match your account email" }, { status: 403 });
     }
 
+    // 4. Validate the attachment is a real, reasonably-sized base64 PDF (DoS / abuse guard)
+    if (
+      typeof pdfBase64 !== "string" ||
+      pdfBase64.length > 8_000_000 ||
+      !/^[A-Za-z0-9+/=\r\n]+$/.test(pdfBase64)
+    ) {
+      return NextResponse.json({ error: "Invalid attachment" }, { status: 400 });
+    }
+    const pdfBuf = Buffer.from(pdfBase64, "base64");
+    if (pdfBuf.length < 5 || pdfBuf.subarray(0, 5).toString("latin1") !== "%PDF-") {
+      return NextResponse.json({ error: "Invalid attachment" }, { status: 400 });
+    }
+
+    // 5. This endpoint only ever mails the user their own plan — clamp/sanitise
+    //    any client-supplied subject/body rather than trusting them.
+    const safeSubject =
+      typeof subject === "string" && subject.trim()
+        ? subject.replace(/[\r\n]+/g, " ").trim().slice(0, 150)
+        : "Your Aussie Lunchbox Plan 🦘";
+    const safeBody =
+      typeof emailBody === "string" && emailBody.trim()
+        ? emailBody.slice(0, 5000)
+        : "Here is your weekly lunchbox plan!";
+
     const { error } = await resend.emails.send({
       from: "Aussie Lunchbox <noreply@aussielunchbox.com>",
       to: [to],
-      subject: subject ?? "Your Aussie Lunchbox Plan 🦘",
-      text: emailBody ?? "Here is your weekly lunchbox plan!",
+      subject: safeSubject,
+      text: safeBody,
       attachments: [
         {
           filename: "aussie_lunchbox_plan.pdf",
@@ -44,7 +68,8 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      console.error("email send error:", error);
+      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
