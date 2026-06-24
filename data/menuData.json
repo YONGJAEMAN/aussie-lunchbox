@@ -767,6 +767,385 @@
         "is_dairy_free": false,
         "is_nut_free": true,
         "is_egg_free": true
+      },
+      {
+        "name": "Pikelets",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Milk",
+          "Egg",
+          "Sugar",
+          "Baking Powder",
+          "Butter"
+        ],
+        "image": "/assets/pikelets.png",
+        "instructions": "**Bake:**\n1. Whisk flour, sugar and baking powder in a bowl.\n2. Beat in the egg and milk until smooth.\n3. Melt a little butter in a frypan over medium heat.\n4. Drop spoonfuls of batter; cook until bubbles form, then flip.\n5. Cook until golden and cool on a rack.\n6. Pack with butter and jam, or fresh fruit.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Pancakes",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Milk",
+          "Egg",
+          "Baking Powder",
+          "Butter"
+        ],
+        "image": "/assets/pancake.jpg",
+        "instructions": "**Bake:**\n1. Whisk the flour and baking powder together.\n2. Beat in the egg, milk and melted butter.\n3. Rest the batter for 5 min.\n4. Cook spoonfuls in a buttered pan until bubbles form, then flip.\n5. Stack and cool.\n6. Pack with a little maple syrup or sliced fruit.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Cinnamon Roll",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Butter",
+          "Cinnamon",
+          "Sugar",
+          "Yeast",
+          "Milk"
+        ],
+        "image": "/assets/cinnamon_roll.jpg",
+        "instructions": "**Bake:**\n1. Warm the milk, stir in yeast and a pinch of sugar, then rest until foamy.\n2. Mix into the flour to a soft dough; knead and rise 1 hour.\n3. Roll out and spread with butter, cinnamon and sugar.\n4. Roll up and slice into rounds.\n5. Rise 20 min, then bake at 180°C for 20 min.\n6. Cool before packing.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chocolate Brownie",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Butter",
+          "Cocoa",
+          "Sugar",
+          "Egg"
+        ],
+        "image": "/assets/chocolate_brownie.jpg",
+        "instructions": "**Bake:**\n1. Melt the butter and stir in cocoa and sugar.\n2. Beat in the eggs.\n3. Fold through the flour until just combined.\n4. Pour into a lined tin.\n5. Bake at 170°C for 22–25 min — keep the centre fudgy.\n6. Cool fully, then cut into squares.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Blueberry Muffins",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Blueberries",
+          "Sugar",
+          "Egg",
+          "Milk",
+          "Butter",
+          "Baking Powder"
+        ],
+        "image": "/assets/blueberry_muffins.jpg",
+        "instructions": "**Bake:**\n1. Mix the flour, sugar and baking powder.\n2. Whisk the egg, milk and melted butter together.\n3. Fold the wet into the dry — don't overmix.\n4. Gently stir through the blueberries.\n5. Spoon into a muffin tray.\n6. Bake at 190°C for 18–20 min until springy.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Beef Burger",
+        "category": "Hot",
+        "ingredients": [
+          "Beef Patty",
+          "Burger Bun",
+          "Cheese",
+          "Lettuce",
+          "Tomato"
+        ],
+        "image": "/assets/beef_burger.jpg",
+        "instructions": "**Hot:**\n1. Season and pan-fry the beef patty 3–4 min each side.\n2. Add a slice of cheese to melt over the top.\n3. Lightly toast the burger bun.\n4. Layer lettuce, tomato and the patty.\n5. Cool slightly, wrap, and pack the salad on the side so it stays crisp.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Lentil Soup",
+        "category": "Hot",
+        "ingredients": [
+          "Red Lentils",
+          "Carrot",
+          "Onion",
+          "Vegetable Stock",
+          "Cumin"
+        ],
+        "image": "/assets/lentil_soup.jpg",
+        "instructions": "**Thermos tip:**\n1. Soften chopped onion and carrot in a little oil.\n2. Stir in cumin until fragrant.\n3. Add rinsed red lentils and vegetable stock.\n4. Simmer 20–25 min until the lentils are soft.\n5. Blend smooth if you like, then season to taste.\n6. Pre-heat a thermos with boiling water, tip out, then fill with hot soup.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Chilli con Carne",
+        "category": "Hot",
+        "ingredients": [
+          "Beef Mince",
+          "Kidney Beans",
+          "Tomato",
+          "Onion",
+          "Spices",
+          "Rice"
+        ],
+        "image": "/assets/chilli_con_carne.jpg",
+        "instructions": "**Thermos tip:**\n1. Brown the beef mince with chopped onion.\n2. Stir in the spices until fragrant.\n3. Add tomato and kidney beans, then simmer 20 min.\n4. Cook the rice separately.\n5. Spoon the chilli over the rice.\n6. Pre-heat a thermos, tip out, and pack hot.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Nachos",
+        "category": "Hot",
+        "ingredients": [
+          "Corn Chips",
+          "Kidney Beans",
+          "Cheese",
+          "Salsa"
+        ],
+        "image": "/assets/nachos.png",
+        "instructions": "**Hot:**\n1. Spread corn chips in an oven dish.\n2. Scatter over drained kidney beans.\n3. Top with grated cheese and a few spoons of salsa.\n4. Bake at 180°C for 8–10 min until the cheese melts.\n5. Cool slightly, then pack. Keep the chips separate if you prefer crunch.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Noodle Stir-fry",
+        "category": "Hot",
+        "ingredients": [
+          "Noodles",
+          "Mixed Vegetables",
+          "Soy Sauce",
+          "Sesame Oil"
+        ],
+        "image": "/assets/noodle_stir_fry.jpg",
+        "instructions": "**Hot:**\n1. Cook the noodles, then drain.\n2. Stir-fry the mixed vegetables in a little sesame oil.\n3. Add the noodles and soy sauce; toss to coat.\n4. Cook 2–3 min until hot through.\n5. Cool slightly and pack — great warm or cold.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Quesadilla",
+        "category": "Hot",
+        "ingredients": [
+          "Tortilla",
+          "Cheese",
+          "Cooked Chicken",
+          "Capsicum"
+        ],
+        "image": "/assets/quesadilla.jpg",
+        "instructions": "**Hot:**\n1. Lay a tortilla flat and cover half with grated cheese.\n2. Add shredded chicken and sliced capsicum.\n3. Fold over and cook in a dry pan until golden each side.\n4. Press so the cheese melts and holds it together.\n5. Cool slightly, then slice into wedges.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Dumplings",
+        "category": "Hot",
+        "ingredients": [
+          "Dumpling Wrappers",
+          "Pork Mince",
+          "Cabbage",
+          "Ginger",
+          "Soy Sauce"
+        ],
+        "image": "/assets/dumplings.jpg",
+        "instructions": "**Hot:**\n1. Mix pork mince with finely chopped cabbage, grated ginger and soy.\n2. Spoon a little filling into the centre of each wrapper.\n3. Wet the edges and pleat to seal.\n4. Steam for 8–10 min, or pan-fry then add a splash of water and cover.\n5. Cool slightly and pack with a small pot of soy for dipping.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Savoury Rice",
+        "category": "Hot",
+        "ingredients": [
+          "Rice",
+          "Peas",
+          "Corn",
+          "Carrot",
+          "Onion"
+        ],
+        "image": "/assets/savoury_rice.jpg",
+        "instructions": "**Method:**\n1. Cook the rice and let it cool.\n2. Soften chopped onion and carrot in a little oil.\n3. Add the peas and corn; cook 2 min.\n4. Stir through the rice and season.\n5. Cool and pack — a great use for leftover rice.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Caprese Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Cherry Tomatoes",
+          "Mozzarella",
+          "Basil",
+          "Olive Oil"
+        ],
+        "image": "/assets/caprese_sticks.jpg",
+        "instructions": "**No-cook:**\n1. Halve the cherry tomatoes.\n2. Tear or slice the mozzarella.\n3. Toss with torn basil leaves.\n4. Drizzle with olive oil and season.\n5. Pack chilled with a fork.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Couscous Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Couscous",
+          "Cucumber",
+          "Tomato",
+          "Capsicum",
+          "Lemon",
+          "Olive Oil"
+        ],
+        "image": "/assets/couscous_salad.jpg",
+        "instructions": "**No-cook:**\n1. Pour boiling water over the couscous, cover and rest 5 min.\n2. Fluff with a fork and cool.\n3. Stir through diced cucumber, tomato and capsicum.\n4. Dress with lemon juice and olive oil, then season.\n5. Pack cold — it keeps well for a day.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Fruit Salad",
+        "category": "Cold",
+        "ingredients": [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Berries",
+          "Grapes"
+        ],
+        "image": "/assets/fruit_salad.jpg",
+        "instructions": "**No-cook:**\n1. Chop the apple and orange into bite-sized pieces.\n2. Slice the banana.\n3. Add the berries and grapes.\n4. Squeeze over a little orange juice to keep it fresh.\n5. Pack chilled.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Apple & Cheese Box",
+        "category": "Cold",
+        "ingredients": [
+          "Apple",
+          "Cheese",
+          "Crackers"
+        ],
+        "image": "/assets/apple_cheese.png",
+        "instructions": "**No-cook:**\n1. Slice the apple and toss with a little lemon juice so it doesn't brown.\n2. Cube or slice the cheese.\n3. Add a few wholegrain crackers.\n4. Pack in a divided container.\n5. A simple, no-cook protein snack box.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
+      },
+      {
+        "name": "Boiled Egg Box",
+        "category": "Cold",
+        "ingredients": [
+          "Boiled Eggs",
+          "Cherry Tomatoes",
+          "Cucumber"
+        ],
+        "image": "/assets/boiled_egg.png",
+        "instructions": "**Method:**\n1. Boil the eggs for 8–9 min, then cool in cold water.\n2. Peel and halve.\n3. Add cherry tomatoes and cucumber sticks.\n4. Pack with a small salt sachet.\n5. A high-protein, gluten-free box.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Chicken Caesar",
+        "category": "Cold",
+        "ingredients": [
+          "Cos Lettuce",
+          "Chicken",
+          "Croutons",
+          "Parmesan",
+          "Boiled Egg",
+          "Caesar Dressing"
+        ],
+        "image": "/assets/chicken_caesar.png",
+        "instructions": "**No-cook (after chicken):**\n1. Chop the cos lettuce.\n2. Slice cooked chicken and add it in.\n3. Scatter over croutons and shaved parmesan.\n4. Add a halved boiled egg.\n5. Pack the caesar dressing separately and toss at lunch.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false
+      },
+      {
+        "name": "Salami & Cheese Sub",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread Roll",
+          "Salami",
+          "Cheese",
+          "Lettuce",
+          "Tomato"
+        ],
+        "image": "/assets/salami_cheese_sub.png",
+        "instructions": "**No-cook:**\n1. Split the bread roll lengthwise.\n2. Layer the salami and cheese.\n3. Add lettuce and sliced tomato.\n4. Press gently and wrap tightly.\n5. Slice in half for easy eating.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true
       }
     ]
   },
