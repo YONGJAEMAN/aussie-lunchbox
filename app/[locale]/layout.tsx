@@ -58,13 +58,15 @@ export async function generateMetadata({
       description,
       images: [`${BASE_URL}/opengraph-image`],
     },
-    // AdSense 승인 단계: 영어 페이지만 index. /ko, /zh는 middleware에서 redirect되지만
-    // direct navigation 대비 noindex 보존. Kiwi 승인 후 다국어 운영 재개 시 isEnglish 가드 제거.
+    // 2026-07: Kiwi AdSense "가치 없는 콘텐츠" 거절 대응. Aussie는 Kiwi의 국가치환 미러라
+    // 중복 콘텐츠 신호가 Kiwi 심사에 감점으로 작용 → 사이트 전체 noindex로 색인에서 제거한다.
+    // follow는 유지(크롤러가 noindex 태그를 보고 색인에서 빼도록 crawlable 상태로 둠).
+    // Kiwi 승인 + Aussie 차별화 콘텐츠 확보 후 index 복원.
     robots: {
-      index: locale === "en",
+      index: false,
       follow: true,
       googleBot: {
-        index: locale === "en",
+        index: false,
         follow: true,
         "max-image-preview": "large",
       },
