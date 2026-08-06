@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
-import { costForIngredients } from "./planGenerator";
+import { costForIngredients, servingFactor } from "./planGenerator";
 import { PORTION_FACTORS, DEFAULT_PORTION } from "./planConfig";
 import type { PriceInfo, MenuItem, SnackData, SnackItem } from "./types";
 import menuData from "@/data/menuData.json";
@@ -171,5 +171,36 @@ describe("폴백 가격의 단위 (알려진 결함 — 넓히지 말 것)", () 
     for (const [k, v] of entries) {
       expect(v, `${k}`).toBeLessThan(40);
     }
+  });
+});
+
+describe("단위 인식: 낱개 상품과 팩 상품에 다른 표를 쓴다", () => {
+  /**
+   * AU 고유 문제. Woolworths AU는 신선농산물을 낱개로 판다
+   * (`Apple Royal Gala $0.94 / 1EA` = 사과 한 개 값).
+   * 이때 팩 비율(0.12)을 곱하면 8배 과소계상이 된다.
+   * 2026-08-06에 이 구분 없이 Kiwi(팩 기준) 표를 그대로 이식했다가 잡았다.
+   */
+  const withEach = (p: number): PriceInfo => ({ price: p, perEach: true }) as PriceInfo;
+
+  it("낱개 사과 한 개는 가격 그대로 잡힌다", () => {
+    const cost = costForIngredients(["Apple"], new Map([["Apple", withEach(1.38)]]));
+    expect(cost).toBeCloseTo(1.38, 2); // PER_EACH_SERVINGS.Apple = 1
+  });
+
+  it("같은 가격이라도 팩 상품이면 팩 비율이 적용된다", () => {
+    const asPack = costForIngredients(["Apple"], new Map([["Apple", price(1.38)]]));
+    expect(asPack).toBeLessThan(0.3); // 1kg 팩의 1/8
+  });
+
+  it("하나를 나눠 쓰는 품목은 1보다 작은 개수를 쓴다", () => {
+    const cost = costForIngredients(["Cucumber"], new Map([["Cucumber", withEach(1.06)]]));
+    expect(cost).toBeLessThan(1.06); // 오이 하나로 서너 끼
+    expect(cost).toBeGreaterThan(0);
+  });
+
+  it("perEach 플래그가 없으면 팩으로 본다 (판정 불가를 낱개로 오인하지 않는다)", () => {
+    expect(servingFactor("Apple", undefined)).toBe(PORTION_FACTORS["Apple"]);
+    expect(servingFactor("Apple", price(1.38))).toBe(PORTION_FACTORS["Apple"]);
   });
 });

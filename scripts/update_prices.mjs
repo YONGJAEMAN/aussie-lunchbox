@@ -9,6 +9,12 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import {
+  SEARCH_BASE,
+  searchTermFor,
+  pickRepresentative,
+  isPricedPerEach,
+} from "../lib/priceSearch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -61,16 +67,23 @@ function loadMenuIngredients() {
 }
 
 async function fetchWoolworths(name) {
-  const url = `https://www.woolworths.com.au/apis/ui/Search/products?searchTerm=${encodeURIComponent(name)}&pageNumber=1&pageSize=5&sortType=TraderRelevance`;
+  // ⚠️ 예전에는 검색 결과의 첫 상품(`Products[0].Products[0]`)을 그냥 집었다.
+  //    그 결과 바나나 걸이·소시지 제조기·새 장난감이 재료 가격으로 캐시에 들어갔고,
+  //    Muesli (Nut-free)에는 "Fruit & Nut" 제품이 잡혀 있었다.
+  //    선별은 lib/priceSearch.mjs가 한다 (검색어 치환 → 비식품·가공식품 제외 →
+  //    필수 토큰 → 규격 트림 → 가격 중앙값).
+  const term = searchTermFor(name);
+  // 중앙값을 고르려면 후보가 충분해야 한다. pageSize 5로는 트림 후 1~2개만 남는다.
+  const url = `${SEARCH_BASE}?searchTerm=${encodeURIComponent(term)}&pageNumber=1&pageSize=24&sortType=TraderRelevance`;
 
   try {
     const res = await fetch(url, {
-      signal: AbortSignal.timeout(8000),
+      signal: AbortSignal.timeout(12000),
       headers: {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json, text/plain, */*",
         "Accept-Language": "en-AU,en;q=0.9",
-        "Referer": "https://www.woolworths.com.au/shop/search/products?searchTerm=" + encodeURIComponent(name),
+        "Referer": "https://www.woolworths.com.au/shop/search/products?searchTerm=" + encodeURIComponent(term),
         "x-requested-with": "XMLHttpRequest",
       },
     });
@@ -81,14 +94,22 @@ async function fetchWoolworths(name) {
     }
 
     const data = await res.json();
-    const product = data?.Products?.[0]?.Products?.[0];
+    const items = (data?.Products ?? []).flatMap((g) => g?.Products ?? []);
+    const product = pickRepresentative(items, name);
     if (product) {
-      const price = product.SalePrice ?? product.Price;
+      const price = parseFloat(String(product.Price));
+      if (!Number.isFinite(price) || price <= 0) return null;
       return {
-        price: price ? parseFloat(String(price)) : 5.0,
+        price,
         image: product.MediumImageFile ?? "",
         name: product.Name ?? name,
         source: "Woolworths AU",
+        // 🔑 단위 정보를 반드시 같이 저장한다. AU는 신선농산물이 낱개로 팔려
+        //    (사과 1개 $1.38) 팩 상품과 분량 계산이 달라진다. 이게 없으면
+        //    분량비율을 어느 기준으로 곱해야 하는지 알 수 없다.
+        cupString: product.CupString ?? "",
+        perEach: isPricedPerEach(product.CupString, price),
+        searchTerm: term,
       };
     }
   } catch (err) {

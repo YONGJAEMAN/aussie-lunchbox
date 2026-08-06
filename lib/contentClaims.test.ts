@@ -2,7 +2,8 @@ import { describe, it, expect } from "vitest";
 import menuData from "@/data/menuData.json";
 import PRICES from "@/data/price_cache.json";
 import { POSTS } from "@/content/posts";
-import { PORTION_FACTORS, DEFAULT_PORTION } from "./planConfig";
+import { servingFactor } from "./planGenerator";
+import type { PriceInfo } from "./types";
 import type { MenuItem, SnackData, SnackItem } from "./types";
 
 /**
@@ -20,9 +21,13 @@ import type { MenuItem, SnackData, SnackItem } from "./types";
 const MENUS = (menuData as { MENU_DATA: { en: MenuItem[] } }).MENU_DATA.en;
 const SNACKS = (menuData as unknown as { SNACK_DATA: SnackData }).SNACK_DATA;
 
+// ⚠️ 계산은 앱과 **같은 함수**를 쓴다. 여기서 따로 곱하면 단위 규약이 갈라져
+//    테스트만 통과하고 화면은 틀리는 상태가 된다.
+const infoFor = (ing: string) =>
+  (PRICES as Record<string, { data?: PriceInfo }>)[ing]?.data;
 const per = (ing: string) => {
-  const p = (PRICES as Record<string, { data: { price?: number } }>)[ing]?.data?.price ?? 0;
-  return p * (PORTION_FACTORS[ing] ?? DEFAULT_PORTION);
+  const info = infoFor(ing);
+  return (info?.price ?? 0) * servingFactor(ing, info);
 };
 const cost = (ings: string[]) => ings.reduce((t, i) => t + per(i), 0);
 const median = (xs: number[]) => {
@@ -65,8 +70,11 @@ describe("본문의 도시락 비용 주장이 실제 계산과 맞는다", () =
   });
 
   it("가장 비싼 조합도 두 자릿수로 가지 않는다 (단위 착오 재발 감지)", () => {
-    // 수정 전에는 최대 $11.68이었다.
-    expect(Math.max(...boxCosts())).toBeLessThan(9.0);
+    // 수정 전 최대 $11.68 → 지금 $8.98(Fruit Salad. 포도 한 송이 $17.91이 끌어올린다).
+    // ⚠️ 임계값을 실제값에 바짝 붙이지 않는다. 이 가드가 잡으려는 것은
+    //    "단위를 잘못 곱해 두 자릿수가 되는 것"이지 주간 가격 변동이 아니다.
+    //    8.98에 맞춰 9.0으로 조이면 다음 주 가격에 흔들려 가드가 아니라 소음이 된다.
+    expect(Math.max(...boxCosts())).toBeLessThan(10.0);
   });
 
   it("본문의 $3~5 주장이 실제로 남아 있다 (숫자만 고치고 문장을 놓치는 것 방지)", () => {

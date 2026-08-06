@@ -2,7 +2,12 @@ import {
   MenuItem, SnackItem, SnackData, PriceInfo, PlanItem,
   AllergyType, GeneratePlanResponse,
 } from "./types";
-import { PORTION_FACTORS, DEFAULT_PORTION } from "./planConfig";
+import {
+  PORTION_FACTORS,
+  DEFAULT_PORTION,
+  PER_EACH_SERVINGS,
+  DEFAULT_PER_EACH_SERVINGS,
+} from "./planConfig";
 import { estimateMenuCalories, estimateSnackCalories } from "./nutritionCalc";
 
 function filterMenus(
@@ -108,10 +113,26 @@ export function costForIngredients(
 ): number {
   let cost = 0;
   for (const ing of ingredients) {
-    const portion = PORTION_FACTORS[ing] ?? DEFAULT_PORTION;
-    cost += (priceMap.get(ing)?.price ?? 0) * portion;
+    const info = priceMap.get(ing);
+    cost += (info?.price ?? 0) * servingFactor(ing, info);
   }
   return cost;
+}
+
+/**
+ * 이 재료 1회분에 곱할 계수. **가격이 어느 단위인지에 따라 표가 다르다.**
+ *
+ * - 낱개 상품(`perEach`)이면 가격이 이미 한 개 값이므로 "몇 개분"을 곱한다.
+ * - 팩 상품이면 "팩의 몇 %"를 곱한다.
+ *
+ * AU는 신선농산물이 낱개(사과 1개 $1.38), 포장식품이 팩(치즈 블록 $10.30)으로
+ * 섞여 있어 한 표로는 맞출 수 없다. 이걸 무시하면 사과가 8배 싸진다.
+ */
+export function servingFactor(ingredient: string, info?: PriceInfo): number {
+  if (info?.perEach) {
+    return PER_EACH_SERVINGS[ingredient] ?? DEFAULT_PER_EACH_SERVINGS;
+  }
+  return PORTION_FACTORS[ingredient] ?? DEFAULT_PORTION;
 }
 
 export async function buildWeeklyPlan(

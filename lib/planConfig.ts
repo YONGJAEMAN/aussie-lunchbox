@@ -121,3 +121,40 @@ export const PORTION_FACTORS: Record<string, number> = {
  * 표 커버리지를 올린 뒤에도 누락은 생기므로, 보수적으로 낮춰 잡는다.
  */
 export const DEFAULT_PORTION = 0.10;
+
+/**
+ * 🇦🇺 낱개로 팔리는 상품의 **1회분 개수**.
+ *
+ * AU Woolworths는 신선농산물을 낱개로 판다 — `Apple Royal Gala $0.94 / 1EA`는
+ * 사과 **한 개** 값이다. 이 경우 가격에 팩 비율(0.12)을 곱하면 8배 과소계상이 된다.
+ * 반대로 `Cheese Block $10.30 ($16.48/1KG)`은 한 팩 값이라 PORTION_FACTORS를 써야 한다.
+ *
+ * 어느 쪽인지는 캐시의 `perEach` 플래그가 알려준다(수집기가 CupString으로 판정).
+ * NZ는 대부분 팩·kg 단위라 Kiwi에는 이 표가 없다 — **AU 고유 문제다.**
+ *
+ * 값은 "도시락 하나에 몇 개분이 들어가는가"다. 지어낸 수치가 아니라
+ * 1회 제공량 기준이며, 애매하면 통째로 하나(1)로 둔다.
+ */
+export const PER_EACH_SERVINGS: Record<string, number> = {
+  // 통째로 하나 들어가는 것
+  Apple: 1, Banana: 1, "Ripe Bananas": 1, Pear: 1, Orange: 1, Mandarin: 1,
+  Kiwifruit: 1, Carrot: 1, "Carrot Stick": 1, Potato: 1, Croissant: 1,
+  Bagel: 1, Roll: 1, "Bread Roll": 1, Muffin: 1,
+
+  // 하나를 여러 끼에 나눠 쓰는 것
+  Cucumber: 0.3, // 레바니즈 오이 하나로 서너 끼
+  Tomato: 0.5,
+  Capsicum: 0.3,
+  Onion: 0.25,
+  Avocado: 0.5,
+  Lemon: 0.2,
+  Cabbage: 0.1,
+  Lettuce: 0.15, "Cos Lettuce": 0.15,
+  Ciabatta: 0.25, // 한 덩이로 네 끼
+  Grapes: 0.15, // 한 송이에서 한 줌
+  Celery: 0.2,
+  Broccoli: 0.25,
+};
+
+/** 낱개 상품인데 위 표에 없으면 하나로 본다 (과소계상보다 안전) */
+export const DEFAULT_PER_EACH_SERVINGS = 1;

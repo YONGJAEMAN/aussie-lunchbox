@@ -39,6 +39,17 @@ export interface PriceInfo {
   image: string;
   name: string;
   source: string;
+  /**
+   * price가 **낱개 하나 값**인지. AU는 신선농산물이 낱개로 팔려
+   * (`Apple $1.38 / 1EA`) 팩 상품과 분량 계산이 달라진다.
+   * 수집기(scripts/update_prices.mjs)가 CupString으로 판정해 채운다.
+   * 없으면 팩 가격으로 본다 — 예전 캐시 항목과의 호환.
+   */
+  perEach?: boolean;
+  /** 판정 근거를 남겨 검수 때 눈으로 볼 수 있게 한다 (예: "$1.38 / 1EA") */
+  cupString?: string;
+  /** 실제로 사용한 검색어. 오매칭을 추적할 때 쓴다 */
+  searchTerm?: string;
 }
 
 export interface NutritionInfo {
