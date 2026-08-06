@@ -90,6 +90,30 @@ function randomChoice<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+/**
+ * 재료 목록의 비용을 계산한다. 메뉴 재료와 간식이 **같은 경로**를 쓰도록 하기 위한
+ * 단일 진입점.
+ *
+ * 2026-08-06에 뽑아냈다. 그전에는 두 곳에 나뉘어 있었고 간식 쪽이
+ * `PORTION_FACTORS`를 조회하지 않고 `DEFAULT_PORTION`을 하드코딩하고 있었다 —
+ * 치즈 블록 한 팩의 20%가 "치즈 큐브" 간식 하나로 계산됐다는 뜻이다.
+ * (Kiwi에서 먼저 발견돼 회귀 테스트가 붙은 것과 같은 버그였다.)
+ *
+ * price는 "판매 단위 한 팩" 가격이고, PORTION_FACTORS는 1인분이 소비하는 팩의 비율.
+ * 자세한 단위 규약은 planConfig.ts 상단 주석 참조.
+ */
+export function costForIngredients(
+  ingredients: string[],
+  priceMap: Map<string, PriceInfo>,
+): number {
+  let cost = 0;
+  for (const ing of ingredients) {
+    const portion = PORTION_FACTORS[ing] ?? DEFAULT_PORTION;
+    cost += (priceMap.get(ing)?.price ?? 0) * portion;
+  }
+  return cost;
+}
+
 export async function buildWeeklyPlan(
   menus: MenuItem[],
   allergies: AllergyType[],
@@ -152,17 +176,11 @@ export async function buildWeeklyPlan(
     const menu = selected[i];
     const dailySnacks = dailySnacksList[i];
 
-    let cost = 0;
-    for (const ing of menu.ingredients) {
-      const portion = PORTION_FACTORS[ing] ?? DEFAULT_PORTION;
-      cost += (priceMap.get(ing)?.price ?? 0) * portion;
-    }
-    for (const snack of dailySnacks) {
-      for (const ing of snack.ingredients ?? []) {
-        cost += (priceMap.get(ing)?.price ?? 0) * DEFAULT_PORTION;
-        shoppingList.push(ing);
-      }
-    }
+    const snackIngredients = dailySnacks.flatMap((s) => s.ingredients ?? []);
+    const cost =
+      costForIngredients(menu.ingredients, priceMap) +
+      costForIngredients(snackIngredients, priceMap);
+    shoppingList.push(...snackIngredients);
 
     const calories =
       estimateMenuCalories(menu.ingredients) +
