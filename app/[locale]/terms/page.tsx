@@ -115,7 +115,7 @@ export default async function TermsPage() {
             <li>The planner does not know your child individually. It applies general age-band serving guidance and the allergy filters you tick — it does not account for medical conditions, growth concerns, sensory issues, or cultural and religious requirements unless you exclude relevant ingredients manually.</li>
             <li>Generated plans may include ingredients that conflict with a school&apos;s specific food policy (e.g., a school that restricts seeds in addition to nuts, or a school with a sugar-free Friday). Always cross-check the plan against your school&apos;s current letter.</li>
             <li>Allergy filters operate on the recipe ingredient list, not on the live FSANZ Plain English Allergen Labelling (PEAL) statement of any commercial product you may buy to make the recipe. If you are managing an anaphylactic allergy, always read the actual product packaging before purchase.</li>
-            <li>Prices shown alongside the plan are estimates drawn from periodic in-store checks at Australian supermarkets and may not reflect the current price at your local store, particularly in regional or remote areas.</li>
+            <li>Prices shown alongside the plan are estimates read weekly from Woolworths&apos; own online catalogue, not from a shop visit, and may not reflect the current price at your local store — particularly in regional or remote areas, or where an online price differs from the shelf tag.</li>
           </ul>
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Allergy, Nutrition, and Food Safety Disclaimer</h2>

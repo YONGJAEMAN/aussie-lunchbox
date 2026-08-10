@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { GUIDES } from "@/content/guides";
 import menuData from "@/data/menuData.json";
 import PRICES from "@/data/price_cache.json";
@@ -80,12 +80,42 @@ describe("🔴 사이트 문구가 실제 구현·About과 어긋나지 않는�
     ]),
   );
 
+  /**
+   * ⚠️ 금지어 가드는 **정직한 부인문까지 막는다** — 이 저장소에서 Coles·실시간
+   *    두 번 겪었다. 팀도 마찬가지다: ko "편집팀도 없습니다", zh "没有编辑团队",
+   *    en "not a support team"은 우리가 **반드시 해야 하는 말**이지 잡을 말이 아니다.
+   *    그래서 문장 단위로 자르고 부정 표지가 든 문장은 빼고 본다.
+   */
+  const DENIAL = /없습니다|없다|아닙니다|没有|不是|\bno (team|editorial team|test kitchen)\b|\bnot a (company|team|support team)\b/i;
+  const assertiveText = (l: string) =>
+    Object.values(messages[l])
+      .filter((v) => typeof v === "string")
+      .join("\n")
+      .split(/(?<=[.!?。！？])\s+|\n+|—|--/)
+      .filter((sentence) => !DENIAL.test(sentence))
+      .join("\n");
+
   it("1인 프로젝트인데 팀·편집 검수를 말하지 않는다", () => {
     const about = src("app/[locale]/about/page.tsx");
     expect(about, "About이 solo project라고 말하는지").toMatch(/solo project/i);
     for (const l of LOCALES) {
-      const all = JSON.stringify(messages[l]);
-      expect(all, `${l}: 팀 주장`).not.toMatch(/team member|editorial review|팀원|编辑审核/i);
+      // 🔴 2026-08-11: 여기 패턴이 /team member|editorial review|팀원|编辑审核/ 였다.
+      //    Kiwi에서 같은 좁은 패턴이 ko "편집팀"·zh "团队"·"试做"를 통과시켜,
+      //    **ko/zh 블로그 글 전부가 가상의 "편집팀" 명의로 나가고 있었다.**
+      //    Aussie는 지금 깨끗하지만 가드에 같은 구멍이 있었다 — 미리 막는다.
+      expect(assertiveText(l), `${l}: 팀 주장`).not.toMatch(
+        /\bour team\b|\ba team member\b|\bteam of parents\b|editorial review|팀원|편집팀|우리 팀|편집 검토|편집 검수|团队|编辑审核|试做|시험 조리/i,
+      );
+    }
+  });
+
+  it("블로그 작성자 표기가 사람 이름이다 (가상의 편집팀이 아니다)", () => {
+    // 🔴 Kiwi에서 `blog_post_editorial_team`이 en만 "Yong Jae Lee"였고 ko/zh는
+    //    "키위 런치박스 편집팀"·"编辑团队"였다. 글 전체의 저자 표기라 파급이 컸다.
+    for (const l of LOCALES) {
+      const byline = messages[l].blog_post_editorial_team;
+      if (byline === undefined) continue;
+      expect(byline, `${l}: 작성자 표기에 '팀'이 들어간다`).not.toMatch(/team|팀|团队/i);
     }
   });
 
@@ -127,6 +157,90 @@ describe("🔴 사이트 문구가 실제 구현·About과 어긋나지 않는�
     for (const l of LOCALES) {
       const bad = Object.entries(messages[l]).filter(([, v]) => String(v).includes("\uFFFD"));
       expect(bad.map(([k]) => k), `${l}: 깨진 문자`).toEqual([]);
+    }
+  });
+
+  /**
+   * 🔴 2026-08-11: 아래 Coles 가드는 `messages[l].faq_a30`과 `planner_seo_intro`
+   *    **두 키만** 봤다. 그래서 정작 거짓 주장이 있던 자리를 통째로 놓쳤다 —
+   *    번역파일은 Coles에 대해 정직했고(전부 "추적하지 않습니다"), 거짓은
+   *    **페이지 metadata**에 있었다:
+   *      app/[locale]/layout.tsx  "price estimates from Woolworths & Coles" (en·ko)
+   *      app/[locale]/layout.tsx  Organization JSON-LD "with Woolworths & Coles prices"
+   *      app/[locale]/planner/layout.tsx  "shopping list with Woolworths & Coles prices"
+   *      app/[locale]/about/page.tsx  "checked for ingredient availability at ... Coles"
+   *    metadata는 검색결과·공유카드에 그대로 나가는 자리라 오히려 더 많이 읽힌다.
+   *    **"이 키"가 아니라 "이 주장"을 단위로 저장소 전체를 훑는다.**
+   */
+  const repoFiles = (() => {
+    const out: string[] = [];
+    const walk = (p: string) => {
+      const abs = new URL(`../${p}`, import.meta.url);
+      let st;
+      try {
+        st = statSync(abs);
+      } catch {
+        return;
+      }
+      if (st.isDirectory()) {
+        for (const e of readdirSync(abs)) walk(`${p}/${e}`);
+      } else if (/\.(ts|tsx|json)$/.test(p) && !p.includes(".test.")) {
+        out.push(p);
+      }
+    };
+    ["app", "content", "messages", "components"].forEach(walk);
+    return out;
+  })();
+
+  it("저장소 어디에서도 Coles 가격을 쓴다고 말하지 않는다", () => {
+    expect(repoFiles.length, "훑을 파일을 못 찾았다").toBeGreaterThan(20);
+    // ⚠️ "Coles"라는 낱말을 막으면 안 된다 — 정직한 고지("Coles는 추적하지 않습니다"),
+    //    제휴 부인("not affiliated with Woolworths, Coles"), 장보기 팁("Coles 앱에서
+    //    특가를 비교하세요")은 전부 참이고 남아야 한다. **우리 가격의 출처가 Coles라는
+    //    형태**만 잡는다.
+    const CLAIM =
+      /(price|prices|pricing|estimates?|shopping list|가격|价格|估算)[^.\n]{0,40}Woolworths\s*(&amp;|&|and|·)\s*Coles|Woolworths\s*(&amp;|&|and)\s*Coles[^.\n]{0,25}(price|prices|pricing|가격|价格)|availability at Woolworths and Coles/i;
+    const hits: string[] = [];
+    for (const f of repoFiles) {
+      const body = readFileSync(new URL(`../${f}`, import.meta.url), "utf-8");
+      for (const line of body.split("\n")) {
+        const m = line.match(CLAIM);
+        if (m) hits.push(`${f}: ${m[0].slice(0, 90)}`);
+      }
+    }
+    expect(hits, `우리 가격이 Coles에서 온다고 말하는 곳:\n${hits.join("\n")}`).toEqual([]);
+  });
+
+  it("저장소 어디에서도 가격을 매장 실사라고 말하지 않는다", () => {
+    // 가격은 Woolworths AU 온라인 카탈로그의 주간 캐시다. 매장에 간 적이 없다.
+    // (Kiwi에서 08-11에 같은 문장을 6개 파일에서 찾아 고쳤다. 여기도 있었다 — terms)
+    const CLAIM = /in-?store (check|visit|survey)s?|shelf tag[^.\n]{0,30}(record|read|check)|매장에서 (직접 )?확인한 가격|门店实地/i;
+    const hits: string[] = [];
+    for (const f of repoFiles) {
+      const body = readFileSync(new URL(`../${f}`, import.meta.url), "utf-8");
+      for (const line of body.split("\n")) {
+        const m = line.match(CLAIM);
+        if (m) hits.push(`${f}: ${line.trim().slice(0, 110)}`);
+      }
+    }
+    expect(hits, `가격을 매장 실사라고 말하는 곳:\n${hits.join("\n")}`).toEqual([]);
+  });
+
+  it("레시피 개수 주장이 실제 데이터와 맞는다 (같은 파일 안에서도 갈라진다)", () => {
+    // 🔴 2026-08-11: en `faq_a16`이 "over 100 recipes"라고 했는데 실제는 63이고,
+    //    **같은 messages 파일 안의 다른 세 키는 63이라고 말하고 있었다.**
+    //    한 파일이 제 자신과 모순된 상태였다. ko/zh도 같았다.
+    const real = (menuData as { MENU_DATA: Record<string, unknown[]> }).MENU_DATA.en.length;
+    for (const l of LOCALES) {
+      for (const [k, v] of Object.entries(messages[l])) {
+        if (typeof v !== "string") continue;
+        for (const m of v.matchAll(/(\d{2,4})\s*\+?\s*(recipes|개 레시피|개의 레시피|道食谱|个食谱)/gi)) {
+          expect(Number(m[1]), `${l}.${k}: "${m[0]}" — 실제 메뉴는 ${real}개다`).toBe(real);
+        }
+        expect(v, `${l}.${k}: 개수를 "100개 이상"처럼 부풀리고 있다`).not.toMatch(
+          /over \d{2,4} recipes|\d{2,4}개 이상 레시피|\d{2,4}多个食谱/i,
+        );
+      }
     }
   });
 

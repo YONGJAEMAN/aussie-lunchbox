@@ -456,7 +456,7 @@ Need help planning allergy-friendly lunchboxes? [Try the Aussie Lunchbox Planner
 
 With the cost of living rising across Australia, families are feeling the pinch at the supermarket. A recent survey found that many Australian families spend $20-40 per week per child on school lunches. But with smart planning, you can pack nutritious, varied lunchboxes for **under $15 per week per child**.
 
-This guide breaks down exactly how to do it — with real pricing from Woolworths and Coles, practical batch cooking strategies, and a complete weekly meal plan.
+This guide breaks down exactly how to do it — with real Woolworths pricing (the chain this site tracks), practical batch cooking strategies, and a complete weekly meal plan.
 
 ---
 

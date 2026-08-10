@@ -24,8 +24,8 @@ export async function generateMetadata({
     zh: "Aussie Lunchbox — 澳洲家庭轻松搭配学校午餐",
   };
   const descriptions: Record<string, string> = {
-    en: "Plan your kids' weekly school lunchbox in seconds. Healthy Australian menus, shopping lists, allergy filters, and price estimates from Woolworths & Coles.",
-    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 호주 메뉴, 쇼핑 목록, 알레르기 필터, 울워스 & 콜스 가격 정보를 제공합니다.",
+    en: "Plan your kids' weekly school lunchbox in seconds. Healthy Australian menus, shopping lists, allergy filters, and price estimates from Woolworths.",
+    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 호주 메뉴, 쇼핑 목록, 알레르기 필터, 울워스 가격 정보를 제공합니다.",
     zh: "几秒内规划孩子一周的学校午餐盒。提供健康的澳洲菜单、购物清单、过敏原过滤器和超市价格估算。",
   };
 
@@ -109,7 +109,7 @@ export default async function LocaleLayout({
     name: "Aussie Lunchbox",
     url: BASE_URL,
     logo: `${BASE_URL}/opengraph-image`,
-    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists with Woolworths & Coles prices.",
+    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists costed against Woolworths prices.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",

@@ -163,7 +163,7 @@ export default async function AboutPage() {
               title: "Tested with Australian ingredients",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Every recipe is checked for ingredient availability at Woolworths and Coles. I don&apos;t recommend products that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are based on regular shelf prices, updated quarterly.
+                  Every recipe is checked for ingredient availability at Woolworths, which is the chain this site prices against. I don&apos;t recommend products that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are regular (non-special) prices, refreshed weekly from Woolworths&apos; own online catalogue.
                 </p>
               ),
             },

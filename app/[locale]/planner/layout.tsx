@@ -4,7 +4,7 @@ const BASE_URL = "https://aussielunchbox.com";
 
 const PLANNER_TITLE = "Weekly Lunch Planner | Aussie Lunchbox";
 const PLANNER_DESC =
-  "Generate a personalised 5-day school lunch plan for Australian families. Set allergy filters, get a shopping list with Woolworths & Coles prices, and download as PDF.";
+  "Generate a personalised 5-day school lunch plan for Australian families. Set allergy filters, get a shopping list costed against Woolworths prices, and download as PDF.";
 
 export async function generateMetadata({
   params,

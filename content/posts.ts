@@ -461,7 +461,7 @@ Based on our survey of canteen menus across 50 Australian primary schools in NSW
 Over a 40-week school year (200 school days), a daily canteen lunch costs **$1,200 to $2,000 per child per year**.
 
 ### Average Packed Lunch Costs
-Using Woolworths and Coles regular prices for standard lunchbox ingredients:
+Using Woolworths regular prices for standard lunchbox ingredients (Woolworths is the chain this site tracks; Coles is not priced here):
 
 - **Main (sandwich, wrap, or pasta):** $1.50 to $2.50
 - **Fruit serve:** $0.50 to $1.00
@@ -507,7 +507,7 @@ Children who see their friends buying hot meals and colourful canteen packaging 
 
 ## Plan Your Packed Lunches With Confidence
 
-Our planner generates five-day school lunch plans that respect your family's allergy requirements, match your budget, and produce a shopping list with Woolworths and Coles price estimates. Every generated plan aligns with the principles underlying Australian school canteen guidelines — balanced nutrition, whole food ingredients, and age-appropriate portions.
+Our planner generates five-day school lunch plans that respect your family's allergy requirements, match your budget, and produce a shopping list with Woolworths price estimates. Every generated plan aligns with the principles underlying Australian school canteen guidelines — balanced nutrition, whole food ingredients, and age-appropriate portions.
 
 [Try the planner →](/en/planner)
 `,
@@ -528,7 +528,7 @@ Australia is one of the most culturally diverse countries in the world. Accordin
 
 There is no reason a child's lunchbox cannot include the flavours their family enjoys at the dinner table. In fact, culturally diverse lunches often provide a broader range of nutrients, introduce children to different food groups, and make the lunchbox feel exciting rather than routine.
 
-This guide provides eight lunchbox-friendly recipes from different culinary traditions, each adapted for Australian supermarket ingredients, child-friendly portions, and practical school-day constraints. Every recipe includes a cost estimate based on Woolworths and Coles prices, allergen information, and tips for making the meal ahead in batches.
+This guide provides eight lunchbox-friendly recipes from different culinary traditions, each adapted for Australian supermarket ingredients, child-friendly portions, and practical school-day constraints. Every recipe includes a cost estimate based on Woolworths prices, allergen information, and tips for making the meal ahead in batches.
 
 ---
 
@@ -956,7 +956,7 @@ Age-appropriate involvement reduces food waste, builds independence, and teaches
 
 ## Let Our Planner Handle the Planning
 
-Generate a personalised 5-day school lunch plan in seconds. Set your allergy filters, choose your preferences, and get a complete plan with shopping list and Woolworths and Coles price estimates.
+Generate a personalised 5-day school lunch plan in seconds. Set your allergy filters, choose your preferences, and get a complete plan with shopping list and Woolworths price estimates.
 
 [Try the planner →](/en/planner)
 `,

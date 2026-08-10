@@ -171,7 +171,7 @@ export default function ContactPage() {
           <p className="text-gray-700 leading-relaxed mb-8">
             This direct line is part of what makes Aussie Lunchbox sustainable as a solo
             project: feedback from real Australian parents shapes which articles get written
-            next, which allergy filters get refined, and which Woolworths and Coles prices
+            next, which allergy filters get refined, and which Woolworths prices
             get checked most often. If you have already read the{" "}
             <Link href={`/${locale}/about`} className="text-[#F5A623] underline">About page</Link>
             {" "}and the{" "}
