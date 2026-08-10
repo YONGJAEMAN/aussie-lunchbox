@@ -131,6 +131,22 @@ describe("🔴 사이트 문구가 실제 구현·About과 어긋나지 않는�
     expect(src("app/[locale]/account/page.tsx"), "하드코딩 통계 타일").not.toContain('">–</p>');
   });
 
+  it("하지 않은 조사를 했다고 말하지 않는다", () => {
+    // 🔴 2026-08-10: Woolworths vs Coles 비교글 3편이 "우리가 25개 품목을 양 매장에서
+    //    비교했다", "시드니 메트로에서 매장·온라인으로 기록했다"고 썼다. **전부 실제
+    //    조사가 아니었다**(사용자 확인). 근거: 수집 상품 146건 중 Coles 0건,
+    //    영양 데이터 파일은 존재하지도 않는다. 3편 모두 삭제하고 308로 보냈다.
+    //    같은 검사에서 heat-safe 가이드의 "In our testing ... 5 hours at 34 degrees"도
+    //    나왔다 - 온도 측정 기록이 없다. 문구를 원리 설명으로 바꿨다.
+    const bodies = [
+      ...Object.entries(GUIDES).map(([k, g]) => [k, String(g.body)] as const),
+      ...Object.entries(POSTS).map(([k, p]) => [k, String(p.body)] as const),
+    ];
+    const CLAIMS = /\b(we (compared|tested|surveyed|priced|measured|visited)|in our testing|were recorded (in-store|at))\b/i;
+    const bad = bodies.filter(([, b]) => CLAIMS.test(b)).map(([k]) => k);
+    expect(bad, `근거 없는 1인칭 조사 주장: ${bad.join(", ")}`).toEqual([]);
+  });
+
   it("출처 없는 비교 수치를 쓰지 않는다", () => {
     const bodies = [
       ...Object.values(GUIDES).map((g) => String(g.body)),

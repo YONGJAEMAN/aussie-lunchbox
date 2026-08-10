@@ -48,6 +48,24 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
+  // 2026-08-10: Woolworths vs Coles 비교글 3편을 내렸다. 표의 가격도 영양수치도
+  // 실제 조사가 아니었다(사용자 확인). 저장소에 Coles 데이터가 0건이고 영양
+  // 데이터 파일 자체가 없다. 404 대신 실제 근거가 있는 예산 가이드로 보낸다.
+  async redirects() {
+    const gone = [
+      "woolworths-vs-coles-lunchbox-budget",
+      "woolworths-vs-coles-lunchbox-staples",
+      "woolworths-macro-vs-coles-branded-lunchbox-comparison",
+    ];
+    return gone.flatMap((slug) =>
+      ["en", "ko", "zh"].map((locale) => ({
+        source: `/${locale}/blog/${slug}`,
+        destination: `/${locale}/guides/budget-lunchbox-planning-guide-australia`,
+        permanent: true,
+      })),
+    );
+  },
+
   async headers() {
     return [
       {
