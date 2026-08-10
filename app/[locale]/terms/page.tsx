@@ -154,7 +154,7 @@ export default async function TermsPage() {
             when you create an account:
           </p>
           <ul className="text-gray-600 space-y-1 list-disc pl-6">
-            <li>Account data is limited to what you provide at sign-up (email address, password hash) and what you choose to save (favourite meal names, plan history, allergy preferences).</li>
+            <li>Account data is limited to what you provide at sign-up (email address, password hash) and what you choose to save (favourite menu names only — we do not store plan history or allergy preferences).</li>
             <li>No child name, age, school name, or precise location is collected or stored — the planner operates on year-level and allergy filters, not personally identifying information about the child.</li>
             <li>You can request export or deletion of your account data at any time by contacting{" "}
               <a href={`mailto:${t("terms_contact_email")}`} className="text-[#F5A623] hover:underline">{t("terms_contact_email")}</a>

@@ -348,7 +348,7 @@ Nutrition is entirely in your control — which is both the opportunity and the 
 | Fibre | 3-5g | 5-8g | Packed lunches include more whole fruit and veg |
 | Protein | 12-18g | 10-15g | Comparable when packed lunch includes protein |
 
-The biggest nutritional concern with canteen meals is sodium. A single canteen pasta bolognese can contain 700-800mg of sodium — nearly half of a child's recommended daily intake (aged 4-8: 1,400mg/day). Packed lunches using fresh ingredients and minimal sauces typically deliver 40-50% less sodium.
+The biggest nutritional concern with canteen meals is sodium. Jarred sauces, processed meat and packaged sides are where most of it comes from, and a hot canteen main built on those can use up a large share of a child's daily upper limit in one sitting (NHMRC sets that limit at 1,400mg a day for ages 4-8). A packed lunch built on fresh ingredients and minimal sauce will usually come in lower — but how much lower depends entirely on what goes in it, and we have not measured that across a set of real lunchboxes, so we won't put a number on it.
 
 **Verdict: Tied** — both can be excellent or poor depending on what's chosen.
 
@@ -535,7 +535,7 @@ Our original comparison covered 25 items, but many families rely on frozen foods
 | Frozen corn kernels (1kg) | $3.00 | $2.80 | Coles |
 | Frozen chicken nuggets (400g) | $5.00 | $4.80 | Coles |
 
-Coles dominates the frozen foods category. Their homebrand frozen range is consistently 10-15% cheaper than Woolworths on like-for-like products. If your lunchbox routine involves frozen peas, corn, or fish fingers, Coles is the clear choice.
+Coles dominates the frozen foods category. Their homebrand frozen range came out cheaper on the one frozen item in this basket (peas, $2.50 against $2.80) — one row is not enough to call the whole range, so treat it as a prompt to compare rather than a rule. If your lunchbox routine involves frozen peas, corn, or fish fingers, Coles is the clear choice.
 
 ### Tinned Goods
 

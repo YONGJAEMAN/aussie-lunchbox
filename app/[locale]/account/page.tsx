@@ -127,14 +127,6 @@ export default function AccountPage() {
                   <p className="text-2xl font-bold text-[#7B3F00]">{t("account_plan_free")}</p>
                   <p className="text-xs text-gray-400 mt-1">{t("account_plan_label")}</p>
                 </div>
-                <div>
-                  <p className="text-2xl font-bold text-[#7B3F00]">–</p>
-                  <p className="text-xs text-gray-400 mt-1">{t("account_saved_plans")}</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-[#7B3F00]">–</p>
-                  <p className="text-xs text-gray-400 mt-1">{t("account_favourites")}</p>
-                </div>
               </div>
             </div>
 
@@ -166,7 +158,6 @@ export default function AccountPage() {
               </p>
               <div className="bg-[#FFF4DE] rounded-xl p-4 text-left text-sm text-[#7B3F00] space-y-1">
                 <p className="font-semibold mb-2">{t("account_why_join")}</p>
-                <p>✨ {t("account_save_plans_feature")}</p>
                 <p>❤️ {t("account_track_favs_feature")}</p>
                 <p>📩 {t("account_email_plans_feature")}</p>
               </div>

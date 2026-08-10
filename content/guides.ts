@@ -505,7 +505,7 @@ This leaves $4 per child for variety items like hummus, dried fruit, or baking i
 ## Smart Shopping Strategies
 
 ### At Woolworths
-- **Woolworths Essentials/Homebrand** range offers basics at 30-50% less than branded equivalents
+- **Woolworths Essentials/Homebrand** range is cheaper than the branded equivalent on most staples — compare the unit price on the shelf label rather than the pack price, since pack sizes differ
 - **Half-price specials** rotate weekly — stock up on non-perishables when they are on sale
 - **Woolworths Online** lets you compare prices easily and avoid impulse buys
 - **Odd Bunch** fruits and vegetables are perfectly good produce at reduced prices
