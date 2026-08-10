@@ -93,7 +93,40 @@ describe("🔴 사이트 문구가 실제 구현·About과 어긋나지 않는�
     const gen = src("lib/planGenerator.ts");
     expect(gen).not.toMatch(/openai|anthropic|\bllm\b/i);
     for (const l of LOCALES) {
-      expect(JSON.stringify(messages[l]), `${l}: AI 주장`).not.toMatch(/AI[- ]powered|AI 기반|AI ?驱动/i);
+      // ⚠️ 처음엔 /AI[- ]powered|our AI/ 로만 봤다가 "Let **the AI** Do the Work"를
+      //    놓쳤다. 좁은 패턴은 알리바이가 된다 — AI라는 단어 자체를 본다.
+      expect(JSON.stringify(messages[l]), `${l}: AI 주장`).not.toMatch(/\bAI\b|AI 기반|AI ?驱动/i);
+    }
+  });
+
+  it("가격을 실시간이라고 말하지 않는다 (주 1회 캐시다)", () => {
+    // lib/supermarketApi.ts는 빌드 시 로드한 주간 캐시를 먼저 본다.
+    expect(src("lib/supermarketApi.ts")).toMatch(/Weekly price cache/i);
+    // UI 배지도 마찬가지 — 캐시값에 "Live"를 붙이고 있었다.
+    expect(src("components/PlannerClient.tsx")).not.toMatch(/\? "Live" :/);
+    for (const l of LOCALES) {
+      const all = JSON.stringify(messages[l]);
+      // 부정문("실시간이 아니라")은 걸리면 안 되므로 **주장 형태**만 본다.
+      expect(all, `${l}: 실시간 주장`).not.toMatch(
+        /(live|real-?time)[ -](Woolworths |supermarket |Australian supermarket )?pric|실시간 (가격|조회)를|实时(查询|价格)的/i,
+      );
+    }
+  });
+
+  it("확인할 수 없는 이용자 증언을 싣지 않는다", () => {
+    for (const l of LOCALES) {
+      const all = JSON.stringify(messages[l]);
+      expect(all, `${l}: 증언 주장`).not.toMatch(
+        /(families|parents) tell us|typically s(ave|pend)|대부분의 가정(은|이)|大多数家庭每/i,
+      );
+    }
+  });
+
+  it("메시지 파일에 깨진 문자가 없다", () => {
+    // 2026-08-10: ko.json 3건이 U+FFFD로 깨져 있었다("글루텐"→"��루텐").
+    for (const l of LOCALES) {
+      const bad = Object.entries(messages[l]).filter(([, v]) => String(v).includes("\uFFFD"));
+      expect(bad.map(([k]) => k), `${l}: 깨진 문자`).toEqual([]);
     }
   });
 

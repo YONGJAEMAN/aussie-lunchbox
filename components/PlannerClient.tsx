@@ -547,7 +547,8 @@ export default function PlannerClient() {
                                     ? "bg-green-100 text-green-700"
                                     : "bg-gray-100 text-gray-400"
                                 }`}>
-                                  {item.source === "Woolworths AU" ? "Live" : "Est."}
+                                  {/* 🔴 "Live"는 거짓이었다 - 가격은 주 1회 갱신되는 캐시다(lib/supermarketApi.ts). */}
+                                  {item.source === "Woolworths AU" ? "Weekly" : "Est."}
                                 </span>
                               </div>
                               {totalItemCost !== undefined && (
