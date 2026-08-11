@@ -255,8 +255,12 @@ export default function PlannerClient() {
 
   return (
     <div className="min-h-screen bg-[#FDFAF2] flex flex-col lg:flex-row">
-      {/* Sidebar */}
-      <aside className="w-full lg:w-80 bg-white border-r border-gray-100 p-6 flex-shrink-0">
+      {/* Sidebar — 모바일에서는 플랜 아래로 내린다(order-2). 첫 화면이 설문지가 되면
+          "몇 초 만에 한 주 도시락"이라는 약속과 어긋난다. 데스크톱은 기존 그대로. */}
+      <aside
+        id="planner-filters"
+        className="order-2 lg:order-1 w-full lg:w-80 bg-white border-t lg:border-t-0 lg:border-r border-gray-100 p-6 flex-shrink-0 scroll-mt-4"
+      >
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-bold text-[#7B3F00]">🦘 {t("sidebar_header")}</h2>
           {user ? (
@@ -267,9 +271,11 @@ export default function PlannerClient() {
               {t("logout")}
             </button>
           ) : (
+            // 🔴 로그인은 선택이다(계정 없이 플랜 생성이 전부 동작). 주황 채움 버튼이면
+            //    생성 CTA와 같은 무게로 보여 "무료·가입 불필요" 문구와 어긋난다.
             <button
               onClick={() => setShowAuth(true)}
-              className="text-xs bg-[#F5A623] text-white px-3 py-1 rounded-full hover:bg-[#7B3F00] transition-colors"
+              className="text-xs text-gray-500 border border-gray-200 px-3 py-1 rounded-full hover:border-[#F5A623] hover:text-[#7B3F00] transition-colors"
             >
               {t("login")}
             </button>
@@ -360,7 +366,7 @@ export default function PlannerClient() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 lg:p-10 overflow-y-auto">
+      <main className="order-1 lg:order-2 flex-1 p-6 lg:p-10 overflow-y-auto">
         <h1 className="text-3xl font-bold text-[#7B3F00] mb-2">{t("title")}</h1>
         <p className="text-gray-500 mb-8">{t("subtitle")}</p>
 
@@ -429,6 +435,16 @@ export default function PlannerClient() {
                 </div>
               ))}
             </div>
+
+            {/* 모바일에서만: 순서를 뒤집으면서 필터가 카드 전부 아래로 갔다. 카드를 다
+                읽은 자리에 앵커를 둔다 — 첫 화면 위에 두면 정작 플랜을 밀어내서
+                이번 작업의 목적과 어긋난다(Kiwi에서 그렇게 했다가 되돌렸다). */}
+            <a
+              href="#planner-filters"
+              className="lg:hidden flex items-center justify-center gap-2 w-full border border-[#F5A623] text-[#7B3F00] font-semibold py-3 rounded-xl mb-10 hover:bg-[#FFF4DE] transition-colors"
+            >
+              ⚙️ {t("sidebar_header")}
+            </a>
 
             {/* Export, Share & Email */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">

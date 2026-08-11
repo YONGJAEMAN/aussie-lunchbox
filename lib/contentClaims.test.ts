@@ -278,6 +278,41 @@ describe("🔴 사이트 문구가 실제 구현·About과 어긋나지 않는�
     expect(src("app/[locale]/account/page.tsx"), "하드코딩 통계 타일").not.toContain('">–</p>');
   });
 
+  it("플랜이 계정에 저장된다고 말하지 않는다 (저장은 그 기기의 localStorage뿐)", () => {
+    // 🔴 위 검사는 **키 하나가 사라졌는지**만 봤다. 그래서 `faq_a7`이 3개 언어 모두
+    //    "생성한 모든 플랜이 계정에 자동 저장됩니다 / automatically saved to your
+    //    account / 自动保存到账户"라고 말하는 동안 통과했다. 실제로 쓰는 테이블은
+    //    favorites 하나뿐이고, 플랜은 `localStorage("lunchbox-plan")`에만 남는다.
+    //    → 키 목록이 아니라 **주장**을 건다.
+    const planner = src("components/PlannerClient.tsx");
+    expect(planner, "계정 저장이 생겼다면 문구를 되살릴 것")
+      .toMatch(/localStorage\.setItem\("lunchbox-plan"/);
+    // ⚠️ 이 가드도 곧바로 **내가 새로 쓴 정직한 부인문**을 잡았다
+    //    ("但它并未保存到账户"). 이 저장소에서 Coles·실시간·팀에 이어 네 번째다.
+    //    부인문은 우리가 반드시 해야 하는 말이다 — 문장 단위로 잘라 걸러낸다.
+    const NOT_SAVED = /並未|并未|不会|没有|않습니다|않으며|아니라서|아닙니다|\bnot\b|\bnever\b/i;
+    const CLAIMS: [RegExp, string][] = [
+      [/plans?[^.]{0,40}saved to your account|saved to your account|계정에 자동 저장|플랜[^.]{0,20}계정에 저장|保存到账户|保存到帐户/i,
+        "없는 계정 저장을 광고한다"],
+      [/meal plans,? and shopping lists synced|식단,? 쇼핑 리스트를 모든 기기|餐食计划和购物清单/i,
+        "계정이 식단·쇼핑리스트를 동기화한다고 말한다"],
+    ];
+    for (const l of LOCALES) {
+      for (const [k, v] of Object.entries(messages[l])) {
+        if (typeof v !== "string") continue;
+        // 🔴 문장 단위로 자르면 **절 단위 알리바이**가 생긴다. 돌연변이로 확인했다:
+        //    "但它会自动保存到账户，因此不会同步到其他设备。"는 뒤 절의 "不会" 때문에
+        //    앞 절의 거짓 주장까지 통째로 면제됐다. 쉼표까지 잘라야 한다.
+        for (const sentence of v.split(/(?<=[.!?。！？；;，,])\s*|—|--/)) {
+          if (NOT_SAVED.test(sentence)) continue;
+          for (const [re, why] of CLAIMS) {
+            expect(sentence, `${l}.${k}: ${why}`).not.toMatch(re);
+          }
+        }
+      }
+    }
+  });
+
   it("하지 않은 조사를 했다고 말하지 않는다", () => {
     // 🔴 2026-08-10: Woolworths vs Coles 비교글 3편이 "우리가 25개 품목을 양 매장에서
     //    비교했다", "시드니 메트로에서 매장·온라인으로 기록했다"고 썼다. **전부 실제
@@ -333,5 +368,71 @@ describe("본문의 도시락 비용 주장이 실제 계산과 맞는다", () =
     expect(POSTS["australian-school-canteen-guidelines-2026"].body).toContain(
       "$600 to $1,000 per child per year",
     );
+  });
+});
+
+describe("화면 안내 문구가 실제 배치와 어긋나지 않는다", () => {
+  const planner = readFileSync(
+    new URL("../components/PlannerClient.tsx", import.meta.url),
+    "utf-8",
+  );
+  const L3 = ["en", "ko", "zh"] as const;
+  const m3 = Object.fromEntries(
+    L3.map((l) => [
+      l,
+      JSON.parse(
+        readFileSync(new URL(`../messages/${l}.json`, import.meta.url), "utf-8"),
+      ) as Record<string, string>,
+    ]),
+  ) as Record<(typeof L3)[number], Record<string, string>>;
+
+  // 🔴 여는 태그를 통째로 떠서 본다. Kiwi에서 `<aside className="order-2`로 걸었다가
+  //    속성을 하나 추가해 줄바꿈이 생긴 순간 가드가 조용히 깨졌다(테스트는 통과한 채로).
+  //    **가드를 코드 서식에 묶지 말 것.**
+  const openTag = (tag: string) =>
+    planner.match(new RegExp(`<${tag}\\b[\\s\\S]{0,400}?>`))?.[0] ?? "";
+
+  it("모바일에서 플랜이 필터보다 먼저 온다", () => {
+    // 첫 화면이 설문지면 "몇 초 만에 한 주 도시락"이라는 약속과 어긋난다.
+    // Kiwi 실측: Monday가 y=1550 → 고친 뒤 659.
+    expect(openTag("aside")).toMatch(/order-2 lg:order-1/);
+    expect(openTag("main")).toMatch(/order-1 lg:order-2/);
+  });
+
+  it("모바일 1단계 안내가 필터를 '위'라고 가리키지 않는다 (3개 언어)", () => {
+    // 🔴 배치를 바꾸면 문구가 조용히 거짓이 된다. `order-2`로 필터를 아래로 내린
+    //    순간 3개 언어의 "icons above / 위의 / 上方"가 전부 틀린 말이 됐다.
+    expect(openTag("aside"), "필터가 모바일에서 아래에 있어야 이 검사가 성립한다")
+      .toMatch(/order-2 /);
+    for (const l of L3) {
+      expect(m3[l].planner_step1_mobile ?? "", `${l}: 필터는 아래에 있다`)
+        .not.toMatch(/\babove\b|위의|위에|上方|上面/);
+    }
+  });
+
+  it("플랜이 있을 때 모바일에서 필터로 돌아갈 길이 있다", () => {
+    // 순서를 뒤집으면 필터가 카드 전부 아래로 간다. 앵커가 없으면
+    // "다시 뽑기"가 사실상 불가능해진다 — Kiwi에서 만든 회귀다.
+    expect(planner).toMatch(/id="planner-filters"/);
+    expect(planner).toMatch(/href="#planner-filters"/);
+  });
+
+  it("로그인 버튼이 생성 CTA와 같은 무게로 보이지 않는다", () => {
+    // 계정 없이 플랜 생성이 전부 동작한다. 로그인이 주황 채움 버튼이면
+    // 최상단에서 가장 눈에 띄는 것이 로그인이 된다 — "무료·가입 불필요"와 어긋난다.
+    const i = planner.indexOf("onClick={() => setShowAuth(true)}\n              className");
+    expect(i, "로그인 버튼을 못 찾았다").toBeGreaterThan(-1);
+    expect(planner.slice(i, i + 400)).not.toMatch(/bg-\[#F5A623\]/);
+  });
+
+  it("쿠키 동의 배너는 남아 있다 (AdSense GDPR 요건)", () => {
+    // 높이를 줄이는 작업 중에 통째로 지우는 사고를 막는다.
+    const banner = readFileSync(
+      new URL("../components/CookieConsent.tsx", import.meta.url),
+      "utf-8",
+    );
+    expect(banner).toMatch(/cookie-consent/);
+    expect(banner).toMatch(/cookie_accept/);
+    expect(banner).toMatch(/cookie_decline/);
   });
 });
