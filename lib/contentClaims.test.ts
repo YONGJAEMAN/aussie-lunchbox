@@ -404,6 +404,14 @@ describe("화면 안내 문구가 실제 배치와 어긋나지 않는다", () =
     //    순간 3개 언어의 "icons above / 위의 / 上方"가 전부 틀린 말이 됐다.
     expect(openTag("aside"), "필터가 모바일에서 아래에 있어야 이 검사가 성립한다")
       .toMatch(/order-2 /);
+
+    // 🔴 이 가드는 처음에 messages의 `planner_step1_mobile`만 봤다. 그런데 Aussie는
+    //    이 문구를 **JSX에 하드코딩**해 뒀고 그 번역키는 **어디서도 쓰이지 않는다**.
+    //    번역파일만 고치고 화면은 그대로 "icons above"인 채 라이브에 나갔고,
+    //    가드는 통과했다. 라이브 HTML을 curl로 받아 보고서야 잡혔다.
+    //    → 번역파일과 **JSX 양쪽**을 본다. 주장이 사는 자리를 먼저 셀 것.
+    expect(planner, "모바일 안내가 JSX에 하드코딩돼 있다면 그것도 봐야 한다")
+      .not.toMatch(/lg:hidden">[^<]*\babove\b[^<]*<\/span>/);
     for (const l of L3) {
       expect(m3[l].planner_step1_mobile ?? "", `${l}: 필터는 아래에 있다`)
         .not.toMatch(/\babove\b|위의|위에|上方|上面/);

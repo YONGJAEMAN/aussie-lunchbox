@@ -608,7 +608,7 @@ export default function PlannerClient() {
               <ol className="text-left text-sm space-y-2 max-w-xs w-full">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">1</span>
-                  <span className="text-gray-600"><span className="hidden lg:inline">Set allergy filters in the left panel</span><span className="lg:hidden">Tap the filter icons above to set dietary needs</span></span>
+                  <span className="text-gray-600"><span className="hidden lg:inline">Set allergy filters in the left panel</span><span className="lg:hidden">Tap the filter icons below to set dietary needs</span></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center mt-0.5">2</span>
