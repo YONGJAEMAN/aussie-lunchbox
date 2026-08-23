@@ -1,4 +1,6 @@
 import { describe, it, expect } from "vitest";
+import { SITE_NOINDEX } from "@/lib/brand";
+import sitemap from "@/app/sitemap";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { GUIDES } from "@/content/guides";
 import menuData from "@/data/menuData.json";
@@ -442,5 +444,53 @@ describe("화면 안내 문구가 실제 배치와 어긋나지 않는다", () =
     expect(banner).toMatch(/cookie-consent/);
     expect(banner).toMatch(/cookie_accept/);
     expect(banner).toMatch(/cookie_decline/);
+  });
+});
+
+/**
+ * 🔴 2026-08-23: 색인 상태를 **세 곳이 따로** 말하고 있었다.
+ *
+ * `generateMetadata`는 2026-07부터 전 페이지에 `index: false`를 걸고 있었는데
+ * 광고 코드와 sitemap은 그걸 몰랐다:
+ *   · 광고 로더가 noindex인 영어 페이지 **전부**에 실려 나갔다
+ *   · sitemap이 noindex URL **27개**를 색인 요청하고 있었다
+ *
+ * 애드센스 심사는 **계정 단위**(`pub-2079938386322416`은 Kiwi와 같다)라,
+ * 이건 Aussie 문제가 아니라 **Kiwi 신청에 얹히는 문제**였다.
+ * 셋을 `SITE_NOINDEX` 하나에 묶었다.
+ */
+describe("🔴 색인 상태·광고 코드·sitemap이 같은 값을 본다", () => {
+  const src = (rel: string) => readFileSync(new URL("../" + rel, import.meta.url), "utf-8");
+
+  it("양성 대조 — 파일을 실제로 읽었다", () => {
+    expect(src("app/[locale]/layout.tsx").length).toBeGreaterThan(2000);
+    expect(src("app/sitemap.ts").length).toBeGreaterThan(500);
+  });
+
+  it("robots 메타가 SITE_NOINDEX에서 나온다 (손으로 false를 박지 않는다)", () => {
+    const layout = src("app/[locale]/layout.tsx");
+    expect(layout, "robots가 SITE_NOINDEX를 안 본다").toMatch(/index:\s*!SITE_NOINDEX/);
+    expect(layout, "index를 손으로 박았다").not.toMatch(/index:\s*false/);
+  });
+
+  it("광고 코드가 SITE_NOINDEX를 본다", () => {
+    expect(src("app/[locale]/layout.tsx"), "광고 코드가 색인 상태를 모른다").toMatch(
+      /showAdSenseScript\s*=\s*!SITE_NOINDEX/,
+    );
+  });
+
+  it("sitemap이 noindex일 때 비어 있다", () => {
+    expect(src("app/sitemap.ts"), "sitemap이 색인 상태를 모른다").toMatch(/if \(SITE_NOINDEX\) return \[\]/);
+    expect(SITE_NOINDEX ? sitemap() : [], "noindex인데 sitemap에 URL이 있다").toEqual([]);
+  });
+
+  it("색인을 복원하면 셋이 같이 움직인다 (한 곳만 바꾸면 되는지)", () => {
+    // SITE_NOINDEX를 쓰는 자리가 셋 다 있는지 — 하나라도 빠지면 갈라진다.
+    const uses = [
+      src("app/[locale]/layout.tsx").match(/SITE_NOINDEX/g)?.length ?? 0,
+      src("app/sitemap.ts").match(/SITE_NOINDEX/g)?.length ?? 0,
+    ];
+    expect(uses[0], "layout이 SITE_NOINDEX를 두 번(robots·광고) 써야 한다").toBeGreaterThanOrEqual(3);
+    expect(uses[1], "sitemap이 SITE_NOINDEX를 써야 한다").toBeGreaterThanOrEqual(2);
   });
 });
