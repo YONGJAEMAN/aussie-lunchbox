@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
-import { BRAND } from "@/lib/brand";
+import { BRAND, SITE_NOINDEX } from "@/lib/brand";
 
 const BASE_URL = BRAND.SITE_URL;
 
@@ -23,6 +23,13 @@ const STATIC_ROUTES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  /**
+   * 🔴 2026-08-23: 사이트 전체가 noindex인데 sitemap이 **27개 URL**을 싣고 있었다.
+   *    "색인하지 마" 태그를 붙인 페이지를 "색인해 줘"라고 제출하는 셈이라
+   *    크롤 예산만 쓰고 신호가 서로 모순된다. 색인을 복원하면 자동으로 돌아온다.
+   */
+  if (SITE_NOINDEX) return [];
+
   const entries: MetadataRoute.Sitemap = [];
 
   for (const route of STATIC_ROUTES) {

@@ -1,4 +1,5 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { SITE_NOINDEX } from "@/lib/brand";
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
@@ -63,10 +64,10 @@ export async function generateMetadata({
     // follow는 유지(크롤러가 noindex 태그를 보고 색인에서 빼도록 crawlable 상태로 둠).
     // Kiwi 승인 + Aussie 차별화 콘텐츠 확보 후 index 복원.
     robots: {
-      index: false,
+      index: !SITE_NOINDEX,
       follow: true,
       googleBot: {
-        index: false,
+        index: !SITE_NOINDEX,
         follow: true,
         "max-image-preview": "large",
       },
@@ -101,7 +102,11 @@ export default async function LocaleLayout({
     pathname.includes("/account") ||
     pathname.startsWith("/ko") ||
     pathname.startsWith("/zh");
-  const showAdSenseScript = locale === "en" && !isNoindexPath;
+  // 🔴 2026-08-23: 여기가 `locale === "en" && !isNoindexPath`였다. 그런데 위
+  //    `generateMetadata`가 **모든 페이지에 noindex를 걸고 있다** — 광고 코드가 그걸
+  //    모르고 전 영어 페이지에 실려 나갔다. noindex 사이트에 광고 코드를 얹으면
+  //    "가치 없는 인벤토리"로 읽히고, 심사는 계정 단위라 Kiwi 신청에 그대로 얹힌다.
+  const showAdSenseScript = !SITE_NOINDEX && locale === "en" && !isNoindexPath;
 
   const orgJsonLd = {
     "@context": "https://schema.org",
