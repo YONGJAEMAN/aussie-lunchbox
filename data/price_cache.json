@@ -242,15 +242,6 @@
       "source": "Est. (Fallback)"
     }
   },
-  "Marmite": {
-    "timestamp": 1792966998512,
-    "data": {
-      "price": 5,
-      "image": "",
-      "name": "Marmite",
-      "source": "Est. (Fallback)"
-    }
-  },
   "Butter": {
     "timestamp": 1792966998512,
     "data": {
@@ -1310,6 +1301,15 @@
       "price": 5,
       "image": "",
       "name": "Salami",
+      "source": "Est. (Fallback)"
+    }
+  },
+  "Vegemite": {
+    "timestamp": 1792966998512,
+    "data": {
+      "price": 5,
+      "image": "",
+      "name": "Vegemite",
       "source": "Est. (Fallback)"
     }
   }

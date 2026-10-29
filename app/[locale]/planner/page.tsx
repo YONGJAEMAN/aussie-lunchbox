@@ -145,8 +145,7 @@ export default async function PlannerPage({
 
       {/* Worked examples — fixed, server-rendered content showing exactly how the
           planner behaves. Uses the real menu library, real allergy flags, and the
-          operator's own weekly price cache (data/price_cache.json — priceIndex.json is the
-          20-item table published on /price-index, which the planner does not read). */}
+          operator's own weekly price cache (data/price_cache.json). */}
       <section className="bg-[#F7F9FC] border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 py-16 space-y-16">
 

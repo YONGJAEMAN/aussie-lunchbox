@@ -83,7 +83,7 @@ const INGREDIENT_CATEGORIES: Record<string, string[]> = {
   ],
   Pantry: [
     "pesto", "olive oil", "soy sauce", "tomato sauce", "tomato paste",
-    "mayo", "hummus", "marmite", "sugar", "honey", "jam", "peanut butter",
+    "mayo", "hummus", "vegemite", "sugar", "honey", "jam", "peanut butter",
     "peanut sauce", "teriyaki sauce", "salsa", "caesar dressing", "seaweed",
     "nori", "corn chips", "curry paste", "nuts", "seeds", "dried fruit",
     "olives", "oil", "sauce", "dressing", "coconut milk", "coconut",
@@ -238,7 +238,7 @@ const EXACT_EMOJIS: Record<string, string> = {
   "Hummus": "🫙",
   "Jam": "🍓",
   "Lemon Dressing": "🍋",
-  "Marmite": "🫙",
+  "Vegemite": "🫙",
   "Mayo": "🫙",
   "Mustard": "🫙",
   "Peanut Butter": "🥜",
@@ -296,7 +296,7 @@ export const SPECIFIC_EMOJIS: Record<string, string> = {
   "chickpea": "🫘", "black bean": "🫘", "lentil": "🫘", "coconut": "🥥",
   "cocoa": "🍫", "chocolate": "🍫", "honey": "🍯", "jam": "🍓",
   "sugar": "🍬", "mustard": "🫙", "hummus": "🫙", "salsa": "🫙",
-  "pesto": "🌿", "mayo": "🫙", "marmite": "🫙", "sauce": "🥫",
+  "pesto": "🌿", "mayo": "🫙", "vegemite": "🫙", "sauce": "🥫",
   "oil": "🫒", "spice": "🌶️", "curry": "🌶️",
 };
 

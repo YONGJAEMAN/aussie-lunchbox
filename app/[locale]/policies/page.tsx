@@ -174,10 +174,7 @@ export default async function PoliciesPage({
             <li>
               The cost shown with each plan is an <strong>estimate</strong> built from regular
               (non-special) <strong>Woolworths</strong> prices, re-read weekly from their own online
-              shop &mdash; not a live till total. The{" "}
-              <Link href={`/${locale}/price-index`} className="text-[#366A1B] underline">Price Index</Link>
-              {" "}is a separate, narrower dataset: 20 staples priced across three chains so you can
-              compare them. Specials, pack sizes, and your local branch will move the real number.
+              shop &mdash; not a live till total. Specials, pack sizes, and your local store will move the real number.
             </li>
             <li>
               The planner does <strong>not</strong> know your child&apos;s age, weight, medical
@@ -198,10 +195,9 @@ export default async function PoliciesPage({
             Everything here is general information for healthy children. It is <strong>not medical,
             dietetic, or allergy advice</strong>, and it must not be used to manage a diagnosed food
             allergy, intolerance, or medical condition. Nutrition guidance is benchmarked against{" "}
-            <a href="https://www.health.govt.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] underline">Ministry of Health NZ</a>
-            {" "}and{" "}
-            <a href="https://www.heartfoundation.org.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] underline">Heart Foundation NZ</a>
-            {" "}resources, but it is no substitute for personalised advice from a registered dietitian.
+            the{" "}
+            <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] underline">Australian Dietary Guidelines (NHMRC)</a>
+            {" "}and state healthy canteen resources, but it is no substitute for personalised advice from an Accredited Practising Dietitian (APD).
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
             If your child has a diagnosed allergy &mdash; especially one carrying anaphylaxis risk

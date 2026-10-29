@@ -111,7 +111,7 @@ export const PORTION_FACTORS: Record<string, number> = {
   Olives: 0.08,
 
   // ── 스프레드·소스·향신료 (대용량 → 1회 사용량은 미미) ────────
-  Butter_Spread: 0.03, Marmite: 0.02, Jam: 0.03, Honey: 0.03,
+  Butter_Spread: 0.03, Vegemite: 0.026, Jam: 0.03, Honey: 0.03,
   "Peanut Butter": 0.04, "Peanut Sauce": 0.04, "Golden Syrup": 0.03,
   Mayo: 0.03, Mayonnaise: 0.03, "Vegan Mayo": 0.03, Mustard: 0.02,
   Hummus: 0.15, Pesto: 0.15, "Pesto/Mayo": 0.05, "Dairy-Free Pesto": 0.05,
@@ -248,7 +248,7 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   // ── 2026-08-20 전수 확인: 본문 표에 실리는 재료를 상품 API로 하나씩 조회했다.
   //    캐시가 집은 상품을 **가격으로 대조해** 특정하고(이름만으로는 250g/500g을 못 가른다),
   //    volumeSize를 읽어 factor가 함의하는 1인분 g수를 계산해 상식 범위를 확인했다.
-  Marmite: { pack: "500g", serve: "10g" },
+  Vegemite: { pack: "380g", serve: "10g" },
   Jam: { pack: "660g", serve: "20g" },
   "Peanut Butter": { pack: "375g", serve: "15g" },
   Honey: { pack: "500g", serve: "15g" },

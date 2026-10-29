@@ -102,7 +102,7 @@ const NAME_TOKENS: Record<Allergen, RegExp> = {
   nuts: /\b(nut|nuts|almond|peanut|cashew|hazelnut|macadamia|walnut|pecan|pistachio)\b/,
   milk: /\b(milk|dairy|cheese|yoghurt|yogurt|butter|cream|paneer|feta|mozzarella|parmesan)\b/,
   egg: /\b(egg|eggs|mayo|mayonnaise)\b/,
-  gluten: /\b(bread|flour|pasta|wheat|noodle|noodles|bagel|bun|roll|rolls|wrap|wraps|crumb|crumbs|pastry|cracker|crackers|couscous|oat|oats|muesli|spaghetti|macaroni|pita|roti|bao|croissant|pretzel|pretzels|breadstick|breadsticks|tortilla|scroll|scrolls|dumpling|marmite|soy sauce|mustard)\b/,
+  gluten: /\b(bread|flour|pasta|wheat|noodle|noodles|bagel|bun|roll|rolls|wrap|wraps|crumb|crumbs|pastry|cracker|crackers|couscous|oat|oats|muesli|spaghetti|macaroni|pita|roti|bao|croissant|pretzel|pretzels|breadstick|breadsticks|tortilla|scroll|scrolls|dumpling|vegemite|soy sauce|mustard)\b/,
   sesame: /\b(sesame|hummus|tahini)\b/,
 };
 const nameSuggests = (s: string, a: Allergen) => NAME_TOKENS[a].test(s);

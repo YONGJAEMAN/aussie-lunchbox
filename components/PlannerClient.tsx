@@ -1055,16 +1055,6 @@ export default function PlannerClient({
                 ))}
               </div>
             )}
-            {/* 🔴 이 사이트에서 일정에 맞춰 바뀌는 것은 가격지수 하나뿐이다.
-                특가를 보러 온 사람이 "다음 주에 또 볼 게 있다"는 걸 아는 자리는 여기다.
-                문구가 갱신 요일을 말하므로 lib/contentClaims.test.ts가 크론과 대조한다 —
-                .github/workflows/update_prices.yml의 시각을 옮기면 문구도 같이 볼 것. */}
-            <a
-              href={`/${locale}/price-index`}
-              className="inline-flex items-center min-h-touch text-xs font-semibold text-[#366A1B] hover:underline"
-            >
-              {t("planner_price_index_link")}
-            </a>
           </div>
         </details>
 

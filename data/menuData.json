@@ -231,16 +231,16 @@
         "cuisine": "american"
       },
       {
-        "name": "Marmite & Cheese Sandwich",
+        "name": "Vegemite & Cheese Sandwich",
         "category": "Sandwich",
         "ingredients": [
           "Bread",
-          "Marmite",
+          "Vegemite",
           "Cheese",
           "Butter"
         ],
         "image": "/assets/marmite_sandwich.png",
-        "instructions": "**Method:**\n1. Butter both slices of bread evenly.\n2. Spread a thin, even layer of Marmite on one slice (a little goes a long way!).\n3. Add sliced cheese on top of the Marmite.\n4. Press slices together and cut into halves or quarters.",
+        "instructions": "**Method:**\n1. Butter both slices of bread evenly.\n2. Spread a thin, even layer of Vegemite on one slice (a little goes a long way!).\n3. Add sliced cheese on top of the Vegemite.\n4. Press slices together and cut into halves or quarters.",
         "is_vegetarian": true,
         "is_vegan": false,
         "is_gluten_free": false,
@@ -1366,13 +1366,13 @@
         "ingredients": [
           "Flour",
           "Cheese",
-          "Marmite",
+          "Vegemite",
           "Milk",
           "Butter",
           "Baking Powder"
         ],
         "image": "/assets/cheesymite_scrolls.png",
-        "instructions": "**Method:**\n1. Make a scone dough: rub 50g butter into 2 cups self-raising flour, add ¾ cup milk and mix to a soft dough.\n2. Roll out into a rectangle and spread thinly with Marmite.\n3. Sprinkle over grated cheese.\n4. Roll up from the long side and slice into 8 scrolls.\n5. Bake at 200°C for 12-15 minutes. Cool before packing.",
+        "instructions": "**Method:**\n1. Make a scone dough: rub 50g butter into 2 cups self-raising flour, add ¾ cup milk and mix to a soft dough.\n2. Roll out into a rectangle and spread thinly with Vegemite.\n3. Sprinkle over grated cheese.\n4. Roll up from the long side and slice into 8 scrolls.\n5. Bake at 200°C for 12-15 minutes. Cool before packing.",
         "is_vegetarian": true,
         "is_vegan": false,
         "is_gluten_free": false,
@@ -1451,14 +1451,14 @@
         "cuisine": "kiwi"
       },
       {
-        "name": "Cocktail Sausages (Cheerios)",
+        "name": "Cocktail Frankfurts",
         "category": "Hot",
         "ingredients": [
           "Cocktail Sausages",
           "Tomato Sauce"
         ],
         "image": "/assets/cocktail_sausages.png",
-        "instructions": "**Method:**\n1. Simmer cocktail sausages (cheerios / saveloys) in boiling water for 5 minutes, or pan-fry until heated through.\n2. Cool, then halve or leave whole.\n3. Pack with a small pot of tomato sauce for dipping.\n4. Keep cold with an ice pack in the lunchbox.",
+        "instructions": "**Method:**\n1. Simmer cocktail frankfurts (cocktail franks) in boiling water for 5 minutes, or pan-fry until heated through.\n2. Cool, then halve or leave whole.\n3. Pack with a small pot of tomato sauce for dipping.\n4. Keep cold with an ice pack in the lunchbox.",
         "is_vegetarian": false,
         "is_vegan": false,
         "is_gluten_free": false,
