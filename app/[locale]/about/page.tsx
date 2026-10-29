@@ -18,9 +18,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/about",
     locale,
-    title: "About – Aussie Lunchbox | Built by a Parent in Auckland",
+    title: "About – Aussie Lunchbox | Built by a Parent",
     description:
-      "Aussie Lunchbox is a free school lunch planner built by Yong Jae Lee, a Senior Product Designer in Auckland. Learn how content is researched and verified.",
+      "Aussie Lunchbox is a free school lunch planner for Australian families, built by Yong Jae Lee, a parent and Senior Product Designer in Auckland. Learn how content is researched and verified.",
   });
 }
 
@@ -57,7 +57,7 @@ export default async function AboutPage() {
           A lunch planner built by a parent, for parents
         </h1>
         <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-          Free, practical, and made with real NZ supermarket ingredients.
+          Free, practical, and costed at Woolworths Australia shelf prices.
         </p>
       </section>
 
@@ -70,19 +70,15 @@ export default async function AboutPage() {
               I&apos;m a Senior Product Designer based in Auckland. Every morning I&apos;d find myself standing in front of the fridge, wondering what to pack in my child&apos;s lunchbox &mdash; and every weekend I&apos;d stress about what groceries to buy for the week ahead.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              I wanted to make proper, balanced lunches using ingredients actually available at Woolworths and Pak&apos;nSave &mdash; without spending 20 minutes each night planning. So I built Aussie Lunchbox: a free tool that generates a week of school lunches in seconds, complete with shopping lists and price estimates.
+              I built Kiwi Lunchbox for New Zealand families first. Aussie Lunchbox is the same tool adapted for Australia &mdash; Australian supermarket prices, dietary guidelines and school rules &mdash; because the morning lunchbox scramble is the same on both sides of the Tasman. It generates a week of school lunches in seconds, complete with shopping lists and price estimates.
             </p>
-            {/* 🔴 09-29: 「both columns are read weekly」 — 수집기(update_prices.yml)는 New World 열까지 셋을 매주 읽는다.
-                5월 라운드 매장도 「those branches」(Botany·Meadowlands까지 읽혔다)가 아니라 priceIndex.json의 checkedAt 두 곳이다. */}
             <p className="text-gray-600 leading-relaxed mb-4">
-              I&apos;m based in East Auckland and do most of our family shopping at Pak&apos;nSave, split fairly evenly between the Ormiston and Botany stores, with the odd top-up at Woolworths Meadowlands or the Tai Ping Asian grocer. Being a Korean family, the rice and nori for my daughter&apos;s onigiri come from the Korean grocer and the furikake from the Japanese one &mdash; so the prices and examples across this site come from the shops I actually push a trolley around. The May 2026 round of the price index was walked in store at Pak&apos;nSave Ormiston and Woolworths Ormiston. Since then the Woolworths, Pak&apos;nSave and New World columns are all read weekly from each chain&apos;s own online shop &mdash; Woolworths and Pak&apos;nSave on every item, New World on most of them &mdash; that is what makes a weekly refresh possible, and it is spelled out on the <Link href={`/${locale}/price-index`} className="underline">Price Index</Link> page along with what it costs in accuracy.
+              I don&apos;t live in Australia, so I can&apos;t walk Australian aisles the way I do at home. The prices on this site are read from Woolworths Australia&apos;s own online shop instead, and where an item couldn&apos;t be read the shopping list marks its price &lsquo;Est.&rsquo; rather than passing it off as a shelf price.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
               This is a solo project. There&apos;s no team, no investors, no sponsored content. Just a parent building something useful.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              <strong>🔖 What&apos;s a bit different here:</strong> each Monday the Woolworths and New World mailers are transcribed and I record which specials match a product the planner actually prices, at the same pack size, checked against that product&apos;s own online listing. The planner&apos;s <em>&quot;Rank by cost after this week&apos;s specials&quot;</em> option &mdash; on by default &mdash; then ranks lunches by what they cost after those specials, so cheaper lunches come up more often. It ranks; it does not build the week around the mailer, and most advertised specials don&apos;t clear the matching bar (the <Link href={`/${locale}/faq`} className="underline">FAQ</Link> explains why).
-            </p>
+
           </div>
           <div className="md:col-span-2">
             <div className="bg-[#F7F9FC] rounded-3xl p-8">
@@ -153,18 +149,14 @@ export default async function AboutPage() {
           {[
             {
               num: "1",
-              title: "NZ health guidelines first",
+              title: "Australian health guidelines first",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   All nutrition content is benchmarked against the{" "}
-                  <a href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
-                    Ministry of Health NZ Healthy Eating Guidelines
+                  <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                    Australian Dietary Guidelines (NHMRC)
                   </a>{" "}
-                  and the{" "}
-                  <a href="https://www.heartfoundation.org.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
-                    Heart Foundation NZ
-                  </a>{" "}
-                  food guidance. I do not publish nutrition claims without a credible NZ or international source.
+                  and the state healthy canteen frameworks. I do not publish nutrition claims without a credible Australian or international source.
                 </p>
               ),
             },
@@ -172,10 +164,10 @@ export default async function AboutPage() {
               num: "2",
               // 🔴 2026-09-09 외부 감사 — 제목은 "Tested"인데 본문은 "재고를 확인한다"였다.
               //    재고 확인은 시험이 아니다. 본문이 맞으므로 제목을 본문에 맞춘다.
-              title: "Checked against NZ supermarket stock",
+              title: "Priced against Australian supermarket listings",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Every recipe is checked for ingredient availability at Woolworths and Pak&apos;nSave. I don&apos;t recommend products that aren&apos;t reliably stocked in New Zealand supermarkets. Price estimates are based on regular shelf prices, refreshed weekly.
+                  Ingredients are priced against products listed in Woolworths Australia&apos;s online shop, using the regular shelf price rather than a special. Where an item couldn&apos;t be read, its price is marked &lsquo;Est.&rsquo;.
                 </p>
               ),
             },
@@ -185,8 +177,8 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Allergy-related content is cross-referenced against product labels, manufacturer allergen statements, and{" "}
-                  <a href="https://www.allergy.org.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
-                    Allergy New Zealand
+                  <a href="https://www.allergy.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                    ASCIA
                   </a>{" "}
                   guidance. However, I always advise readers to check product labels directly &mdash; formulations change.
                 </p>
@@ -194,10 +186,10 @@ export default async function AboutPage() {
             },
             {
               num: "4",
-              title: "School context is NZ-specific",
+              title: "School context is Australian",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  NZ primary schools vary in their lunchbox policies. I note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly.
+                  Australian schools&apos; lunchbox policies vary by state and by school. I note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly.
                 </p>
               ),
             },
@@ -206,7 +198,7 @@ export default async function AboutPage() {
               title: "Regular review cycle",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Articles are reviewed when MoH guidelines change, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
+                  Articles are reviewed when NHMRC or FSANZ guidance changes, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
                 </p>
               ),
             },
