@@ -570,7 +570,7 @@
   "planner_portion_recipe_note": "显示的用量是5–12岁标准一份；每项金额都乘以「{band}」的系数 {factor}。",
   "planner_kindy_portion_kindy": "本计划使用幼儿园份量：约为标准一份的 {factor}。",
   "planner_kindy_portion_other": "本计划使用「{band}」份量，5岁以下的孩子通常吃得更少——如需更小份量，请在「份量」中选择幼儿园。",
-  "planner_kindy_guide_link": "阅读幼儿园防噎指南 →",
+  "planner_kindy_guide_link": "阅读新西兰姐妹网站 Kiwi Lunchbox 上的指南 →",
   "planner_kindy_prep_title": "5岁以下的处理方法",
   "planner_kindy_prep_item": "{item}：{how}",
   "planner_kindy_prep_older": "4–6岁也可以：{how}",

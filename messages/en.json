@@ -570,7 +570,7 @@
   "planner_portion_recipe_note": "Amounts shown are the standard 5–12 serve; each cost is multiplied by {factor} for {band}.",
   "planner_kindy_portion_kindy": "This plan uses Kindy portions: about {factor} of that serve.",
   "planner_kindy_portion_other": "This plan uses {band} portions, so a child under 5 will usually need less — choose Kindy under Portion size for a smaller serve.",
-  "planner_kindy_guide_link": "Read the kindy choking guide →",
+  "planner_kindy_guide_link": "Read the guide on Kiwi Lunchbox, our New Zealand site →",
   "planner_kindy_prep_title": "Prep for under-5s",
   "planner_kindy_prep_item": "{item}: {how}",
   "planner_kindy_prep_older": "Aged 4–6, you can also: {how}",

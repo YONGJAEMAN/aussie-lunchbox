@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Aussie Lunchbox — NZ School Lunch Planner";
+export const alt = "Aussie Lunchbox — Australian School Lunch Planner";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default function OGImage() {
             maxWidth: "800px",
           }}
         >
-          Stress-free school lunches for New Zealand families
+          Stress-free school lunches for Australian families
         </p>
 
         {/* Feature pills */}

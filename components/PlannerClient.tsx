@@ -46,7 +46,9 @@ const ALLERGY_DISPLAY_KEYS: Record<AllergyType, string> = {
 };
 
 /** 킨디 안내가 링크하는 글. `FILTER_ARTICLES.Kindy`와 같은 글이다(가드가 대조한다). */
-const KINDY_GUIDE = "kindy-lunchbox-choking-guide-nz";
+// 킨디 필터는 아직 뉴질랜드 보건부 지침을 따른다(4단계에서 호주 지침으로 교체).
+// 그 지침을 풀어 쓴 가이드는 자매 사이트에 있으므로 그리로 보낸다 — Aussie에는 아직 킨디 가이드가 없다.
+const KINDY_GUIDE_URL = "https://www.kiwilunchbox.co.nz/en/guides/kindy-lunchbox-choking-guide-nz";
 
 const PREP_OPTIONS: PrepStyle[] = ["no-cook", "make-ahead", "cook-fresh"];
 
@@ -798,9 +800,9 @@ export default function PlannerClient({
           {kindyOn(allergies) && (
             <p className="mt-2 text-xs leading-relaxed text-gray-500">
               {t("planner_kindy_sidebar")}{" "}
-              <Link href={`/${locale}/guides/${KINDY_GUIDE}`} className="underline text-[#314A37]">
+              <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline text-[#314A37]">
                 {t("planner_kindy_guide_link")}
-              </Link>
+              </a>
             </p>
           )}
         </details>
@@ -1231,9 +1233,9 @@ export default function PlannerClient({
                   : planOptions.band === "kindy"
                     ? t("planner_kindy_portion_kindy", { factor: bandFactorLabel("kindy") })
                     : t("planner_kindy_portion_other", { band: t(`portion_band_${planOptions.band}`) })}{" "}
-                <Link href={`/${locale}/guides/${KINDY_GUIDE}`} className="font-semibold underline">
+                <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline">
                   {t("planner_kindy_guide_link")}
-                </Link>
+                </a>
               </p>
             )}
 
@@ -2041,9 +2043,9 @@ export default function PlannerClient({
                     })}
                   </ul>
                   <p className="mt-2 text-xs leading-relaxed">
-                    <Link href={`/${locale}/guides/${KINDY_GUIDE}`} className="underline">
+                    <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline">
                       {t("planner_kindy_guide_link")}
-                    </Link>
+                    </a>
                   </p>
                 </div>
               )}

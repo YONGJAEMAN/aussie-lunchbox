@@ -17,7 +17,7 @@ import type { AllergyType, MenuItem, SnackItem } from "./types";
 export const KINDY: AllergyType = "Kindy";
 
 export const CHOKING_SOURCE = {
-  publisher: "Ministry of Health",
+  publisher: "New Zealand Ministry of Health",
   title: "Reducing food-related choking for babies and young children at early learning services",
   published: "December 2020",
   url: "https://health.govt.nz/system/files/2020-12/reducing-food-related-choking-babies-young-children-early-learning-services-apr21.pdf",

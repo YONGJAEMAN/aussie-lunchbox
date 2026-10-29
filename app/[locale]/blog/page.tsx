@@ -24,7 +24,7 @@ export async function generateMetadata({
     locale,
     title: "Lunchbox Tips & Recipes Blog | Aussie Lunchbox",
     description:
-      "Practical lunchbox tips, NZ-friendly recipes, allergy guides, and budget ideas for New Zealand school families.",
+      "Practical lunchbox tips, recipes, allergy guides, and budget ideas for Australian school families.",
   });
 }
 
@@ -76,7 +76,7 @@ export default async function BlogPage({
           <p className="text-gray-500 leading-relaxed max-w-2xl mb-2">
             The posts above are single topics — one week&apos;s ideas, one comparison, one
             problem. The guides below are the reference material behind them: longer pieces
-            we revisit and re-date as NZ prices, school policies and supermarket ranges
+            we revisit and re-date as prices, school policies and supermarket ranges
             change.
           </p>
           <p className="text-gray-500 leading-relaxed max-w-2xl mb-10">

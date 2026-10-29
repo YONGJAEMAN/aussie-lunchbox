@@ -570,7 +570,7 @@
   "planner_portion_recipe_note": "표시된 분량은 기준(5–12세) 1인분이고, 각 금액에는 {band} 배율 {factor}를 곱했습니다.",
   "planner_kindy_portion_kindy": "이 식단은 킨디 양입니다: 그 1인분의 약 {factor}.",
   "planner_kindy_portion_other": "이 식단은 {band} 양이라 5세 미만 아이는 보통 덜 먹습니다 — 더 적은 양을 원하시면 '양'에서 킨디를 고르세요.",
-  "planner_kindy_guide_link": "킨디 질식 예방 가이드 읽기 →",
+  "planner_kindy_guide_link": "뉴질랜드 자매 사이트(Kiwi Lunchbox)의 가이드 읽기 →",
   "planner_kindy_prep_title": "5세 미만 손질법",
   "planner_kindy_prep_item": "{item}: {how}",
   "planner_kindy_prep_older": "4–6세라면: {how}",

@@ -42,18 +42,17 @@ export type FilterState = {
  * **사유가 적힌 항목에 글이 생기면 사유도 같이 지워야 한다.**
  */
 export const FILTER_ARTICLES: Record<FilterKey, RelatedLink | { none: string }> = {
-  "Nut Allergy": { slug: "nut-free-school-lunches-new-zealand", kind: "blog" },
-  "Egg Allergy": { slug: "egg-free-lunchbox-ideas-nz", kind: "blog" },
-  "Sesame Allergy": { slug: "sesame-free-school-lunches-nz", kind: "blog" },
-  Vegetarian: { slug: "vegetarian-vegan-school-lunch-guide-nz", kind: "guide" },
-  Vegan: { slug: "vegetarian-vegan-school-lunch-guide-nz", kind: "guide" },
-  "make-ahead": { slug: "batch-cooking-save-money-nz", kind: "blog" },
-  thermosOnly: { slug: "thermos-hot-lunches-nz-winter", kind: "blog" },
-  "Dairy Allergy": { slug: "dairy-free-school-lunches-nz", kind: "blog" },
-  "Gluten Allergy": { slug: "gluten-free-school-lunches-nz", kind: "blog" },
-  Kindy: { slug: "kindy-lunchbox-choking-guide-nz", kind: "guide" },
-  "no-cook": { slug: "no-cook-lunchbox-ideas-nz", kind: "blog" },
-
+  "Nut Allergy": { slug: "allergy-management-school-lunchbox-australia", kind: "guide" },
+  "Egg Allergy": { slug: "allergy-management-school-lunchbox-australia", kind: "guide" },
+  "Dairy Allergy": { slug: "allergy-management-school-lunchbox-australia", kind: "guide" },
+  "Gluten Allergy": { slug: "allergy-management-school-lunchbox-australia", kind: "guide" },
+  "Sesame Allergy": { slug: "fsanz-peal-allergen-labelling-australian-30-second-read", kind: "blog" },
+  Vegetarian: { slug: "vegetarian-vegan-school-lunch-guide-australia", kind: "guide" },
+  Vegan: { slug: "vegetarian-vegan-school-lunch-guide-australia", kind: "guide" },
+  "make-ahead": { slug: "budget-lunchbox-planning-guide-australia", kind: "guide" },
+  thermosOnly: { slug: "lunchbox-food-safety-guide-australia", kind: "guide" },
+  Kindy: { none: "호주 킨디 가이드는 4단계(호주 질식 예방 지침으로 교체)에서 쓴다 — Kiwi 가이드는 NZ 보건부 지침이라 옮기지 않았다" },
+  "no-cook": { none: "호주 글에 무조리 도시락만 다룬 글이 아직 없다" },
   "cook-fresh": {
     none: "글을 만들지 않는다 — '아침에 조리한다'는 별도 글의 주제가 되기 어렵고 기존 레시피 글들이 이미 다룬다",
   },
@@ -61,9 +60,9 @@ export const FILTER_ARTICLES: Record<FilterKey, RelatedLink | { none: string }> 
 
 /** 필터를 하나도 안 켠 사용자에게 보여줄 글. 어떤 필터와도 무관하게 모두에게 해당한다. */
 export const FALLBACK: RelatedLink[] = [
-  { slug: "budget-friendly-lunchbox-ideas-nz", kind: "blog" },
-  { slug: "lunchbox-food-safety-nz-term-1-heat", kind: "blog" },
-  { slug: "term-1-first-week-lunchbox-routine-auckland-parent", kind: "blog" },
+  { slug: "budget-lunchbox-planning-guide-australia", kind: "guide" },
+  { slug: "australian-lunchbox-food-safety-summer-heat-fsanz", kind: "blog" },
+  { slug: "school-canteen-vs-packed-lunch", kind: "blog" },
 ];
 
 const MAX = 3;

@@ -7,7 +7,7 @@ const PLANNER_TITLE = "Weekly Lunch Planner | Aussie Lunchbox";
 //    page.tsx의 generateMetadata가 title·description·og·twitter를 덮어써 지금은 <head>에 안 나가지만,
 //    page 쪽 metadata가 빠지는 날 그대로 노출된다.
 const PLANNER_DESC =
-  "Generate a 5-day school lunch plan for NZ families. Set allergy filters, get a shopping list costed at regular Woolworths prices, and download it as a PDF.";
+  "Generate a 5-day school lunch plan for Australian families. Set allergy filters, get a shopping list costed at regular Woolworths prices, and download it as a PDF.";
 
 export async function generateMetadata({
   params,

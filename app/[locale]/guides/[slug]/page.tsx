@@ -213,18 +213,14 @@ export default async function GuideDetailPage({
         {/* 🔴 2026-09-09 — 글과 같은 이유. 손으로 적은 금액은 스냅샷이라고 밝힌다. */}
         {guide.staticPrices && (
           <div className="mb-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900 leading-relaxed">
-            <strong>About the dollar figures in this guide.</strong> They are hand-checked
-            snapshots, not the weekly tracked prices, and they are not updated when the index
-            moves.{guide.lastReviewed ? ` This guide was last reviewed in ${guide.lastReviewed}.` : ""}{" "}
-            For current figures use the{" "}
-            <Link href={`/${locale}/price-index`} className="underline font-semibold">
-              NZ Lunchbox Price Index
+            <strong>About the dollar figures in this guide.</strong> They were written into
+            the text by hand, not taken from the weekly tracked prices, and they are not updated when prices
+            move.{guide.lastReviewed ? ` This guide was last reviewed in ${guide.lastReviewed}.` : ""}{" "}
+            For current figures, generate a plan in the{" "}
+            <Link href={`/${locale}/planner`} className="underline font-semibold">
+              planner
             </Link>
-            , or the raw rows in{" "}
-            <a href="/lunchbox-ingredients.csv" className="underline font-semibold">
-              lunchbox-ingredients.csv
-            </a>
-            .
+            , which prices each ingredient from the weekly Woolworths Australia cache.
           </div>
         )}
 

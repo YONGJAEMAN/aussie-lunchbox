@@ -63,8 +63,8 @@ export function priceMonth(): string {
     .map((v) => v.timestamp)
     .filter((t): t is number => typeof t === "number");
   if (!stamps.length) throw new Error("본문 가격: 캐시에 timestamp가 하나도 없다");
-  return new Intl.DateTimeFormat("en-NZ", {
-    timeZone: "Pacific/Auckland",
+  return new Intl.DateTimeFormat("en-AU", {
+    timeZone: "Australia/Sydney",
     month: "long",
     year: "numeric",
   }).format(new Date(Math.max(...stamps)));
@@ -525,7 +525,7 @@ export const SCHOOL_WEEK_DAYS = 5;
  * 연 단위 금액에 센트는 정밀도의 착각을 준다. $100 이상은 달러로 반올림하고 천 단위를 끊는다.
  */
 export const bigMoney = (n: number) =>
-  n >= 100 ? `$${Math.round(n).toLocaleString("en-NZ")}` : money(n);
+  n >= 100 ? `$${Math.round(n).toLocaleString("en-AU")}` : money(n);
 
 /**
  * "랩이 식빵보다 얼마나 비싼가" — easy-wraps 글이 이 값 위에 서 있다.

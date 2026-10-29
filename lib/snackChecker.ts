@@ -64,8 +64,8 @@ export type CheckerRow = {
 
 /** 관측일은 뉴질랜드 날짜로 쓴다 — 독자가 NZ에 있다. */
 export const nzDate = (ms: number) =>
-  new Intl.DateTimeFormat("en-NZ", {
-    timeZone: "Pacific/Auckland", day: "numeric", month: "long", year: "numeric",
+  new Intl.DateTimeFormat("en-AU", {
+    timeZone: "Australia/Sydney", day: "numeric", month: "long", year: "numeric",
   }).format(new Date(ms));
 
 function packFor(ing: string): PackPrice {
@@ -161,5 +161,5 @@ export function labelReadRange(): { oldest: number; newest: number } {
 export function checkerDescription(): string {
   const { total } = checkerSummary();
   const w = CHECKER_ALLERGIES.map((a) => CHECKER_LABEL[a].toLowerCase());
-  return `Which of the ${total} snacks our NZ lunchbox planner packs pass a ${w.slice(0, -1).join(", ")} or ${w.at(-1)} filter, and what each tracked product's allergen label says.`;
+  return `Which of the ${total} snacks our lunchbox planner packs pass a ${w.slice(0, -1).join(", ")} or ${w.at(-1)} filter, and what each tracked product's allergen label says.`;
 }
