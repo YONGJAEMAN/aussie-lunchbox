@@ -15,9 +15,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/policies",
     locale,
-    title: "Privacy Policy & Disclaimer — Kiwi Lunchbox",
+    title: "Privacy Policy & Disclaimer — Aussie Lunchbox",
     description:
-      "Read the Kiwi Lunchbox privacy policy, cookie usage, data handling practices, and health & nutrition disclaimer.",
+      "Read the Aussie Lunchbox privacy policy, cookie usage, data handling practices, and health & nutrition disclaimer.",
   });
 }
 
@@ -133,7 +133,7 @@ export default async function PoliciesPage({
         <div className="max-w-3xl mx-auto prose prose-gray">
           <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">Advertising, money, and what I actually earn from</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Kiwi Lunchbox is free to use, and I want to be plain about how it stays online. The
+            Aussie Lunchbox is free to use, and I want to be plain about how it stays online. The
             only thing that earns money here is <strong>Google AdSense display advertising</strong>
             {" "}&mdash; the banner and in-page ad slots Google may serve on the English pages. I do
             not hand-pick those ads; Google fills the slot. That is the whole business model. There

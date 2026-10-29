@@ -73,7 +73,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const t = await getTranslations();
-  const author = post.author ?? "Kiwi Lunchbox Team";
+  const author = post.author ?? "Aussie Lunchbox Team";
 
   // Related posts: same category first, then fill from others
   const sameCat = BLOG_CARDS.filter(p => p.category === post.category && p.slug !== slug);
@@ -87,10 +87,10 @@ export default async function BlogPostPage({
 
   const references = getReferences(post.body);
 
-  // Kiwi Lunchbox는 solo operator 사이트. 글 author가 비어있거나 "team"이면
+  // Aussie Lunchbox는 solo operator 사이트. 글 author가 비어있거나 "team"이면
   // 운영자 본인(Yong Jae Lee)으로 통일 — About 페이지의 "solo operator" 톤과 일치시킴.
   // "Editorial Team" Organization은 사용 안 함 (실제 운영 구조와 모순되어 신뢰 신호 깎임).
-  const authorName = author && author !== "Kiwi Lunchbox Team" ? author : "Yong Jae Lee";
+  const authorName = author && author !== "Aussie Lunchbox Team" ? author : "Yong Jae Lee";
 
   // 사이트맵 lastmod와 같은 값 — lib/contentDates.ts
   const dateModified = lastModified(post).toISOString();
@@ -111,7 +111,7 @@ export default async function BlogPostPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Kiwi Lunchbox",
+      name: "Aussie Lunchbox",
       url: BASE_URL,
       logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/kiwi_lunchbox_logo.png` },
     },

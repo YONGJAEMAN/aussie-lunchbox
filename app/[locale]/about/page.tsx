@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo/pageMetadata";
 import Footer from "@/components/Footer";
 
-const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const BASE_URL = "https://aussielunchbox.com";
 const OPERATOR_PHOTO = "/assets/operator-yong-jae-lee.jpg";
 
 export async function generateMetadata({
@@ -18,9 +18,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/about",
     locale,
-    title: "About – Kiwi Lunchbox | Built by a Parent in Auckland",
+    title: "About – Aussie Lunchbox | Built by a Parent in Auckland",
     description:
-      "Kiwi Lunchbox is a free school lunch planner built by Yong Jae Lee, a Senior Product Designer in Auckland. Learn how content is researched and verified.",
+      "Aussie Lunchbox is a free school lunch planner built by Yong Jae Lee, a Senior Product Designer in Auckland. Learn how content is researched and verified.",
   });
 }
 
@@ -38,7 +38,7 @@ export default async function AboutPage() {
     sameAs: ["https://www.linkedin.com/in/francescolee/"],
     worksFor: {
       "@type": "Organization",
-      name: "Kiwi Lunchbox",
+      name: "Aussie Lunchbox",
       url: BASE_URL,
     },
   };
@@ -70,7 +70,7 @@ export default async function AboutPage() {
               I&apos;m a Senior Product Designer based in Auckland. Every morning I&apos;d find myself standing in front of the fridge, wondering what to pack in my child&apos;s lunchbox &mdash; and every weekend I&apos;d stress about what groceries to buy for the week ahead.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              I wanted to make proper, balanced lunches using ingredients actually available at Woolworths and Pak&apos;nSave &mdash; without spending 20 minutes each night planning. So I built Kiwi Lunchbox: a free tool that generates a week of school lunches in seconds, complete with shopping lists and price estimates.
+              I wanted to make proper, balanced lunches using ingredients actually available at Woolworths and Pak&apos;nSave &mdash; without spending 20 minutes each night planning. So I built Aussie Lunchbox: a free tool that generates a week of school lunches in seconds, complete with shopping lists and price estimates.
             </p>
             {/* 🔴 09-29: 「both columns are read weekly」 — 수집기(update_prices.yml)는 New World 열까지 셋을 매주 읽는다.
                 5월 라운드 매장도 「those branches」(Botany·Meadowlands까지 읽혔다)가 아니라 priceIndex.json의 checkedAt 두 곳이다. */}
@@ -90,7 +90,7 @@ export default async function AboutPage() {
                 <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-white shadow-md">
                   <Image
                     src={OPERATOR_PHOTO}
-                    alt="Yong Jae Lee, the parent and Senior Product Designer who builds and runs Kiwi Lunchbox in Auckland"
+                    alt="Yong Jae Lee, the parent and Senior Product Designer who builds and runs Aussie Lunchbox in Auckland"
                     fill
                     className="object-cover object-top"
                     sizes="128px"
@@ -110,10 +110,10 @@ export default async function AboutPage() {
                   <span>in</span> LinkedIn Profile
                 </a>
                 <a
-                  href="mailto:kiwilunchboxplanner@gmail.com"
+                  href="mailto:aussielunchbox@gmail.com"
                   className="flex items-center gap-2 text-[#366A1B] hover:underline"
                 >
-                  <span>@</span> kiwilunchboxplanner@gmail.com
+                  <span>@</span> aussielunchbox@gmail.com
                 </a>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Kiwi Lunchbox */}
+      {/* Why Choose Aussie Lunchbox */}
       <section className="bg-[#F7F9FC] py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>

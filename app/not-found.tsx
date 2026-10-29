@@ -9,8 +9,8 @@ import zh from "@/messages/zh.json";
 const messages: Record<string, Record<string, string>> = { en, ko, zh };
 
 export const metadata: Metadata = {
-  title: "Page Not Found | Kiwi Lunchbox",
-  description: "The page you were looking for doesn't exist. Return to the Kiwi Lunchbox homepage.",
+  title: "Page Not Found | Aussie Lunchbox",
+  description: "The page you were looking for doesn't exist. Return to the Aussie Lunchbox homepage.",
   robots: { index: false, follow: true },
 };
 

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Kiwi Lunchbox — NZ School Lunch Planner",
+    name: "Aussie Lunchbox — NZ School Lunch Planner",
     short_name: "KiwiLunch",
     description: "Plan stress-free school lunches for NZ families. Weekly plans, shopping lists, allergy filters.",
     start_url: "/en/planner",

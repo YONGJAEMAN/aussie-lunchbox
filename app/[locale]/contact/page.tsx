@@ -14,7 +14,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/contact",
     locale,
-    title: "Contact – Kiwi Lunchbox | Reach the Solo Operator Directly",
+    title: "Contact – Aussie Lunchbox | Reach the Solo Operator Directly",
     description:
       "A free school lunch planner for NZ families, run as a solo project by Yong Jae Lee in Auckland. Corrections, feedback and data requests reach me directly.",
   });
@@ -86,13 +86,13 @@ export default async function ContactPage() {
           <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">Who answers your email</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Every message sent through this page is read by <strong>Yong Jae Lee</strong>, the
-            solo operator of Kiwi Lunchbox. There is no support team, no ticketing system,
+            solo operator of Aussie Lunchbox. There is no support team, no ticketing system,
             and no virtual assistant in front of the inbox. Yong Jae is a Senior Product
             Designer based in Auckland and a parent of school-age children — the same
             audience the site is built for.
           </p>
           <p className="text-gray-700 leading-relaxed mb-8">
-            This direct line is part of what makes Kiwi Lunchbox sustainable as a solo
+            This direct line is part of what makes Aussie Lunchbox sustainable as a solo
             project: feedback from real NZ parents shapes which articles get written next,
             which allergy filters get refined, and which supermarket prices get checked
             most often. If you have already read the{" "}
@@ -138,7 +138,7 @@ export default async function ContactPage() {
             </li>
             <li>
               <strong>Advertising and partnership enquiries</strong> ({t("contact_subject_partner")})
-              — Kiwi Lunchbox is
+              — Aussie Lunchbox is
               monetised through Google AdSense only. The site does not currently accept
               sponsored content, affiliate partnerships, or brand-sponsored articles. If
               your enquiry is editorial-content related (a recipe collaboration or a
@@ -147,7 +147,7 @@ export default async function ContactPage() {
             <li>
               <strong>Privacy and data enquiries</strong> ({t("contact_subject_general")}) —
               under the New Zealand Privacy Act 2020, you have a right to ask what personal
-              information Kiwi Lunchbox holds about you and to ask for it to be corrected, and
+              information Aussie Lunchbox holds about you and to ask for it to be corrected, and
               I will also delete an account on request. Pick{" "}
               {t("contact_subject_general")} and start the message with &quot;Privacy
               request&quot;. The Act (section 44) requires a decision on an access request as
@@ -160,7 +160,7 @@ export default async function ContactPage() {
 
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Response times</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Kiwi Lunchbox is run from Auckland, New Zealand. Typical reply windows:
+            Aussie Lunchbox is run from Auckland, New Zealand. Typical reply windows:
           </p>
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
             {/* 🔴 09-29: 이 목록이 24시간(알레르기·일반)·48시간(정정)을 약속했고 FAQ(faq_a27)는
@@ -175,7 +175,7 @@ export default async function ContactPage() {
 
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Where the operator is based</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Kiwi Lunchbox is operated from Auckland, New Zealand. Articles and pricing
+            Aussie Lunchbox is operated from Auckland, New Zealand. Articles and pricing
             data on the site are written from an Auckland perspective:
           </p>
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
@@ -197,7 +197,7 @@ export default async function ContactPage() {
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
             <li>
               <strong>Medical or dietary advice for an individual child.</strong> Articles
-              on Kiwi Lunchbox follow public NZ Government and Heart Foundation
+              on Aussie Lunchbox follow public NZ Government and Heart Foundation
               guidance, but I am not a registered dietitian or paediatric clinician. If
               your child has a diagnosed condition, allergy with anaphylaxis risk, growth
               concern, or specific nutritional need, talk to your GP or a registered
@@ -215,7 +215,7 @@ export default async function ContactPage() {
             </li>
             <li>
               <strong>Bulk content licensing or scraping requests.</strong> All
-              Kiwi Lunchbox content is original and copyrighted to the operator. Use the{" "}
+              Aussie Lunchbox content is original and copyrighted to the operator. Use the{" "}
               <Link href={`/${locale}/terms`} className="text-[#366A1B] underline">Terms</Link>
               {" "}page for the licensing details, or email with the subject "Licensing"
               and a clear use-case description.

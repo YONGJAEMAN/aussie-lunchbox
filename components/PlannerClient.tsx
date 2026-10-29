@@ -629,12 +629,12 @@ export default function PlannerClient({
 
   function handleWhatsAppShare() {
     const items = shoppingList.slice(0, 15).join(", ");
-    const text = `${t("share_plan_text")} 🥝\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://www.kiwilunchbox.co.nz/en/planner`;
+    const text = `${t("share_plan_text")} 🥝\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://aussielunchbox.com/en/planner`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   }
 
   function handleFacebookShare() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.kiwilunchbox.co.nz/en/planner")}`, "_blank", "width=600,height=400");
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://aussielunchbox.com/en/planner")}`, "_blank", "width=600,height=400");
   }
 
   // Shopping list summary
@@ -1523,7 +1523,7 @@ export default function PlannerClient({
                         href={SOCIAL.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Kiwi Lunchbox on Instagram"
+                        aria-label="Aussie Lunchbox on Instagram"
                         className="text-gray-500 hover:text-[#314A37] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
                       >
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">
@@ -1534,7 +1534,7 @@ export default function PlannerClient({
                         href={SOCIAL.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Kiwi Lunchbox on Facebook"
+                        aria-label="Aussie Lunchbox on Facebook"
                         className="text-gray-500 hover:text-[#314A37] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
                       >
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">
@@ -1641,12 +1641,12 @@ export default function PlannerClient({
                                   ${item.price.toFixed(2)}
                                 </span>
                                 <span className={`text-xs px-1.5 py-0.5 rounded font-medium ${
-                                  item.source === "Woolworths NZ"
+                                  item.source === "Woolworths Australia"
                                     ? "bg-green-100 text-green-700"
                                     : "bg-gray-100 text-gray-500"
                                 }`}>
                                   {/* 🔴 "Live"는 거짓 — 가격은 주 1회 갱신 캐시다(lib/supermarketApi.ts). */}
-                                  {item.source === "Woolworths NZ" ? "Weekly" : "Est."}
+                                  {item.source === "Woolworths Australia" ? "Weekly" : "Est."}
                                 </span>
                               </div>
                               {totalItemCost !== undefined && (

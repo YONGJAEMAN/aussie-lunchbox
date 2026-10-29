@@ -52,9 +52,9 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
-      from: "Kiwi Lunchbox Contact <noreply@kiwilunchbox.co.nz>",
+      from: "Aussie Lunchbox Contact <noreply@aussielunchbox.com>",
       replyTo: email,
-      to: ["kiwilunchboxplanner@gmail.com"],
+      to: ["aussielunchbox@gmail.com"],
       subject: `[Contact] ${safeSubject} — from ${safeName}`,
       text: `Name: ${safeName}\nEmail: ${email}\nSubject: ${safeSubject}\n\nMessage:\n${message}`,
     });

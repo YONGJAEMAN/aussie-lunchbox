@@ -66,7 +66,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href={`/${currentLocale}`} className="flex items-center gap-2 min-h-touch min-w-touch">
           <span className="text-2xl">🥝</span>
-          <span className="font-bold text-[#314A37] text-lg hidden sm:block">Kiwi Lunchbox</span>
+          <span className="font-bold text-[#314A37] text-lg hidden sm:block">Aussie Lunchbox</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

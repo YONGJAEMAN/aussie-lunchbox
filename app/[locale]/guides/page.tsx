@@ -20,7 +20,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/guides",
     locale,
-    title: "Lunchbox Guides & Resources | Kiwi Lunchbox",
+    title: "Lunchbox Guides & Resources | Aussie Lunchbox",
     description:
       "Comprehensive guides covering nutrition, allergies, budget planning, seasonal produce, and food safety for NZ school lunches.",
   });
@@ -60,7 +60,7 @@ export default async function GuidesPage({
         <div className="max-w-3xl mx-auto prose prose-gray">
           <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">How these guides are researched</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Every guide on Kiwi Lunchbox is written by{" "}
+            Every guide on Aussie Lunchbox is written by{" "}
             <Link href={`/${locale}/about`} className="text-[#366A1B] underline">Yong Jae Lee</Link>
             , the Auckland-based solo operator of the site, and reviewed against publicly
             available New Zealand Government and Heart Foundation NZ guidance before

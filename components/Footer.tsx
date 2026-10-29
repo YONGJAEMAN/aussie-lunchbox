@@ -40,7 +40,7 @@ export default function Footer({ locale }: { locale: string }) {
               <div className="w-8 h-8 rounded-full bg-primary-deep flex items-center justify-center">
                 <span className="text-white font-bold text-xs">KL</span>
               </div>
-              <span className="font-bold">Kiwi Lunchbox</span>
+              <span className="font-bold">Aussie Lunchbox</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">{t("footer_tagline")}</p>
 
@@ -52,7 +52,7 @@ export default function Footer({ locale }: { locale: string }) {
                 href={SOCIAL.instagram}
                 target="_blank"
                 rel="noopener noreferrer me"
-                aria-label="Kiwi Lunchbox on Instagram"
+                aria-label="Aussie Lunchbox on Instagram"
                 className="text-gray-400 hover:text-white transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">
@@ -63,7 +63,7 @@ export default function Footer({ locale }: { locale: string }) {
                 href={SOCIAL.facebook}
                 target="_blank"
                 rel="noopener noreferrer me"
-                aria-label="Kiwi Lunchbox on Facebook"
+                aria-label="Aussie Lunchbox on Facebook"
                 className="text-gray-400 hover:text-white transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">

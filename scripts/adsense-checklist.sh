@@ -21,7 +21,7 @@ require_file() {
   fi
   return 0
 }
-KIWI_URL="https://www.kiwilunchbox.co.nz"
+KIWI_URL="https://aussielunchbox.com"
 AUSSIE_URL="https://aussielunchbox.com"  # www는 307로 여기로 온다
 OUTPUT="$KIWI_DIR/checklist.md"
 
@@ -383,7 +383,7 @@ cat >> "$OUTPUT" << 'FOOTER'
 - [ ] Google Search Console에서 Aussie Lunchbox URL 삭제 요청
 - [ ] Vercel 배포 후 라이브 사이트에서 위 항목 재확인
 - [ ] PageSpeed Insights 모바일 점수 확인 (목표: 90+)
-- [ ] Gmail 주소 → 자체 도메인 이메일 변경 권장 (e.g. hello@kiwilunchbox.co.nz)
+- [ ] Gmail 주소 → 자체 도메인 이메일 변경 권장 (e.g. hello@aussielunchbox.com)
 
 ---
 

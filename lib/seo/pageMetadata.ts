@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const BASE_URL = "https://aussielunchbox.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/opengraph-image`;
 
 /** 구글이 검색결과 제목을 자르기 시작하는 지점. 픽셀 폭 기준이라 정확한 경계는 없지만 60자면 거의 안전하다. */
@@ -10,12 +10,12 @@ export const TITLE_MAX = 60;
  * 브랜드 접미사를 **자리가 남을 때만** 붙인다.
  *
  * 🔴 2026-08-13 실측: 글·가이드 21편 중 **19편의 title이 60자를 넘었다.**
- * 접미사가 `| Kiwi Lunchbox Blog`(20자) · `| Kiwi Lunchbox Guides`(22자)였고,
+ * 접미사가 `| Aussie Lunchbox Blog`(20자) · `| Aussie Lunchbox Guides`(22자)였고,
  * 제목이 40자만 돼도 넘어간다. 검색결과에서 잘리면 브랜드도 같이 잘리므로
  * **붙여서 잘리는 것보다 안 붙이는 쪽이 낫다.** (og:siteName에는 그대로 남는다)
  */
 export function withBrand(title: string, max = TITLE_MAX): string {
-  const suffix = " | Kiwi Lunchbox";
+  const suffix = " | Aussie Lunchbox";
   return title.length + suffix.length <= max ? title + suffix : title;
 }
 
@@ -72,7 +72,7 @@ export function buildPageMetadata({
       description,
       url: canonical,
       type: ogType,
-      siteName: "Kiwi Lunchbox",
+      siteName: "Aussie Lunchbox",
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       ...(publishedTime ? { publishedTime } : {}),
       ...(modifiedTime ? { modifiedTime } : {}),

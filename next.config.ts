@@ -83,13 +83,13 @@ const nextConfig: NextConfig = {
       // www가 canonical인데 non-www도 200 응답하면 duplicate content 신호 → AdSense 감점.
       //
       // 단, ads.txt / robots.txt / sitemap.xml 은 redirect에서 제외.
-      // AdSense 등록 도메인이 non-www(kiwilunchbox.co.nz)인데, 이 파일들까지
+      // AdSense 등록 도메인이 non-www(aussielunchbox.com)인데, 이 파일들까지
       // 308로 www에 튕기면 ads.txt crawler가 308을 못 따라가 "찾을 수 없음" 판정.
       // → 등록 도메인에서 직접 200으로 서빙되도록 negative lookahead로 예외 처리.
       {
         source: "/:path((?!ads\\.txt|robots\\.txt|sitemap\\.xml).*)",
-        has: [{ type: "host", value: "kiwilunchbox.co.nz" }],
-        destination: "https://www.kiwilunchbox.co.nz/:path",
+        has: [{ type: "host", value: "aussielunchbox.com" }],
+        destination: "https://aussielunchbox.com/:path",
         permanent: true,
       },
       // 2026-09-09: `lunchbox-price-index-august-2026`은 **본문이 매주 갱신되는 글**인데

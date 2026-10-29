@@ -72,7 +72,7 @@ export default async function GuideDetailPage({
   if (!guide) notFound();
 
   const t = await getTranslations();
-  const author = guide.author ?? "Kiwi Lunchbox Team";
+  const author = guide.author ?? "Aussie Lunchbox Team";
 
   // Related guides: same category first, then fill from others
   const sameCat = GUIDE_CARDS.filter(g => g.category === guide.category && g.slug !== slug);
@@ -87,7 +87,7 @@ export default async function GuideDetailPage({
   const references = getReferences(guide.body);
 
   // Solo operator 사이트 — author 통일 (blog/[slug]와 동일 정책).
-  const authorName = author && author !== "Kiwi Lunchbox Team" ? author : "Yong Jae Lee";
+  const authorName = author && author !== "Aussie Lunchbox Team" ? author : "Yong Jae Lee";
 
   // 사이트맵 lastmod와 같은 값 — lib/contentDates.ts
   const dateModified = lastModified(guide).toISOString();
@@ -109,7 +109,7 @@ export default async function GuideDetailPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Kiwi Lunchbox",
+      name: "Aussie Lunchbox",
       url: BASE_URL,
       logo: { "@type": "ImageObject", url: `${BASE_URL}/assets/kiwi_lunchbox_logo.png` },
     },

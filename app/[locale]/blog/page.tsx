@@ -22,7 +22,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/blog",
     locale,
-    title: "Lunchbox Tips & Recipes Blog | Kiwi Lunchbox",
+    title: "Lunchbox Tips & Recipes Blog | Aussie Lunchbox",
     description:
       "Practical lunchbox tips, NZ-friendly recipes, allergy guides, and budget ideas for New Zealand school families.",
   });

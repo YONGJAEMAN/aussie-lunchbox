@@ -15,9 +15,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/terms",
     locale,
-    title: "Terms & Conditions — Kiwi Lunchbox",
+    title: "Terms & Conditions — Aussie Lunchbox",
     description:
-      "Terms of use for Kiwi Lunchbox, a free school lunch planner for New Zealand families. Includes acceptable use, liability scope, and content licensing.",
+      "Terms of use for Aussie Lunchbox, a free school lunch planner for New Zealand families. Includes acceptable use, liability scope, and content licensing.",
   });
 }
 
@@ -100,7 +100,7 @@ export default async function TermsPage() {
           {/* 🔴 제목이 바로 아래 본문("does not ... use a large language model")과 모순이었다. */}
           <h2 className="text-xl font-bold text-[#1a1a1a] mt-12">Use of the Meal Planner</h2>
           <p className="text-gray-600 leading-relaxed">
-            The Kiwi Lunchbox planner assembles a weekly plan from a fixed library of
+            The Aussie Lunchbox planner assembles a weekly plan from a fixed library of
             lunchbox recipes maintained by hand. It applies the allergy and dietary filters
             you tick, drops any menu that conflicts, and varies the recipe categories across
             the week so you do not get five sandwiches. It does <strong>not</strong> check a
@@ -118,7 +118,7 @@ export default async function TermsPage() {
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Allergy, Nutrition, and Food Safety Disclaimer</h2>
           <p className="text-gray-600 leading-relaxed">
-            Kiwi Lunchbox content covers allergy management, food safety, and child
+            Aussie Lunchbox content covers allergy management, food safety, and child
             nutrition — topics that fall within the Your Money or Your Life (YMYL)
             category where errors can have real consequences. Articles are written and
             reviewed against publicly available NZ Government and Heart Foundation
@@ -133,7 +133,7 @@ export default async function TermsPage() {
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Parent / Guardian Responsibility</h2>
           <p className="text-gray-600 leading-relaxed">
-            Kiwi Lunchbox is built for use by adults responsible for school-age children
+            Aussie Lunchbox is built for use by adults responsible for school-age children
             (parents, caregivers, grandparents, guardians). By using the planner or
             relying on site content for a child&apos;s lunch, you confirm:
           </p>
@@ -149,7 +149,7 @@ export default async function TermsPage() {
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Account and Data Provisions</h2>
           <p className="text-gray-600 leading-relaxed">
-            The Kiwi Lunchbox planner offers an optional free account (via Supabase Auth)
+            The Aussie Lunchbox planner offers an optional free account (via Supabase Auth)
             for saving favourite meals. The following apply when you create an account:
           </p>
           <ul className="text-gray-600 space-y-1 list-disc pl-6">
@@ -164,7 +164,7 @@ export default async function TermsPage() {
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Advertising and Third-Party Services</h2>
           <p className="text-gray-600 leading-relaxed">
-            Kiwi Lunchbox has no paywall, subscription, or affiliate links; the site is
+            Aussie Lunchbox has no paywall, subscription, or affiliate links; the site is
             funded by display advertising through <strong>Google AdSense</strong>. Google
             (including third-party vendors that Google may use) may use cookies to serve
             ads based on your prior visits to this site or other sites. Google&apos;s use

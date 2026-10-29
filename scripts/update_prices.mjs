@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Kiwi Lunchbox — Weekly Price Updater
- * Fetches ingredient prices from Woolworths NZ and saves to data/price_cache.json
+ * Aussie Lunchbox — Weekly Price Updater
+ * Fetches ingredient prices from Woolworths Australia and saves to data/price_cache.json
  * 상품 선별 규칙은 lib/priceSearch.mjs 참조 (items[0] 무조건 집기 금지)
  *
  * Usage: node scripts/update_prices.mjs
@@ -106,7 +106,7 @@ async function fetchPinned(name, pin) {
       //       배열의 첫 항목이 전체 URL을 준다.
       image: p?.images?.[0]?.big ?? "",
       name: p?.name ?? name,
-      source: "Woolworths NZ",
+      source: "Woolworths Australia",
       // 🔴 2026-08-23: SKU를 저장한다. 고정과 캐시가 **같은 상품인지**를 이름으로만
       //    대조하면 SKU만 바뀐 경우를 못 잡는다(돌연변이로 확인했다 — 침묵했다).
       sku: String(p?.sku ?? ""),
@@ -191,7 +191,7 @@ async function fetchWoolworths(name) {
         price,
         image: item?.images?.big ?? "",
         name: item?.name ?? name,
-        source: "Woolworths NZ",
+        source: "Woolworths Australia",
         sku: String(item?.sku ?? ""),
         ...(await fetchAllergens(item.sku)),
       };
@@ -203,7 +203,7 @@ async function fetchWoolworths(name) {
 }
 
 async function main() {
-  console.log("🥝 Kiwi Lunchbox — Woolworths NZ Price Updater\n");
+  console.log("🥝 Aussie Lunchbox — Woolworths Australia Price Updater\n");
 
   const ingredients = loadMenuIngredients();
   console.log(`📋 Found ${ingredients.length} ingredients to fetch\n`);

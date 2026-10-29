@@ -30,9 +30,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/search",
     locale,
-    title: "Search – Kiwi Lunchbox",
+    title: "Search – Aussie Lunchbox",
     description:
-      "Search Kiwi Lunchbox lunch recipes, snacks, guides and posts by name or ingredient.",
+      "Search Aussie Lunchbox lunch recipes, snacks, guides and posts by name or ingredient.",
     noindex: true,
   });
 }

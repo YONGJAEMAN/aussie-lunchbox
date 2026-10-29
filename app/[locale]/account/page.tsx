@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import AccountClient from "./AccountClient";
 
-const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const BASE_URL = "https://aussielunchbox.com";
 
 /**
  * Account 페이지는 로그인/유저 대시보드라 SEO 인덱싱 대상이 아님.
@@ -15,8 +15,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "My Account – Kiwi Lunchbox",
-    description: "Sign in or manage your saved lunch plans and favourites on Kiwi Lunchbox.",
+    title: "My Account – Aussie Lunchbox",
+    description: "Sign in or manage your saved lunch plans and favourites on Aussie Lunchbox.",
     alternates: {
       canonical: `${BASE_URL}/${locale}/account`,
     },

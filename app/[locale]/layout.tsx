@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
 import { getMessages, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { BRAND, SITE_NOINDEX } from "@/lib/brand";
 import type { ReactNode } from "react";
 import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
@@ -11,7 +12,7 @@ import CookieConsent from "@/components/CookieConsent";
 import ConsentScripts from "@/components/ConsentScripts";
 import { Analytics } from "@vercel/analytics/next";
 
-const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const BASE_URL = BRAND.SITE_URL;
 
 export async function generateMetadata({
   params,
@@ -21,14 +22,14 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    en: "Kiwi Lunchbox — Stress-Free School Lunches for New Zealand Families",
-    ko: "키위 런치박스 — 뉴질랜드 가족을 위한 간편한 도시락 플래너",
-    zh: "Kiwi Lunchbox — 新西兰家庭轻松搭配学校午餐",
+    en: "Aussie Lunchbox — Stress-Free School Lunches for Australian Families",
+    ko: "Aussie Lunchbox — 호주 가족을 위한 간편한 도시락 플래너",
+    zh: "Aussie Lunchbox — 澳洲家庭轻松搭配学校午餐",
   };
   const descriptions: Record<string, string> = {
-    en: "Plan your kids' weekly school lunchbox in seconds. Healthy New Zealand menus, shopping lists, allergy filters, and price estimates from Woolworths & Pak'nSave.",
-    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 뉴질랜드 메뉴, 쇼핑 목록, 알레르기 필터, 카운트다운 & 팩앤세이브 가격 정보를 제공합니다.",
-    zh: "几秒内规划孩子一周的学校午餐盒。提供健康的新西兰菜单、购物清单、过敏原过滤器和超市价格估算。",
+    en: "Plan your kids' weekly school lunchbox in seconds. Menus, shopping lists, allergy filters, and price estimates from Woolworths Australia.",
+    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 메뉴, 쇼핑 목록, 알레르기 필터, Woolworths Australia 가격 추정을 제공합니다.",
+    zh: "几秒内规划孩子一周的学校午餐盒。提供菜单、购物清单、过敏原过滤器和Woolworths Australia价格估算。",
   };
 
   const title = titles[locale] ?? titles.en;
@@ -37,6 +38,8 @@ export async function generateMetadata({
   // /ko, /zh는 언어 전환으로 열리지만(2026-10-29~, redirect 제거) noindex로 둔다 —
   // 블로그·가이드 본문이 영어라 색인하면 번역 미완성 중복 페이지가 된다.
   const isEnglish = locale === "en";
+  // 🔴 사이트 전체 noindex 스위치(lib/brand.ts) — 켜져 있으면 영어도 색인하지 않는다.
+  const indexable = isEnglish && !SITE_NOINDEX;
 
   return {
     title,
@@ -46,15 +49,15 @@ export async function generateMetadata({
       title,
       description,
       url: `${BASE_URL}/${locale}`,
-      siteName: "Kiwi Lunchbox",
-      locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : "en_NZ",
+      siteName: BRAND.SITE_NAME,
+      locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : BRAND.OG_LOCALE,
       type: "website",
       images: [
         {
           url: `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: "Kiwi Lunchbox – NZ School Lunch Planner",
+          alt: "Aussie Lunchbox – Australian School Lunch Planner",
         },
       ],
     },
@@ -65,10 +68,10 @@ export async function generateMetadata({
       images: [`${BASE_URL}/opengraph-image`],
     },
     robots: {
-      index: isEnglish,
+      index: indexable,
       follow: true,
       googleBot: {
-        index: isEnglish,
+        index: indexable,
         follow: true,
         "max-image-preview": "large",
       },
@@ -119,20 +122,20 @@ export default async function LocaleLayout({
     pathname.includes("/terms") ||
     pathname.includes("/contact");
 
-  const showAdSenseScript = locale === "en" && !isNoindexPath && !isUtilityPath;
+  const showAdSenseScript = locale === "en" && !SITE_NOINDEX && !isNoindexPath && !isUtilityPath;
 
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Kiwi Lunchbox",
+    name: BRAND.SITE_NAME,
     url: BASE_URL,
-    logo: `${BASE_URL}/assets/kiwi_lunchbox_logo.png`,
+    logo: `${BASE_URL}/assets/aussie_lunchbox_logo.png`,
     // 🔴 09-29: 「Woolworths & Pak'nSave prices」였다 — 모든 페이지 <head>에 실리는데, 플래너 원가는 Woolworths 캐시뿐이다.
-    description: "Free school lunch planner for New Zealand families. Weekly meal plans, allergy filters, and shopping lists costed at regular Woolworths prices.",
+    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists costed at regular Woolworths prices.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "kiwilunchboxplanner@gmail.com",
+      email: "aussielunchbox@gmail.com",
     },
     sameAs: [],
   };

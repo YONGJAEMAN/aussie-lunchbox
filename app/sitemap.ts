@@ -1,11 +1,8 @@
 import { MetadataRoute } from "next";
 import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
-import { BRAND } from "@/lib/brand";
-import priceIndex from "@/data/priceIndex.json";
+import { BRAND, SITE_NOINDEX } from "@/lib/brand";
 import { lastModified } from "@/lib/contentDates";
-import { coverage } from "@/lib/priceSeries";
-import { labelReadRange } from "@/lib/snackChecker";
 
 const BASE_URL = BRAND.SITE_URL;
 // AdSense 승인 단계: 영어만 sitemap에 포함.
@@ -23,36 +20,23 @@ const STATIC_ROUTES = [
   "/policies",
   "/terms",
   "/faq",
-  "/price-index",
-  "/price-history",
-  "/snack-checker",
   "/blog",
   "/guides",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // 🔴 사이트 전체가 noindex인 동안 sitemap이 URL을 색인 요청하면 신호가 갈라진다(2026-08-23, lib/brand.ts).
+  if (SITE_NOINDEX) return [];
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of LOCALES) {
     for (const route of STATIC_ROUTES) {
-      // 🔴 2026-08-14: 여기가 `new Date()`였다. 배포할 때마다 정적 페이지 10개가
-      // 전부 "방금 수정됨"으로 신고됐다 — 내용이 안 바뀐 날에도 그랬다.
-      // 매번 갱신되는 lastmod는 신선도 신호가 아니라 **신뢰할 수 없는 신호**다.
-      // 실제 근거가 있는 곳(price-index는 데이터 갱신일)만 주고 나머지는 생략한다.
-      // price-history는 09-18에 열었는데 lastmod가 없어 구글이 아직 크롤조차 안 했다(09-28 GSC).
-      const dataDate =
-        route === "/price-index"
-          ? new Date(priceIndex.woolworthsUpdated)
-          : route === "/price-history"
-            ? new Date(coverage().map((c) => c.last).sort().at(-1) ?? "")
-            : route === "/snack-checker"
-              ? new Date(labelReadRange().newest) // 페이지에 실린 간식 재료의 가장 최근 라벨 관측
-              : null;
+      // 🔴 2026-08-14(Kiwi): 여기가 `new Date()`였다 — 매번 갱신되는 lastmod는 신뢰할 수 없는 신호다.
+      // 실제 근거가 있는 날짜가 없으면 lastmod를 생략한다(가격 페이지는 3단계에서 데이터 갱신일과 함께 다시 붙는다).
       entries.push({
         url: `${BASE_URL}/${locale}${route}`,
-        ...(dataDate && !isNaN(dataDate.getTime()) ? { lastModified: dataDate } : {}),
         changeFrequency: route === "" ? "weekly" : "monthly",
-        priority: route === "" ? 1.0 : route === "/planner" ? 0.9 : route === "/price-index" ? 0.8 : 0.7,
+        priority: route === "" ? 1.0 : route === "/planner" ? 0.9 : 0.7,
       });
     }
 

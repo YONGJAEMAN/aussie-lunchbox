@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { POST_COUNT, GUIDE_COUNT } from "@/lib/siteCounts";
 import { exampleWeekRows, exampleWeekTotal, portionExample } from "@/lib/servePrice";
 
-const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const BASE_URL = "https://aussielunchbox.com";
 
 export async function generateMetadata({
   params,
@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}`;
   return {
-    title: "Kiwi Lunchbox – Free School Lunch Planner for NZ Families",
+    title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
     description:
       "Generate a personalised week of healthy New Zealand school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
     alternates: {
@@ -31,14 +31,14 @@ export async function generateMetadata({
     },
     openGraph: {
       url: canonical,
-      title: "Kiwi Lunchbox – Free School Lunch Planner for NZ Families",
+      title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
       description:
         "Generate a personalised week of healthy New Zealand school lunches in seconds.",
       images: [{ url: `${BASE_URL}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Kiwi Lunchbox – Free School Lunch Planner for NZ Families",
+      title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
       description:
         "Generate a personalised week of healthy New Zealand school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
       images: [`${BASE_URL}/opengraph-image`],
@@ -53,7 +53,7 @@ export default async function HomePage() {
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Kiwi Lunchbox",
+    name: "Aussie Lunchbox",
     url: BASE_URL,
     description: "Free school lunch planner for New Zealand families.",
     potentialAction: {
@@ -491,7 +491,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Get the Most from Kiwi Lunchbox ── */}
+      {/* ── Get the Most from Aussie Lunchbox ── */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-[#366A1B] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_tips_label")}</p>

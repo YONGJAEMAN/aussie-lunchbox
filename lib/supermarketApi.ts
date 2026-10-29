@@ -1,10 +1,8 @@
 import { PriceInfo } from "./types";
 import { getIngredientCategory, CATEGORY_EMOJIS, SPECIFIC_EMOJIS } from "./utils";
 import priceCacheRaw from "@/data/price_cache.json";
-import { shelfPrice } from "./priceSearch.mjs";
 
 // Weekly price cache loaded at build time
-// Refresh by running: POST /api/prices/refresh (re-fetches from Woolworths and redeploys)
 type CacheEntry = { timestamp: number; data: PriceInfo };
 const PRICE_CACHE = priceCacheRaw as Record<string, CacheEntry>;
 
@@ -18,15 +16,15 @@ const PRICE_CACHE = priceCacheRaw as Record<string, CacheEntry>;
  * 새 항목을 넣을 때는 **마트에서 집어 드는 그 포장 하나의 값**을 넣을 것.
  */
 const FALLBACK_PRICES: Record<string, number> = {
-  Bread: 3.50, Marmite: 6.00, Cheese: 12.00, Butter: 8.50,
-  Croissant: 4.00, Ham: 5.50, "Chicken Breast": 14.00, Lettuce: 4.00, Mayo: 6.50,
-  "Sushi Rice": 4.50, Seaweed: 3.00, "Canned Tuna": 2.50, Cucumber: 3.00,
-  Eggs: 9.00, Milk: 3.50, Spinach: 4.00, Pastry: 5.00,
-  Pasta: 2.00, Pesto: 6.00, "Cherry Tomatoes": 4.50, "Olive Oil": 10.00,
-  Apple: 5.99, // 1kg 팩 (이전 0.80은 사과 1개 값이었다)
-  Carrot: 1.95, // 1kg 봉지 (이전 0.50은 당근 1개 값이었다)
-  Hummus: 5.00,
-  Yoghurt: 6.50, Muesli: 7.00, Crackers: 3.00, Tortilla: 4.50,
+  Bread: 4.00, Vegemite: 6.50, Cheese: 13.00, Butter: 9.00,
+  Croissant: 4.50, Ham: 6.00, "Chicken Breast": 15.00, Lettuce: 4.50, Mayo: 7.00,
+  "Sushi Rice": 5.00, Seaweed: 3.50, "Canned Tuna": 2.80, Cucumber: 3.50,
+  Eggs: 9.50, Milk: 3.80, Spinach: 4.50, Pastry: 5.50,
+  Pasta: 2.50, Pesto: 6.50, "Cherry Tomatoes": 5.00, "Olive Oil": 11.00,
+  Apple: 5.50, // 1kg 봉지 — Aussie의 옛 0.90은 사과 1개 값이었다(Kiwi 07-28 수정과 같은 단위 문제)
+  Carrot: 2.50, // 1kg 봉지 (옛 0.60은 당근 1개 값)
+  Hummus: 5.50,
+  Yoghurt: 7.00, Muesli: 8.00, Crackers: 3.50, Tortilla: 5.00,
 };
 
 function getEmoji(name: string): string {
@@ -72,31 +70,29 @@ export async function fetchIngredientPrice(name: string): Promise<PriceInfo> {
 
   // Live fallback (with 3s timeout) if not in cache
   try {
-    // countdown.co.nz는 2024년 폐기돼 301로 넘어간다. 직접 woolworths를 부른다.
-    // ⚠️ 이 경로는 캐시에 없는 재료에만 쓰이는 폴백이고, items[0]을 그대로 집는다.
+    // ⚠️ 이 경로는 캐시에 없는 재료에만 쓰이는 폴백이고, 첫 상품을 그대로 집는다.
     //    대표 상품 선별 규칙은 lib/priceSearch.mjs에 있으며 캐시 생성 시 적용된다.
-    //    (scripts/update_prices.mjs) 폴백까지 규칙을 태우려면 그 모듈을 TS로 옮길 것.
-    const url = `https://www.woolworths.co.nz/api/v1/products?target=search&search=${encodeURIComponent(name)}`;
+    const url = `https://www.woolworths.com.au/apis/ui/Search/products?searchTerm=${encodeURIComponent(name)}&pageNumber=1&pageSize=5&sortType=TraderRelevance`;
     const res = await fetch(url, {
       signal: AbortSignal.timeout(3000),
       headers: {
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json",
-        "X-Requested-With": "OnlineShopping.WebApp",
+        "Accept-Language": "en-AU,en;q=0.9",
       },
       next: { revalidate: 86400 },
     });
     if (!res.ok) return getFallbackData(name);
     const data = await res.json();
-    const items = data?.products?.items;
-    if (items?.length > 0) {
-      const item = items[0];
-      const price = shelfPrice(item?.price).regular;
+    const item = data?.Products?.[0]?.Products?.[0];
+    if (item) {
+      // 정상가만 쓴다 — 특가 주에는 WasPrice가 정상가다(Kiwi shelfPrice와 같은 규칙).
+      const regular = item.IsOnSpecial && item.WasPrice > 0 ? item.WasPrice : item.Price;
       return {
-        price: price > 0 ? price : 5.0,
+        price: regular > 0 ? regular : 5.0,
         image: getEmoji(name),
-        name: item?.name ?? name,
-        source: "Woolworths NZ",
+        name: item.Name ?? name,
+        source: "Woolworths AU",
       };
     }
   } catch {

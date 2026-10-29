@@ -8,23 +8,8 @@ import Footer from "@/components/Footer";
 import { buildPageMetadata } from "@/lib/seo/pageMetadata";
 import { POSTS } from "@/content/posts";
 import { GUIDES } from "@/content/guides";
-import {
-  firstRoundRows,
-  firstRoundDate,
-  roundDateLabel,
-  respecifiedSince,
-} from "@/lib/priceIndexCompare";
-import { money, joinList, methodExample, exampleWeekRows, exampleWeekTotal } from "@/lib/servePrice";
+import { methodExample, exampleWeekRows, exampleWeekTotal } from "@/lib/servePrice";
 
-/**
- * 표에 싣는 5월 라운드 행 — **이름만** 고른다. 금액·날짜는 `history[0]`에서 나온다.
- * 이름이 바뀌면 `firstRoundRows`가 던진다(조용히 빠지면 표만 짧아진다).
- */
-const MAY_ROWS_SHOWN = [
-  "Wholegrain Bread (700g)",
-  "Wraps 8-pack",
-  "Bagels 4-pack",
-] as const;
 
 /**
  * 🔴 카드에 필요한 세 필드만 뽑아 클라이언트로 넘긴다.
@@ -50,20 +35,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    en: "Lunch Planner — Kiwi Lunchbox",
-    ko: "도시락 플래너 — Kiwi Lunchbox",
-    zh: "午餐计划器 — Kiwi Lunchbox",
+    en: "Lunch Planner — Aussie Lunchbox",
+    ko: "도시락 플래너 — Aussie Lunchbox",
+    zh: "午餐计划器 — Aussie Lunchbox",
   };
   const descriptions: Record<string, string> = {
-    en: "Generate a personalised week of NZ school lunches in seconds. Set allergy and diet filters, then get a full meal plan with a costed shopping list.",
+    en: "Generate a personalised week of Australian school lunches in seconds. Set allergy and diet filters, then get a full meal plan with a costed shopping list.",
     // 🔴 09-29: ko/zh만 「예산을 설정」이라 했다 — 플래너에 예산 입력은 없다. en과 같은 말로 맞춘다.
-    ko: "몇 초 만에 뉴질랜드 학교 도시락 1주일 계획을 만드세요. 알레르기·식단 필터를 설정하면 비용이 계산된 장보기 목록과 함께 식단을 받습니다.",
-    zh: "几秒钟内生成一周新西兰学校午餐计划。设置过敏原和饮食筛选，即可获得完整的午餐计划和估算费用的购物清单。",
+    ko: "몇 초 만에 호주 학교 도시락 1주일 계획을 만드세요. 알레르기·식단 필터를 설정하면 비용이 계산된 장보기 목록과 함께 식단을 받습니다.",
+    zh: "几秒钟内生成一周澳大利亚学校午餐计划。设置过敏原和饮食筛选，即可获得完整的午餐计划和估算费用的购物清单。",
   };
 
   // 🔴 2026-08-13: 이 페이지만 helper를 안 쓰고 metadata를 손으로 짜고 있었다.
-  // 결과가 라이브에 그대로 나가 있었다 — og:title은 "Lunch Planner — Kiwi Lunchbox"인데
-  // twitter:title은 레이아웃 기본값 "Weekly Lunch Planner | Kiwi Lunchbox"였고,
+  // 결과가 라이브에 그대로 나가 있었다 — og:title은 "Lunch Planner — Aussie Lunchbox"인데
+  // twitter:title은 레이아웃 기본값 "Weekly Lunch Planner | Aussie Lunchbox"였고,
   // 설명도 서로 달랐으며, twitter:image는 정사각 로고가 large_image 카드에 실리고 있었다.
   // helper가 막으려던 상황이 정작 사이트에서 가장 중요한 페이지에서 벌어져 있었다.
   return buildPageMetadata({
@@ -237,7 +222,7 @@ export default async function PlannerPage({
               <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-md">
                 <Image
                   src="/assets/real-packed-lunchbox-snacks-fruit.jpg"
-                  alt="A real packed Kiwi Lunchbox: onigiri rice balls rolled with furikake, cucumber sticks, apple slices, a peeled mandarin, salami in a green silicone cup, and ring snacks in a blue bento box"
+                  alt="A real packed lunchbox: onigiri rice balls rolled with furikake, cucumber sticks, apple slices, a peeled mandarin, salami in a green silicone cup, and ring snacks in a blue bento box"
                   width={1200}
                   height={900}
                   className="w-full h-auto"
@@ -282,73 +267,21 @@ export default async function PlannerPage({
             </p>
           </div>
 
-          {/* 3. How the price estimate is calculated — first-party data */}
+          {/* 3. How the price estimate is calculated */}
           <div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-4">
               How the price estimate is calculated
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Every plan comes with a rough weekly cost. The prices behind it are read weekly from
-              Woolworths NZ&apos;s own online catalogue, and they started from a round I walked in
-              person. On <strong>{roundDateLabel(firstRoundDate())}</strong> I walked the
-              aisles at <strong>Pak&apos;nSave Ormiston</strong> and <strong>Woolworths Ormiston</strong>{" "}
-              in East Auckland — the two stores I actually shop at — and recorded the shelf price of
-              20 lunchbox staples by hand. A few of them:
-            </p>
-            <div className="overflow-x-auto mb-4">
-              <table className="w-full text-sm border-collapse bg-white rounded-2xl overflow-hidden shadow-sm">
-                <thead>
-                  <tr className="bg-[#314A37] text-white text-left">
-                    <th className="px-4 py-3 font-semibold">Item</th>
-                    <th className="px-4 py-3 font-semibold">Woolworths</th>
-                    <th className="px-4 py-3 font-semibold">Pak&apos;nSave</th>
-                  </tr>
-                </thead>
-                {/* 🔴 금액과 날짜를 손으로 적지 말 것. 2026-09-15까지 여섯 개가 리터럴이었다.
-                    값 자체는 history[0]과 맞았지만, 같은 기록이 두 곳에 살면 한쪽만 고치게 된다.
-                    실제로 "Wraps 8-pack"은 08-12에 재정의됐는데 이 표만 옛 규격을 싣고 있었다. */}
-                <tbody className="divide-y divide-gray-100">
-                  {firstRoundRows(MAY_ROWS_SHOWN).map((r) => (
-                    <tr key={r.name}>
-                      <td className="px-4 py-3">{r.name}</td>
-                      <td className="px-4 py-3 text-gray-500">{money(r.woolworths)}</td>
-                      <td className="px-4 py-3 text-gray-500">{money(r.paknsave)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
             <p className="text-gray-600 leading-relaxed">
-              That May round is where this started, and the table above is that round — a dated
-              snapshot, not today&apos;s prices.
-              {respecifiedSince(MAY_ROWS_SHOWN).length > 0 && (
-                <>
-                  {" "}Since then the specification for{" "}
-                  <strong>{joinList(respecifiedSince(MAY_ROWS_SHOWN))}</strong>{" "}
-                  {respecifiedSince(MAY_ROWS_SHOWN).length === 1 ? "has" : "have"} been re-pinned to a
-                  product both chains actually carry, so that row is no longer in the current basket
-                  under this name. The May figure is kept as recorded rather than restated — see the{" "}
-                  <a href={`/${locale}/price-index`} className="text-[#366A1B] underline">price index</a>{" "}
-                  for what it was changed to and why.
-                </>
-              )}
-            </p>
-            {/* 🔴 2026-09-09 재점검 — 이 문단이 "maps it onto this price data"라고 해서
-                플래너가 **위 20행 표**로 계산하는 것처럼 읽혔다. 실제로는 훨씬 큰 주간
-                재료 캐시로 계산하고, 20행 표는 체인 비교용으로 따로 공개하는 것이다. */}
-            <p className="text-gray-600 leading-relaxed">
-              What the planner actually prices against is a larger weekly cache of pinned supermarket
-              products — one tracked product per ingredient, re-read each week — <strong>not</strong> the
-              20-item table above. That table is the cross-chain comparison, chosen so the same
-              specification can be priced at more than one chain; the planner needs breadth instead.
-              For each recipe it takes the ingredient list, looks up that ingredient&apos;s pack price,
-              and multiplies by the share of the pack one lunchbox uses. Add the five days together and
-              you get the weekly figure under your plan. It is an <em>estimate</em> in one specific
-              place — the share of a pack a lunchbox uses is our household&apos;s portion, not a
-              published figure — while the pack prices themselves are read from the shop. Both datasets
-              are downloadable as CSV from the{" "}
-              <a href={`/${locale}/price-index`} className="text-[#366A1B] underline">NZ Lunchbox Price Index</a>,
-              so the arithmetic can be checked rather than taken on trust.
+              The planner prices against a weekly cache of supermarket products from Woolworths
+              Australia&apos;s online shop — one tracked product per ingredient. For each recipe it
+              takes the ingredient list, looks up that ingredient&apos;s pack price, and multiplies by
+              the share of the pack one lunchbox uses. Add the five days together and you get the
+              weekly figure under your plan. It is an <em>estimate</em> in one specific place — the
+              share of a pack a lunchbox uses is our household&apos;s portion, not a published figure —
+              while the pack prices themselves are read from the shop. Where an ingredient couldn&apos;t
+              be read, its price is marked &lsquo;Est.&rsquo; in the shopping list rather than passed
+              off as a shelf price.
             </p>
           </div>
 

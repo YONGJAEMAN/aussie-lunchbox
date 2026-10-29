@@ -17,7 +17,7 @@ export const AUTH_UNREACHABLE =
 
 /** 무엇이 잘못됐는지 우리도 모를 때. */
 export const AUTH_UNKNOWN =
-  "Something went wrong on our side. Please try again, or email kiwilunchboxplanner@gmail.com.";
+  "Something went wrong on our side. Please try again, or email aussielunchbox@gmail.com.";
 
 /** 비밀번호 최소 길이 — 가입 화면 두 곳이 서로 다른 값을 쓰고 있었다(8 vs 6). */
 export const PASSWORD_MIN_LENGTH = 8;

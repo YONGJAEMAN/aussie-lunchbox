@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Kiwi Lunchbox — NZ School Lunch Planner";
+export const alt = "Aussie Lunchbox — NZ School Lunch Planner";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,7 +25,7 @@ export default function OGImage() {
         <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "24px" }}>
           <span style={{ fontSize: "80px" }}>🥝</span>
           <span style={{ fontSize: "72px", fontWeight: "bold", color: "white", letterSpacing: "-2px" }}>
-            Kiwi Lunchbox
+            Aussie Lunchbox
           </span>
         </div>
 
@@ -66,7 +66,7 @@ export default function OGImage() {
 
         {/* URL */}
         <p style={{ position: "absolute", bottom: "32px", color: "rgba(255,255,255,0.6)", fontSize: "20px" }}>
-          kiwilunchbox.co.nz
+          aussielunchbox.com
         </p>
       </div>
     ),

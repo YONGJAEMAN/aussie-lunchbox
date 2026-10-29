@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { basketFigures } from "@/lib/priceIndexCompare";
 import { getLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { boxMedianLabel, boxFloorLabel, boxCeilingLabel } from "@/lib/servePrice";
@@ -18,9 +17,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     path: "/faq",
     locale,
-    title: "FAQ – Kiwi Lunchbox | Frequently Asked Questions",
+    title: "FAQ – Aussie Lunchbox | Frequently Asked Questions",
     description:
-      "Answers to common questions about the Kiwi Lunchbox planner — allergies, dietary restrictions, shopping lists, PDF export, and more.",
+      "Answers to common questions about the Aussie Lunchbox planner — allergies, dietary restrictions, shopping lists, PDF export, and more.",
   });
 }
 
@@ -46,7 +45,7 @@ export default async function FAQPage() {
       name: t(`faq_q${n}`),
       acceptedAnswer: {
         "@type": "Answer",
-        text: t(`faq_a${n}`, { boxMedian: boxMedianLabel(), boxFloor: boxFloorLabel(), boxCeiling: boxCeilingLabel(), menuCount: String(MENU_COUNT), ...basketFigures(), ...portionBandFigures() }),
+        text: t(`faq_a${n}`, { boxMedian: boxMedianLabel(), boxFloor: boxFloorLabel(), boxCeiling: boxCeilingLabel(), menuCount: String(MENU_COUNT), ...portionBandFigures() }),
       },
     })),
   };
@@ -87,7 +86,7 @@ export default async function FAQPage() {
                       </span>
                     </summary>
                     <div className="px-7 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                      {t(`faq_a${n}`, { boxMedian: boxMedianLabel(), boxFloor: boxFloorLabel(), boxCeiling: boxCeilingLabel(), menuCount: String(MENU_COUNT), ...basketFigures(), ...portionBandFigures() })}
+                      {t(`faq_a${n}`, { boxMedian: boxMedianLabel(), boxFloor: boxFloorLabel(), boxCeiling: boxCeilingLabel(), menuCount: String(MENU_COUNT), ...portionBandFigures() })}
                     </div>
                   </details>
                 ))}

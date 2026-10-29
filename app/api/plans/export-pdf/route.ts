@@ -53,7 +53,7 @@ function PdfDocument({ planData, shoppingList }: PdfDocProps) {
       React.createElement(
         View,
         { style: styles.header },
-        React.createElement(Text, { style: styles.title }, "🥝 Kiwi Lunchbox Plan"),
+        React.createElement(Text, { style: styles.title }, "🥝 Aussie Lunchbox Plan"),
         React.createElement(Text, { style: styles.subtitle }, "Your weekly lunchbox meal plan")
       ),
       ...planData.map((item) =>

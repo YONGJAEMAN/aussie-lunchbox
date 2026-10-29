@@ -17,7 +17,7 @@
  *
  * 사용: node scripts/check_external_links.mjs [베이스URL]
  */
-const BASE = process.argv[2] ?? "https://www.kiwilunchbox.co.nz";
+const BASE = process.argv[2] ?? "https://aussielunchbox.com";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 
@@ -70,7 +70,7 @@ for (const page of pages) {
   const html = await (await fetch(page, { headers: { "User-Agent": UA } })).text();
   for (const m of html.matchAll(/href="(https?:\/\/[^"]+)"/g)) {
     const href = m[1];
-    if (href.includes("kiwilunchbox.co.nz")) continue;
+    if (href.includes("aussielunchbox.com")) continue;
     if (!external.has(href)) external.set(href, new Set());
     external.get(href).add(page.replace(BASE, ""));
   }
