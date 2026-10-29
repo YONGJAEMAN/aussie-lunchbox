@@ -48,20 +48,21 @@ export async function POST(req: NextRequest) {
     const safeSubject =
       typeof subject === "string" && subject.trim()
         ? subject.replace(/[\r\n]+/g, " ").trim().slice(0, 150)
-        : "Your Aussie Lunchbox Plan 🦘";
+        : "Your Kiwi Lunchbox Plan 🥝";
     const safeBody =
       typeof emailBody === "string" && emailBody.trim()
         ? emailBody.slice(0, 5000)
         : "Here is your weekly lunchbox plan!";
 
     const { error } = await resend.emails.send({
-      from: "Aussie Lunchbox <noreply@aussielunchbox.com>",
+      from: "Kiwi Lunchbox <noreply@kiwilunchbox.co.nz>",
+      replyTo: "kiwilunchboxplanner@gmail.com",
       to: [to],
       subject: safeSubject,
       text: safeBody,
       attachments: [
         {
-          filename: "aussie_lunchbox_plan.pdf",
+          filename: "kiwi_lunchbox_plan.pdf",
           content: pdfBase64,
         },
       ],

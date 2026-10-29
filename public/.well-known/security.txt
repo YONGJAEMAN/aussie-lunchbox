@@ -1,4 +1,4 @@
-Contact: mailto:aussielunchbox@gmail.com
+Contact: mailto:kiwilunchboxplanner@gmail.com
 Expires: 2027-06-19T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://aussielunchbox.com/.well-known/security.txt
+Canonical: https://www.kiwilunchbox.co.nz/.well-known/security.txt

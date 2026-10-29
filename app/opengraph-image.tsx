@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Aussie Lunchbox — Australian School Lunch Planner";
+export const alt = "Kiwi Lunchbox — NZ School Lunch Planner";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #7B3F00 0%, #F5A623 100%)",
+          background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -23,9 +23,9 @@ export default function OGImage() {
       >
         {/* Logo & Title */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "24px" }}>
-          <span style={{ fontSize: "80px" }}>🦘</span>
+          <span style={{ fontSize: "80px" }}>🥝</span>
           <span style={{ fontSize: "72px", fontWeight: "bold", color: "white", letterSpacing: "-2px" }}>
-            Aussie Lunchbox
+            Kiwi Lunchbox
           </span>
         </div>
 
@@ -39,7 +39,7 @@ export default function OGImage() {
             maxWidth: "800px",
           }}
         >
-          Stress-free school lunches for Australian families
+          Stress-free school lunches for New Zealand families
         </p>
 
         {/* Feature pills */}
@@ -66,7 +66,7 @@ export default function OGImage() {
 
         {/* URL */}
         <p style={{ position: "absolute", bottom: "32px", color: "rgba(255,255,255,0.6)", fontSize: "20px" }}>
-          aussielunchbox.com
+          kiwilunchbox.co.nz
         </p>
       </div>
     ),

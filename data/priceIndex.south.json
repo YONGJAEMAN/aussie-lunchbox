@@ -1,0 +1,194 @@
+{
+  "_doc": "남섬(크라이스트처치) 가격지수. 품목 목록은 data/priceIndex.json(북섬)을 따른다. null = 그 매장에서 아직 못 잰 값(특가 주·같은 규격 없음) — 북섬 값으로 채우지 않는다. 생성: scripts/update_{price_index,paknsave_prices,newworld_prices}.mjs --island south",
+  "island": "south",
+  "woolworthsUpdated": "2026-10-28",
+  "woolworthsMethod": "Woolworths NZ online price feed, Woolworths Church Corner (Christchurch) pickup (fixed SKUs, regular shelf price)",
+  "lastUpdated": "2026-10-28",
+  "paknsaveUpdated": "2026-10-28",
+  "paknsaveMethod": "Pak'nSave Riccarton (Christchurch) online price feed (fixed SKUs, Click & Collect pricing)",
+  "items": [
+    {
+      "name": "Wholegrain Bread (700g)",
+      "category": "Bakery",
+      "unit": "per loaf",
+      "countdown": 4.49,
+      "paknsave": 4.19,
+      "newworld": 4.39,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Wraps 6-pack",
+      "category": "Bakery",
+      "unit": "per pack",
+      "countdown": 6.99,
+      "paknsave": 6.29,
+      "newworld": 6.99,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Bagels 4-pack",
+      "category": "Bakery",
+      "unit": "per pack",
+      "countdown": 3.79,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Apples (1kg)",
+      "category": "Produce",
+      "unit": "per kg",
+      "countdown": 5.95,
+      "paknsave": 4.99,
+      "newworld": 5.99,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Bananas (1kg)",
+      "category": "Produce",
+      "unit": "per kg",
+      "countdown": 4.35,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Carrots (1kg)",
+      "category": "Produce",
+      "unit": "per kg",
+      "countdown": 2.7,
+      "paknsave": 2.99,
+      "newworld": 2.79,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Cherry Tomatoes (180g)",
+      "category": "Produce",
+      "unit": "per punnet",
+      "countdown": 2.99,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Cucumber",
+      "category": "Produce",
+      "unit": "each",
+      "countdown": null,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Lettuce",
+      "category": "Produce",
+      "unit": "each",
+      "countdown": 3,
+      "paknsave": 3.99,
+      "newworld": null,
+      "paknsaveAsOf": "2026-10-28"
+    },
+    {
+      "name": "Sliced Chicken (200g)",
+      "category": "Meat & Deli",
+      "unit": "per pack",
+      "countdown": null,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Canned Tuna (185g)",
+      "category": "Meat & Deli",
+      "unit": "per can",
+      "countdown": 4.3,
+      "paknsave": 3.75,
+      "newworld": 4.35,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Sliced Ham (200g)",
+      "category": "Meat & Deli",
+      "unit": "per pack",
+      "countdown": 6.89,
+      "paknsave": 7.79,
+      "newworld": 7.99,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Cheese Block (500g)",
+      "category": "Dairy & Eggs",
+      "unit": "per block",
+      "countdown": 10.9,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Eggs (12-pack)",
+      "category": "Dairy & Eggs",
+      "unit": "per dozen",
+      "countdown": 11.8,
+      "paknsave": null,
+      "newworld": null
+    },
+    {
+      "name": "Yoghurt (1kg)",
+      "category": "Dairy & Eggs",
+      "unit": "per tub",
+      "countdown": 8.15,
+      "paknsave": 8.05,
+      "newworld": null,
+      "paknsaveAsOf": "2026-10-28"
+    },
+    {
+      "name": "Butter (500g)",
+      "category": "Dairy & Eggs",
+      "unit": "per block",
+      "countdown": 9.39,
+      "paknsave": 9.09,
+      "newworld": 9.39,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Rice (1kg)",
+      "category": "Pantry",
+      "unit": "per kg",
+      "countdown": null,
+      "paknsave": 4.19,
+      "newworld": null,
+      "paknsaveAsOf": "2026-10-28"
+    },
+    {
+      "name": "Pasta (500g)",
+      "category": "Pantry",
+      "unit": "per pack",
+      "countdown": 1.95,
+      "paknsave": 1.79,
+      "newworld": 1.95,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Hummus (220g)",
+      "category": "Pantry",
+      "unit": "per tub",
+      "countdown": 4.89,
+      "paknsave": 4.65,
+      "newworld": 4.89,
+      "paknsaveAsOf": "2026-10-28",
+      "newworldAsOf": "2026-10-28"
+    },
+    {
+      "name": "Peanut Butter (380g)",
+      "category": "Pantry",
+      "unit": "per jar",
+      "countdown": 7.79,
+      "paknsave": null,
+      "newworld": null
+    }
+  ],
+  "newworldUpdated": "2026-10-28",
+  "newworldMethod": "New World Ilam (Christchurch) online price feed (fixed SKUs, Click & Collect pricing)"
+}

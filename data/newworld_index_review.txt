@@ -1,0 +1,89 @@
+Kiwi Lunchbox — Price Index / New World 열 갱신 리포트
+생성 2026-10-25   갱신 14 / 특가보류 5 / 보류 1 / 실패 0 / 상품변경 0
+매장 New World Ormiston (240 Ormiston Road, Ormiston)
+
+이 열은 **온라인(Click & Collect) 가격**이다. 매대 태그와 같다는 보장이 없다.
+특가(SPECIAL)는 값을 갱신하지 않는다 — 특가 주간엔 정상가가 응답에 없어서,
+특가를 넣으면 지수가 물가 하락처럼 보인다. 오래된 값이 틀린 값보다 낫고
+오래된 것은 페이지에 날짜로 드러난다.
+==========================================================================
+
+SPECIAL Wholegrain Bread (700g) (sku 5026127-EA-000)
+          이번 주 특가 $4.40 — 정상가를 알 수 없어 **값을 건드리지 않는다**
+          기존값 (없음) 유지
+
+SPECIAL Wraps 6-pack (sku 5016678-EA-000)
+          이번 주 특가 $5.49 — 정상가를 알 수 없어 **값을 건드리지 않는다**
+          기존값 $6.99 유지
+
+OK      Bagels 4-pack (sku 5286875-EA-000)
+          $3.99 → $3.99
+          Everyday Original Bagels [4pk]  $1.00/ea
+
+OK      Apples (1kg) (sku 5039945-KGM-000)
+          $4.99 → $4.99
+          Granny Smith Apples [kg]  $4.99/1kg
+
+OK      Bananas (1kg) (sku 5046542-KGM-000)
+          $3.59 → $3.59
+          Bananas [kg]  $3.59/1kg
+
+OK      Carrots (1kg) (sku 5039965-KGM-000)
+          $2.49 → $2.49
+          Carrots [kg]  $2.49/1kg
+
+OK      Cherry Tomatoes (180g) (sku 5345926-EA-000)
+          $3.59 → $3.59
+          Pams Cherry Tomatoes [180g]  $19.94/1kg
+
+OK      Cucumber (sku 5028889-EA-000)
+          $1.99 → $2.49
+          Telegraph Cucumber [ea]
+
+OK      Lettuce (sku 5303543-EA-000)
+          $3.29 → $3.49
+          Pams Iceberg Lettuce [1pk]
+
+SPECIAL Sliced Chicken (200g) (sku 5013383-EA-000)
+          이번 주 특가 $5.49 — 정상가를 알 수 없어 **값을 건드리지 않는다**
+          기존값 $6.99 유지
+
+OK      Canned Tuna (185g) (sku 5009791-EA-000)
+          $4.49 → $4.49
+          Sealord Chunky Style Tuna In Spring Water [185g]  $24.27/1kg
+
+OK      Sliced Ham (200g) (sku 5023557-EA-000)
+          $7.69 → $7.69
+          Beehive Shaved Champagne Ham [200g]  $38.45/1kg
+
+BLOCKED Cheese Block (500g)
+          New World Ormiston에 Mainland mild 500g이 없다. 치즈 186종 전수 확인 — Mainland 'Smooth & Mellow Mild'는 1kg($18.99)뿐이고, 500g은 Edam·Colby만 있다. 지수 note가 'Mainland mild'라 다른 품종으로 대체하면 세 열이 다른 상품을 가리키게 된다(2026-07-30에 같은 실수로 17건 중 9건이 어긋났다). 규격이 맞는 상품이 생기기 전까지 NW 열은 비워 둔다.
+          → 기존값 (없음) 유지
+
+OK      Eggs (12-pack) (sku 5322429-EA-000)
+          $10.79 → $10.79
+          eg. Free Range Size 7 Eggs [12pk]  $0.90/ea
+
+SPECIAL Yoghurt (1kg) (sku 5281810-EA-000)
+          이번 주 특가 $7.39 — 정상가를 알 수 없어 **값을 건드리지 않는다**
+          기존값 $8.29 유지
+
+SPECIAL Butter (500g) (sku 5002650-EA-000)
+          이번 주 특가 $8.49 — 정상가를 알 수 없어 **값을 건드리지 않는다**
+          기존값 $9.79 유지
+
+OK      Rice (1kg) (sku 5303223-EA-000)
+          $3.39 → $3.39
+          Fortune Long Grain Rice [1kg]  $0.34/100g
+
+OK      Pasta (500g) (sku 5323415-EA-000)
+          $1.79 → $1.79
+          Pams Penne Pasta [500g]  $0.36/100g
+
+OK      Hummus (220g) (sku 5224862-EA-000)
+          $5.39 → $5.39
+          Obela Classic Hommus [220g]  $2.45/100g
+
+OK      Peanut Butter (380g) (sku 5019876-EA-000)
+          $7.69 → $7.69
+          Pic's Smooth Peanut Butter [380g]  $2.02/100g

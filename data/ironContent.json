@@ -1,0 +1,314 @@
+{
+  "_about": "Iron per 100g for the tracked products in the iron-rich blog post. Every value is copied from the New Zealand Food Composition Database record named in `recordId` (component FE, mg/100g) — none is estimated. Deep links to single records return 404 on foodcomposition.co.nz, so `url` is the database's search page (look the record ID up there) and `dataUrl` is the same record from the database's own API. `edibleShare` is used only where the reference food is drained but our serve is a fraction of the can's net weight; it is the legume percentage declared in the tracked product's own ingredient list. `reference` holds foods the post discusses that we do not price; same database, same rules. `measure` is the serving weight printed on that database record (e.g. 1 cup of baby spinach = 40g) — used instead of guessing what a cup or a tablespoon weighs.",
+  "source": "New Zealand Food Composition Database (FOODfiles), The New Zealand Institute for Plant and Food Research Limited and the Ministry of Health",
+  "foods": {
+    "Beef Mince": {
+      "ironPer100g": 2.1,
+      "recordId": "M1232",
+      "matched": "Beef, mince, prime, 5–10% fat, raw, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/M1232?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true,
+      "note": "Tracked product is 10% fat, the boundary between the database's prime (5–10%, 2.1mg) and standard (10–20%, M1233, 2.0mg) composites; prime used. Raw value, because the price and serve are raw weight."
+    },
+    "Tuna": {
+      "ironPer100g": 0.99,
+      "recordId": "K1010",
+      "matched": "Tuna, in spring water, plain, canned, salt added, undrained, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/K1010?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true,
+      "note": "Undrained record chosen because our serve is half of the can's 95g net weight, water included.",
+      "measure": {
+        "text": "small can",
+        "grams": 95,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Chicken Breast": {
+      "ironPer100g": 0.33,
+      "recordId": "M10007",
+      "matched": "Chicken, breast, flesh, lean, fresh, raw, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/M10007?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true
+    },
+    "Chickpeas": {
+      "ironPer100g": 1.4,
+      "recordId": "X1146",
+      "matched": "Bean, chickpea, seed, in brine, canned, drained, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X1146?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "edibleShare": {
+        "share": 0.6,
+        "productSku": "259399",
+        "label": "Chickpeas (60%) Water",
+        "url": "https://www.woolworths.co.nz/shop/productdetails?stockcode=259399",
+        "accessed": "2026-09-29"
+      }
+    },
+    "Kidney Beans": {
+      "ironPer100g": 1.4,
+      "recordId": "X1147",
+      "matched": "Bean, red kidney bean, seed, in brine, canned, drained, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X1147?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "edibleShare": {
+        "share": 0.6,
+        "productSku": "259401",
+        "label": "Red Kidney Beans (60%) Water",
+        "url": "https://www.woolworths.co.nz/shop/productdetails?stockcode=259401",
+        "accessed": "2026-09-29"
+      }
+    },
+    "Red Lentils": {
+      "ironPer100g": 1.9,
+      "recordId": "X10044",
+      "matched": "Lentil, canned in salted or unsalted water, rinsed and drained",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X10044?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "The cache key says red lentils but the tracked product is Delmaine tinned lentils; the database's canned-lentil record does not specify a variety.",
+      "edibleShare": {
+        "share": 0.6,
+        "productSku": "324116",
+        "label": "Lentils (60%), Water, Salt, Firming Agent (E509)",
+        "url": "https://www.woolworths.co.nz/shop/productdetails?stockcode=324116",
+        "accessed": "2026-09-29"
+      }
+    },
+    "Black Beans": {
+      "ironPer100g": 1.8,
+      "recordId": "X10047",
+      "matched": "Bean, black, canned in salted water (brine), drained, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X10047?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "edibleShare": {
+        "share": 0.6,
+        "productSku": "930176",
+        "label": "Black Beans (60%), Water, Sugar, Salt, Firming Agent (509), Food Acid (Acetic Acid)",
+        "url": "https://www.woolworths.co.nz/shop/productdetails?stockcode=930176",
+        "accessed": "2026-09-29"
+      }
+    },
+    "Hummus": {
+      "ironPer100g": 1.4,
+      "recordId": "S10007",
+      "matched": "Hummus, original, from chickpea (70%), reduced fat (15%), composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/S10007?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "Closest composite: the tracked product declares Chickpeas (72%) and 10.4g fat per 100g. The other plain composite (S10006, 50% chickpea, 30% fat) is 1.6mg.",
+      "measure": {
+        "text": "1 tablespoon",
+        "grams": 16,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Spinach": {
+      "ironPer100g": 1.4,
+      "recordId": "X1267",
+      "matched": "Spinach, baby leaf, leafy vegetable, raw, fresh",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X1267?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "Baby leaf record, not mature English spinach (X1045, 4.4mg).",
+      "measure": {
+        "text": "1 cup",
+        "grams": 40,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Dried Apricots": {
+      "ironPer100g": 1.2,
+      "recordId": "L1156",
+      "matched": "Apricot, dried, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/L1156?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "Tracked product is labelled 'Partially Rehydrated Apricots (99.6%)', Product of Turkey.",
+      "measure": {
+        "text": "4 apricot halves",
+        "grams": 40,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Sultanas": {
+      "ironPer100g": 2,
+      "recordId": "L173",
+      "matched": "Sultana",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/L173?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false
+    },
+    "Rolled Oats": {
+      "ironPer100g": 3.7,
+      "recordId": "E1042",
+      "matched": "Oats, grains rolled, raw, product of Australia",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/E1042?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "Tracked product is labelled Product of Australia; the New Zealand record (E1075) has the same value."
+    }
+  },
+  "excluded": {
+    "Egg": "Serve is '1ea', not grams; the database's egg serve is a size 6 and the tracked product is size 7 — no weight to multiply by without estimating one.",
+    "Eggs": "Same as Egg.",
+    "Chicken Thigh": "Tracked product has no nutrition panel and does not say whether the thighs are skin-on or bone-in, so the serve weight cannot be matched to a flesh-only record.",
+    "Bread": "Tracked loaf is a kibbled-grain sandwich loaf (Molenberg Original), not the wholemeal bread the post discusses; no matching database record.",
+    "Tortilla": "Serve is '1 wrap', not grams.",
+    "Canned Tuna": "Flavoured (lemon & pepper); the plain spring-water key 'Tuna' is used instead.",
+    "Wholegrain Crackers": "Tracked product is brown rice multigrain crackers; no matching database record.",
+    "Weet-Bix": "Not a tracked product — no price.",
+    "Pumpkin seeds": "Not a tracked product — no price.",
+    "Up&Go": "Removed from the fortified-products table: the database record (C1094, assorted flavours) lists no iron fortification and gives 0.36mg/100g — about 0.96mg per 250mL.",
+    "Vogel's bread": "Removed: no Vogel's (non-gluten-free) loaf in the database, and 'some varieties' cannot be matched to a record.",
+    "Woolworths wholemeal bread": "Removed from the fortified table: wholemeal bread is not iron-fortified; the generic wholemeal record (A1163) is used in the text instead.",
+    "Pams cornflakes": "No Pams record; replaced with Sanitarium Skippy Cornflakes (D1057), whose record states Fe fortification.",
+    "Wholegrain crackers (Idea 5)": "No record matches a generic wholegrain cracker; the post points to the pack's nutrition panel instead of a figure."
+  },
+  "reference": {
+    "Beef mince, cooked": {
+      "ironPer100g": 2.1,
+      "recordId": "R10356",
+      "matched": "Beef, mince, prime, 5–10% fat, cooked with oil",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/R10356?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true,
+      "note": "Leftover mince in the wrap idea. Other cooked-mince records: M20 lean stewed 2.7, M1076 premium simmered 1.8 — prime matches the tracked 10% fat product."
+    },
+    "Chicken thigh, cooked": {
+      "ironPer100g": 0.82,
+      "recordId": "M10014",
+      "matched": "Chicken, thigh, flesh, baked or roasted (skin removed before eaten), no salt or fat added, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/M10014?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true
+    },
+    "Chicken breast, cooked": {
+      "ironPer100g": 0.36,
+      "recordId": "M10008",
+      "matched": "Chicken, breast, flesh, fresh, baked or roasted (skin removed before eaten), no fat or salt added",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/M10008?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true
+    },
+    "Red lentils, cooked": {
+      "ironPer100g": 1.1,
+      "recordId": "X10053",
+      "matched": "Lentil, red or orange, mature, split, or whole without husk, boiled, undrained, unsalted",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/X10053?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false
+    },
+    "Weet-Bix": {
+      "ironPer100g": 15,
+      "recordId": "D1056",
+      "matched": "Breakfast cereal, whole grain wheat biscuit, ready to eat, Weet-Bix™, Sanitarium™, fortified, vitamins B1, B2, B3 & folate & Fe",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/D1056?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "measure": {
+        "text": "2 biscuits",
+        "grams": 34,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Raisins": {
+      "ironPer100g": 1.2,
+      "recordId": "L161",
+      "matched": "Raisin, seedless, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/L161?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "measure": {
+        "text": "snack pack",
+        "grams": 14,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Pumpkin seeds": {
+      "ironPer100g": 8.5,
+      "recordId": "Q1029",
+      "matched": "Seed, pumpkin, kernel, shelled, green, dried, raw, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/Q1029?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "note": "No spoon measure on this record, so the post gives grams. (Q23, roasted and salted, is 15mg.)"
+    },
+    "Wholemeal bread": {
+      "ironPer100g": 1.8,
+      "recordId": "A1163",
+      "matched": "Bread, from wholemeal or wholegrain wheat flour, sliced, prepacked, as purchased, commercial, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/A1163?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "measure": {
+        "text": "2 slices",
+        "grams": 80,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "White bread": {
+      "ironPer100g": 1,
+      "recordId": "A1161",
+      "matched": "Bread, from white wheat flour, sliced, prepacked, as purchased, commercial, composite",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/A1161?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "measure": {
+        "text": "2 slices",
+        "grams": 80,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Skippy Cornflakes": {
+      "ironPer100g": 11,
+      "recordId": "D1057",
+      "matched": "Breakfast cereal, cornflakes toasted, ready to eat, Skippy™ Cornflakes, Sanitarium™, fortified vitamins B1, B2, B3 & folate & Fe",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/D1057?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": false,
+      "measure": {
+        "text": "1 cup",
+        "grams": 33,
+        "source": "serving weight given on the same database record"
+      }
+    },
+    "Mussels, boiled": {
+      "ironPer100g": 4.4,
+      "recordId": "T1026",
+      "matched": "Mussel, green, meat, boiled",
+      "url": "https://www.foodcomposition.co.nz/search/",
+      "dataUrl": "https://api.foodcomposition.co.nz/api/fiav/food/T1026?comp_group_id=12",
+      "accessed": "2026-09-29",
+      "haem": true,
+      "note": "Raw green mussel meat (T1024) is 3.3."
+    }
+  }
+}

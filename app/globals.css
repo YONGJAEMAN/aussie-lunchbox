@@ -1,14 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FDFAF2;
+  --color-background: #F5F7FA;
   --color-foreground: #333333;
-  --color-primary: #F5A623;
-  --color-primary-dark: #7B3F00;
-  --color-primary-light: #FFF4DE;
-  --color-secondary: #E8A020;
+  --color-primary: #78B159;
+  --color-primary-dark: #314A37;
+  --color-primary-light: #E8F5E9;
+  --color-secondary: #4CAF50;
   --color-text-grey: #666666;
   --font-sans: "Open Sans", Arial, sans-serif;
+
+  /* 🔴 탭 타깃 최소 크기 (2026-09-11).
+     모바일 375px 실측에서 플래너 버튼 185개가 22~32px였다 — 재료 제외 칩 166개가
+     22px로 가장 작았다. WCAG 2.5.8(AA)은 24px, 애플은 44px, 구글 Lighthouse는 48px를
+     본다. 44px으로 잡는다 — 24는 낮고 48은 166개짜리 칩 목록에서 화면을 다 먹는다.
+     🔴 픽셀을 컴포넌트에 직접 적지 말 것. 여기 하나만 고치면 전부 따라온다. */
+  --spacing-touch: 44px;
+
+  /* 🔴 흰 글자를 얹는 초록 (2026-09-11).
+     브랜드 초록 #78B159 위의 흰 글자는 대비 **2.55:1** 이다 — WCAG AA 본문 4.5,
+     큰 글자 3.0 둘 다 못 넘는다. Lighthouse가 「Generate Plan」 CTA와 쿠키
+     「Accept」 버튼을 콕 집어 실패로 올렸다. 사이트의 제1 행동 버튼이다.
+     #4F7A34 는 같은 색상 계열에서 **5.04:1** 로 AA 본문을 넘는다.
+     🔴 #78B159 자체는 테두리·연한 배경·글자 없는 면에 그대로 둔다 —
+        바꾸는 건 **흰 글자가 얹히는 면**뿐이다. */
+  --color-primary-deep: #4F7A34;
 }
 
 body {

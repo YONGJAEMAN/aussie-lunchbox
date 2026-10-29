@@ -1,26 +1,23 @@
 // ─── References extraction ────────────────────────────────────────────────────
 // Pulls unique external links from markdown body for the auto-generated
 // "References" section at the bottom of articles (E-E-A-T signal).
-// If body has no inline links, falls back to a standard set of AU authority sources.
+// If body has no inline links, falls back to a standard set of NZ authority sources.
 
 export interface Reference {
   text: string;
   url: string;
 }
 
-const STANDARD_AU_REFERENCES: Reference[] = [
-  { text: "Australian Dietary Guidelines (Eat for Health)", url: "https://www.eatforhealth.gov.au/" },
-  { text: "Allergy & Anaphylaxis Australia", url: "https://allergyfacts.org.au/" },
-  { text: "National Heart Foundation of Australia", url: "https://www.heartfoundation.org.au/" },
-  { text: "Food Standards Australia New Zealand (FSANZ)", url: "https://www.foodstandards.gov.au/" },
-];
 
 export function extractReferences(body: string): Reference[] {
   const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
   const seen = new Map<string, string>();
   let match: RegExpExecArray | null;
   while ((match = pattern.exec(body)) !== null) {
-    const text = match[1].trim();
+    // 🔴 2026-08-23: 링크 라벨 안의 인라인 마크다운(`[*제목*](url)`)이 References
+    //    목록에 **별표째** 실려 나갔다. 본문은 렌더러가 처리하지만 이 목록은
+    //    라벨을 그대로 쓰는 별도 경로다 — 같은 문자열이 두 곳에서 다르게 처리된다.
+    const text = match[1].replace(/\*\*?/g, "").trim();
     const url = match[2].trim();
     if (url.startsWith("http") && !seen.has(url)) {
       seen.set(url, text);
@@ -29,9 +26,21 @@ export function extractReferences(body: string): Reference[] {
   return Array.from(seen.entries()).map(([url, text]) => ({ text, url }));
 }
 
+/**
+ * 🔴 2026-08-14: 여기가 "인용이 없으면 표준 4개를 대신 보여준다"였다.
+ * 글 21편 중 **14편이 그 폴백**이었고, 그래서 보온가방 리뷰와 가격지수 글이
+ * "Ministry of Health 영양 지침 · Allergy NZ · Heart Foundation · FSANZ"를
+ * 출처로 달고 있었다. **참조하지 않은 것을 참조했다고 표시하는 것**이라
+ * 신뢰 신호가 아니라 정확히 그 반대다.
+ * (같은 날 그 표준 4개 중 하나가 실제로 404였다는 것도 이 구조 탓이다 —
+ *  아무도 안 쓰는 링크라 아무도 안 눌러 봤다.)
+ *
+ * 이제 **본문이 실제로 인용한 것만** 보여준다. 인용이 없으면 References 섹션은
+ * 뜨지 않는다. 권위 있는 주장을 하는 글이라면 폴백에 기대지 말고
+ * **그 문장에 직접 링크를 달 것.**
+ */
 export function getReferences(body: string): Reference[] {
-  const extracted = extractReferences(body);
-  return extracted.length > 0 ? extracted : STANDARD_AU_REFERENCES;
+  return extractReferences(body);
 }
 
 // ─── Ingredient categories ────────────────────────────────────────────────────
@@ -200,7 +209,7 @@ const EXACT_EMOJIS: Record<string, string> = {
   // Grains & Noodles
   "GF Pasta": "🍝",
   "Macaroni": "🍝",
-  "Muesli (Nut-free)": "🌾",
+  Muesli: "🌾",
   "Nori": "🌿",
   "Oat Cookie": "🍪",
   "Pasta": "🍝",

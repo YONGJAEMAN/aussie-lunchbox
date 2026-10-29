@@ -1,0 +1,201 @@
+{
+  "_doc": [
+    "⚠️ 이것은 가격지수 데이터가 **아니다.** 매장 실사를 빠르게 하기 위한 참고값이다.",
+    "",
+    "출처: paknsave.co.nz 온라인 게시가, 점포=PAK'nSAVE Ormiston (1 Bellingham Road, Flat Bush).",
+    "지수의 Pak'nSave 열은 이제 같은 온라인 피드에서 자동으로 채워진다(scripts/update_paknsave_prices.mjs).",
+    "그래서 이 파일의 쓸모는 하나뿐이다 — **매장에서 태그와 대조할 목록**.",
+    "",
+    "🔴 `status`를 먼저 볼 것:",
+    "  regular    = 지금 정상가로 보인다. 태그가 다르면 태그가 맞다.",
+    "  on-special = **지금 특가다.** 노란 딱지 값이라 지수엔 못 넣는다.",
+    "               `normalOnline`이 사이트가 말하는 정상가지만, 매장 태그로 확인할 것.",
+    "  not-found  = 상품 페이지가 없다(단종·리뉴얼 의심). SKU 재선정 대상.",
+    "  no-pin     = Pak'nSave 고정 SKU가 아직 없다.",
+    "",
+    "⚠️ 매장 전환 필수: 기본값은 Highland Park이고 가격도 특가도 다르다.",
+    "   paknsave.co.nz 상단 'Your store is' → Change store → 'Ormiston' 검색 → Select.",
+    "",
+    "📌 `brandNote`는 지수가 지정한 브랜드/품종이다. 2026-07-30에 이걸 안 읽어",
+    "   17건 중 9건의 브랜드가 어긋났다. 매장에서도 그 상품을 봐야 한다."
+  ],
+  "source": "paknsave.co.nz online, store: PAK'nSAVE Ormiston",
+  "collectedAt": "2026-08-24",
+  "isIndexData": false,
+  "items": {
+    "Wholegrain Bread (700g)": {
+      "status": "regular",
+      "product": "Molenberg Original Toast Bread",
+      "size": "700g",
+      "online": 2.99,
+      "woolworths": 4.4,
+      "sku": "5026127-EA-000"
+    },
+    "Wraps 6-pack": {
+      "status": "on-special",
+      "product": "Farrah's Wraps Premium White",
+      "size": "6pk",
+      "online": 4.79,
+      "woolworths": 6.99,
+      "brandNote": "Farrah's Premium White",
+      "sku": "5016678-EA-000"
+    },
+    "Bagels 4-pack": {
+      "status": "regular",
+      "product": "Everyday Original Bagels",
+      "size": "4pk",
+      "online": 3.69,
+      "woolworths": 3.79,
+      "sku": "5286875-EA-000"
+    },
+    "Apples (1kg)": {
+      "status": "regular",
+      "product": "Granny Smith Apples",
+      "size": "kg",
+      "online": 4.49,
+      "woolworths": 4.5,
+      "brandNote": "Granny Smith",
+      "sku": "5039945-KGM-000"
+    },
+    "Bananas (1kg)": {
+      "status": "regular",
+      "product": "Bananas",
+      "size": "kg",
+      "online": 3.49,
+      "woolworths": 3.75,
+      "sku": "5046542-KGM-000"
+    },
+    "Carrots (1kg)": {
+      "status": "regular",
+      "product": "Carrots",
+      "size": "kg",
+      "online": 1.99,
+      "woolworths": 2.25,
+      "sku": "5039965-KGM-000"
+    },
+    "Cucumber": {
+      "status": "regular",
+      "product": "Telegraph Cucumber",
+      "size": "ea",
+      "online": 3.49,
+      "woolworths": 2.49,
+      "brandNote": "Telegraph",
+      "sku": "5028889-EA-000"
+    },
+    "Lettuce": {
+      "status": "on-special",
+      "product": "Pams Iceberg Lettuce",
+      "size": "1pk",
+      "online": 2.99,
+      "woolworths": 3.49,
+      "brandNote": "Iceberg",
+      "sku": "5303543-EA-000"
+    },
+    "Sliced Chicken (200g)": {
+      "status": "regular",
+      "product": "Hellers Shaved Roast Chicken",
+      "size": "200g",
+      "online": 4.99,
+      "woolworths": 6.5,
+      "brandNote": "Deli sliced",
+      "sku": "5013383-EA-000"
+    },
+    "Canned Tuna (185g)": {
+      "status": "regular",
+      "product": "Sealord Chunky Style Tuna In Spring Water",
+      "size": "185g",
+      "online": 3.99,
+      "woolworths": 4.5,
+      "brandNote": "Sealord in springwater",
+      "sku": "5009791-EA-000"
+    },
+    "Sliced Ham (200g)": {
+      "status": "regular",
+      "product": "Beehive Shaved Champagne Ham",
+      "size": "200g",
+      "online": 4.69,
+      "woolworths": 5.99,
+      "sku": "5023557-EA-000"
+    },
+    "Cheese Block (500g)": {
+      "status": "regular",
+      "product": "Mainland Smooth & Mellow Mild Cheese",
+      "size": "500g",
+      "online": 8.99,
+      "woolworths": 10.5,
+      "brandNote": "Mainland mild",
+      "sku": "5025944-EA-000"
+    },
+    "Eggs (12-pack)": {
+      "status": "regular",
+      "product": "New Day Size 7 Eggs",
+      "size": "12pk",
+      "online": 10.99,
+      "woolworths": 11.79,
+      "brandNote": "Free range",
+      "sku": "5342311-EA-000"
+    },
+    "Yoghurt (1kg)": {
+      "status": "on-special",
+      "product": "Fresh 'n Fruity Greek Natural Thick 'n Creamy Yoghurt",
+      "size": "1kg",
+      "online": 6.39,
+      "woolworths": 7.75,
+      "brandNote": "Fresh 'n Fruity Greek natural",
+      "sku": "5281810-EA-000"
+    },
+    "Butter (500g)": {
+      "status": "regular",
+      "product": "Anchor Butter",
+      "size": "500g",
+      "online": 9.29,
+      "woolworths": 9.7,
+      "brandNote": "Anchor",
+      "sku": "5002650-EA-000"
+    },
+    "Rice (1kg)": {
+      "status": "regular",
+      "product": "SunRice Long Grain White Rice",
+      "size": "1kg",
+      "online": 3.42,
+      "woolworths": 3.4,
+      "brandNote": "Long grain white",
+      "sku": "5002645-EA-000"
+    },
+    "Pasta (500g)": {
+      "status": "regular",
+      "product": "Pams Penne Pasta",
+      "size": "500g",
+      "online": 1.59,
+      "woolworths": 1.79,
+      "brandNote": "Penne",
+      "sku": "5323415-EA-000"
+    },
+    "Hummus (220g)": {
+      "status": "regular",
+      "product": "Obela Classic Hommus",
+      "size": "220g",
+      "online": 4.99,
+      "woolworths": 5.39,
+      "brandNote": "Obela Classic",
+      "sku": "5224862-EA-000"
+    },
+    "Peanut Butter (380g)": {
+      "status": "regular",
+      "product": "Pic's Smooth Peanut Butter",
+      "size": "380g",
+      "online": 6.99,
+      "woolworths": 7.79,
+      "brandNote": "Pic's smooth",
+      "sku": "5019876-EA-000"
+    },
+    "Cherry Tomatoes (180g)": {
+      "status": "regular",
+      "product": "Pams Cherry Tomatoes",
+      "size": "180g",
+      "online": 6.49,
+      "woolworths": 6.99,
+      "sku": "5345926-EA-000"
+    }
+  }
+}

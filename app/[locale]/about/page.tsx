@@ -1,9 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import Footer from "@/components/Footer";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = "https://www.kiwilunchbox.co.nz";
+const OPERATOR_PHOTO = "/assets/operator-yong-jae-lee.jpg";
 
 export async function generateMetadata({
   params,
@@ -11,20 +15,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/about`;
-  return {
-    title: "About – Aussie Lunchbox | Built by a Parent",
+  return buildPageMetadata({
+    path: "/about",
+    locale,
+    title: "About – Kiwi Lunchbox | Built by a Parent in Auckland",
     description:
-      "Aussie Lunchbox is a free school lunch planner built by Yong Jae Lee, a Senior Product Designer. Learn how content is researched and verified for Australian families.",
-    alternates: {
-      canonical,
-      languages: {
-        "x-default": `${BASE_URL}/about`,
-        en: `${BASE_URL}/about`,
-      },
-    },
-    openGraph: { url: canonical },
-  };
+      "Kiwi Lunchbox is a free school lunch planner built by Yong Jae Lee, a Senior Product Designer in Auckland. Learn how content is researched and verified.",
+  });
 }
 
 export default async function AboutPage() {
@@ -36,11 +33,12 @@ export default async function AboutPage() {
     "@type": "Person",
     name: "Yong Jae Lee",
     jobTitle: "Senior Product Designer",
+    image: `${BASE_URL}${OPERATOR_PHOTO}`,
     url: "https://www.linkedin.com/in/francescolee/",
     sameAs: ["https://www.linkedin.com/in/francescolee/"],
     worksFor: {
       "@type": "Organization",
-      name: "Aussie Lunchbox",
+      name: "Kiwi Lunchbox",
       url: BASE_URL,
     },
   };
@@ -53,57 +51,69 @@ export default async function AboutPage() {
       />
 
       {/* Hero */}
-      <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">About</p>
+      <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
+        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">About</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           A lunch planner built by a parent, for parents
         </h1>
         <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-          Free, practical, and made with real Australian supermarket ingredients.
+          Free, practical, and made with real NZ supermarket ingredients.
         </p>
       </section>
 
       {/* About the Creator */}
       <section className="max-w-5xl mx-auto py-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
-          <div className="md:col-span-3 bg-[#FFF8EE] rounded-3xl p-10">
-            <h2 className="text-2xl font-bold text-[#7B3F00] mb-4">Hi, I&apos;m Yong Jae Lee.</h2>
+          <div className="md:col-span-3 bg-[#F7F9FC] rounded-3xl p-10">
+            <h2 className="text-2xl font-bold text-[#366A1B] mb-4">Hi, I&apos;m Yong Jae Lee.</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              I&apos;m a Senior Product Designer based in Auckland. I built Aussie Lunchbox alongside Kiwi Lunchbox &mdash; the same tool, adapted for Australian supermarkets and dietary guidelines, because the morning lunchbox stress is the same problem on both sides of the Tasman.
+              I&apos;m a Senior Product Designer based in Auckland. Every morning I&apos;d find myself standing in front of the fridge, wondering what to pack in my child&apos;s lunchbox &mdash; and every weekend I&apos;d stress about what groceries to buy for the week ahead.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              I wanted parents to be able to pack proper, balanced lunches using ingredients actually available at Woolworths and Coles &mdash; without spending 20 minutes each night planning. So I built this: a free tool that generates a week of school lunches in seconds, with shopping lists and price estimates.
+              I wanted to make proper, balanced lunches using ingredients actually available at Woolworths and Pak&apos;nSave &mdash; without spending 20 minutes each night planning. So I built Kiwi Lunchbox: a free tool that generates a week of school lunches in seconds, complete with shopping lists and price estimates.
+            </p>
+            {/* 🔴 09-29: 「both columns are read weekly」 — 수집기(update_prices.yml)는 New World 열까지 셋을 매주 읽는다.
+                5월 라운드 매장도 「those branches」(Botany·Meadowlands까지 읽혔다)가 아니라 priceIndex.json의 checkedAt 두 곳이다. */}
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I&apos;m based in East Auckland and do most of our family shopping at Pak&apos;nSave, split fairly evenly between the Ormiston and Botany stores, with the odd top-up at Woolworths Meadowlands or the Tai Ping Asian grocer. Being a Korean family, the rice and nori for my daughter&apos;s onigiri come from the Korean grocer and the furikake from the Japanese one &mdash; so the prices and examples across this site come from the shops I actually push a trolley around. The May 2026 round of the price index was walked in store at Pak&apos;nSave Ormiston and Woolworths Ormiston. Since then the Woolworths, Pak&apos;nSave and New World columns are all read weekly from each chain&apos;s own online shop &mdash; Woolworths and Pak&apos;nSave on every item, New World on most of them &mdash; that is what makes a weekly refresh possible, and it is spelled out on the <Link href={`/${locale}/price-index`} className="underline">Price Index</Link> page along with what it costs in accuracy.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              This is a solo project. There&apos;s no team, no investors, no sponsored content. Just a parent building something useful.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              This is a solo project. There&apos;s no team, no investors, no sponsored content. Just a parent building something useful.
+              <strong>🔖 What&apos;s a bit different here:</strong> each Monday the Woolworths and New World mailers are transcribed and I record which specials match a product the planner actually prices, at the same pack size, checked against that product&apos;s own online listing. The planner&apos;s <em>&quot;Rank by cost after this week&apos;s specials&quot;</em> option &mdash; on by default &mdash; then ranks lunches by what they cost after those specials, so cheaper lunches come up more often. It ranks; it does not build the week around the mailer, and most advertised specials don&apos;t clear the matching bar (the <Link href={`/${locale}/faq`} className="underline">FAQ</Link> explains why).
             </p>
           </div>
           <div className="md:col-span-2">
-            <div className="bg-[#FFF8EE] rounded-3xl p-8">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 rounded-full bg-[#7B3F00] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                  YJ
+            <div className="bg-[#F7F9FC] rounded-3xl p-8">
+              <div className="flex flex-col items-center text-center mb-6">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-white shadow-md">
+                  <Image
+                    src={OPERATOR_PHOTO}
+                    alt="Yong Jae Lee, the parent and Senior Product Designer who builds and runs Kiwi Lunchbox in Auckland"
+                    fill
+                    className="object-cover object-top"
+                    sizes="128px"
+                  />
                 </div>
-                <div>
-                  <p className="font-bold text-[#1a1a1a] text-lg">Yong Jae Lee</p>
-                  <p className="text-sm text-[#F5A623]">Senior Product Designer</p>
-                  <p className="text-xs text-gray-400">Auckland</p>
-                </div>
+                <p className="font-bold text-[#1a1a1a] text-lg">Yong Jae Lee</p>
+                <p className="text-sm text-[#366A1B]">Senior Product Designer</p>
+                <p className="text-xs text-gray-500">Auckland, New Zealand</p>
               </div>
               <div className="space-y-3 text-sm">
                 <a
                   href="https://www.linkedin.com/in/francescolee/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#7B3F00] hover:underline"
+                  className="flex items-center gap-2 text-[#366A1B] hover:underline"
                 >
                   <span>in</span> LinkedIn Profile
                 </a>
                 <a
-                  href="mailto:yongjaeman@gmail.com"
-                  className="flex items-center gap-2 text-[#7B3F00] hover:underline"
+                  href="mailto:kiwilunchboxplanner@gmail.com"
+                  className="flex items-center gap-2 text-[#366A1B] hover:underline"
                 >
-                  <span>@</span> yongjaeman@gmail.com
+                  <span>@</span> kiwilunchboxplanner@gmail.com
                 </a>
               </div>
             </div>
@@ -111,10 +121,10 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Aussie Lunchbox */}
-      <section className="bg-[#FFF8EE] py-20 px-4">
+      {/* Why Choose Kiwi Lunchbox */}
+      <section className="bg-[#F7F9FC] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>
+          <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>
           <h2 className="text-3xl font-extrabold text-center text-[#1a1a1a] mb-12">{t("about_why_title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -134,7 +144,7 @@ export default async function AboutPage() {
 
       {/* How I Research Content */}
       <section className="max-w-5xl mx-auto py-20 px-4">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
+        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
         <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">How I Research Content</h2>
         <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           Every piece of content on this site goes through a consistent research and verification process.
@@ -143,27 +153,29 @@ export default async function AboutPage() {
           {[
             {
               num: "1",
-              title: "Australian health guidelines first",
+              title: "NZ health guidelines first",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   All nutrition content is benchmarked against the{" "}
-                  <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                    Australian Dietary Guidelines (Eat for Health)
+                  <a href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                    Ministry of Health NZ Healthy Eating Guidelines
                   </a>{" "}
                   and the{" "}
-                  <a href="https://www.heartfoundation.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                    National Heart Foundation of Australia
+                  <a href="https://www.heartfoundation.org.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                    Heart Foundation NZ
                   </a>{" "}
-                  food guidance. I do not publish nutrition claims without a credible Australian or international source.
+                  food guidance. I do not publish nutrition claims without a credible NZ or international source.
                 </p>
               ),
             },
             {
               num: "2",
-              title: "Tested with Australian ingredients",
+              // 🔴 2026-09-09 외부 감사 — 제목은 "Tested"인데 본문은 "재고를 확인한다"였다.
+              //    재고 확인은 시험이 아니다. 본문이 맞으므로 제목을 본문에 맞춘다.
+              title: "Checked against NZ supermarket stock",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Every recipe is checked for ingredient availability at Woolworths, which is the chain this site prices against. I don&apos;t recommend products that aren&apos;t reliably stocked in Australian supermarkets. Price estimates are regular (non-special) prices, refreshed weekly from Woolworths&apos; own online catalogue.
+                  Every recipe is checked for ingredient availability at Woolworths and Pak&apos;nSave. I don&apos;t recommend products that aren&apos;t reliably stocked in New Zealand supermarkets. Price estimates are based on regular shelf prices, refreshed weekly.
                 </p>
               ),
             },
@@ -173,8 +185,8 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Allergy-related content is cross-referenced against product labels, manufacturer allergen statements, and{" "}
-                  <a href="https://allergyfacts.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#F5A623] hover:underline">
-                    Allergy &amp; Anaphylaxis Australia
+                  <a href="https://www.allergy.org.nz/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                    Allergy New Zealand
                   </a>{" "}
                   guidance. However, I always advise readers to check product labels directly &mdash; formulations change.
                 </p>
@@ -182,10 +194,10 @@ export default async function AboutPage() {
             },
             {
               num: "4",
-              title: "School context is AU-specific",
+              title: "School context is NZ-specific",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Australian primary schools vary in their lunchbox policies. I note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly.
+                  NZ primary schools vary in their lunchbox policies. I note where school rules may differ (e.g., nut-free zones, no glass containers, no hot food without insulated containers). When in doubt, check your school&apos;s lunchbox policy directly.
                 </p>
               ),
             },
@@ -194,7 +206,7 @@ export default async function AboutPage() {
               title: "Regular review cycle",
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Articles are reviewed when Australian dietary guidelines change, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
+                  Articles are reviewed when MoH guidelines change, when prices shift substantially, or when a reader flags an issue. Each article shows its publication date and last review date.
                 </p>
               ),
             },
@@ -204,7 +216,7 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   I take accuracy seriously. If you find an error &mdash; whether a wrong price, an incorrect allergy tag, or outdated school policy &mdash; please{" "}
-                  <Link href={`/${locale}/contact`} className="text-[#F5A623] hover:underline">
+                  <Link href={`/${locale}/contact`} className="text-[#366A1B] hover:underline">
                     contact me
                   </Link>
                   . I aim to respond and update within 48 hours.
@@ -212,9 +224,9 @@ export default async function AboutPage() {
               ),
             },
           ].map((item) => (
-            <div key={item.num} className="bg-[#FFF8EE] rounded-3xl p-7">
+            <div key={item.num} className="bg-[#F7F9FC] rounded-3xl p-7">
               <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#7B3F00] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="bg-[#366A1B] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                   {item.num}
                 </span>
                 <h3 className="font-bold text-[#1a1a1a]">{item.title}</h3>
@@ -231,14 +243,14 @@ export default async function AboutPage() {
           <h3 className="font-bold text-amber-800 mb-3">Important: What This Site Is NOT</h3>
           <ul className="text-amber-700 text-sm space-y-2 leading-relaxed">
             <li>This is <strong>not a medical or dietetic service</strong>. Content is general guidance for healthy children, not personalised nutrition advice. If your child has a medical condition or complex dietary needs, consult a registered dietitian.</li>
-            <li>This site is <strong>not affiliated with Woolworths, Coles, or any supermarket</strong>. Price data is collected independently. I do not receive payment for product recommendations.</li>
+            <li>This site is <strong>not affiliated with Woolworths, Pak&apos;nSave, or any supermarket</strong>. Price data is collected independently. I do not receive payment for product recommendations.</li>
             <li>I am <strong>not responsible for allergic reactions</strong>. Always verify product labels yourself. Manufacturers change formulations and cross-contamination risks vary.</li>
           </ul>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-[#7B3F00] py-20 px-4 text-center">
+      <section className="bg-[#366A1B] py-20 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h3 className="text-3xl font-extrabold text-white mb-4">{t("about_community_title")}</h3>
           <p className="text-white/80 mb-8 leading-relaxed">
@@ -246,7 +258,7 @@ export default async function AboutPage() {
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="bg-[#F5A623] hover:bg-white hover:text-[#7B3F00] text-white font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
+            className="bg-white hover:bg-[#F7F9FC] text-[#366A1B] font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
           >
             {t("about_start_btn")}
           </Link>
@@ -254,46 +266,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">AL</span>
-                </div>
-                <span className="font-bold">Aussie Lunchbox</span>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
-                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
-                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
-                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
-                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8">
-            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer locale={locale} />
     </main>
   );
 }

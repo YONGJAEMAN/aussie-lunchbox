@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = "https://www.kiwilunchbox.co.nz";
 
 export async function generateMetadata({
   params,
@@ -8,16 +8,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${BASE_URL}/policies`;
+  const canonical = `${BASE_URL}/${locale}/policies`;
   return {
-    title: "Privacy Policy & Disclaimer | Aussie Lunchbox",
+    title: "Privacy Policy & Disclaimer | Kiwi Lunchbox",
     description:
-      "Read the Aussie Lunchbox privacy policy, including how we use Google AdSense, Google Analytics, Supabase, and how we handle your data under Australian law.",
+      "Read the Kiwi Lunchbox privacy policy, including how we use Google AdSense, Google Analytics, Supabase, and how we handle your data under NZ law.",
     alternates: {
       canonical,
+      // ko/zh hreflang은 AdSense 승인 단계에서 제거.
       languages: {
-        "x-default": `${BASE_URL}/policies`,
-        en: `${BASE_URL}/policies`,
+        "x-default": `${BASE_URL}/en/policies`,
+        en: `${BASE_URL}/en/policies`,
       },
     },
     openGraph: { url: canonical },

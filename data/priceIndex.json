@@ -1,0 +1,359 @@
+{
+  "lastUpdated": "2026-10-25",
+  "checkedAt": "Pak'nSave Ormiston and Woolworths Ormiston, East Auckland",
+  "checkedBy": "Yong Jae Lee",
+  "source": "Numbeo, TheMigrateHub, Woolworths.co.nz (May 2026)",
+  "items": [
+    {
+      "name": "Wholegrain Bread (700g)",
+      "category": "Bakery",
+      "countdown": 4.4,
+      "paknsave": 2.99,
+      "unit": "per loaf",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25"
+    },
+    {
+      "name": "Wraps 6-pack",
+      "category": "Bakery",
+      "countdown": 6.99,
+      "paknsave": 5.79,
+      "unit": "per pack",
+      "note": "Farrah's Premium White",
+      "paknsaveAsOf": "2026-10-25",
+      "respec": {
+        "on": "2026-08-12",
+        "was": "an 8-pack, which Woolworths does not sell"
+      },
+      "newworld": 6.99,
+      "newworldAsOf": "2026-10-18"
+    },
+    {
+      "name": "Bagels 4-pack",
+      "category": "Bakery",
+      "countdown": 3.79,
+      "paknsave": 3.69,
+      "unit": "per pack",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 3.99,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Apples (1kg)",
+      "category": "Produce",
+      "countdown": 4,
+      "paknsave": 2.99,
+      "unit": "per kg",
+      "note": "Granny Smith",
+      "paknsaveAsOf": "2026-10-25",
+      "respec": {
+        "on": "2026-08-12",
+        "was": "Royal Gala, which Pak'nSave Ormiston does not sell loose"
+      },
+      "newworld": 4.99,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Bananas (1kg)",
+      "category": "Produce",
+      "countdown": 3.99,
+      "paknsave": 3.59,
+      "unit": "per kg",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 3.59,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Carrots (1kg)",
+      "category": "Produce",
+      "countdown": 2.5,
+      "paknsave": 1.99,
+      "unit": "per kg",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 2.49,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Cherry Tomatoes (180g)",
+      "category": "Produce",
+      "countdown": 2.79,
+      "paknsave": 3.79,
+      "unit": "per punnet",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 3.59,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Cucumber",
+      "category": "Produce",
+      "countdown": 2.49,
+      "paknsave": 1.99,
+      "unit": "each",
+      "note": "Telegraph",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 2.49,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Lettuce",
+      "category": "Produce",
+      "countdown": 2.2,
+      "paknsave": 2.99,
+      "unit": "each",
+      "note": "Iceberg",
+      "paknsaveAsOf": "2026-10-18",
+      "newworld": 3.49,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Sliced Chicken (200g)",
+      "category": "Meat & Deli",
+      "countdown": 6.5,
+      "paknsave": 4.99,
+      "unit": "per pack",
+      "note": "Deli sliced",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 6.99,
+      "newworldAsOf": "2026-10-18"
+    },
+    {
+      "name": "Canned Tuna (185g)",
+      "category": "Meat & Deli",
+      "countdown": 4.5,
+      "paknsave": 3.99,
+      "unit": "per can",
+      "note": "Sealord in springwater",
+      "paknsaveAsOf": "2026-10-18",
+      "newworld": 4.49,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Sliced Ham (200g)",
+      "category": "Meat & Deli",
+      "countdown": 5.99,
+      "paknsave": 6.49,
+      "unit": "per pack",
+      "note": "",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 7.69,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Cheese Block (500g)",
+      "category": "Dairy & Eggs",
+      "countdown": 10.5,
+      "paknsave": 8.99,
+      "unit": "per block",
+      "note": "Mainland mild",
+      "paknsaveAsOf": "2026-10-25"
+    },
+    {
+      "name": "Eggs (12-pack)",
+      "category": "Dairy & Eggs",
+      "countdown": 11.79,
+      "paknsave": 10.99,
+      "unit": "per dozen",
+      "note": "Free range",
+      "paknsaveAsOf": "2026-09-13",
+      "newworld": 10.79,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Yoghurt (1kg)",
+      "category": "Dairy & Eggs",
+      "countdown": 8.25,
+      "paknsave": 7.29,
+      "unit": "per tub",
+      "note": "Fresh 'n Fruity Greek natural",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 8.29,
+      "newworldAsOf": "2026-10-11"
+    },
+    {
+      "name": "Butter (500g)",
+      "category": "Dairy & Eggs",
+      "countdown": 9.7,
+      "paknsave": 9.29,
+      "unit": "per block",
+      "note": "Anchor",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 9.79,
+      "newworldAsOf": "2026-10-18"
+    },
+    {
+      "name": "Rice (1kg)",
+      "category": "Pantry",
+      "countdown": 3.4,
+      "paknsave": 3.39,
+      "unit": "per kg",
+      "note": "Long grain white",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 3.39,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Pasta (500g)",
+      "category": "Pantry",
+      "countdown": 1.79,
+      "paknsave": 1.52,
+      "unit": "per pack",
+      "note": "Penne",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 1.79,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Hummus (220g)",
+      "category": "Pantry",
+      "countdown": 5.39,
+      "paknsave": 4.99,
+      "unit": "per tub",
+      "note": "Obela Classic",
+      "paknsaveAsOf": "2026-10-25",
+      "respec": {
+        "on": "2026-08-12",
+        "was": "a 200g tub, a size neither chain stocks in this line"
+      },
+      "newworld": 5.39,
+      "newworldAsOf": "2026-10-25"
+    },
+    {
+      "name": "Peanut Butter (380g)",
+      "category": "Pantry",
+      "countdown": 7.79,
+      "paknsave": 6.99,
+      "unit": "per jar",
+      "note": "Pic's smooth",
+      "paknsaveAsOf": "2026-10-25",
+      "newworld": 7.69,
+      "newworldAsOf": "2026-10-25"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-05-16",
+      "method": "both columns checked in store on the same round",
+      "comparable": true,
+      "woolworthsTotal": 99.48,
+      "paknsaveTotal": 87.42,
+      "gap": 12.06,
+      "paknsaveCheaperCount": 20,
+      "woolworthsCheaperCount": 0,
+      "biggestGapItem": "Cheese Block (500g)",
+      "biggestGap": 1.41,
+      "note": "본문 'What the May check showed'가 인용하는 스냅샷. 이후 Woolworths 열만 자동 갱신되므로 이 라운드가 마지막 동일시점 비교다.",
+      "items": [
+        {
+          "name": "Wholegrain Bread (700g)",
+          "countdown": 4.5,
+          "paknsave": 3.99
+        },
+        {
+          "name": "Wraps 8-pack",
+          "countdown": 5,
+          "paknsave": 4.5
+        },
+        {
+          "name": "Bagels 4-pack",
+          "countdown": 4.5,
+          "paknsave": 3.99
+        },
+        {
+          "name": "Apples (1kg)",
+          "countdown": 4.99,
+          "paknsave": 4.49
+        },
+        {
+          "name": "Bananas (1kg)",
+          "countdown": 3.49,
+          "paknsave": 3.29
+        },
+        {
+          "name": "Carrots (1kg)",
+          "countdown": 2.99,
+          "paknsave": 2.49
+        },
+        {
+          "name": "Cherry Tomatoes (250g)",
+          "countdown": 4.99,
+          "paknsave": 4.49
+        },
+        {
+          "name": "Cucumber",
+          "countdown": 2.49,
+          "paknsave": 1.99
+        },
+        {
+          "name": "Lettuce",
+          "countdown": 3.49,
+          "paknsave": 2.99
+        },
+        {
+          "name": "Sliced Chicken (200g)",
+          "countdown": 6.5,
+          "paknsave": 5.99
+        },
+        {
+          "name": "Canned Tuna (185g)",
+          "countdown": 2.7,
+          "paknsave": 2.3
+        },
+        {
+          "name": "Sliced Ham (200g)",
+          "countdown": 5.5,
+          "paknsave": 4.99
+        },
+        {
+          "name": "Cheese Block (500g)",
+          "countdown": 9.9,
+          "paknsave": 8.49
+        },
+        {
+          "name": "Eggs (12-pack)",
+          "countdown": 9.49,
+          "paknsave": 8.49
+        },
+        {
+          "name": "Yoghurt (1kg)",
+          "countdown": 6.99,
+          "paknsave": 5.99
+        },
+        {
+          "name": "Butter (500g)",
+          "countdown": 6.49,
+          "paknsave": 5.79
+        },
+        {
+          "name": "Rice (1kg)",
+          "countdown": 3.49,
+          "paknsave": 2.99
+        },
+        {
+          "name": "Pasta (500g)",
+          "countdown": 2.49,
+          "paknsave": 1.89
+        },
+        {
+          "name": "Hummus (200g)",
+          "countdown": 4.5,
+          "paknsave": 3.99
+        },
+        {
+          "name": "Peanut Butter (375g)",
+          "countdown": 4.99,
+          "paknsave": 4.29
+        }
+      ]
+    }
+  ],
+  "paknsaveUpdated": "2026-10-25",
+  "paknsaveMethod": "Pak'nSave Ormiston online price feed (fixed SKUs, Click & Collect pricing)",
+  "woolworthsUpdated": "2026-10-25",
+  "woolworthsMethod": "Woolworths NZ online price feed (fixed SKUs, regular shelf price)",
+  "newworldUpdated": "2026-10-25",
+  "newworldMethod": "New World Ormiston online price feed (fixed SKUs, Click & Collect pricing)"
+}

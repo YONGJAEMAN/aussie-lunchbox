@@ -10,7 +10,6 @@ export default [
       "public/**",
       "next-env.d.ts",
       "scripts/**",
-      ".claude/**",
     ],
   },
   js.configs.recommended,

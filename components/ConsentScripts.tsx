@@ -9,7 +9,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
  * Consent-gated analytics scripts.
  *
  * AdSense (adsbygoogle.js)는 app/[locale]/layout.tsx <head>에 raw script로 직접
- * 추가됨 (영어 페이지에 한정, consent 무관 — crawler가 광고 코드 검증 가능).
+ * 추가됨 (consent 무관 항상 로드 — crawler가 광고 코드 검증할 수 있도록).
  *
  * 여기서는 user-level tracking에 해당하는 GA만 consent 후에 로드.
  */

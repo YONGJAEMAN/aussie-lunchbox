@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
-import { BRAND } from "@/lib/brand";
 
-const BASE_URL = BRAND.SITE_URL;
+const BASE_URL = "https://www.kiwilunchbox.co.nz";
 
 export default function robots(): MetadataRoute.Robots {
   return {

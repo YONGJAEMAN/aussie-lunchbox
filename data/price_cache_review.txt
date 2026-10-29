@@ -1,0 +1,407 @@
+# 재료 → 선택된 상품 (검수용)
+# 생성: update_prices.mjs / 선별 규칙: lib/priceSearch.mjs
+# 이상한 매칭이 보이면 SEARCH_TERMS 또는 AVOID_TOKENS에 반영할 것
+#
+# 🔴 넛프리 사이트다. 상품명에 견과류(almond·cashew·hazelnut·walnut·pecan·
+#    macadamia·pistachio)가 보이면 그 자리에서 고칠 것. 2026-08-06에 Croissant이
+#    "french croissant chocolate hazelnut"으로 넘어가기 직전이었다.
+#
+# 검색으로 안 잡혀 폴백가를 쓴 재료 (4종):
+#      Chicken/Tofu
+#      Ham/Bacon
+#      Tuna/Chicken/Avocado
+#      Turkey
+#
+# SKU로 고정한 재료 (193종) — 검색 대신 상품을 직접 지정한다:
+#      Apple
+#      Avocado
+#      Bacon
+#      Bagel
+#      Baking Powder
+#      Baking Soda
+#      Banana
+#      Bao Buns
+#      Basil
+#      Beef
+#      Beef Mince
+#      Beef Patty
+#      Berries
+#      Black Beans
+#      Blueberries
+#      Boiled Egg
+#      Boiled Eggs
+#      Bread
+#      Bread Roll
+#      Breadcrumbs
+#      Breadsticks
+#      Broccoli
+#      Burger Bun
+#      Butter
+#      Butter Chicken Sauce
+#      Cabbage
+#      Caesar Dressing
+#      Canned Tuna
+#      Capsicum
+#      Carrot
+#      Celery
+#      Cheese
+#      Cheese Block
+#      Cheese Sauce
+#      Cheese Stick
+#      Cherry Tomatoes
+#      Chicken
+#      Chicken Breast
+#      Chicken Skewers
+#      Chicken Thigh
+#      Chickpeas
+#      Ciabatta
+#      Cinnamon
+#      Cocktail Sausages
+#      Cocoa
+#      Coconut
+#      Coconut Milk
+#      Coconut Oil
+#      Cooked Chicken
+#      Corn
+#      Corn Chips
+#      Corn Tortilla
+#      Cos Lettuce
+#      Cottage Cheese
+#      Courgette
+#      Couscous
+#      Crackers
+#      Cream Cheese
+#      Cream/Milk
+#      Croissant
+#      Croutons
+#      Cucumber
+#      Cumin
+#      Curry Paste
+#      Curry Spices
+#      Dairy-Free Pesto
+#      Dark Chocolate
+#      Dates
+#      Desiccated Coconut
+#      Dried Apricots
+#      Dumpling Wrappers
+#      Edamame
+#      Egg
+#      Egg (glaze)
+#      Eggs
+#      Falafel
+#      Feta
+#      Flour
+#      GF Crackers
+#      GF Pasta
+#      GF Sausages
+#      Ginger
+#      Gluten-Free Bread
+#      Gluten-Free Flour
+#      Golden Syrup
+#      Grapes
+#      Grated Apple
+#      Ham
+#      Herbs
+#      Hoisin Sauce
+#      Honey
+#      Hummus
+#      Jam
+#      Kidney Beans
+#      Kiwifruit
+#      Lemon
+#      Lemon Dressing
+#      Lettuce
+#      Macaroni
+#      Mandarin
+#      Mango Chutney
+#      Marmite
+#      Mayo
+#      Mayonnaise
+#      Meatballs
+#      Milk
+#      Mince
+#      Mixed Vegetables
+#      Mozzarella
+#      Muesli
+#      Muffin
+#      Mustard
+#      Noodles
+#      Nori
+#      Oat Cookie
+#      Oil
+#      Olive Oil
+#      Olives
+#      Onion
+#      Orange
+#      Paneer
+#      Parmesan
+#      Pasta
+#      Pasta spirals
+#      Pastry
+#      Pastry Cases
+#      Peanut Butter
+#      Peanut Sauce
+#      Pear
+#      Peas
+#      Pesto
+#      Pesto/Mayo
+#      Pickle
+#      Pita Bread
+#      Plain Flour
+#      Plant Milk
+#      Popcorn
+#      Pork Mince
+#      Pork Shoulder
+#      Potato
+#      Pretzels
+#      Probiotic Drink
+#      Puff Pastry
+#      Quinoa
+#      Real Fruit Strip
+#      Red Lentils
+#      Rice
+#      Rice Bubbles
+#      Rice Crackers
+#      Rice Noodles
+#      Rice Paper
+#      Rice Wheels
+#      Ripe Bananas
+#      Roast Beef
+#      Rocket
+#      Rockmelon
+#      Roll
+#      Rolled Oats
+#      Roti
+#      Salami
+#      Salsa
+#      Sausage Meat
+#      Sesame Oil
+#      Smoked Salmon
+#      Soy Sauce
+#      Spaghetti
+#      Spices
+#      Spinach
+#      Spring Onion
+#      Strawberries
+#      Sub Roll
+#      Sugar
+#      Sugar Snap Peas
+#      Sultanas
+#      Sushi Rice
+#      Sweetcorn
+#      Tahini
+#      Teriyaki Sauce
+#      Tofu
+#      Tomato
+#      Tomato Paste
+#      Tomato Sauce
+#      Tortilla
+#      Tuna
+#      Vanilla Essence
+#      Vegan Mayo
+#      Vegetable Stock
+#      Veggie Straws
+#      Vermicelli Noodles
+#      Watermelon
+#      Wholegrain Crackers
+#      Yeast
+#      Yoghurt
+
+Apple                    $5.85     fresh fruit apples royal gala
+Avocado                  $2.99     fresh avocado pre-ripened
+Bacon                    $6.89     woolworths streaky bacon honey cured
+Bagel                    $5.29     abe's bagels the natural
+Baking Powder            $3.69     woolworths baking powder 
+Baking Soda              $2.99     hansells baking soda 
+Banana                   $3.99     fresh fruit bananas yellow loose
+Bao Buns                 $7        united food co bao buns 480g
+Basil                    $4.95     fresh herb basil living plant
+Beef                     $13.99    woolworths nz beef stir fry premium grass fed
+Beef Mince               $16.99    woolworths nz angus beef mince grass fed 10% fat
+Beef Patty               $9        woolworths beef burger patties 
+Berries                  $7.79     woolworths frozen mixed berries 
+Black Beans              $2.49     edgell beans black
+Blueberries              $7.25     woolworths frozen blueberries 
+Boiled Egg               $9.55     hens choice eggs cage free mixed grade
+Boiled Eggs              $9.29     henergy eggs cage free size 6
+Bread                    $4.4      molenberg sandwich bread original
+Bread Roll               $4.7      woolworths bread rolls baps
+Breadcrumbs              $2.4      gerry's bread crumbs fine white
+Breadsticks              $4.9      woolworths bread sticks italian style
+Broccoli                 $2        fresh vegetable broccoli head
+Burger Bun               $4        woolworths burger buns plain
+Butter                   $9.7      anchor butter 
+Butter Chicken Sauce     $4.89     continental pasta & sauce butter chicken
+Cabbage                  $3        fresh vegetable cabbage whole
+Caesar Dressing          $6.19     best foods dressing caesar
+Canned Tuna              $1.35     woolworths tuna lemon & pepper
+Capsicum                 $2.75     fresh vegetable capsicum red
+Carrot                   $2.5      fresh vegetable carrots 
+Celery                   $5.69     fresh vegetable celery sticks
+Cheese                   $9.12     woolworths cheese mild
+Cheese Block             $10.42    woolworths cheese tasty
+Cheese Sauce             $1.85     continental cheese sauce four cheeses instant mix
+Cheese Stick             $6.49     dairyworks cheese snack low lactose cheddar sticks
+Cherry Tomatoes          $2.79     woolworths fresh tomatoes cherry
+Chicken                  $15       woolworths nz chicken breasts skin on
+Chicken Breast           $10       turk's chicken breast skinless fillets free range
+Chicken Skewers          $9        woolworths cook nz chicken kebabs satay
+Chicken Thigh            $17.9     bostocks organic chicken thighs 
+Chicken/Tofu             $5        Chicken/Tofu
+Chickpeas                $1.2      woolworths chickpeas no added salt
+Ciabatta                 $1.4      woolworths ciabatta pocket single
+Cinnamon                 $2.7      woolworths cinnamon ground
+Cocktail Sausages        $9.49     woolworths sausages thin pork
+Cocoa                    $7.79     cadbury baking cocoa powder bournville
+Coconut                  $4        macro coconut shredded
+Coconut Milk             $3.19     tcc coconut milk premium
+Coconut Oil              $7.52     macro organic virgin coconut oil 
+Cooked Chicken           $11.99    hellers craft roast chicken shredded
+Corn                     $3.29     edgell corn whole kernel
+Corn Chips               $5.3      mexicano corn chips natural
+Corn Tortilla            $4.5      woolworths free from gluten mexican tortillas white corn 280g
+Cos Lettuce              $2        fresh vegetable lettuce cos
+Cottage Cheese           $5.4      meadowfresh cottage cheese 
+Courgette                $13       fresh vegetable courgette 
+Couscous                 $2.89     woolworths couscous 
+Crackers                 $2.79     woolworths crackers sea salt
+Cream Cheese             $5.99     philadelphia cream cheese 
+Cream/Milk               $3.11     woolworths cream fresh
+Croissant                $3.6      woolworths french croissant large
+Croutons                 $4.49     fresh produce salad croutons garden herb
+Cucumber                 $2.5      fresh vegetable cucumbers telegraph
+Cumin                    $3.5      mrs rogers eco organic cumin ground
+Curry Paste              $5.09     exotic food curry paste red
+Curry Spices             $3.2      greggs curry powder 
+Dairy-Free Pesto         $8.9      veesey vegan fresh pesto chilled dairy free
+Dark Chocolate           $6.99     whittaker's dark chocolate block cocoa lovers 70% cocoa togo
+Dates                    $4.69     cinderella dates pitted
+Desiccated Coconut       $3.99     macro coconut desiccated
+Dried Apricots           $7.89     cinderella dried apricots 
+Dumpling Wrappers        $6.59     lian huat dumpling pastry 
+Edamame                  $4.29     mama san frozen edamame soy beans shelled
+Egg                      $11.79    macro eggs free range size 7
+Egg (glaze)              $10.49    woodland eggs free range size 6
+Eggs                     $10.29    farmer brown eggs cage free barn size 7
+Falafel                  $5.89     turkish kitchen falafel mix traditional omega 3
+Feta                     $5.99     bouton dor feta cheese 
+Flour                    $2.4      woolworths self raising flour white
+GF Crackers              $2.79     woolworths rice crackers brown rice & black sesame
+GF Pasta                 $5.39     buontempo pasta spirals gluten free
+GF Sausages              $13.49    hellers sausages precooked gluten free
+Ginger                   $2.49     woolworths crushed ginger 
+Gluten-Free Bread        $8.41     vogels gluten free sliced bread white
+Gluten-Free Flour        $4.19     freshlife rice flour gluten free
+Golden Syrup             $4.5      chelsea golden syrup 
+Grapes                   $9.9      fresh fruit grapes green
+Grated Apple             $5.85     fresh fruit apples royal gala
+Ham                      $5.5      woolworths shaved ham manuka smoked
+Ham/Bacon                $5.5      Ham/Bacon
+Herbs                    $2.7      woolworths mixed herbs 
+Hoisin Sauce             $3.6      woolworths hoisin sauce 
+Honey                    $10.99    arataki multiflora honey manuka
+Hummus                   $4.49     lisas hummus plain
+Jam                      $6.69     craigs fruit jam strawberry
+Kidney Beans             $1.2      woolworths beans red kidney no added salt
+Kiwifruit                $5.5      fresh fruit kiwifruit green
+Lemon                    $5.18     the odd bunch fresh fruit lemons 
+Lemon Dressing           $5.5      barkers dressing greek olive
+Lettuce                  $3.5      fresh vegetable lettuce trio
+Macaroni                 $1.49     essentials pasta macaroni
+Mandarin                 $6.8      fresh fruit mandarins 
+Mango Chutney            $6.5      ashoka chutney sweet mango
+Marmite                  $8.99     sanitarium marmite yeast spread 
+Mayo                     $7.4      best foods mayonnaise real
+Mayonnaise               $6.9      best foods mayonnaise real
+Meatballs                $9.99     woolworths nz beef meatballs 
+Milk                     $3.72     meadow fresh milk standard original
+Mince                    $12.99    woolworths nz beef mince grass fed 18% fat
+Mixed Vegetables         $3.69     woolworths frozen mixed vegetables 
+Mozzarella               $6.99     massimos mozzarella cheese 
+Muesli                   $4.89     woolworths muesli toasted berry
+Muffin                   $7        woolworths muffins double choc chip mini
+Mustard                  $4.87     colmans mustard original english
+Noodles                  $3.99     trident hokkien noodles two pack
+Nori                     $4.29     dragon foods nori roasted seaweed
+Oat Cookie               $4.39     arnotts farmbake cookies crunchy oat & fruit
+Oil                      $3.1      woolworths canola oil 
+Olive Oil                $15.09    woolworths olive oil classic
+Olives                   $6.99     the olive lady olives green with garlic
+Onion                    $3.99     fresh vegetable onions brown
+Orange                   $4.99     fresh fruit oranges navel
+Paneer                   $6.69     gopala paneer cheese 
+Parmesan                 $7.9      woolworths parmesan cheese 
+Pasta                    $2.99     diamond pasta bow ties
+Pasta spirals            $1.79     woolworths pasta spirals
+Pastry                   $7.8      woolworths puff pastry 1kg
+Pastry Cases             $6.5      woolworths shortcrust pastry 1kg
+Peanut Butter            $5.29     bega peanut butter smooth
+Peanut Sauce             $4.29     passage to asia stir fry sauce satay chicken
+Pear                     $5.8      fresh fruit pears packham green
+Peas                     $3.9      woolworths frozen baby peas 
+Pesto                    $7        genoese fresh pesto chilled ground with fresh basil
+Pesto/Mayo               $6.39     barilla pesto alla genovese
+Pickle                   $3        sun harvest pickles special burger
+Pita Bread               $4.69     woolworths pita bread wholemeal
+Plain Flour              $2        woolworths plain flour 
+Plant Milk               $5.8      milklab home barista oat
+Popcorn                  $3.9      popcorners corn snacks cinnamon crunch
+Pork Mince               $11.5     woolworths nz free farmed pork mince 13% fat
+Pork Shoulder            $13.99    woolworths free farmed bone in pork shoulder roast nz
+Potato                   $4.3      fresh vegetable potatoes white washed
+Pretzels                 $4.7      macy & tailor pretzels sea salt
+Probiotic Drink          $4.75     yakult probiotic light milk  drink
+Puff Pastry              $7.8      woolworths puff pastry 1kg
+Quinoa                   $7.7      macro organic quinoa tri colour
+Real Fruit Strip         $9.29     annies fruit snack strips
+Red Lentils              $2.29     delmaine lentils 
+Rice                     $3.4      kings choice long grain rice 
+Rice Bubbles             $3.39     woolworths cereal rice pops
+Rice Crackers            $2.25     fantastic rice crackers seaweed
+Rice Noodles             $3.09     erawan rice sticks medium noodles
+Rice Paper               $3.59     valcom rice paper 
+Rice Wheels              $5        healtheries snack rice wheels chicken
+Ripe Bananas             $3.99     fresh fruit bananas yellow loose
+Roast Beef               $5        woolworths shaved roast beef wafer thin
+Rocket                   $3.5      woolworths fresh salad baby rocket mini bag
+Rockmelon                $7.9      fresh fruit rockmelon cut
+Roll                     $5.2      woolworths bread rolls country grain
+Rolled Oats              $2.49     woolworths oats rolled
+Rolled Oats (GF)         $4.25     harraways oats rolled
+Roti                     $4.49     giannis roti street style
+Salami                   $4.39     verkerks salami sliced italian thin
+Salsa                    $5        old el paso chunky salsa dip mild
+Sausage Meat             $8        woolworths beef sausage meat 
+Sesame Oil               $7.39     lee kum kee sesame oil pure gluten free
+Smoked Salmon            $7.5      ocean blue smoked salmon natural
+Soy Sauce                $5.79     lee kum kee soy sauce premium
+Spaghetti                $1.79     woolworths pasta spaghetti
+Spices                   $2.7      woolworths chilli ground
+Spinach                  $3.9      fresh vegetable salad baby leaf spinach
+Spring Onion             $1.95     fresh vegetable spring onion 
+Strawberries             $8.29     woolworths frozen strawberries 
+Sub Roll                 $4.49     woolworths bread rolls long plain
+Sugar                    $4.69     chelsea white sugar 
+Sugar Snap Peas          $6.5      fresh vegetable snow peas sugar snap
+Sultanas                 $2.5      woolworths sultanas 
+Sushi Rice               $3.89     mama san sushi rice 
+Sweetcorn                $6.8      emma janes sweetcorn cobs
+Tahini                   $8        macro organic hulled tahini 
+Teriyaki Sauce           $4.29     passage to asia stir fry sauce teriyaki chicken
+Tofu                     $5.7      macro firm tofu 
+Tomato                   $6        woolworths fresh tomatoes 
+Tomato Paste             $1.7      essentials tomato paste 
+Tomato Sauce             $1.7      woolworths tomato sauce 
+Tortilla                 $5.79     woolworths wraps wholemeal
+Tuna                     $1.35     woolworths tuna in spring water
+Tuna/Chicken/Avocado     $5        Tuna/Chicken/Avocado
+Turkey                   $5        Turkey
+Vanilla Essence          $2        queen vanilla flavoured essence
+Vegan Mayo               $7.49     best foods vegan mayonnaise 
+Vegetable Stock          $6        campbells real stock vegetable stock liquid
+Veggie Straws            $4.19     the natural chip company corn snacks veggie straws sour cream 65g
+Vermicelli Noodles       $1.89     double phoenix asian vermicelli
+Watermelon               $14.99    woolworths watermelon cut seedless
+Wholegrain Crackers      $2.79     woolworths brown rice crackers multigrain
+Yeast                    $6.79     edmonds yeast active dried
+Yoghurt                  $8.25     fresh n fruity greek yoghurt mango & passionfuit
