@@ -16,7 +16,7 @@ export async function generateMetadata({
     locale,
     title: "Contact – Aussie Lunchbox | Reach the Solo Operator Directly",
     description:
-      "A free school lunch planner for Australian families, run as a solo project by Yong Jae Lee in Auckland, New Zealand. Corrections, feedback and data requests reach me directly.",
+      "A free school lunch planner for Australian families, run solo by Yong Jae Lee in Auckland, NZ. Corrections, feedback and data requests reach me directly.",
   });
 }
 

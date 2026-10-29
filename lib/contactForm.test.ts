@@ -32,8 +32,8 @@ describe("문의폼 오류를 원인별로 가른다", () => {
         expect(msgs[l][k], `${l}.${k}`).toBeTruthy();
       }
       // 서버 실패 문구는 "네 잘못이 아니다"를 말해야 한다
-      expect(msgs[l].contact_error_server).toMatch(/kiwilunchboxplanner@gmail\.com/);
-      expect(msgs[l].contact_error_rate).toMatch(/kiwilunchboxplanner@gmail\.com/);
+      expect(msgs[l].contact_error_server).toMatch(/aussielunchbox@gmail\.com/);
+      expect(msgs[l].contact_error_rate).toMatch(/aussielunchbox@gmail\.com/);
     }
     // 세 문구가 서로 달라야 가른 의미가 있다
     for (const l of LOCALES) {

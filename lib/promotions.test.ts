@@ -35,10 +35,23 @@ const fakeCandidate = (
  * currentWeek 의 validFrom 을 그대로 쓰면 데이터가 갱신돼도 항상 유효한 날짜다.
  */
 import promotionsFile from "@/data/promotions.json";
-const WITHIN_WEEK = new Date(
-  `${(promotionsFile as { currentWeek: string; weeks: Record<string, { validFrom: string }> })
-    .weeks[(promotionsFile as { currentWeek: string }).currentWeek].validFrom}T09:00:00+12:00`,
-);
+const CURRENT_WEEK = (promotionsFile as { currentWeek: string; weeks: Record<string, { validFrom: string }> })
+  .weeks[(promotionsFile as { currentWeek: string }).currentWeek];
+/**
+ * 🔴 Aussie(2026-10-30): AU 전단은 아직 없다(계획 5단계) — `promotions.json`의 weeks가 비어 있다.
+ *    전단에 기대는 검사는 `skipIf(!HAS_PROMOS)`로 미룬다. 대신 「특가가 없으면 화면이 missing이라고 말한다」를
+ *    아래에서 따로 확인한다 — 건너뛴 검사가 「통과」로 읽히지 않게.
+ */
+const HAS_PROMOS = !!CURRENT_WEEK;
+const WITHIN_WEEK = new Date(`${CURRENT_WEEK?.validFrom ?? "2026-01-01"}T09:00:00+12:00`);
+
+describe.skipIf(HAS_PROMOS)("특가 데이터가 없으면 「없다」고 말한다(Aussie, 전단 전)", () => {
+  it("상태는 missing이고 특가 목록은 비어 있다 — 지난 주 것이나 지어낸 것이 나가지 않는다", () => {
+    expect(getPromotionsStatus().state).toBe("missing");
+    expect(getCurrentWeekPromotions()).toBeNull();
+    expect(getActivePromotions(["woolworths", "newworld"])).toEqual([]);
+  });
+});
 
 describe("matchIngredient", () => {
   it("returns null for empty input", () => {
@@ -152,7 +165,7 @@ describe("calculateSaleBonus", () => {
   });
 });
 
-describe("getCurrentWeekPromotions / getActivePromotions", () => {
+describe.skipIf(!HAS_PROMOS)("getCurrentWeekPromotions / getActivePromotions", () => {
   it("loads current week from JSON", () => {
     const week = getCurrentWeekPromotions(WITHIN_WEEK);
     expect(week).not.toBeNull();
@@ -179,7 +192,7 @@ describe("getCurrentWeekPromotions / getActivePromotions", () => {
 // 2026-08-17: getActivePromotions 가 validUntil 을 보지 않아, currentWeek 가 만료돼도
 // 그대로 반환하고 있었다. 특가가 opt-in 이라 갇혀 있었을 뿐 — 기본값을 켜면
 // 모든 방문자가 지난주 특가를 이번 주 것으로 받는다.
-describe("🔴 만료된 주의 특가는 나가지 않는다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 만료된 주의 특가는 나가지 않는다", () => {
   // 🔴 날짜를 리터럴로 박으면 데이터가 갱신되는 순간 깨진다.
   // (실제로 2026-08-17 갱신 때 이 블록이 통째로 깨졌다 — 같은 파일 위쪽에서
   //  똑같은 실수를 이미 고쳐 놓고 새 테스트에서 반복했다.)
@@ -188,7 +201,7 @@ describe("🔴 만료된 주의 특가는 나가지 않는다", () => {
     currentWeek: string;
     weeks: Record<string, { validFrom: string; validUntil: string }>;
   };
-  const WEEK = FILE.weeks[FILE.currentWeek];
+  const WEEK = FILE.weeks[FILE.currentWeek] ?? { validFrom: "2026-01-01", validUntil: "2026-01-07" };
   /** NZ 기준 그 날짜의 오전 9시 */
   const nzMorning = (ymd: string) => new Date(`${ymd}T09:00:00+12:00`);
   const plusDays = (ymd: string, n: number) => {
@@ -233,7 +246,7 @@ describe("🔴 만료된 주의 특가는 나가지 않는다", () => {
 // 은 salePrice/regularPrice 에서 나오는 값을 **다시 적은 것**이라, 한쪽만 고치면
 // 조용히 거짓말이 된다. 매주 갱신되는 데이터라 한 번 어긋나면 그대로 라이브로 나간다.
 // 그래서 note 안의 숫자를 전부 가격에서 다시 계산해 대조한다.
-describe("🔴 note 의 금액 주장은 가격에서 다시 계산해 맞아야 한다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 note 의 금액 주장은 가격에서 다시 계산해 맞아야 한다", () => {
   const FILE = promotionsFile as unknown as {
     currentWeek: string;
     weeks: Record<
@@ -242,7 +255,7 @@ describe("🔴 note 의 금액 주장은 가격에서 다시 계산해 맞아야
     >;
   };
   const rows: Array<{ store: string; item: Promotion }> = [];
-  for (const [store, sp] of Object.entries(FILE.weeks[FILE.currentWeek].stores)) {
+  for (const [store, sp] of Object.entries((FILE.weeks[FILE.currentWeek]?.stores ?? {}))) {
     for (const item of sp.items) rows.push({ store, item });
   }
 
@@ -306,12 +319,12 @@ describe("🔴 note 의 금액 주장은 가격에서 다시 계산해 맞아야
 // Everyday Rewards 회원가가 섞여 있다. 카드 없는 사람은 그 값에 못 사는데
 // 화면은 절약액에 그대로 더하고 있었다. 회원가가 하나라도 실려 있으면
 // 그 사실을 밝히는 문구가 **세 언어 모두**와 플래너 컴포넌트에 있어야 한다.
-describe("🔴 회원 전용가는 회원가라고 밝혀야 한다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 회원 전용가는 회원가라고 밝혀야 한다", () => {
   const FILE = promotionsFile as unknown as {
     currentWeek: string;
     weeks: Record<string, { stores: Record<string, { items: Promotion[] }> }>;
   };
-  const items = Object.values(FILE.weeks[FILE.currentWeek].stores).flatMap((s) => s.items);
+  const items = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {})).flatMap((s) => s.items);
   const clubItems = items.filter((i) => i.promoType === "club");
 
   it("이번 주에 회원가가 실려 있다 — 없으면 아래 검사는 공짜로 통과한다", () => {
@@ -381,7 +394,7 @@ describe("🔴 다른 식품에 특가를 붙이지 않는다", () => {
 });
 
 // alsoMatches 는 사람이 손으로 적는다 — 오타는 조용히 "아무것도 안 붙음"이 된다.
-describe("🔴 alsoMatches 에 적힌 이름은 실제 재료여야 한다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 alsoMatches 에 적힌 이름은 실제 재료여야 한다", () => {
   it("모든 alsoMatches 가 메뉴의 재료 이름과 일치한다", async () => {
     const menu = (await import("@/data/menuData.json")).default as {
       MENU_DATA: { en: { ingredients?: string[] }[] };
@@ -392,7 +405,7 @@ describe("🔴 alsoMatches 에 적힌 이름은 실제 재료여야 한다", () 
       currentWeek: string;
       weeks: Record<string, { stores: Record<string, { items: Promotion[] }> }>;
     };
-    const named = Object.values(FILE.weeks[FILE.currentWeek].stores)
+    const named = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {}))
       .flatMap((s) => s.items)
       .flatMap((i) => (i.alsoMatches ?? []).map((n) => [i.name, n] as const));
     expect(named.length, "alsoMatches 가 하나도 없다 — 이 검사가 무의미하다").toBeGreaterThan(0);
@@ -404,12 +417,12 @@ describe("🔴 alsoMatches 에 적힌 이름은 실제 재료여야 한다", () 
 
 // 2026-08-24: 전단 멀티바이("2 for $5")를 실으면서 salePrice 에 **묶음 단가**를 넣었다.
 // 하나만 사면 정가를 낸다 — 안 밝히면 절약액이 부풀어 보인다. 회원가와 같은 종류의 문제다.
-describe("🔴 묶음 가격은 묶음이라고 밝혀야 한다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 묶음 가격은 묶음이라고 밝혀야 한다", () => {
   const FILE = promotionsFile as unknown as {
     currentWeek: string;
     weeks: Record<string, { stores: Record<string, { items: Promotion[] }> }>;
   };
-  const items = Object.values(FILE.weeks[FILE.currentWeek].stores).flatMap((s) => s.items);
+  const items = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {})).flatMap((s) => s.items);
   const multi = items.filter((i) => i.multibuy);
 
   it("이번 주에 묶음 특가가 실려 있다 — 없으면 아래 검사가 공짜로 통과한다", () => {

@@ -6,6 +6,10 @@ import { costForIngredients, effectivePackPrice, saleMapFor, weekTotalFrom } fro
 import { PORTION_FACTORS, DEFAULT_PORTION } from "./planConfig";
 import type { PriceInfo } from "./types";
 import type { SaleMatch } from "@/data/promotions.types";
+import { getActivePromotions as activePromosForGate } from "./promotions";
+// Aussie: AU 전단은 5단계 — 특가에 기대는 검사는 데이터가 들어오면 다시 켜진다(「없으면 missing」은 promotions.test).
+const HAS_PROMOS = activePromosForGate(["woolworths", "newworld"]).length > 0;
+
 
 /**
  * 플랜 총액과 쇼핑 목록 총액은 **같은 숫자**여야 한다.
@@ -219,7 +223,7 @@ describe("🔴 화면이 합계를 직접 계산하지 않는다", () => {
  * 위 합계 가드는 이걸 **가끔만** 잡았다(무작위 30회 중 1/6 확률로). 결함을
  * 직접 겨누는 검사가 따로 있어야 한다.
  */
-describe("🔴 간식 재료도 특가 대조를 거친다", () => {
+describe.skipIf(!HAS_PROMOS)("🔴 간식 재료도 특가 대조를 거친다", () => {
   const menuData2 = JSON.parse(readFileSync(path.join(ROOT, "data/menuData.json"), "utf-8")) as {
     MENU_DATA: { en: import("./types").MenuItem[] };
     SNACK_DATA: import("./types").SnackData;

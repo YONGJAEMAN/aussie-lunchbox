@@ -229,11 +229,10 @@ export default async function PlannerPage({
                 />
               </div>
               <figcaption className="text-xs text-gray-500 italic text-center mt-3 leading-relaxed max-w-2xl mx-auto">
-                📷 What a planned day actually looks like packed — one of our own boxes from this
-                term: onigiri rolled with furikake from the night before, cucumber, apple, a
-                mandarin, a small salami cup and ring snacks. The rice balls are the East Auckland
-                Korean-family habit described across our guides. Photographed at home by the
-                operator, not a stock photo.
+                📷 What a planned day actually looks like packed — one of our own boxes: onigiri
+                rolled with furikake from the night before, cucumber, apple, a mandarin, a small
+                salami cup and ring snacks. Packed in Auckland, where this site&apos;s sister site Kiwi
+                Lunchbox is run. Photographed at home by the operator, not a stock photo.
               </figcaption>
             </figure>
           </div>

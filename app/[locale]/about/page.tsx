@@ -21,7 +21,7 @@ export async function generateMetadata({
     locale,
     title: "About – Aussie Lunchbox | Built by a Parent",
     description:
-      "Aussie Lunchbox is a free school lunch planner for Australian families, built by Yong Jae Lee, a parent and Senior Product Designer in Auckland. Learn how content is researched and verified.",
+      "A free school lunch planner for Australian families, built by Yong Jae Lee, a parent in Auckland. How prices are read and how content is researched.",
   });
 }
 

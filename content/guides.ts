@@ -1,4 +1,5 @@
 import { withReadTime } from "@/lib/readTime";
+import { boxMedianLabel, boxWeekLabel } from "@/lib/servePrice";
 
 export interface Guide {
   title: string;
@@ -39,8 +40,8 @@ const RAW_GUIDES: Record<string, Omit<Guide, "readTime"> & { readTime?: string }
     excerpt:
       "Everything Australian parents need to know about packing nutritionally balanced school lunches, based on the NHMRC Australian Dietary Guidelines and real-world advice.",
     date: "January 5, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "February 2026",
-    readTime: "12 min read",
     image: "/assets/kiwi_chicken_pesto_panini.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
@@ -55,7 +56,7 @@ The **National Health and Medical Research Council (NHMRC)** publishes the Austr
 
 ## The Five Food Groups: A Quick Refresher
 
-According to the NHMRC's Australian Guide to Healthy Eating, daily intake should draw from five core food groups:
+According to the NHMRC's [Australian Guide to Healthy Eating](https://www.eatforhealth.gov.au/food-essentials/five-food-groups), daily intake should draw from five core food groups:
 
 | Food Group | Examples | Daily Serves (Ages 4-8) | Daily Serves (Ages 9-13) |
 | --- | --- | --- | --- |
@@ -63,15 +64,15 @@ According to the NHMRC's Australian Guide to Healthy Eating, daily intake should
 | Vegetables & legumes | Carrot, capsicum, broccoli, lentils | 4.5 | 5 |
 | Fruit | Apple, banana, berries, kiwi | 1.5 | 2 |
 | Dairy & alternatives | Cheese, yoghurt, milk | 1.5-2 | 2.5-3.5 |
-| Lean meat & alternatives | Chicken, tuna, eggs, tofu, nuts* | 1.5 | 2.5 |
+| Lean meat & alternatives | Chicken, tuna, eggs, tofu, nuts† | 1.5 | 2.5 |
 
-*Note: Whole nuts are a choking hazard for children under 3. Many Australian schools are also nut-free — always check your school's policy before packing nut products.
+† Note: Whole nuts are a choking hazard for children under 3. Many Australian schools are also nut-free — always check your school's policy before packing nut products.
 
 ---
 
 ## How Much Should the Lunchbox Provide?
 
-A school lunchbox typically covers **lunch plus one or two snacks**, meaning it should deliver roughly 30-40% of your child's daily nutritional intake. As a practical rule of thumb, aim for:
+A school lunchbox typically covers **lunch plus one or two snacks**, so it carries a large share of the school day's food. As a practical rule of thumb — ours, not an official target — aim for:
 
 - **1 serve of grain foods** (e.g. a sandwich, wrap, or crackers)
 - **1-2 serves of vegetables** (carrot sticks, cherry tomatoes, cucumber)
@@ -239,23 +240,26 @@ The goal is not perfection. It is consistency. A lunchbox that covers the key fo
 ---
 
 Ready to plan balanced lunchboxes for the whole week? [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [The NHMRC guidelines, translated for lunchboxes](/en/blog/nhmrc-australian-dietary-guidelines-school-lunches-parent-translation) · [Iron, calcium and protein in the lunchbox](/en/blog/australian-lunchbox-iron-calcium-protein-three-missed-nutrients)
 `,
   },
 
   "allergy-management-school-lunchbox-australia": {
     title: "Allergy Management for School Lunchboxes: An Australian Parent's Complete Guide",
+    seoTitle: "Allergy Management for School Lunchboxes",
     excerpt:
       "A comprehensive guide to managing food allergies in Australian school lunchboxes — from understanding labelling laws to practical nut-free, dairy-free, and egg-free alternatives.",
     date: "January 22, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "14 min read",
     image: "/assets/kiwi_dairy_free_falafel_wrap.webp",
     category: "Allergy Friendly",
     author: "Yong Jae Lee",
     body: `
 ## The Scale of Food Allergies in Australia
 
-Australia has one of the highest rates of food allergies in the world. According to the Australasian Society of Clinical Immunology and Allergy (ASCIA), approximately **1 in 10 infants** and **1 in 20 children** aged 5-14 have a diagnosed food allergy. Hospital admissions for severe allergic reactions (anaphylaxis) in Australian children have increased significantly over the past two decades.
+Food allergy is common in Australian children: food allergies affect around **1 in 10 one-year-old children** in Australia, according to [healthdirect](https://healthdirect.gov.au/food-allergies-in-children), the government-funded health information service.
 
 For parents of allergic children, the school lunchbox is a daily exercise in vigilance. For parents of non-allergic children at schools with allergy policies, it means understanding which foods to avoid bringing. This guide covers both perspectives.
 
@@ -268,7 +272,7 @@ Australian food labelling laws (managed by Food Standards Australia New Zealand,
 | Allergen | Common Sources | Lunchbox Alternatives |
 | --- | --- | --- |
 | Peanuts | Peanut butter, satay sauce, some muesli bars | Sunflower seed butter, tahini, WowButter |
-| Tree nuts | Almonds, cashews, walnuts, pecans, pistachios | Seeds (sunflower, pumpkin), coconut* |
+| Tree nuts | Almonds, cashews, walnuts, pecans, pistachios | Seeds (sunflower, pumpkin), coconut† |
 | Milk | Cheese, yoghurt, butter, chocolate | Soy yoghurt, dairy-free cheese, coconut milk |
 | Eggs | Cakes, muffins, mayo, pasta | Egg-free mayo, rice noodles, JUST Egg |
 | Wheat | Bread, crackers, pasta, couscous | Rice cakes, corn thins, gluten-free wraps |
@@ -278,7 +282,7 @@ Australian food labelling laws (managed by Food Standards Australia New Zealand,
 | Sesame | Tahini, hummus, burger buns | Sunflower seed butter, bean dips |
 | Lupin | Some breads, pastries, pasta | Check labels; lupin flour is less common |
 
-*Note: Coconut is technically a fruit, not a tree nut, but some individuals with tree nut allergies may also react. Consult your allergist.
+† Note: Coconut is technically a fruit, not a tree nut, but some individuals with tree nut allergies may also react. Consult your allergist.
 
 ---
 
@@ -461,23 +465,27 @@ EpiPens (adrenaline autoinjectors) are the frontline treatment for anaphylaxis. 
 ---
 
 Need help planning allergy-friendly lunchboxes? [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Reading an Australian allergen label](/en/blog/fsanz-peal-allergen-labelling-australian-30-second-read) · [Your school's lunchbox policy](/en/guides/school-lunchbox-policy-guide-australia)
 `,
   },
 
   "budget-lunchbox-planning-guide-australia": {
-    title: "Budget Lunchbox Planning: Feed Your Kids Well for Under $15/Week",
+    title: "Budget Lunchbox Planning: Feeding Kids Well When Money Is Tight",
+    staticPrices: true,
+    seoTitle: "Budget Lunchbox Planning in Australia",
     excerpt:
       "Practical strategies for packing healthy, delicious school lunches on a tight budget — with shopping tips for Woolworths and Coles, batch cooking ideas, and weekly meal plans.",
     date: "February 8, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "March 2026",
-    readTime: "11 min read",
     image: "/assets/kiwi_macaroni_cheese.webp",
     category: "Budget",
     author: "Yong Jae Lee",
     body: `
 ## The Real Cost of School Lunches in Australia
 
-With the cost of living rising across Australia, families are feeling the pinch at the supermarket. A recent survey found that many Australian families spend $20-40 per week per child on school lunches. But with smart planning, you can pack nutritious, varied lunchboxes for **under $15 per week per child**.
+With the cost of living rising across Australia, families are feeling the pinch at the supermarket. Across our menu set, priced at regular Woolworths shelf prices, the median lunchbox works out at about **${boxMedianLabel()} a day — roughly ${boxWeekLabel()} for a school week** — and with some planning you can come in under that.
 
 This guide breaks down exactly how to do it — with real Woolworths pricing (the chain this site tracks), practical batch cooking strategies, and a complete weekly meal plan.
 
@@ -696,16 +704,19 @@ There is no shame in using these resources. They exist to help families through 
 ---
 
 Start planning affordable, healthy lunchboxes today. [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Canteen vs packed lunch](/en/blog/school-canteen-vs-packed-lunch) · [Seasonal produce calendar](/en/guides/australian-seasonal-produce-calendar)
 `,
   },
 
   "australian-seasonal-produce-calendar": {
     title: "Australian Seasonal Produce Calendar for School Lunches",
+    staticPrices: true,
     excerpt:
       "A month-by-month guide to the cheapest, freshest Australian fruits and vegetables — with lunchbox ideas for every season.",
     date: "February 19, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "March 2026",
-    readTime: "10 min read",
     image: "/assets/carrot_hummus.png",
     category: "Seasonal",
     author: "Yong Jae Lee",
@@ -800,7 +811,7 @@ Apples are at their cheapest during autumn harvest season. Buy a large bag (2kg+
 - **Spinach and cheese rolls** — use frozen puff pastry, spread with ricotta and wilted spinach, roll and bake
 
 ### Keeping Lunches Warm
-Winter is the perfect time to invest in a good thermos. Pack hot soups, pasta, rice dishes, or even baked beans. Pre-heat the thermos with boiling water for 5 minutes, then fill with hot food. It stays warm until lunchtime.
+Winter is the perfect time to invest in a good thermos. Pack hot soups, pasta, rice dishes, or even baked beans. Pre-heat the thermos with boiling water for 5 minutes, then fill with hot food. Pre-heating makes the biggest difference to how warm it still is at lunch — we have not timed any particular jar ourselves.
 
 ---
 
@@ -884,7 +895,7 @@ The Riverland and Adelaide Hills are major growing regions. SA produces excellen
 
 Farmers' markets operate in every major Australian city and many regional towns, typically on Saturday or Sunday mornings. For lunchbox planning, they offer several advantages:
 
-- **Price**: End-of-market discounts (last hour of trading) often result in 30-50% savings on seasonal produce
+- **Price**: Stalls often mark seasonal produce down in the last hour of trading
 - **Freshness**: Produce is typically picked within 24-48 hours, compared to supermarket stock that may have been in cold storage for weeks
 - **Variety**: You will find heritage tomato varieties, unusual apple cultivars, and specialty greens that never appear in supermarkets
 - **Education**: Children who visit markets develop a better understanding of where food comes from, making them more adventurous eaters
@@ -904,6 +915,8 @@ Popular markets include the **Carriageworks Farmers Market** (Sydney), **Queen V
 ---
 
 Plan your seasonal lunchbox menu today. [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Budget lunchbox planning](/en/guides/budget-lunchbox-planning-guide-australia) · [Term 1 lunchbox checklist](/en/blog/term-1-back-to-school-lunchbox-checklist-australia)
 `,
   },
 
@@ -912,8 +925,8 @@ Plan your seasonal lunchbox menu today. [Try the Aussie Lunchbox Planner →](/e
     excerpt:
       "A parent's guide to navigating school food policies across Australia — from nut-free rules and canteen guidelines to nude food days and sustainability initiatives.",
     date: "March 5, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "10 min read",
     image: "/assets/kiwi_blt_sandwich.webp",
     category: "Parenting Tips",
     author: "Yong Jae Lee",
@@ -1129,16 +1142,19 @@ Remember that policies exist to protect all children. Even if a rule inconvenien
 ---
 
 Want help packing a lunchbox that meets your school's policy? [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [School canteen guidelines by state](/en/blog/australian-school-canteen-guidelines-2026) · [Allergy management for lunchboxes](/en/guides/allergy-management-school-lunchbox-australia)
 `,
   },
 
   "lunchbox-food-safety-guide-australia": {
     title: "Food Safety for School Lunchboxes: Temperature, Storage & Packing",
+    seoTitle: "Lunchbox Food Safety: Temps & Storage",
     excerpt:
       "Keep your child's lunch safe from harmful bacteria with this comprehensive guide to lunchbox food safety, covering temperature control, storage tips, and safe packing methods.",
     date: "March 18, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "11 min read",
     image: "/assets/kiwi_thermos_lentil_soup.webp",
     category: "Gear & Tips",
     author: "Yong Jae Lee",
@@ -1371,16 +1387,19 @@ Use this quick checklist each morning:
 ---
 
 Keep your kids' lunches safe and delicious. [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Summer lunchbox food safety (FSANZ)](/en/blog/australian-lunchbox-food-safety-summer-heat-fsanz) · [Keeping lunches safe in Queensland heat](/en/blog/queensland-heat-safe-lunchbox-guide)
 `,
   },
 
   "healthy-snacks-guide-australia": {
     title: "The Complete Guide to Healthy School Snacks in Australia",
+    staticPrices: true,
     excerpt:
       "Over 40 healthy snack ideas for Australian school kids — from no-bake bliss balls to savoury bites, with recipes, shopping lists, and tips for even the pickiest eaters.",
     date: "April 1, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "13 min read",
     image: "/assets/diy_snack_box.png",
     category: "Recipes",
     author: "Yong Jae Lee",
@@ -1604,23 +1623,26 @@ The key to consistent healthy snacking is making it easy on yourself:
 ---
 
 Get snack ideas tailored to your family. [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Reading an Australian allergen label](/en/blog/fsanz-peal-allergen-labelling-australian-30-second-read) · [Multicultural lunchbox recipes](/en/blog/multicultural-australian-lunchbox-recipes)
 `,
   },
 
   "vegetarian-vegan-school-lunch-guide-australia": {
     title: "Vegetarian & Vegan School Lunches: A Complete Australian Guide",
+    seoTitle: "Vegetarian & Vegan School Lunches (AU)",
     excerpt:
       "How to pack nutritionally complete vegetarian and vegan school lunches — with protein-rich recipes, essential nutrient advice, and practical tips for Australian families.",
     date: "April 14, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "12 min read",
     image: "/assets/quinoa_salad.png",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `
 ## Plant-Based Eating in Australian Schools
 
-Plant-based eating is growing rapidly in Australia. According to a 2025 Roy Morgan survey, approximately **12% of Australians** now identify as vegetarian or mostly vegetarian, and the number is rising among younger demographics. Whether your family is fully vegetarian, vegan, flexitarian, or simply trying to eat less meat, school lunches present unique challenges.
+Plenty of Australian families eat little or no meat. In [Roy Morgan's 2019 release](https://www.roymorgan.com/findings/rise-in-vegetarianism-not-halting-the-march-of-obesity) (2018 data), **12.1% of Australians** said their diet was all or almost all vegetarian. Whether your family is fully vegetarian, vegan, flexitarian, or simply trying to eat less meat, school lunches present unique challenges.
 
 The main concern parents have is ensuring their child gets enough **protein, iron, calcium, zinc, and vitamin B12** — nutrients that are easily obtained from animal products but require more planning on a plant-based diet. This guide addresses each of these concerns with practical, Australian-specific advice.
 
@@ -1646,14 +1668,14 @@ Children need protein for growth, immune function, and energy. The recommended d
 | Lentils, cooked (1/2 cup) | 9g |
 | Chickpeas, cooked (1/2 cup) | 7g |
 | Edamame (1/2 cup) | 9g |
-| Peanut butter (2 tbsp)* | 7g |
+| Peanut butter (2 tbsp)† | 7g |
 | Quinoa, cooked (1/2 cup) | 4g |
 | Soy milk (250ml) | 8g |
 | Wholegrain bread (2 slices) | 6g |
 | Hummus (2 tbsp) | 2g |
 | Greek yoghurt (150g) — vegetarian | 10g |
 
-*Check school nut policy before packing nut butters.
+† Check school nut policy before packing nut butters.
 
 The key principle is **protein combining** — eating a variety of plant proteins throughout the day ensures all essential amino acids are covered. You do not need to combine them in a single meal; across the day is sufficient.
 
@@ -1861,6 +1883,8 @@ Even with careful planning, it can be difficult to meet all nutritional needs on
 ---
 
 Ready to plan plant-based lunchboxes? [Try the Aussie Lunchbox Planner →](/en/planner)
+
+**Related reading:** [Iron, calcium and protein in the lunchbox](/en/blog/australian-lunchbox-iron-calcium-protein-three-missed-nutrients) · [Multicultural lunchbox recipes](/en/blog/multicultural-australian-lunchbox-recipes)
 `,
   },
 };

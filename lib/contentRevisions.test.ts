@@ -10,7 +10,8 @@ describe("🔴 본문을 고치면 수정일도 같이 바뀐다", () => {
   const current = currentRevisions();
 
   it("기록이 비어 있지 않다 — 빈 기록은 모든 글을 공짜로 통과시킨다", () => {
-    expect(Object.keys(current).length).toBeGreaterThan(20);
+    // Aussie는 글 10 + 가이드 8 = 18편이다(Kiwi는 20편 넘게).
+    expect(Object.keys(current).length).toBeGreaterThanOrEqual(18);
     expect(Object.keys(recorded).length).toBe(Object.keys(current).length);
   });
 

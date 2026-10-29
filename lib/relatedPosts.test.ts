@@ -41,7 +41,7 @@ describe("relatedPosts", () => {
 
   it("켠 필터에 해당하는 글을 준다", () => {
     const r = relatedPosts({ allergies: ["Nut Allergy"], prepStyles: [], thermosOnly: false });
-    expect(r.map((x) => x.slug)).toContain("nut-free-school-lunches-new-zealand");
+    expect(r.map((x) => x.slug)).toContain("allergy-management-school-lunchbox-australia");
   });
 
   it("중복을 내지 않는다 — Vegetarian과 Vegan은 같은 가이드다", () => {

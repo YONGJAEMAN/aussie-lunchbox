@@ -45,9 +45,10 @@ export interface Post {
 const RAW_POSTS: Record<string, Omit<Post, "readTime"> & { readTime?: string }> = {
   "school-canteen-vs-packed-lunch": {
     title: "School Canteen vs Packed Lunch: The Complete Comparison",
+    staticPrices: true,
     excerpt: "Should you pack lunch every day or let your kids buy from the canteen? We break down the cost, nutrition, and convenience of both options to help Australian parents decide.",
     date: "October 20, 2025",
-    readTime: "8 min read",
+    contentUpdated: "2026-10-30",
     image: "/assets/kiwi_ham_salad_sandwich.webp",
     category: "Gear & Tips",
     author: "Yong Jae Lee",
@@ -235,14 +236,17 @@ These figures assume 40 school weeks per year. For families with three children,
 ## Plan Your Packed Days With Us
 
 [Generate your weekly lunchbox plan →](/en/planner)
+
+**Related reading:** [School canteen guidelines by state](/en/blog/australian-school-canteen-guidelines-2026) · [Budget lunchbox planning](/en/guides/budget-lunchbox-planning-guide-australia)
 `,
   },
   "queensland-heat-safe-lunchbox-guide": {
     title: "Keeping Lunches Safe in Queensland Heat: A Complete Guide to Food Safety in Hot Climates",
+    seoTitle: "Queensland Heat: Keeping Lunches Safe",
     excerpt: "Essential food safety tips for packing lunchboxes when temperatures soar above 35 degrees. Covers the 2-hour/4-hour rule, best ice packs, and heat-proof meal ideas for Australian schools.",
     date: "March 28, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "7 min read",
     author: "Yong Jae Lee",
     category: "Food Safety",
     image: "/assets/kiwi_yoghurt_fruit_box.webp",
@@ -399,14 +403,18 @@ Print this and stick it on your fridge during summer:
 Our planner takes your location and the time of year into account when suggesting meals. During Australian summer months, the algorithm favours heat-stable ingredients and cold meal formats.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Summer lunchbox food safety (FSANZ)](/en/blog/australian-lunchbox-food-safety-summer-heat-fsanz) · [Lunchbox food safety](/en/guides/lunchbox-food-safety-guide-australia)
 `,
   },
   "australian-school-canteen-guidelines-2026": {
     title: "Australian School Canteen Guidelines 2026: What Every Parent Needs to Know",
+    staticPrices: true,
+    seoTitle: "Australian School Canteen Guidelines 2026",
     excerpt: "A comprehensive guide to school canteen regulations across NSW, Victoria, Queensland, and WA — plus how packed lunches compare on cost, nutrition, and convenience.",
     date: "April 2, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "8 min read",
     author: "Yong Jae Lee",
     category: "School Policy",
     image: "/assets/kiwi_veggie_wrap.webp",
@@ -542,21 +550,25 @@ Children who see their friends buying hot meals and colourful canteen packaging 
 Our planner generates five-day school lunch plans that respect your family's allergy requirements, match your budget, and produce a shopping list with Woolworths price estimates. Every generated plan aligns with the principles underlying Australian school canteen guidelines — balanced nutrition, whole food ingredients, and age-appropriate portions.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Canteen vs packed lunch](/en/blog/school-canteen-vs-packed-lunch) · [Your school's lunchbox policy](/en/guides/school-lunchbox-policy-guide-australia)
 `,
   },
   "multicultural-australian-lunchbox-recipes": {
     title: "Multicultural Lunchbox Recipes for Aussie Kids: 8 Diverse Meals From Around the World",
+    staticPrices: true,
+    seoTitle: "Multicultural Lunchbox Recipes for Kids",
     excerpt: "From Vietnamese banh mi to Korean kimbap — eight culturally diverse lunchbox recipes celebrating Australia's multicultural food landscape, each with cost estimates and allergy info.",
     date: "April 8, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "7 min read",
     author: "Yong Jae Lee",
     category: "Recipes",
     image: "/assets/kiwi_planner_sushi_rolls.webp",
     body: `
 ## Introduction: Australia's Lunchbox Melting Pot
 
-Australia is one of the most culturally diverse countries in the world. According to the Australian Bureau of Statistics, nearly half of all Australians were either born overseas or have at least one parent who was born overseas. This extraordinary diversity is reflected in the food we eat at home — but too often, school lunchboxes default to the same rotation of sandwiches, wraps, and packaged snacks.
+Australia is one of the most culturally diverse countries in the world. According to the [Australian Bureau of Statistics](https://www.abs.gov.au/media-centre/media-releases/2021-census-nearly-half-australians-have-parent-born-overseas), nearly half of all Australians (48.2% at the 2021 Census) have at least one parent who was born overseas. This extraordinary diversity is reflected in the food we eat at home — but too often, school lunchboxes default to the same rotation of sandwiches, wraps, and packaged snacks.
 
 There is no reason a child's lunchbox cannot include the flavours their family enjoys at the dinner table. In fact, culturally diverse lunches often provide a broader range of nutrients, introduce children to different food groups, and make the lunchbox feel exciting rather than routine.
 
@@ -810,14 +822,18 @@ This single batch cooking session provides lunchbox components for approximately
 Our planner generates diverse weekly lunch plans using Australian supermarket ingredients. Set your allergy filters, hit Generate, and discover new meal ideas every week.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Vegetarian and vegan school lunches](/en/guides/vegetarian-vegan-school-lunch-guide-australia) · [Healthy school snacks](/en/guides/healthy-snacks-guide-australia)
 `,
   },
   "term-1-back-to-school-lunchbox-checklist-australia": {
     title: "Term 1 Back-to-School Lunchbox Checklist: Everything Australian Families Need",
+    staticPrices: true,
+    seoTitle: "Term 1 Lunchbox Checklist for Australia",
     excerpt: "The complete back-to-school lunchbox preparation guide for Australian families — from equipment and pantry staples to first-week meal plans and getting kids involved.",
     date: "April 20, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "April 2026",
-    readTime: "6 min read",
     author: "Yong Jae Lee",
     category: "Planning",
     image: "/assets/kiwi_egg_salad_sandwich.webp",
@@ -838,7 +854,7 @@ The lunchbox container is the single most important purchase you will make. Choo
 
 **Bento-style lunchboxes** are the most popular option among Australian primary school families. They feature multiple compartments that keep different foods separated, making lunches visually appealing and easy to pack. Popular brands available in Australia include the Yumbox Panino (around $45 from Big W or Amazon), the Bentgo Kids (around $35 from Target), and the Planet Box Rover (around $80 from specialty retailers). For a budget option, the Sistema Bento Lunch To Go (around $15 from Woolworths, Kmart, or Big W) performs surprisingly well and is dishwasher safe.
 
-**Thermos containers** are essential if you plan to pack hot lunches during Terms 2 and 3. The Thermos FUNtainer (around $25 from Big W) keeps food hot for five hours. The Hydro Flask Food Jar (around $50) is a premium option that maintains temperature for up to six hours. For a budget alternative, the Decor Go Insulated Food Jar (around $15 from Kmart) works adequately for three to four hours.
+**Thermos containers** are essential if you plan to pack hot lunches during Terms 2 and 3. Common options run from a budget Kmart food jar (around $15) through the Thermos FUNtainer (around $25 from Big W) to the Hydro Flask Food Jar (around $50). We have not timed how long any of them keeps food hot — check the maker's stated hold time, and pre-heat the jar with boiling water, which matters more than the brand.
 
 **Insulated lunch bags** are critical during Terms 1 and 4 when temperatures regularly exceed 30 degrees. As discussed in our heat safety guide, a quality insulated bag with ice packs can mean the difference between safe food and a food poisoning risk. The PackIt Freezable Lunch Bag (around $30 from Myer or online) is our top recommendation — the gel-lined walls eliminate the need for separate ice packs.
 
@@ -991,15 +1007,18 @@ Age-appropriate involvement reduces food waste, builds independence, and teaches
 Generate a personalised 5-day school lunch plan in seconds. Set your allergy filters, choose your preferences, and get a complete plan with shopping list and Woolworths price estimates.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Keeping lunches safe in Queensland heat](/en/blog/queensland-heat-safe-lunchbox-guide) · [Your school's lunchbox policy](/en/guides/school-lunchbox-policy-guide-australia)
 `,
   },
   "australian-lunchbox-food-safety-summer-heat-fsanz": {
     title: "Australian Lunchbox Food Safety: A Summer Heat Guide Based on FSANZ Standards",
+    seoTitle: "Australian Lunchbox Food Safety in Summer",
     excerpt:
       "Australian summers routinely hit 35–40°C in NSW, VIC, QLD, and WA, and a school bag in the sun can easily reach 45°C+ by lunch. This guide translates FSANZ food safety standards into practical lunchbox rules — what spoils fastest, the 2-hour/4-hour rule, and how to pack with frozen drink bottles.",
     date: "May 9, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "May 2026",
-    readTime: "12 min read",
     image: "/assets/kiwi_tuna_mayo_sandwich.webp",
     category: "Food Safety",
     author: "Yong Jae Lee",
@@ -1146,15 +1165,18 @@ This article is informational and aligned with publicly available FSANZ and Aust
 The [Aussie Lunchbox Planner](/en/planner) factors heat-stability into its weekly suggestions.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Keeping lunches safe in Queensland heat](/en/blog/queensland-heat-safe-lunchbox-guide) · [Lunchbox food safety](/en/guides/lunchbox-food-safety-guide-australia)
 `,
   },
   "nhmrc-australian-dietary-guidelines-school-lunches-parent-translation": {
     title: "NHMRC Australian Dietary Guidelines: A Parent's Practical Translation for School Lunches",
+    seoTitle: "NHMRC Australian Guidelines for Lunchboxes",
     excerpt:
       "The NHMRC Australian Dietary Guidelines and state Healthy Canteen frameworks separate school foods into Green, Amber, and Red tiers. Most parents have never read the full guidelines — here is what they actually mean for a Monday-morning lunchbox in plain English.",
     date: "May 10, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "May 2026",
-    readTime: "11 min read",
     image: "/assets/kiwi_planner_rice_paper_rolls.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
@@ -1304,15 +1326,18 @@ This article is informational. Not personalised medical or dietary advice. For s
 The [Aussie Lunchbox Planner](/en/planner) generates weekly menus that lean Green by default.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [The complete nutrition guide](/en/guides/complete-nutrition-guide-school-lunches-australia) · [Lunchbox portions by year level](/en/blog/australian-year-level-portion-guide-school-lunches)
 `,
   },
   "australian-year-level-portion-guide-school-lunches": {
     title: "Foundation vs Year 8: An Australian Year-Level Portion Guide for School Lunches",
+    seoTitle: "Foundation vs Year 8: Lunchbox Portions",
     excerpt:
       "A five-year-old Foundation/Prep starter and an eleven-year-old Year 7 do not eat the same lunch — but most lunchbox advice treats them as one category. This guide breaks down NHMRC portion sizes by school year, with concrete lunchbox examples.",
     date: "May 11, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "May 2026",
-    readTime: "10 min read",
     image: "/assets/kiwi_turkey_club_sandwich.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
@@ -1360,7 +1385,7 @@ Portion needs roughly double from Foundation to Year 12.
 | Protein | 1.5 serves | About half a serve |
 
 ### Year 3–4
-60–70% of an adult lunchbox.
+Roughly two-thirds of an adult lunchbox — our rule of thumb, not an official figure.
 
 ### Year 5–6
 Many children&apos;s appetites jump noticeably. Move to a full adult-sized lunchbox.
@@ -1488,15 +1513,18 @@ Informational only — not personalised dietary advice. For specific concerns, c
 The [Aussie Lunchbox Planner](/en/planner) lets you set portion size by school year and auto-scales the weekly menu to match.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [The NHMRC guidelines, translated for lunchboxes](/en/blog/nhmrc-australian-dietary-guidelines-school-lunches-parent-translation) · [Iron, calcium and protein in the lunchbox](/en/blog/australian-lunchbox-iron-calcium-protein-three-missed-nutrients)
 `,
   },
   "australian-lunchbox-iron-calcium-protein-three-missed-nutrients": {
     title: "Iron, Calcium, Protein: The Three Nutrients Most Missed in Australian School Lunchboxes",
+    seoTitle: "Iron, Calcium, Protein in Lunchboxes",
     excerpt:
       "A bread-and-fruit lunchbox can hit the calorie target and still leave an Australian primary-school child short on iron, calcium, and protein — the three nutrients most flagged in NHMRC child nutrition reports.",
     date: "May 12, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "May 2026",
-    readTime: "11 min read",
     image: "/assets/kiwi_roast_beef_roll.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
@@ -1515,7 +1543,7 @@ The most-cited sources are the **Australian Bureau of Statistics (ABS) Australia
 2. **Calcium** — particularly children who do not drink milk daily
 3. **Protein** — under-supplied in bread-and-fruit lunchboxes
 
-The lunchbox carries 30–40% of a typical Australian child&apos;s daily intake. If these are missing here, the rest of the day rarely compensates.
+The lunchbox carries a large share of a school day&apos;s food. If these are missing here, the rest of the day has to make up for it.
 
 ---
 
@@ -1532,10 +1560,10 @@ The lunchbox carries 30–40% of a typical Australian child&apos;s daily intake.
 
 ### Two types of iron
 
-- **Haem iron** (red meat, chicken, fish, eggs) — absorbed at 15–35%
-- **Non-haem iron** (legumes, leafy greens, wholegrains) — absorbed at 2–20%
+- **Haem iron** (red meat, chicken, fish) — absorbed much more readily
+- **Non-haem iron** (legumes, leafy greens, wholegrains, eggs) — absorbed less well, which is why the Nutrient Reference Values set a higher iron requirement for vegetarians
 
-For vegetarian children, **strategic pairing with vitamin C** doubles non-haem iron absorption. A sandwich with hummus + a kiwifruit pairs iron with vitamin C far better than the same sandwich + a banana.
+For vegetarian children, **pairing with vitamin C** improves non-haem iron absorption. A sandwich with hummus + a kiwifruit pairs iron with vitamin C far better than the same sandwich + a banana.
 
 ### Iron-rich lunchbox foods
 
@@ -1603,7 +1631,7 @@ Lactose-free milk (Liddells, Pauls Zymil, house-brand) keeps the calcium. Calciu
 | 14–18 years (boys) | 65 g |
 | 14–18 years (girls) | 45 g |
 
-Lunchbox carries roughly 30–40% — so primary ~6–8g, upper primary ~12g, secondary ~18g+.
+If the lunchbox carries about a third of the day&apos;s food — our working assumption, not a measured figure — that is roughly 6–8g for primary, ~12g for upper primary and ~18g+ for secondary.
 
 ### Protein per typical serving
 
@@ -1666,15 +1694,18 @@ Informational only — not personalised medical/dietary advice. For deficiency s
 The [Aussie Lunchbox Planner](/en/planner) flags iron, calcium, and protein totals for each generated week.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Vegetarian and vegan school lunches](/en/guides/vegetarian-vegan-school-lunch-guide-australia) · [The NHMRC guidelines, translated for lunchboxes](/en/blog/nhmrc-australian-dietary-guidelines-school-lunches-parent-translation)
 `,
   },
   "fsanz-peal-allergen-labelling-australian-30-second-read": {
     title: "FSANZ PEAL Allergen Labelling: How to Read an Australian Food Label in 30 Seconds",
+    seoTitle: "FSANZ PEAL Allergen Labels in 30 Seconds",
     excerpt:
       "Since February 2024, all packaged food in Australia must declare allergens in Plain English Allergen Labelling (PEAL) format. This guide shows you what to look for, where to find it, and how to read 'contains' vs 'may contain' without standing in the supermarket aisle for 20 minutes.",
     date: "May 13, 2026",
+    contentUpdated: "2026-10-30",
     lastReviewed: "May 2026",
-    readTime: "10 min read",
     image: "/assets/kiwi_bagel_cream_cheese.webp",
     category: "Allergy Friendly",
     author: "Yong Jae Lee",
@@ -1832,6 +1863,8 @@ Informational only — not personalised medical/allergy advice. For diagnosed al
 The [Aussie Lunchbox Planner](/en/planner) lets you tick allergens to avoid and filters the menu library accordingly.
 
 [Try the planner →](/en/planner)
+
+**Related reading:** [Allergy management for lunchboxes](/en/guides/allergy-management-school-lunchbox-australia) · [Healthy school snacks](/en/guides/healthy-snacks-guide-australia)
 `,
   },
 };

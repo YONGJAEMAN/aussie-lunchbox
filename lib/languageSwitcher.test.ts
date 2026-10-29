@@ -43,7 +43,9 @@ describe("ko/zh는 열려도 심사 대상이 아니다", () => {
 
   it("🔴 robots index는 영어일 때만", () => {
     expect(layout).toMatch(/const isEnglish = locale === "en";/);
-    expect(layout).toMatch(/index: isEnglish,[\s\S]*googleBot: \{\s*index: isEnglish,/);
+    // Aussie: 영어여도 `SITE_NOINDEX`(재런칭 전) 동안은 noindex다 — 둘 다 걸려 있어야 한다.
+    expect(layout).toMatch(/const indexable = isEnglish && !SITE_NOINDEX/);
+    expect(layout).toMatch(/index: indexable,[\s\S]*googleBot: \{\s*index: indexable,/);
   });
 
   it("🔴 광고 코드는 영어 페이지에만", () => {

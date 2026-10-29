@@ -6,6 +6,10 @@ import { fetchBatchPrices } from "./supermarketApi";
 import menuData from "../data/menuData.json";
 import type { StoreId, SaleMatch } from "@/data/promotions.types";
 import type { MenuItem, SnackData, PriceInfo } from "./types";
+// Aussie: AU 전단은 아직 없다(5단계) — 특가에 기대는 검사는 데이터가 들어오면 자동으로 다시 켜진다.
+// 「없으면 missing」은 lib/promotions.test.ts가 따로 확인한다.
+const HAS_PROMOS = getActivePromotions(["woolworths", "newworld"]).length > 0;
+
 
 const raw = menuData as unknown as { MENU_DATA: { en: MenuItem[] }; SNACK_DATA: SnackData };
 const MENUS = raw.MENU_DATA.en;
@@ -80,7 +84,7 @@ function ingListsOf(p: Awaited<ReturnType<typeof buildWeeklyPlan>>): string[][] 
  *
  * 여기 N은 CI가 매번 도니까 250이다. 위 숫자를 다시 재려면 N을 1500으로 올릴 것.
  */
-describe("특가를 켜면 주간 지출이 실제로 줄어든다", () => {
+describe.skipIf(!HAS_PROMOS)("특가를 켜면 주간 지출이 실제로 줄어든다", () => {
   it("공정 비교로 순효과가 음수다", async () => {
     const N = 250;
     const offNet: number[] = [];        // 끔 — 화면에 찍히는 값(정가)

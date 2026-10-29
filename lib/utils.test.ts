@@ -91,7 +91,7 @@ describe("🔴 References 라벨에 마크다운이 새지 않는다", () => {
 
   it("모든 글의 References 라벨에 별표가 없다", () => {
     const all = [...Object.values(POSTS), ...Object.values(GUIDES)];
-    expect(all.length, "글을 하나도 못 읽었다").toBeGreaterThan(20);
+    expect(all.length, "글을 하나도 못 읽었다").toBeGreaterThanOrEqual(18); // Aussie 글 10 + 가이드 8
     const bad = all.flatMap((e) => getReferences(e.body)).filter((r) => r.text.includes("*"));
     expect(bad, `References 라벨에 별표가 있다 → ${JSON.stringify(bad)}`).toEqual([]);
   });

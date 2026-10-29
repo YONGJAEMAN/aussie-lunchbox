@@ -112,7 +112,8 @@ describe("🔴 렌더러가 모르는 마크다운이 화면으로 새지 않는
       .replace(/&amp;/g, "&");
 
   it("양성 대조 — 글을 실제로 렌더하고 있다", () => {
-    expect(BODIES.length).toBeGreaterThan(20);
+    // Aussie는 글 10 + 가이드 8 = 18편이다(Kiwi는 20편 넘게). 하한은 「렌더를 하고 있다」만 본다.
+    expect(BODIES.length).toBeGreaterThanOrEqual(18);
     expect(visibleText(BODIES[0][1]).length).toBeGreaterThan(500);
   });
 
