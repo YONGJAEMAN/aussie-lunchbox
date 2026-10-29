@@ -17,7 +17,7 @@ export async function generateMetadata({
     locale,
     title: "Terms & Conditions — Aussie Lunchbox",
     description:
-      "Terms of use for Aussie Lunchbox, a free school lunch planner for New Zealand families. Includes acceptable use, liability scope, and content licensing.",
+      "Terms of use for Aussie Lunchbox, a free school lunch planner for Australian families. Includes acceptable use, liability scope, and content licensing.",
   });
 }
 
@@ -104,7 +104,7 @@ export default async function TermsPage() {
             lunchbox recipes maintained by hand. It applies the allergy and dietary filters
             you tick, drops any menu that conflicts, and varies the recipe categories across
             the week so you do not get five sandwiches. It does <strong>not</strong> check a
-            week against the Ministry of Health food groups &mdash; there is no food-group
+            week against the Australian Dietary Guidelines food groups &mdash; there is no food-group
             logic in the code &mdash; and it does not generate novel recipes or use a large
             language model to write content. Treat its output as a starting point, not a
             finished medical or dietary plan:
@@ -113,7 +113,7 @@ export default async function TermsPage() {
             <li>The planner does not know your child individually. It applies the allergy filters you tick and an estimated calorie figure per lunch based on standard portion sizes — it does not account for medical conditions, growth concerns, sensory issues, or cultural and religious requirements unless you exclude relevant ingredients manually.</li>
             <li>Generated plans may include ingredients that conflict with a school&apos;s specific food policy (e.g., a school that restricts seeds in addition to nuts, or a school with a sugar-free Friday). Always cross-check the plan against your school&apos;s current letter.</li>
             <li>Allergy filters operate on the recipe ingredient list, not on the live PEAL allergen statement of any commercial product you may buy to make the recipe. If you are managing an anaphylactic allergy, always read the actual product packaging before purchase.</li>
-            <li>Prices shown alongside the plan are estimates drawn from weekly readings of regular Woolworths shelf prices in their own online shop, and may not reflect the current price at your local store — particularly outside Auckland, or where a Click &amp; Collect price differs from the shelf tag.</li>
+            <li>Prices shown alongside the plan are estimates drawn from weekly readings of regular Woolworths shelf prices in their own online shop, and may not reflect the current price at your local store — particularly in other states, or where an online price differs from the shelf tag.</li>
           </ul>
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Allergy, Nutrition, and Food Safety Disclaimer</h2>
@@ -121,14 +121,14 @@ export default async function TermsPage() {
             Aussie Lunchbox content covers allergy management, food safety, and child
             nutrition — topics that fall within the Your Money or Your Life (YMYL)
             category where errors can have real consequences. Articles are written and
-            reviewed against publicly available NZ Government and Heart Foundation
+            reviewed against publicly available Australian Government and NHMRC
             guidance, but they are general educational content, not personalised advice.
           </p>
           <ul className="text-gray-600 space-y-1 list-disc pl-6">
             <li><strong>For diagnosed allergies, particularly with anaphylaxis risk:</strong> follow your child&apos;s allergy action plan from your GP, paediatrician, or allergist. Do not rely on a planner-generated label as your only safety check.</li>
-            <li><strong>For nutrient adequacy concerns</strong> (iron, calcium, protein, vitamin D, growth tracking): consult a registered NZ dietitian or your GP. Site articles can illustrate the general framework but cannot diagnose deficiency.</li>
-            <li><strong>For food safety in extreme conditions</strong> (long bus rides in summer, unrefrigerated school trips, camp food): the Ministry for Primary Industries (NZ Food Safety) consumer guidance overrides anything written on this site if the two differ.</li>
-            <li><strong>Reactions or adverse events:</strong> always stop the food in question, manage the immediate reaction per your allergy plan, and contact Healthline (0800 611 116) or emergency services as appropriate. Do not contact this site as a first response.</li>
+            <li><strong>For nutrient adequacy concerns</strong> (iron, calcium, protein, vitamin D, growth tracking): consult an Accredited Practising Dietitian (APD) or your GP. Site articles can illustrate the general framework but cannot diagnose deficiency.</li>
+            <li><strong>For food safety in extreme conditions</strong> (long bus rides in summer, unrefrigerated school trips, camp food): FSANZ and your state food authority&apos;s consumer guidance override anything written on this site if the two differ.</li>
+            <li><strong>Reactions or adverse events:</strong> always stop the food in question, manage the immediate reaction per your allergy plan, and call healthdirect (1800 022 222) or emergency services on 000 as appropriate. Do not contact this site as a first response.</li>
           </ul>
 
           <h2 className="text-xl font-bold text-[#1a1a1a]">Parent / Guardian Responsibility</h2>
@@ -141,7 +141,7 @@ export default async function TermsPage() {
             <li>You are the parent or legal guardian of the child the plan is for, or you have been given clear instructions by that parent or guardian (allergy list, cultural restrictions, school policy).</li>
             <li>You have read the current school food and allergy policy and will cross-check the generated plan against it before sending food in.</li>
             <li>You will physically prepare and check each lunchbox item before it leaves your home — the planner does not handle packaging, food safety on the day, or temperature control on the route to school. See the{" "}
-              <Link href={`/${locale}/blog/lunchbox-food-safety-nz-term-1-heat`} className="text-[#366A1B] hover:underline">NZ Lunchbox Food Safety guide</Link>
+              <Link href={`/${locale}/blog/australian-lunchbox-food-safety-summer-heat-fsanz`} className="text-[#366A1B] hover:underline">Australian Lunchbox Food Safety guide</Link>
               {" "}for the practical handling rules.
             </li>
             <li>You accept that supermarket prices, allergen labels, and school policies change over time — the planner cannot be more current than the data it was last updated with.</li>

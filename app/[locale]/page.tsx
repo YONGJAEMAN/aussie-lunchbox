@@ -18,9 +18,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const canonical = `${BASE_URL}/${locale}`;
   return {
-    title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
+    title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
     description:
-      "Generate a personalised week of healthy New Zealand school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
+      "Generate a personalised week of Australian school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
     alternates: {
       canonical,
       // ko/zh hreflang은 AdSense 승인 단계에서 제거 (helper와 동일 정책).
@@ -31,16 +31,16 @@ export async function generateMetadata({
     },
     openGraph: {
       url: canonical,
-      title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
+      title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
       description:
-        "Generate a personalised week of healthy New Zealand school lunches in seconds.",
+        "Generate a personalised week of Australian school lunches in seconds.",
       images: [{ url: `${BASE_URL}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Aussie Lunchbox – Free School Lunch Planner for NZ Families",
+      title: "Aussie Lunchbox – Free School Lunch Planner for Australian Families",
       description:
-        "Generate a personalised week of healthy New Zealand school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
+        "Generate a personalised week of Australian school lunches in seconds. Free planner with allergy filters, shopping list, and PDF export.",
       images: [`${BASE_URL}/opengraph-image`],
     },
   };
@@ -55,7 +55,7 @@ export default async function HomePage() {
     "@type": "WebSite",
     name: "Aussie Lunchbox",
     url: BASE_URL,
-    description: "Free school lunch planner for New Zealand families.",
+    description: "Free school lunch planner for Australian families.",
     potentialAction: {
       "@type": "SearchAction",
       // 🔴 09-29: `/blog?q=`였다 — 블로그 페이지는 q를 안 읽는다. q를 처리하는 것은 /search다.
@@ -264,7 +264,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── How NZ Families Use It ── */}
+      {/* ── How Families Use It ── */}
       <section className="max-w-6xl mx-auto py-20 px-4">
         <div className="text-center mb-14">
           <p className="text-[#366A1B] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_usecases_label")}</p>
@@ -306,7 +306,7 @@ export default async function HomePage() {
             {[
               { icon: "📅", text: "I was spending 15 minutes every night deciding what to pack — now it takes about five." },
               { icon: "🛒", text: "I wanted one shopping list for the whole week, not five separate mental notes." },
-              { icon: "💡", text: "No app existed that used real NZ supermarket ingredients and prices. So I made one." },
+              { icon: "💡", text: "No app I could find priced lunches against real supermarket products. So I made one — first for New Zealand, then for Australia." },
             ].map((item) => (
               <div key={item.icon} className="bg-white rounded-3xl p-8 text-left shadow-sm">
                 <div className="text-3xl mb-4">{item.icon}</div>
@@ -317,32 +317,6 @@ export default async function HomePage() {
           <p className="text-sm text-gray-500 mt-8">
             — Yong Jae Lee, Senior Product Designer, Auckland
           </p>
-        </div>
-      </section>
-
-      {/* ── Price Index Banner ── */}
-      <section className="py-10 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Link
-            href={`/${locale}/price-index`}
-            className="block bg-[#F7F9FC] border border-gray-200 rounded-3xl p-8 md:p-10 hover:shadow-md transition-shadow group"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[#366A1B] text-xs font-semibold uppercase tracking-widest mb-2">Original Data</p>
-                <h3 className="text-xl md:text-2xl font-extrabold text-[#1a1a1a] mb-2">NZ Lunchbox Price Index</h3>
-                {/*
-                  ⚠️ 예전엔 이 줄이 Pak'nSave 열을 매달 실사한다고 말했다. 사실이 아니었다 —
-                  Woolworths 열은 주간 자동 갱신이지만 Pak'nSave 열은 매장에 직접
-                  가야 해서 2026-05-16 이후 멈춰 있었다(85일). 사이트의 대표 자산을
-                  소개하는 문장이 거짓이면 그게 가장 비싸다. 실제 동작대로 고쳤다.
-                */}
-                {/* 🔴 09-29: 「both」 — 지수에는 New World 열도 있다(대부분 행). 전 품목을 싣는 것은 두 열뿐이라 그렇게 나눠 말한다. */}
-                <p className="text-gray-500 text-sm">20 staples tracked every week at Woolworths and Pak&apos;nSave Ormiston, with New World Ormiston alongside on most of them, all read from each chain&apos;s own online shop &mdash; specials are left out, and any row whose price is older than the rest says so.</p>
-              </div>
-              <ChevronRight size={24} className="text-[#366A1B] group-hover:translate-x-1 transition-transform shrink-0" />
-            </div>
-          </Link>
         </div>
       </section>
 
@@ -375,25 +349,25 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                slug: "easy-wraps-for-school-lunches-nz",
-                title: "Easy Wraps & Rolls for NZ School Lunches",
-                excerpt: "Quick, versatile wrap ideas using ingredients from Woolworths and Pak'nSave.",
-                category: "Recipes",
+                slug: "school-canteen-vs-packed-lunch",
+                title: "School Canteen vs Packed Lunch: The Complete Comparison",
+                excerpt: "What a canteen order and a home-packed lunch each involve, across Australian schools.",
+                category: "Gear & Tips",
                 image: "/assets/kiwi_shredded_chicken_wrap.webp",
               },
               {
-                slug: "nut-free-school-lunches-new-zealand",
-                title: "Nut-Free School Lunches & Snacks: A Guide",
-                excerpt: "How to pack safe lunches and snacks that comply with your school's nut-free policy.",
-                category: "Allergy Friendly",
-                image: "/assets/kiwi_marmite_cheese_sandwich.webp",
+                slug: "queensland-heat-safe-lunchbox-guide",
+                title: "Keeping Lunches Safe in Queensland Heat",
+                excerpt: "Food safety tips for packing lunchboxes in Australia's hottest climates.",
+                category: "School Policy",
+                image: "/assets/kiwi_cheese_cracker_box.webp",
               },
               {
-                slug: "budget-friendly-lunchbox-ideas-nz",
-                title: "Budget-Friendly Lunchbox Ideas Under $3",
-                excerpt: "Practical and nutritious lunchbox ideas without breaking the budget.",
-                category: "Budget",
-                image: "/assets/kiwi_cheese_cracker_box.webp",
+                slug: "multicultural-australian-lunchbox-recipes",
+                title: "Multicultural Lunchbox Recipes for Aussie Kids",
+                excerpt: "Diverse lunchbox ideas that reflect Australia's food culture.",
+                category: "Planning",
+                image: "/assets/kiwi_marmite_cheese_sandwich.webp",
               },
             ].map((post) => (
               <Link
@@ -446,7 +420,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── NZ School Lunchbox Guide ── */}
+      {/* ── Australian School Lunchbox Guide ── */}
       <section className="bg-[#F7F9FC] py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-[#366A1B] text-sm font-semibold uppercase tracking-widest mb-3">{t("home_guide_label")}</p>
@@ -457,6 +431,17 @@ export default async function HomePage() {
               <h3 className="text-xl font-bold text-[#314A37] mb-3">{t("home_guide_rules_h")}</h3>
               <p className="mb-3">{t("home_guide_rules_p1")}</p>
               <p>{t("home_guide_rules_p2")}</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#314A37] mb-3">{t("home_guide_states_h")}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                {(["nsw", "vic", "qld", "wa"] as const).map((st) => (
+                  <div key={st} className="bg-white rounded-xl p-4">
+                    <p className="font-bold text-[#314A37] text-sm mb-1">{t(`home_guide_${st}`)}</p>
+                    <p className="text-sm text-gray-600">{t(`home_guide_${st}_desc`)}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>

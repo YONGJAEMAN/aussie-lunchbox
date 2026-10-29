@@ -16,7 +16,7 @@ export async function generateMetadata({
     locale,
     title: "Contact – Aussie Lunchbox | Reach the Solo Operator Directly",
     description:
-      "A free school lunch planner for NZ families, run as a solo project by Yong Jae Lee in Auckland. Corrections, feedback and data requests reach me directly.",
+      "A free school lunch planner for Australian families, run as a solo project by Yong Jae Lee in Auckland, New Zealand. Corrections, feedback and data requests reach me directly.",
   });
 }
 
@@ -93,7 +93,7 @@ export default async function ContactPage() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-8">
             This direct line is part of what makes Aussie Lunchbox sustainable as a solo
-            project: feedback from real NZ parents shapes which articles get written next,
+            project: feedback from parents shapes which articles get written next,
             which allergy filters get refined, and which supermarket prices get checked
             most often. If you have already read the{" "}
             <Link href={`/${locale}/about`} className="text-[#366A1B] underline">About page</Link>
@@ -121,7 +121,7 @@ export default async function ContactPage() {
             </li>
             <li>
               <strong>Content corrections</strong> ({t("contact_subject_support")}) — an
-              incorrect ingredient measurement, a broken external reference, an outdated NZ
+              incorrect ingredient measurement, a broken external reference, an outdated
               price, or a recipe step that does not read clearly. I aim to review a correction
               within 48 hours and to fix a confirmed one within one week, and the article is
               updated with a new <code>lastReviewed</code> date. The original is not
@@ -175,18 +175,18 @@ export default async function ContactPage() {
 
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Where the operator is based</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Aussie Lunchbox is operated from Auckland, New Zealand. Articles and pricing
-            data on the site are written from an Auckland perspective:
+            Aussie Lunchbox is operated from Auckland, New Zealand, for families in Australia.
+            What that means for the content:
           </p>
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
             {/* 🔴 09-29: 「Botany 지점을 격주로 확인」은 수집기(.github/workflows/update_prices.yml)에 없다.
                 세 열 모두 매주 온라인 매장에서 읽고, 매장을 고르는 두 체인은 Ormiston으로 고정돼 있다. */}
-            <li>Price-index prices are read each week from the chains&apos; own online shops &mdash; <strong>Pak&apos;nSave</strong> and <strong>New World</strong> with the store set to Ormiston in East Auckland, near where we shop, and <strong>Woolworths</strong> from its online price feed. The May 2026 starting round was walked in store at Pak&apos;nSave Ormiston and Woolworths Ormiston. Other NZ cities, and other branches, may differ meaningfully.</li>
-            <li>Seasonal produce calendar uses Auckland timing as the baseline. South Island timing typically lags Auckland by 3–4 weeks (see the{" "}
-              <Link href={`/${locale}/guides/nz-seasonal-produce-calendar`} className="text-[#366A1B] underline">seasonal calendar guide</Link>
+            <li>Prices are read from <strong>Woolworths Australia</strong>&apos;s own online shop rather than walked in store — I don&apos;t live in Australia. Prices at your local store, and in other states, may differ.</li>
+            <li>The seasonal produce calendar describes general Australian seasons; what is in season varies a lot between the tropical north and the southern states (see the{" "}
+              <Link href={`/${locale}/guides/australian-seasonal-produce-calendar`} className="text-[#366A1B] underline">seasonal calendar guide</Link>
               ).
             </li>
-            <li>School-policy references (Healthy Food and Drink Guidance, NZ Eating and Activity Guidelines) apply across NZ — they are nationally published Ministry documents.</li>
+            <li>School food rules are set by each state&apos;s healthy canteen framework and by individual schools, so the guides describe the common ground and point to the state documents rather than one national rule.</li>
             <li>The site is hosted on Vercel infrastructure with content delivered from the nearest available edge node, regardless of where you are reading from.</li>
           </ul>
 
@@ -197,7 +197,7 @@ export default async function ContactPage() {
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
             <li>
               <strong>Medical or dietary advice for an individual child.</strong> Articles
-              on Aussie Lunchbox follow public NZ Government and Heart Foundation
+              on Aussie Lunchbox follow public Australian Government and NHMRC
               guidance, but I am not a registered dietitian or paediatric clinician. If
               your child has a diagnosed condition, allergy with anaphylaxis risk, growth
               concern, or specific nutritional need, talk to your GP or a registered
