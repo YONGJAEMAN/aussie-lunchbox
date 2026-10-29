@@ -72,9 +72,10 @@ describe("AVOID_TOKENS가 재료 자신을 죽이지 않는다", () => {
 
 describe("오매칭이 확인된 재료는 SKU로 고정돼 있다", () => {
   const pinned: [string, string][] = [
-    ["Croissant", "6003482"],
-    ["Spring Onion", "144522"],
-    ["Desiccated Coconut", "6015740"],
+    // Woolworths AU SKU(2026-10-30) — 오매칭 이력은 Kiwi(NZ)에서 나온 것이고, AU도 같은 재료를 고정했다
+    ["Croissant", "33593"],
+    ["Spring Onion", "147603"],
+    ["Desiccated Coconut", "28708"],
     ["Cinnamon", "251000"],
   ];
 

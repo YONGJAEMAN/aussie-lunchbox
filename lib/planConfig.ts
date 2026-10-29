@@ -43,16 +43,16 @@ export const PORTION_FACTORS: Record<string, number> = {
   "Muffin Splits": 0.20, Muffin: 0.125,
 
   // ── 과일 (kg/팩 단위 → 1개분) ────────────────────────────────
-  Apple: 0.12, "Grated Apple": 0.12, Banana: 0.12, "Ripe Bananas": 0.25,
-  Pear: 0.15, Orange: 0.15, Mandarin: 0.12, Kiwifruit: 0.15,
+  Apple: 0.12, "Grated Apple": 0.12, Banana: 1.00, "Ripe Bananas": 0.40,
+  Pear: 0.75, Orange: 0.75, Mandarin: 0.12, Kiwifruit: 0.15,
   Grapes: 0.15, Blueberries: 0.20, Strawberries: 0.20, Berries: 0.20,
-  Rockmelon: 0.15, Watermelon: 0.10, Lemon: 0.10,
+  Rockmelon: 0.15, Watermelon: 0.05, Lemon: 0.10,
   Sultanas: 0.08, Dates: 0.10, "Dried Apricots": 0.10,
 
   // ── 채소 ────────────────────────────────────────────────────
   Carrot: 0.10, "Carrot Stick": 0.10, Celery: 0.10, Cucumber: 0.15,
-  Capsicum: 0.25, Tomato: 0.15, "Cherry Tomatoes": 0.15,
-  Lettuce: 0.08, "Cos Lettuce": 0.10, Rocket: 0.15, Cabbage: 0.08,
+  Capsicum: 0.25, Tomato: 0.50, "Cherry Tomatoes": 0.15,
+  Lettuce: 0.08, "Cos Lettuce": 0.10, Rocket: 0.15, Cabbage: 0.30,
   Spinach: 0.10, Onion: 0.10, "Spring Onion": 0.10, Potato: 0.15,
   Broccoli: 0.15, Sweetcorn: 0.15, Corn: 0.05, Peas: 0.05,
   "Sugar Snap Peas": 0.20, Edamame: 0.15, "Mixed Vegetables": 0.10,
@@ -151,68 +151,68 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   Bacon: { pack: "250g", serve: "30g" },
   "Boiled Eggs": { pack: "12pack", serve: "2ea" },
   "Burger Bun": { pack: "6pack", serve: "1ea" },
-  "Caesar Dressing": { pack: "250mL", serve: "12.5mL" },
+  "Caesar Dressing": { pack: "300mL", serve: "12.5mL" }, // NZ 250mL
   Celery: { pack: "300g", serve: "30g" },
   "Cheese Block": { pack: "500g", serve: "30g" },
-  "Cheese Stick": { pack: "200g", serve: "20g" },
-  "Cocktail Sausages": { pack: "9pack", serve: "2ea" },
+  "Cheese Stick": { pack: "160g", serve: "20g" }, // NZ 200g
+  "Cocktail Sausages": { pack: "500g", serve: "40g" }, // NZ 9pack
   Coconut: { pack: "250g", serve: "12.5g" },
   "Coconut Milk": { pack: "400mL", serve: "100mL" },
   "Corn Chips": { pack: "300g", serve: "45g" },
   Couscous: { pack: "500g", serve: "50g" },
-  Crackers: { pack: "185g", serve: "28g" },
-  Croutons: { pack: "120g", serve: "12g" },
-  "Curry Paste": { pack: "220g", serve: "11g" },
-  "Dairy-Free Pesto": { pack: "200g", serve: "10g" },
+  Crackers: { pack: "125g", serve: "28g" }, // NZ 185g
+  Croutons: { pack: "150g", serve: "12g" }, // NZ 120g
+  "Curry Paste": { pack: "190g", serve: "11g" }, // NZ 220g
+  "Dairy-Free Pesto": { pack: "190g", serve: "10g" }, // NZ 200g
   "Dark Chocolate": { pack: "100g", serve: "10g" },
   "Dried Apricots": { pack: "200g", serve: "20g" },
-  Edamame: { pack: "454g", serve: "68g" },
+  Edamame: { pack: "1kg", serve: "68g" }, // NZ 454g
   Egg: { pack: "12pack", serve: "1ea" },
   Feta: { pack: "200g", serve: "20g" },
   "GF Crackers": { pack: "100g", serve: "15g" },
-  "GF Pasta": { pack: "350g", serve: "42g" },
+  "GF Pasta": { pack: "600g", serve: "42g" }, // NZ 350g
   Ginger: { pack: "230g", serve: "4.6g" },
-  "Gluten-Free Bread": { pack: "520g", serve: "78g" },
-  "Gluten-Free Flour": { pack: "450g", serve: "36g" },
-  "Golden Syrup": { pack: "540g", serve: "16g" },
-  "Lemon Dressing": { pack: "280mL", serve: "14mL" },
-  Mayo: { pack: "405g", serve: "12g" },
+  "Gluten-Free Bread": { pack: "440g", serve: "78g" }, // NZ 520g
+  "Gluten-Free Flour": { pack: "750g", serve: "36g" }, // NZ 450g
+  "Golden Syrup": { pack: "500g", serve: "16g" }, // NZ 540g
+  "Lemon Dressing": { pack: "250mL", serve: "14mL" }, // NZ 280mL
+  Mayo: { pack: "440g", serve: "12g" }, // NZ 405g
   Mince: { pack: "500g", serve: "75g" },
   "Mixed Vegetables": { pack: "1kg", serve: "100g" },
   Muffin: { pack: "8pack", serve: "1ea" },
-  Mustard: { pack: "170g", serve: "3.4g" },
-  Paneer: { pack: "300g", serve: "75g" },
+  Mustard: { pack: "175g", serve: "3.4g" }, // NZ 170g
+  Paneer: { pack: "200g", serve: "75g" }, // NZ 300g
   Parmesan: { pack: "250g", serve: "7.5g" },
   "Pasta spirals": { pack: "500g", serve: "60g" },
   Pastry: { pack: "6 sheets", serve: "1.5sheets" },
-  "Peanut Sauce": { pack: "200g", serve: "8g" },
+  "Peanut Sauce": { pack: "175g", serve: "8g" }, // NZ 200g
   "Pesto/Mayo": { pack: "190g", serve: "9.5g" },
-  "Pita Bread": { pack: "10pack", serve: "2ea" },
+  "Pita Bread": { pack: "5pack", serve: "2ea" }, // NZ 10pack
   "Plant Milk": { pack: "1L", serve: "50mL" },
-  Popcorn: { pack: "130g", serve: "19.5g" },
+  Popcorn: { pack: "80g", serve: "19.5g" }, // NZ 130g
   "Pork Mince": { pack: "500g", serve: "75g" },
   Potato: { pack: "per kg", serve: "150g" },
   Pretzels: { pack: "180g", serve: "27g" },
   "Puff Pastry": { pack: "6 sheets", serve: "1.5sheets" },
-  "Real Fruit Strip": { pack: "90g", serve: "13.5g" },
+  "Real Fruit Strip": { pack: "120g", serve: "13.5g" }, // NZ 90g
   "Rice Crackers": { pack: "100g", serve: "20g" },
   "Rice Noodles": { pack: "375g", serve: "75g" },
-  "Rice Paper": { pack: "250g", serve: "12.5g" },
-  "Rice Wheels": { pack: "126g", serve: "25g" },
-  "Roast Beef": { pack: "100g", serve: "12g" },
+  "Rice Paper": { pack: "150g", serve: "12.5g" }, // NZ 250g
+  "Rice Wheels": { pack: "6pack", serve: "1ea" }, // NZ 126g
+  "Roast Beef": { pack: "80g", serve: "12g" }, // NZ 100g
   "Rockmelon": { pack: "200g", serve: "30g" },
-  "Sausage Meat": { pack: "450g", serve: "90g" },
+  "Sausage Meat": { pack: "500g", serve: "90g" }, // NZ 450g
   "Sub Roll": { pack: "6pack", serve: "1ea" },
   Sultanas: { pack: "375g", serve: "30g" },
-  Sweetcorn: { pack: "750g", serve: "112g" },
+  Sweetcorn: { pack: "1kg", serve: "112g" }, // NZ 750g
   "Teriyaki Sauce": { pack: "200g", serve: "6g" },
   Tofu: { pack: "450g", serve: "112g" },
   "Tomato Paste": { pack: "170g", serve: "8.5g" },
-  "Tomato Sauce": { pack: "565g", serve: "17g" },
+  "Tomato Sauce": { pack: "500mL", serve: "15mL" }, // NZ 565g
   Tuna: { pack: "95g", serve: "47.5g" },
   "Veggie Straws": { pack: "5pack", serve: "1ea" },
   "Wholegrain Crackers": { pack: "100g", serve: "15g" },
-  Yeast: { pack: "150g", serve: "7.5g" },
+  Yeast: { pack: "280g", serve: "7.5g" }, // NZ 150g
 
   // ── 2026-09-06: 검색이 엉뚱한 상품을 집던 재료를 고정하면서, 팩 크기를 상품 API로
   //    확인해 함께 적는다. 🔴 serve는 factor에서 역산하지 않았다 — 그러면 아래 가드가
@@ -222,23 +222,23 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   Berries: { pack: "500g", serve: "100g" },
   Blueberries: { pack: "500g", serve: "100g" },
   "Bread Roll": { pack: "6pack", serve: "1ea" },
-  Breadcrumbs: { pack: "300g", serve: "15g" },
-  "Cherry Tomatoes": { pack: "180g", serve: "27g" },
-  "Chicken Breast": { pack: "450g", serve: "90g" },
+  Breadcrumbs: { pack: "375g", serve: "15g" }, // NZ 300g
+  "Cherry Tomatoes": { pack: "250g", serve: "27g" }, // NZ 180g
+  "Chicken Breast": { pack: "650g", serve: "90g" }, // NZ 450g
   "Corn Tortilla": { pack: "10pack", serve: "1ea" },
   "Cream/Milk": { pack: "300mL", serve: "15mL" },
-  "Dumpling Wrappers": { pack: "300g", serve: "45g" },
+  "Dumpling Wrappers": { pack: "275g", serve: "45g" }, // NZ 300g
   Herbs: { pack: "12g", serve: "0.6g" },
-  Kiwifruit: { pack: "680g", serve: "102g" },
-  Nori: { pack: "30g", serve: "3g" },
+  Kiwifruit: { pack: "8pack", serve: "1ea" }, // NZ 680g
+  Nori: { pack: "25g", serve: "3g" }, // NZ 30g
   Oil: { pack: "750mL", serve: "15mL" },
   Onion: { pack: "per kg", serve: "100g" },
-  Pickle: { pack: "500g", serve: "25g" },
-  "Smoked Salmon": { pack: "80g", serve: "16g" },
+  Pickle: { pack: "490g", serve: "25g" }, // NZ 500g
+  "Smoked Salmon": { pack: "100g", serve: "16g" }, // NZ 80g
   Spinach: { pack: "120g", serve: "12g" },
   Strawberries: { pack: "500g", serve: "100g" },
-  Watermelon: { pack: "per kg", serve: "100g" },
-  "Butter Chicken Sauce": { pack: "80g", serve: "20g" },
+  // Watermelon: AU는 1/4통 낱개라 무게를 모른다 → PORTION_BASIS_UNVERIFIED
+  "Butter Chicken Sauce": { pack: "500g", serve: "20g" }, // NZ 80g
   Cumin: { pack: "30g", serve: "0.3g" },
   Spaghetti: { pack: "500g", serve: "60g" },
 
@@ -249,22 +249,22 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   //    캐시가 집은 상품을 **가격으로 대조해** 특정하고(이름만으로는 250g/500g을 못 가른다),
   //    volumeSize를 읽어 factor가 함의하는 1인분 g수를 계산해 상식 범위를 확인했다.
   Vegemite: { pack: "380g", serve: "10g" },
-  Jam: { pack: "660g", serve: "20g" },
+  Jam: { pack: "375g", serve: "20g" }, // NZ 660g
   "Peanut Butter": { pack: "375g", serve: "15g" },
   Honey: { pack: "500g", serve: "15g" },
   "Cream Cheese": { pack: "250g", serve: "15g" },
   Hummus: { pack: "200g", serve: "30g" },
   Eggs: { pack: "12pack", serve: "1 egg" },
-  Sugar: { pack: "1.5kg", serve: "45g" },
+  Sugar: { pack: "2kg", serve: "45g" }, // NZ 1.5kg
   Pasta: { pack: "500g", serve: "60g" },
   // 🔴 팩이 바뀌었다 — 고정 전엔 가공 시리얼 500g이었고 지금은 rolled oats 750g이다.
   "Rolled Oats": { pack: "750g", serve: "60g" },
-  Chickpeas: { pack: "420g", serve: "105g" },
-  Salami: { pack: "100g", serve: "10g" },
+  Chickpeas: { pack: "400g", serve: "105g" }, // NZ 420g
+  Salami: { pack: "80g", serve: "10g" }, // NZ 100g
   Milk: { pack: "1L", serve: "50ml" },
   Carrot: { pack: "per kg", serve: "100g" },
   Yoghurt: { pack: "1kg", serve: "120g" },
-  Grapes: { pack: "500g", serve: "75g" },
+  Grapes: { pack: "900g", serve: "75g" }, // NZ 500g
   Bagel: { pack: "4pack", serve: "1 bagel" },
 
   // 상품을 새로 고정하면서 근거를 같이 등록한 셋 (아래 PINNED_SKUS 주석 참조)
@@ -273,14 +273,14 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   Butter: { pack: "500g", serve: "15g" },
   // ── 2026-08-21: 남아 있던 미확인 12건을 상품 API로 전수 대조했다.
   //    10건은 기록된 size가 실제와 같았고, 둘이 어긋났다(크루아상 factor·시나몬 팩 크기).
-  Breadsticks: { pack: "2pack", serve: "0.4 stick" },
-  "Rice Bubbles": { pack: "460g", serve: "37g" },
+  Breadsticks: { pack: "125g", serve: "20g" }, // NZ 2pack
+  "Rice Bubbles": { pack: "365g", serve: "37g" }, // NZ 460g
   Macaroni: { pack: "500g", serve: "60g" },
   Meatballs: { pack: "400g", serve: "80g" },
   Cocoa: { pack: "250g", serve: "8g" },
-  Falafel: { pack: "300g", serve: "75g" },
-  "Red Lentils": { pack: "390g", serve: "39g" },
-  Croissant: { pack: "each", serve: "1 croissant" },
+  Falafel: { pack: "200g", serve: "75g" }, // NZ 300g
+  "Red Lentils": { pack: "375g", serve: "39g" }, // NZ 390g
+  Croissant: { pack: "4pack", serve: "1 croissant" }, // NZ each
   // API가 volumeSize를 안 준다(packageType "bunch", $2.50/1ea). 다발 하나가 판매 단위다.
   "Spring Onion": { pack: "each", serve: "0.1 bunch" },
   "Desiccated Coconut": { pack: "250g", serve: "12g" },
@@ -297,68 +297,68 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
    *       Roll 1.2개, Probiotic Drink 0.85병. 낱개로 맞췄다.
    *    🔴 Pesto는 100g의 5%(=5g)였다. 파니니 한 번 바르는 양도 안 된다 — 1큰술(15g)로.
    */
-  Pesto: { pack: "100g", serve: "15g" },
+  Pesto: { pack: "190g", serve: "15g" }, // NZ 100g
   Spices: { pack: "30g", serve: "0.3g" },
-  Noodles: { pack: "400g", serve: "80g" },
-  Roti: { pack: "7pack", serve: "1 roti" },
-  Rocket: { pack: "45g", serve: "6.75g" },
+  Noodles: { pack: "440g", serve: "80g" }, // NZ 400g
+  Roti: { pack: "8pack", serve: "1 roti" }, // NZ 7pack
+  Rocket: { pack: "60g", serve: "6.75g" }, // NZ 45g
   Quinoa: { pack: "500g", serve: "50g" },
   Cucumber: { pack: "each", serve: "0.15 cucumber" },
   Salsa: { pack: "312g", serve: "31.2g" },
   Lettuce: { pack: "each", serve: "0.08 lettuce" },
   Ham: { pack: "200g", serve: "24g" },
   Peas: { pack: "1kg", serve: "50g" },
-  "Egg (glaze)": { pack: "10pack", serve: "0.2 egg" },
-  Tortilla: { pack: "10pack", serve: "1 wrap" },
-  "Chicken Thigh": { pack: "450g", serve: "90g" },
+  "Egg (glaze)": { pack: "12pack", serve: "0.2 egg" }, // NZ 10pack
+  Tortilla: { pack: "8pack", serve: "1 wrap" }, // NZ 10pack
+  "Chicken Thigh": { pack: "550g", serve: "90g" }, // NZ 450g
   Mozzarella: { pack: "125g", serve: "10g" },
   Roll: { pack: "6pack", serve: "1 roll" },
   "Canned Tuna": { pack: "95g", serve: "47.5g" },
-  Tomato: { pack: "600g", serve: "90g" },
+  Tomato: { pack: "each", serve: "0.5ea" }, // NZ 600g
   Chicken: { pack: "per kg", serve: "200g" },
-  "Cheese Sauce": { pack: "30g", serve: "3g" },
+  "Cheese Sauce": { pack: "29g", serve: "3g" }, // NZ 30g
   "Soy Sauce": { pack: "500mL", serve: "10ml" },
   Olives: { pack: "280g", serve: "22.4g" },
-  Dates: { pack: "400g", serve: "40g" },
+  Dates: { pack: "500g", serve: "40g" }, // NZ 400g
   Bread: { pack: "700g", serve: "70g" },
   "Vegetable Stock": { pack: "1L", serve: "50ml" },
-  "Cooked Chicken": { pack: "250g", serve: "50g" },
+  "Cooked Chicken": { pack: "200g", serve: "50g" }, // NZ 250g
   "Olive Oil": { pack: "1L", serve: "20ml" },
-  Lemon: { pack: "1kg", serve: "100g" },
+  Lemon: { pack: "500g", serve: "100g" }, // NZ 1kg
   "Boiled Egg": { pack: "12pack", serve: "1 egg" },
-  Mayonnaise: { pack: "340mL", serve: "10.2ml" },
+  Mayonnaise: { pack: "440g", serve: "12g" }, // NZ 340mL
   "Probiotic Drink": { pack: "5pack", serve: "1 bottle" },
 
   // ── 2026-08-23 2차: 상품명 전수 대조에서 **다른 음식**이 잡혀 있던 15건.
   //    고정하면서 팩 크기도 같이 확인해 여기 넣는다.
-  Muesli: { pack: "650g", serve: "52g" },
+  Muesli: { pack: "750g", serve: "52g" }, // NZ 650g
   "Pork Shoulder": { pack: "per kg", serve: "80g" },
-  "Mango Chutney": { pack: "340g", serve: "17g" },
-  "Sesame Oil": { pack: "207mL", serve: "4.14ml" },
-  "Vegan Mayo": { pack: "340mL", serve: "10.2ml" },
-  "Chicken Skewers": { pack: "5pack", serve: "1 skewer" },
-  "Curry Spices": { pack: "40g", serve: "2g" },
-  "Sugar Snap Peas": { pack: "100g", serve: "20g" },
-  "Ripe Bananas": { pack: "per kg", serve: "250g" },
+  "Mango Chutney": { pack: "250g", serve: "17g" }, // NZ 340g
+  "Sesame Oil": { pack: "150mL", serve: "4.14ml" }, // NZ 207mL
+  "Vegan Mayo": { pack: "270mL", serve: "10.2ml" }, // NZ 340mL
+  "Chicken Skewers": { pack: "6pack", serve: "1 skewer" }, // NZ 5pack
+  "Curry Spices": { pack: "50g", serve: "2g" }, // NZ 40g
+  "Sugar Snap Peas": { pack: "150g", serve: "20g" }, // NZ 100g
+  "Ripe Bananas": { pack: "5pack", serve: "2ea" }, // NZ per kg 250g — AU는 작은 바나나 5개 봉지에서 2개
   "Cottage Cheese": { pack: "250g", serve: "30g" },
-  "Hoisin Sauce": { pack: "320mL", serve: "9.6ml" },
+  "Hoisin Sauce": { pack: "300mL", serve: "9.6ml" }, // NZ 320mL
   "Sushi Rice": { pack: "1kg", serve: "60g" },
   "Kidney Beans": { pack: "420g", serve: "105g" },
-  "Vermicelli Noodles": { pack: "250g", serve: "50g" },
-  "Oat Cookie": { pack: "310g", serve: "46.5g" },
-  "Bao Buns": { pack: "8pack", serve: "2 buns" },
+  "Vermicelli Noodles": { pack: "200g", serve: "50g" }, // NZ 250g
+  "Oat Cookie": { pack: "350g", serve: "46.5g" }, // NZ 310g
+  "Bao Buns": { pack: "16pack", serve: "2 buns" }, // NZ 8pack
   "Pastry Cases": { pack: "5pack", serve: "1 sheet" },
 
-  Flour: { pack: "1.5kg", serve: "120g" },
-  Banana: { pack: "per kg", serve: "120g" },
+  Flour: { pack: "2kg", serve: "120g" }, // NZ 1.5kg
+  Banana: { pack: "each", serve: "1ea" }, // NZ per kg
   "Coconut Oil": { pack: "300g", serve: "9g" },
-  "Baking Powder": { pack: "400g", serve: "8g" },
-  "Baking Soda": { pack: "185g", serve: "3.7g" },
+  "Baking Powder": { pack: "300g", serve: "8g" }, // NZ 400g
+  "Baking Soda": { pack: "500g", serve: "3.7g" }, // NZ 185g
   Corn: { pack: "420g", serve: "21g" },
 
   // 메뉴에는 없고 가이드 레시피에만 쓰는 재료 (RECIPE_ONLY_INGREDIENTS).
   // serve는 레시피 원가에 쓰이지 않지만(그램으로 센다) 비워 두면 규칙이 갈라진다.
-  "Plain Flour": { pack: "1.5kg", serve: "120g" },
+  "Plain Flour": { pack: "2kg", serve: "120g" }, // NZ 1.5kg
   Tahini: { pack: "375g", serve: "15g" },
   Courgette: { pack: "per kg", serve: "100g" },
   "Vanilla Essence": { pack: "100mL", serve: "5ml" },
@@ -366,6 +366,25 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   //   factor 0.12 × 1kg = 120g ≈ 귤 1~2개. 도시락 한 통 분량으로 맞다.
   //   🔴 이 재료는 고정이 없어서 크론이 **오렌지주스**($6.49)를 집고 있었다.
   Mandarin: { pack: "1kg", serve: "120g" },
+
+  /* ── 2026-10-30 Aussie: Woolworths AU 고정 SKU의 `PackageSize`로 확인했다(검색 응답에 그대로 있다).
+   *    NZ에선 상품 API가 volumeSize를 안 줘 미확인이던 낱개 품목도 AU는 「each」·「4 pack」으로 준다.
+   *    serve는 Kiwi factor가 뜻하던 양(사과 120g·아보카도 반 개 등)을 그대로 옮겼다 — 도시락 1인분은 나라가 바뀌어도 같다.
+   *    🔴 Cabbage는 **1/4통** 상품이라 0.3개 = 통배추 약 1/13이다(Kiwi 0.08통과 같은 양). */
+  Apple: { pack: "1kg", serve: "120g" },
+  "Grated Apple": { pack: "1kg", serve: "120g" },
+  Beef: { pack: "500g", serve: "100g" },
+  "Chicken/Tofu": { pack: "650g", serve: "90g" },
+  Turkey: { pack: "160g", serve: "20g" },
+  Avocado: { pack: "each", serve: "0.5ea" },
+  Basil: { pack: "each", serve: "0.1ea" },
+  Broccoli: { pack: "each", serve: "0.15ea" },
+  Cabbage: { pack: "each", serve: "0.3ea" },
+  Capsicum: { pack: "each", serve: "0.25ea" },
+  Orange: { pack: "each", serve: "0.75ea" },
+  Pear: { pack: "each", serve: "0.75ea" },
+  Ciabatta: { pack: "4pack", serve: "1ea" },
+  "Cos Lettuce": { pack: "2pack", serve: "0.2ea" },
 };
 
 /**
@@ -375,28 +394,9 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
  *    한 줄씩 상품 API로 확인해 `PORTION_BASIS`로 옮길 것. 비워 두지 말고 줄여 나갈 것.
  */
 export const PORTION_BASIS_UNVERIFIED: readonly string[] = [
-  // ── 2026-09-07: 낱개/무게 판매라 상품 API가 volumeSize를 안 준다.
-  "GF Sausages", // SKU 규격이 "1kg pack" — qty()가 못 읽는 표기다
-  "Avocado", // 낱개 아보카도
-  "Basil", // 화분 단위
-  "Beef", // 트레이 단위, volumeSize 없음
-  "Cabbage", // 통 단위
-  "Capsicum", // 낱개
-  "Ciabatta", // 낱개 포켓
-  "Cos Lettuce", // 한 통
-  "Grated Apple", // 낱개 사과
+  // ── 2026-10-30 Aussie: Kiwi의 낱개 품목 13개는 AU `PackageSize`로 확인해 PORTION_BASIS로 옮겼다.
+  "Watermelon", // 1/4통 낱개(each) — 통마다 무게가 달라 100g이 몇 분의 몇인지 모른다
 
-  // ── 2026-09-06: 낱개/무게 판매라 상품 API가 volumeSize를 안 준다.
-  //    팩 크기를 못 적으므로 여기 남긴다 — 조용히 빠지는 것과 구별하기 위해서다.
-  "Apple", // 낱개 사과. 상품 API에 volumeSize 없음
-  "Broccoli", // 한 통 단위
-  "Orange", // 낱개
-  "Pear", // 낱개
-
-  // 🔴 2026-08-23에 **다시 비었다.** 크론 churn 때문에 고정한 31건까지 팩 크기를 확인해
-  //    전부 PORTION_BASIS로 옮겼다. 비어 있다는 건 "확인할 게 없다"가 아니라
-  //    **"고정 SKU가 있는 재료는 전부 팩 크기를 대조했다"**는 뜻이다.
-  //    새 재료를 고정하면 여기 적고, 상품 API로 확인한 뒤 PORTION_BASIS로 옮길 것.
 ];
 
 /**

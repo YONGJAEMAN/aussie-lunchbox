@@ -158,14 +158,15 @@ describe("회귀: 실제 매대가로 도시락 1통이 현실적인 범위에 �
   // 예전 버그는 1통 $8.59를 만들었다. 대표적인 도시락 구성에 실제 관측 가격을
   // 넣었을 때 터무니없는 값이 나오면 즉시 실패해야 한다.
   const observed = new Map<string, PriceInfo>([
-    ["Bread", price(4.26)], // Nature's Fresh 700g
-    ["Ham", price(4.0)], // shaved sandwich ham
-    ["Cheese", price(12.55)], // 1kg cheddar block
-    ["Lettuce", price(2.99)],
-    ["Tomato", price(3.49)],
-    ["Butter", price(6.8)],
-    ["Apple", price(5.99)], // 1kg kids apples
-    ["Carrot", price(1.95)],
+    // Woolworths AU 고정 상품 정가(2026-10-30 수집) — 팩 크기는 PORTION_BASIS와 같다
+    ["Bread", price(4.6)], // 700g 식빵
+    ["Ham", price(6.6)], // 200g 포장 햄
+    ["Cheese", price(6.6)], // 500g 블록
+    ["Lettuce", price(3.0)], // 양상추 한 통
+    ["Tomato", price(0.65)], // 낱개(each) — 1인분 0.5개
+    ["Butter", price(7.0)],
+    ["Apple", price(7.9)], // 1kg 펀넷
+    ["Carrot", price(2.2)], // kg당
   ]);
 
   it("햄샌드위치 + 사과 + 당근 한 통이 현실적인 범위($1.5~4.5)에 든다", () => {

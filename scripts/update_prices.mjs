@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import {
   SEARCH_BASE, searchTermFor, pickRepresentative, pinnedFor, PINNED_SKUS,
-  RECIPE_ONLY_INGREDIENTS, shelfPrice,
+  RECIPE_ONLY_INGREDIENTS,
 } from "../lib/priceSearch.mjs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -19,19 +19,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const CACHE_PATH = join(ROOT, "data", "price_cache.json");
 
-// NZ fallback prices (NZD) — **반드시 '판매 단위 한 팩' 가격**.
+// AU fallback prices (AUD) — **반드시 '판매 단위 한 팩' 가격**.
 // 비용 계산이 여기에 PORTION_FACTORS(팩 대비 비율)를 곱하므로 개당 가격을 넣으면 안 된다.
 // lib/supermarketApi.ts의 같은 테이블과 값을 맞출 것.
 const FALLBACK_PRICES = {
-  Bread: 3.50, Marmite: 6.00, Cheese: 12.00, Butter: 8.50,
-  Croissant: 4.00, Ham: 5.50, "Chicken Breast": 14.00, Lettuce: 4.00, Mayo: 6.50,
-  "Sushi Rice": 4.50, Seaweed: 3.00, "Canned Tuna": 2.50, Cucumber: 3.00,
-  Eggs: 9.00, Milk: 3.50, Spinach: 4.00, Pastry: 5.00,
-  Pasta: 2.00, Pesto: 6.00, "Cherry Tomatoes": 4.50, "Olive Oil": 10.00,
-  Apple: 5.99, // 1kg 팩 (이전 0.80은 사과 1개 값)
-  Carrot: 1.95, // 1kg 봉지 (이전 0.50은 당근 1개 값)
-  Hummus: 5.00,
-  Yoghurt: 6.50, Muesli: 7.00, Crackers: 3.00, Tortilla: 4.50,
+  Bread: 4.00, Vegemite: 6.50, Cheese: 13.00, Butter: 9.00,
+  Croissant: 4.50, Ham: 6.00, "Chicken Breast": 15.00, Lettuce: 4.50, Mayo: 7.00,
+  "Sushi Rice": 5.00, Seaweed: 3.50, "Canned Tuna": 2.80, Cucumber: 3.50,
+  Eggs: 9.50, Milk: 3.80, Spinach: 4.50, Pastry: 5.50,
+  Pasta: 2.50, Pesto: 6.50, "Cherry Tomatoes": 5.00, "Olive Oil": 11.00,
+  Apple: 5.50, // 1kg 봉지
+  Carrot: 2.50, // 1kg 봉지
+  Hummus: 5.50,
+  Yoghurt: 7.00, Muesli: 8.00, Crackers: 3.50, Tortilla: 5.00,
 };
 
 function getFallback(name) {
@@ -69,133 +69,93 @@ function loadMenuIngredients() {
   return [...ingredients];
 }
 
-/** SKU가 고정된 재료는 검색을 건너뛰고 그 상품을 직접 조회한다 */
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+
+/** Woolworths AU 검색 — 마켓플레이스(제3자 판매) 상품은 뺀다(치약·개 사료가 여기서 왔다). */
+async function auSearch(term) {
+  const url = `${SEARCH_BASE}?searchTerm=${encodeURIComponent(term)}&pageNumber=1&pageSize=24&sortType=TraderRelevance`;
+  const res = await fetch(url, {
+    signal: AbortSignal.timeout(20000),
+    headers: { "User-Agent": UA, Accept: "application/json", "Accept-Language": "en-AU,en;q=0.9" },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  return (data?.Products ?? []).flatMap((g) => g?.Products ?? []).filter((p) => p && !p.IsMarketProduct);
+}
+
+/**
+ * AU 상품 → 캐시에 넣을 **정상가**. 특가 주에는 `WasPrice`가 정상가다(Kiwi `shelfPrice`와 같은 규칙 —
+ * 특가는 promotions.json 쪽에서만 반영한다). `IsOnSpecial` 딱지 없이 Was > Price인 경우는 매대 값(Price)을 쓴다.
+ *
+ * kg당 재료(`size: "per kg"`)는 팩 가격이 아니라 `CupString`("$2.20 / 1KG")의 kg당 값을 쓴다 —
+ * 🔴 AU 응답은 Unit이 전부 "Each"라 kg당 값이 따로 없다. 특가 중이면 CupString도 특가 기준이라 같은 비율로 되돌린다.
+ */
+function auShelfPrice(p, perKg = false) {
+  const price = Number(p?.Price);
+  const was = Number(p?.WasPrice);
+  const regular = p?.IsOnSpecial && was > price ? was : price;
+  if (!Number.isFinite(regular) || regular <= 0) return NaN;
+  if (!perKg) return regular;
+  const m = /\$([\d.]+)\s*\/\s*(1KG|100G)/i.exec(String(p?.CupString ?? ""));
+  if (!m) return NaN;
+  const perKgNow = parseFloat(m[1]) * (/100G/i.test(m[2]) ? 10 : 1);
+  return Math.round(perKgNow * (regular / price) * 100) / 100;
+}
+
+function auEntry(p, name, perKg) {
+  const price = auShelfPrice(p, perKg);
+  if (!Number.isFinite(price) || price <= 0) return null; // 품절이면 Price가 null/0으로 온다
+  const contains = String(p?.AdditionalAttributes?.allergencontains ?? "").trim();
+  return {
+    price,
+    image: p?.LargeImageFile ?? p?.MediumImageFile ?? "",
+    name: p?.Name ?? name,
+    source: "Woolworths Australia",
+    // 🔴 Kiwi 2026-08-23: 고정과 캐시가 같은 상품인지 이름만으로 대조하면 SKU만 바뀐 경우를 못 잡는다.
+    sku: String(p?.Stockcode ?? ""),
+    // 🔴 Kiwi 2026-08-23: 라벨을 안 읽어서 `Vegan Mayo` 자리에 달걀 든 마요가 있었다. AU는 검색 응답에 라벨이 있다.
+    //    Kiwi 캐시와 같은 모양(쉼표로 이은 문자열 하나를 담은 배열 + 문자열). 라벨이 없는 상품은 빈 값.
+    allergens: contains ? [contains] : [],
+    allergenMaybePresent: String(p?.AdditionalAttributes?.allergenmaybepresent ?? "").trim(),
+  };
+}
+
+/** SKU가 고정된 재료 — 검색어에 Stockcode를 넣으면 그 상품 하나만 돌아온다(상세 엔드포인트는 응답이 없다). */
 async function fetchPinned(name, pin) {
   try {
-    const res = await fetch(`${SEARCH_BASE}/${encodeURIComponent(pin.sku)}`, {
-      signal: AbortSignal.timeout(12000),
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json",
-        "X-Requested-With": "OnlineShopping.WebApp",
-      },
-    });
-    if (!res.ok) {
-      console.warn(`  ⚠️  ${name}: 고정 SKU ${pin.sku} HTTP ${res.status}`);
+    let p = (await auSearch(pin.sku)).find((x) => String(x.Stockcode) === pin.sku);
+    // 🔴 SKU가 짧으면(Coconut Milk "168") 번호 검색이 다른 상품들을 준다 — 상품명으로 찾아 같은 Stockcode를 고른다.
+    if (!p) {
+      await new Promise((r) => setTimeout(r, 1500));
+      p = (await auSearch(pin.name)).find((x) => String(x.Stockcode) === pin.sku);
+    }
+    if (!p) {
+      console.warn(`  ⚠️  ${name}: 고정 SKU ${pin.sku}가 검색에 없다(단종·품절 목록 제외일 수 있다)`);
       return null;
     }
-    const p = await res.json();
-    // 정가를 저장한다 — 특가·회원가는 promotions.json 쪽에서만 반영한다(shelfPrice 머리 주석).
-    const price = shelfPrice(p?.price).regular;
-    if (!Number.isFinite(price) || price <= 0) return null;
-    // 상품이 바뀌었는지 확인 — 고정의 의미가 사라지면 알려야 한다.
     const norm = (s) => String(s ?? "").trim().replace(/\s+/g, " ").toLowerCase();
-    if (norm(p?.name) !== norm(pin.name)) {
-      console.warn(
-        `  ⚠️  ${name}: 고정 SKU ${pin.sku}의 상품명이 변경됨 — "${pin.name}" → "${p?.name}". PINNED_SKUS 재확인 필요`,
-      );
+    if (norm(p.Name) !== norm(pin.name)) {
+      console.warn(`  ⚠️  ${name}: 고정 SKU ${pin.sku}의 상품명이 변경됨 — "${pin.name}" → "${p.Name}". PINNED_SKUS 재확인 필요`);
     }
-    return {
-      price,
-      // 🔴 2026-08-23: 여기가 `p?.images?.big`이었다. **단일 상품 엔드포인트의
-      //    `images`는 배열**이라 항상 undefined였고, 고정 SKU 재료 43개 중 26개가
-      //    이미지 없이 저장돼 있었다(검색 경로는 객체를 줘서 안 걸렸다).
-      //    지금은 화면이 이 필드를 안 쓰지만(`lib/supermarketApi.ts`가 이모지로 덮는다),
-      //    쓰는 순간 조용히 빈 값이 나간다.
-      //    ⚠️ `bigImageUrl`은 **URL이 아니라 파일명**이다("9414742036288.jpg").
-      //       배열의 첫 항목이 전체 URL을 준다.
-      image: p?.images?.[0]?.big ?? "",
-      name: p?.name ?? name,
-      source: "Woolworths Australia",
-      // 🔴 2026-08-23: SKU를 저장한다. 고정과 캐시가 **같은 상품인지**를 이름으로만
-      //    대조하면 SKU만 바뀐 경우를 못 잡는다(돌연변이로 확인했다 — 침묵했다).
-      sku: String(p?.sku ?? ""),
-      // 🔴 2026-08-23: 상품 API가 알레르겐을 준다는 걸 그제야 알았다.
-      //    `Muesli (Nut-free)`라는 재료가 **견과류 경고가 붙은 뮤즐리**로 잡혀 있었고,
-      //    참기름 자리엔 미강유, 비건 마요 자리엔 달걀이 든 일반 마요가 있었다.
-      //    이름만 보고는 못 잡는다 — 라벨을 같이 저장해서 가드가 보게 한다.
-      allergens: Array.isArray(p?.allergens) ? p.allergens : [],
-      allergenMaybePresent: typeof p?.allergenMaybePresent === "string" ? p.allergenMaybePresent : "",
-    };
+    return auEntry(p, name, /^per\s*kg$/i.test(pin.size ?? ""));
   } catch (err) {
     console.warn(`  ⚠️  ${name}: 고정 SKU 조회 실패 ${err.message}`);
     return null;
   }
 }
 
-/**
- * 알레르겐 라벨은 **검색 응답에 없다** — 단일 상품 엔드포인트에만 있다.
- * 그래서 상품을 고른 뒤 한 번 더 부른다(재료당 요청 1회 추가).
- *
- * 🔴 2026-08-23: 라벨을 안 읽어서 `Muesli (Nut-free)`가 견과류 경고가 붙은 뮤즐리로,
- *    `Vegan Mayo`가 달걀이 든 마요로 잡혀 있었다. 이름 토큰 필터로는 못 잡는다.
- *    라벨이 없으면 **빈 값으로 두고 넘어간다** — 여기서 실패하면 가격까지 못 받는다.
- */
-async function fetchAllergens(sku) {
-  try {
-    const res = await fetch(`${SEARCH_BASE}/${encodeURIComponent(sku)}`, {
-      signal: AbortSignal.timeout(12000),
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json",
-        "X-Requested-With": "OnlineShopping.WebApp",
-      },
-    });
-    if (!res.ok) return { allergens: [], allergenMaybePresent: "" };
-    const p = await res.json();
-    return {
-      allergens: Array.isArray(p?.allergens) ? p.allergens : [],
-      allergenMaybePresent: typeof p?.allergenMaybePresent === "string" ? p.allergenMaybePresent : "",
-    };
-  } catch {
-    return { allergens: [], allergenMaybePresent: "" };
-  }
-}
-
 async function fetchWoolworths(name) {
-  // 검색으로 못 잡히는 재료는 SKU로 직접 간다 (PINNED_SKUS 참조).
   const pin = pinnedFor(name);
   if (pin) {
-    const pinned = await fetchPinned(name, pin);
-    if (pinned) return pinned;
     // 고정 조회가 실패하면 검색으로 후퇴하지 않는다 — 검색이 안 되니까 고정한 것이다.
-    return null;
+    return fetchPinned(name, pin);
   }
-
-  // 검색어는 재료명 그대로가 아니라 SEARCH_TERMS를 거친다 (모호한 이름 보정).
-  const url = `${SEARCH_BASE}?target=search&search=${encodeURIComponent(searchTermFor(name))}`;
-
   try {
-    const res = await fetch(url, {
-      signal: AbortSignal.timeout(12000),
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json",
-        "X-Requested-With": "OnlineShopping.WebApp",
-      },
-    });
-
-    if (!res.ok) {
-      console.warn(`  ⚠️  ${name}: HTTP ${res.status}`);
-      return null;
-    }
-
-    const data = await res.json();
-    // items[0]을 그냥 집지 않는다 — 대표성 없는 상품이 상단에 오는 경우가 많다.
-    const item = pickRepresentative(data?.products?.items, name);
-    const price = item ? shelfPrice(item.price).regular : NaN;
-    // 품절이면 가격이 0.0으로 온다(2026-10-04 쌀) — 고정 SKU 경로(위)와 같이 거른다.
-    if (item && Number.isFinite(price) && price > 0) {
-      // 검색 응답의 `images`는 **객체**다(단일 상품 엔드포인트는 배열이다 — 다르다).
-      return {
-        price,
-        image: item?.images?.big ?? "",
-        name: item?.name ?? name,
-        source: "Woolworths Australia",
-        sku: String(item?.sku ?? ""),
-        ...(await fetchAllergens(item.sku)),
-      };
-    }
+    const prods = await auSearch(searchTermFor(name));
+    // items[0]을 그냥 집지 않는다 — 규칙(pickRepresentative)이 쓰는 모양으로 바꿔 같은 선별을 거친다.
+    const items = prods.map((p) => ({ type: "Product", name: String(p.Name ?? "").toLowerCase(), price: { salePrice: auShelfPrice(p) }, _p: p }));
+    const item = pickRepresentative(items, name);
+    if (item) return auEntry(item._p, name, false);
   } catch (err) {
     console.warn(`  ⚠️  ${name}: ${err.message}`);
   }
@@ -203,7 +163,7 @@ async function fetchWoolworths(name) {
 }
 
 async function main() {
-  console.log("🥝 Aussie Lunchbox — Woolworths Australia Price Updater\n");
+  console.log("🦘 Aussie Lunchbox — Woolworths Australia Price Updater\n");
 
   const ingredients = loadMenuIngredients();
   console.log(`📋 Found ${ingredients.length} ingredients to fetch\n`);
@@ -249,7 +209,8 @@ async function main() {
     }
 
     if (i < ingredients.length - 1) {
-      await new Promise((r) => setTimeout(r, 300));
+      // 🔴 Kiwi는 300ms였다. AU는 Akamai 뒤라 1.5초 간격으로 197개를 받아도 막히지 않았다(2026-10-30) — 줄이지 말 것.
+      await new Promise((r) => setTimeout(r, 1500));
     }
   }
 

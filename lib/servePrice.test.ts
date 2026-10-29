@@ -60,7 +60,8 @@ describe("packSize / serveSize — 팩 크기는 고정 SKU와 PORTION_BASIS에�
   it("근거 없는 재료는 던진다 — 본문에 팩 크기를 손으로 적지 못하게", () => {
     // 🔴 2026-08-23: 예전엔 "Bread"를 썼는데 그날 근거가 등록되면서 더 이상 안 던졌다.
     //    근거가 **끝내 없을** 재료를 쓴다 — API가 한 번도 안 잡히는 폴백 재료다.
-    expect(() => packSize("Turkey")).toThrow(/PINNED_SKUS에/);
-    expect(() => serveSize("Turkey")).toThrow(/PORTION_BASIS에/);
+    // Aussie: Turkey는 AU에서 포장 상품을 고정했다 — 끝내 고정이 없는 재료는 GF Sausages다(AU 검색에 없다).
+    expect(() => packSize("GF Sausages")).toThrow(/PINNED_SKUS에/);
+    expect(() => serveSize("GF Sausages")).toThrow(/PORTION_BASIS에/);
   });
 });
