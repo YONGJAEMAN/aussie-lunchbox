@@ -1,6 +1,4 @@
 import priceCache from "@/data/price_cache.json";
-import { cacheFor } from "@/lib/priceCaches";
-import type { Island } from "@/data/promotions.types";
 import menuDataJson from "@/data/menuData.json";
 import { PORTION_FACTORS, DEFAULT_PORTION, PORTION_BASIS } from "@/lib/planConfig";
 import { PINNED_SKUS } from "@/lib/priceSearch.mjs";
@@ -248,14 +246,12 @@ const MENU_DATA = (menuDataJson as unknown as {
 }).MENU_DATA.en;
 const SNACK_DATA = (menuDataJson as unknown as { SNACK_DATA: Record<string, Row[]> }).SNACK_DATA;
 
-type Cache = Record<string, { data?: { price?: number } }>;
-
-const perIngredient = (ing: string, cache: Cache = CACHE) => {
-  const p = cache[ing]?.data?.price;
+const perIngredient = (ing: string) => {
+  const p = CACHE[ing]?.data?.price;
   return (typeof p === "number" && p > 0 ? p : 0) * (PORTION_FACTORS[ing] ?? DEFAULT_PORTION);
 };
 
-const sumCost = (ings: string[], cache: Cache = CACHE) => ings.reduce((t, i) => t + perIngredient(i, cache), 0);
+const sumCost = (ings: string[]) => ings.reduce((t, i) => t + perIngredient(i), 0);
 
 export function median(xs: number[]): number {
   const a = [...xs].sort((x, y) => x - y);
@@ -273,8 +269,8 @@ export function median(xs: number[]): number {
  *    바로 위 ⚠️ 주석이 경고하던 그 실수인데, 경고가 이 파일 안에만 있어서
  *    밖에서 새로 쓴 모듈에는 닿지 않았다. 이제 밖에서도 **여기를** 부른다.
  */
-export function snackSlotsCost(cache: Cache = CACHE): number {
-  const poolCost = (rows: Row[]) => rows.map((r) => sumCost(r.ingredients ?? [], cache));
+export function snackSlotsCost(): number {
+  const poolCost = (rows: Row[]) => rows.map((r) => sumCost(r.ingredients ?? []));
   const fruit = median(poolCost(SNACK_DATA["Fruit & Veg"] ?? []));
   const other = median(
     poolCost([...(SNACK_DATA["Protein & Dairy"] ?? []), ...(SNACK_DATA["Savoury Crunch"] ?? [])]),
@@ -285,9 +281,9 @@ export function snackSlotsCost(cache: Cache = CACHE): number {
   return fruit + other;
 }
 
-function boxCosts(cache: Cache = CACHE): number[] {
-  const slots = snackSlotsCost(cache);
-  return MENU_DATA.map((m) => sumCost(m.ingredients ?? [], cache) + slots);
+function boxCosts(): number[] {
+  const slots = snackSlotsCost();
+  return MENU_DATA.map((m) => sumCost(m.ingredients ?? []) + slots);
 }
 
 /** 도시락 중앙값의 **숫자**. 게시 문구는 `boxMedianLabel()`을 쓸 것. */
@@ -330,20 +326,6 @@ export const mainMedianLabel = () => approxMoney(mainMedian());
 
 export const boxFloorLabel = () => approxMoney(Math.min(...boxCosts()));
 export const boxCeilingLabel = () => approxMoney(Math.max(...boxCosts()));
-
-/**
- * 섬별 도시락 어림(중앙·아래끝·위끝) — 남섬 아웃리치 본문이 쓴다(2026-10-28).
- * 북섬은 위 `boxMedianLabel` 등과 **같은 값**이다(같은 캐시·같은 식). 남섬은 `price_cache.south.json`.
- * 🔴 사이트 본문(글·홈)은 지금도 북섬 값만 말한다 — 이 함수는 남섬에 보내는 메일 본문 검사용이다.
- */
-export function boxLabelsFor(island: Island = "north") {
-  const costs = boxCosts(cacheFor(island) as Cache);
-  return {
-    median: approxMoney(median(costs)),
-    floor: approxMoney(Math.min(...costs)),
-    ceiling: approxMoney(Math.max(...costs)),
-  };
-}
 
 /** "$3 미만 N종". 개수는 반올림할 수 없으므로 정확히 센다. */
 export const boxUnderCount = (threshold: number) =>

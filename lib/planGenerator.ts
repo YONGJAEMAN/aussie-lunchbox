@@ -8,8 +8,7 @@ import { estimateMenuCalories, estimateSnackCalories } from "./nutritionCalc";
 import { getActivePromotions, pricedMenuMatches } from "./promotions";
 import { snackAllowed, dietViolations, dayMayContain } from "./ingredientDiet";
 import { kindyOn, menuExclusion, snackExclusion, dayKindyPrep } from "./chokingRisk";
-import type { StoreId, SaleMatch, Promotion, Island } from "@/data/promotions.types";
-import { cacheFor } from "./priceCaches";
+import type { StoreId, SaleMatch, Promotion } from "@/data/promotions.types";
 import { ALL_LUNCH_DAYS, type WeekDayNames, type SharedPlan } from "./planShare";
 import priceCache from "../data/price_cache.json";
 
@@ -350,15 +349,13 @@ export function priceDay(
   priceMap: Map<string, PriceInfo>,
   promotions: Array<Promotion & { store: StoreId }>,
   band: Portions = DEFAULT_PORTION_BAND,
-  /** 특가가 「우리 추적가보다 싼가」를 그 섬의 캐시로 잰다. 원가 자체는 priceMap(그 섬 가격)이다. */
-  island: Island = "north",
 ): { cost: number; saved: number; saleMatches: SaleMatch[] } {
-  const saleMatches = promotions.length > 0 ? pricedMenuMatches(ingredients, promotions, cacheFor(island)) : [];
+  const saleMatches = promotions.length > 0 ? pricedMenuMatches(ingredients, promotions) : [];
   const { cost, saved } = costForIngredients(ingredients, priceMap, saleMapFor(saleMatches), band);
   return { cost, saved, saleMatches };
 }
 
-type SaleOptions = { useSales: boolean; saleStores: StoreId[]; island?: Island };
+type SaleOptions = { useSales: boolean; saleStores: StoreId[] };
 
 /**
  * 하루치 열량 추정 — 나이대 배율을 원가와 **같은 값**으로 곱한다. standard(×1)는 예전 값 그대로다.
@@ -372,7 +369,7 @@ type PrepOptions = { prepStyles: PrepStyle[]; thermosOnly: boolean };
 /** 특가 토글이 켜졌고 마트가 하나라도 골라졌을 때만 특가를 쓴다. */
 export function activePromotionsFor(saleOptions?: SaleOptions): Array<Promotion & { store: StoreId }> {
   return saleOptions?.useSales && saleOptions.saleStores.length > 0
-    ? getActivePromotions(saleOptions.saleStores, new Date(), saleOptions.island ?? "north")
+    ? getActivePromotions(saleOptions.saleStores)
     : [];
 }
 
@@ -419,7 +416,6 @@ async function assembleWeek(
   warning?: string,
   band: Portions = DEFAULT_PORTION_BAND,
   lunchDays: readonly boolean[] = ALL_LUNCH_DAYS,
-  island: Island = "north",
 ): Promise<GeneratePlanResponse> {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   const shoppingList: string[] = [];
@@ -468,7 +464,7 @@ async function assembleWeek(
     // 작성돼 PORTION_FACTORS를 건너뛰었고, 그 결과 치즈 블록 한 팩의 20%가
     // "치즈큐브" 간식 하나로 계산됐다. 경로를 하나로 합쳐 재발을 막는다.
     const { cost, saved, saleMatches } = priceDay(
-      [...menu.ingredients, ...snackIngredients], priceMap, activePromotions, band, island,
+      [...menu.ingredients, ...snackIngredients], priceMap, activePromotions, band,
     );
     // 안 싸는 날은 메뉴만 남기고 장보기·합계·절약액에서 뺀다 — 화면 합계(`weekTotalFrom`)도 같은 날을 건너뛴다.
     const off = lunchDays[i] === false;
@@ -562,8 +558,6 @@ export async function buildWeeklyPlan(
   prepOptions?: PrepOptions,
   band: Portions = DEFAULT_PORTION_BAND,
   lunchDays: readonly boolean[] = ALL_LUNCH_DAYS,
-  /** 가격을 매길 섬. 특가를 끈 식단도 섬에 따라 원가가 다르다 — saleOptions와 따로 받는다. */
-  island: Island = "north",
 ): Promise<GeneratePlanResponse> {
   const available = filterMenus(
     menus, allergies, excluded,
@@ -593,7 +587,7 @@ export async function buildWeeklyPlan(
   //    기준 1인분으로 잰다. 양·원가만 `assembleWeek`에서 곱한다.
   return assembleWeek(
     menus, selected, dailySnacksList, allergies, excluded,
-    getPrices, activePromotions, prepOptions, warning, band, lunchDays, island,
+    getPrices, activePromotions, prepOptions, warning, band, lunchDays,
   );
 }
 
@@ -711,7 +705,7 @@ export async function swapPlanDay(
   snackData: SnackData,
   week: WeekDayNames[],
   dayIndex: number,
-  options: WeekFilters & { favorites: string[]; leftover: string; saleOptions?: SaleOptions; band?: Portions; lunchDays?: readonly boolean[]; island?: Island },
+  options: WeekFilters & { favorites: string[]; leftover: string; saleOptions?: SaleOptions; band?: Portions; lunchDays?: readonly boolean[] },
   getPrices: (ingredients: string[]) => Promise<PriceInfo[]>,
 ): Promise<GeneratePlanResponse> {
   if (!Number.isInteger(dayIndex) || dayIndex < 0 || dayIndex >= 5) {
@@ -742,7 +736,7 @@ export async function swapPlanDay(
   return assembleWeek(
     menus, nextSelected, nextSnacks, allergies, excluded,
     getPrices, activePromotions, prepOptions, undefined, options.band ?? DEFAULT_PORTION_BAND,
-    options.lunchDays ?? ALL_LUNCH_DAYS, options.island ?? "north",
+    options.lunchDays ?? ALL_LUNCH_DAYS,
   );
 }
 
@@ -757,11 +751,10 @@ export async function buildSharedPlan(
   const { selected, snacks } = resolveWeek(menus, snackData, shared.days, {
     allergies: shared.allergies, excluded: shared.excluded, prepOptions,
   });
-  const activePromotions = activePromotionsFor({ useSales: shared.useSales, saleStores: shared.saleStores, island: shared.island });
+  const activePromotions = activePromotionsFor({ useSales: shared.useSales, saleStores: shared.saleStores });
   return assembleWeek(
     menus, selected, snacks, shared.allergies, shared.excluded,
     getPrices, activePromotions, prepOptions, undefined,
     portionsOf(shared.band ?? DEFAULT_PORTION_BAND, shared.extraBoxes), shared.lunchDays ?? ALL_LUNCH_DAYS,
-    shared.island ?? "north",
   );
 }

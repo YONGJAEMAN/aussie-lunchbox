@@ -80,7 +80,7 @@ export interface MayContainNote {
   snack?: string;
 }
 
-import type { SaleMatch, StoreId, Island } from "@/data/promotions.types";
+import type { SaleMatch, StoreId } from "@/data/promotions.types";
 import type { KindyPrepNote } from "./chokingRisk";
 
 export interface PlanItem {
@@ -131,8 +131,6 @@ export interface GeneratePlanRequest {
   useSales?: boolean;
   /** 사용자가 선택한 마트 (sale 적용 대상) */
   saleStores?: StoreId[];
-  /** 전단을 고른 섬. 생략·모르는 값 = "north" */
-  island?: Island;
   /** 조리 방식 필터 (빈 배열 = 전체) */
   prepStyles?: PrepStyle[];
   /** 보온병 도시락만 */

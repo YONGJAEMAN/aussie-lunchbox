@@ -260,7 +260,6 @@ type MenuRow = { name: string; ingredients: string[] };
 const MENUS = (menuDataJson as unknown as { MENU_DATA: { en: MenuRow[] } }).MENU_DATA.en;
 const CACHE = priceCacheJson as Record<string, { data?: { price?: number } }>;
 
-// 북섬 전단만 센다(섬 생략 = north). 남섬 전단은 몇 주 쌓인 뒤 따로 판단한다(2026-10-27).
 const ACTIVE = () => getActivePromotions(["woolworths", "newworld"]);
 
 /** 캐시에 값이 있는 재료만 더한 1인분 원가. 없는 재료는 0 — 순위용이다. */

@@ -7,10 +7,6 @@
 
 export type StoreId = "paknsave" | "woolworths" | "newworld";
 
-/** 전단이 섬마다 다르다. 고르지 않으면 north — 이 기능 전의 모든 링크·저장 식단이 북섬이다. */
-export type Island = "north" | "south";
-export const ISLANDS: readonly Island[] = ["north", "south"];
-
 /**
  * Promotion 종류:
  * - "sale": 정가 → 세일가 직접 할인 (Super Saver, 1/2 price 등). 누구나 즉시 적용.
@@ -102,13 +98,8 @@ export interface WeeklyPromotions {
   validFrom: string;
   /** 유효 만료일 (YYYY-MM-DD) */
   validUntil: string;
-  /** 마트별 promo 데이터 — **북섬 전단**이다(2026-10-27까지 들어온 것은 전부 북섬판) */
+  /** 마트별 promo 데이터 */
   stores: Partial<Record<StoreId, StorePromotions>>;
-  /**
-   * 남섬 전단. 없으면 그 주 남섬 특가는 「아직 없음」이다 — 🔴북섬 값으로 대신하지 않는다.
-   * `stores`를 섬별로 중첩하지 않은 이유: 기존 주차·테스트·promoHistory가 전부 `stores`를 읽는다.
-   */
-  southStores?: Partial<Record<StoreId, StorePromotions>>;
   /** 사용자(본인)가 입력한 시점 */
   enteredAt?: string;
   /** AI 파싱 사용 여부 (감사용) */

@@ -13,9 +13,7 @@ import type {
   WeeklyPromotions,
   Promotion,
   StoreId,
-  StorePromotions,
   SaleMatch,
-  Island,
 } from "@/data/promotions.types";
 import { PORTION_BASIS } from "@/lib/planConfig";
 import priceCacheJson from "@/data/price_cache.json";
@@ -55,31 +53,20 @@ export type PromotionsStatus =
  * 기본값을 켜는 순간 모든 방문자가 **지난주 특가를 이번 주 것으로** 받게 된다.
  * 가격 정확성이 이 사이트의 존재 이유라 조용히 틀리면 안 된다.
  */
-export function getPromotionsStatus(now: Date = new Date(), island: Island = "north"): PromotionsStatus {
+export function getPromotionsStatus(now: Date = new Date()): PromotionsStatus {
   const week = promotions.weeks[promotions.currentWeek];
   if (!week) return { state: "missing" };
   const today = nzToday(now);
   if (today > week.validUntil) return { state: "expired", validUntil: week.validUntil };
   if (today < week.validFrom) return { state: "upcoming", validFrom: week.validFrom };
-  // 🔴 남섬 전단이 안 들어온 주에 북섬 특가를 대신 주지 않는다 — 남섬 매장엔 없는 특가다.
-  if (island === "south" && !hasItems(storesFor(week, island))) return { state: "missing" };
   return { state: "active", week, validUntil: week.validUntil };
-}
-
-/** 그 주의 섬별 전단. 북섬은 기존 `stores`, 남섬은 `southStores`(없으면 빈 것). */
-export function storesFor(week: WeeklyPromotions, island: Island = "north"): Partial<Record<StoreId, StorePromotions>> {
-  return island === "south" ? week.southStores ?? {} : week.stores;
-}
-
-function hasItems(stores: Partial<Record<StoreId, StorePromotions>>): boolean {
-  return Object.values(stores).some((sp) => (sp?.items.length ?? 0) > 0);
 }
 
 /**
  * 현재 주의 promotions 데이터 — **유효기간이 지났으면 null**.
  */
-export function getCurrentWeekPromotions(now: Date = new Date(), island: Island = "north"): WeeklyPromotions | null {
-  const s = getPromotionsStatus(now, island);
+export function getCurrentWeekPromotions(now: Date = new Date()): WeeklyPromotions | null {
+  const s = getPromotionsStatus(now);
   return s.state === "active" ? s.week : null;
 }
 
@@ -90,14 +77,12 @@ export function getCurrentWeekPromotions(now: Date = new Date(), island: Island 
 export function getActivePromotions(
   stores: StoreId[] = ["woolworths", "newworld"],
   now: Date = new Date(),
-  island: Island = "north",
 ): Array<Promotion & { store: StoreId }> {
-  const week = getCurrentWeekPromotions(now, island);
+  const week = getCurrentWeekPromotions(now);
   if (!week) return [];
-  const byStore = storesFor(week, island);
   const result: Array<Promotion & { store: StoreId }> = [];
   for (const store of stores) {
-    const sp = byStore[store];
+    const sp = week.stores[store];
     if (!sp) continue;
     for (const p of sp.items) {
       if (p.lunchboxFit === "lunchbox" || p.lunchboxFit === "snack-only") {
@@ -313,13 +298,11 @@ export function matchMenuIngredients(
 export function pricedMenuMatches(
   ingredients: string[],
   candidates: Array<Promotion & { store: StoreId }>,
-  /** 추적가를 읽을 캐시 — 남섬은 `cacheFor("south")`. 생략 = 북섬(이전과 같다). */
-  cache: Record<string, { data?: { price?: number } }> = PRICES,
 ): SaleMatch[] {
   const matches: SaleMatch[] = [];
   const seen = new Set<string>();
   for (const ing of ingredients) {
-    const base = cache[ing]?.data?.price;
+    const base = PRICES[ing]?.data?.price;
     const m = pricedMatchFor(ing, PORTION_BASIS[ing]?.pack, typeof base === "number" ? base : 0, candidates);
     if (!m) continue;
     // 🔴 2026-10-05: 여기 키가 `store:matchKey`(분류)였다. 같은 날 Soy Sauce·Teriyaki Sauce가

@@ -7625,11 +7625,10 @@ describe("🔴 재점검 — 화면의 숫자가 한 기준을 쓴다", () => {
     // 09-29: 복원·생성·하루 교체·공유 링크가 `priceDay` 하나로 값을 낸다(식이 한 자리).
     //        그 함수가 특가 재매칭과 원가 재계산을 실제로 하는지는 아래에서 본다.
     // 10-12: 나이대별 양 — 복원도 저장된 나이대로 매긴다(빠지면 새로고침 뒤 기준 1인분 값으로 돌아간다).
-    expect(block, "복원이 생성과 같은 가격 함수(priceDay)를 저장된 나이대로 안 쓴다").toMatch(/priceDay\(all, priceMap, promos, portionsOf\(opts\.band, opts\.extraBoxes\), opts\.island\)/);
+    expect(block, "복원이 생성과 같은 가격 함수(priceDay)를 저장된 나이대로 안 쓴다").toMatch(/priceDay\(all, priceMap, promos, portionsOf\(opts\.band, opts\.extraBoxes\)\)/);
     const gen = readFileSync(new URL("./planGenerator.ts", import.meta.url), "utf-8");
     const fn = gen.slice(gen.indexOf("export function priceDay"), gen.indexOf("\n}\n", gen.indexOf("export function priceDay")));
-    // 10-28: 섬별 — 특가 기준가를 그 섬의 캐시로 잰다(`cacheFor(island)`).
-    expect(fn, "지금 특가로 다시 매칭하지 않는다").toContain("pricedMenuMatches(ingredients, promotions, cacheFor(island))");
+    expect(fn, "지금 특가로 다시 매칭하지 않는다").toContain("pricedMenuMatches(ingredients, promotions)");
     expect(fn, "지금 가격으로 총액을 다시 계산하지 않는다").toContain("costForIngredients(ingredients, priceMap");
   });
 

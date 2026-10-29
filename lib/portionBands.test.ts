@@ -342,7 +342,7 @@ describe("화면·문구가 같은 배율을 쓴다", () => {
     expect(src).toMatch(/const planPortions = portionsOf\(planOptions\.band, planOptions\.extraBoxes\)/);
     expect(src).toMatch(/\(item\.price \?\? 0\) \* portionFor\(item\.name, planPortions\) \* item\.count/);
     expect(src, "portionFor에 band만 넘기는 자리가 남았다").not.toMatch(/portionFor\([^)]*planOptions\.band\)/);
-    expect(src).toMatch(/priceDay\(all, priceMap, promos, portionsOf\(opts\.band, opts\.extraBoxes\), opts\.island\)/);
+    expect(src).toMatch(/priceDay\(all, priceMap, promos, portionsOf\(opts\.band, opts\.extraBoxes\)\)/);
     expect(src).toMatch(/portionBand: planOptions\.band/);
     expect(src).toMatch(/extraBoxes: planOptions\.extraBoxes/);
     expect(src).toMatch(/band: normalizePortionBand\(parsed\.portionBand\)/);

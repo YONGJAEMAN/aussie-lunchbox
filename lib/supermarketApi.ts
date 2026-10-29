@@ -1,12 +1,12 @@
 import { PriceInfo } from "./types";
 import { getIngredientCategory, CATEGORY_EMOJIS, SPECIFIC_EMOJIS } from "./utils";
+import priceCacheRaw from "@/data/price_cache.json";
 import { shelfPrice } from "./priceSearch.mjs";
-import { cacheFor, type PriceCache } from "./priceCaches";
-import type { Island } from "@/data/promotions.types";
 
 // Weekly price cache loaded at build time
 // Refresh by running: POST /api/prices/refresh (re-fetches from Woolworths and redeploys)
-const PRICE_CACHE: PriceCache = cacheFor("north");
+type CacheEntry = { timestamp: number; data: PriceInfo };
+const PRICE_CACHE = priceCacheRaw as Record<string, CacheEntry>;
 
 /**
  * 가격 캐시에 없는 재료의 추정가. **반드시 "판매 단위 한 팩" 가격**이어야 한다.
@@ -49,13 +49,13 @@ function getFallbackData(name: string): PriceInfo {
   return { price, image: getEmoji(name), name, source: "Est." };
 }
 
-function findInCache(name: string, cache: PriceCache = PRICE_CACHE): PriceInfo | null {
+function findInCache(name: string): PriceInfo | null {
   // Exact match
-  if (cache[name]) return cache[name].data;
+  if (PRICE_CACHE[name]) return PRICE_CACHE[name].data;
   // Case-insensitive partial match
   const lower = name.toLowerCase();
-  const key = Object.keys(cache).find((k) => k.toLowerCase() === lower);
-  if (key) return cache[key].data;
+  const key = Object.keys(PRICE_CACHE).find((k) => k.toLowerCase() === lower);
+  if (key) return PRICE_CACHE[key].data;
   return null;
 }
 
@@ -65,9 +65,9 @@ export function getIngredientPrice(name: string): PriceInfo {
   return getFallbackData(name);
 }
 
-export async function fetchIngredientPrice(name: string, island: Island = "north"): Promise<PriceInfo> {
-  // Check static weekly cache first — 고른 섬의 캐시. 남섬 캐시에 없는 재료는 북섬 경로(아래)와 같다.
-  const cached = findInCache(name, cacheFor(island)) ?? (island === "south" ? findInCache(name) : null);
+export async function fetchIngredientPrice(name: string): Promise<PriceInfo> {
+  // Check static weekly cache first
+  const cached = findInCache(name);
   if (cached) return { ...cached, image: getEmoji(name) };
 
   // Live fallback (with 3s timeout) if not in cache
@@ -105,7 +105,7 @@ export async function fetchIngredientPrice(name: string, island: Island = "north
   return getFallbackData(name);
 }
 
-export async function fetchBatchPrices(ingredients: string[], island: Island = "north"): Promise<PriceInfo[]> {
+export async function fetchBatchPrices(ingredients: string[]): Promise<PriceInfo[]> {
   // Most ingredients will be served from the weekly cache (synchronous, no network)
-  return Promise.all(ingredients.map((ing) => fetchIngredientPrice(ing, island)));
+  return Promise.all(ingredients.map((ing) => fetchIngredientPrice(ing)));
 }

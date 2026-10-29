@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { PlanItem, AllergyType, Locale, PriceInfo, PrepStyle, GeneratePlanResponse, MayContainNote } from "@/lib/types";
-import type { StoreId, Island } from "@/data/promotions.types";
+import type { StoreId } from "@/data/promotions.types";
 import { getIngredientCategory, getIngredientEmoji, CATEGORY_EMOJIS } from "@/lib/utils";
 import { PORTION_BASIS, portionFor } from "@/lib/planConfig";
 import {
@@ -79,13 +79,9 @@ type PlanOptions = {
   extraBoxes: PortionBand[];
   /** 월~금 도시락을 싸는 날(길이 5). 끈 날은 카드에 「No lunchbox」, 합계·장보기에서 빠진다(서버가 뺀다). */
   lunchDays: boolean[];
-  /** 특가를 매긴 전단의 섬. 옛 저장분·링크는 north다. */
-  island: Island;
 };
 
 const DEFAULT_SALE_STORES: StoreId[] = ["woolworths", "newworld"];
-/** 방문자가 고른 섬 — 기기에만 둔다(편의값). 없거나 못 읽으면 north. */
-const ISLAND_KEY = "lunchbox-island";
 
 /**
  * 「$0.86 ×1.39 = $1.20」의 오른쪽 — **화면에 찍힌 두 값**을 곱한다. 반올림 전 값으로 곱하면
@@ -121,17 +117,11 @@ const EXAMPLE_IMAGES: Record<string, string> = {
 
 export default function PlannerClient({
   salesActive = false,
-  southSalesActive = false,
-  southCoverage,
   articleMeta,
   methodExample,
   exampleWeek,
 }: {
   salesActive?: boolean;
-  /** 남섬 전단이 이번 주 들어왔고 유효한가. 🔴없으면 남섬에 북섬 특가를 대신 주지 않는다. */
-  southSalesActive?: boolean;
-  /** 남섬 캐시 중 크라이스트처치에서 실제로 읽은 재료 수(`southCacheCoverage`) — 남섬을 고르면 화면에 적는다. */
-  southCoverage?: { read: number; total: number };
   articleMeta: Record<string, ArticleMeta>;
   /** 「1인분 vs 조리법 투입량」 안내에 쓰는 값. 서버에서 `lib/servePrice.ts`가 만든다. */
   methodExample: { one: string; count: number; many: string };
@@ -163,10 +153,6 @@ export default function PlannerClient({
   // 🔴 단, 특가 주가 만료됐으면 켜지 않는다. 지난주 특가를 이번 주 것으로 보여주게 된다.
   const [useSales, setUseSales] = useState(salesActive);
   const [saleStores, setSaleStores] = useState<StoreId[]>(DEFAULT_SALE_STORES);
-  const [island, setIsland] = useState<Island>("north");
-  const islandSalesActive = island === "south" ? southSalesActive : salesActive;
-  // 고른 섬에 이번 주 전단이 없으면 토글이 켜져 있어도 특가를 매기지 않는다.
-  const salesOn = useSales && islandSalesActive;
   const [prepStyles, setPrepStyles] = useState<PrepStyle[]>([]);
   const [thermosOnly, setThermosOnly] = useState(false);
   const [portionBand, setPortionBand] = useState<PortionBand>(DEFAULT_PORTION_BAND);
@@ -186,7 +172,7 @@ export default function PlannerClient({
   });
   const [planOptions, setPlanOptions] = useState<PlanOptions>({
     allergies: [], excluded: [], prepStyles: [], thermosOnly: false, useSales: false, saleStores: [],
-    band: DEFAULT_PORTION_BAND, extraBoxes: [], lunchDays: [...ALL_LUNCH_DAYS], island: "north",
+    band: DEFAULT_PORTION_BAND, extraBoxes: [], lunchDays: [...ALL_LUNCH_DAYS],
   });
   const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [prices, setPrices] = useState<Record<string, PriceInfo>>({});
@@ -310,15 +296,13 @@ export default function PlannerClient({
             extraBoxes: normalizeExtraBoxes(parsed.extraBoxes),
             // 끈 날은 저장된 planData의 `off`가 들고 있다 — 옛 저장분은 다섯 날 전부다.
             lunchDays: normalizeLunchDays(parsed.lunchDays),
-            // 이 값이 없는 옛 저장분은 북섬 전단으로 만든 것이다.
-            island: parsed.sale?.island === "south" ? "south" : "north",
           };
-          const promos = activePromotionsFor({ useSales: opts.useSales, saleStores: opts.saleStores, island: opts.island });
+          const promos = activePromotionsFor({ useSales: opts.useSales, saleStores: opts.saleStores });
           // 생성·교체·공유와 **같은 함수**(priceDay)로 매긴다.
           const refreshed = (parsed.planData ?? []).map((d: PlanItem) => {
             const snackIngs = (d.snacks ?? []).flatMap((s) => s.ingredients ?? []);
             const all = [...(d.rawIngredients ?? []), ...snackIngs];
-            const { cost, saleMatches: matches } = priceDay(all, priceMap, promos, portionsOf(opts.band, opts.extraBoxes), opts.island);
+            const { cost, saleMatches: matches } = priceDay(all, priceMap, promos, portionsOf(opts.band, opts.extraBoxes));
             // 🔴 ⚠도 지금 라벨로 다시 낸다 — 옛 저장분엔 필드가 없고, 라벨은 매주 바뀐다.
             const mayContain = dayMayContain(d.rawIngredients ?? [], d.snacks ?? [], opts.allergies);
             // 킨디 손질 안내도 같은 함수로 다시 낸다 — 표가 바뀌면 저장분도 새 안내를 받는다.
@@ -382,7 +366,6 @@ export default function PlannerClient({
         band: decoded.band ?? DEFAULT_PORTION_BAND,
         extraBoxes: decoded.extraBoxes ?? [],
         lunchDays: decoded.lunchDays ?? [...ALL_LUNCH_DAYS],
-        island: decoded.island ?? "north",
       }, false);
       setSharedView(true);
     } catch {
@@ -391,21 +374,6 @@ export default function PlannerClient({
     } finally {
       setGenerating(false);
     }
-  }
-
-  useEffect(() => {
-    try {
-      if (localStorage.getItem(ISLAND_KEY) === "south") chooseIsland("south");
-    } catch {}
-  }, []);
-
-  /** 섬을 바꾸면 특가 토글도 그 섬의 전단 유무에 맞춘다(북섬 특가를 남섬 값처럼 켜 두지 않는다). */
-  function chooseIsland(next: Island) {
-    setIsland(next);
-    setUseSales(next === "south" ? southSalesActive : salesActive);
-    try {
-      localStorage.setItem(ISLAND_KEY, next);
-    } catch {}
   }
 
   useEffect(() => {
@@ -445,7 +413,7 @@ export default function PlannerClient({
 
     // Save to localStorage for offline access
     if (save) {
-      const { allergies, prepStyles, thermosOnly, excluded, useSales, saleStores, band, extraBoxes, lunchDays, island } = opts;
+      const { allergies, prepStyles, thermosOnly, excluded, useSales, saleStores, band, extraBoxes, lunchDays } = opts;
       try {
         localStorage.setItem("lunchbox-plan", JSON.stringify({
           planData: data.planData,
@@ -458,7 +426,7 @@ export default function PlannerClient({
           schema: PLAN_SCHEMA,
           filters: { allergies, prepStyles, thermosOnly, excluded },
           // 특가 토글은 안전 조건이 아니라 가격 조건이라 filters와 따로 둔다 — 복원·하루 교체가 쓴다.
-          sale: { useSales, saleStores, island },
+          sale: { useSales, saleStores },
           // 양도 가격 조건이다 — 복원 때 같은 배율로 다시 매긴다.
           portionBand: band,
           extraBoxes,
@@ -503,9 +471,8 @@ export default function PlannerClient({
           excludedIngredients: excluded,
           favoriteIngredients: dbFavorites,
           fridgeLeftover: leftover,
-          useSales: salesOn,
-          saleStores: salesOn ? saleStores : [],
-          island,
+          useSales,
+          saleStores: useSales ? saleStores : [],
           prepStyles,
           thermosOnly,
           portionBand,
@@ -517,11 +484,10 @@ export default function PlannerClient({
       if (!res.ok) throw new Error(data.error);
       applyPlan(data, {
         allergies, excluded, prepStyles, thermosOnly,
-        useSales: salesOn, saleStores: salesOn ? saleStores : [],
+        useSales, saleStores: useSales ? saleStores : [],
         band: portionBand,
         extraBoxes,
         lunchDays,
-        island,
       }, true);
       if (data.warning) setWarning(data.warning);
       setRestored(false);
@@ -558,7 +524,6 @@ export default function PlannerClient({
           fridgeLeftover: leftover,
           useSales: planOptions.useSales,
           saleStores: planOptions.useSales ? planOptions.saleStores : [],
-          island: planOptions.island,
           prepStyles: planOptions.prepStyles,
           thermosOnly: planOptions.thermosOnly,
           portionBand: planOptions.band,
@@ -1043,51 +1008,22 @@ export default function PlannerClient({
             🔖 {t("sale_section_title")}
           </summary>
           <div className="mt-2 space-y-3 text-sm">
-            {/* 전단은 섬마다 다르다 — 특가 토글보다 먼저 고른다. */}
-            <div role="radiogroup" aria-label={t("island_label")}>
-              <p className="text-xs font-semibold text-gray-600 mb-1">{t("island_label")}</p>
-              <div className="flex gap-2">
-                {(["north", "south"] as const).map((i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    role="radio"
-                    aria-checked={island === i}
-                    onClick={() => chooseIsland(i)}
-                    className={`flex-1 min-h-touch rounded-lg border px-2 text-xs font-semibold ${
-                      island === i
-                        ? "bg-[#366A1B] border-[#366A1B] text-white"
-                        : "bg-white border-gray-300 text-gray-700"
-                    }`}
-                  >
-                    {t(`island_${i}`)}
-                  </button>
-                ))}
-              </div>
-              {island === "south" && southCoverage && (
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
-                  {t("island_south_prices", { read: southCoverage.read, total: southCoverage.total })}
-                </p>
-              )}
-            </div>
             <label className="flex items-start gap-2 cursor-pointer min-h-touch py-1">
               <input
                 type="checkbox"
-                checked={salesOn}
+                checked={useSales}
                 onChange={(e) => setUseSales(e.target.checked)}
-                disabled={!islandSalesActive}
+                disabled={!salesActive}
                 className="rounded mt-1 w-5 h-5 disabled:opacity-40"
               />
-              <span className={islandSalesActive ? "text-gray-700" : "text-gray-500"}>
+              <span className={salesActive ? "text-gray-700" : "text-gray-500"}>
                 {t("sale_toggle_label")}
               </span>
             </label>
             <p className="text-xs text-gray-600 leading-relaxed pl-6">
-              {islandSalesActive
-                ? t("sale_toggle_hint")
-                : island === "south" ? t("sale_unavailable_south") : t("sale_unavailable")}
+              {salesActive ? t("sale_toggle_hint") : t("sale_unavailable")}
             </p>
-            {salesOn && (
+            {useSales && (
               <div className="pl-6 space-y-2">
                 <p className="text-xs font-semibold text-gray-600">
                   {t("sale_store_label")}

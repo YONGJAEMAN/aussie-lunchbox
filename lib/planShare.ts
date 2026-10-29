@@ -1,5 +1,5 @@
 import type { AllergyType, PrepStyle } from "./types";
-import type { StoreId, Island } from "@/data/promotions.types";
+import type { StoreId } from "@/data/promotions.types";
 import { PORTION_BANDS, DEFAULT_PORTION_BAND, MAX_LUNCHBOXES, type PortionBand } from "./portionBands";
 
 /**
@@ -54,11 +54,6 @@ export type SharedPlan = {
    * **생략 = 다섯 날 전부** — 31은 싣지 않는다(같은 식단에 링크가 두 개 생기지 않게).
    */
   lunchDays?: boolean[];
-  /**
-   * 전단을 고른 섬(2026-10-27). 키 `i` = 1(남섬)만.
-   * **생략 = north** — 옛 링크는 전부 북섬이다(문자열도 이 기능 전과 같다).
-   */
-  island?: Island;
 };
 
 export const ALL_LUNCH_DAYS: readonly boolean[] = [true, true, true, true, true];
@@ -137,13 +132,12 @@ export function encodeSharedPlan(p: SharedPlan): string | null {
   if (p.band !== undefined && p.band !== DEFAULT_PORTION_BAND) compact.b = PORTION_BANDS.indexOf(p.band);
   if (p.extraBoxes?.length) compact.k = p.extraBoxes.map((b) => PORTION_BANDS.indexOf(b));
   if (p.lunchDays && daysMask(p.lunchDays) !== 31) compact.w = daysMask(p.lunchDays);
-  if (p.island === "south") compact.i = 1;
   const out = toBase64Url(JSON.stringify(compact));
   // 스스로 못 푸는 값은 내보내지 않는다(범위 밖 인덱스·긴 이름 등).
   return out.length <= SHARE_PARAM_MAX && decodeSharedPlan(out) ? out : null;
 }
 
-const ALLOWED_KEYS = new Set(["v", "d", "a", "x", "p", "t", "s", "b", "k", "w", "i"]);
+const ALLOWED_KEYS = new Set(["v", "d", "a", "x", "p", "t", "s", "b", "k", "w"]);
 
 /**
  * `?plan=` 값 → 식단. **신뢰하지 않는 URL 입력이다.** 모양이 조금이라도 어긋나면 null.
@@ -211,9 +205,6 @@ export function decodeSharedPlan(param: unknown): SharedPlan | null {
     lunchDays = [0, 1, 2, 3, 4].map((i) => ((o.w as number) & (1 << i)) !== 0);
   }
 
-  // north는 인코더가 싣지 않는 값이다 — 1(남섬) 말고는 거절한다.
-  if (o.i !== undefined && o.i !== 1) return null;
-
   return {
     days: week,
     allergies,
@@ -225,6 +216,5 @@ export function decodeSharedPlan(param: unknown): SharedPlan | null {
     ...(band ? { band } : {}),
     ...(extraBoxes ? { extraBoxes } : {}),
     ...(lunchDays ? { lunchDays } : {}),
-    ...(o.i === 1 ? { island: "south" as const } : {}),
   };
 }

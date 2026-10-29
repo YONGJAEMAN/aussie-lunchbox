@@ -3,7 +3,6 @@ import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { BRAND } from "@/lib/brand";
 import priceIndex from "@/data/priceIndex.json";
-import priceIndexSouth from "@/data/priceIndex.south.json";
 import { lastModified } from "@/lib/contentDates";
 import { coverage } from "@/lib/priceSeries";
 import { labelReadRange } from "@/lib/snackChecker";
@@ -25,7 +24,6 @@ const STATIC_ROUTES = [
   "/terms",
   "/faq",
   "/price-index",
-  "/price-index/south-island",
   "/price-history",
   "/snack-checker",
   "/blog",
@@ -45,9 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const dataDate =
         route === "/price-index"
           ? new Date(priceIndex.woolworthsUpdated)
-          : route === "/price-index/south-island"
-            ? new Date(priceIndexSouth.lastUpdated)
-            : route === "/price-history"
+          : route === "/price-history"
             ? new Date(coverage().map((c) => c.last).sort().at(-1) ?? "")
             : route === "/snack-checker"
               ? new Date(labelReadRange().newest) // 페이지에 실린 간식 재료의 가장 최근 라벨 관측

@@ -7,8 +7,7 @@
  * Usage: node scripts/update_prices.mjs
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
-import { islandArg, woolworthsSouthCookie, WOOLWORTHS_SOUTH_PICKUP } from "./_island.mjs";
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import {
   SEARCH_BASE, searchTermFor, pickRepresentative, pinnedFor, PINNED_SKUS,
   RECIPE_ONLY_INGREDIENTS, shelfPrice,
@@ -18,14 +17,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-// `--island south` → Church Corner 픽업 세션으로 같은 규칙(고정 SKU + 검색 선별)을 돌려 data/price_cache.south.json에 쓴다.
-// 생략 = 북섬(기본 세션 = Glenfield, 이전과 같다). 🔴 2026-10-28 실측: 같은 SKU 193개 중 112개가 남섬에서 가격이 달랐다.
-const ISLAND = islandArg();
-const CACHE_PATH = join(ROOT, "data", ISLAND === "south" ? "price_cache.south.json" : "price_cache.json");
-const NORTH_CACHE_PATH = join(ROOT, "data", "price_cache.json");
-const REVIEW_FILE = ISLAND === "south" ? "price_cache_review.south.txt" : "price_cache_review.txt";
-/** 남섬 세션 쿠키 — main()에서 한 번 만든다. 북섬은 비어 있다(헤더에 안 붙는다). */
-let COOKIE = "";
+const CACHE_PATH = join(ROOT, "data", "price_cache.json");
 
 // NZ fallback prices (NZD) — **반드시 '판매 단위 한 팩' 가격**.
 // 비용 계산이 여기에 PORTION_FACTORS(팩 대비 비율)를 곱하므로 개당 가격을 넣으면 안 된다.
@@ -86,7 +78,6 @@ async function fetchPinned(name, pin) {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json",
         "X-Requested-With": "OnlineShopping.WebApp",
-        ...(COOKIE ? { Cookie: COOKIE } : {}),
       },
     });
     if (!res.ok) {
@@ -148,7 +139,6 @@ async function fetchAllergens(sku) {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json",
         "X-Requested-With": "OnlineShopping.WebApp",
-        ...(COOKIE ? { Cookie: COOKIE } : {}),
       },
     });
     if (!res.ok) return { allergens: [], allergenMaybePresent: "" };
@@ -164,7 +154,7 @@ async function fetchAllergens(sku) {
 
 async function fetchWoolworths(name) {
   // 검색으로 못 잡히는 재료는 SKU로 직접 간다 (PINNED_SKUS 참조).
-  const pin = pinnedFor(name, ISLAND);
+  const pin = pinnedFor(name);
   if (pin) {
     const pinned = await fetchPinned(name, pin);
     if (pinned) return pinned;
@@ -182,7 +172,6 @@ async function fetchWoolworths(name) {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json",
         "X-Requested-With": "OnlineShopping.WebApp",
-        ...(COOKIE ? { Cookie: COOKIE } : {}),
       },
     });
 
@@ -214,11 +203,7 @@ async function fetchWoolworths(name) {
 }
 
 async function main() {
-  console.log(`🥝 Kiwi Lunchbox — Woolworths NZ Price Updater${ISLAND === "south" ? ` · ${WOOLWORTHS_SOUTH_PICKUP.label}` : ""}\n`);
-  if (ISLAND === "south") COOKIE = await woolworthsSouthCookie("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-  // 남섬에서 한 번도 못 읽은 재료는 **북섬 수집가를 표시를 붙여** 쓴다 — 지어낸 추정가보다 낫고,
-  // `fromNorth`로 드러난다(플래너가 원가를 매겨야 해서 비울 수는 없다).
-  const northCache = ISLAND === "south" && existsSync(NORTH_CACHE_PATH) ? JSON.parse(readFileSync(NORTH_CACHE_PATH, "utf-8")) : {};
+  console.log("🥝 Kiwi Lunchbox — Woolworths NZ Price Updater\n");
 
   const ingredients = loadMenuIngredients();
   console.log(`📋 Found ${ingredients.length} ingredients to fetch\n`);
@@ -251,15 +236,10 @@ async function main() {
       // (라이브 플래너가 $5 균일가로 도시락을 계산했다).
       // **이미 실제 수집가가 있으면 그걸 남긴다.** 낡은 실제가 > 지어낸 값.
       const prev = cache[name]?.data;
-      const prevIsReal = prev && !/fallback/i.test(prev.source ?? "") && !prev.fromNorth;
-      const north = northCache[name]?.data;
+      const prevIsReal = prev && !/fallback/i.test(prev.source ?? "");
       if (prevIsReal) {
         keptCount++;
         console.log(`↩️  유지 $${Number(prev.price).toFixed(2)} (이전 수집가)`);
-      } else if (ISLAND === "south" && north && !/fallback|est/i.test(north.source ?? "")) {
-        cache[name] = { timestamp: now, data: { ...north, source: `${north.source} (Auckland price — not read at ${WOOLWORTHS_SOUTH_PICKUP.label})`, fromNorth: true } };
-        fallbackCount++;
-        console.log(`🏝️  북섬 값 $${Number(north.price).toFixed(2)} (남섬에서 못 읽음 — fromNorth)`);
       } else {
         const fallback = getFallback(name);
         cache[name] = { timestamp: now, data: fallback };
@@ -305,10 +285,9 @@ async function main() {
     .map(([ing]) => ing)
     .sort();
   const pinned = Object.keys(PINNED_SKUS).sort();
-  const fromNorth = Object.entries(cache).filter(([, v]) => v.data?.fromNorth).map(([ing]) => ing).sort();
 
   writeFileSync(
-    join(ROOT, "data", REVIEW_FILE),
+    join(ROOT, "data", "price_cache_review.txt"),
     `# 재료 → 선택된 상품 (검수용)
 # 생성: update_prices.mjs / 선별 규칙: lib/priceSearch.mjs
 # 이상한 매칭이 보이면 SEARCH_TERMS 또는 AVOID_TOKENS에 반영할 것
@@ -320,19 +299,19 @@ async function main() {
 # 검색으로 안 잡혀 폴백가를 쓴 재료 (${fellBack.length}종):
 ${fellBack.length ? fellBack.map((i) => `#      ${i}`).join("\n") : "#      (없음)"}
 #
-${ISLAND === "south" ? `# 남섬에서 못 읽어 북섬(오클랜드) 수집가를 쓴 재료 (${fromNorth.length}종, fromNorth):\n${fromNorth.length ? fromNorth.map((i) => `#      ${i}`).join("\n") : "#      (없음)"}\n#\n` : ""}# SKU로 고정한 재료 (${pinned.length}종) — 검색 대신 상품을 직접 지정한다:
+# SKU로 고정한 재료 (${pinned.length}종) — 검색 대신 상품을 직접 지정한다:
 ${pinned.map((i) => `#      ${i}`).join("\n")}
 
 ${review}
 `,
     "utf-8",
   );
-  console.log(`📝 검수 목록: data/${REVIEW_FILE}`);
+  console.log(`📝 검수 목록: data/price_cache_review.txt`);
 
   console.log(`\n✅ Fetched from Woolworths: ${successCount}`);
   console.log(`💾 Fallback used: ${fallbackCount}`);
   console.log(`↩️  이전 수집가 유지: ${keptCount}`);
-  console.log(`📁 Saved to ${CACHE_PATH}`);
+  console.log(`📁 Saved to data/price_cache.json`);
 }
 
 main();

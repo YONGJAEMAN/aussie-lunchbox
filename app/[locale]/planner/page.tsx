@@ -3,7 +3,6 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import PlannerClient from "@/components/PlannerClient";
 import { getPromotionsStatus } from "@/lib/promotions";
-import { southCacheCoverage } from "@/lib/priceCaches";
 import { MENU_COUNT, SNACK_COUNT, NUT_CONTAINING_COUNT, NUT_FREE_COUNT } from "@/lib/siteCounts";
 import Footer from "@/components/Footer";
 import { buildPageMetadata } from "@/lib/seo/pageMetadata";
@@ -115,8 +114,6 @@ export default async function PlannerPage({
       />
       <PlannerClient
         salesActive={getPromotionsStatus().state === "active"}
-        southSalesActive={getPromotionsStatus(new Date(), "south").state === "active"}
-        southCoverage={southCacheCoverage()}
         articleMeta={ARTICLE_META}
         methodExample={methodExample()}
         exampleWeek={{ rows: exampleWeekRows(), total: exampleWeekTotal() }}

@@ -4,7 +4,7 @@ import { decodeSharedPlan, sanitizeWeek, normalizeLunchDays } from "@/lib/planSh
 import { fetchBatchPrices } from "@/lib/supermarketApi";
 import { getMenuData, getSnackData } from "@/data/menuDataLoader";
 import { GeneratePlanRequest, Locale, PrepStyle } from "@/lib/types";
-import type { StoreId, Island } from "@/data/promotions.types";
+import type { StoreId } from "@/data/promotions.types";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 import { normalizePortionBand, normalizeExtraBoxes, portionsOf } from "@/lib/portionBands";
 
@@ -59,8 +59,6 @@ export async function POST(req: NextRequest) {
           .filter((s): s is StoreId => VALID_STORES.includes(s as StoreId))
           .slice(0, VALID_STORES.length)
       : [];
-    // 전단을 고른 섬 — "south"만 받는다. 그 밖의 값·없음은 north(이 기능 전과 같다).
-    const island: Island = body.island === "south" ? "south" : "north";
 
     // 조리 방식/보온병 필터 (선택)
     const prepStyles: PrepStyle[] = Array.isArray(body.prepStyles)
@@ -84,7 +82,7 @@ export async function POST(req: NextRequest) {
       if (!shared) {
         return NextResponse.json({ error: "Invalid share link", code: "BAD_INPUT" }, { status: 400 });
       }
-      const result = await buildSharedPlan(menus, snackData, shared, (ingredients) => fetchBatchPrices(ingredients, shared.island ?? "north"));
+      const result = await buildSharedPlan(menus, snackData, shared, (ingredients) => fetchBatchPrices(ingredients));
       return NextResponse.json(result);
     }
 
@@ -103,13 +101,12 @@ export async function POST(req: NextRequest) {
           excluded: excludedIngredients,
           favorites: favoriteIngredients,
           leftover: fridgeLeftover,
-          saleOptions: useSales && saleStores.length > 0 ? { useSales, saleStores, island } : undefined,
+          saleOptions: useSales && saleStores.length > 0 ? { useSales, saleStores } : undefined,
           prepOptions: prepStyles.length > 0 || thermosOnly ? { prepStyles, thermosOnly } : undefined,
           band: portions,
           lunchDays,
-          island,
         },
-        (ingredients) => fetchBatchPrices(ingredients, island),
+        (ingredients) => fetchBatchPrices(ingredients),
       );
       return NextResponse.json(result);
     }
@@ -121,16 +118,15 @@ export async function POST(req: NextRequest) {
       favoriteIngredients,
       fridgeLeftover,
       snackData,
-      (ingredients) => fetchBatchPrices(ingredients, island),
+      (ingredients) => fetchBatchPrices(ingredients),
       useSales && saleStores.length > 0
-        ? { useSales, saleStores, island }
+        ? { useSales, saleStores }
         : undefined,
       prepStyles.length > 0 || thermosOnly
         ? { prepStyles, thermosOnly }
         : undefined,
       portions,
       lunchDays,
-      island,
     );
 
     return NextResponse.json(result);

@@ -82,21 +82,6 @@ jobs:
               bad = true;
             }
 
-            // 남섬 지수(2026-10-28~) — 파일이 생긴 뒤로는 북섬과 같은 기준으로 본다.
-            const fs = require("fs");
-            if (fs.existsSync("./data/priceIndex.south.json")) {
-              const si = require("./data/priceIndex.south.json");
-              const siAge = Math.floor((Date.now() - Date.parse(si.lastUpdated)) / DAY);
-              console.log(`남섬 가격지수 lastUpdated=${si.lastUpdated} (${siAge}일 전)`);
-              if (!Number.isFinite(siAge)) {
-                console.error(`❌ 남섬 지수 lastUpdated를 날짜로 못 읽었다(${JSON.stringify(si.lastUpdated)}).`);
-                bad = true;
-              } else if (siAge > MAX_AGE) {
-                console.error(`❌ 남섬 지수가 ${siAge}일째 낡았다 — 로컬 수집의 남섬 단계를 볼 것.`);
-                bad = true;
-              }
-            }
-
             const cache = require("./data/price_cache.json");
             const stamps = Object.values(cache).map(v => v && v.timestamp).filter(Boolean);
             const cacheAge = Math.floor((Date.now() - Math.max(...stamps)) / DAY);
@@ -107,21 +92,6 @@ jobs:
             } else if (cacheAge > MAX_AGE) {
               console.error(`❌ 플래너 캐시가 ${cacheAge}일째 낡았다 — 도시락 비용이 옛 가격으로 나온다.`);
               bad = true;
-            }
-
-            // 남섬 플래너 캐시(2026-10-28~) — 남섬을 고른 사람의 도시락 비용이 여기서 나온다.
-            if (fs.existsSync("./data/price_cache.south.json")) {
-              const sc = require("./data/price_cache.south.json");
-              const ss = Object.values(sc).map(v => v && v.timestamp).filter(Boolean);
-              const scAge = Math.floor((Date.now() - Math.max(...ss)) / DAY);
-              console.log(`남섬 플래너 캐시 ${ss.length}개 · 가장 최신이 ${scAge}일 전`);
-              if (!Number.isFinite(scAge) || scAge < 0) {
-                console.error(`❌ 남섬 플래너 캐시 나이를 못 읽었다(${scAge}).`);
-                bad = true;
-              } else if (scAge > MAX_AGE) {
-                console.error(`❌ 남섬 플래너 캐시가 ${scAge}일째 낡았다 — 남섬 도시락 비용이 옛 가격으로 나온다.`);
-                bad = true;
-              }
             }
 
             if (bad) process.exit(1);
