@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/en/planner",
     display: "standalone",
     background_color: "#F5F7FA",
-    theme_color: "#78B159",
+    theme_color: "#F5A623",
     icons: [
       { src: "/icons/icon-192", sizes: "192x192", type: "image/png" },
       { src: "/icons/icon-512", sizes: "512x512", type: "image/png", purpose: "maskable" },

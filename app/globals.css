@@ -4,10 +4,10 @@
 @theme inline {
   --color-background: #F5F7FA;
   --color-foreground: #333333;
-  --color-primary: #78B159;
-  --color-primary-dark: #314A37;
-  --color-primary-light: #E8F5E9;
-  --color-secondary: #4CAF50;
+  --color-primary: #F5A623;
+  --color-primary-dark: #6B3600;
+  --color-primary-light: #FFF3E0;
+  --color-secondary: #E8961E;
   --color-text-grey: #666666;
   --font-sans: "Open Sans", Arial, sans-serif;
 
@@ -19,13 +19,13 @@
   --spacing-touch: 44px;
 
   /* 🔴 흰 글자를 얹는 초록 (2026-09-11).
-     브랜드 초록 #78B159 위의 흰 글자는 대비 **2.55:1** 이다 — WCAG AA 본문 4.5,
+     브랜드 주황 #F5A623 위의 흰 글자는 대비 **2.03:1** 이다(Kiwi 초록은 2.55:1) — WCAG AA 본문 4.5,
      큰 글자 3.0 둘 다 못 넘는다. Lighthouse가 「Generate Plan」 CTA와 쿠키
      「Accept」 버튼을 콕 집어 실패로 올렸다. 사이트의 제1 행동 버튼이다.
-     #4F7A34 는 같은 색상 계열에서 **5.04:1** 로 AA 본문을 넘는다.
-     🔴 #78B159 자체는 테두리·연한 배경·글자 없는 면에 그대로 둔다 —
+     #9A4D00 는 같은 색상 계열에서 **6.11:1** 로 AA 본문을 넘는다.
+     🔴 #F5A623 자체는 테두리·연한 배경·글자 없는 면에 그대로 둔다 —
         바꾸는 건 **흰 글자가 얹히는 면**뿐이다. */
-  --color-primary-deep: #4F7A34;
+  --color-primary-deep: #9A4D00;
 }
 
 body {

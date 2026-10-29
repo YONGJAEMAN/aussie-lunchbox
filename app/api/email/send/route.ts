@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     const safeSubject =
       typeof subject === "string" && subject.trim()
         ? subject.replace(/[\r\n]+/g, " ").trim().slice(0, 150)
-        : "Your Aussie Lunchbox Plan 🥝";
+        : "Your Aussie Lunchbox Plan 🦘";
     const safeBody =
       typeof emailBody === "string" && emailBody.trim()
         ? emailBody.slice(0, 5000)

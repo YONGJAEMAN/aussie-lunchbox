@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import AccountClient from "./AccountClient";
+import { BRAND } from "@/lib/brand";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = BRAND.SITE_URL;
 
 /**
  * Account 페이지는 로그인/유저 대시보드라 SEO 인덱싱 대상이 아님.

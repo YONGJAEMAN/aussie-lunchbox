@@ -61,7 +61,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-[#314A37]">Join Aussie Lunchbox</h2>
+          <h2 className="text-xl font-bold text-[#6B3600]">Join Aussie Lunchbox</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-600 text-2xl leading-none">×</button>
         </div>
 
@@ -108,7 +108,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
             required
           />
           <input
@@ -116,7 +116,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
             required
           />
           {tab === "signup" && (
@@ -125,7 +125,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
               placeholder="Confirm Password"
               value={confirmPwd}
               onChange={(e) => setConfirmPwd(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159]"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623]"
               required
             />
           )}
@@ -134,7 +134,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
+            className="w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
           >
             {loading ? "..." : tab === "login" ? "Log In" : "Sign Up"}
           </button>

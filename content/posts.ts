@@ -48,7 +48,7 @@ const RAW_POSTS: Record<string, Omit<Post, "readTime"> & { readTime?: string }> 
     excerpt: "Should you pack lunch every day or let your kids buy from the canteen? We break down the cost, nutrition, and convenience of both options to help Australian parents decide.",
     date: "October 20, 2025",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
+    image: "/assets/kiwi_ham_salad_sandwich.webp",
     category: "Gear & Tips",
     author: "Yong Jae Lee",
     body: `
@@ -245,7 +245,7 @@ These figures assume 40 school weeks per year. For families with three children,
     readTime: "7 min read",
     author: "Yong Jae Lee",
     category: "Food Safety",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop",
+    image: "/assets/kiwi_yoghurt_fruit_box.webp",
     body: `
 ## Introduction: Why Heat and Lunchboxes Are a Serious Concern
 
@@ -409,7 +409,7 @@ Our planner takes your location and the time of year into account when suggestin
     readTime: "8 min read",
     author: "Yong Jae Lee",
     category: "School Policy",
-    image: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=1200&q=80&auto=format&fit=crop",
+    image: "/assets/kiwi_veggie_wrap.webp",
     body: `
 ## Introduction: The Changing Landscape of School Food in Australia
 
@@ -552,7 +552,7 @@ Our planner generates five-day school lunch plans that respect your family's all
     readTime: "7 min read",
     author: "Yong Jae Lee",
     category: "Recipes",
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80&auto=format&fit=crop",
+    image: "/assets/kiwi_planner_sushi_rolls.webp",
     body: `
 ## Introduction: Australia's Lunchbox Melting Pot
 
@@ -820,7 +820,7 @@ Our planner generates diverse weekly lunch plans using Australian supermarket in
     readTime: "6 min read",
     author: "Yong Jae Lee",
     category: "Planning",
-    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=1200&q=80&auto=format&fit=crop",
+    image: "/assets/kiwi_egg_salad_sandwich.webp",
     body: `
 ## Introduction: Setting Up for a Stress-Free School Year
 
@@ -1000,7 +1000,7 @@ Generate a personalised 5-day school lunch plan in seconds. Set your allergy fil
     date: "May 9, 2026",
     lastReviewed: "May 2026",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1543362906-acfc16c67564?w=1200&q=80",
+    image: "/assets/kiwi_tuna_mayo_sandwich.webp",
     category: "Food Safety",
     author: "Yong Jae Lee",
     body: `
@@ -1155,7 +1155,7 @@ The [Aussie Lunchbox Planner](/en/planner) factors heat-stability into its weekl
     date: "May 10, 2026",
     lastReviewed: "May 2026",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80",
+    image: "/assets/kiwi_planner_rice_paper_rolls.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `
@@ -1313,7 +1313,7 @@ The [Aussie Lunchbox Planner](/en/planner) generates weekly menus that lean Gree
     date: "May 11, 2026",
     lastReviewed: "May 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1471943311424-646960669fbc?w=1200&q=80",
+    image: "/assets/kiwi_turkey_club_sandwich.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `
@@ -1497,7 +1497,7 @@ The [Aussie Lunchbox Planner](/en/planner) lets you set portion size by school y
     date: "May 12, 2026",
     lastReviewed: "May 2026",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80",
+    image: "/assets/kiwi_roast_beef_roll.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `
@@ -1675,7 +1675,7 @@ The [Aussie Lunchbox Planner](/en/planner) flags iron, calcium, and protein tota
     date: "May 13, 2026",
     lastReviewed: "May 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
+    image: "/assets/kiwi_bagel_cream_cheese.webp",
     category: "Allergy Friendly",
     author: "Yong Jae Lee",
     body: `

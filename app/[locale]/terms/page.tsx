@@ -29,7 +29,7 @@ export default async function TermsPage() {
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_legal")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_legal")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("terms_title")}
         </h1>
@@ -90,7 +90,7 @@ export default async function TermsPage() {
           <h2 className="text-xl font-bold text-[#1a1a1a]">{t("terms_8_h")}</h2>
           <p className="text-gray-600 leading-relaxed">
             {t("terms_8_p")}{" "}
-            <a href={`mailto:${t("terms_contact_email")}`} className="text-[#366A1B] hover:underline">
+            <a href={`mailto:${t("terms_contact_email")}`} className="text-[#8C4A00] hover:underline">
               {t("terms_contact_email")}
             </a>
             .
@@ -141,7 +141,7 @@ export default async function TermsPage() {
             <li>You are the parent or legal guardian of the child the plan is for, or you have been given clear instructions by that parent or guardian (allergy list, cultural restrictions, school policy).</li>
             <li>You have read the current school food and allergy policy and will cross-check the generated plan against it before sending food in.</li>
             <li>You will physically prepare and check each lunchbox item before it leaves your home — the planner does not handle packaging, food safety on the day, or temperature control on the route to school. See the{" "}
-              <Link href={`/${locale}/blog/australian-lunchbox-food-safety-summer-heat-fsanz`} className="text-[#366A1B] hover:underline">Australian Lunchbox Food Safety guide</Link>
+              <Link href={`/${locale}/blog/australian-lunchbox-food-safety-summer-heat-fsanz`} className="text-[#8C4A00] hover:underline">Australian Lunchbox Food Safety guide</Link>
               {" "}for the practical handling rules.
             </li>
             <li>You accept that supermarket prices, allergen labels, and school policies change over time — the planner cannot be more current than the data it was last updated with.</li>
@@ -156,7 +156,7 @@ export default async function TermsPage() {
             <li>Account data is limited to what you provide at sign-up (email address, password hash) and what you choose to save (favourite menu names only — we do not store plan history or allergy preferences). Your most recent generated plan is kept in your own browser&apos;s local storage so it survives a refresh; it is never sent to or stored on our servers, and clearing your browser data removes it.</li>
             <li>No child name, age, school name, or precise location is collected or stored — the planner asks only for the number of days and your dietary filters, and holds nothing that identifies the child.</li>
             <li>You can request export or deletion of your account data at any time by contacting{" "}
-              <a href={`mailto:${t("terms_contact_email")}`} className="text-[#366A1B] hover:underline">{t("terms_contact_email")}</a>
+              <a href={`mailto:${t("terms_contact_email")}`} className="text-[#8C4A00] hover:underline">{t("terms_contact_email")}</a>
               . The export covers your account email and your saved favourite menu names, which is everything we hold; deletion is irreversible and processed within 10 working days.
             </li>
             <li>Account data is stored on Supabase infrastructure in the Australia-Sydney region. By creating an account you consent to this data location.</li>
@@ -171,11 +171,11 @@ export default async function TermsPage() {
             of advertising cookies enables it and its partners to serve ads based on your
             visits to this site and/or other sites on the Internet. You may opt out of
             personalised advertising by visiting{" "}
-            <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank" className="text-[#366A1B] hover:underline">Google Ads Settings</a>.
+            <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank" className="text-[#8C4A00] hover:underline">Google Ads Settings</a>.
             More about third-party advertising opt-out is available at{" "}
-            <a href="https://www.aboutads.info/" rel="nofollow noopener" target="_blank" className="text-[#366A1B] hover:underline">aboutads.info</a>.
+            <a href="https://www.aboutads.info/" rel="nofollow noopener" target="_blank" className="text-[#8C4A00] hover:underline">aboutads.info</a>.
             See the{" "}
-            <Link href={`/${locale}/policies`} className="text-[#366A1B] hover:underline">Privacy Policy</Link>
+            <Link href={`/${locale}/policies`} className="text-[#8C4A00] hover:underline">Privacy Policy</Link>
             {" "}for the full data-handling overview, including the cookie consent banner.
           </p>
         </div>

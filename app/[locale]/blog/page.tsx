@@ -43,7 +43,7 @@ export default async function BlogPage({
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("blog_section_label")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("blog_section_label")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("blog_title")}
         </h1>
@@ -90,10 +90,10 @@ export default async function BlogPage({
                 href={`/${locale}/guides/${guide.slug}`}
                 className="block bg-[#F7F9FC] rounded-2xl p-5 hover:shadow-md transition-shadow group"
               >
-                <p className="text-xs text-[#366A1B] font-semibold uppercase tracking-wide mb-1">
+                <p className="text-xs text-[#8C4A00] font-semibold uppercase tracking-wide mb-1">
                   {guide.category} · {guide.readTime}
                 </p>
-                <h3 className="font-bold text-[#1a1a1a] leading-snug group-hover:text-[#366A1B] transition-colors">
+                <h3 className="font-bold text-[#1a1a1a] leading-snug group-hover:text-[#8C4A00] transition-colors">
                   {guide.title}
                 </h3>
               </Link>
@@ -103,7 +103,7 @@ export default async function BlogPage({
       </section>
 
       {/* CTA */}
-      <section className="bg-[#366A1B] py-20 px-4 text-center">
+      <section className="bg-[#8C4A00] py-20 px-4 text-center">
         <h2 className="text-3xl font-extrabold text-white mb-3">
           {t("blog_cta_title")}
         </h2>
@@ -112,7 +112,7 @@ export default async function BlogPage({
         </p>
         <Link
           href={`/${locale}/planner`}
-          className="inline-block bg-white hover:bg-[#F7F9FC] text-[#366A1B] font-bold px-10 py-4 rounded-full transition-colors shadow-lg"
+          className="inline-block bg-white hover:bg-[#F7F9FC] text-[#8C4A00] font-bold px-10 py-4 rounded-full transition-colors shadow-lg"
         >
           {t("blog_cta_btn")}
         </Link>

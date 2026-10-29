@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { BRAND } from "@/lib/brand";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = BRAND.SITE_URL;
 const DEFAULT_OG_IMAGE = `${BASE_URL}/opengraph-image`;
 
 /** 구글이 검색결과 제목을 자르기 시작하는 지점. 픽셀 폭 기준이라 정확한 경계는 없지만 60자면 거의 안전하다. */

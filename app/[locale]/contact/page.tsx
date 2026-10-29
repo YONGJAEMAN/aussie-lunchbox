@@ -28,7 +28,7 @@ export default async function ContactPage() {
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_get_in_touch")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_get_in_touch")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("contact_title")}
         </h1>
@@ -96,9 +96,9 @@ export default async function ContactPage() {
             project: feedback from parents shapes which articles get written next,
             which allergy filters get refined, and which supermarket prices get checked
             most often. If you have already read the{" "}
-            <Link href={`/${locale}/about`} className="text-[#366A1B] underline">About page</Link>
+            <Link href={`/${locale}/about`} className="text-[#8C4A00] underline">About page</Link>
             {" "}and the{" "}
-            <Link href={`/${locale}/faq`} className="text-[#366A1B] underline">FAQ</Link>,
+            <Link href={`/${locale}/faq`} className="text-[#8C4A00] underline">FAQ</Link>,
             this email goes straight to me.
           </p>
 
@@ -153,7 +153,7 @@ export default async function ContactPage() {
               request&quot;. The Act (section 44) requires a decision on an access request as
               soon as reasonably practicable and no later than 20 working days after it
               arrives; I aim to reply within 10 working days. See the{" "}
-              <Link href={`/${locale}/policies`} className="text-[#366A1B] underline">Privacy Policy</Link>
+              <Link href={`/${locale}/policies`} className="text-[#8C4A00] underline">Privacy Policy</Link>
               {" "}for the full data-handling overview.
             </li>
           </ul>
@@ -183,7 +183,7 @@ export default async function ContactPage() {
                 세 열 모두 매주 온라인 매장에서 읽고, 매장을 고르는 두 체인은 Ormiston으로 고정돼 있다. */}
             <li>Prices are read from <strong>Woolworths Australia</strong>&apos;s own online shop rather than walked in store — I don&apos;t live in Australia. Prices at your local store, and in other states, may differ.</li>
             <li>The seasonal produce calendar describes general Australian seasons; what is in season varies a lot between the tropical north and the southern states (see the{" "}
-              <Link href={`/${locale}/guides/australian-seasonal-produce-calendar`} className="text-[#366A1B] underline">seasonal calendar guide</Link>
+              <Link href={`/${locale}/guides/australian-seasonal-produce-calendar`} className="text-[#8C4A00] underline">seasonal calendar guide</Link>
               ).
             </li>
             <li>School food rules are set by each state&apos;s healthy canteen framework and by individual schools, so the guides describe the common ground and point to the state documents rather than one national rule.</li>
@@ -216,7 +216,7 @@ export default async function ContactPage() {
             <li>
               <strong>Bulk content licensing or scraping requests.</strong> All
               Aussie Lunchbox content is original and copyrighted to the operator. Use the{" "}
-              <Link href={`/${locale}/terms`} className="text-[#366A1B] underline">Terms</Link>
+              <Link href={`/${locale}/terms`} className="text-[#8C4A00] underline">Terms</Link>
               {" "}page for the licensing details, or email with the subject "Licensing"
               and a clear use-case description.
             </li>

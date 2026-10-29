@@ -60,8 +60,8 @@ export default function CategoryFilter({
               aria-pressed={selected}
               className={`px-4 min-h-touch inline-flex items-center rounded-full text-sm font-medium transition-colors ${
                 selected
-                  ? "bg-[#366A1B] text-white"
-                  : "bg-white text-[#366A1B] border border-gray-200 hover:border-[#78B159] hover:bg-[#F0F7E8]"
+                  ? "bg-[#8C4A00] text-white"
+                  : "bg-white text-[#8C4A00] border border-gray-200 hover:border-[#F5A623] hover:bg-[#FFF7EC]"
               }`}
             >
               {label}
@@ -85,7 +85,7 @@ export default function CategoryFilter({
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <span className="absolute top-3 left-3 bg-[#366A1B] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="absolute top-3 left-3 bg-[#8C4A00] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   {item.category}
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function CategoryFilter({
                 <p className="text-xs text-gray-500 mb-2">
                   {item.date} · {item.readTime}
                 </p>
-                <h2 className="text-lg font-bold text-[#1a1a1a] mb-2 leading-snug group-hover:text-[#366A1B] transition-colors">
+                <h2 className="text-lg font-bold text-[#1a1a1a] mb-2 leading-snug group-hover:text-[#8C4A00] transition-colors">
                   {item.title}
                 </h2>
                 <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">

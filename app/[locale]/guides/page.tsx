@@ -40,7 +40,7 @@ export default async function GuidesPage({
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("guides_section_label")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("guides_section_label")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("guides_title")}
         </h1>
@@ -61,7 +61,7 @@ export default async function GuidesPage({
           <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-6">How these guides are researched</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Every guide on Aussie Lunchbox is written by{" "}
-            <Link href={`/${locale}/about`} className="text-[#366A1B] underline">Yong Jae Lee</Link>
+            <Link href={`/${locale}/about`} className="text-[#8C4A00] underline">Yong Jae Lee</Link>
             , the solo operator of the site (based in Auckland, New Zealand, and also behind
             Kiwi Lunchbox), and reviewed against publicly available Australian Government,
             NHMRC and state health-department guidance before publishing. The aim is to translate dense official documents — often 40 to 80
@@ -138,7 +138,7 @@ export default async function GuidesPage({
             </li>
             <li>
               <strong>Corrections process</strong> — readers can flag errors through the{" "}
-              <Link href={`/${locale}/contact`} className="text-[#366A1B] underline">Contact page</Link>
+              <Link href={`/${locale}/contact`} className="text-[#8C4A00] underline">Contact page</Link>
               . Verified corrections are applied within 48 hours and the
               last-reviewed date is updated. Substantial factual corrections are noted
               in the article footer.
@@ -202,16 +202,16 @@ export default async function GuidesPage({
             about your child&apos;s growth, allergies, nutrient adequacy, or feeding
             behaviour, please consult your GP, paediatrician, or a registered dietitian.
             See the{" "}
-            <Link href={`/${locale}/terms`} className="text-[#366A1B] underline">Terms</Link>
+            <Link href={`/${locale}/terms`} className="text-[#8C4A00] underline">Terms</Link>
             {" "}and{" "}
-            <Link href={`/${locale}/policies`} className="text-[#366A1B] underline">Privacy Policy</Link>
+            <Link href={`/${locale}/policies`} className="text-[#8C4A00] underline">Privacy Policy</Link>
             {" "}for the full disclaimer and data-handling overview.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-[#366A1B] py-20 px-4 text-center">
+      <section className="bg-[#8C4A00] py-20 px-4 text-center">
         <h2 className="text-3xl font-extrabold text-white mb-3">
           {t("guides_cta_title")}
         </h2>
@@ -220,7 +220,7 @@ export default async function GuidesPage({
         </p>
         <Link
           href={`/${locale}/planner`}
-          className="inline-block bg-white hover:bg-[#F7F9FC] text-[#366A1B] font-bold px-10 py-4 rounded-full transition-colors shadow-lg"
+          className="inline-block bg-white hover:bg-[#F7F9FC] text-[#8C4A00] font-bold px-10 py-4 rounded-full transition-colors shadow-lg"
         >
           {t("guides_cta_btn")}
         </Link>

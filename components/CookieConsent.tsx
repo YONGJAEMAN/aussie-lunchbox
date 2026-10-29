@@ -34,7 +34,7 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-[#314A37] text-white shadow-2xl"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-[#6B3600] text-white shadow-2xl"
     >
       {/* ⚠️ 이 배너는 지우면 안 된다 — AdSense GDPR 동의 요건이다.
           모바일에서 첫 화면의 22%(177px)를 먹고 있어 **높이만** 줄인다. */}

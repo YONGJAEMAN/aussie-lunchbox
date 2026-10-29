@@ -67,7 +67,7 @@ export default function ContactForm() {
           type="text"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors bg-white"
+          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
           placeholder="Jane Smith"
         />
       </div>
@@ -77,7 +77,7 @@ export default function ContactForm() {
           type="email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors bg-white"
+          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
           placeholder="jane@example.com"
         />
       </div>
@@ -86,7 +86,7 @@ export default function ContactForm() {
         <select
           value={form.subject || t("contact_subject_general")}
           onChange={(e) => setForm({ ...form, subject: e.target.value })}
-          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors bg-white"
+          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
         >
           <option>{t("contact_subject_general")}</option>
           <option>{t("contact_subject_support")}</option>
@@ -100,7 +100,7 @@ export default function ContactForm() {
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           rows={5}
-          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#78B159] transition-colors resize-none bg-white"
+          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors resize-none bg-white"
           placeholder={t("contact_message_placeholder")}
         />
       </div>
@@ -116,7 +116,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#366A1B] hover:bg-primary-deep text-white font-bold py-3 rounded-full transition-colors disabled:opacity-60"
+        className="w-full bg-[#8C4A00] hover:bg-primary-deep text-white font-bold py-3 rounded-full transition-colors disabled:opacity-60"
       >
         {loading ? t("contact_sending") : t("contact_send_btn")}
       </button>

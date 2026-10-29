@@ -631,7 +631,7 @@ export default function PlannerClient({
 
   function handleWhatsAppShare() {
     const items = shoppingList.slice(0, 15).join(", ");
-    const text = `${t("share_plan_text")} 🥝\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://aussielunchbox.com/en/planner`;
+    const text = `${t("share_plan_text")} 🦘\n\n🛒 ${t("shopping_list")}: ${items}${shoppingList.length > 15 ? "..." : ""}\n\nhttps://aussielunchbox.com/en/planner`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   }
 
@@ -759,7 +759,7 @@ export default function PlannerClient({
         className="order-2 lg:order-1 w-full lg:w-80 bg-white border-t lg:border-t-0 lg:border-r border-gray-100 p-6 flex-shrink-0 scroll-mt-4"
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-bold text-[#314A37]">🥝 {t("sidebar_header")}</h2>
+          <h2 className="text-lg font-bold text-[#6B3600]">🦘 {t("sidebar_header")}</h2>
           {user ? (
             <button
               onClick={() => supabase.auth.signOut()}
@@ -772,7 +772,7 @@ export default function PlannerClient({
             //    같은 무게로 보여 "가입 불필요" 홍보 문구와 어긋난다 — 외곽선으로 낮춘다.
             <button
               onClick={() => setShowAuth(true)}
-              className="text-xs text-gray-500 border border-gray-200 px-3 min-h-touch inline-flex items-center rounded-full hover:border-[#78B159] hover:text-[#314A37] transition-colors"
+              className="text-xs text-gray-500 border border-gray-200 px-3 min-h-touch inline-flex items-center rounded-full hover:border-[#F5A623] hover:text-[#6B3600] transition-colors"
             >
               {t("login")}
             </button>
@@ -789,8 +789,8 @@ export default function PlannerClient({
                 onClick={() => toggleAllergy(a)}
                 className={`px-3.5 min-h-touch inline-flex items-center rounded-full text-xs border transition-colors ${
                   allergies.includes(a)
-                    ? "bg-primary-deep text-white border-[#78B159]"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#78B159]"
+                    ? "bg-primary-deep text-white border-[#F5A623]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-[#F5A623]"
                 }`}
               >
                 {t(ALLERGY_DISPLAY_KEYS[a])}
@@ -800,7 +800,7 @@ export default function PlannerClient({
           {kindyOn(allergies) && (
             <p className="mt-2 text-xs leading-relaxed text-gray-500">
               {t("planner_kindy_sidebar")}{" "}
-              <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline text-[#314A37]">
+              <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline text-[#6B3600]">
                 {t("planner_kindy_guide_link")}
               </a>
             </p>
@@ -817,7 +817,7 @@ export default function PlannerClient({
             aria-label={t("planner_portion_title")}
             value={portionBand}
             onChange={(e) => setPortionBand(normalizePortionBand(e.target.value))}
-            className="w-full min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 bg-white focus:outline-none focus:border-[#78B159]"
+            className="w-full min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 bg-white focus:outline-none focus:border-[#F5A623]"
           >
             {PORTION_BANDS.map((b) => (
               <option key={b} value={b}>
@@ -834,7 +834,7 @@ export default function PlannerClient({
               href={PORTION_BAND_SOURCE.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline text-[#314A37]"
+              className="underline text-[#6B3600]"
             >
               {t("planner_portion_source")}
             </a>
@@ -868,7 +868,7 @@ export default function PlannerClient({
                     const v = normalizePortionBand(e.target.value);
                     setExtraBoxes((prev) => prev.map((x, j) => (j === i ? v : x)));
                   }}
-                  className="flex-1 min-w-0 min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:border-[#78B159]"
+                  className="flex-1 min-w-0 min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:border-[#F5A623]"
                 >
                   {PORTION_BANDS.map((o) => (
                     <option key={o} value={o}>
@@ -880,7 +880,7 @@ export default function PlannerClient({
                   type="button"
                   onClick={() => setExtraBoxes((prev) => prev.filter((_, j) => j !== i))}
                   aria-label={t("planner_boxes_remove", { n: String(i + 2) })}
-                  className="min-h-touch min-w-touch inline-flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:border-[#78B159]"
+                  className="min-h-touch min-w-touch inline-flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:border-[#F5A623]"
                 >
                   ×
                 </button>
@@ -891,7 +891,7 @@ export default function PlannerClient({
             <button
               type="button"
               onClick={() => setExtraBoxes((prev) => [...prev, DEFAULT_PORTION_BAND])}
-              className="mt-3 px-3.5 min-h-touch inline-flex items-center rounded-full text-xs border border-gray-200 bg-white text-[#314A37] hover:border-[#78B159]"
+              className="mt-3 px-3.5 min-h-touch inline-flex items-center rounded-full text-xs border border-gray-200 bg-white text-[#6B3600] hover:border-[#F5A623]"
             >
               {t("planner_boxes_add")}
             </button>
@@ -909,8 +909,8 @@ export default function PlannerClient({
                 onClick={() => setLunchDays((prev) => prev.map((on, j) => (j === i ? !on : on)))}
                 className={`px-3.5 min-h-touch min-w-touch inline-flex items-center justify-center rounded-full text-xs border transition-colors disabled:opacity-60 ${
                   lunchDays[i]
-                    ? "bg-primary-deep text-white border-[#78B159]"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#78B159]"
+                    ? "bg-primary-deep text-white border-[#F5A623]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-[#F5A623]"
                 }`}
               >
                 {t(k)}
@@ -934,8 +934,8 @@ export default function PlannerClient({
                 }
                 className={`px-3.5 min-h-touch inline-flex items-center rounded-full text-xs border transition-colors ${
                   prepStyles.includes(p)
-                    ? "bg-primary-deep text-white border-[#78B159]"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#78B159]"
+                    ? "bg-primary-deep text-white border-[#F5A623]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-[#F5A623]"
                 }`}
               >
                 {t(PREP_DISPLAY_KEYS[p])}
@@ -986,7 +986,7 @@ export default function PlannerClient({
             value={leftover}
             onChange={(e) => setLeftover(e.target.value)}
             placeholder={t("leftovers_placeholder")}
-            className="w-full min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 focus:outline-none focus:border-[#78B159]"
+            className="w-full min-h-touch border border-gray-200 rounded-lg px-3 py-2 text-sm mt-2 focus:outline-none focus:border-[#F5A623]"
           />
         </details>
 
@@ -1005,8 +1005,8 @@ export default function PlannerClient({
         )}
 
         {/* This Week's Sales — NZ supermarket promotions (default open: 핵심 차별화) */}
-        <details className="mb-6 bg-[#F0F7E8] border border-[#78B159]/40 rounded-xl p-3" open>
-          <summary className="cursor-pointer font-bold text-sm text-[#314A37] py-3">
+        <details className="mb-6 bg-[#FFF7EC] border border-[#F5A623]/40 rounded-xl p-3" open>
+          <summary className="cursor-pointer font-bold text-sm text-[#6B3600] py-3">
             🔖 {t("sale_section_title")}
           </summary>
           <div className="mt-2 space-y-3 text-sm">
@@ -1061,7 +1061,7 @@ export default function PlannerClient({
         <button
           onClick={handleGenerate}
           disabled={generating}
-          className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors mt-4 disabled:opacity-60"
+          className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl transition-colors mt-4 disabled:opacity-60"
         >
           {generating ? t("generating") : t("generate_btn")}
         </button>
@@ -1070,19 +1070,19 @@ export default function PlannerClient({
             🔴 특가를 기본으로 켜면서 화면 숫자가 정가 기준 $4 중앙값보다 낮아진다.
             한 줄만 보여주면 글·학교 안내문의 $4와 어긋난 것처럼 읽힌다. */}
         {typeof totalWeekCost === "number" && totalWeekCost > 0 && (
-          <div className="mt-6 bg-[#F0F7E8] border border-[#78B159]/50 rounded-xl p-4 text-xs">
+          <div className="mt-6 bg-[#FFF7EC] border border-[#F5A623]/50 rounded-xl p-4 text-xs">
             <p className="text-gray-600">
               {t("cost_regular_label")}:{" "}
-              <span className={totalSavings ? "line-through text-gray-500" : "font-semibold text-[#314A37]"}>
+              <span className={totalSavings ? "line-through text-gray-500" : "font-semibold text-[#6B3600]"}>
                 ${(totalWeekCost + (totalSavings ?? 0)).toFixed(2)}
               </span>
             </p>
             {typeof totalSavings === "number" && totalSavings > 0 && (
               <>
-                <p className="font-semibold text-[#314A37] mt-1">
+                <p className="font-semibold text-[#6B3600] mt-1">
                   {t("cost_with_specials_label")}: ${totalWeekCost.toFixed(2)}
                 </p>
-                <p className="text-[#366A1B] font-semibold mt-1">
+                <p className="text-[#8C4A00] font-semibold mt-1">
                   🔖 {t("sale_savings_label")}: ${totalSavings.toFixed(2)}
                 </p>
               </>
@@ -1114,7 +1114,7 @@ export default function PlannerClient({
 
       {/* Main Content */}
       <main className="order-1 lg:order-2 flex-1 p-6 lg:p-10 overflow-y-auto">
-        <h1 className="text-3xl font-bold text-[#314A37] mb-2">{t("title")}</h1>
+        <h1 className="text-3xl font-bold text-[#6B3600] mb-2">{t("title")}</h1>
         <p className="text-gray-500 mb-8">{t("subtitle")}</p>
 
         {error && (
@@ -1153,7 +1153,7 @@ export default function PlannerClient({
         {/* Plan Grid */}
         {planData.length > 0 && (
           <>
-            <h2 className="text-xl font-bold text-[#314A37] mb-4">📅 {t("weekly_plan")}</h2>
+            <h2 className="text-xl font-bold text-[#6B3600] mb-4">📅 {t("weekly_plan")}</h2>
 
             {/* Weekly total cost headline */}
             {(() => {
@@ -1163,7 +1163,7 @@ export default function PlannerClient({
               const total = weekTotalFrom(planData);
               if (total === null) return null;
               return (
-                <div className="bg-[#314A37] text-white rounded-2xl px-6 py-4 mb-6 flex items-center gap-3">
+                <div className="bg-[#6B3600] text-white rounded-2xl px-6 py-4 mb-6 flex items-center gap-3">
                   <span className="text-2xl">💰</span>
                   <span className="font-bold text-lg">
                     {planBoxes.length > 1
@@ -1190,7 +1190,7 @@ export default function PlannerClient({
 
             {/* 기준(5–12세)이 아니면 이 계획의 금액이 배율을 곱한 값이라는 것을 합계 바로 아래에 말한다 */}
             {planOptions.extraBoxes.length > 0 ? (
-              <p className="mb-6 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm leading-relaxed text-[#314A37]">
+              <p className="mb-6 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm leading-relaxed text-[#6B3600]">
                 {t("planner_boxes_plan_line", {
                   count: String(planBoxes.length),
                   boxes: boxesList(planBoxes, t),
@@ -1198,7 +1198,7 @@ export default function PlannerClient({
                 })}
               </p>
             ) : planOptions.band !== DEFAULT_PORTION_BAND && (
-              <p className="mb-6 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm leading-relaxed text-[#314A37]">
+              <p className="mb-6 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm leading-relaxed text-[#6B3600]">
                 {t("planner_portion_plan_line", {
                   band: t(`portion_band_${planOptions.band}`),
                   factor: bandFactorLabel(planOptions.band),
@@ -1256,7 +1256,7 @@ export default function PlannerClient({
 
                   <div className="p-4 flex flex-col flex-1">
                     <div className="flex items-start justify-between mb-1">
-                      <h3 className="font-bold text-[#314A37] text-base leading-tight">{item.menuName}</h3>
+                      <h3 className="font-bold text-[#6B3600] text-base leading-tight">{item.menuName}</h3>
                       <button
                         onClick={() => toggleFavorite(item.menuName)}
                         aria-pressed={dbFavorites.includes(item.menuName)}
@@ -1268,7 +1268,7 @@ export default function PlannerClient({
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs text-gray-500 font-medium">{item.day}</span>
-                      <span className="text-xs bg-[#E8F5E9] text-[#314A37] px-2 py-0.5 rounded-full">{item.category}</span>
+                      <span className="text-xs bg-[#FFF3E0] text-[#6B3600] px-2 py-0.5 rounded-full">{item.category}</span>
                       {item.cuisine && (
                         <span className="text-xs bg-[#F1EDF7] text-[#5B4B7A] px-2 py-0.5 rounded-full">
                           {t(`cuisine_${item.cuisine}`)}
@@ -1321,7 +1321,7 @@ export default function PlannerClient({
                         {item.saleMatches.slice(0, 3).map((m) => (
                           <span
                             key={`${m.store}:${m.promotion.matchKey}`}
-                            className="text-[11px] bg-[#F0F7E8] text-[#314A37] border border-[#78B159]/50 rounded-full px-2 py-0.5 leading-tight"
+                            className="text-[11px] bg-[#FFF7EC] text-[#6B3600] border border-[#F5A623]/50 rounded-full px-2 py-0.5 leading-tight"
                             title={`${m.promotion.name} — $${m.promotion.salePrice} (was $${m.promotion.regularPrice})`}
                           >
                             🔖 {m.ingredient}
@@ -1340,14 +1340,14 @@ export default function PlannerClient({
                           금액은 재료만 반영하다 보니 "사진의 주스박스·과일은 왜 빠졌냐"는
                           지적을 받았다. 무엇이 포함된 값인지 화면에서 바로 알 수 있어야 한다. */}
                       <span
-                        className="font-bold text-[#314A37] border-b border-dotted border-gray-300 cursor-help"
+                        className="font-bold text-[#6B3600] border-b border-dotted border-gray-300 cursor-help"
                         title={t("planner_cost_basis")}
                       >
                         {item.estCost}
                       </span>
                       <button
                         onClick={() => setActiveRecipe(item)}
-                        className="text-sm bg-[#E8F5E9] text-[#314A37] px-3 min-h-touch inline-flex items-center rounded-lg hover:bg-primary-deep hover:text-white transition-colors"
+                        className="text-sm bg-[#FFF3E0] text-[#6B3600] px-3 min-h-touch inline-flex items-center rounded-lg hover:bg-primary-deep hover:text-white transition-colors"
                       >
                         {t("view_recipe")}
                       </button>
@@ -1356,7 +1356,7 @@ export default function PlannerClient({
                       onClick={() => handleSwap(dayIndex)}
                       disabled={swappingDay !== null}
                       aria-label={`${t("planner_swap_day")}: ${item.day}`}
-                      className="mt-2 min-h-touch inline-flex items-center justify-center w-full text-sm border border-gray-200 text-gray-600 rounded-lg hover:border-[#78B159] hover:text-[#314A37] transition-colors disabled:opacity-50"
+                      className="mt-2 min-h-touch inline-flex items-center justify-center w-full text-sm border border-gray-200 text-gray-600 rounded-lg hover:border-[#F5A623] hover:text-[#6B3600] transition-colors disabled:opacity-50"
                     >
                       {swappingDay === dayIndex ? t("planner_swapping") : `🔄 ${t("planner_swap_day")}`}
                     </button>
@@ -1373,7 +1373,7 @@ export default function PlannerClient({
                 밀어내서(Monday 659→839) 이번 작업의 목적과 어긋난다. */}
             <a
               href="#planner-filters"
-              className="lg:hidden flex items-center justify-center gap-2 w-full border border-[#78B159] text-[#314A37] font-semibold py-3 rounded-xl mb-10 hover:bg-[#F0F7E8] transition-colors"
+              className="lg:hidden flex items-center justify-center gap-2 w-full border border-[#F5A623] text-[#6B3600] font-semibold py-3 rounded-xl mb-10 hover:bg-[#FFF7EC] transition-colors"
             >
               ⚙️ {t("sidebar_header")}
             </a>
@@ -1381,7 +1381,7 @@ export default function PlannerClient({
             {/* Prep game plan — grouped by prep_style */}
             {planData.some((p) => p.prepStyle && !p.off) && (
               <div className="bg-white rounded-2xl shadow p-6 mb-10">
-                <h2 className="text-xl font-bold text-[#314A37] mb-4">🗓️ {t("planner_prep_summary_title")}</h2>
+                <h2 className="text-xl font-bold text-[#6B3600] mb-4">🗓️ {t("planner_prep_summary_title")}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                   {([
                     ["make-ahead", "planner_prep_summary_ahead", "🍳"],
@@ -1392,7 +1392,7 @@ export default function PlannerClient({
                     if (!items.length) return null;
                     return (
                       <div key={style} className="bg-[#F7F9FC] rounded-xl p-4">
-                        <p className="font-semibold text-[#314A37] mb-2">{emoji} {t(labelKey)}</p>
+                        <p className="font-semibold text-[#6B3600] mb-2">{emoji} {t(labelKey)}</p>
                         <ul className="space-y-1 text-gray-600">
                           {items.map((p) => (
                             <li key={p.day}>
@@ -1420,11 +1420,11 @@ export default function PlannerClient({
                 메뉴를 새로 만들지 않는다. 이미 만드는 것을 조금 더 만들면 된다는 사실만
                 말한다. 다만 위의 통당 금액은 아이 기준이므로 어른 몫이 더 든다는 것을
                 같이 적는다 — 안 적으면 우리 숫자로 잘못된 예산을 짜게 된다. */}
-            <div className="bg-[#E8F5E9] rounded-2xl p-6 mb-10">
-              <h2 className="text-lg font-bold text-[#314A37] mb-2">
+            <div className="bg-[#FFF3E0] rounded-2xl p-6 mb-10">
+              <h2 className="text-lg font-bold text-[#6B3600] mb-2">
                 🥪 {t("planner_adult_note_title")}
               </h2>
-              <p className="text-sm text-[#314A37] leading-relaxed">
+              <p className="text-sm text-[#6B3600] leading-relaxed">
                 {t("planner_adult_note_body")}
               </p>
             </div>
@@ -1432,13 +1432,13 @@ export default function PlannerClient({
             {/* Export, Share & Email */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
-                <h3 className="font-bold text-[#314A37] mb-3">📥 {t("download_pdf")}</h3>
+                <h3 className="font-bold text-[#6B3600] mb-3">📥 {t("download_pdf")}</h3>
                 <div className="flex-1 flex flex-col justify-end">
                   {pdfBlob ? (
                     <a
                       href={URL.createObjectURL(pdfBlob)}
                       download="kiwi_lunchbox_plan.pdf"
-                      className="block w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl text-center transition-colors"
+                      className="block w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl text-center transition-colors"
                     >
                       ⬇️ {t("download_pdf")}
                     </a>
@@ -1449,25 +1449,25 @@ export default function PlannerClient({
               </div>
 
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
-                <h3 className="font-bold text-[#314A37] mb-3">📤 {t("share_title")}</h3>
+                <h3 className="font-bold text-[#6B3600] mb-3">📤 {t("share_title")}</h3>
                 <div className="flex-1 flex flex-col gap-2 justify-end">
                   <button
                     onClick={handleCopyList}
-                    className="min-h-touch flex items-center justify-center w-full bg-[#E8F5E9] text-[#314A37] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
+                    className="min-h-touch flex items-center justify-center w-full bg-[#FFF3E0] text-[#6B3600] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
                   >
                     {listCopied ? `✅ ${t("share_copied")}` : `📋 ${t("share_copy_list")}`}
                   </button>
                   {typeof navigator !== "undefined" && "share" in navigator && (
                     <button
                       onClick={handleNativeShare}
-                      className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors"
+                      className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl transition-colors"
                     >
                       📤 {t("share_native")}
                     </button>
                   )}
                   <button
                     onClick={handleCopyShareLink}
-                    className="min-h-touch flex items-center justify-center w-full bg-[#E8F5E9] text-[#314A37] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
+                    className="min-h-touch flex items-center justify-center w-full bg-[#FFF3E0] text-[#6B3600] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
                   >
                     {shareLinkState === "copied" ? `✅ ${t("planner_share_link_copied")}` : `🔗 ${t("planner_share_link_btn")}`}
                   </button>
@@ -1516,7 +1516,7 @@ export default function PlannerClient({
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Aussie Lunchbox on Instagram"
-                        className="text-gray-500 hover:text-[#314A37] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
+                        className="text-gray-500 hover:text-[#6B3600] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
                       >
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">
                           <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.44c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07Zm0 2.45a5.95 5.95 0 1 1 0 11.9 5.95 5.95 0 0 1 0-11.9Zm0 9.81a3.86 3.86 0 1 0 0-7.72 3.86 3.86 0 0 0 0 7.72Zm7.58-10.05a1.39 1.39 0 1 1-2.78 0 1.39 1.39 0 0 1 2.78 0Z" />
@@ -1527,7 +1527,7 @@ export default function PlannerClient({
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Aussie Lunchbox on Facebook"
-                        className="text-gray-500 hover:text-[#314A37] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
+                        className="text-gray-500 hover:text-[#6B3600] transition-colors min-h-touch min-w-touch inline-flex items-center justify-center -m-2"
                       >
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5" fill="currentColor">
                           <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22c4.78-.75 8.44-4.92 8.44-9.94Z" />
@@ -1539,7 +1539,7 @@ export default function PlannerClient({
               </div>
 
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
-                <h3 className="font-bold text-[#314A37] mb-3">✉️ {t("planner_email_title")}</h3>
+                <h3 className="font-bold text-[#6B3600] mb-3">✉️ {t("planner_email_title")}</h3>
                 <div className="flex-1 flex flex-col justify-end">
                   {!user ? (
                     <p className="text-sm text-gray-500 text-center py-4">
@@ -1552,12 +1552,12 @@ export default function PlannerClient({
                         value={emailAddr}
                         onChange={(e) => setEmailAddr(e.target.value)}
                         placeholder={t("email_placeholder")}
-                        className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm mb-3 focus:outline-none focus:border-[#78B159]"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm mb-3 focus:outline-none focus:border-[#F5A623]"
                       />
                       <button
                         onClick={handleSendEmail}
                         disabled={sending || !pdfBlob}
-                        className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
+                        className="min-h-touch flex items-center justify-center w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-50"
                       >
                         {sending ? t("planner_sending") : t("email_btn")}
                       </button>
@@ -1570,9 +1570,9 @@ export default function PlannerClient({
 
             {/* Shopping List */}
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-[#314A37]">{t("shopping_list")}</h2>
+              <h2 className="text-xl font-bold text-[#6B3600]">{t("shopping_list")}</h2>
               {totalCost > 0 && (
-                <span className="bg-[#E8F5E9] text-[#314A37] font-bold px-4 py-1.5 rounded-full text-sm">
+                <span className="bg-[#FFF3E0] text-[#6B3600] font-bold px-4 py-1.5 rounded-full text-sm">
                   {t("planner_est_total")} ${totalCost.toFixed(2)}
                 </span>
               )}
@@ -1581,11 +1581,11 @@ export default function PlannerClient({
               <div className="mb-4 rounded-2xl border border-gray-200 bg-white px-5 py-4">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                   <span className="text-sm text-gray-600">{t("planner_used_basis")}</span>
-                  <span className="font-bold text-[#314A37]">${totalCost.toFixed(2)}</span>
+                  <span className="font-bold text-[#6B3600]">${totalCost.toFixed(2)}</span>
                 </div>
                 <div className="mt-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                   <span className="text-sm text-gray-600">{t("planner_till_basis")}</span>
-                  <span className="font-bold text-[#314A37]">${tillTotal.toFixed(2)}</span>
+                  <span className="font-bold text-[#6B3600]">${tillTotal.toFixed(2)}</span>
                 </div>
                 <p className="mt-3 text-xs text-gray-500 leading-relaxed">
                   {t("planner_two_totals_note")}
@@ -1628,7 +1628,7 @@ export default function PlannerClient({
                                   </span>
                                 )}
                                 <span
-                                  className={`text-xs ${item.regularPrice !== undefined ? "text-[#78B159] font-semibold" : "text-gray-500"}`}
+                                  className={`text-xs ${item.regularPrice !== undefined ? "text-[#F5A623] font-semibold" : "text-gray-500"}`}
                                 >
                                   ${item.price.toFixed(2)}
                                 </span>
@@ -1642,7 +1642,7 @@ export default function PlannerClient({
                                 </span>
                               </div>
                               {totalItemCost !== undefined && (
-                                <div className="text-sm font-bold text-[#314A37]">
+                                <div className="text-sm font-bold text-[#6B3600]">
                                   ${totalItemCost.toFixed(2)}
                                   <span className="text-xs font-normal text-gray-500 ml-1">portion</span>
                                 </div>
@@ -1665,7 +1665,7 @@ export default function PlannerClient({
               const filtered = matchedFilters(planFilters);
               return (
                 <div className="mt-10">
-                  <h2 className="text-xl font-bold text-[#314A37] mb-1">
+                  <h2 className="text-xl font-bold text-[#6B3600] mb-1">
                     {filtered ? t("planner_read_next_filtered") : t("planner_read_next")}
                   </h2>
                   <div className="grid gap-3 sm:grid-cols-3 mt-4">
@@ -1678,10 +1678,10 @@ export default function PlannerClient({
                           href={articleHref(locale, l)}
                           className="block bg-white rounded-2xl shadow p-4 hover:shadow-md transition-shadow"
                         >
-                          <p className="text-xs font-bold text-[#78B159] uppercase tracking-wide">
+                          <p className="text-xs font-bold text-[#F5A623] uppercase tracking-wide">
                             {meta.category}
                           </p>
-                          <p className="font-bold text-[#314A37] mt-1 leading-snug">
+                          <p className="font-bold text-[#6B3600] mt-1 leading-snug">
                             {meta.title}
                           </p>
                           <p className="text-xs text-gray-500 mt-2">{meta.readTime}</p>
@@ -1698,7 +1698,7 @@ export default function PlannerClient({
         {planData.length === 0 && !generating && (
           <div>
             {/* Desktop: subtle pointer to sidebar button */}
-            <div className="hidden lg:flex items-center gap-2 mb-5 bg-[#E8F5E9] border border-[#78B159]/30 rounded-xl px-4 py-3 text-sm text-[#314A37]">
+            <div className="hidden lg:flex items-center gap-2 mb-5 bg-[#FFF3E0] border border-[#F5A623]/30 rounded-xl px-4 py-3 text-sm text-[#6B3600]">
               <span className="text-lg">👈</span>
               <span>{t("planner_desktop_hint")}</span>
             </div>
@@ -1710,26 +1710,26 @@ export default function PlannerClient({
                 aria-pressed={allergies.includes("Kindy")}
                 className={`px-4 min-h-touch inline-flex items-center rounded-full text-sm border transition-colors ${
                   allergies.includes("Kindy")
-                    ? "bg-primary-deep text-white border-[#78B159]"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#78B159]"
+                    ? "bg-primary-deep text-white border-[#F5A623]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-[#F5A623]"
                 }`}
               >
                 {allergies.includes("Kindy") ? "✓ " : ""}{t("planner_allergy_kindy")}
               </button>
-              <a href="#planner-filters" className="text-sm text-[#314A37] underline min-h-touch inline-flex items-center">
+              <a href="#planner-filters" className="text-sm text-[#6B3600] underline min-h-touch inline-flex items-center">
                 {t("planner_mobile_more_options")}
               </a>
             </div>
             {/* Mobile: button-style CTA */}
             <button
               onClick={handleGenerate}
-              className="min-h-touch flex items-center justify-center lg:hidden w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-4 rounded-xl transition-colors mb-5 text-lg"
+              className="min-h-touch flex items-center justify-center lg:hidden w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-4 rounded-xl transition-colors mb-5 text-lg"
             >
               ✨ {t("planner_mobile_cta")}
             </button>
             <div className="flex flex-col items-center justify-center py-6 text-center mb-4">
               <div className="text-6xl mb-4">🥗</div>
-              <h2 className="text-2xl font-bold text-[#314A37] mb-2">{t("planner_empty_title")}</h2>
+              <h2 className="text-2xl font-bold text-[#6B3600] mb-2">{t("planner_empty_title")}</h2>
               <p className="text-gray-500 max-w-sm text-sm mb-5">
                 {t("planner_empty_desc")}
               </p>
@@ -1762,19 +1762,19 @@ export default function PlannerClient({
                       <img src={d.image} alt={d.menu} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="p-3 flex flex-col gap-1 flex-1">
-                      <p className="text-xs font-bold text-[#366A1B]">{d.day}</p>
-                      <p className="text-sm font-semibold text-[#314A37] leading-tight">{d.menu}</p>
+                      <p className="text-xs font-bold text-[#8C4A00]">{d.day}</p>
+                      <p className="text-sm font-semibold text-[#6B3600] leading-tight">{d.menu}</p>
                       <div className="flex items-center gap-1.5 mt-auto pt-1">
-                        <span className="text-xs bg-[#E8F5E9] text-[#314A37] px-2 py-0.5 rounded-full">{d.tag}</span>
+                        <span className="text-xs bg-[#FFF3E0] text-[#6B3600] px-2 py-0.5 rounded-full">{d.tag}</span>
                       </div>
-                      <p className="text-sm font-bold text-[#314A37]">{d.cost}</p>
+                      <p className="text-sm font-bold text-[#6B3600]">{d.cost}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="border-t border-gray-100 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
                 <div className="text-gray-500">
-                  {t("planner_example_weekly_cost")} <strong className="text-[#314A37]">~{exampleWeek.total}</strong>
+                  {t("planner_example_weekly_cost")} <strong className="text-[#6B3600]">~{exampleWeek.total}</strong>
                 </div>
                 <div className="text-xs text-gray-500 bg-gray-50 rounded-lg px-3 py-2">
                   🛒 {t("planner_example_shopping_summary", { items: exampleShopping.reduce((n, s) => n + s.items.length, 0), categories: exampleShopping.length })}
@@ -1842,7 +1842,7 @@ export default function PlannerClient({
                 </button>
               </div>
             ) : (
-              <div className="relative w-full h-32 bg-gradient-to-br from-[#E8F5E9] to-[#F5F7FA] rounded-t-2xl flex items-center justify-center">
+              <div className="relative w-full h-32 bg-gradient-to-br from-[#FFF3E0] to-[#F5F7FA] rounded-t-2xl flex items-center justify-center">
                 <span className="text-6xl">🥗</span>
                 <button
                   onClick={() => setActiveRecipe(null)}
@@ -1855,10 +1855,10 @@ export default function PlannerClient({
 
             <div className="p-6">
               {/* Title & badges */}
-              <h2 className="text-xl font-bold text-[#314A37] mb-2">{activeRecipe.menuName}</h2>
+              <h2 className="text-xl font-bold text-[#6B3600] mb-2">{activeRecipe.menuName}</h2>
               <div className="flex flex-wrap gap-2 mb-5">
-                <span className="bg-[#E8F5E9] text-[#314A37] text-xs font-semibold px-3 py-1 rounded-full">📅 {activeRecipe.day}</span>
-                <span className="bg-[#E8F5E9] text-[#314A37] text-xs font-semibold px-3 py-1 rounded-full">💰 {activeRecipe.estCost}</span>
+                <span className="bg-[#FFF3E0] text-[#6B3600] text-xs font-semibold px-3 py-1 rounded-full">📅 {activeRecipe.day}</span>
+                <span className="bg-[#FFF3E0] text-[#6B3600] text-xs font-semibold px-3 py-1 rounded-full">💰 {activeRecipe.estCost}</span>
                 <span className="bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full">🔥 {(activeRecipe.nutrition.perBox ?? [activeRecipe.nutrition.calories]).join(" / ")} kcal</span>
               </div>
               {/* 🔴 2026-09-09 외부 감사 — 숫자의 **기준**이 화면에 없었다.
@@ -1891,7 +1891,7 @@ export default function PlannerClient({
                 const y = parseYield(activeRecipe.instructions);
                 if (!y) return null;
                 return (
-                  <p className="text-xs font-medium text-[#366A1B] mb-5 leading-relaxed">
+                  <p className="text-xs font-medium text-[#8C4A00] mb-5 leading-relaxed">
                     {t("planner_batch_note", { count: String(y.count), unit: y.unit })}
                   </p>
                 );
@@ -1903,7 +1903,7 @@ export default function PlannerClient({
                      이제 재료마다 「1인분 양 · 팩 크기 · 팩값 · 그 몫의 값」을 적는다.
                      네 값의 관계가 곧 산수이므로 독자가 직접 검산할 수 있다.
                      🔴 근거가 없는 재료는 **빈칸으로 둔다** — 양을 지어내지 않는다. */}
-              <h3 className="font-bold text-[#314A37] mb-2">{t("ingredients")}</h3>
+              <h3 className="font-bold text-[#6B3600] mb-2">{t("ingredients")}</h3>
               {planOptions.extraBoxes.length > 0 ? (
                 <p className="text-xs text-gray-500 mb-2 leading-relaxed">
                   {t("planner_boxes_recipe_note", {
@@ -1957,7 +1957,7 @@ export default function PlannerClient({
                           {onSale && typeof base === "number" && (
                             <span className="line-through mr-1">${base.toFixed(2)}</span>
                           )}
-                          <span className={onSale ? "text-[#366A1B] font-semibold" : ""}>
+                          <span className={onSale ? "text-[#8C4A00] font-semibold" : ""}>
                             ${packPrice.toFixed(2)}
                             {basis.pack === "per kg" ? "/kg" : ""}
                           </span>
@@ -1987,16 +1987,16 @@ export default function PlannerClient({
               })()}
 
               {/* Instructions — parsed into steps */}
-              <h3 className="font-bold text-[#314A37] mb-3">👩‍🍳 {t("planner_instructions_label")}</h3>
+              <h3 className="font-bold text-[#6B3600] mb-3">👩‍🍳 {t("planner_instructions_label")}</h3>
               <RecipeInstructions text={activeRecipe.instructions} noInstructionsText={t("planner_no_instructions")} />
 
               {/* Snacks */}
               {activeRecipe.snacks && activeRecipe.snacks.length > 0 && (
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <h3 className="font-bold text-[#314A37] mb-2">🍎 {t("planner_snacks_label")}</h3>
+                  <h3 className="font-bold text-[#6B3600] mb-2">🍎 {t("planner_snacks_label")}</h3>
                   <div className="flex flex-wrap gap-2">
                     {activeRecipe.snacks.map((s) => (
-                      <span key={s.name} className="bg-[#E8F5E9] text-[#314A37] text-xs font-medium px-3 py-1.5 rounded-full">
+                      <span key={s.name} className="bg-[#FFF3E0] text-[#6B3600] text-xs font-medium px-3 py-1.5 rounded-full">
                         {getIngredientEmoji(s.name)} {s.name}{s.keepCold && <span aria-label={t("planner_snack_keep_cold")}> 🧊</span>}
                       </span>
                     ))}
@@ -2042,7 +2042,7 @@ export default function PlannerClient({
 
               <button
                 onClick={() => setActiveRecipe(null)}
-                className="min-h-touch flex items-center justify-center mt-6 w-full bg-[#E8F5E9] text-[#314A37] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
+                className="min-h-touch flex items-center justify-center mt-6 w-full bg-[#FFF3E0] text-[#6B3600] font-bold py-3 rounded-xl hover:bg-primary-deep hover:text-white transition-colors"
               >
                 {t("close")}
               </button>

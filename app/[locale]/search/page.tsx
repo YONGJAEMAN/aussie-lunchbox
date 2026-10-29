@@ -75,11 +75,11 @@ export default async function SearchPage({
               defaultValue={query}
               maxLength={100}
               placeholder={t("search_placeholder")}
-              className="flex-1 px-4 py-3 rounded-full border border-gray-200 text-[#1a1a1a] placeholder:text-gray-500 focus:outline-none focus:border-[#366A1B]"
+              className="flex-1 px-4 py-3 rounded-full border border-gray-200 text-[#1a1a1a] placeholder:text-gray-500 focus:outline-none focus:border-[#8C4A00]"
             />
             <button
               type="submit"
-              className="bg-[#366A1B] hover:bg-[#314A37] text-white font-semibold px-6 py-3 rounded-full transition-colors"
+              className="bg-[#8C4A00] hover:bg-[#6B3600] text-white font-semibold px-6 py-3 rounded-full transition-colors"
             >
               {t("search_button")}
             </button>
@@ -95,7 +95,7 @@ export default async function SearchPage({
             <p className="text-gray-600 mb-6">{t("search_none", { query })}</p>
             <Link
               href={`/${locale}/planner`}
-              className="text-[#366A1B] underline hover:text-[#24470F]"
+              className="text-[#8C4A00] underline hover:text-[#4A2400]"
             >
               {t("nav_planner")}
             </Link>
@@ -108,7 +108,7 @@ export default async function SearchPage({
 
             {results.articles.length > 0 && (
               <section className="mb-12">
-                <h2 className="text-xl font-bold text-[#314A37] mb-5">
+                <h2 className="text-xl font-bold text-[#6B3600] mb-5">
                   {t("search_section_articles")} ({results.articles.length})
                 </h2>
                 <ul className="grid gap-5 md:grid-cols-2">
@@ -122,7 +122,7 @@ export default async function SearchPage({
                           <Image src={a.image} alt="" fill className="object-cover" />
                         </div>
                         <div className="py-4 pr-4">
-                          <p className="text-xs text-[#366A1B] font-semibold mb-1">{a.category}</p>
+                          <p className="text-xs text-[#8C4A00] font-semibold mb-1">{a.category}</p>
                           <h3 className="font-bold text-[#1a1a1a] leading-snug mb-1">{a.title}</h3>
                           <p className="text-sm text-gray-600 line-clamp-2">{a.excerpt}</p>
                         </div>
@@ -135,7 +135,7 @@ export default async function SearchPage({
 
             {results.menus.length > 0 && (
               <section className="mb-12">
-                <h2 className="text-xl font-bold text-[#314A37] mb-5">
+                <h2 className="text-xl font-bold text-[#6B3600] mb-5">
                   {t("search_section_menus")} ({results.menus.length})
                 </h2>
                 <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -148,7 +148,7 @@ export default async function SearchPage({
                         <Image src={m.image} alt="" fill className="object-cover" />
                       </div>
                       <div className="p-4 flex-1">
-                        <p className="text-xs text-[#366A1B] font-semibold mb-1">{m.category}</p>
+                        <p className="text-xs text-[#8C4A00] font-semibold mb-1">{m.category}</p>
                         <h3 className="font-bold text-[#1a1a1a] leading-snug mb-1">{m.name}</h3>
                         <p className="text-xs text-gray-600 leading-relaxed">{m.detail}</p>
                       </div>
@@ -158,7 +158,7 @@ export default async function SearchPage({
                 <p className="text-sm text-gray-600 mt-4">
                   <Link
                     href={`/${locale}/planner`}
-                    className="text-[#366A1B] underline hover:text-[#24470F]"
+                    className="text-[#8C4A00] underline hover:text-[#4A2400]"
                   >
                     {t("search_menus_cta")}
                   </Link>
@@ -168,13 +168,13 @@ export default async function SearchPage({
 
             {results.snacks.length > 0 && (
               <section className="mb-12">
-                <h2 className="text-xl font-bold text-[#314A37] mb-5">
+                <h2 className="text-xl font-bold text-[#6B3600] mb-5">
                   {t("search_section_snacks")} ({results.snacks.length})
                 </h2>
                 <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {results.snacks.map((s) => (
                     <li key={s.name} className="bg-[#F7F9FC] rounded-xl px-4 py-3">
-                      <p className="text-xs text-[#366A1B] font-semibold mb-0.5">{s.category}</p>
+                      <p className="text-xs text-[#8C4A00] font-semibold mb-0.5">{s.category}</p>
                       <h3 className="font-semibold text-[#1a1a1a] text-sm">{s.name}</h3>
                       <p className="text-xs text-gray-600">{s.detail}</p>
                     </li>

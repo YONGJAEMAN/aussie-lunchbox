@@ -52,15 +52,15 @@ export default async function PoliciesPage({
       <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_3_h")}</h3>
       <p className="text-gray-600 leading-relaxed">
         {t("privacy_3_p")}{" "}
-        <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">{t("privacy_3_link1")}</a>
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] hover:underline">{t("privacy_3_link1")}</a>
         {t("privacy_3_mid")}{" "}
-        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">{t("privacy_3_link2")}</a>.
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] hover:underline">{t("privacy_3_link2")}</a>.
       </p>
 
       <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_4_h")}</h3>
       <p className="text-gray-600 leading-relaxed">
         {t("privacy_4_p")}{" "}
-        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">{t("privacy_4_link")}</a>.
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] hover:underline">{t("privacy_4_link")}</a>.
       </p>
 
       <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_5_h")}</h3>
@@ -72,7 +72,7 @@ export default async function PoliciesPage({
       <h3 className="text-lg font-bold text-[#1a1a1a]">{t("privacy_7_h")}</h3>
       <p className="text-gray-600 leading-relaxed">
         {t("privacy_7_p")}{" "}
-        <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#366A1B] hover:underline">{t("privacy_contact_email")}</a>.
+        <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#8C4A00] hover:underline">{t("privacy_contact_email")}</a>.
       </p>
     </div>
   );
@@ -112,7 +112,7 @@ export default async function PoliciesPage({
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_legal")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_legal")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("policies_title")}
         </h1>
@@ -161,7 +161,7 @@ export default async function PoliciesPage({
           <h2 className="text-3xl font-extrabold text-[#1a1a1a] mt-12 mb-6">How the planner works &mdash; and where it stops</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             The{" "}
-            <Link href={`/${locale}/planner`} className="text-[#366A1B] underline">planner</Link>
+            <Link href={`/${locale}/planner`} className="text-[#8C4A00] underline">planner</Link>
             {" "}is a planning aid, not a dietitian, and it helps to know exactly what it is doing.
             It assembles a Monday-to-Friday menu from a fixed library of lunchbox recipes I maintain
             by hand. When you tick the allergy filters (nut, dairy, egg, gluten), it drops any menu
@@ -196,7 +196,7 @@ export default async function PoliciesPage({
             dietetic, or allergy advice</strong>, and it must not be used to manage a diagnosed food
             allergy, intolerance, or medical condition. Nutrition guidance is benchmarked against{" "}
             the{" "}
-            <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] underline">Australian Dietary Guidelines (NHMRC)</a>
+            <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] underline">Australian Dietary Guidelines (NHMRC)</a>
             {" "}and state healthy canteen resources, but it is no substitute for personalised advice from an Accredited Practising Dietitian (APD).
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -212,9 +212,9 @@ export default async function PoliciesPage({
             I would much rather fix a mistake than defend it. If you spot a wrong price, an incorrect
             allergy tag, an out-of-date school-policy note, or anything that reads as inaccurate, send
             it through the{" "}
-            <Link href={`/${locale}/contact`} className="text-[#366A1B] underline">contact form</Link>
+            <Link href={`/${locale}/contact`} className="text-[#8C4A00] underline">contact form</Link>
             {" "}or email{" "}
-            <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#366A1B] underline">{t("privacy_contact_email")}</a>.
+            <a href={`mailto:${t("privacy_contact_email")}`} className="text-[#8C4A00] underline">{t("privacy_contact_email")}</a>.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
             I aim to acknowledge within 48 hours. Price corrections are checked against the store&apos;s

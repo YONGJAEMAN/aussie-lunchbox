@@ -138,7 +138,7 @@ export default async function BlogPostPage({
       {/* Hero image */}
       <div className="relative h-64 md:h-96 w-full">
         <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-[#314A37]/60" />
+        <div className="absolute inset-0 bg-[#6B3600]/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
           <Link
             href={`/${locale}/blog`}
@@ -181,7 +181,7 @@ export default async function BlogPostPage({
             {author.charAt(0)}
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-[#314A37]">{author}</p>
+            <p className="text-sm font-semibold text-[#6B3600]">{author}</p>
             <p className="text-xs text-gray-500">
               {t("blog_post_published")} {post.date}
               {post.lastReviewed && <> · {t("blog_post_reviewed")} {post.lastReviewed}</>}
@@ -189,25 +189,25 @@ export default async function BlogPostPage({
             </p>
             <p className="text-xs text-gray-500 mt-0.5">
               {t("blog_post_reviewed_by")}{" "}
-              <Link href={`/${locale}/about`} className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">
+              <Link href={`/${locale}/about`} className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">
                 {t("blog_post_editorial_team")}
               </Link>
               {" "}· {t("blog_post_content_follows")}{" "}
-              <Link href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">
+              <Link href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">
                 {t("blog_post_nz_guidelines")}
               </Link>
             </p>
           </div>
           <Link
             href={`/${locale}/blog?category=${encodeURIComponent(post.category)}`}
-            className="min-h-touch inline-flex items-center text-xs text-[#366A1B] border border-[#78B159] rounded-full px-3 hover:bg-primary-deep hover:text-white transition-colors whitespace-nowrap flex-shrink-0"
+            className="min-h-touch inline-flex items-center text-xs text-[#8C4A00] border border-[#F5A623] rounded-full px-3 hover:bg-primary-deep hover:text-white transition-colors whitespace-nowrap flex-shrink-0"
           >
             {post.category}
           </Link>
         </div>
 
         {/* Excerpt */}
-        <p className="text-lg text-gray-500 leading-relaxed mb-8 border-l-4 border-[#78B159] pl-4">
+        <p className="text-lg text-gray-500 leading-relaxed mb-8 border-l-4 border-[#F5A623] pl-4">
           {post.excerpt}
         </p>
 
@@ -242,7 +242,7 @@ export default async function BlogPostPage({
         {/* References — auto-extracted from body links (E-E-A-T) */}
         {references.length > 0 && (
           <section className="mt-10 pt-6 border-t border-gray-100">
-            <h2 className="text-sm font-bold text-[#314A37] uppercase tracking-wide mb-3">
+            <h2 className="text-sm font-bold text-[#6B3600] uppercase tracking-wide mb-3">
               {t("blog_post_references")}
             </h2>
             <ol className="text-sm text-gray-600 space-y-2 list-decimal list-inside leading-relaxed">
@@ -252,7 +252,7 @@ export default async function BlogPostPage({
                     href={ref.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#366A1B] hover:underline break-words"
+                    className="text-[#8C4A00] hover:underline break-words"
                   >
                     {ref.text}
                   </a>
@@ -265,14 +265,14 @@ export default async function BlogPostPage({
         {/* E-E-A-T: editorial note */}
         <div className="mt-10 pt-6 border-t border-gray-100">
           <div className="bg-[#F7F9FC] rounded-2xl p-5">
-            <p className="text-xs font-semibold text-[#314A37] uppercase tracking-wide mb-2">{t("blog_post_about_article")}</p>
+            <p className="text-xs font-semibold text-[#6B3600] uppercase tracking-wide mb-2">{t("blog_post_about_article")}</p>
             <p className="text-sm text-gray-600 leading-relaxed">
               {t("blog_post_about_desc")}{" "}
-              <a href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">
+              <a href="https://www.health.govt.nz/publications/food-and-nutrition-guidelines-for-healthy-children-and-young-people-aged-2-18-years-a-background" target="_blank" rel="noopener noreferrer" className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">
                 {t("blog_post_nz_eating_guidelines")}
               </a>
               . {t("blog_post_spot_error")}{" "}
-              <Link href={`/${locale}/contact`} className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">
+              <Link href={`/${locale}/contact`} className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">
                 {t("blog_post_contact_us")}
               </Link>
               .
@@ -280,8 +280,8 @@ export default async function BlogPostPage({
             <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3 text-xs text-gray-500">
               <span>{t("blog_post_published")} {post.date}</span>
               {post.lastReviewed && <span>{t("blog_post_last_reviewed")} {post.lastReviewed}</span>}
-              <Link href={`/${locale}/about`} className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">{t("blog_post_editorial_standards")}</Link>
-              <Link href={`/${locale}/policies`} className="min-h-touch inline-flex items-center text-[#366A1B] hover:underline">{t("blog_post_privacy_disclaimer")}</Link>
+              <Link href={`/${locale}/about`} className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">{t("blog_post_editorial_standards")}</Link>
+              <Link href={`/${locale}/policies`} className="min-h-touch inline-flex items-center text-[#8C4A00] hover:underline">{t("blog_post_privacy_disclaimer")}</Link>
             </div>
           </div>
         </div>
@@ -298,7 +298,7 @@ export default async function BlogPostPage({
       {/* Related posts */}
       {relatedPosts.length > 0 && (
         <section className="max-w-5xl mx-auto px-4 pb-12">
-          <h2 className="text-xl font-bold text-[#314A37] mb-6">
+          <h2 className="text-xl font-bold text-[#6B3600] mb-6">
             {t("blog_post_more_articles", { category: post.category })}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -321,7 +321,7 @@ export default async function BlogPostPage({
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-gray-500 mb-1">{related.date}</p>
-                  <h3 className="text-sm font-bold text-[#314A37] leading-snug group-hover:text-[#366A1B] transition-colors line-clamp-2">
+                  <h3 className="text-sm font-bold text-[#6B3600] leading-snug group-hover:text-[#8C4A00] transition-colors line-clamp-2">
                     {related.title}
                   </h3>
                 </div>
@@ -334,7 +334,7 @@ export default async function BlogPostPage({
       {/* Related guides — cross-type internal linking (E-E-A-T) */}
       {relatedGuides.length > 0 && (
         <section className="max-w-5xl mx-auto px-4 pb-12">
-          <h2 className="text-xl font-bold text-[#314A37] mb-6">
+          <h2 className="text-xl font-bold text-[#6B3600] mb-6">
             {t("blog_post_related_guides")}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -351,13 +351,13 @@ export default async function BlogPostPage({
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="absolute top-2 left-2 bg-[#366A1B] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
+                  <span className="absolute top-2 left-2 bg-[#8C4A00] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
                     {g.category}
                   </span>
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-gray-500 mb-1">{g.date}</p>
-                  <h3 className="text-sm font-bold text-[#314A37] leading-snug group-hover:text-[#366A1B] transition-colors line-clamp-2">
+                  <h3 className="text-sm font-bold text-[#6B3600] leading-snug group-hover:text-[#8C4A00] transition-colors line-clamp-2">
                     {g.title}
                   </h3>
                 </div>
@@ -368,7 +368,7 @@ export default async function BlogPostPage({
       )}
 
       {/* CTA + internal links */}
-      <section className="bg-[#366A1B] py-16 px-4">
+      <section className="bg-[#8C4A00] py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-extrabold text-white mb-3">
             {t("blog_post_cta_title")}
@@ -378,7 +378,7 @@ export default async function BlogPostPage({
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="inline-block bg-white hover:bg-[#F7F9FC] text-[#366A1B] font-bold px-10 py-4 rounded-full transition-colors shadow-lg mb-8"
+            className="inline-block bg-white hover:bg-[#F7F9FC] text-[#8C4A00] font-bold px-10 py-4 rounded-full transition-colors shadow-lg mb-8"
           >
             {t("blog_post_cta_btn")}
           </Link>

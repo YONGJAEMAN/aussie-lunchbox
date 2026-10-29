@@ -10,7 +10,7 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)",
+          background: "linear-gradient(135deg, #6B3600 0%, #F5A623 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -23,7 +23,7 @@ export default function OGImage() {
       >
         {/* Logo & Title */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "24px" }}>
-          <span style={{ fontSize: "80px" }}>🥝</span>
+          <span style={{ fontSize: "80px" }}>🦘</span>
           <span style={{ fontSize: "72px", fontWeight: "bold", color: "white", letterSpacing: "-2px" }}>
             Aussie Lunchbox
           </span>

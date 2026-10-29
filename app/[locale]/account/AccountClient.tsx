@@ -97,7 +97,7 @@ export default function AccountClient() {
   return (
     <main className="min-h-screen bg-[#F5F7FA]">
       {/* Hero */}
-      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #314A37 0%, #78B159 100%)" }}>
+      <section className="text-white text-center py-16 px-4" style={{ background: "linear-gradient(135deg, #6B3600 0%, #F5A623 100%)" }}>
         <h1 className="text-4xl font-bold mb-3">👤 {t("account_title")}</h1>
         <p className="text-lg opacity-90">{t("account_subtitle")}</p>
       </section>
@@ -109,7 +109,7 @@ export default function AccountClient() {
             {/* Profile card */}
             <div className="bg-white rounded-2xl shadow p-8">
               <div className="flex items-center gap-5 mb-6">
-                <div className="w-16 h-16 bg-[#E8F5E9] rounded-full flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 bg-[#FFF3E0] rounded-full flex items-center justify-center text-3xl">
                   {user.user_metadata?.avatar_url ? (
                     // OAuth provider avatar URL — host is dynamic (Google, GitHub, etc.) and
                     // can't be added to next.config.images.remotePatterns ahead of time.
@@ -125,7 +125,7 @@ export default function AccountClient() {
                   )}
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[#314A37]">
+                  <h2 className="text-xl font-bold text-[#6B3600]">
                     {user.user_metadata?.full_name ?? user.email?.split("@")[0]}
                   </h2>
                   <p className="text-gray-500 text-sm">{user.email}</p>
@@ -137,7 +137,7 @@ export default function AccountClient() {
 
               <div className="border-t border-gray-100 pt-5 flex justify-around text-center">
                 <div>
-                  <p className="text-2xl font-bold text-[#314A37]">{t("account_plan_free")}</p>
+                  <p className="text-2xl font-bold text-[#6B3600]">{t("account_plan_free")}</p>
                   <p className="text-xs text-gray-500 mt-1">{t("account_plan_label")}</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function AccountClient() {
             <div className="bg-white rounded-2xl shadow p-6 space-y-3">
               <Link
                 href={`/${locale}/planner`}
-                className="block w-full text-center bg-primary-deep hover:bg-[#314A37] text-white font-semibold py-3 rounded-xl transition-colors"
+                className="block w-full text-center bg-primary-deep hover:bg-[#6B3600] text-white font-semibold py-3 rounded-xl transition-colors"
               >
                 🍱 {t("account_go_planner")}
               </Link>
@@ -165,11 +165,11 @@ export default function AccountClient() {
             {/* Why join */}
             <div className="bg-white rounded-2xl shadow p-8 text-center">
               <div className="text-5xl mb-4">👋</div>
-              <h2 className="text-2xl font-bold text-[#314A37] mb-2">{t("account_welcome")}</h2>
+              <h2 className="text-2xl font-bold text-[#6B3600] mb-2">{t("account_welcome")}</h2>
               <p className="text-gray-500 mb-6 leading-relaxed">
                 {t("account_welcome_desc")}
               </p>
-              <div className="bg-[#E8F5E9] rounded-xl p-4 text-left text-sm text-[#314A37] space-y-1">
+              <div className="bg-[#FFF3E0] rounded-xl p-4 text-left text-sm text-[#6B3600] space-y-1">
                 <p className="font-semibold mb-2">{t("account_why_join")}</p>
                 <p>❤️ {t("account_track_favs_feature")}</p>
                 <p>📩 {t("account_email_plans_feature")}</p>
@@ -222,21 +222,21 @@ export default function AccountClient() {
                   placeholder={t("account_email_placeholder")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                 />
                 <input
                   type="password"
                   placeholder={t("account_password_placeholder")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#78B159] transition-colors"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] transition-colors"
                 />
                 {authError && <p className="text-red-500 text-sm">{authError}</p>}
                 {authSuccess && <p className="text-green-600 text-sm">{authSuccess}</p>}
                 <button
                   type="submit"
                   disabled={authLoading}
-                  className="w-full bg-primary-deep hover:bg-[#314A37] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
+                  className="w-full bg-primary-deep hover:bg-[#6B3600] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-60"
                 >
                   {authLoading ? t("account_please_wait") : authMode === "login" ? t("login") : t("account_create_account")}
                 </button>

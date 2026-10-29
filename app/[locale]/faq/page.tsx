@@ -59,7 +59,7 @@ export default async function FAQPage() {
 
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_help_centre")}</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_help_centre")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("faq_title")}
         </h1>
@@ -73,7 +73,7 @@ export default async function FAQPage() {
         <div className="space-y-10">
           {FAQ_CATEGORIES.map((cat) => (
             <div key={cat.label}>
-              <h2 className="text-xl font-bold text-[#314A37] mb-4">{cat.label}</h2>
+              <h2 className="text-xl font-bold text-[#6B3600] mb-4">{cat.label}</h2>
               <div className="space-y-3">
                 {cat.keys.map((n) => (
                   <details key={n} className="bg-[#F7F9FC] rounded-3xl overflow-hidden group">
@@ -81,7 +81,7 @@ export default async function FAQPage() {
                       <span className="font-semibold text-[#1a1a1a] text-sm md:text-base leading-snug">
                         {t(`faq_q${n}`)}
                       </span>
-                      <span className="text-[#366A1B] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
+                      <span className="text-[#8C4A00] text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
                         +
                       </span>
                     </summary>
@@ -96,14 +96,14 @@ export default async function FAQPage() {
         </div>
 
         {/* Still have questions CTA */}
-        <div className="mt-12 bg-[#366A1B] text-white rounded-3xl p-10 text-center">
+        <div className="mt-12 bg-[#8C4A00] text-white rounded-3xl p-10 text-center">
           <h2 className="text-2xl font-extrabold mb-2">{t("faq_still_title")}</h2>
           <p className="text-white/80 text-sm mb-6">
             {t("faq_still_desc")}
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-block bg-white hover:bg-[#F7F9FC] text-[#366A1B] px-8 py-3 rounded-full font-bold text-sm transition-colors"
+            className="inline-block bg-white hover:bg-[#F7F9FC] text-[#8C4A00] px-8 py-3 rounded-full font-bold text-sm transition-colors"
           >
             {t("faq_contact_btn")}
           </Link>

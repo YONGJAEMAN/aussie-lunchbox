@@ -21,7 +21,7 @@ export default function PolicyTabs({
         <button
           onClick={() => setTab("privacy")}
           className={`flex-1 py-3.5 text-sm font-semibold transition-colors rounded-l-2xl ${
-            tab === "privacy" ? "bg-[#366A1B] text-white" : "text-gray-500 hover:bg-gray-100"
+            tab === "privacy" ? "bg-[#8C4A00] text-white" : "text-gray-500 hover:bg-gray-100"
           }`}
         >
           {privacyLabel}
@@ -29,7 +29,7 @@ export default function PolicyTabs({
         <button
           onClick={() => setTab("disclaimer")}
           className={`flex-1 py-3.5 text-sm font-semibold transition-colors rounded-r-2xl ${
-            tab === "disclaimer" ? "bg-[#366A1B] text-white" : "text-gray-500 hover:bg-gray-100"
+            tab === "disclaimer" ? "bg-[#8C4A00] text-white" : "text-gray-500 hover:bg-gray-100"
           }`}
         >
           {disclaimerLabel}

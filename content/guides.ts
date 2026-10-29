@@ -41,7 +41,7 @@ const RAW_GUIDES: Record<string, Omit<Guide, "readTime"> & { readTime?: string }
     date: "January 5, 2026",
     lastReviewed: "February 2026",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80",
+    image: "/assets/kiwi_chicken_pesto_panini.webp",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `
@@ -249,7 +249,7 @@ Ready to plan balanced lunchboxes for the whole week? [Try the Aussie Lunchbox P
     date: "January 22, 2026",
     lastReviewed: "April 2026",
     readTime: "14 min read",
-    image: "https://images.unsplash.com/photo-1607532941433-304659e8198a?w=1200&q=80",
+    image: "/assets/kiwi_dairy_free_falafel_wrap.webp",
     category: "Allergy Friendly",
     author: "Yong Jae Lee",
     body: `
@@ -471,7 +471,7 @@ Need help planning allergy-friendly lunchboxes? [Try the Aussie Lunchbox Planner
     date: "February 8, 2026",
     lastReviewed: "March 2026",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80",
+    image: "/assets/kiwi_macaroni_cheese.webp",
     category: "Budget",
     author: "Yong Jae Lee",
     body: `
@@ -706,7 +706,7 @@ Start planning affordable, healthy lunchboxes today. [Try the Aussie Lunchbox Pl
     date: "February 19, 2026",
     lastReviewed: "March 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1200&q=80",
+    image: "/assets/carrot_hummus.png",
     category: "Seasonal",
     author: "Yong Jae Lee",
     body: `
@@ -914,7 +914,7 @@ Plan your seasonal lunchbox menu today. [Try the Aussie Lunchbox Planner →](/e
     date: "March 5, 2026",
     lastReviewed: "April 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80",
+    image: "/assets/kiwi_blt_sandwich.webp",
     category: "Parenting Tips",
     author: "Yong Jae Lee",
     body: `
@@ -1139,7 +1139,7 @@ Want help packing a lunchbox that meets your school's policy? [Try the Aussie Lu
     date: "March 18, 2026",
     lastReviewed: "April 2026",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1200&q=80",
+    image: "/assets/kiwi_thermos_lentil_soup.webp",
     category: "Gear & Tips",
     author: "Yong Jae Lee",
     body: `
@@ -1381,7 +1381,7 @@ Keep your kids' lunches safe and delicious. [Try the Aussie Lunchbox Planner →
     date: "April 1, 2026",
     lastReviewed: "April 2026",
     readTime: "13 min read",
-    image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=1200&q=80",
+    image: "/assets/diy_snack_box.png",
     category: "Recipes",
     author: "Yong Jae Lee",
     body: `
@@ -1614,7 +1614,7 @@ Get snack ideas tailored to your family. [Try the Aussie Lunchbox Planner →](/
     date: "April 14, 2026",
     lastReviewed: "April 2026",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80",
+    image: "/assets/quinoa_salad.png",
     category: "Nutrition",
     author: "Yong Jae Lee",
     body: `

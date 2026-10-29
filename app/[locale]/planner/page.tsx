@@ -105,7 +105,7 @@ export default async function PlannerPage({
       />
       <section className="bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#6B3600] mb-6">
             {t("planner_seo_title")}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -115,28 +115,28 @@ export default async function PlannerPage({
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             <div className="bg-[#F5F7FA] rounded-2xl p-6">
               <div className="text-2xl mb-3">1️⃣</div>
-              <h3 className="font-bold text-[#314A37] mb-2">{t("planner_seo_step1_name")}</h3>
+              <h3 className="font-bold text-[#6B3600] mb-2">{t("planner_seo_step1_name")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{t("planner_seo_step1_text")}</p>
             </div>
             <div className="bg-[#F5F7FA] rounded-2xl p-6">
               <div className="text-2xl mb-3">2️⃣</div>
-              <h3 className="font-bold text-[#314A37] mb-2">{t("planner_seo_step2_name")}</h3>
+              <h3 className="font-bold text-[#6B3600] mb-2">{t("planner_seo_step2_name")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{t("planner_seo_step2_text")}</p>
             </div>
             <div className="bg-[#F5F7FA] rounded-2xl p-6">
               <div className="text-2xl mb-3">3️⃣</div>
-              <h3 className="font-bold text-[#314A37] mb-2">{t("planner_seo_step3_name")}</h3>
+              <h3 className="font-bold text-[#6B3600] mb-2">{t("planner_seo_step3_name")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{t("planner_seo_step3_text")}</p>
             </div>
           </div>
 
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <div>
-              <h3 className="text-xl font-bold text-[#314A37] mb-2">{t("planner_seo_allergy_h")}</h3>
+              <h3 className="text-xl font-bold text-[#6B3600] mb-2">{t("planner_seo_allergy_h")}</h3>
               <p>{t("planner_seo_allergy_p", { menuCount: String(MENU_COUNT) })}</p>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#314A37] mb-2">{t("planner_seo_price_h")}</h3>
+              <h3 className="text-xl font-bold text-[#6B3600] mb-2">{t("planner_seo_price_h")}</h3>
               <p>{t("planner_seo_price_p")}</p>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default async function PlannerPage({
 
           {/* 1. A real generated week */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#6B3600] mb-4">
               What a generated week actually looks like
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -166,7 +166,7 @@ export default async function PlannerPage({
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse bg-white rounded-2xl overflow-hidden shadow-sm">
                 <thead>
-                  <tr className="bg-[#314A37] text-white text-left">
+                  <tr className="bg-[#6B3600] text-white text-left">
                     <th className="px-4 py-3 font-semibold">Day</th>
                     <th className="px-4 py-3 font-semibold">Lunch</th>
                     <th className="px-4 py-3 font-semibold">Type</th>
@@ -175,31 +175,31 @@ export default async function PlannerPage({
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   <tr>
-                    <td className="px-4 py-3 font-medium text-[#314A37]">Monday</td>
+                    <td className="px-4 py-3 font-medium text-[#6B3600]">Monday</td>
                     <td className="px-4 py-3">Chicken Wrap</td>
                     <td className="px-4 py-3 text-gray-500">Sandwich</td>
                     <td className="px-4 py-3 text-gray-500">Tortilla, chicken, lettuce, mayo</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium text-[#314A37]">Tuesday</td>
+                    <td className="px-4 py-3 font-medium text-[#6B3600]">Tuesday</td>
                     <td className="px-4 py-3">Sushi Rolls</td>
                     <td className="px-4 py-3 text-gray-500">Cold</td>
                     <td className="px-4 py-3 text-gray-500">Sushi rice, nori, tuna or chicken, avocado, mayo</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium text-[#314A37]">Wednesday</td>
+                    <td className="px-4 py-3 font-medium text-[#6B3600]">Wednesday</td>
                     <td className="px-4 py-3">Mac &apos;n Cheese</td>
                     <td className="px-4 py-3 text-gray-500">Hot</td>
                     <td className="px-4 py-3 text-gray-500">Macaroni, cheese sauce, milk</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium text-[#314A37]">Thursday</td>
+                    <td className="px-4 py-3 font-medium text-[#6B3600]">Thursday</td>
                     <td className="px-4 py-3">Egg Salad Sandwich</td>
                     <td className="px-4 py-3 text-gray-500">Sandwich</td>
                     <td className="px-4 py-3 text-gray-500">Bread, boiled eggs, mayo, lettuce</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium text-[#314A37]">Friday</td>
+                    <td className="px-4 py-3 font-medium text-[#6B3600]">Friday</td>
                     <td className="px-4 py-3">Pizza Muffins</td>
                     <td className="px-4 py-3 text-gray-500">Baking</td>
                     <td className="px-4 py-3 text-gray-500">Flour, milk, cheese, ham, tomato paste</td>
@@ -240,7 +240,7 @@ export default async function PlannerPage({
 
           {/* 2. How allergy filters work — real worked example */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#6B3600] mb-4">
               How the allergy filters work — a worked example
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
@@ -268,7 +268,7 @@ export default async function PlannerPage({
 
           {/* 3. How the price estimate is calculated */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#6B3600] mb-4">
               How the price estimate is calculated
             </h2>
             <p className="text-gray-600 leading-relaxed">
@@ -286,7 +286,7 @@ export default async function PlannerPage({
 
           {/* 4. What you actually get */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#314A37] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#6B3600] mb-4">
               What you get when you click Generate
             </h2>
             {/* 🔴 09-29: 「download the whole thing as a PDF」였다. export-pdf/route.ts가 싣는 것은

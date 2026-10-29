@@ -5,8 +5,9 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo/pageMetadata";
 import Footer from "@/components/Footer";
+import { BRAND } from "@/lib/brand";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = BRAND.SITE_URL;
 const OPERATOR_PHOTO = "/assets/operator-yong-jae-lee.jpg";
 
 export async function generateMetadata({
@@ -52,7 +53,7 @@ export default async function AboutPage() {
 
       {/* Hero */}
       <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest mb-4">About</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">About</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           A lunch planner built by a parent, for parents
         </h1>
@@ -65,7 +66,7 @@ export default async function AboutPage() {
       <section className="max-w-5xl mx-auto py-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
           <div className="md:col-span-3 bg-[#F7F9FC] rounded-3xl p-10">
-            <h2 className="text-2xl font-bold text-[#366A1B] mb-4">Hi, I&apos;m Yong Jae Lee.</h2>
+            <h2 className="text-2xl font-bold text-[#8C4A00] mb-4">Hi, I&apos;m Yong Jae Lee.</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               I&apos;m a Senior Product Designer based in Auckland. Every morning I&apos;d find myself standing in front of the fridge, wondering what to pack in my child&apos;s lunchbox &mdash; and every weekend I&apos;d stress about what groceries to buy for the week ahead.
             </p>
@@ -93,7 +94,7 @@ export default async function AboutPage() {
                   />
                 </div>
                 <p className="font-bold text-[#1a1a1a] text-lg">Yong Jae Lee</p>
-                <p className="text-sm text-[#366A1B]">Senior Product Designer</p>
+                <p className="text-sm text-[#8C4A00]">Senior Product Designer</p>
                 <p className="text-xs text-gray-500">Auckland, New Zealand</p>
               </div>
               <div className="space-y-3 text-sm">
@@ -101,13 +102,13 @@ export default async function AboutPage() {
                   href="https://www.linkedin.com/in/francescolee/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#366A1B] hover:underline"
+                  className="flex items-center gap-2 text-[#8C4A00] hover:underline"
                 >
                   <span>in</span> LinkedIn Profile
                 </a>
                 <a
                   href="mailto:aussielunchbox@gmail.com"
-                  className="flex items-center gap-2 text-[#366A1B] hover:underline"
+                  className="flex items-center gap-2 text-[#8C4A00] hover:underline"
                 >
                   <span>@</span> aussielunchbox@gmail.com
                 </a>
@@ -120,7 +121,7 @@ export default async function AboutPage() {
       {/* Why Choose Aussie Lunchbox */}
       <section className="bg-[#F7F9FC] py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>
+          <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest text-center mb-3">{t("section_why_us")}</p>
           <h2 className="text-3xl font-extrabold text-center text-[#1a1a1a] mb-12">{t("about_why_title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -140,7 +141,7 @@ export default async function AboutPage() {
 
       {/* How I Research Content */}
       <section className="max-w-5xl mx-auto py-20 px-4">
-        <p className="text-[#366A1B] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest text-center mb-3">Editorial Standards</p>
         <h2 className="text-3xl font-extrabold text-[#1a1a1a] mb-3 text-center">How I Research Content</h2>
         <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           Every piece of content on this site goes through a consistent research and verification process.
@@ -153,7 +154,7 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   All nutrition content is benchmarked against the{" "}
-                  <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                  <a href="https://www.eatforhealth.gov.au/guidelines" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] hover:underline">
                     Australian Dietary Guidelines (NHMRC)
                   </a>{" "}
                   and the state healthy canteen frameworks. I do not publish nutrition claims without a credible Australian or international source.
@@ -177,7 +178,7 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Allergy-related content is cross-referenced against product labels, manufacturer allergen statements, and{" "}
-                  <a href="https://www.allergy.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#366A1B] hover:underline">
+                  <a href="https://www.allergy.org.au/" target="_blank" rel="noopener noreferrer" className="text-[#8C4A00] hover:underline">
                     ASCIA
                   </a>{" "}
                   guidance. However, I always advise readers to check product labels directly &mdash; formulations change.
@@ -208,7 +209,7 @@ export default async function AboutPage() {
               content: (
                 <p className="text-gray-500 text-sm leading-relaxed">
                   I take accuracy seriously. If you find an error &mdash; whether a wrong price, an incorrect allergy tag, or outdated school policy &mdash; please{" "}
-                  <Link href={`/${locale}/contact`} className="text-[#366A1B] hover:underline">
+                  <Link href={`/${locale}/contact`} className="text-[#8C4A00] hover:underline">
                     contact me
                   </Link>
                   . I aim to respond and update within 48 hours.
@@ -218,7 +219,7 @@ export default async function AboutPage() {
           ].map((item) => (
             <div key={item.num} className="bg-[#F7F9FC] rounded-3xl p-7">
               <div className="flex items-start gap-3 mb-3">
-                <span className="bg-[#366A1B] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="bg-[#8C4A00] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                   {item.num}
                 </span>
                 <h3 className="font-bold text-[#1a1a1a]">{item.title}</h3>
@@ -242,7 +243,7 @@ export default async function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#366A1B] py-20 px-4 text-center">
+      <section className="bg-[#8C4A00] py-20 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h3 className="text-3xl font-extrabold text-white mb-4">{t("about_community_title")}</h3>
           <p className="text-white/80 mb-8 leading-relaxed">
@@ -250,7 +251,7 @@ export default async function AboutPage() {
           </p>
           <Link
             href={`/${locale}/planner`}
-            className="bg-white hover:bg-[#F7F9FC] text-[#366A1B] font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
+            className="bg-white hover:bg-[#F7F9FC] text-[#8C4A00] font-bold py-4 px-10 rounded-full text-lg transition-colors shadow-lg inline-block"
           >
             {t("about_start_btn")}
           </Link>

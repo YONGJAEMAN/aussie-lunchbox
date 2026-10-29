@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { BRAND } from "@/lib/brand";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = BRAND.SITE_URL;
 
 const PLANNER_TITLE = "Weekly Lunch Planner | Aussie Lunchbox";
 // 🔴 09-29: 「Woolworths & Pak'nSave prices」였다 — 플래너 원가는 Woolworths 캐시에서만 나온다.
