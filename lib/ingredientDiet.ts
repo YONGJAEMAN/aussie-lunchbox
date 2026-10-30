@@ -1,6 +1,7 @@
 import { declares, labelFor, warnsAbout } from "./allergenLabels";
 import { kindyOn, menuExclusion, snackExclusion } from "./chokingRisk";
 import type { AllergyType, MayContainNote, SnackItem } from "./types";
+import REVIEW from "@/data/allergenReview.au.json";
 
 /**
  * 재료 한 가지가 **어느 식이 조건에 걸리는지**.
@@ -194,8 +195,21 @@ const NO_LABEL: Record<string, DietTag[]> = {
  *    Bao Buns는 **선언**한다 — 라벨 없는 빵·반죽·향신료를 「없음」이라 적을 근거가 없다.
  */
 export const SESAME_UNVERIFIED = new Set<string>([
-  "Breadcrumbs", "Ciabatta", "Croissant", "Muffin", "Pastry Cases", "Roll", "Spices",
+  // Aussie(2026-10-30): 일곱 개 모두 AU 판정표(`data/allergenReview.au.json`)에 원재료·라벨 근거가 있다.
+  //   빵 다섯은 참깨가 「may contain」뿐이라 거르지 않고 ⚠로 알린다(사용자 결정 10-30). Breadcrumbs는 참깨를 선언한다.
 ]);
+
+/**
+ * 🔴 Aussie(2026-10-30): **사람이 승인한 AU 판정표가 상품 라벨보다 먼저다.**
+ *    AU 검색 응답의 선언 필드를 그대로 믿을 수 없었다 —
+ *      · 194개 중 89개에만 선언이 있다
+ *      · Teriyaki 소스는 원재료에 Sesame Seeds·Sesame Oil이 있는데 선언은 Soy뿐이다
+ *      · `containsgluten`이 밀가루·밀 글루텐 베이글에 False로 온다
+ *    그래서 선언 ∪ 원재료 판독으로 표를 만들어 승인받았다(`~/Downloads/aussie_allergen_review_1030.md`).
+ *    주의(may contain)는 표에 없다 — 아래 `mayContainNotes`가 라벨에서 그대로 읽는다.
+ */
+type Reviewed = { tags: DietTag[] | null; basis: string; sku?: string };
+export const AU_REVIEW = (REVIEW as unknown as { ingredients: Record<string, Reviewed> }).ingredients;
 
 /** 알레르겐은 없지만 동물성이라 비건이 아닌 것. */
 const ANIMAL_NOT_MEAT = new Set<string>(["Honey"]);
@@ -206,6 +220,14 @@ const ALLERGEN_TAGS = ["nuts", "milk", "gluten", "egg", "sesame"] as const;
  * 이 재료가 걸리는 조건들. **모르는 재료면 `null`** — 「없다」가 아니다.
  */
 export function dietTagsFor(ingredient: string): Set<DietTag> | null {
+  const reviewed = AU_REVIEW[ingredient];
+  if (reviewed) {
+    if (reviewed.tags === null) return null;
+    const t = new Set<DietTag>(reviewed.tags);
+    if (MEAT.has(ingredient)) t.add("meat");
+    if (ANIMAL_NOT_MEAT.has(ingredient)) t.add("animal");
+    return t;
+  }
   const hasLabel = labelFor(ingredient) !== null;
   const hand = NO_LABEL[ingredient];
   if (!hasLabel && hand === undefined) return null;

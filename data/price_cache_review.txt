@@ -233,7 +233,7 @@ Butter Chicken Sauce     $2.7      Woolworths Butter Chicken Simmer Sauce
 Cabbage                  $2.1      Woolworths Green Cabbage Quarter
 Caesar Dressing          $1.8      Woolworths Caesar Salad Dressing
 Canned Tuna              $1        Woolworths Lemon & Pepper Tuna
-Capsicum                 $2.23     Red Capsicum
+Capsicum                 $1.48     Red Capsicum
 Carrot                   $2.2      Woolworths Australian Grown Carrots
 Celery                   $4.9      Woolworths Celery Sticks Punnet
 Cheese                   $6.6      Woolworths Tasty Cheese Block
@@ -267,7 +267,7 @@ Cream Cheese             $5.7      Philadelphia Original Cream Cheese Block
 Cream/Milk               $3.2      Woolworths Thickened Cream
 Croissant                $2.6      Woolworths All Butter Croissants
 Croutons                 $4.8      Praise Caesar Salad Croutons
-Cucumber                 $2.9      Woolworths Continental Cucumbers
+Cucumber                 $2.5      Woolworths Continental Cucumbers
 Cumin                    $2        Woolworths Cumin Ground Ground
 Curry Paste              $2.3      Mr Chen's Thai Red Curry Paste
 Curry Spices             $2.65     Hoyt's Curry Powder Mild
@@ -284,9 +284,9 @@ Eggs                     $5.7      Woolworths 12 Pack Extra Large Cage Free Eggs
 Falafel                  $3.4      Kings Falafel Mix
 Feta                     $3        Woolworths Greek Style Fetta
 Flour                    $2.4      Woolworths Essentials Self Raising Flour
-GF Crackers              $1        Woolworths Original Rice Crackers
+GF Crackers              $4.9      Arnott's Gluten Free Jatz Cracker Biscuits
 GF Pasta                 $5.4      Buontempo Gluten Free Pasta Spirals
-GF Sausages              $4.4      Market Value 8 Pack Thin Pork BBQ Sausages
+GF Sausages              $4.4      Market Value 8 Pack Thin Honey & Herb BBQ Sausages
 Ginger                   $2.8      Woolworths Crushed Ginger
 Gluten-Free Bread        $5.5      Woolworths Free From Gluten White Bread Loaf
 Gluten-Free Flour        $3.6      Woolworths Free From Gluten Plain Flour
@@ -306,7 +306,7 @@ Lemon                    $3.5      The Odd Bunch Lemon Prepacked
 Lemon Dressing           $6.2      Birch & Waite Greek Lemon Dressing
 Lettuce                  $3        Iceberg Lettuce
 Macaroni                 $1        Woolworths Pasta Macaroni
-Mandarin                 $3.1      The Odd Bunch Mandarin Prepacked
+Mandarin                 $2.8      The Odd Bunch Mandarin Prepacked
 Mango Chutney            $3.6      MasterFoods Mango Chutney Relish
 Mayo                     $2.8      Woolworths Whole Egg Mayonnaise
 Mayonnaise               $2.8      Woolworths Whole Egg Mayonnaise
@@ -333,7 +333,7 @@ Pasta spirals            $1        Woolworths Pasta Spirals
 Pastry                   $3.8      Woolworths Puff Pastry Sheets
 Pastry Cases             $7        Pampas Shortcrust Pastry 5 Sheets
 Peanut Butter            $5.8      Bega Peanut Butter Smooth
-Peanut Sauce             $3        MasterFoods Satay Chicken Stir Fry Recipe Base
+Peanut Sauce             $3.8      Passage To Asia Satay Chicken
 Pear                     $1.42     Fresh Packham Pear
 Peas                     $5.5      Woolworths Frozen Australian Baby Peas
 Pesto                    $1.95     Woolworths Pesto Basil

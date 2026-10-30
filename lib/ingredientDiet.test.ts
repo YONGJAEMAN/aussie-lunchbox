@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildWeeklyPlan } from "./planGenerator";
-import { dietTagsFor, dietViolations, snackAllowed } from "./ingredientDiet";
+import { dietTagsFor, dietViolations, snackAllowed, AU_REVIEW } from "./ingredientDiet";
 import { labelFor, declares } from "./allergenLabels";
 import { productName } from "./allergenFacts";
 import menuData from "../data/menuData.json";
@@ -39,7 +39,9 @@ describe("재료 식이 분류", () => {
     for (const s of ALL_SNACKS) (s.ingredients ?? []).forEach((i) => used.add(i));
 
     const unknown = [...used].filter((i) => dietTagsFor(i) === null);
-    expect(unknown).toEqual([]);
+    // Aussie(10-30): Falafel Mix는 원재료 목록이 없고 글루텐 「may contain」뿐이라 **일부러 모르는 재료**로 뒀다(사용자 결정).
+    //   필터가 켜지면 빠진다. 다른 재료가 여기 늘면 판정표(`data/allergenReview.au.json`)에 줄이 빠진 것이다.
+    expect(unknown).toEqual(["Falafel"]);
     // 양성 대조 — 실제로 193개를 봤다는 것까지 세어 둔다. 재료가 늘면 여기가 먼저 틀린다.
     expect(used.size).toBe(193);
   });
@@ -67,9 +69,12 @@ describe("재료 식이 분류", () => {
       for (const [tag, field] of FIELD) {
         if (!m[field]) continue;
         for (const ing of m.ingredients) {
-          if (labelFor(ing) === null) continue;
+          // Aussie(10-30): 상품 선언 필드 대신 **승인한 판정표**(선언 ∪ 원재료)로 잰다 — 선언 필드가 Teriyaki 참깨처럼 빠뜨린다.
+          //   이 대조로 메뉴 표시 9곳을 고쳤다(Mayo·Breadcrumbs·Cocktail Sausages 우유, Pesto·Butter Chicken 달걀, Muesli 견과).
+          const r = AU_REVIEW[ing];
+          if (!r || r.tags === null) continue;
           checked++;
-          if (declares(ing, tag)) clashes.push(`${m.name}: ${field}=true 인데 ${ing} 라벨이 ${tag}를 선언한다`);
+          if (r.tags.includes(tag)) clashes.push(`${m.name}: ${field}=true 인데 ${ing} 판정이 ${tag}다`);
         }
       }
     }
@@ -133,10 +138,11 @@ describe("간식 필터", () => {
     const kept = PLANNER_POOL.filter((s) => snackAllowed(s, ["Dairy Allergy"]));
     const dropped = PLANNER_POOL.filter((s) => !snackAllowed(s, ["Dairy Allergy"])).map((s) => s.name);
     expect(dropped.sort()).toEqual([
-      "Cheese Cubes", "Cheese Stick", "Cottage Cheese",
+      "Breadsticks", "Cheese Cubes", "Cheese Stick", "Cottage Cheese",
       "Probiotic Drink", "Rice Wheels", "Veggie Straws", "Yoghurt Pot",
     ]);
-    expect(kept.length).toBe(26);
+    // Aussie: Breadsticks(Vita Vigor 그리시니)는 우유를 선언한다 — NZ 상품은 안 했다
+    expect(kept.length).toBe(25);
   });
 
   it("어떤 조합에서도 간식 풀이 비지 않는다", () => {

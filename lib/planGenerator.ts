@@ -6,7 +6,7 @@ import { PORTION_FACTORS, DEFAULT_PORTION, portionFor } from "./planConfig";
 import { bandFactor, DEFAULT_PORTION_BAND, portionsOf, type PortionBand, type Portions } from "./portionBands";
 import { estimateMenuCalories, estimateSnackCalories } from "./nutritionCalc";
 import { getActivePromotions, pricedMenuMatches } from "./promotions";
-import { snackAllowed, dietViolations, dayMayContain } from "./ingredientDiet";
+import { snackAllowed, dietViolations, dayMayContain, dietTagsFor } from "./ingredientDiet";
 import { kindyOn, menuExclusion, snackExclusion, dayKindyPrep } from "./chokingRisk";
 import type { StoreId, SaleMatch, Promotion } from "@/data/promotions.types";
 import { ALL_LUNCH_DAYS, type WeekDayNames, type SharedPlan } from "./planShare";
@@ -36,6 +36,9 @@ function filterMenus(
     if (allergies.includes("Sesame Allergy") && dietViolations(menu.ingredients, ["Sesame Allergy"]).length) return false;
     if (allergies.includes("Vegetarian") && !menu.is_vegetarian) return false;
     if (allergies.includes("Vegan") && !menu.is_vegan) return false;
+    // 🔴 Aussie(10-30): 판정이 없는 재료(Falafel Mix — 원재료 없음)가 든 메인은 식이 필터가 하나라도 켜지면 뺀다.
+    //    손 표시만 보면 is_vegan 메뉴로 뽑히고, 저장분 검사(`savedPlanIsStale`)는 같은 날을 위반으로 버린다 — 두 규칙이 갈렸다.
+    if (allergies.some((a) => a !== "Kindy") && menu.ingredients.some((i) => dietTagsFor(i) === null)) return false;
     // 질식 규칙은 손으로 적은 플래그가 아니라 재료 표(`chokingRisk.ts`)로 본다 — 간식과 같은 표다.
     if (kindyOn(allergies) && menuExclusion(menu.ingredients)) return false;
     if (excluded.some((ex) => menu.ingredients.includes(ex))) return false;

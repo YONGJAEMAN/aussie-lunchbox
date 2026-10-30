@@ -90,11 +90,14 @@ describe("🔴 menuCounts의 값이 menuData.json 실측과 같다", () => {
     }).toEqual({
       MENU_COUNT: 94,
       SNACK_COUNT: 41,
-      NUT_CONTAINING_COUNT: 5,
-      NUT_FREE_COUNT: 89,
+      // 🔴 Aussie 2026-10-30: 89 → 88. Yoghurt & Muesli — AU 뮤즐리가 견과를 선언한다(판정표 data/allergenReview.au.json)
+      NUT_CONTAINING_COUNT: 6,
+      NUT_FREE_COUNT: 88,
       THERMOS_COUNT: 14,
       // 🔴 2026-08-23: 44 → 43. Char Siu Bao의 is_dairy_free를 내렸다 (바오번이 우유 선언)
-      DAIRY_FREE_COUNT: 43,
+      // 🔴 Aussie 2026-10-30: 43 → 37. AU 마요·빵가루·칵테일 소시지가 우유를 선언 — Mini Meatballs·Sushi Rolls·
+      //    Cocktail Frankfurts·Popcorn Chicken·Rice Balls·GF Chicken & Salad Sandwich
+      DAIRY_FREE_COUNT: 37,
       GLUTEN_FREE_COUNT: 23,
       NO_COOK_COUNT: 28,
     });

@@ -169,7 +169,7 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   Edamame: { pack: "1kg", serve: "68g" }, // NZ 454g
   Egg: { pack: "12pack", serve: "1ea" },
   Feta: { pack: "200g", serve: "20g" },
-  "GF Crackers": { pack: "100g", serve: "15g" },
+  "GF Crackers": { pack: "130g", serve: "15g" }, // AU Arnott's GF Jatz(10-30)
   "GF Pasta": { pack: "600g", serve: "42g" }, // NZ 350g
   Ginger: { pack: "230g", serve: "4.6g" },
   "Gluten-Free Bread": { pack: "440g", serve: "78g" }, // NZ 520g
@@ -185,7 +185,7 @@ export const PORTION_BASIS: Record<string, { pack: string; serve: string }> = {
   Parmesan: { pack: "250g", serve: "7.5g" },
   "Pasta spirals": { pack: "500g", serve: "60g" },
   Pastry: { pack: "6 sheets", serve: "1.5sheets" },
-  "Peanut Sauce": { pack: "175g", serve: "8g" }, // NZ 200g
+  "Peanut Sauce": { pack: "200g", serve: "8g" }, // AU Passage To Asia Satay(10-30) — NZ와 같은 200g
   "Pesto/Mayo": { pack: "190g", serve: "9.5g" },
   "Pita Bread": { pack: "5pack", serve: "2ea" }, // NZ 10pack
   "Plant Milk": { pack: "1L", serve: "50mL" },

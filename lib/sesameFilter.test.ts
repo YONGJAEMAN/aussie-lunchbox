@@ -1,9 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import menuData from "@/data/menuData.json";
-import PRICES from "@/data/price_cache.json";
-import { declares } from "./allergenLabels";
-import { dietViolations, snackAllowed } from "./ingredientDiet";
+import { dietViolations, snackAllowed, AU_REVIEW } from "./ingredientDiet";
 import { buildWeeklyPlan, buildSharedPlan } from "./planGenerator";
 import { encodeSharedPlan, decodeSharedPlan, SHARE_ALLERGIES } from "./planShare";
 import type { AllergyType, MenuItem, PriceInfo, SnackData } from "./types";
@@ -20,23 +18,25 @@ const MENUS = RAW.MENU_DATA.en;
 const SNACKS = RAW.SNACK_DATA;
 const ALL_SNACKS = Object.values(SNACKS).flat();
 
-/** 추적 상품 라벨이 참깨를 **선언**하는 재료(2026-10-22 실측). */
+/**
+ * Aussie(2026-10-30, 사용자 승인 판정표 `data/allergenReview.au.json`)에서 참깨가 걸린 재료.
+ * 🔴 Kiwi와 다른 점: Teriyaki는 AU 선언 필드에 참깨가 없지만 **원재료에 Sesame Seeds·Sesame Oil**이 있다.
+ *    빵 다섯(Roll·Ciabatta·Croissant·Muffin·Pastry Cases)은 참깨가 「may contain」뿐이라 **거르지 않고 ⚠**(사용자 결정).
+ */
 const DECLARES_SESAME = [
-  "Bao Buns", "Curry Spices", "GF Crackers", "Hoisin Sauce", "Hummus",
-  "Sesame Oil", "Tahini", "Teriyaki Sauce", "Wholegrain Crackers",
+  "Bao Buns", "Breadcrumbs", "Breadsticks", "Burger Bun", "Hummus",
+  "Sesame Oil", "Teriyaki Sauce", "Wholegrain Crackers",
 ];
-/** 라벨이 없어 참깨를 확인할 수 없는 재료 — 걸린 것으로 본다. */
-const UNVERIFIED = ["Breadcrumbs", "Ciabatta", "Croissant", "Muffin", "Pastry Cases", "Roll", "Spices"];
+/** Kiwi에선 라벨이 없어 걸었던 빵들 — AU는 라벨이 있고 참깨는 주의뿐이다. */
+const UNVERIFIED: string[] = [];
+const WARN_ONLY_BREADS = ["Ciabatta", "Croissant", "Muffin", "Pastry Cases", "Roll"];
 
 const EXCLUDED_MAINS = [
-  // 선언 재료
-  "Veggie Wrap", "Teriyaki Chicken & Rice", "Veggie Sticks & Hummus Box", "Falafel Wrap", "Noodle Stir-fry",
-  "Falafel Pita Pocket", "Corn Tortilla Veggie Wrap", "Vegetable Samosa", "Bulgogi Rice Bento", "Char Siu Bao",
-  // 확인 못 하는 재료
-  "Mini Meatballs", "Popcorn Chicken", "Chicken Pesto Panini", "Ham & Cheese Croissant",
-  "Mini Spinach Quiche", "Roast Beef Roll", "Chilli con Carne",
+  "Veggie Wrap", "Teriyaki Chicken & Rice", "Mini Meatballs", "Veggie Sticks & Hummus Box", "Falafel Wrap",
+  "Beef Burger", "Noodle Stir-fry", "Popcorn Chicken", "Falafel Pita Pocket", "Corn Tortilla Veggie Wrap",
+  "Bulgogi Rice Bento", "Char Siu Bao",
 ];
-const EXCLUDED_SNACKS = ["Hummus & Veg", "Wholegrain Crackers", "Mini Muffin", "Roasted Chickpeas"];
+const EXCLUDED_SNACKS = ["Breadsticks", "Hummus & Veg", "Wholegrain Crackers"];
 
 const SESAME: AllergyType[] = ["Sesame Allergy"];
 const BAD = new Set([...DECLARES_SESAME, ...UNVERIFIED]);
@@ -44,29 +44,31 @@ const stubPrices = async (ings: string[]): Promise<PriceInfo[]> =>
   ings.map((name) => ({ name, price: 2, image: "", source: "test" }));
 
 describe("🔴 참깨 필터 — 분류가 승인한 표와 같다", () => {
-  it("참깨를 선언하는 추적 재료가 리터럴 9개와 같다", () => {
-    const found = Object.keys(PRICES).filter((k) => declares(k, "sesame")).sort();
+  it("참깨가 걸린 재료가 승인한 리터럴 8개와 같다", () => {
+    const found = Object.keys(AU_REVIEW).filter((k) => AU_REVIEW[k].tags?.includes("sesame")).sort();
     expect(found).toEqual([...DECLARES_SESAME].sort());
   });
 
-  it("메인 94개 중 빠지는 17개가 리터럴과 같다 — 77개가 남는다", () => {
+  it("메인 94개 중 빠지는 12개가 리터럴과 같다 — 82개가 남는다", () => {
     const out = MENUS.filter((m) => dietViolations(m.ingredients, SESAME).length > 0).map((m) => m.name).sort();
     expect(out).toEqual([...EXCLUDED_MAINS].sort());
-    expect(MENUS.length - out.length).toBe(77);
+    expect(MENUS.length - out.length).toBe(82);
   });
 
-  it("간식 41개 중 빠지는 4개가 리터럴과 같다 — 37개가 남는다", () => {
+  it("간식 41개 중 빠지는 3개가 리터럴과 같다 — 38개가 남는다", () => {
     const out = ALL_SNACKS.filter((s) => !snackAllowed(s, SESAME)).map((s) => s.name).sort();
     expect(out).toEqual([...EXCLUDED_SNACKS].sort());
-    expect(ALL_SNACKS.length - out.length).toBe(37);
+    expect(ALL_SNACKS.length - out.length).toBe(38);
   });
 
-  it("다른 필터의 판정은 참깨 때문에 바뀌지 않는다 — 확인 못 하는 빵은 참깨 필터에서만 걸린다", () => {
+  it("참깨 주의뿐인 빵은 거르지 않는다 — 다른 필터 판정도 그대로다(Aussie 10-30 결정)", () => {
     for (const a of ["Nut Allergy", "Dairy Allergy", "Gluten Allergy", "Egg Allergy"] as AllergyType[]) {
       expect(dietViolations(["Roll"], [a]).some((v) => v.reason === "unknown"), `${a}: Roll이 모르는 재료가 됐다`).toBe(false);
     }
     expect(dietViolations(["Roll"], ["Nut Allergy"])).toEqual([]);
-    expect(dietViolations(["Roll"], SESAME).length).toBe(1);
+    for (const b of WARN_ONLY_BREADS) expect(dietViolations([b], SESAME), b).toEqual([]);
+    // 🔴 Teriyaki는 선언 필드가 아니라 원재료로 걸렸다 — 선언만 보던 때로 돌아가면 여기서 깨진다
+    expect(dietViolations(["Teriyaki Sauce"], SESAME).length).toBe(1);
   });
 });
 

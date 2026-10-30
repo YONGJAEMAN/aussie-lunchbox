@@ -73,10 +73,11 @@ describe("🔴 ⚠ may contain — 원본 라벨과 같은 재료를 짚는다",
   it("글루텐 필터: 오늘 관측된 네 메인과 그 재료 (라벨이 바뀌면 새 관측으로 고칠 것)", () => {
     const exp = expectedMains("Gluten Allergy");
     expect(Object.fromEntries(exp)).toEqual({
+      // Aussie 10-30 관측: AU Salsa는 글루텐 주의가 없고(NZ Old El Paso는 있었다) AU 붉은 렌틸이 있다
       "Vegetable Curry": ["Chickpeas", "Curry Paste"],
-      Nachos: ["Kidney Beans", "Salsa"],
+      Nachos: ["Kidney Beans"],
       "Chilli con Carne": ["Kidney Beans"],
-      "Vegan Burrito Bowl": ["Salsa"],
+      "Lentil Soup": ["Red Lentils"],
     });
   });
 
@@ -152,7 +153,7 @@ describe("🔴 생성·교체·공유 — 모든 경로의 하루에 ⚠가 실�
 
   it("공유 링크로 연 주에도 실린다", async () => {
     const plan = await buildSharedPlan(MENUS, SNACKS, {
-      days: ["Nachos", "Vegan Burrito Bowl", "Chilli con Carne", "Vegetable Curry", "Nachos"].map((menu) => ({ menu, snacks: [] })),
+      days: ["Nachos", "Lentil Soup", "Chilli con Carne", "Vegetable Curry", "Nachos"].map((menu) => ({ menu, snacks: [] })),
       allergies: GF, excluded: [], prepStyles: [], thermosOnly: false, useSales: false, saleStores: [],
     }, stubPrices);
     for (const d of plan.planData) expect(actualDay(d)).toEqual(expectedDay(d.rawIngredients, [], "Gluten Allergy"));
@@ -160,7 +161,7 @@ describe("🔴 생성·교체·공유 — 모든 경로의 하루에 ⚠가 실�
   });
 
   it("하루 교체 뒤에도 다섯 날 전부 다시 계산된다", async () => {
-    const week = ["Nachos", "Vegan Burrito Bowl", "Chilli con Carne", "Vegetable Curry"].map((menu) => ({ menu, snacks: [] as string[] }));
+    const week = ["Nachos", "Lentil Soup", "Chilli con Carne", "Vegetable Curry"].map((menu) => ({ menu, snacks: [] as string[] }));
     const fifth = MENUS.find((m) => m.is_gluten_free && !week.some((w) => w.menu === m.name))!;
     const plan = await swapPlanDay(MENUS, SNACKS, [...week, { menu: fifth.name, snacks: [] }], 4, {
       allergies: GF, excluded: [], favorites: [], leftover: "",
