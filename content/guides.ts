@@ -1,5 +1,114 @@
 import { withReadTime } from "@/lib/readTime";
-import { boxMedianLabel, boxWeekLabel } from "@/lib/servePrice";
+import { boxMedianLabel, boxWeekLabel, joinList } from "@/lib/servePrice";
+import menuDataJson from "@/data/menuData.json";
+import enMessages from "@/messages/en.json";
+import { PLANNER_CATEGORIES, EXCLUDED_CATEGORY } from "@/lib/snackEconomics";
+import { bandFactorLabel, PORTION_BAND_SOURCE } from "@/lib/portionBands";
+import {
+  CHOKING_SOURCE, EXCLUDE_CATEGORIES, ALTER_CATEGORIES, FORM_LINES, EXCLUDE_INGREDIENTS, EXCLUDE_SNACKS,
+  ALTER_INGREDIENTS, PREPS, menuExclusion, kindyExcludedMenus, kindyExcludedSnacks, type PrepId,
+} from "@/lib/chokingRisk";
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * 킨디 질식 가이드(Kiwi 2026-10-12 → Aussie 2026-10-30 NSW Health) — 표·개수·이름은 전부
+ * `lib/chokingRisk.ts`와 데이터에서 만든다.
+ *
+ * 🔴 손질 문구는 플래너 카드와 **같은 문자열**(`messages/en.json`의 `kindy_prep_*`)을 읽는다.
+ *    글에만 다른 말을 적어 두면 카드와 글이 갈라진다. 가드: `lib/kindyChoking.test.ts`.
+ * ──────────────────────────────────────────────────────────────────────────── */
+const EN_MSG = enMessages as Record<string, string>;
+type KindyItem = { name: string; ingredients: string[] };
+const KINDY_DATA = menuDataJson as unknown as { MENU_DATA: { en: KindyItem[] }; SNACK_DATA: Record<string, KindyItem[]> };
+const kindySnackPool = () => PLANNER_CATEGORIES.flatMap((c) => KINDY_DATA.SNACK_DATA[c] ?? []);
+const kindyTreats = () => KINDY_DATA.SNACK_DATA[EXCLUDED_CATEGORY] ?? [];
+const capFirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** 「Kindy」를 켜면 빠지는 메인·간식과 그 개수. 글의 숫자는 전부 여기서 나온다. */
+export function kindyFacts() {
+  const pool = kindySnackPool();
+  return {
+    menuTotal: KINDY_DATA.MENU_DATA.en.length,
+    menusOut: kindyExcludedMenus(KINDY_DATA.MENU_DATA.en).map((m) => m.name),
+    snackTotal: pool.length,
+    snacksOut: kindyExcludedSnacks(pool).map((s) => s.name),
+    treatsOut: kindyExcludedSnacks(kindyTreats()).map((s) => s.name),
+  };
+}
+
+/** 지침에서 빼는 여섯 줄 × 우리 데이터에서 걸리는 메인·간식. */
+function kindyExcludeTable(): string {
+  const menus = KINDY_DATA.MENU_DATA.en;
+  // 이름이 이미 그 재료를 말하면(Yoghurt & Muesli) 괄호를 달지 않는다 — Nachos (corn chips)만 단다.
+  const named = (name: string, ing: string) => name.toLowerCase().includes(ing.toLowerCase().split(" ").at(-1)!.replace(/s$/, ""));
+  return EXCLUDE_CATEGORIES.map((cat) => {
+    const ings = Object.entries(EXCLUDE_INGREDIENTS)
+      .filter(([, r]) => r.basis === "guide" && r.category === cat)
+      .map(([i]) => i);
+    const label = (s: KindyItem) => {
+      const hit = s.ingredients.filter((i) => ings.includes(i));
+      return s.ingredients.length > 1 ? `${s.name} (${hit.join(", ").toLowerCase()})` : s.name;
+    };
+    const hits = (list: KindyItem[]) => list.filter((s) => !EXCLUDE_SNACKS[s.name] && s.ingredients.some((i) => ings.includes(i)));
+    const menuHits = hits(menus).map((m) => {
+      const hit = m.ingredients.filter((i) => ings.includes(i) && !named(m.name, i));
+      return hit.length ? `${m.name} (${hit.join(", ").toLowerCase()})` : m.name;
+    });
+    const parts = [
+      hits(kindySnackPool()).length ? `snacks: ${joinList(hits(kindySnackPool()).map(label))}` : "",
+      hits(kindyTreats()).length ? `treats the planner never packs: ${joinList(hits(kindyTreats()).map(label))}` : "",
+      menuHits.length ? `mains: ${joinList(menuHits)}` : "",
+    ].filter(Boolean);
+    return `| ${capFirst(EN_MSG[`kindy_cat_${cat}`])} | ${parts.length ? capFirst(parts.join("; ")) : "Nothing in our menus or snacks"} |`;
+  }).join("\n");
+}
+
+/** 손질로 다루는 네 줄 → 손질표의 어느 분류가 받는지. */
+function kindyFormLinesList(): string {
+  return Object.entries(FORM_LINES)
+    .map(([line, cat]) => `- **${capFirst(EN_MSG[`kindy_cat_${line}`])}** — see "${EN_MSG[`kindy_alter_${cat}`]}" below`)
+    .join("\n");
+}
+
+/** 손질 안내 표 — 손질법마다 한 줄, 그 손질법이 붙는 재료를 데이터 순서로. */
+function kindyAlterTable(): string {
+  return (Object.keys(PREPS) as PrepId[])
+    .map((prep) => ({ prep, ings: Object.entries(ALTER_INGREDIENTS).filter(([, ps]) => ps.includes(prep)).map(([i]) => i) }))
+    .filter((r) => r.ings.length > 0)
+    .map(({ prep, ings }) => `| ${capFirst(EN_MSG[`kindy_alter_${PREPS[prep].category}`])} | ${joinList(ings)} | ${EN_MSG[`kindy_prep_${prep}`]} |`)
+    .join("\n");
+}
+
+/** 우리 데이터에 해당 재료가 없는 「손질」 분류 — 지침이 다루지만 표에 줄이 안 생기는 것. */
+function kindyUnusedAlterSentence(): string {
+  const used = new Set<string>(Object.values(ALTER_INGREDIENTS).flat().map((p) => PREPS[p].category));
+  const unused = ALTER_CATEGORIES.filter((c) => !used.has(c)).map((c) => EN_MSG[`kindy_alter_${c}`]);
+  if (!unused.length) return "";
+  return `The guidance also covers ${joinList(unused)}; nothing the planner packs falls under ${unused.length === 1 ? "that heading" : "those headings"}, so it has no row here.`;
+}
+
+/** 「우리 판단」으로 빼는 간식 — 이름과 이유(messages `kindy_ours_*`). */
+function kindyOursList(): string {
+  return Object.entries(EXCLUDE_SNACKS)
+    .map(([name, r]) => (r.basis === "ours" ? `- **${name}** — ${EN_MSG[`kindy_ours_${r.reason}`]}.` : ""))
+    .filter(Boolean)
+    .join("\n");
+}
+
+/** 「우리 판단」으로 빼는 간식 → 그 간식의 주재료. 같은 재료가 메인 안에선 익혀 무르게 남는다. */
+const OURS_MAIN_INGREDIENT: Record<string, string> = { "Roasted Chickpeas": "Chickpeas" };
+
+function kindyOursSentence(): string {
+  const menus = KINDY_DATA.MENU_DATA.en;
+  return Object.keys(EXCLUDE_SNACKS).map((name) => {
+    const ing = OURS_MAIN_INGREDIENT[name];
+    if (!ing) return "";
+    const soft = menus.filter((m) => !menuExclusion(m.ingredients) && m.ingredients.includes(ing)).map((m) => m.name);
+    const how = (ALTER_INGREDIENTS[ing] ?? []).map((p) => EN_MSG[`kindy_prep_${p}`].replace(/\.$/, "").toLowerCase());
+    return soft.length
+      ? `Cooked ${ing.toLowerCase()} inside a main are soft, so those mains stay in${how.length ? `, with the guidance's note to ${joinList(how)}` : ""}: ${joinList(soft)}.`
+      : "";
+  }).filter(Boolean).join(" ");
+}
 
 export interface Guide {
   title: string;
@@ -1378,6 +1487,12 @@ Use this quick checklist each morning:
 
 ---
 
+## Packing for a Child Under 5
+
+Keeping food cold is not the only thing that changes for younger children: under-5s are also more likely to choke. If you are packing for kindy, NSW Health's choking guidance for early childhood services lists foods not to serve and says how to make others safer — summarised in [Kindy Lunchboxes in Australia: NSW Health's Choking Guidance in Plain English](/en/guides/kindy-lunchbox-choking-guide-australia).
+
+---
+
 ## References
 
 - [FSANZ — Food Safety for Consumers](https://www.foodstandards.gov.au/consumer)
@@ -1885,6 +2000,110 @@ Even with careful planning, it can be difficult to meet all nutritional needs on
 Ready to plan plant-based lunchboxes? [Try the Aussie Lunchbox Planner →](/en/planner)
 
 **Related reading:** [Iron, calcium and protein in the lunchbox](/en/blog/australian-lunchbox-iron-calcium-protein-three-missed-nutrients) · [Multicultural lunchbox recipes](/en/blog/multicultural-australian-lunchbox-recipes)
+`,
+  },
+  "kindy-lunchbox-choking-guide-australia": {
+    title: "Kindy Lunchboxes in Australia: NSW Health's Choking Guidance in Plain English",
+    seoTitle: "Kindy Lunchboxes: Choking Guidance in Plain English",
+    excerpt:
+      "What NSW Health's choking guidance for early childhood services says not to serve, how to make other foods safer, and how that maps onto a kindy lunchbox.",
+    date: "October 30, 2026",
+    lastReviewed: "October 2026",
+    contentUpdated: "2026-10-30",
+    image: "/assets/fruit_salad.jpg",
+    category: "Food Safety",
+    author: "Yong Jae Lee",
+    body: `
+## Why Under-5s Need Different Food
+
+Young children choke on food more easily than older children. Their ability to chew and swallow is still developing, and it varies a lot from child to child. Some foods are riskier because of their size, how hard they are, or their shape.
+
+NSW Health's *${CHOKING_SOURCE.title}* is part of the ${CHOKING_SOURCE.partOf}, written for early childhood education and care services. It names foods not to serve, says how to prepare others so they are safer, and covers how children should eat. The page was current as at ${CHOKING_SOURCE.currentAt}.
+
+This guide puts the food part of that page in plain English and shows where it touches the menus and snacks in our planner. It is a summary, not a replacement. The [original page](${CHOKING_SOURCE.url}) is short and worth reading in full.
+
+---
+
+## Under 3 or Under 5?
+
+NSW Health's list of high-risk foods is for **children under ${CHOKING_SOURCE.appliesUnder}**. The planner's option is called Kindy (under 5), and **we apply the same list to every child under 5**. That is our own call, not something NSW Health says.
+
+Our reason is simple. A kindy lunchbox can be for a two-year-old in long day care or a four-year-old in preschool, and the planner can't tell them apart. We would rather leave a few foods out of a four-year-old's box than pack them for a two-year-old.
+
+There is no national list to fall back on. The national regulations for early childhood services ask each service to have a policy on nutrition, food and drinks, but they don't list choking foods. If your service has its own food rules, those come first.
+
+---
+
+## Foods to Leave Out
+
+The guidance lists ten kinds of high-risk food. Six of them come with no way to make them safer, so the planner's Kindy option leaves them out. The right-hand column is where each one turns up in our data:
+
+| The guidance says not to serve | Where it appears in our menus and snacks |
+|---|---|
+${kindyExcludeTable()}
+
+The other four lines on the list are about the form a food is in — raw, whole, with skin, or in large pieces. The guidance's own table says how to make those foods safer, so the planner keeps them and adds a prep note instead:
+
+${kindyFormLinesList()}
+
+### Two extras that are our call, not the guidance's
+
+${kindyOursList()}
+
+That is our own judgement, not something NSW Health says. ${kindyOursSentence()}
+
+---
+
+## Foods to Change Before Serving
+
+These are the foods in our menus and snacks that the guidance's "how to make foods safer" table covers, with the same wording the planner shows on each day:
+
+| Type of food (the guidance's heading) | In our menus and snacks | How to make it safer |
+|---|---|---|
+${kindyAlterTable()}
+
+${kindyUnusedAlterSentence()}
+
+### What we don't flag
+
+We only put a note on foods the guidance names. Strawberries, sliced tomato, lettuce, cucumber, capsicum, cheese, boiled egg, pretzels and breadsticks get no note from us — not because they are risk-free, but because the guidance doesn't list them and we won't claim a risk it doesn't state. Supervision still matters for every food.
+
+---
+
+## Eating Safely: The Rest of the Guidance
+
+Food is only part of the page. It also asks services to:
+
+- Ask families how well their child can chew and swallow.
+- Make sure children sit down for meals and snacks.
+- Have an educator with a current first aid certificate watching children while they eat and drink.
+
+It also explains that gagging and spitting food out is normal while children learn to eat, and lists the signs of choking. For first aid itself, follow the [original page](${CHOKING_SOURCE.url}) and your service's first aid procedures.
+
+---
+
+## Using the Planner's Kindy Option
+
+Tick **Kindy (under 5)** under Allergies / Restrictions before you generate a plan. With it on:
+
+- **Excluded foods are left out.** That takes ${kindyFacts().menusOut.length} of our ${kindyFacts().menuTotal} mains (${joinList(kindyFacts().menusOut)}) and ${kindyFacts().snacksOut.length} of the ${kindyFacts().snackTotal} snacks the planner packs (${joinList(kindyFacts().snacksOut)}) out of the running. The planner never packs treats, so ${joinList(kindyFacts().treatsOut.map((n) => n.toLowerCase()))} don't come up either way.
+- **Each day lists prep notes** for anything in the "change before serving" table, on the day card and in the recipe window.
+- **It combines with the other filters**, so a kindy plan can also be nut-free, vegetarian and so on.
+- **Portions get smaller.** Ticking Kindy also sets the planner's Portion size to Under 5 / Kindy (ages 3–4): about ${bandFactorLabel("kindy")} of the standard serve, which is sized for primary school children aged 5–12. The ratio is an estimate from average daily energy needs by age in the [Nutrient Reference Values for Australia and New Zealand](${PORTION_BAND_SOURCE.url}), not a prescription — you can change it.
+
+The [snack checker](/en/snack-checker) shows the same Kindy line for every snack the planner packs.
+
+[Try the Aussie Lunchbox Planner →](/en/planner)
+
+---
+
+## Source and Licence
+
+This page summarises, in our own words, *${CHOKING_SOURCE.title}* (${CHOKING_SOURCE.publisher}, ${CHOKING_SOURCE.partOf}, current as at ${CHOKING_SOURCE.currentAt}). NSW Health's [website copyright notice](${CHOKING_SOURCE.copyrightUrl}) licenses its web material under [Creative Commons Attribution 4.0](${CHOKING_SOURCE.licenceUrl}); attribution: ${CHOKING_SOURCE.attribution}. For current information go to www.health.nsw.gov.au.
+
+We have reorganised it around the menus and snacks in our planner, applied its under-${CHOKING_SOURCE.appliesUnder} list to children under 5, and added two judgements of our own (roasted chickpeas and veggie straws). All three are marked as ours above. NSW Health has not reviewed or endorsed this page or the planner.
+
+- [${CHOKING_SOURCE.publisher}: ${CHOKING_SOURCE.title}](${CHOKING_SOURCE.url})
 `,
   },
 };

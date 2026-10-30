@@ -20,7 +20,7 @@ import { encodeSharedPlan, decodeSharedPlan, normalizeLunchDays, ALL_LUNCH_DAYS 
 import { methodAmountFor, RECIPES_WITH_METHOD_AMOUNTS } from "@/lib/recipeMethodAmounts";
 import { MENU_COUNT } from "@/lib/menuCounts";
 import { savedPlanIsStale, PLAN_SCHEMA, dayMayContain, ALLERGY_TAG } from "@/lib/ingredientDiet";
-import { dayKindyPrep, kindyOn, PREPS, type KindyPrepNote } from "@/lib/chokingRisk";
+import { dayKindyPrep, kindyOn, type KindyPrepNote } from "@/lib/chokingRisk";
 import AuthModal from "@/components/AuthModal";
 import { useParams } from "next/navigation";
 import { SOCIAL } from "@/components/Footer";
@@ -46,9 +46,7 @@ const ALLERGY_DISPLAY_KEYS: Record<AllergyType, string> = {
 };
 
 /** 킨디 안내가 링크하는 글. `FILTER_ARTICLES.Kindy`와 같은 글이다(가드가 대조한다). */
-// 킨디 필터는 아직 뉴질랜드 보건부 지침을 따른다(4단계에서 호주 지침으로 교체).
-// 그 지침을 풀어 쓴 가이드는 자매 사이트에 있으므로 그리로 보낸다 — Aussie에는 아직 킨디 가이드가 없다.
-const KINDY_GUIDE_URL = "https://www.kiwilunchbox.co.nz/en/guides/kindy-lunchbox-choking-guide-nz";
+const KINDY_GUIDE_SLUG = "kindy-lunchbox-choking-guide-australia";
 
 const PREP_OPTIONS: PrepStyle[] = ["no-cook", "make-ahead", "cook-fresh"];
 
@@ -665,8 +663,7 @@ export default function PlannerClient({
   /** 킨디 손질 안내 한 줄. 문구는 표(`PREPS`)의 id로 messages에서 찾는다. 이름 규칙은 ⚠ 줄과 같다. */
   const kindyItem = (n: KindyPrepNote) => (n.snack && n.snack !== n.ingredient ? `${n.snack} — ${n.ingredient}` : n.ingredient);
   const kindyPrepLine = (n: KindyPrepNote) => t("planner_kindy_prep_item", { item: kindyItem(n), how: t(`kindy_prep_${n.prep}`) });
-  const kindyOlderLine = (n: KindyPrepNote) =>
-    PREPS[n.prep].older ? t("planner_kindy_prep_older", { how: t(`kindy_prep_${n.prep}_46`) }) : null;
+  const kindyGuideHref = `/${locale}/guides/${KINDY_GUIDE_SLUG}`;
 
   const catItems = Object.entries(ingredientCounts).reduce<
     Record<
@@ -800,9 +797,9 @@ export default function PlannerClient({
           {kindyOn(allergies) && (
             <p className="mt-2 text-xs leading-relaxed text-gray-500">
               {t("planner_kindy_sidebar")}{" "}
-              <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline text-[#6B3600]">
+              <Link href={kindyGuideHref} className="underline text-[#6B3600]">
                 {t("planner_kindy_guide_link")}
-              </a>
+              </Link>
             </p>
           )}
         </details>
@@ -1230,9 +1227,9 @@ export default function PlannerClient({
                   : planOptions.band === "kindy"
                     ? t("planner_kindy_portion_kindy", { factor: bandFactorLabel("kindy") })
                     : t("planner_kindy_portion_other", { band: t(`portion_band_${planOptions.band}`) })}{" "}
-                <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+                <Link href={kindyGuideHref} className="font-semibold underline">
                   {t("planner_kindy_guide_link")}
-                </a>
+                </Link>
               </p>
             )}
 
@@ -2029,20 +2026,14 @@ export default function PlannerClient({
                 <div className="mt-4 rounded-xl border border-[#4A7FB5]/60 bg-[#EEF5FB] p-3 text-[#1F4466]">
                   <h3 className="font-bold mb-2 text-sm">✂️ {t("planner_kindy_prep_title")}</h3>
                   <ul className="space-y-2 text-sm">
-                    {activeRecipe.kindyPrep.map((n) => {
-                      const older = kindyOlderLine(n);
-                      return (
-                        <li key={`${n.snack ?? ""}:${n.ingredient}:${n.prep}`}>
-                          {kindyPrepLine(n)}
-                          {older && <span className="block text-xs text-[#1F4466]/80">{older}</span>}
-                        </li>
-                      );
-                    })}
+                    {activeRecipe.kindyPrep.map((n) => (
+                      <li key={`${n.snack ?? ""}:${n.ingredient}:${n.prep}`}>{kindyPrepLine(n)}</li>
+                    ))}
                   </ul>
                   <p className="mt-2 text-xs leading-relaxed">
-                    <a href={KINDY_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="underline">
+                    <Link href={kindyGuideHref} className="underline">
                       {t("planner_kindy_guide_link")}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               )}
