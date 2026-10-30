@@ -1,10 +1,8 @@
 name: Weekly Price Check
 
-# 🔴 2026-10-26: 이 워크플로는 이제 **수집하지 않는다. 감시만 한다.**
-#    수집은 로컬 launchd(`ops/kiwi-prices.plist`, 일 18:00 NZ → `scripts/collect_prices_local.sh`)가 한다.
-#    GitHub 러너에서는 마트 사이트에 닿지 않는다 — 08-23 이후 12회 중 플래너 캐시 0/197 매번,
-#    Woolworths 지수 0/18 열한 번, Pak'nSave·New World는 매번 Cloudflare 403(buildId 추출 실패).
-#    그런데도 지수 스크립트가 열 날짜를 올려 **옛 값을 새 관측으로** 커밋했다(라이브 가짜 6점, PR #147).
+# 🔴 이 워크플로는 **수집하지 않는다. 감시만 한다.** (Kiwi 2026-10-26 구조를 그대로)
+#    수집은 로컬 launchd(`ops/aussie-prices.plist`, 일 19:00 NZ → `scripts/collect_prices_local.sh`)가 한다.
+#    Woolworths AU는 GitHub 러너에서 막힌다 — Aussie 캐시가 08-16부터 146개 전부 「Est. (Fallback)」였던 이유다.
 #    읽지 못하는 곳에서 수집기를 돌릴 이유가 없다. 챌린지 우회는 하지 않는다.
 #
 # 남긴 것: 로컬 수집이 멈추거나 본문 수치가 가격과 어긋나면 **빨간불**이 되는 검사.
@@ -68,19 +66,7 @@ jobs:
               if (v !== "success") { console.error(`❌ ${name}이 통과하지 못했다 — 위 단계 로그를 볼 것.`); bad = true; }
             }
 
-            const idx = require("./data/priceIndex.json");
-            const idxAge = Math.floor((Date.now() - Date.parse(idx.lastUpdated)) / DAY);
-            console.log(`가격지수 lastUpdated=${idx.lastUpdated} (${idxAge}일 전)`);
-            for (const k of Object.keys(idx).filter(k => k.endsWith("Updated") && k !== "lastUpdated")) {
-              console.log(`  ${k}=${idx[k]}`);
-            }
-            if (!Number.isFinite(idxAge)) {
-              console.error(`❌ 지수 lastUpdated를 날짜로 못 읽었다(${JSON.stringify(idx.lastUpdated)}) — 나이를 모르면 통과가 아니다.`);
-              bad = true;
-            } else if (idxAge > MAX_AGE) {
-              console.error(`❌ 지수가 ${idxAge}일째 낡았다 — 로컬 수집(일 18:00 NZ)이 멈췄거나 병합이 안 됐다. ~/Library/Logs/kiwilunchbox-prices.log를 볼 것.`);
-              bad = true;
-            }
+            // Aussie: 가격지수(priceIndex.json)는 3단계에서 연다 — 그때 Kiwi의 지수 신선도 검사를 되살릴 것.
 
             const cache = require("./data/price_cache.json");
             const stamps = Object.values(cache).map(v => v && v.timestamp).filter(Boolean);
@@ -90,7 +76,7 @@ jobs:
               console.error(`❌ 플래너 캐시 나이를 못 읽었다(${cacheAge}) — 나이를 모르면 통과가 아니다.`);
               bad = true;
             } else if (cacheAge > MAX_AGE) {
-              console.error(`❌ 플래너 캐시가 ${cacheAge}일째 낡았다 — 도시락 비용이 옛 가격으로 나온다.`);
+              console.error(`❌ 플래너 캐시가 ${cacheAge}일째 낡았다 — 도시락 비용이 옛 가격으로 나온다. 로컬 수집(일 19:00 NZ) 로그 ~/Library/Logs/aussielunchbox-prices.log를 볼 것.`);
               bad = true;
             }
 

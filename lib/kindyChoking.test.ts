@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import {
   EXCLUDE_CATEGORIES, ALTER_CATEGORIES, EXCLUDE_INGREDIENTS, EXCLUDE_SNACKS, ALTER_INGREDIENTS, PREPS,
   CHOKING_SOURCE, snackChokingFlag, dayKindyPrep, type PrepId,
@@ -296,11 +296,11 @@ describe("🔴 킨디는 알레르겐이 아니다", () => {
     expect(src).toMatch(/onClick=\{\(\) => toggleAllergy\(a\)\}/);
     expect(src).toMatch(/onClick=\{\(\) => toggleAllergy\("Kindy"\)\}/);
     expect(read("lib/planGenerator.ts")).toMatch(/dayKindyPrep\(menu\.ingredients, dailySnacks, allergies, menu\.name\)/);
-    // 킨디 안내 링크 = 관련 글 매핑 = 간식 확인 페이지 링크
-    const slug = (FILTER_ARTICLES.Kindy as { slug: string }).slug;
-    expect(GUIDES[slug], slug).toBeTruthy();
-    expect(src).toContain(`const KINDY_GUIDE = "${slug}"`);
-    expect(read("app/[locale]/snack-checker/page.tsx")).toContain(`/guides/${slug}`);
+    // Aussie(10-30): 호주 킨디 가이드는 4단계에서 쓴다 — 그때까지 플래너는 Kiwi 가이드(NZ 보건부 지침)로
+    //   **외부 링크**하고, 관련 글 매핑은 비워 둔다. 4단계에서 AU 가이드가 생기면 Kiwi 원래 검사로 되돌릴 것.
+    expect(FILTER_ARTICLES.Kindy, "킨디 관련 글은 4단계 전까지 없다").toHaveProperty("none");
+    expect(src).toContain('const KINDY_GUIDE_URL = "https://www.kiwilunchbox.co.nz/en/guides/kindy-lunchbox-choking-guide-nz"');
+    expect(src).toMatch(/href=\{KINDY_GUIDE_URL\} target="_blank" rel="noopener noreferrer"/);
   });
 
   it("dayKindyPrep: 킨디가 꺼져 있으면 빈 배열", () => {
@@ -343,7 +343,8 @@ describe("🔴 간식 확인 페이지의 Kindy 줄 = 같은 표", () => {
     expect(s.kindyAlter, "손질 간식 0 — 대조가 비었다").toBeGreaterThan(0);
   });
 
-  it("클라이언트가 같은 문구 키로 그린다", () => {
+  // Aussie: 간식 확인 페이지(/snack-checker)는 3단계에서 연다 — 그때 이 검사가 다시 켜진다(표 자체는 위 검사가 본다).
+  it.skipIf(!existsSync("components/SnackCheckerClient.tsx"))("클라이언트가 같은 문구 키로 그린다", () => {
     const src = read("components/SnackCheckerClient.tsx");
     expect(src).toMatch(/kindy_cat_\$\{c\.rule\.category\}/);
     expect(src).toMatch(/kindy_prep_\$\{n\.prep\}/);
@@ -351,8 +352,9 @@ describe("🔴 간식 확인 페이지의 Kindy 줄 = 같은 표", () => {
   });
 });
 
-describe("🔴 킨디 가이드 글 — 숫자·이름·문구가 데이터와 같다", () => {
-  const g = GUIDES["kindy-lunchbox-choking-guide-nz"];
+// Aussie(10-30): 이 글(NZ 보건부 지침)은 옮기지 않았다 — 4단계(NSW Health 지침)에서 AU 가이드로 다시 쓰고 이 describe를 켠다.
+describe.skipIf(!GUIDES["kindy-lunchbox-choking-guide-nz"])("🔴 킨디 가이드 글 — 숫자·이름·문구가 데이터와 같다", () => {
+  const g = GUIDES["kindy-lunchbox-choking-guide-nz"] ?? { body: "" };
   const body = g.body;
   const menusOut = MENUS.filter(isExcludedMenu).map((m) => m.name);
   const snacksOut = POOL.filter(isExcludedSnack).map((s) => s.name);
