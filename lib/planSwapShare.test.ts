@@ -61,7 +61,7 @@ const stubPrices = async (ings: string[]): Promise<PriceInfo[]> => {
   return ings.map((name) => ({ name, price: stubPrice(name), image: "", source: "test" }));
 };
 
-const STORES: StoreId[] = ["woolworths", "newworld"];
+const STORES: StoreId[] = ["woolworths", "coles"];
 const saleOpts = (c: Case) => (c.useSales ? { useSales: true, saleStores: STORES } : undefined);
 const prepOpts = (c: Case) =>
   c.prepStyles.length || c.thermosOnly ? { prepStyles: c.prepStyles, thermosOnly: c.thermosOnly } : undefined;

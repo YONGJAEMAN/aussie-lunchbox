@@ -81,7 +81,8 @@ type PlanOptions = {
   lunchDays: boolean[];
 };
 
-const DEFAULT_SALE_STORES: StoreId[] = ["woolworths", "newworld"];
+const SALE_STORES: StoreId[] = ["woolworths", "coles"];
+const DEFAULT_SALE_STORES: StoreId[] = SALE_STORES;
 
 /**
  * 「$0.86 ×1.39 = $1.20」의 오른쪽 — **화면에 찍힌 두 값**을 곱한다. 반올림 전 값으로 곱하면
@@ -117,11 +118,14 @@ const EXAMPLE_IMAGES: Record<string, string> = {
 
 export default function PlannerClient({
   salesActive = false,
+  saleStoresThisWeek = [],
   articleMeta,
   methodExample,
   exampleWeek,
 }: {
   salesActive?: boolean;
+  /** 이번 주 특가가 실린 마트 — Coles는 전단을 붙여 넣은 주에만 있다. 체크박스는 이것만 보인다. */
+  saleStoresThisWeek?: StoreId[];
   articleMeta: Record<string, ArticleMeta>;
   /** 「1인분 vs 조리법 투입량」 안내에 쓰는 값. 서버에서 `lib/servePrice.ts`가 만든다. */
   methodExample: { one: string; count: number; many: string };
@@ -289,7 +293,10 @@ export default function PlannerClient({
             prepStyles: parsed.filters?.prepStyles ?? [],
             thermosOnly: parsed.filters?.thermosOnly ?? false,
             useSales: typeof parsed.sale?.useSales === "boolean" ? parsed.sale.useSales : true,
-            saleStores: Array.isArray(parsed.sale?.saleStores) ? parsed.sale.saleStores : DEFAULT_SALE_STORES,
+            // 재포크 뒤 Coles 자리는 `newworld`였다 — 모르는 id는 버린다.
+            saleStores: Array.isArray(parsed.sale?.saleStores)
+              ? (parsed.sale.saleStores as string[]).filter((x): x is StoreId => (SALE_STORES as string[]).includes(x))
+              : DEFAULT_SALE_STORES,
             // 이 값이 없는 옛 저장분은 기준(5–12세)으로 만든 것이다.
             band: normalizePortionBand(parsed.portionBand),
             // 이 값이 없는 옛 저장분은 도시락 한 개로 만든 것이다.
@@ -689,8 +696,7 @@ export default function PlannerClient({
     return acc;
   }, {});
 
-  const storeLabel = (store: string) =>
-    store === "newworld" ? "New World" : store === "woolworths" ? "Woolworths" : "Pak'nSave";
+  const storeLabel = (store: string) => (store === "coles" ? "Coles" : "Woolworths");
 
   /** 정가가 전단에 없어 절약액이 0으로 잡히는 마트 목록 (중복 제거) */
   const noRegularPriceStores = [
@@ -702,8 +708,8 @@ export default function PlannerClient({
     ),
   ];
 
-  // 🔴 2026-08-24: 회원 전용가를 그냥 "특가"로 보여주고 있었다. New World 특가는
-  // 사실상 전부 Club Plus Deal 이고 Woolworths 에도 Everyday Rewards 회원가가 섞인다.
+  // 🔴 2026-08-24(Kiwi): 회원 전용가를 그냥 "특가"로 보여주고 있었다. 회원가(Everyday Rewards·Flybuys)는
+  // 카드가 있어야 그 값에 산다. Aussie 수요일 수집기는 회원가를 아예 넣지 않는다 — 붙여 넣은 Coles 전단만 해당.
   // 카드가 없는 사람은 그 값에 못 사는데 화면은 절약액에 그대로 더하고 있었다.
   // 🔴 2026-08-24: salePrice 가 **묶음 단가**인 특가가 있다(전단 멀티바이).
   //    하나만 사면 정가를 낸다. 안 밝히면 절약액이 부풀어 보인다.
@@ -1027,10 +1033,7 @@ export default function PlannerClient({
                 <p className="text-xs font-semibold text-gray-600">
                   {t("sale_store_label")}
                 </p>
-                {([
-                  { id: "woolworths" as StoreId, label: t("sale_store_woolworths") },
-                  { id: "newworld" as StoreId, label: t("sale_store_newworld") },
-                ]).map((s) => (
+                {saleStoresThisWeek.map((id) => ({ id, label: t(`sale_store_${id}`) })).map((s) => (
                   <label
                     key={s.id}
                     className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer min-h-touch"
@@ -1092,7 +1095,7 @@ export default function PlannerClient({
               </>
             )}
             {/* 절약액이 0인 특가가 섞여 있으면 이유를 밝힌다.
-                New World 전단은 정가를 인쇄하지 않아 salePrice = regularPrice 로 들어간다.
+                정가를 인쇄하지 않는 전단(Kiwi New World)은 salePrice = regularPrice 로 들어간다.
                 그대로 두면 "특가 5건인데 절약 0"으로 보여서 기능이 고장난 것처럼 읽힌다. */}
             {noRegularPriceStores.length > 0 && (
               <p className="text-gray-500 mt-2 leading-relaxed">

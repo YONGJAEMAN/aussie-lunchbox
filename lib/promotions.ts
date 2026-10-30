@@ -17,27 +17,15 @@ import type {
 } from "@/data/promotions.types";
 import { PORTION_BASIS } from "@/lib/planConfig";
 import priceCacheJson from "@/data/price_cache.json";
+import { auToday } from "@/lib/auWeek.mjs";
 
 const PRICES = priceCacheJson as Record<string, { data?: { price?: number } }>;
 
 // 정적 import — 매주 갱신 시 rebuild 트리거 (admin 페이지에서 commit 시 자동 redeploy)
 const promotions = promotionsData as PromotionsFile;
 
-/**
- * 오늘 날짜를 뉴질랜드 벽시계 기준 YYYY-MM-DD 로 반환.
- *
- * 🔴 UTC 로 비교하면 하루 밀린다. validFrom/validUntil 은 NZ 날짜 문자열이고,
- * 오클랜드는 UTC+12/+13 이라 UTC 자정~정오 사이에는 이미 NZ 다음 날이다.
- * (서머타임 오프셋을 직접 계산하지 말 것 — 전에 그러다 하루 밀렸다.)
- */
-export function nzToday(now: Date = new Date()): string {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Pacific/Auckland",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(now);
-}
+// 날짜는 시드니 벽시계로 본다 — 호주 특가 기간이 시드니 날짜다. 이유는 `lib/auWeek.mjs` 머리 주석.
+export { auToday };
 
 export type PromotionsStatus =
   | { state: "active"; week: WeeklyPromotions; validUntil: string }
@@ -56,7 +44,7 @@ export type PromotionsStatus =
 export function getPromotionsStatus(now: Date = new Date()): PromotionsStatus {
   const week = promotions.weeks[promotions.currentWeek];
   if (!week) return { state: "missing" };
-  const today = nzToday(now);
+  const today = auToday(now);
   if (today > week.validUntil) return { state: "expired", validUntil: week.validUntil };
   if (today < week.validFrom) return { state: "upcoming", validFrom: week.validFrom };
   return { state: "active", week, validUntil: week.validUntil };
@@ -70,12 +58,18 @@ export function getCurrentWeekPromotions(now: Date = new Date()): WeeklyPromotio
   return s.state === "active" ? s.week : null;
 }
 
+/** 이번 주 특가가 실린 마트 — 플래너 체크박스는 이것만 보인다(Coles는 전단을 붙여 넣은 주에만 있다). */
+export function saleStoresThisWeek(now: Date = new Date()): StoreId[] {
+  const week = getCurrentWeekPromotions(now);
+  return (["woolworths", "coles"] as StoreId[]).filter((s) => (week?.stores[s]?.items.length ?? 0) > 0);
+}
+
 /**
  * 선택한 마트(들)의 lunchbox/snack-only 적합 promotions 만 반환.
  * "excluded" 항목은 자동으로 빠짐.
  */
 export function getActivePromotions(
-  stores: StoreId[] = ["woolworths", "newworld"],
+  stores: StoreId[] = ["woolworths", "coles"],
   now: Date = new Date(),
 ): Array<Promotion & { store: StoreId }> {
   const week = getCurrentWeekPromotions(now);
@@ -233,8 +227,8 @@ export function pricedMatchFor(
     (p.pricesIngredients ?? []).some((n) => n.trim() === ingredient.trim()),
   );
   const usable = declared.filter((p) => {
-    // 🔴 실제로 **할인 중**이어야 한다. New World 전단은 정가와 특가가 같게 들어오는
-    //    항목이 많은데(할인 0), 그게 우리 추적가보다 싸다고 「이번 주 특가」로 찍으면
+    // 🔴 실제로 **할인 중**이어야 한다. 전단에는 정가와 특가가 같게 들어오는 항목이
+    //    있는데(Kiwi New World, 할인 0), 그게 우리 추적가보다 싸다고 「이번 주 특가」로 찍으면
     //    할인이 아니라 **체인 간 가격차**를 특가라고 말하는 것이다.
     //    2026-09-09에 후보 도구를 만들다 드러났다.
     if (!(p.regularPrice > 0) || !(p.salePrice < p.regularPrice)) return false;
@@ -316,7 +310,7 @@ export function pricedMenuMatches(
 }
 
 /**
- * 매칭된 sale 들의 총 절약 금액 (NZD).
+ * 매칭된 sale 들의 총 절약 금액 (AUD).
  */
 export function calculateSavings(matches: SaleMatch[]): number {
   return matches.reduce((sum, m) => sum + m.promotion.savings, 0);

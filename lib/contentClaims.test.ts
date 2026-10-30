@@ -26,7 +26,7 @@ import * as SNACK from "./snackEconomics";
 import * as SP_VEG from "./servePrice";
 import { getActivePromotions as activePromosForGate } from "./promotions";
 // Aussie(2026-10-30): AU 전단은 5단계 — 특가 데이터가 있어야 성립하는 검사는 데이터가 들어오면 다시 켜진다.
-const HAS_PROMOS = activePromosForGate(["woolworths", "newworld"]).length > 0;
+const HAS_PROMOS = activePromosForGate(["woolworths", "coles"]).length > 0;
 
 /**
  * 가이드 본문에 써 넣은 "우리 데이터 기반 수치"가 실제 데이터와 어긋나면 실패한다.
@@ -2383,14 +2383,17 @@ describe("🔴 특가 토글 문구가 동작과 같다", () => {
     expect(bad, "문구가 동작보다 넓게 약속한다").toEqual([]);
   });
 
-  it.skipIf(!HAS_PROMOS)("🔴 FAQ가 「대부분의 특가는 통과하지 못한다」를 밝힌다", () => {
-    // 이게 이번 재측정의 핵심 사실이다. 빼면 다시 과장이 된다.
+  it("🔴 FAQ가 특가의 조건 — 추적 상품만·같은 용량만·회원가 제외 — 을 세 언어로 밝힌다(Aussie 5단계)", () => {
+    // Kiwi는 「대부분의 특가는 통과하지 못한다」였다(분류로 붙인 전단). Aussie Woolworths 특가는 추적 SKU에서
+    // 읽으므로 대부분 통과한다 — 대신 무엇이 빠지는지(개당 품목·회원가·Coles 미기록 주)를 말해야 과장이 아니다.
+    const must: Record<"en" | "ko" | "zh", RegExp[]> = {
+      en: [/exact products we track/, /pack size matches/, /sold by the each/, /member prices are never included/, /Coles specials are included only/],
+      ko: [/추적하는 바로 그 상품/, /같은 용량일 때만/, /개당으로 파는 품목/, /회원가는 넣지 않습니다/, /Coles 특가는 그 주 전단을 기록한 주에만/],
+      zh: [/跟踪的同一商品/, /同样包装规格/, /按个出售/, /会员价一律不计入/, /Coles特价只在/],
+    };
     for (const loc of ["en", "ko", "zh"] as const) {
       const faq = load(loc).faq_a21 ?? "";
-      expect(
-        /do not clear it|not clear it|통과하지 못|통과하는 특가는 많지|都通不过|门槛/.test(faq),
-        `${loc}: 대부분의 특가가 적용되지 않는다는 사실이 빠졌다`,
-      ).toBe(true);
+      for (const re of must[loc]) expect(faq, `${loc}: ${re}`).toMatch(re);
     }
   });
 
@@ -3225,12 +3228,11 @@ describe("🔴 10-02 전단 처리 방식을 사실대로", () => {
       expect(read(f), f).not.toMatch(OLD);
     }
   });
-  it.skipIf(!HAS_PROMOS)("양성 대조 — 새 표현이 실제로 들어가 있다", () => {
-    expect(read("content/posts.ts")).toMatch(/mailers are transcribed/);
-    expect(read("messages/ko.json")).toMatch(/전단을 옮겨 적어/);
-  });
-  it.skipIf(HAS_PROMOS)("전단 전(Aussie) — FAQ가 특가를 추적하지 않는다고 말한다", () => {
-    const en = JSON.parse(read("messages/en.json")).faq_a21 as string;
-    expect(en, "특가를 추적한다고 말하기 시작했다면 전단이 실제로 들어와 있어야 한다").toMatch(/don't track them/);
+  it("Aussie 5단계 — FAQ가 「특가를 추적하지 않는다」는 옛말을 버리고, 읽는 방식(수요일·추적 상품)을 말한다", () => {
+    for (const loc of ["en", "ko", "zh"] as const) {
+      const faq = JSON.parse(read(`messages/${loc}.json`)).faq_a21 as string;
+      expect(faq, loc).not.toMatch(/don't track them|추적하지 않습니다|不做跟踪/);
+      expect(faq, loc).toMatch(/Wednesday|수요일|周三/);
+    }
   });
 });

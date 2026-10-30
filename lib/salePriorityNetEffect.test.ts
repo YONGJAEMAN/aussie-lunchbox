@@ -8,13 +8,13 @@ import type { StoreId, SaleMatch } from "@/data/promotions.types";
 import type { MenuItem, SnackData, PriceInfo } from "./types";
 // Aussie: AU 전단은 아직 없다(5단계) — 특가에 기대는 검사는 데이터가 들어오면 자동으로 다시 켜진다.
 // 「없으면 missing」은 lib/promotions.test.ts가 따로 확인한다.
-const HAS_PROMOS = getActivePromotions(["woolworths", "newworld"]).length > 0;
+const HAS_PROMOS = getActivePromotions(["woolworths", "coles"]).length > 0;
 
 
 const raw = menuData as unknown as { MENU_DATA: { en: MenuItem[] }; SNACK_DATA: SnackData };
 const MENUS = raw.MENU_DATA.en;
 const SNACKS = raw.SNACK_DATA;
-const STORES = ["woolworths", "newworld"] as StoreId[];
+const STORES = ["woolworths", "coles"] as StoreId[];
 const PROMOS = getActivePromotions(STORES);
 
 /** 총액이 없으면 0으로 때우지 말고 던진다 — 0이 섞이면 중앙값이 조용히 내려간다. */

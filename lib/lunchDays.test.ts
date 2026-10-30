@@ -13,7 +13,7 @@ import type { StoreId } from "@/data/promotions.types";
 import { getActivePromotions } from "./promotions";
 // Aussie: AU 전단은 아직 없다(5단계) — 특가에 기대는 검사는 데이터가 들어오면 자동으로 다시 켜진다.
 // 「없으면 missing」은 lib/promotions.test.ts가 따로 확인한다.
-const HAS_PROMOS = getActivePromotions(["woolworths", "newworld"]).length > 0;
+const HAS_PROMOS = getActivePromotions(["woolworths", "coles"]).length > 0;
 
 
 /**
@@ -28,7 +28,7 @@ const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "u
 const raw = menuData as unknown as { MENU_DATA: { en: MenuItem[] }; SNACK_DATA: SnackData };
 const MENUS = raw.MENU_DATA.en;
 const SNACKS = raw.SNACK_DATA;
-const STORES: StoreId[] = ["woolworths", "newworld"];
+const STORES: StoreId[] = ["woolworths", "coles"];
 
 function stubPrice(name: string): number {
   let h = 0;
