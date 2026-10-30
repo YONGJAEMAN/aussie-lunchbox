@@ -1,17 +1,19 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { SITE_NOINDEX } from "@/lib/brand";
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { BRAND, SITE_NOINDEX } from "@/lib/brand";
 import type { ReactNode } from "react";
 import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/CookieConsent";
 import ConsentScripts from "@/components/ConsentScripts";
+import { Analytics } from "@vercel/analytics/next";
 
-const BASE_URL = "https://aussielunchbox.com";
+const BASE_URL = BRAND.SITE_URL;
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,17 +23,23 @@ export async function generateMetadata({
 
   const titles: Record<string, string> = {
     en: "Aussie Lunchbox — Stress-Free School Lunches for Australian Families",
-    ko: "오지 런치박스 — 호주 가족을 위한 간편한 도시락 플래너",
+    ko: "Aussie Lunchbox — 호주 가족을 위한 간편한 도시락 플래너",
     zh: "Aussie Lunchbox — 澳洲家庭轻松搭配学校午餐",
   };
   const descriptions: Record<string, string> = {
-    en: "Plan your kids' weekly school lunchbox in seconds. Healthy Australian menus, shopping lists, allergy filters, and price estimates from Woolworths.",
-    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 건강한 호주 메뉴, 쇼핑 목록, 알레르기 필터, 울워스 가격 정보를 제공합니다.",
-    zh: "几秒内规划孩子一周的学校午餐盒。提供健康的澳洲菜单、购物清单、过敏原过滤器和超市价格估算。",
+    en: "Plan your kids' weekly school lunchbox in seconds. Menus, shopping lists, allergy filters, and price estimates from Woolworths Australia.",
+    ko: "아이들의 한 주 도시락을 몇 초 만에 계획하세요. 메뉴, 쇼핑 목록, 알레르기 필터, Woolworths Australia 가격 추정을 제공합니다.",
+    zh: "几秒内规划孩子一周的学校午餐盒。提供菜单、购物清单、过敏原过滤器和Woolworths Australia价格估算。",
   };
 
   const title = titles[locale] ?? titles.en;
   const description = descriptions[locale] ?? descriptions.en;
+
+  // /ko, /zh는 언어 전환으로 열리지만(2026-10-29~, redirect 제거) noindex로 둔다 —
+  // 블로그·가이드 본문이 영어라 색인하면 번역 미완성 중복 페이지가 된다.
+  const isEnglish = locale === "en";
+  // 🔴 사이트 전체 noindex 스위치(lib/brand.ts) — 켜져 있으면 영어도 색인하지 않는다.
+  const indexable = isEnglish && !SITE_NOINDEX;
 
   return {
     title,
@@ -40,9 +48,9 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}`,
-      siteName: "Aussie Lunchbox",
-      locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : "en_AU",
+      url: `${BASE_URL}/${locale}`,
+      siteName: BRAND.SITE_NAME,
+      locale: locale === "ko" ? "ko_KR" : locale === "zh" ? "zh_CN" : BRAND.OG_LOCALE,
       type: "website",
       images: [
         {
@@ -59,15 +67,11 @@ export async function generateMetadata({
       description,
       images: [`${BASE_URL}/opengraph-image`],
     },
-    // 2026-07: Kiwi AdSense "가치 없는 콘텐츠" 거절 대응. Aussie는 Kiwi의 국가치환 미러라
-    // 중복 콘텐츠 신호가 Kiwi 심사에 감점으로 작용 → 사이트 전체 noindex로 색인에서 제거한다.
-    // follow는 유지(크롤러가 noindex 태그를 보고 색인에서 빼도록 crawlable 상태로 둠).
-    // Kiwi 승인 + Aussie 차별화 콘텐츠 확보 후 index 복원.
     robots: {
-      index: !SITE_NOINDEX,
+      index: indexable,
       follow: true,
       googleBot: {
-        index: !SITE_NOINDEX,
+        index: indexable,
         follow: true,
         "max-image-preview": "large",
       },
@@ -91,30 +95,43 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const messages = await getMessages();
+  const t = await getTranslations();
 
-  // middleware가 x-pathname header를 설정함. AdSense 정책상 noindex / auth-gated /
-  // 비-EN locale 페이지에는 광고 코드를 두지 않는 게 안전. index 가능한 영어 콘텐츠
-  // 페이지에서만 SSR <script>로 광고 코드 로드 → 크롤러는 영어 콘텐츠 페이지에서
-  // 광고 코드 발견 + noindex 페이지에서는 광고 코드 없음.
+  // middleware가 x-pathname header를 설정함 (middleware.ts 참고).
+  // AdSense 정책상 noindex / auth-gated / 비-EN locale 페이지에는 광고 코드를 두지 않는 게 안전.
+  // index 가능한 영어 콘텐츠 페이지에서만 SSR <script>로 광고 코드 로드 → 크롤러는
+  // 영어 콘텐츠 페이지에서 광고 코드 발견 + noindex 페이지에서는 광고 코드 없음.
   const headersList = await headers();
   const pathname = headersList.get("x-pathname") ?? "";
+  // 🔴 2026-08-22: `/search`가 이 목록에 없어서 **31단어짜리 빈 검색결과 페이지에
+  // 광고 코드가 실려 나가고 있었다.** `?q=zzzz` 같은 무결과 쿼리마다 그런 URL이
+  // 무한히 생기고, noindex라 색인은 안 되지만 **심사 크롤러는 별도로 사이트를 돈다.**
+  // 우리 거절 사유가 문자 그대로 "가치가 별로 없는 콘텐츠"였다.
+  // 이 목록과 실제 noindex 선언이 갈라지지 않는지는 contentClaims 가드가 지킨다.
   const isNoindexPath =
     pathname.includes("/account") ||
+    pathname.includes("/search") ||
     pathname.startsWith("/ko") ||
     pathname.startsWith("/zh");
-  // 🔴 2026-08-23: 여기가 `locale === "en" && !isNoindexPath`였다. 그런데 위
-  //    `generateMetadata`가 **모든 페이지에 noindex를 걸고 있다** — 광고 코드가 그걸
-  //    모르고 전 영어 페이지에 실려 나갔다. noindex 사이트에 광고 코드를 얹으면
-  //    "가치 없는 인벤토리"로 읽히고, 심사는 계정 단위라 Kiwi 신청에 그대로 얹힌다.
-  const showAdSenseScript = !SITE_NOINDEX && locale === "en" && !isNoindexPath;
+
+  // 🔴 2026-08-14: 게시자 콘텐츠가 없는 유틸리티 페이지에는 광고 코드를 두지 않는다.
+  // Google Publisher Policies "Inventory value" — 약관·정책·문의가 그 범주다.
+  // 지금은 미승인이라 광고가 렌더되진 않지만, **심사 크롤러가 보는 건 이 코드다.**
+  const isUtilityPath =
+    pathname.includes("/policies") ||
+    pathname.includes("/terms") ||
+    pathname.includes("/contact");
+
+  const showAdSenseScript = locale === "en" && !SITE_NOINDEX && !isNoindexPath && !isUtilityPath;
 
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Aussie Lunchbox",
+    name: BRAND.SITE_NAME,
     url: BASE_URL,
-    logo: `${BASE_URL}/opengraph-image`,
-    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists costed against Woolworths prices.",
+    logo: `${BASE_URL}/assets/aussie_lunchbox_logo.png`,
+    // 🔴 09-29: 「Woolworths & Pak'nSave prices」였다 — 모든 페이지 <head>에 실리는데, 플래너 원가는 Woolworths 캐시뿐이다.
+    description: "Free school lunch planner for Australian families. Weekly meal plans, allergy filters, and shopping lists costed at regular Woolworths prices.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
@@ -146,11 +163,26 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd).replace(/</g, "\\u003c") }}
         />
         <NextIntlClientProvider messages={messages}>
+          {/*
+            WCAG 2.4.1 (Bypass Blocks, Level A). 이게 없으면 키보드·스크린리더
+            사용자는 페이지마다 내비게이션을 전부 지나야 본문에 닿는다.
+            `<main>`은 페이지마다 따로 렌더되므로 여기서 래퍼에 id를 준다 —
+            링크는 한 곳에만 두고, 모든 페이지가 같은 목적지를 갖는다.
+          */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#1F2937] focus:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-[#2563EB]"
+          >
+            {t("skip_to_content")}
+          </a>
           <Navbar />
-          {children}
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
           <CookieConsent />
         </NextIntlClientProvider>
         <ConsentScripts />
+        <Analytics />
       </body>
     </html>
   );

@@ -56,12 +56,13 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: "Aussie Lunchbox <noreply@aussielunchbox.com>",
+      replyTo: "aussielunchbox@gmail.com",
       to: [to],
       subject: safeSubject,
       text: safeBody,
       attachments: [
         {
-          filename: "aussie_lunchbox_plan.pdf",
+          filename: "kiwi_lunchbox_plan.pdf",
           content: pdfBase64,
         },
       ],

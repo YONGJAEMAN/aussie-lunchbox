@@ -45,5 +45,9 @@ public/sw.js
 public/sw.js.map
 public/swe-worker-*.js
 public/swe-worker-*.js.map
-.claude/
-.claude/
+
+# superpowers 브레인스토밍 목업 (로컬 전용)
+.superpowers/
+
+# adsense-checklist.sh 출력 (실행 시각이 들어가 매번 달라진다)
+checklist.md

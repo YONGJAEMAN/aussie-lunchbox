@@ -1,23 +1,29 @@
-name: Weekly Price Update
+name: Weekly Price Check
 
+# 🔴 이 워크플로는 **수집하지 않는다. 감시만 한다.** (Kiwi 2026-10-26 구조를 그대로)
+#    수집은 로컬 launchd(`ops/aussie-prices.plist`, 일 19:00 NZ → `scripts/collect_prices_local.sh`)가 한다.
+#    Woolworths AU는 GitHub 러너에서 막힌다 — Aussie 캐시가 08-16부터 146개 전부 「Est. (Fallback)」였던 이유다.
+#    읽지 못하는 곳에서 수집기를 돌릴 이유가 없다. 챌린지 우회는 하지 않는다.
+#
+# 남긴 것: 로컬 수집이 멈추거나 본문 수치가 가격과 어긋나면 **빨간불**이 되는 검사.
 on:
-  # 매주 월요일 오전 8시 NZ 시간 (NZST 기준 UTC 일요일 20:00)
-  # 서머타임(NZDT, 10월~3월)에는 NZ 시간 09:00에 실행됨 — 운영상 무방
+  # 목요일 09:00 NZDT / 08:00 NZST (UTC 수요일 20:00).
+  # 일요일 수집분이 월요일까지 병합되면 목요일엔 4일이다. 일요일을 한 번 놓치면 11일 → 10일 가드에 걸린다.
+  # 월요일에 두지 않는 이유: 그날 아침엔 지난주 특가가 막 만료돼 전단을 넣기 전까지 가드가 **옳게** 빨갛다 —
+  #   매주 뜨는 빨간불은 아무도 안 본다(08-30 실패를 6일간 몰랐다).
   schedule:
-    - cron: "0 20 * * 0"
+    - cron: "0 20 * * 3"
   workflow_dispatch:
 
 jobs:
-  update-prices:
+  check-prices:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -26,24 +32,53 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        # npm ci는 lock 파일이 100% sync 안 되면 실패해서 가격 수집 자체가 멈춤.
-        # 가격 캐시만 갱신하는 가벼운 작업이라 install로 충분 (--no-save는 lock 변경 방지).
         run: npm install --no-save --no-audit --no-fund
 
-      - name: Fetch Woolworths AU prices
-        run: node scripts/update_prices.mjs
+      # 🔴 2026-08-18: 가격이 바뀌면 본문에 손으로 적힌 비용 수치가 안 따라온다 — 한 번 돌렸더니
+      #    게시된 주장 5건이 곧바로 거짓이 됐다. 그 가드는 vitest에만 있어서 사람이 돌릴 때까지 모른다.
+      - name: Content claims must still match the prices
+        id: claims
+        continue-on-error: true
+        run: npx vitest run
 
-      - name: Commit and push price cache
+      # 🔴 2026-09-06: vitest가 전부 통과하는데 `next build`의 tsc가 깨져 배포가 조용히 멈췄다.
+      - name: Types must still compile
+        id: types
+        continue-on-error: true
+        run: npm run typecheck
+
+      # 🔴 2026-09-25: 앞 단계가 실패하면 이 검사가 통째로 건너뛰어졌다 — 그래서 앞 둘은
+      #    continue-on-error로 끝까지 돌고, 결과(outcome)를 **여기 한 곳에서** 모아 판정한다.
+      #    continue-on-error만 붙이면 실패가 초록으로 삼켜지므로 아래에서 다시 본다.
+      - name: Fail if the published data has gone stale
+        env:
+          CLAIMS_OUTCOME: ${{ steps.claims.outcome }}
+          TYPES_OUTCOME: ${{ steps.types.outcome }}
         run: |
-          # GitHub Actions 표준 bot identity 사용
-          # 이 email은 GitHub이 자동으로 github-actions[bot] user와 매칭함 →
-          # Vercel Hobby plan에서 "committer not associated with GitHub user" 에러 방지
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/price_cache.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "🛒 Woolworths 가격 업데이트 ($(date '+%Y-%m-%d'))"
-            git push origin main
-          fi
+          node -e '
+            const DAY = 86400000, MAX_AGE = 10;
+            let bad = false;
+
+            // 앞 검사 두 개의 결과 — "success"가 아니면 전부 실패로 친다(빈 값·skipped 포함).
+            for (const [name, v] of [["콘텐츠 주장(vitest)", process.env.CLAIMS_OUTCOME],
+                                     ["타입 검사(tsc)", process.env.TYPES_OUTCOME]]) {
+              console.log(`${name}: ${v || "(결과 없음)"}`);
+              if (v !== "success") { console.error(`❌ ${name}이 통과하지 못했다 — 위 단계 로그를 볼 것.`); bad = true; }
+            }
+
+            // Aussie: 가격지수(priceIndex.json)는 3단계에서 연다 — 그때 Kiwi의 지수 신선도 검사를 되살릴 것.
+
+            const cache = require("./data/price_cache.json");
+            const stamps = Object.values(cache).map(v => v && v.timestamp).filter(Boolean);
+            const cacheAge = Math.floor((Date.now() - Math.max(...stamps)) / DAY);
+            console.log(`플래너 가격캐시 ${stamps.length}개 · 가장 최신이 ${cacheAge}일 전`);
+            if (!Number.isFinite(cacheAge) || cacheAge < 0) {
+              console.error(`❌ 플래너 캐시 나이를 못 읽었다(${cacheAge}) — 나이를 모르면 통과가 아니다.`);
+              bad = true;
+            } else if (cacheAge > MAX_AGE) {
+              console.error(`❌ 플래너 캐시가 ${cacheAge}일째 낡았다 — 도시락 비용이 옛 가격으로 나온다. 로컬 수집(일 19:00 NZ) 로그 ~/Library/Logs/aussielunchbox-prices.log를 볼 것.`);
+              bad = true;
+            }
+
+            if (bad) process.exit(1);
+          '

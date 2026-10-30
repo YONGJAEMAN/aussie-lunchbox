@@ -1,1316 +1,2543 @@
 {
   "Croissant": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4.5,
-      "image": "",
-      "name": "Croissant",
-      "source": "Est. (Fallback)"
+      "price": 2.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/033593.jpg",
+      "name": "Woolworths All Butter Croissants",
+      "source": "Woolworths Australia",
+      "sku": "33593",
+      "allergens": [
+        "Milk, Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Egg, Tree Nuts, Soy, Almond, Pecan"
     }
   },
   "Ham": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 6,
-      "image": "",
-      "name": "Ham",
-      "source": "Est. (Fallback)"
+      "price": 6.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/290324.jpg",
+      "name": "Don Leg Ham Shaved",
+      "source": "Woolworths Australia",
+      "sku": "290324",
+      "allergens": [],
+      "allergenMaybePresent": "Soy"
     }
   },
   "Cheese": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 13,
-      "image": "",
-      "name": "Cheese",
-      "source": "Est. (Fallback)"
+      "price": 6.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/310237.jpg",
+      "name": "Woolworths Tasty Cheese Block",
+      "source": "Woolworths Australia",
+      "sku": "310237",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Cucumber": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Cucumber",
-      "source": "Est. (Fallback)"
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/137102.jpg",
+      "name": "Woolworths Continental Cucumbers",
+      "source": "Woolworths Australia",
+      "sku": "137102",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Tortilla": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Tortilla",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/634919.jpg",
+      "name": "Woolworths Wholegrain Wrap 8Pk",
+      "source": "Woolworths Australia",
+      "sku": "634919",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Chicken": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 15,
-      "image": "",
-      "name": "Chicken",
-      "source": "Est. (Fallback)"
+      "price": 11,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/969723.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Breast Fillet",
+      "source": "Woolworths Australia",
+      "sku": "969723",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Lettuce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4.5,
-      "image": "",
-      "name": "Lettuce",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/154340.jpg",
+      "name": "Iceberg Lettuce",
+      "source": "Woolworths Australia",
+      "sku": "154340",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Mayo": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 7,
-      "image": "",
-      "name": "Mayo",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/360680.jpg",
+      "name": "Woolworths Whole Egg Mayonnaise",
+      "source": "Woolworths Australia",
+      "sku": "360680",
+      "allergens": [
+        "Egg, Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Bread": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4,
-      "image": "",
-      "name": "Bread",
-      "source": "Est. (Fallback)"
+      "price": 4.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/713816.jpg",
+      "name": "Tip Top The One White Sandwich Slice Bread Loaf Bakery",
+      "source": "Woolworths Australia",
+      "sku": "713816",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": "Sesame"
     }
   },
   "Turkey": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Turkey",
-      "source": "Est. (Fallback)"
+      "price": 6.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/290982.jpg",
+      "name": "Don Shaved Turkey",
+      "source": "Woolworths Australia",
+      "sku": "290982",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Tomato": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 1,
-      "image": "",
-      "name": "Tomato",
-      "source": "Est. (Fallback)"
+      "price": 0.65,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/134034.jpg",
+      "name": "Gourmet Tomato",
+      "source": "Woolworths Australia",
+      "sku": "134034",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Bagel": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Bagel",
-      "source": "Est. (Fallback)"
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/270580.jpg",
+      "name": "Abe's Bagels The Natural Bagels",
+      "source": "Woolworths Australia",
+      "sku": "270580",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cream Cheese": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5.5,
-      "image": "",
-      "name": "Cream Cheese",
-      "source": "Est. (Fallback)"
+      "price": 5.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/048062.jpg",
+      "name": "Philadelphia Original Cream Cheese Block",
+      "source": "Woolworths Australia",
+      "sku": "48062",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Smoked Salmon": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Smoked Salmon",
-      "source": "Est. (Fallback)"
+      "price": 9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/345350.jpg",
+      "name": "Ocean Blue Smoked Salmon",
+      "source": "Woolworths Australia",
+      "sku": "345350",
+      "allergens": [
+        "Fish"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Boiled Eggs": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 9.5,
-      "image": "",
-      "name": "Boiled Eggs",
-      "source": "Est. (Fallback)"
+      "price": 5.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/165367.jpg",
+      "name": "Woolworths 12 Pack Extra Large Cage Free Eggs",
+      "source": "Woolworths Australia",
+      "sku": "165367",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Canned Tuna": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.8,
-      "image": "",
-      "name": "Canned Tuna",
-      "source": "Est. (Fallback)"
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/827211.jpg",
+      "name": "Woolworths Lemon & Pepper Tuna",
+      "source": "Woolworths Australia",
+      "sku": "827211",
+      "allergens": [
+        "Fish"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Roll": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Roll",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/130502.jpg",
+      "name": "Woolworths Soft Round Rolls Extra Soft Lunch",
+      "source": "Woolworths Australia",
+      "sku": "130502",
+      "allergens": [
+        "CONTAINS:Gluten,Wheat"
+      ],
+      "allergenMaybePresent": "MAY CONTAIN:Egg,Lupin,Milk,Sesame,Soy,Peanuts,Tree Nuts"
     }
   },
   "Roast Beef": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Roast Beef",
-      "source": "Est. (Fallback)"
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/544698.jpg",
+      "name": "Primo Roast Beef",
+      "source": "Woolworths Australia",
+      "sku": "544698",
+      "allergens": [],
+      "allergenMaybePresent": "Milk, Soy"
     }
   },
   "Mustard": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Mustard",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/032822.jpg",
+      "name": "MasterFoods Wholegrain Mustard",
+      "source": "Woolworths Australia",
+      "sku": "32822",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Rocket": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Rocket",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/380580.jpg",
+      "name": "Woolworths Baby Leaf Rocket",
+      "source": "Woolworths Australia",
+      "sku": "380580",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Ciabatta": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Ciabatta",
-      "source": "Est. (Fallback)"
+      "price": 4.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/125496.jpg",
+      "name": "Woolworths Plain Ciabatta Rolls",
+      "source": "Woolworths Australia",
+      "sku": "125496",
+      "allergens": [
+        "CONTAINS:Gluten,Wheat,Soy"
+      ],
+      "allergenMaybePresent": "MAY CONTAIN:Egg,Lupin,Milk,Sesame,Peanuts,Tree Nuts"
     }
   },
   "Pesto": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 6.5,
-      "image": "",
-      "name": "Pesto",
-      "source": "Est. (Fallback)"
+      "price": 1.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/753340.jpg",
+      "name": "Woolworths Pesto Basil",
+      "source": "Woolworths Australia",
+      "sku": "753340",
+      "allergens": [
+        "Cashew, Egg, Milk"
+      ],
+      "allergenMaybePresent": "Tree Nuts, Peanuts"
     }
   },
   "Mozzarella": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Mozzarella",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/732059.jpg",
+      "name": "La Casa Del Formaggio Fresh Mozzarella",
+      "source": "Woolworths Australia",
+      "sku": "732059",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Hummus": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5.5,
-      "image": "",
-      "name": "Hummus",
-      "source": "Est. (Fallback)"
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/323320.jpg",
+      "name": "Willow Farm Dip Hommus",
+      "source": "Woolworths Australia",
+      "sku": "323320",
+      "allergens": [
+        "Sesame"
+      ],
+      "allergenMaybePresent": "Tree Nuts"
     }
   },
   "Carrot": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 0.6,
-      "image": "",
-      "name": "Carrot",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/135369.jpg",
+      "name": "Woolworths Australian Grown Carrots",
+      "source": "Woolworths Australia",
+      "sku": "135369",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Spinach": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4.5,
-      "image": "",
-      "name": "Spinach",
-      "source": "Est. (Fallback)"
+      "price": 3.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/524322.jpg",
+      "name": "Woolworths Baby Leaf Spinach",
+      "source": "Woolworths Australia",
+      "sku": "524322",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Bacon": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 8,
-      "image": "",
-      "name": "Bacon",
-      "source": "Est. (Fallback)"
-    }
-  },
-  "Marmite": {
-    "timestamp": 1792966998512,
-    "data": {
-      "price": 5,
-      "image": "",
-      "name": "Marmite",
-      "source": "Est. (Fallback)"
+      "price": 4.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/266794.jpg",
+      "name": "Woolworths Middle Bacon Middle Cut Rashers",
+      "source": "Woolworths Australia",
+      "sku": "266794",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Butter": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 9,
-      "image": "",
-      "name": "Butter",
-      "source": "Est. (Fallback)"
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/048650.jpg",
+      "name": "Woolworths Salted Butter",
+      "source": "Woolworths Australia",
+      "sku": "48650",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Peanut Butter": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 6,
-      "image": "",
-      "name": "Peanut Butter",
-      "source": "Est. (Fallback)"
+      "price": 5.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/033605.jpg",
+      "name": "Bega Peanut Butter Smooth",
+      "source": "Woolworths Australia",
+      "sku": "33605",
+      "allergens": [
+        "Peanuts"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Jam": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4.5,
-      "image": "",
-      "name": "Jam",
-      "source": "Est. (Fallback)"
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/292796.jpg",
+      "name": "Cottee's Strawberry Jam",
+      "source": "Woolworths Australia",
+      "sku": "292796",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Macaroni": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Macaroni",
-      "source": "Est. (Fallback)"
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/346837.jpg",
+      "name": "Woolworths Pasta Macaroni",
+      "source": "Woolworths Australia",
+      "sku": "346837",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Egg, Milk"
     }
   },
   "Cheese Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 13,
-      "image": "",
-      "name": "Cheese Sauce",
-      "source": "Est. (Fallback)"
+      "price": 1.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/757571.jpg",
+      "name": "Gravox Cheese Sauce Mix CHEESE",
+      "source": "Woolworths Australia",
+      "sku": "757571",
+      "allergens": [
+        "Milk, Soy"
+      ],
+      "allergenMaybePresent": "Egg, Sesame, Gluten, Wheat"
     }
   },
   "Milk": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.8,
-      "image": "",
-      "name": "Milk",
-      "source": "Est. (Fallback)"
+      "price": 1.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/050923.jpg",
+      "name": "Woolworths Full Cream Milk",
+      "source": "Woolworths Australia",
+      "sku": "50923",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Rice": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Rice",
-      "source": "Est. (Fallback)"
+      "price": 1.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/035007.jpg",
+      "name": "Woolworths Essentials Long Grain Rice Long Grain",
+      "source": "Woolworths Australia",
+      "sku": "35007",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Egg": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 9.5,
-      "image": "",
-      "name": "Egg",
-      "source": "Est. (Fallback)"
+      "price": 6.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/224763.jpg",
+      "name": "Woolworths 12 Pack X Large Free Range Eggs",
+      "source": "Woolworths Australia",
+      "sku": "224763",
+      "allergens": [
+        "Egg"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Peas": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Peas",
-      "source": "Est. (Fallback)"
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/754181.jpg",
+      "name": "Woolworths Frozen Australian Baby Peas",
+      "source": "Woolworths Australia",
+      "sku": "754181",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Ham/Bacon": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 6,
-      "image": "",
-      "name": "Ham/Bacon",
-      "source": "Est. (Fallback)"
+      "price": 6.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/324925.jpg",
+      "name": "Spam Ham With Real Bacon",
+      "source": "Woolworths Australia",
+      "sku": "324925",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Soy Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Soy Sauce",
-      "source": "Est. (Fallback)"
+      "price": 4.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/198763.jpg",
+      "name": "Lee Kum Kee Soy Sauce Premium",
+      "source": "Woolworths Australia",
+      "sku": "198763",
+      "allergens": [
+        "Soy, Soybean, Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Chicken Thigh": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Chicken Thigh",
-      "source": "Est. (Fallback)"
+      "price": 9.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6078692.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Thigh Fillets",
+      "source": "Woolworths Australia",
+      "sku": "6078692",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Teriyaki Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Teriyaki Sauce",
-      "source": "Est. (Fallback)"
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/703375.jpg",
+      "name": "Passage To Asia Teriyaki Chicken",
+      "source": "Woolworths Australia",
+      "sku": "703375",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Broccoli": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Broccoli",
-      "source": "Est. (Fallback)"
+      "price": 2.28,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/134681.jpg",
+      "name": "Fresh Broccoli",
+      "source": "Woolworths Australia",
+      "sku": "134681",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Mince": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Mince",
-      "source": "Est. (Fallback)"
+      "price": 7.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/577863.jpg",
+      "name": "Woolworths Beef Mince",
+      "source": "Woolworths Australia",
+      "sku": "577863",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Breadcrumbs": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4,
-      "image": "",
-      "name": "Breadcrumbs",
-      "source": "Est. (Fallback)"
+      "price": 3.1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/036440.jpg",
+      "name": "Krummies Breadcrumbs",
+      "source": "Woolworths Australia",
+      "sku": "36440",
+      "allergens": [
+        "Fish, Gluten, Milk, Sesame, Soy"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Tomato Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 1,
-      "image": "",
-      "name": "Tomato Sauce",
-      "source": "Est. (Fallback)"
+      "price": 1.85,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/230519.jpg",
+      "name": "Woolworths Tomato Sauce Squeeze",
+      "source": "Woolworths Australia",
+      "sku": "230519",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Spaghetti": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Spaghetti",
-      "source": "Est. (Fallback)"
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/346830.jpg",
+      "name": "Woolworths Pasta Spaghetti",
+      "source": "Woolworths Australia",
+      "sku": "346830",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Egg, Milk"
     }
   },
   "Beef Mince": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Beef Mince",
-      "source": "Est. (Fallback)"
+      "price": 7.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/577863.jpg",
+      "name": "Woolworths Beef Mince",
+      "source": "Woolworths Australia",
+      "sku": "577863",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Butter Chicken Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 9,
-      "image": "",
-      "name": "Butter Chicken Sauce",
-      "source": "Est. (Fallback)"
+      "price": 2.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/157531.jpg",
+      "name": "Woolworths Butter Chicken Simmer Sauce",
+      "source": "Woolworths Australia",
+      "sku": "157531",
+      "allergens": [
+        "Egg, Milk"
+      ],
+      "allergenMaybePresent": "Peanuts"
     }
   },
   "Chickpeas": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Chickpeas",
-      "source": "Est. (Fallback)"
+      "price": 1.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/227107.jpg",
+      "name": "Edgell Australian Grown Chickpeas",
+      "source": "Woolworths Australia",
+      "sku": "227107",
+      "allergens": [],
+      "allergenMaybePresent": "Gluten, Soy, Lupin, Wheat"
     }
   },
   "Potato": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 1.5,
-      "image": "",
-      "name": "Potato",
-      "source": "Est. (Fallback)"
+      "price": 3.25,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/262783.jpg",
+      "name": "Woolworths Washed Potatoes Bag",
+      "source": "Woolworths Australia",
+      "sku": "262783",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Coconut Milk": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.8,
-      "image": "",
-      "name": "Coconut Milk",
-      "source": "Est. (Fallback)"
+      "price": 3.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/000168.jpg",
+      "name": "TCC Coconut Milk",
+      "source": "Woolworths Australia",
+      "sku": "168",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Curry Paste": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Curry Paste",
-      "source": "Est. (Fallback)"
+      "price": 2.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/224632.jpg",
+      "name": "Mr Chen's Thai Red Curry Paste",
+      "source": "Woolworths Australia",
+      "sku": "224632",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": "Crustacean, Milk, Peanuts, Sesame, Gluten, Mollusc, Wheat"
     }
   },
   "Chicken Skewers": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Chicken Skewers",
-      "source": "Est. (Fallback)"
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/908166.jpg",
+      "name": "Woolworths 6 Pack Honey Soy Chicken Kebabs",
+      "source": "Woolworths Australia",
+      "sku": "908166",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Peanut Sauce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Peanut Sauce",
-      "source": "Est. (Fallback)"
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/703559.jpg",
+      "name": "Passage To Asia Satay Chicken",
+      "source": "Woolworths Australia",
+      "sku": "703559",
+      "allergens": [
+        "Peanuts"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Flour": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Flour",
-      "source": "Est. (Fallback)"
+      "price": 2.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/094124.jpg",
+      "name": "Woolworths Essentials Self Raising Flour",
+      "source": "Woolworths Australia",
+      "sku": "94124",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Tomato Paste": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 1,
-      "image": "",
-      "name": "Tomato Paste",
-      "source": "Est. (Fallback)"
+      "price": 0.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/090260.jpg",
+      "name": "Woolworths Essentials Tomato Paste",
+      "source": "Woolworths Australia",
+      "sku": "90260",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Sausage Meat": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Sausage Meat",
-      "source": "Est. (Fallback)"
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/109099.jpg",
+      "name": "Woolworths Beef Sausage Mince",
+      "source": "Woolworths Australia",
+      "sku": "109099",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Puff Pastry": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5.5,
-      "image": "",
-      "name": "Puff Pastry",
-      "source": "Est. (Fallback)"
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/018366.jpg",
+      "name": "Woolworths Puff Pastry Sheets",
+      "source": "Woolworths Australia",
+      "sku": "18366",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Soy"
     }
   },
   "Egg (glaze)": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Egg (glaze)",
-      "source": "Est. (Fallback)"
+      "price": 6.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/224763.jpg",
+      "name": "Woolworths 12 Pack X Large Free Range Eggs",
+      "source": "Woolworths Australia",
+      "sku": "224763",
+      "allergens": [
+        "Egg"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Eggs": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 9.5,
-      "image": "",
-      "name": "Eggs",
-      "source": "Est. (Fallback)"
+      "price": 5.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/165367.jpg",
+      "name": "Woolworths 12 Pack Extra Large Cage Free Eggs",
+      "source": "Woolworths Australia",
+      "sku": "165367",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Pastry": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5.5,
-      "image": "",
-      "name": "Pastry",
-      "source": "Est. (Fallback)"
+      "price": 3.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/018366.jpg",
+      "name": "Woolworths Puff Pastry Sheets",
+      "source": "Woolworths Australia",
+      "sku": "18366",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Soy"
     }
   },
   "Cream/Milk": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793276391041,
     "data": {
-      "price": 3.8,
-      "image": "",
-      "name": "Cream/Milk",
-      "source": "Est. (Fallback)"
+      "price": 3.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/044317.jpg",
+      "name": "Woolworths Thickened Cream",
+      "source": "Woolworths Australia",
+      "sku": "44317",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Feta": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Feta",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/452083.jpg",
+      "name": "Woolworths Greek Style Fetta",
+      "source": "Woolworths Australia",
+      "sku": "452083",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Pastry Cases": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5.5,
-      "image": "",
-      "name": "Pastry Cases",
-      "source": "Est. (Fallback)"
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/032897.jpg",
+      "name": "Pampas Shortcrust Pastry 5 Sheets",
+      "source": "Woolworths Australia",
+      "sku": "32897",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Ripe Bananas": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 0.4,
-      "image": "",
-      "name": "Ripe Bananas",
-      "source": "Est. (Fallback)"
+      "price": 3.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/106218.jpg",
+      "name": "Bananas Kids",
+      "source": "Woolworths Australia",
+      "sku": "106218",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Sugar": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Sugar",
-      "source": "Est. (Fallback)"
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/033157.jpg",
+      "name": "CSR White Sugar",
+      "source": "Woolworths Australia",
+      "sku": "33157",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Sushi Rice": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Sushi Rice",
-      "source": "Est. (Fallback)"
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6091997.jpg",
+      "name": "Sun Rice Sushi Rice",
+      "source": "Woolworths Australia",
+      "sku": "6091997",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Nori": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Nori",
-      "source": "Est. (Fallback)"
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/185395.jpg",
+      "name": "Obento Japanese Yaki Nori For Sushi",
+      "source": "Woolworths Australia",
+      "sku": "185395",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Tuna/Chicken/Avocado": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
+      "price": 5,
       "image": "",
       "name": "Tuna/Chicken/Avocado",
       "source": "Est. (Fallback)"
     }
   },
   "Rice Paper": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Rice Paper",
-      "source": "Est. (Fallback)"
+      "price": 2.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/121531.jpg",
+      "name": "Pandaroo Ingredients Rice Paper Spring Roll",
+      "source": "Woolworths Australia",
+      "sku": "121531",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Rice Noodles": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Rice Noodles",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/040313.jpg",
+      "name": "Erawan Rice Stick Medium",
+      "source": "Woolworths Australia",
+      "sku": "40313",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Chicken/Tofu": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Chicken/Tofu",
-      "source": "Est. (Fallback)"
+      "price": 9.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6078623.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Breast Fillets",
+      "source": "Woolworths Australia",
+      "sku": "6078623",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Herbs": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Herbs",
-      "source": "Est. (Fallback)"
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/251120.jpg",
+      "name": "Woolworths Mixed Herbs Dried",
+      "source": "Woolworths Australia",
+      "sku": "251120",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Pasta spirals": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
-      "image": "",
-      "name": "Pasta spirals",
-      "source": "Est. (Fallback)"
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/346833.jpg",
+      "name": "Woolworths Pasta Spirals",
+      "source": "Woolworths Australia",
+      "sku": "346833",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Egg, Milk"
     }
   },
   "Pesto/Mayo": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 7,
-      "image": "",
-      "name": "Pesto/Mayo",
-      "source": "Est. (Fallback)"
+      "price": 1.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/753340.jpg",
+      "name": "Woolworths Pesto Basil",
+      "source": "Woolworths Australia",
+      "sku": "753340",
+      "allergens": [
+        "Cashew, Egg, Milk"
+      ],
+      "allergenMaybePresent": "Tree Nuts, Peanuts"
     }
   },
   "Corn": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Corn",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/034437.jpg",
+      "name": "Edgell Corn Kernels",
+      "source": "Woolworths Australia",
+      "sku": "34437",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Olives": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Olives",
-      "source": "Est. (Fallback)"
+      "price": 4.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/329746.jpg",
+      "name": "Sandhurst Olives Green Sicilian",
+      "source": "Woolworths Australia",
+      "sku": "329746",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Yoghurt": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 7,
-      "image": "",
-      "name": "Yoghurt",
-      "source": "Est. (Fallback)"
-    }
-  },
-  "Muesli (Nut-free)": {
-    "timestamp": 1792966998512,
-    "data": {
-      "price": 8,
-      "image": "",
-      "name": "Muesli (Nut-free)",
-      "source": "Est. (Fallback)"
+      "price": 4.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/571487.jpg",
+      "name": "Woolworths Natural Greek Style Yoghurt",
+      "source": "Woolworths Australia",
+      "sku": "571487",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Berries": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Berries",
-      "source": "Est. (Fallback)"
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/260010.jpg",
+      "name": "Woolworths Frozen Mixed Berries",
+      "source": "Woolworths Australia",
+      "sku": "260010",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Black Beans": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Black Beans",
-      "source": "Est. (Fallback)"
+      "price": 1.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/930176.jpg",
+      "name": "Edgell Black Beans Plant Protein",
+      "source": "Woolworths Australia",
+      "sku": "930176",
+      "allergens": [],
+      "allergenMaybePresent": "Soy"
     }
   },
   "Salsa": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Salsa",
-      "source": "Est. (Fallback)"
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/231416.jpg",
+      "name": "Old El Paso Chunky Salsa Dip Mild Mild",
+      "source": "Woolworths Australia",
+      "sku": "231416",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Avocado": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
-      "image": "",
-      "name": "Avocado",
-      "source": "Est. (Fallback)"
+      "price": 2.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/120080.jpg",
+      "name": "Hass Avocado",
+      "source": "Woolworths Australia",
+      "sku": "120080",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Vegan Mayo": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 7,
-      "image": "",
-      "name": "Vegan Mayo",
-      "source": "Est. (Fallback)"
+      "price": 6.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/164531.jpg",
+      "name": "Heinz Seriously Good Mayonnaise Vegan Mayo",
+      "source": "Woolworths Australia",
+      "sku": "164531",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Celery": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Celery",
-      "source": "Est. (Fallback)"
+      "price": 4.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/745467.jpg",
+      "name": "Woolworths Celery Sticks Punnet",
+      "source": "Woolworths Australia",
+      "sku": "745467",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "GF Pasta": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
-      "image": "",
-      "name": "GF Pasta",
-      "source": "Est. (Fallback)"
+      "price": 5.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/188832.jpg",
+      "name": "Buontempo Gluten Free Pasta Spirals",
+      "source": "Woolworths Australia",
+      "sku": "188832",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Basil": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Basil",
-      "source": "Est. (Fallback)"
+      "price": 3.3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/133621.jpg",
+      "name": "Woolworths Green Basil Bunch",
+      "source": "Woolworths Australia",
+      "sku": "133621",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Tofu": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Tofu",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/023038.jpg",
+      "name": "Macro Firm Tofu",
+      "source": "Woolworths Australia",
+      "sku": "23038",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": "Peanuts, Sesame"
     }
   },
   "GF Crackers": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "GF Crackers",
-      "source": "Est. (Fallback)"
+      "price": 4.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/612774.jpg",
+      "name": "Arnott's Gluten Free Jatz Cracker Biscuits",
+      "source": "Woolworths Australia",
+      "sku": "612774",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": "Egg, Milk"
     }
   },
   "Pasta": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
-      "image": "",
-      "name": "Pasta",
-      "source": "Est. (Fallback)"
+      "price": 2.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/048900.jpg",
+      "name": "San Remo Bows Ties Pasta No 23",
+      "source": "Woolworths Australia",
+      "sku": "48900",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Egg, Soy"
     }
   },
   "Dairy-Free Pesto": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 6.5,
-      "image": "",
-      "name": "Dairy-Free Pesto",
-      "source": "Est. (Fallback)"
+      "price": 4.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/190944.jpg",
+      "name": "Barilla Basil Pesto Vegan Pasta Sauce",
+      "source": "Woolworths Australia",
+      "sku": "190944",
+      "allergens": [
+        "Cashew"
+      ],
+      "allergenMaybePresent": "Almond, Pistachio, Walnut"
     }
   },
   "Cherry Tomatoes": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cherry Tomatoes",
-      "source": "Est. (Fallback)"
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/149620.jpg",
+      "name": "Woolworths Cherry Tomatoes Punnet",
+      "source": "Woolworths Australia",
+      "sku": "149620",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Falafel": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Falafel",
-      "source": "Est. (Fallback)"
+      "price": 3.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/106765.jpg",
+      "name": "Kings Falafel Mix",
+      "source": "Woolworths Australia",
+      "sku": "106765",
+      "allergens": [],
+      "allergenMaybePresent": "Gluten, Wheat"
     }
   },
   "Quinoa": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Quinoa",
-      "source": "Est. (Fallback)"
+      "price": 6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/717631.jpg",
+      "name": "Macro Organic Quinoa Tri Colour",
+      "source": "Woolworths Australia",
+      "sku": "717631",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Lemon Dressing": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Lemon Dressing",
-      "source": "Est. (Fallback)"
+      "price": 6.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/710191.jpg",
+      "name": "Birch & Waite Greek Lemon Dressing",
+      "source": "Woolworths Australia",
+      "sku": "710191",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "GF Sausages": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "GF Sausages",
-      "source": "Est. (Fallback)"
+      "price": 4.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6077163.jpg",
+      "name": "Market Value 8 Pack Thin Honey & Herb BBQ Sausages",
+      "source": "Woolworths Australia",
+      "sku": "6077163",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Apple": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 0.9,
-      "image": "",
-      "name": "Apple",
-      "source": "Est. (Fallback)"
+      "price": 7.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/314012.jpg",
+      "name": "Woolworths Royal Gala Apple Punnet",
+      "source": "Woolworths Australia",
+      "sku": "314012",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Grapes": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Grapes",
-      "source": "Est. (Fallback)"
+      "price": 10.71,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/138801.jpg",
+      "name": "White Seedless Grapes Bag Approx. 900g",
+      "source": "Woolworths Australia",
+      "sku": "138801",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Mandarin": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Mandarin",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/845671.jpg",
+      "name": "The Odd Bunch Mandarin Prepacked",
+      "source": "Woolworths Australia",
+      "sku": "845671",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Banana": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 0.4,
-      "image": "",
-      "name": "Banana",
-      "source": "Est. (Fallback)"
+      "price": 0.81,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/133211.jpg",
+      "name": "Cavendish Bananas",
+      "source": "Woolworths Australia",
+      "sku": "133211",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Pear": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Pear",
-      "source": "Est. (Fallback)"
+      "price": 1.42,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/115330.jpg",
+      "name": "Fresh Packham Pear",
+      "source": "Woolworths Australia",
+      "sku": "115330",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Capsicum": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 2.5,
-      "image": "",
-      "name": "Capsicum",
-      "source": "Est. (Fallback)"
+      "price": 1.48,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/135306.jpg",
+      "name": "Red Capsicum",
+      "source": "Woolworths Australia",
+      "sku": "135306",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cheese Block": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 13,
-      "image": "",
-      "name": "Cheese Block",
-      "source": "Est. (Fallback)"
+      "price": 6.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/310237.jpg",
+      "name": "Woolworths Tasty Cheese Block",
+      "source": "Woolworths Australia",
+      "sku": "310237",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Cheese Stick": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 13,
-      "image": "",
-      "name": "Cheese Stick",
-      "source": "Est. (Fallback)"
+      "price": 4.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/453303.jpg",
+      "name": "Woolworths Natural Cheese Sticks",
+      "source": "Woolworths Australia",
+      "sku": "453303",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Rice Crackers": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Rice Crackers",
-      "source": "Est. (Fallback)"
+      "price": 2.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/035231.jpg",
+      "name": "Fantastic Rice Crackers Original",
+      "source": "Woolworths Australia",
+      "sku": "35231",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": "Egg, Milk, Sesame"
     }
   },
   "Pretzels": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Pretzels",
-      "source": "Est. (Fallback)"
+      "price": 4.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/695577.jpg",
+      "name": "Macy and Tailor Oven Baked Pressed Pretzels Sea Salt",
+      "source": "Woolworths Australia",
+      "sku": "695577",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": "Sesame"
     }
   },
   "Spices": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Spices",
-      "source": "Est. (Fallback)"
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/250995.jpg",
+      "name": "Woolworths Chilli Ground",
+      "source": "Woolworths Australia",
+      "sku": "250995",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Rice Wheels": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Rice Wheels",
-      "source": "Est. (Fallback)"
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/116987.jpg",
+      "name": "Healtheries Rice Wheels Chicken Gluten Free Lunchbox Snacks",
+      "source": "Woolworths Australia",
+      "sku": "116987",
+      "allergens": [
+        "Milk, Soy"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Dates": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Dates",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/018160.jpg",
+      "name": "Woolworths Pitted Dates",
+      "source": "Woolworths Australia",
+      "sku": "18160",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cocoa": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cocoa",
-      "source": "Est. (Fallback)"
+      "price": 8.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/267413.jpg",
+      "name": "Cadbury Baking Bournville Cocoa Powder",
+      "source": "Woolworths Australia",
+      "sku": "267413",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Coconut": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Coconut",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/172405.jpg",
+      "name": "Woolworths Shredded Coconut",
+      "source": "Woolworths Australia",
+      "sku": "172405",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Muffin": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Muffin",
-      "source": "Est. (Fallback)"
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6035082.jpg",
+      "name": "Woolworths Mini Choc Chip Muffin",
+      "source": "Woolworths Australia",
+      "sku": "6035082",
+      "allergens": [
+        "Egg, Milk, Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": "Peanuts, Sesame, Almond, Hazelnut, Macadamia, Pecan, Brazil Nut, Pistachio, Walnut"
     }
   },
   "Oat Cookie": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Oat Cookie",
-      "source": "Est. (Fallback)"
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6059965.jpg",
+      "name": "Arnott's Cookies Fruit & Oat",
+      "source": "Woolworths Australia",
+      "sku": "6059965",
+      "allergens": [
+        "Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": "Egg, Milk, Tree Nuts, Peanuts, Sesame"
     }
   },
   "Dried Apricots": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Dried Apricots",
-      "source": "Est. (Fallback)"
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/089722.jpg",
+      "name": "Woolworths Dried & Diced Apricots",
+      "source": "Woolworths Australia",
+      "sku": "89722",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Baking Powder": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Baking Powder",
-      "source": "Est. (Fallback)"
+      "price": 5.55,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/574616.jpg",
+      "name": "McKenzie's Baking Powder",
+      "source": "Woolworths Australia",
+      "sku": "574616",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cinnamon": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cinnamon",
-      "source": "Est. (Fallback)"
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/251000.jpg",
+      "name": "Woolworths Cinnamon Ground",
+      "source": "Woolworths Australia",
+      "sku": "251000",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Yeast": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Yeast",
-      "source": "Est. (Fallback)"
+      "price": 4.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/184917.jpg",
+      "name": "Lowan Yeast Dried Instant",
+      "source": "Woolworths Australia",
+      "sku": "184917",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Blueberries": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Blueberries",
-      "source": "Est. (Fallback)"
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/260007.jpg",
+      "name": "Woolworths Frozen Blueberries",
+      "source": "Woolworths Australia",
+      "sku": "260007",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Beef Patty": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Beef Patty",
-      "source": "Est. (Fallback)"
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/899860.jpg",
+      "name": "Woolworths 8 Pack Slider Beef Burgers",
+      "source": "Woolworths Australia",
+      "sku": "899860",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Burger Bun": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Burger Bun",
-      "source": "Est. (Fallback)"
+      "price": 2.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6016711.jpg",
+      "name": "Woolworths Hamburger Buns",
+      "source": "Woolworths Australia",
+      "sku": "6016711",
+      "allergens": [
+        "Sesame, Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Soy"
     }
   },
   "Red Lentils": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Red Lentils",
-      "source": "Est. (Fallback)"
+      "price": 2.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/008088.jpg",
+      "name": "McKenzie's Lentils Red",
+      "source": "Woolworths Australia",
+      "sku": "8088",
+      "allergens": [],
+      "allergenMaybePresent": "Gluten, Soy, Lupin, Wheat"
     }
   },
   "Onion": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Onion",
-      "source": "Est. (Fallback)"
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/144336.jpg",
+      "name": "Woolworths Onion Brown Bag",
+      "source": "Woolworths Australia",
+      "sku": "144336",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Vegetable Stock": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Vegetable Stock",
-      "source": "Est. (Fallback)"
+      "price": 1.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/310254.jpg",
+      "name": "Woolworths Vegetable Liquid Stock",
+      "source": "Woolworths Australia",
+      "sku": "310254",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cumin": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cumin",
-      "source": "Est. (Fallback)"
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/251007.jpg",
+      "name": "Woolworths Cumin Ground Ground",
+      "source": "Woolworths Australia",
+      "sku": "251007",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Kidney Beans": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Kidney Beans",
-      "source": "Est. (Fallback)"
+      "price": 0.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/907049.jpg",
+      "name": "Woolworths Red Kidney Beans",
+      "source": "Woolworths Australia",
+      "sku": "907049",
+      "allergens": [],
+      "allergenMaybePresent": "Gluten, Soy, Wheat"
     }
   },
   "Corn Chips": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Corn Chips",
-      "source": "Est. (Fallback)"
+      "price": 5.95,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6058084.jpg",
+      "name": "Old El Paso Nachips Tortilla Nacho Corn Chips Original",
+      "source": "Woolworths Australia",
+      "sku": "6058084",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Noodles": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Noodles",
-      "source": "Est. (Fallback)"
+      "price": 3.1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/106256.jpg",
+      "name": "Wokka Shelf Fresh Thin Hokkien Noodles",
+      "source": "Woolworths Australia",
+      "sku": "106256",
+      "allergens": [
+        "Wheat"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Mixed Vegetables": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Mixed Vegetables",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/093915.jpg",
+      "name": "Woolworths Essentials Frozen Mixed Vegetables",
+      "source": "Woolworths Australia",
+      "sku": "93915",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Sesame Oil": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
       "price": 5,
-      "image": "",
-      "name": "Sesame Oil",
-      "source": "Est. (Fallback)"
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/076240.jpg",
+      "name": "Chang's Sesame Oil",
+      "source": "Woolworths Australia",
+      "sku": "76240",
+      "allergens": [
+        "Sesame"
+      ],
+      "allergenMaybePresent": "Peanuts"
     }
   },
   "Cooked Chicken": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cooked Chicken",
-      "source": "Est. (Fallback)"
+      "price": 8.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/904897.jpg",
+      "name": "Mt Barker Free Range Roasted Shredded Chicken",
+      "source": "Woolworths Australia",
+      "sku": "904897",
+      "allergens": [],
+      "allergenMaybePresent": "Egg, Milk, Gluten"
     }
   },
   "Dumpling Wrappers": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Dumpling Wrappers",
-      "source": "Est. (Fallback)"
+      "price": 3.55,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/085721.jpg",
+      "name": "Double Merino Pastry Gow Gee",
+      "source": "Woolworths Australia",
+      "sku": "85721",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Egg"
     }
   },
   "Pork Mince": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Pork Mince",
-      "source": "Est. (Fallback)"
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/582608.jpg",
+      "name": "Woolworths Lean Pork Mince",
+      "source": "Woolworths Australia",
+      "sku": "582608",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Cabbage": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Cabbage",
-      "source": "Est. (Fallback)"
+      "price": 2.1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/134968.jpg",
+      "name": "Woolworths Green Cabbage Quarter",
+      "source": "Woolworths Australia",
+      "sku": "134968",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Ginger": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Ginger",
-      "source": "Est. (Fallback)"
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/680510.jpg",
+      "name": "Woolworths Crushed Ginger",
+      "source": "Woolworths Australia",
+      "sku": "680510",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Olive Oil": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 11,
-      "image": "",
-      "name": "Olive Oil",
-      "source": "Est. (Fallback)"
+      "price": 14,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/698863.jpg",
+      "name": "Woolworths Classic Mediterranean Olive Oil",
+      "source": "Woolworths Australia",
+      "sku": "698863",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Couscous": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Couscous",
-      "source": "Est. (Fallback)"
+      "price": 2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/720060.jpg",
+      "name": "Woolworths Cous Cous",
+      "source": "Woolworths Australia",
+      "sku": "720060",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Egg, Milk"
     }
   },
   "Lemon": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Lemon",
-      "source": "Est. (Fallback)"
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/830353.jpg",
+      "name": "The Odd Bunch Lemon Prepacked",
+      "source": "Woolworths Australia",
+      "sku": "830353",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Orange": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Orange",
-      "source": "Est. (Fallback)"
+      "price": 1.49,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/259450.jpg",
+      "name": "Orange Navel",
+      "source": "Woolworths Australia",
+      "sku": "259450",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Crackers": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 3.5,
-      "image": "",
-      "name": "Crackers",
-      "source": "Est. (Fallback)"
+      "price": 2.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/140784.jpg",
+      "name": "Captain's Table Classic Water Crackers",
+      "source": "Woolworths Australia",
+      "sku": "140784",
+      "allergens": [
+        "Wheat"
+      ],
+      "allergenMaybePresent": "Milk, Soy"
     }
   },
   "Cos Lettuce": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4.5,
-      "image": "",
-      "name": "Cos Lettuce",
-      "source": "Est. (Fallback)"
+      "price": 3.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/141496.jpg",
+      "name": "Woolworths Cos Hearts Lettuce",
+      "source": "Woolworths Australia",
+      "sku": "141496",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Croutons": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Croutons",
-      "source": "Est. (Fallback)"
+      "price": 4.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/279869.jpg",
+      "name": "Praise Caesar Salad Croutons",
+      "source": "Woolworths Australia",
+      "sku": "279869",
+      "allergens": [
+        "Milk, Gluten, Wheat"
+      ],
+      "allergenMaybePresent": "Tree Nuts, Sesame, Soy"
     }
   },
   "Parmesan": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Parmesan",
-      "source": "Est. (Fallback)"
+      "price": 5.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/085587.jpg",
+      "name": "Woolworths Shredded Parmesan Cheese",
+      "source": "Woolworths Australia",
+      "sku": "85587",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Boiled Egg": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Boiled Egg",
-      "source": "Est. (Fallback)"
+      "price": 5.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/165367.jpg",
+      "name": "Woolworths 12 Pack Extra Large Cage Free Eggs",
+      "source": "Woolworths Australia",
+      "sku": "165367",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   },
   "Caesar Dressing": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 5,
-      "image": "",
-      "name": "Caesar Dressing",
-      "source": "Est. (Fallback)"
+      "price": 1.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/296531.jpg",
+      "name": "Woolworths Caesar Salad Dressing",
+      "source": "Woolworths Australia",
+      "sku": "296531",
+      "allergens": [
+        "Milk, Egg"
+      ],
+      "allergenMaybePresent": ""
     }
   },
   "Bread Roll": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
     "data": {
-      "price": 4,
-      "image": "",
-      "name": "Bread Roll",
-      "source": "Est. (Fallback)"
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/130502.jpg",
+      "name": "Woolworths Soft Round Rolls Extra Soft Lunch",
+      "source": "Woolworths Australia",
+      "sku": "130502",
+      "allergens": [
+        "CONTAINS:Gluten,Wheat"
+      ],
+      "allergenMaybePresent": "MAY CONTAIN:Egg,Lupin,Milk,Sesame,Soy,Peanuts,Tree Nuts"
     }
   },
   "Salami": {
-    "timestamp": 1792966998512,
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/544764.jpg",
+      "name": "Primo Mild Hungarian Sliced Salami Mild",
+      "source": "Woolworths Australia",
+      "sku": "544764",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": "Soy"
+    }
+  },
+  "Vegemite": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/796439.jpg",
+      "name": "Vegemite Spread",
+      "source": "Woolworths Australia",
+      "sku": "796439",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Muesli": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.35,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/743268.jpg",
+      "name": "Woolworths Toasted Honey & Cinnamon Muesli",
+      "source": "Woolworths Australia",
+      "sku": "743268",
+      "allergens": [
+        "Sulphites, Gluten, Almond, Cashew"
+      ],
+      "allergenMaybePresent": "Milk, Peanuts, Sesame, Soy, Lupin, Pine Nut, Hazelnut, Macadamia, Pecan, Brazil Nut, Pistachio, Walnut, Wheat"
+    }
+  },
+  "Rolled Oats": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 1.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/321220.jpg",
+      "name": "Woolworths Rolled Traditional Oats",
+      "source": "Woolworths Australia",
+      "sku": "321220",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Wheat"
+    }
+  },
+  "Desiccated Coconut": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/028708.jpg",
+      "name": "McKenzie's Coconut Fine Desiccated",
+      "source": "Woolworths Australia",
+      "sku": "28708",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Golden Syrup": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/092491.jpg",
+      "name": "CSR Golden Syrup Squeeze",
+      "source": "Woolworths Australia",
+      "sku": "92491",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Baking Soda": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 2.45,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/251189.jpg",
+      "name": "Woolworths Essentials Bicarbonate Soda",
+      "source": "Woolworths Australia",
+      "sku": "251189",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Sweetcorn": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/374274.jpg",
+      "name": "Woolworths Frozen Australian Corn Cobs",
+      "source": "Woolworths Australia",
+      "sku": "374274",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Spring Onion": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/147603.jpg",
+      "name": "Spring Onion Bunch",
+      "source": "Woolworths Australia",
+      "sku": "147603",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Cocktail Sausages": {
+    "timestamp": 1793321122675,
     "data": {
       "price": 5,
-      "image": "",
-      "name": "Salami",
-      "source": "Est. (Fallback)"
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/391575.jpg",
+      "name": "Primo Hot Dog Cocktail Frankfurts",
+      "source": "Woolworths Australia",
+      "sku": "391575",
+      "allergens": [
+        "Milk, Sulphites, Soy"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Chicken Breast": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 9.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6078623.jpg",
+      "name": "Woolworths RSPCA Approved Chicken Breast Fillets",
+      "source": "Woolworths Australia",
+      "sku": "6078623",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Grated Apple": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/314012.jpg",
+      "name": "Woolworths Royal Gala Apple Punnet",
+      "source": "Woolworths Australia",
+      "sku": "314012",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Honey": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 8.15,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/805353.jpg",
+      "name": "Adley's Nothing But Honey",
+      "source": "Woolworths Australia",
+      "sku": "805353",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Pickle": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/009228.jpg",
+      "name": "Fehlbergs Burger Pickles",
+      "source": "Woolworths Australia",
+      "sku": "9228",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Pita Bread": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.75,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/391891.jpg",
+      "name": "MEB Foods Khobz White Pita",
+      "source": "Woolworths Australia",
+      "sku": "391891",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Sub Roll": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.55,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/202570.jpg",
+      "name": "Woolworths Jumbo Crusty Long Rolls Crusty Jumbo Long",
+      "source": "Woolworths Australia",
+      "sku": "202570",
+      "allergens": [
+        "CONTAINS:Gluten,Wheat"
+      ],
+      "allergenMaybePresent": "MAY CONTAIN:Egg,Lupin,Milk,Sesame,Soy,Peanuts,Tree Nuts"
+    }
+  },
+  "Meatballs": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/084993.jpg",
+      "name": "Woolworths 20 Pack Beef & Vegetable Meatballs",
+      "source": "Woolworths Australia",
+      "sku": "84993",
+      "allergens": [
+        "Sulphites"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Tuna": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/476700.jpg",
+      "name": "Woolworths Tuna In Springwater",
+      "source": "Woolworths Australia",
+      "sku": "476700",
+      "allergens": [
+        "Fish"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Mayonnaise": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 2.8,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/360680.jpg",
+      "name": "Woolworths Whole Egg Mayonnaise",
+      "source": "Woolworths Australia",
+      "sku": "360680",
+      "allergens": [
+        "Egg, Milk"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Oil": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/750736.jpg",
+      "name": "Woolworths Canola Oil",
+      "source": "Woolworths Australia",
+      "sku": "750736",
+      "allergens": [],
+      "allergenMaybePresent": "Soy"
+    }
+  },
+  "Coconut Oil": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5.25,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/751353.jpg",
+      "name": "Macro Organic Virgin Coconut Oil",
+      "source": "Woolworths Australia",
+      "sku": "751353",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Plant Milk": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/899852.jpg",
+      "name": "MILKLAB Home Barista Oat Long Life Milk",
+      "source": "Woolworths Australia",
+      "sku": "899852",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Lupin, Wheat"
+    }
+  },
+  "Gluten-Free Bread": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/277578.jpg",
+      "name": "Woolworths Free From Gluten White Bread Loaf",
+      "source": "Woolworths Australia",
+      "sku": "277578",
+      "allergens": [
+        "Egg, Soy"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Corn Tortilla": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/169871.jpg",
+      "name": "Old El Paso Street Market White Corn Tortilla Taco Wraps",
+      "source": "Woolworths Australia",
+      "sku": "169871",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Gluten-Free Flour": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/770057.jpg",
+      "name": "Woolworths Free From Gluten Plain Flour",
+      "source": "Woolworths Australia",
+      "sku": "770057",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Vermicelli Noodles": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 1.85,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/103214.jpg",
+      "name": "Double Phoenix Bean Vermicelli Noodles",
+      "source": "Woolworths Australia",
+      "sku": "103214",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Curry Spices": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 2.65,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/716890.jpg",
+      "name": "Hoyt's Curry Powder Mild",
+      "source": "Woolworths Australia",
+      "sku": "716890",
+      "allergens": [
+        "Gluten, Mustard, Wheat"
+      ],
+      "allergenMaybePresent": "Gluten, Pine Nuts, Sesame"
+    }
+  },
+  "Beef": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 12,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6044171.jpg",
+      "name": "Woolworths Lean Beef Strips",
+      "source": "Woolworths Australia",
+      "sku": "6044171",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Bao Buns": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 16,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/277300.jpg",
+      "name": "Mr Chen's Bao Buns",
+      "source": "Woolworths Australia",
+      "sku": "277300",
+      "allergens": [
+        "Milk, Sesame, Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Pork Shoulder": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 9.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/764541.jpg",
+      "name": "Woolworths Pork Shoulder Roast Boneless Boneless Small",
+      "source": "Woolworths Australia",
+      "sku": "764541",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Hoisin Sauce": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6031454.jpg",
+      "name": "Lantern Alley Hoisin Sauce",
+      "source": "Woolworths Australia",
+      "sku": "6031454",
+      "allergens": [
+        "Sulphites, Gluten, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Roti": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6004830.jpg",
+      "name": "Katoomba Roti Bread Plain",
+      "source": "Woolworths Australia",
+      "sku": "6004830",
+      "allergens": [
+        "Gluten, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Paneer": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 8.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/185281.jpg",
+      "name": "Lemnos Paneer Cheese",
+      "source": "Woolworths Australia",
+      "sku": "185281",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Mango Chutney": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.6,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/298987.jpg",
+      "name": "MasterFoods Mango Chutney Relish",
+      "source": "Woolworths Australia",
+      "sku": "298987",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": "Peanuts"
+    }
+  },
+  "Strawberries": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/777899.jpg",
+      "name": "Woolworths Frozen Strawberries",
+      "source": "Woolworths Australia",
+      "sku": "777899",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Kiwifruit": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/760907.jpg",
+      "name": "Woolworths Kiwi Fruit Green",
+      "source": "Woolworths Australia",
+      "sku": "760907",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Sugar Snap Peas": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.9,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/163783.jpg",
+      "name": "Woolworths Sugar Snap Peas Bag",
+      "source": "Woolworths Australia",
+      "sku": "163783",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Watermelon": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 6.38,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/120384.jpg",
+      "name": "Woolworths Red Watermelon Cut Quarter",
+      "source": "Woolworths Australia",
+      "sku": "120384",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Rockmelon": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/073197.jpg",
+      "name": "Woolworths Fresh Rockmelon Tub",
+      "source": "Woolworths Australia",
+      "sku": "73197",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Edamame": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/386006.jpg",
+      "name": "Umami Frozen Edamame Whole Baby Soy Beans",
+      "source": "Woolworths Australia",
+      "sku": "386006",
+      "allergens": [
+        "Soy"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Cottage Cheese": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5.25,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/757097.jpg",
+      "name": "Brancourts Cottage Cheese Classic",
+      "source": "Woolworths Australia",
+      "sku": "757097",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Probiotic Drink": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/256106.jpg",
+      "name": "Yakult Probiotic Drink Light",
+      "source": "Woolworths Australia",
+      "sku": "256106",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Popcorn": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/377589.jpg",
+      "name": "Cobs Popcorn Sea Salt Gluten Free",
+      "source": "Woolworths Australia",
+      "sku": "377589",
+      "allergens": [],
+      "allergenMaybePresent": "Milk"
+    }
+  },
+  "Veggie Straws": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/453873.jpg",
+      "name": "Infuzions Veggie Straws Sour Cream & Herb",
+      "source": "Woolworths Australia",
+      "sku": "453873",
+      "allergens": [
+        "Milk"
+      ],
+      "allergenMaybePresent": "Peanuts, Sesame, Sulphites, Gluten, Soy, Almond, Cashew"
+    }
+  },
+  "Wholegrain Crackers": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 1,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/378069.jpg",
+      "name": "Woolworths Multigrain Brown Rice Crackers",
+      "source": "Woolworths Australia",
+      "sku": "378069",
+      "allergens": [
+        "Soy, Sesame"
+      ],
+      "allergenMaybePresent": "Milk, Fish, Crustacean"
+    }
+  },
+  "Breadsticks": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 3.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/084864.jpg",
+      "name": "Vita Vigor Grissini Bread Sticks Grissini Bread Sticks",
+      "source": "Woolworths Australia",
+      "sku": "84864",
+      "allergens": [
+        "Cereals, Milk, Sesame, Soy, Wheat"
+      ],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Sultanas": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.2,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/726367.jpg",
+      "name": "Woolworths Sultanas",
+      "source": "Woolworths Australia",
+      "sku": "726367",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Real Fruit Strip": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/119059.jpg",
+      "name": "True Fruit Apple & Strawberry Straps",
+      "source": "Woolworths Australia",
+      "sku": "119059",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Rice Bubbles": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 4.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/6055324.jpg",
+      "name": "Kellogg's Rice Bubbles Breakfast Cereal",
+      "source": "Woolworths Australia",
+      "sku": "6055324",
+      "allergens": [
+        "Gluten"
+      ],
+      "allergenMaybePresent": "Tree Nuts, Peanuts, Wheat"
+    }
+  },
+  "Dark Chocolate": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 8.5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/019731.jpg",
+      "name": "Lindt Excellence Dark Chocolate 70% Cocoa Block",
+      "source": "Woolworths Australia",
+      "sku": "19731",
+      "allergens": [],
+      "allergenMaybePresent": "Milk, Sesame, Soy, Almond, Hazelnut"
+    }
+  },
+  "Plain Flour": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 2.4,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/045813.jpg",
+      "name": "Woolworths Essentials Plain Flour",
+      "source": "Woolworths Australia",
+      "sku": "45813",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Tahini": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 5,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/334757.jpg",
+      "name": "Macro Organic Hulled Tahini Spread",
+      "source": "Woolworths Australia",
+      "sku": "334757",
+      "allergens": [
+        "Sesame"
+      ],
+      "allergenMaybePresent": "Tree Nuts, Peanuts, Almond, Cashew, Hazelnut, Brazil Nut"
+    }
+  },
+  "Courgette": {
+    "timestamp": 1793276391041,
+    "data": {
+      "price": 6.27,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/825869.jpg",
+      "name": "The Odd Bunch Zucchini Prepacked",
+      "source": "Woolworths Australia",
+      "sku": "825869",
+      "allergens": [],
+      "allergenMaybePresent": ""
+    }
+  },
+  "Vanilla Essence": {
+    "timestamp": 1793321122675,
+    "data": {
+      "price": 7,
+      "image": "https://cdn1.woolworths.media/content/wowproductimages/large/037420.jpg",
+      "name": "Queen Organic Vanilla Extract",
+      "source": "Woolworths Australia",
+      "sku": "37420",
+      "allergens": [],
+      "allergenMaybePresent": ""
     }
   }
 }

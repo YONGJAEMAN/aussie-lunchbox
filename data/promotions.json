@@ -1,0 +1,5 @@
+{
+  "_comment": "Weekly supermarket promotions. Schema: data/promotions.types.ts. 🔴 Aussie: 호주 전단(Woolworths·Coles)은 5단계에서 넣는다. 재포크 때 Kiwi의 NZ 전단(Pak'nSave·New World)이 그대로 들어와 있어 비웠다 — 그대로 두면 Aussie 플래너가 NZ 특가를 이번 주 특가로 보여 준다.",
+  "currentWeek": "",
+  "weeks": {}
+}

@@ -1,0 +1,1147 @@
+{
+  "_comment": "Aussie 알레르기 판정표 — 사용자 승인 2026-10-30(검토 문서 ~/Downloads/aussie_allergen_review_1030.md). dietTagsFor가 상품 라벨보다 먼저 본다. tags: null = 모르는 재료(필터가 켜지면 빠진다). 주의(may contain)는 여기 없다 — 라벨에서 ⚠로만 알린다. 고정 SKU를 바꾸면 그 줄을 다시 판정할 것(가드가 sku를 대조한다).",
+  "reviewed": "2026-10-30",
+  "rules": [
+    "제안 = 선언 ∪ 원재료 판독(원재료 끝의 may contain 문장 제외)",
+    "containsgluten 필드는 쓰지 않는다(밀 베이글에 False)",
+    "참깨 주의만 있는 빵은 거르지 않고 ⚠(사용자 10-30)"
+  ],
+  "ingredients": {
+    "Apple": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "314012"
+    },
+    "Avocado": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "120080"
+    },
+    "Bacon": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "266794"
+    },
+    "Bagel": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "270580"
+    },
+    "Baking Powder": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "574616"
+    },
+    "Baking Soda": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "251189"
+    },
+    "Banana": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "133211"
+    },
+    "Bao Buns": {
+      "tags": [
+        "gluten",
+        "milk",
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "277300"
+    },
+    "Basil": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "133621"
+    },
+    "Beef": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6044171"
+    },
+    "Beef Mince": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "577863"
+    },
+    "Beef Patty": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "899860"
+    },
+    "Berries": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "260010"
+    },
+    "Black Beans": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "930176"
+    },
+    "Blueberries": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "260007"
+    },
+    "Boiled Egg": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "165367"
+    },
+    "Boiled Eggs": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "165367"
+    },
+    "Bread": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "713816"
+    },
+    "Bread Roll": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "130502"
+    },
+    "Breadcrumbs": {
+      "tags": [
+        "gluten",
+        "milk",
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "36440"
+    },
+    "Breadsticks": {
+      "tags": [
+        "gluten",
+        "milk",
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "84864"
+    },
+    "Broccoli": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "134681"
+    },
+    "Burger Bun": {
+      "tags": [
+        "gluten",
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6016711"
+    },
+    "Butter": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "48650"
+    },
+    "Butter Chicken Sauce": {
+      "tags": [
+        "egg",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "157531"
+    },
+    "Cabbage": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "134968"
+    },
+    "Caesar Dressing": {
+      "tags": [
+        "egg",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "296531"
+    },
+    "Canned Tuna": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "827211"
+    },
+    "Capsicum": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "135306"
+    },
+    "Carrot": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "135369"
+    },
+    "Celery": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "745467"
+    },
+    "Cheese": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "310237"
+    },
+    "Cheese Block": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "310237"
+    },
+    "Cheese Sauce": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "757571"
+    },
+    "Cheese Stick": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "453303"
+    },
+    "Cherry Tomatoes": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "149620"
+    },
+    "Chicken": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "969723"
+    },
+    "Chicken Breast": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "6078623"
+    },
+    "Chicken Skewers": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "908166"
+    },
+    "Chicken Thigh": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "6078692"
+    },
+    "Chicken/Tofu": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "6078623"
+    },
+    "Chickpeas": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "227107"
+    },
+    "Ciabatta": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "125496"
+    },
+    "Cinnamon": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "251000"
+    },
+    "Cocktail Sausages": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "391575"
+    },
+    "Cocoa": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "267413"
+    },
+    "Coconut": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "172405"
+    },
+    "Coconut Milk": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "168"
+    },
+    "Coconut Oil": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "751353"
+    },
+    "Cooked Chicken": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "904897"
+    },
+    "Corn": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "34437"
+    },
+    "Corn Chips": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6058084"
+    },
+    "Corn Tortilla": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "169871"
+    },
+    "Cos Lettuce": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "141496"
+    },
+    "Cottage Cheese": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "사람 판단 — 원재료·선언 없음",
+      "sku": "757097"
+    },
+    "Couscous": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "720060"
+    },
+    "Crackers": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "140784"
+    },
+    "Cream Cheese": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "48062"
+    },
+    "Cream/Milk": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언",
+      "sku": "44317"
+    },
+    "Croissant": {
+      "tags": [
+        "gluten",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "33593"
+    },
+    "Croutons": {
+      "tags": [
+        "gluten",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "279869"
+    },
+    "Cucumber": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "137102"
+    },
+    "Cumin": {
+      "tags": [],
+      "basis": "사람 판단 — 원재료·선언 없음",
+      "sku": "251007"
+    },
+    "Curry Paste": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "224632"
+    },
+    "Curry Spices": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "716890"
+    },
+    "Dairy-Free Pesto": {
+      "tags": [
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "190944"
+    },
+    "Dark Chocolate": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "19731"
+    },
+    "Dates": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "18160"
+    },
+    "Desiccated Coconut": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "28708"
+    },
+    "Dried Apricots": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "89722"
+    },
+    "Dumpling Wrappers": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언",
+      "sku": "85721"
+    },
+    "Edamame": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "386006"
+    },
+    "Egg": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언",
+      "sku": "224763"
+    },
+    "Egg (glaze)": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언",
+      "sku": "224763"
+    },
+    "Eggs": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "165367"
+    },
+    "Falafel": {
+      "tags": null,
+      "basis": "모름 — 원재료 없음·글루텐 주의(사용자 10-30: fail-closed)",
+      "sku": "106765"
+    },
+    "Feta": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "452083"
+    },
+    "Flour": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "94124"
+    },
+    "GF Crackers": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "612774"
+    },
+    "GF Pasta": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "188832"
+    },
+    "GF Sausages": {
+      "tags": [],
+      "basis": "고정 상품 없음 — Kiwi 손 판정 유지"
+    },
+    "Ginger": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "680510"
+    },
+    "Gluten-Free Bread": {
+      "tags": [
+        "egg"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "277578"
+    },
+    "Gluten-Free Flour": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "770057"
+    },
+    "Golden Syrup": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "92491"
+    },
+    "Grapes": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "138801"
+    },
+    "Grated Apple": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "314012"
+    },
+    "Ham": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "290324"
+    },
+    "Ham/Bacon": {
+      "tags": [],
+      "basis": "고정 상품 없음 — Kiwi 손 판정 유지"
+    },
+    "Herbs": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "251120"
+    },
+    "Hoisin Sauce": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6031454"
+    },
+    "Honey": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "805353"
+    },
+    "Hummus": {
+      "tags": [
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "323320"
+    },
+    "Jam": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "292796"
+    },
+    "Kidney Beans": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "907049"
+    },
+    "Kiwifruit": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "760907"
+    },
+    "Lemon": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "830353"
+    },
+    "Lemon Dressing": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "710191"
+    },
+    "Lettuce": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "154340"
+    },
+    "Macaroni": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "346837"
+    },
+    "Mandarin": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "845671"
+    },
+    "Mango Chutney": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "298987"
+    },
+    "Mayo": {
+      "tags": [
+        "egg",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "360680"
+    },
+    "Mayonnaise": {
+      "tags": [
+        "egg",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "360680"
+    },
+    "Meatballs": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "84993"
+    },
+    "Milk": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "50923"
+    },
+    "Mince": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "577863"
+    },
+    "Mixed Vegetables": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "93915"
+    },
+    "Mozzarella": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "732059"
+    },
+    "Muesli": {
+      "tags": [
+        "gluten",
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "743268"
+    },
+    "Muffin": {
+      "tags": [
+        "egg",
+        "gluten",
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6035082"
+    },
+    "Mustard": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "32822"
+    },
+    "Noodles": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "106256"
+    },
+    "Nori": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "185395"
+    },
+    "Oat Cookie": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6059965"
+    },
+    "Oil": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "750736"
+    },
+    "Olive Oil": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "698863"
+    },
+    "Olives": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "329746"
+    },
+    "Onion": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "144336"
+    },
+    "Orange": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "259450"
+    },
+    "Paneer": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "185281"
+    },
+    "Parmesan": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "85587"
+    },
+    "Pasta": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "48900"
+    },
+    "Pasta spirals": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "346833"
+    },
+    "Pastry": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "18366"
+    },
+    "Pastry Cases": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "32897"
+    },
+    "Peanut Butter": {
+      "tags": [
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "33605"
+    },
+    "Peanut Sauce": {
+      "tags": [
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "703559"
+    },
+    "Pear": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "115330"
+    },
+    "Peas": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "754181"
+    },
+    "Pesto": {
+      "tags": [
+        "egg",
+        "milk",
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "753340"
+    },
+    "Pesto/Mayo": {
+      "tags": [
+        "egg",
+        "milk",
+        "nuts"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "753340"
+    },
+    "Pickle": {
+      "tags": [],
+      "basis": "사람 판단 — 원재료·선언 없음",
+      "sku": "9228"
+    },
+    "Pita Bread": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "391891"
+    },
+    "Plant Milk": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "899852"
+    },
+    "Popcorn": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "377589"
+    },
+    "Pork Mince": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "582608"
+    },
+    "Pork Shoulder": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "764541"
+    },
+    "Potato": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "262783"
+    },
+    "Pretzels": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "695577"
+    },
+    "Probiotic Drink": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "256106"
+    },
+    "Puff Pastry": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "18366"
+    },
+    "Quinoa": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "717631"
+    },
+    "Real Fruit Strip": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "119059"
+    },
+    "Red Lentils": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "8088"
+    },
+    "Rice": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "35007"
+    },
+    "Rice Bubbles": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6055324"
+    },
+    "Rice Crackers": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "35231"
+    },
+    "Rice Noodles": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "40313"
+    },
+    "Rice Paper": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "121531"
+    },
+    "Rice Wheels": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "116987"
+    },
+    "Ripe Bananas": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "106218"
+    },
+    "Roast Beef": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "544698"
+    },
+    "Rocket": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "380580"
+    },
+    "Rockmelon": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "73197"
+    },
+    "Roll": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "130502"
+    },
+    "Rolled Oats": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "321220"
+    },
+    "Roti": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6004830"
+    },
+    "Salami": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "544764"
+    },
+    "Salsa": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "231416"
+    },
+    "Sausage Meat": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "109099"
+    },
+    "Sesame Oil": {
+      "tags": [
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "76240"
+    },
+    "Smoked Salmon": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "345350"
+    },
+    "Soy Sauce": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "198763"
+    },
+    "Spaghetti": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "346830"
+    },
+    "Spices": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "250995"
+    },
+    "Spinach": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "524322"
+    },
+    "Spring Onion": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "147603"
+    },
+    "Strawberries": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "777899"
+    },
+    "Sub Roll": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "202570"
+    },
+    "Sugar": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "33157"
+    },
+    "Sugar Snap Peas": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "163783"
+    },
+    "Sultanas": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "726367"
+    },
+    "Sushi Rice": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "6091997"
+    },
+    "Sweetcorn": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "374274"
+    },
+    "Teriyaki Sauce": {
+      "tags": [
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "703375"
+    },
+    "Tofu": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "23038"
+    },
+    "Tomato": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "134034"
+    },
+    "Tomato Paste": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "90260"
+    },
+    "Tomato Sauce": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "230519"
+    },
+    "Tortilla": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "634919"
+    },
+    "Tuna": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "476700"
+    },
+    "Tuna/Chicken/Avocado": {
+      "tags": [],
+      "basis": "고정 상품 없음 — Kiwi 손 판정 유지"
+    },
+    "Turkey": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "290982"
+    },
+    "Vegan Mayo": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "164531"
+    },
+    "Vegemite": {
+      "tags": [
+        "gluten"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "796439"
+    },
+    "Vegetable Stock": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "310254"
+    },
+    "Veggie Straws": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "453873"
+    },
+    "Vermicelli Noodles": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "103214"
+    },
+    "Watermelon": {
+      "tags": [],
+      "basis": "원물 — 라벨 없음",
+      "sku": "120384"
+    },
+    "Wholegrain Crackers": {
+      "tags": [
+        "sesame"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "378069"
+    },
+    "Yeast": {
+      "tags": [],
+      "basis": "선언 ∪ 원재료",
+      "sku": "184917"
+    },
+    "Yoghurt": {
+      "tags": [
+        "milk"
+      ],
+      "basis": "선언 ∪ 원재료",
+      "sku": "571487"
+    }
+  }
+}

@@ -2,13 +2,15 @@ import { MetadataRoute } from "next";
 import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { BRAND, SITE_NOINDEX } from "@/lib/brand";
+import { lastModified } from "@/lib/contentDates";
 
 const BASE_URL = BRAND.SITE_URL;
-
 // AdSense 승인 단계: 영어만 sitemap에 포함.
-// /ko, /zh는 layout.tsx에서 robots: noindex 처리 + middleware 307 redirect → sitemap 제외.
-// Aussie는 localePrefix: "as-needed"라 영어는 prefix 없음 (예: /blog).
-// 승인 후 다국어 운영 본격화 시 BRAND.LOCALES로 복원.
+// /ko, /zh는 layout.tsx에서 robots: noindex 처리되므로 sitemap에서도 빼서
+// crawler가 무의미한 URL을 시도하지 않게 함. 승인 후 다국어 운영 본격화 시
+// `[...BRAND.LOCALES]`로 복원.
+const LOCALES: string[] = ["en"];
+void BRAND.LOCALES;
 
 const STATIC_ROUTES = [
   "",
@@ -23,50 +25,40 @@ const STATIC_ROUTES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  /**
-   * 🔴 2026-08-23: 사이트 전체가 noindex인데 sitemap이 **27개 URL**을 싣고 있었다.
-   *    "색인하지 마" 태그를 붙인 페이지를 "색인해 줘"라고 제출하는 셈이라
-   *    크롤 예산만 쓰고 신호가 서로 모순된다. 색인을 복원하면 자동으로 돌아온다.
-   */
+  // 🔴 사이트 전체가 noindex인 동안 sitemap이 URL을 색인 요청하면 신호가 갈라진다(2026-08-23, lib/brand.ts).
   if (SITE_NOINDEX) return [];
-
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const route of STATIC_ROUTES) {
-    entries.push({
-      url: `${BASE_URL}${route}`,
-      lastModified: new Date(),
-      changeFrequency: route === "" ? "weekly" : "monthly",
-      priority: route === "" ? 1.0 : route === "/planner" ? 0.9 : 0.7,
-    });
-  }
+  for (const locale of LOCALES) {
+    for (const route of STATIC_ROUTES) {
+      // 🔴 2026-08-14(Kiwi): 여기가 `new Date()`였다 — 매번 갱신되는 lastmod는 신뢰할 수 없는 신호다.
+      // 실제 근거가 있는 날짜가 없으면 lastmod를 생략한다(가격 페이지는 3단계에서 데이터 갱신일과 함께 다시 붙는다).
+      entries.push({
+        url: `${BASE_URL}/${locale}${route}`,
+        changeFrequency: route === "" ? "weekly" : "monthly",
+        priority: route === "" ? 1.0 : route === "/planner" ? 0.9 : 0.7,
+      });
+    }
 
-  for (const slug of BLOG_SLUGS) {
-    const post = POSTS[slug];
-    // lastModified는 publish 이후여야 함. lastReviewed가 같은 달이면 day 1로 파싱돼
-    // publishDate보다 앞설 수 있음 → schema 위반. Math.max 가드.
-    const publishTime = new Date(post.date).getTime();
-    const reviewDate = post.lastReviewed ? new Date(`1 ${post.lastReviewed}`) : null;
-    const reviewTime = reviewDate && !isNaN(reviewDate.getTime()) ? reviewDate.getTime() : 0;
-    entries.push({
-      url: `${BASE_URL}/blog/${slug}`,
-      lastModified: new Date(Math.max(publishTime, reviewTime)),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
-  }
+    for (const slug of BLOG_SLUGS) {
+      const post = POSTS[slug];
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/${slug}`,
+        lastModified: lastModified(post),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
 
-  for (const slug of GUIDE_SLUGS) {
-    const guide = GUIDES[slug];
-    const publishTime = new Date(guide.date).getTime();
-    const reviewDate = guide.lastReviewed ? new Date(`1 ${guide.lastReviewed}`) : null;
-    const reviewTime = reviewDate && !isNaN(reviewDate.getTime()) ? reviewDate.getTime() : 0;
-    entries.push({
-      url: `${BASE_URL}/guides/${slug}`,
-      lastModified: new Date(Math.max(publishTime, reviewTime)),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    });
+    for (const slug of GUIDE_SLUGS) {
+      const guide = GUIDES[slug];
+      entries.push({
+        url: `${BASE_URL}/${locale}/guides/${slug}`,
+        lastModified: lastModified(guide),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      });
+    }
   }
 
   return entries;

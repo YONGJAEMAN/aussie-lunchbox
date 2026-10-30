@@ -17,7 +17,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "european"
       },
       {
         "name": "Chicken Wrap",
@@ -35,7 +38,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Turkey Club Sandwich",
@@ -54,7 +60,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Bagel & Cream Cheese",
@@ -70,7 +79,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Smoked Salmon Bagel",
@@ -87,7 +99,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Egg Salad Sandwich",
@@ -105,7 +120,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Tuna Mayo Sandwich",
@@ -123,7 +141,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Roast Beef Roll",
@@ -141,7 +162,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Chicken Pesto Panini",
@@ -159,7 +183,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": false,
-        "is_egg_free": true
+        "is_egg_free": false,
+        "prep_style": "cook-fresh",
+        "is_thermos": false,
+        "cuisine": "italian"
       },
       {
         "name": "Veggie Wrap",
@@ -177,7 +204,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "BLT Sandwich",
@@ -195,25 +225,31 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
-        "name": "Marmite & Cheese Sandwich",
+        "name": "Vegemite & Cheese Sandwich",
         "category": "Sandwich",
         "ingredients": [
           "Bread",
-          "Marmite",
+          "Vegemite",
           "Cheese",
           "Butter"
         ],
         "image": "/assets/marmite_sandwich.png",
-        "instructions": "**Method:**\n1. Butter both slices of bread evenly.\n2. Spread a thin, even layer of Marmite on one slice (a little goes a long way!).\n3. Add sliced cheese on top of the Marmite.\n4. Press slices together and cut into halves or quarters.",
+        "instructions": "**Method:**\n1. Butter both slices of bread evenly.\n2. Spread a thin, even layer of Vegemite on one slice (a little goes a long way!).\n3. Add sliced cheese on top of the Vegemite.\n4. Press slices together and cut into halves or quarters.",
         "is_vegetarian": true,
         "is_vegan": false,
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Peanut Butter Sandwich",
@@ -229,7 +265,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": false,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Jam Sandwich",
@@ -246,7 +285,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Mac 'n Cheese",
@@ -263,7 +305,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "american"
       },
       {
         "name": "Fried Rice",
@@ -282,7 +327,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "chinese"
       },
       {
         "name": "Teriyaki Chicken & Rice",
@@ -300,7 +348,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "japanese"
       },
       {
         "name": "Mini Meatballs",
@@ -315,9 +366,12 @@
         "is_vegetarian": false,
         "is_vegan": false,
         "is_gluten_free": false,
-        "is_dairy_free": true,
+        "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "italian"
       },
       {
         "name": "Spaghetti Bolognese",
@@ -334,7 +388,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "italian"
       },
       {
         "name": "Butter Chicken & Rice",
@@ -351,7 +408,10 @@
         "is_gluten_free": true,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": false,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "indian"
       },
       {
         "name": "Vegetable Curry",
@@ -370,7 +430,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "indian"
       },
       {
         "name": "Chicken Satay",
@@ -384,10 +447,13 @@
         "instructions": "**Packing Tip:**\n1. Cut chicken into strips and marinate in teriyaki or satay sauce for 15 minutes.\n2. Thread onto wooden skewers (pre-soaked in water).\n3. Grill or pan-fry for 3–4 minutes per side until cooked through and lightly charred.\n4. Pack peanut sauce separately in a small sealed container.\n5. Pack skewers in a container with a side of rice or steamed veggies.",
         "is_vegetarian": false,
         "is_vegan": false,
-        "is_gluten_free": true,
+        "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": false,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "southeast_asian"
       },
       {
         "name": "Pizza Muffins",
@@ -406,7 +472,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Sausage Rolls",
@@ -423,7 +492,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Bacon & Egg Pie",
@@ -441,7 +513,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Mini Spinach Quiche",
@@ -460,7 +535,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "european"
       },
       {
         "name": "Cheese Scones",
@@ -478,7 +556,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Banana Bread",
@@ -497,7 +578,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Sushi Rolls",
@@ -513,9 +597,12 @@
         "is_vegetarian": false,
         "is_vegan": false,
         "is_gluten_free": true,
-        "is_dairy_free": true,
+        "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "japanese"
       },
       {
         "name": "Rice Paper Rolls",
@@ -533,7 +620,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "southeast_asian"
       },
       {
         "name": "Pasta Salad",
@@ -551,7 +641,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": false,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "italian"
       },
       {
         "name": "Greek Salad",
@@ -569,14 +662,17 @@
         "is_gluten_free": true,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "mediterranean"
       },
       {
         "name": "Yoghurt & Muesli",
         "category": "Cold",
         "ingredients": [
           "Yoghurt",
-          "Muesli (Nut-free)",
+          "Muesli",
           "Berries"
         ],
         "image": "/assets/yoghurt_muesli.png",
@@ -585,8 +681,11 @@
         "is_vegan": false,
         "is_gluten_free": false,
         "is_dairy_free": false,
-        "is_nut_free": true,
-        "is_egg_free": true
+        "is_nut_free": false,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "european"
       },
       {
         "name": "Vegan Burrito Bowl",
@@ -605,7 +704,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "mexican"
       },
       {
         "name": "Chickpea Salad Sandwich",
@@ -623,7 +725,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "GF Pasta with Tomato Sauce",
@@ -640,7 +745,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "italian"
       },
       {
         "name": "Tofu Stir-fry",
@@ -659,7 +767,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "chinese"
       },
       {
         "name": "Veggie Sticks & Hummus Box",
@@ -677,7 +788,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "middle_eastern"
       },
       {
         "name": "Dairy-Free Chicken Pesto Pasta",
@@ -695,7 +809,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": false,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "italian"
       },
       {
         "name": "Egg-Free Mayo Chicken Sandwich",
@@ -713,7 +830,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Falafel Wrap",
@@ -731,7 +851,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "middle_eastern"
       },
       {
         "name": "Quinoa Salad",
@@ -749,7 +872,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "mediterranean"
       },
       {
         "name": "Sausage & Mash (GF)",
@@ -766,7 +892,10 @@
         "is_gluten_free": true,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "british"
       },
       {
         "name": "Pikelets",
@@ -786,7 +915,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Pancakes",
@@ -805,7 +937,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Cinnamon Roll",
@@ -825,7 +960,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "european"
       },
       {
         "name": "Chocolate Brownie",
@@ -844,7 +982,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Blueberry Muffins",
@@ -865,7 +1006,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Beef Burger",
@@ -884,7 +1028,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Lentil Soup",
@@ -903,7 +1050,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "middle_eastern"
       },
       {
         "name": "Chilli con Carne",
@@ -923,7 +1073,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "mexican"
       },
       {
         "name": "Nachos",
@@ -941,7 +1094,10 @@
         "is_gluten_free": true,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "mexican"
       },
       {
         "name": "Noodle Stir-fry",
@@ -959,7 +1115,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "chinese"
       },
       {
         "name": "Quesadilla",
@@ -977,7 +1136,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": false,
+        "cuisine": "mexican"
       },
       {
         "name": "Dumplings",
@@ -996,7 +1158,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "chinese"
       },
       {
         "name": "Savoury Rice",
@@ -1015,7 +1180,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "kiwi"
       },
       {
         "name": "Caprese Salad",
@@ -1033,7 +1201,10 @@
         "is_gluten_free": true,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "italian"
       },
       {
         "name": "Couscous Salad",
@@ -1053,7 +1224,10 @@
         "is_gluten_free": false,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "middle_eastern"
       },
       {
         "name": "Fruit Salad",
@@ -1072,7 +1246,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Apple & Cheese Box",
@@ -1089,7 +1266,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Boiled Egg Box",
@@ -1106,7 +1286,10 @@
         "is_gluten_free": true,
         "is_dairy_free": true,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
       },
       {
         "name": "Chicken Caesar",
@@ -1126,7 +1309,10 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": false
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
       },
       {
         "name": "Salami & Cheese Sub",
@@ -1145,7 +1331,684 @@
         "is_gluten_free": false,
         "is_dairy_free": false,
         "is_nut_free": true,
-        "is_egg_free": true
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "ANZAC Biscuits",
+        "category": "Baking",
+        "ingredients": [
+          "Rolled Oats",
+          "Flour",
+          "Desiccated Coconut",
+          "Golden Syrup",
+          "Butter",
+          "Sugar",
+          "Baking Soda"
+        ],
+        "image": "/assets/anzac_biscuits.png",
+        "instructions": "**Method:**\n1. Mix 1 cup each of rolled oats, flour, coconut and sugar in a bowl.\n2. Melt 125g butter with 2 tbsp golden syrup in a pot.\n3. Stir 1 tsp baking soda dissolved in 2 tbsp boiling water into the butter, then pour into the dry mix.\n4. Roll spoonfuls into balls, flatten on a lined tray.\n5. Bake at 160°C for 12-15 minutes until golden. Cool before packing.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Cheesymite Scrolls",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Cheese",
+          "Vegemite",
+          "Milk",
+          "Butter",
+          "Baking Powder"
+        ],
+        "image": "/assets/cheesymite_scrolls.png",
+        "instructions": "**Method:**\n1. Make a scone dough: rub 50g butter into 2 cups self-raising flour, add ¾ cup milk and mix to a soft dough.\n2. Roll out into a rectangle and spread thinly with Vegemite.\n3. Sprinkle over grated cheese.\n4. Roll up from the long side and slice into 8 scrolls.\n5. Bake at 200°C for 12-15 minutes. Cool before packing.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Pizza Scrolls",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Tomato Paste",
+          "Cheese",
+          "Ham",
+          "Milk",
+          "Butter"
+        ],
+        "image": "/assets/pizza_scrolls.png",
+        "instructions": "**Method:**\n1. Make a scone dough and roll into a rectangle.\n2. Spread thinly with tomato paste.\n3. Scatter over grated cheese and chopped ham.\n4. Roll up and slice into 8 scrolls, place cut-side up on a lined tray.\n5. Bake at 200°C for 15 minutes until golden. Cool before packing.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Savoury Cheese Muffins",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Cheese",
+          "Milk",
+          "Egg",
+          "Sweetcorn",
+          "Butter"
+        ],
+        "image": "/assets/savoury_cheese_muffins.png",
+        "instructions": "**Method:**\n1. Whisk 1 egg with 1 cup milk and 50g melted butter.\n2. Fold in 2 cups self-raising flour, 1 cup grated cheese and ½ cup drained sweetcorn until just combined.\n3. Spoon into a greased muffin tray.\n4. Bake at 200°C for 18-20 minutes until risen and golden.\n5. Cool fully before packing.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Bacon & Egg Muffins",
+        "category": "Baking",
+        "ingredients": [
+          "Egg",
+          "Bacon",
+          "Cheese",
+          "Spring Onion"
+        ],
+        "image": "/assets/bacon_egg_muffins.png",
+        "instructions": "**Method:**\n1. Line a muffin tray with a strip of bacon in each hole.\n2. Whisk 6 eggs and season lightly.\n3. Add chopped spring onion and grated cheese to the egg.\n4. Pour into the bacon-lined holes.\n5. Bake at 180°C for 15-18 minutes until set. Cool before packing. Naturally gluten-free.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Cocktail Frankfurts",
+        "category": "Hot",
+        "ingredients": [
+          "Cocktail Sausages",
+          "Tomato Sauce"
+        ],
+        "image": "/assets/cocktail_sausages.png",
+        "instructions": "**Method:**\n1. Simmer cocktail frankfurts (cocktail franks) in boiling water for 5 minutes, or pan-fry until heated through.\n2. Cool, then halve or leave whole.\n3. Pack with a small pot of tomato sauce for dipping.\n4. Keep cold with an ice pack in the lunchbox.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Popcorn Chicken",
+        "category": "Hot",
+        "ingredients": [
+          "Chicken Breast",
+          "Flour",
+          "Egg",
+          "Breadcrumbs"
+        ],
+        "image": "/assets/popcorn_chicken.png",
+        "instructions": "**Method:**\n1. Cut chicken breast into bite-sized pieces.\n2. Coat in flour, then beaten egg, then breadcrumbs.\n3. Bake at 200°C for 15-18 minutes (or air-fry) until golden and cooked through.\n4. Cool, then pack. Great cold or gently reheated in a thermos.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "Toasted Cheese Jaffle",
+        "category": "Hot",
+        "ingredients": [
+          "Bread",
+          "Cheese",
+          "Butter"
+        ],
+        "image": "/assets/toasted_cheese_jaffle.png",
+        "instructions": "**Method:**\n1. Butter two slices of bread on the outside.\n2. Fill with grated or sliced cheese.\n3. Toast in a jaffle iron or sandwich press until golden and melted.\n4. Cut in half, cool slightly, and wrap. Best packed in an insulated pocket.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "DIY Snack Box",
+        "category": "Cold",
+        "ingredients": [
+          "Crackers",
+          "Cheese",
+          "Ham",
+          "Grapes"
+        ],
+        "image": "/assets/diy_snack_box.png",
+        "instructions": "**Method:**\n1. Pack a row of plain crackers in a divided lunchbox.\n2. Add cubes or slices of cheese.\n3. Add a few slices of rolled ham (or salami).\n4. Fill the last section with grapes or cherry tomatoes.\n5. No cooking needed – kids build their own bites.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Bircher / Overnight Oats",
+        "category": "Cold",
+        "ingredients": [
+          "Rolled Oats",
+          "Yoghurt",
+          "Milk",
+          "Grated Apple",
+          "Honey"
+        ],
+        "image": "/assets/bircher_oats.png",
+        "instructions": "**Method:**\n1. The night before, mix ½ cup rolled oats with ½ cup yoghurt and ¼ cup milk.\n2. Stir in 1 grated apple and a drizzle of honey.\n3. Cover and refrigerate overnight.\n4. Spoon into a small container in the morning. Add berries on top if you like.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "european"
+      },
+      {
+        "name": "Avocado & Cheese Toastie",
+        "category": "Hot",
+        "ingredients": [
+          "Bread",
+          "Avocado",
+          "Cheese",
+          "Butter"
+        ],
+        "image": "/assets/avocado_cheese_toastie.png",
+        "instructions": "**Method:**\n1. Mash half an avocado onto a slice of bread.\n2. Add sliced or grated cheese and top with a second slice.\n3. Butter the outsides and toast in a sandwich press until golden.\n4. Cut in half, cool slightly, and wrap. Best in an insulated pocket.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Cheese & Pickle Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Cheese",
+          "Pickle",
+          "Butter"
+        ],
+        "image": "/assets/cheese_pickle_sandwich.png",
+        "instructions": "**Method:**\n1. Butter two slices of bread.\n2. Add slices of tasty cheese.\n3. Spread a thin layer of pickle or relish.\n4. Close, cut into halves or triangles, and wrap.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
+      },
+      {
+        "name": "Falafel Pita Pocket",
+        "category": "Sandwich",
+        "ingredients": [
+          "Pita Bread",
+          "Falafel",
+          "Lettuce",
+          "Tomato",
+          "Hummus"
+        ],
+        "image": "/assets/falafel_pita.png",
+        "instructions": "**Method:**\n1. Warm a pita pocket and cut it open.\n2. Spread the inside with hummus.\n3. Fill with 2-3 falafel, shredded lettuce and diced tomato.\n4. Wrap firmly so it holds together in the lunchbox.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "middle_eastern"
+      },
+      {
+        "name": "Meatball Sub",
+        "category": "Sandwich",
+        "ingredients": [
+          "Sub Roll",
+          "Meatballs",
+          "Tomato Sauce",
+          "Cheese"
+        ],
+        "image": "/assets/meatball_sub.png",
+        "instructions": "**Method:**\n1. Warm cooked meatballs in a little tomato sauce.\n2. Split a sub roll and fill with the meatballs.\n3. Top with grated cheese.\n4. Cool before packing, or keep warm in a thermos-style container.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "Cheese & Cucumber Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Cheese",
+          "Cucumber",
+          "Butter"
+        ],
+        "image": "/assets/cheese_cucumber_sandwich.png",
+        "instructions": "**Method:**\n1. Butter two slices of bread.\n2. Layer with sliced cheese.\n3. Add thin cucumber slices for crunch.\n4. Close, remove crusts if you like, cut into triangles and wrap.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
+      },
+      {
+        "name": "Ham Salad Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Bread",
+          "Ham",
+          "Lettuce",
+          "Tomato",
+          "Butter"
+        ],
+        "image": "/assets/ham_salad_sandwich.png",
+        "instructions": "**Method:**\n1. Butter two slices of bread.\n2. Layer with sliced ham.\n3. Add lettuce and thin tomato slices (pat dry so it doesn't go soggy).\n4. Close, cut in half and wrap.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "british"
+      },
+      {
+        "name": "Rice Balls (Onigiri)",
+        "category": "Cold",
+        "ingredients": [
+          "Rice",
+          "Nori",
+          "Tuna",
+          "Mayonnaise"
+        ],
+        "image": "/assets/real-onigiri-lunchbox.webp",
+        "instructions": "**Method:**\n1. Cook short-grain rice and let it cool until just warm.\n2. Mix a small tin of drained tuna with 1 tbsp mayonnaise.\n3. Wet your hands, take a handful of rice, press a dent in the middle and add a spoon of the tuna mix.\n4. Close the rice over the filling and shape into a ball or triangle.\n5. Wrap a strip of nori around the base. Pack cold with an ice pack.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "japanese"
+      },
+      {
+        "name": "Tamagoyaki (Rolled Omelette)",
+        "category": "Cold",
+        "ingredients": [
+          "Egg",
+          "Soy Sauce",
+          "Sugar",
+          "Oil"
+        ],
+        "image": "/assets/tamagoyaki.png",
+        "instructions": "**Method:**\n1. Whisk 3 eggs with 1 tsp soy sauce and 1 tsp sugar.\n2. Heat a lightly oiled pan over medium-low and pour in a thin layer of egg.\n3. When just set, roll it to one end of the pan.\n4. Pour in more egg, lift the roll so the raw egg runs underneath, then roll again. Repeat.\n5. Cool, slice into rounds, and pack. Great cold.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "japanese"
+      },
+      {
+        "name": "Hash Browns",
+        "category": "Hot",
+        "ingredients": [
+          "Potato",
+          "Onion",
+          "Flour",
+          "Oil"
+        ],
+        "image": "/assets/hash_browns.png",
+        "instructions": "**Method:**\n1. Grate 2 potatoes and squeeze out as much water as you can.\n2. Mix with finely grated onion, 2 tbsp flour and a pinch of salt.\n3. Press into flat patties.\n4. Pan-fry or bake at 220°C for 20 minutes, turning once, until crisp and golden.\n5. Cool before packing. Also great made ahead and reheated.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "Chicken & Rice Bento",
+        "category": "Hot",
+        "ingredients": [
+          "Rice",
+          "Chicken",
+          "Egg",
+          "Broccoli",
+          "Carrot"
+        ],
+        "image": "/assets/chicken_rice_bento.png",
+        "instructions": "**Method:**\n1. Fill one section of the lunchbox with cooked rice.\n2. Add sliced cooked chicken alongside.\n3. Add a halved boiled egg.\n4. Fill the last section with steamed broccoli and carrot.\n5. Cool everything fully before closing the box. Naturally gluten-free and dairy-free.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "japanese"
+      },
+      {
+        "name": "Waffles",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Egg",
+          "Milk",
+          "Butter",
+          "Sugar",
+          "Baking Powder"
+        ],
+        "image": "/assets/waffles.png",
+        "instructions": "**Method:**\n1. Whisk 1 egg with 1 cup milk and 50g melted butter.\n2. Fold in 1½ cups flour, 2 tbsp sugar and 2 tsp baking powder until just combined.\n3. Cook in a hot waffle iron until golden.\n4. Cool on a rack so they stay crisp, then pack whole or cut into strips.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "european"
+      },
+      {
+        "name": "Date & Oat Slice",
+        "category": "Baking",
+        "ingredients": [
+          "Rolled Oats",
+          "Dates",
+          "Coconut Oil",
+          "Golden Syrup",
+          "Desiccated Coconut"
+        ],
+        "image": "/assets/date_oat_slice.png",
+        "instructions": "**Method:**\n1. Simmer 1 cup chopped dates with 3 tbsp water until soft, then mash to a paste.\n2. Melt 60g coconut oil with 2 tbsp golden syrup.\n3. Mix into 2 cups rolled oats and ½ cup coconut.\n4. Press half into a lined tin, spread the date paste over, top with the rest.\n5. Bake at 180°C for 20 minutes. Cool fully, then slice into bars.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "kiwi"
+      },
+      {
+        "name": "Vegan Banana Muffins",
+        "category": "Baking",
+        "ingredients": [
+          "Flour",
+          "Banana",
+          "Plant Milk",
+          "Oil",
+          "Sugar",
+          "Baking Powder"
+        ],
+        "image": "/assets/vegan_banana_muffins.png",
+        "instructions": "**Method:**\n1. Mash 2 ripe bananas in a bowl.\n2. Stir in ½ cup plant milk, ⅓ cup oil and ½ cup sugar.\n3. Fold in 1½ cups flour and 2 tsp baking powder until just combined.\n4. Spoon into a lined muffin tray.\n5. Bake at 190°C for 18-20 minutes. Cool fully before packing.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "GF Chicken & Salad Sandwich",
+        "category": "Sandwich",
+        "ingredients": [
+          "Gluten-Free Bread",
+          "Chicken",
+          "Lettuce",
+          "Tomato",
+          "Mayonnaise"
+        ],
+        "image": "/assets/gf_chicken_salad_sandwich.png",
+        "instructions": "**Method:**\n1. Lightly toast two slices of gluten-free bread so they hold together.\n2. Spread thinly with mayonnaise.\n3. Layer sliced cooked chicken, lettuce and tomato (pat the tomato dry).\n4. Close, cut in half and wrap firmly.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "british"
+      },
+      {
+        "name": "Corn Tortilla Veggie Wrap",
+        "category": "Sandwich",
+        "ingredients": [
+          "Corn Tortilla",
+          "Hummus",
+          "Capsicum",
+          "Carrot",
+          "Lettuce"
+        ],
+        "image": "/assets/corn_tortilla_veggie_wrap.png",
+        "instructions": "**Method:**\n1. Warm a corn tortilla briefly so it rolls without cracking.\n2. Spread with hummus.\n3. Add capsicum strips, grated carrot and shredded lettuce.\n4. Roll up tightly and cut in half. Naturally gluten-free and vegan.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "no-cook",
+        "is_thermos": false,
+        "cuisine": "mexican"
+      },
+      {
+        "name": "GF Banana Bread",
+        "category": "Baking",
+        "ingredients": [
+          "Gluten-Free Flour",
+          "Banana",
+          "Oil",
+          "Sugar",
+          "Egg",
+          "Baking Powder"
+        ],
+        "image": "/assets/gf_banana_bread.png",
+        "instructions": "**Method:**\n1. Mash 3 ripe bananas.\n2. Whisk in 1 egg, ⅓ cup oil and ½ cup sugar.\n3. Fold in 1½ cups gluten-free flour and 2 tsp baking powder.\n4. Pour into a lined loaf tin.\n5. Bake at 180°C for 45 minutes. Cool fully, then slice and pack.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": true,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": false,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "american"
+      },
+      {
+        "name": "Samoan Chop Suey",
+        "category": "Hot",
+        "ingredients": [
+          "Vermicelli Noodles",
+          "Beef Mince",
+          "Cabbage",
+          "Carrot",
+          "Soy Sauce"
+        ],
+        "image": "/assets/samoan_chop_suey.png",
+        "instructions": "**Method:**\n1. Soak vermicelli noodles in hot water until soft, then drain and cut shorter.\n2. Brown beef mince in a pan with grated ginger.\n3. Add shredded cabbage and carrot, cook until just soft.\n4. Stir through the noodles with soy sauce.\n5. Cool before packing, or send warm in a thermos.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "cook-fresh",
+        "is_thermos": true,
+        "cuisine": "pacific"
+      },
+      {
+        "name": "Vegetable Samosa",
+        "category": "Baking",
+        "ingredients": [
+          "Pastry",
+          "Potato",
+          "Peas",
+          "Onion",
+          "Curry Spices"
+        ],
+        "image": "/assets/vegetable_samosa.png",
+        "instructions": "**Method:**\n1. Cook diced potato until soft, then mash roughly with peas and fried onion.\n2. Season with mild curry spices and cool.\n3. Cut pastry into strips, spoon in filling and fold into triangles.\n4. Brush with oil and bake at 200°C for 20 minutes until golden.\n5. Cool before packing.",
+        "is_vegetarian": true,
+        "is_vegan": true,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "indian"
+      },
+      {
+        "name": "Bulgogi Rice Bento",
+        "category": "Hot",
+        "ingredients": [
+          "Rice",
+          "Beef",
+          "Soy Sauce",
+          "Sesame Oil",
+          "Carrot",
+          "Spinach"
+        ],
+        "image": "/assets/bulgogi_rice_bento.png",
+        "instructions": "**Method:**\n1. Marinate thin sliced beef in soy sauce, a little sugar and sesame oil.\n2. Pan-fry quickly over high heat until just cooked.\n3. Pack steamed rice in one section and the beef beside it.\n4. Add blanched spinach and carrot in the last section.\n5. Cool fully before closing the box.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": true,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "korean"
+      },
+      {
+        "name": "Char Siu Bao",
+        "category": "Hot",
+        "ingredients": [
+          "Bao Buns",
+          "Pork Shoulder",
+          "Hoisin Sauce"
+        ],
+        "image": "/assets/char_siu_bao.png",
+        "instructions": "**Method:**\n1. Steam the bao buns for 8 minutes until soft and puffy.\n2. Slice char siu pork and toss with a little hoisin sauce.\n3. Fill each bun with the pork.\n4. Cool slightly, then wrap each bun so they don't dry out.",
+        "is_vegetarian": false,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "chinese"
+      },
+      {
+        "name": "Paneer & Chutney Wrap",
+        "category": "Sandwich",
+        "ingredients": [
+          "Roti",
+          "Paneer",
+          "Mango Chutney",
+          "Cucumber",
+          "Onion"
+        ],
+        "image": "/assets/paneer_chutney_wrap.png",
+        "instructions": "**Method:**\n1. Pan-fry cubes of paneer until lightly golden.\n2. Warm a roti so it rolls easily.\n3. Spread with mint chutney.\n4. Add the paneer, cucumber sticks and thin onion slices.\n5. Roll up tightly, cut in half and wrap.",
+        "is_vegetarian": true,
+        "is_vegan": false,
+        "is_gluten_free": false,
+        "is_dairy_free": false,
+        "is_nut_free": true,
+        "is_egg_free": true,
+        "prep_style": "make-ahead",
+        "is_thermos": false,
+        "cuisine": "indian"
       }
     ]
   },
@@ -1204,6 +2067,52 @@
         "ingredients": [
           "Capsicum"
         ]
+      },
+      {
+        "name": "Blueberries",
+        "ingredients": [
+          "Blueberries"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Strawberries",
+        "ingredients": [
+          "Strawberries"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Kiwifruit",
+        "ingredients": [
+          "Kiwifruit"
+        ]
+      },
+      {
+        "name": "Sugar Snap Peas",
+        "ingredients": [
+          "Sugar Snap Peas"
+        ]
+      },
+      {
+        "name": "Celery Sticks",
+        "ingredients": [
+          "Celery"
+        ]
+      },
+      {
+        "name": "Watermelon",
+        "ingredients": [
+          "Watermelon"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Rockmelon",
+        "ingredients": [
+          "Rockmelon"
+        ],
+        "keepCold": true
       }
     ],
     "Protein & Dairy": [
@@ -1211,32 +2120,64 @@
         "name": "Cheese Cubes",
         "ingredients": [
           "Cheese Block"
-        ]
+        ],
+        "keepCold": true
       },
       {
         "name": "Yoghurt Pot",
         "ingredients": [
           "Yoghurt"
-        ]
+        ],
+        "keepCold": true
       },
       {
         "name": "Boiled Egg",
         "ingredients": [
           "Egg"
-        ]
+        ],
+        "keepCold": true
       },
       {
         "name": "Hummus & Veg",
         "ingredients": [
           "Hummus",
           "Carrot"
-        ]
+        ],
+        "keepCold": true
       },
       {
         "name": "Cheese Stick",
         "ingredients": [
           "Cheese Stick"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Ham Roll-ups",
+        "ingredients": [
+          "Ham"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Edamame",
+        "ingredients": [
+          "Edamame"
         ]
+      },
+      {
+        "name": "Cottage Cheese",
+        "ingredients": [
+          "Cottage Cheese"
+        ],
+        "keepCold": true
+      },
+      {
+        "name": "Probiotic Drink",
+        "ingredients": [
+          "Probiotic Drink"
+        ],
+        "keepCold": true
       }
     ],
     "Savoury Crunch": [
@@ -1263,6 +2204,30 @@
         "name": "Rice Wheels",
         "ingredients": [
           "Rice Wheels"
+        ]
+      },
+      {
+        "name": "Popcorn",
+        "ingredients": [
+          "Popcorn"
+        ]
+      },
+      {
+        "name": "Veggie Straws",
+        "ingredients": [
+          "Veggie Straws"
+        ]
+      },
+      {
+        "name": "Wholegrain Crackers",
+        "ingredients": [
+          "Wholegrain Crackers"
+        ]
+      },
+      {
+        "name": "Breadsticks",
+        "ingredients": [
+          "Breadsticks"
         ]
       }
     ],
@@ -1291,6 +2256,32 @@
         "name": "Dried Apricots",
         "ingredients": [
           "Dried Apricots"
+        ]
+      },
+      {
+        "name": "Sultanas",
+        "ingredients": [
+          "Sultanas"
+        ]
+      },
+      {
+        "name": "Fruit Leather",
+        "ingredients": [
+          "Real Fruit Strip"
+        ]
+      },
+      {
+        "name": "Rice Bubble Slice",
+        "ingredients": [
+          "Rice Bubbles",
+          "Golden Syrup",
+          "Butter"
+        ]
+      },
+      {
+        "name": "Dark Chocolate Square",
+        "ingredients": [
+          "Dark Chocolate"
         ]
       }
     ]

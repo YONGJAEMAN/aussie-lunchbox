@@ -1,49 +1,34 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import Footer from "@/components/Footer";
 
-export default function ContactPage() {
-  const params = useParams();
-  const locale = (params.locale as string) ?? "en";
-  const t = useTranslations();
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildPageMetadata({
+    path: "/contact",
+    locale,
+    title: "Contact – Aussie Lunchbox | Reach the Solo Operator Directly",
+    description:
+      "A free school lunch planner for Australian families, run solo by Yong Jae Lee in Auckland, NZ. Corrections, feedback and data requests reach me directly.",
+  });
+}
 
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      setStatus("error");
-      return;
-    }
-    setLoading(true);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    } finally {
-      setLoading(false);
-    }
-  }
+export default async function ContactPage() {
+  const locale = await getLocale();
+  const t = await getTranslations();
 
   return (
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Open Sans', sans-serif" }}>
       {/* Hero */}
-      <section className="bg-[#FFF8EE] pt-24 pb-16 px-4 text-center">
-        <p className="text-[#F5A623] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_get_in_touch")}</p>
+      <section className="bg-[#F7F9FC] pt-24 pb-16 px-4 text-center">
+        <p className="text-[#8C4A00] font-semibold text-sm uppercase tracking-widest mb-4">{t("section_get_in_touch")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 max-w-2xl mx-auto leading-tight">
           {t("contact_title")}
         </h1>
@@ -63,89 +48,27 @@ export default function ContactPage() {
             </p>
             <div className="space-y-4 text-gray-700 mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#FFF8EE] flex items-center justify-center text-lg">✉️</div>
+                <div className="w-10 h-10 rounded-2xl bg-[#F7F9FC] flex items-center justify-center text-lg">✉️</div>
                 <span className="text-sm">{t("contact_email_addr")}</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#FFF8EE] flex items-center justify-center text-lg">📍</div>
+                <div className="w-10 h-10 rounded-2xl bg-[#F7F9FC] flex items-center justify-center text-lg">📍</div>
                 <span className="text-sm">{t("contact_location")}</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#FFF8EE] flex items-center justify-center text-lg">🕐</div>
+                <div className="w-10 h-10 rounded-2xl bg-[#F7F9FC] flex items-center justify-center text-lg">🕐</div>
                 <span className="text-sm">{t("contact_hours")}</span>
               </div>
             </div>
-            <div className="bg-[#FFF8EE] rounded-3xl p-5 text-gray-600 text-sm leading-relaxed">
-              💡 {t("contact_support_tip")}
+            <div className="bg-[#F7F9FC] rounded-3xl p-5 text-gray-600 text-sm leading-relaxed">
+              {t("contact_support_tip")}
             </div>
           </div>
 
-          {/* Right: contact form */}
-          <div className="bg-[#FFF8EE] rounded-3xl p-8">
+          {/* Right: contact form (client component) */}
+          <div className="bg-[#F7F9FC] rounded-3xl p-8">
             <h2 className="text-2xl font-extrabold text-[#1a1a1a] mb-6">{t("contact_form_title")}</h2>
-            {status === "success" ? (
-              <div className="bg-green-50 border border-green-200 text-green-700 rounded-3xl p-8 text-center">
-                <div className="text-4xl mb-3">✅</div>
-                <p className="font-semibold text-lg">{t("contact_success_title")}</p>
-                <p className="text-sm mt-1">{t("contact_success_msg")}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">{t("contact_name_label")}</label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full border border-orange-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
-                    placeholder="Jane Smith"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">{t("contact_email_label")}</label>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-orange-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
-                    placeholder="jane@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">{t("contact_subject_label")}</label>
-                  <select
-                    value={form.subject || t("contact_subject_general")}
-                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className="w-full border border-orange-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors bg-white"
-                  >
-                    <option>{t("contact_subject_general")}</option>
-                    <option>{t("contact_subject_support")}</option>
-                    <option>{t("contact_subject_feedback")}</option>
-                    <option>{t("contact_subject_partner")}</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">{t("contact_message_label")}</label>
-                  <textarea
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    rows={5}
-                    className="w-full border border-orange-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#F5A623] transition-colors resize-none bg-white"
-                    placeholder={t("contact_message_placeholder")}
-                  />
-                </div>
-                {status === "error" && (
-                  <p className="text-red-500 text-sm">{t("contact_error")}</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-[#7B3F00] hover:bg-[#F5A623] text-white font-bold py-3 rounded-full transition-colors disabled:opacity-60"
-                >
-                  {loading ? t("contact_sending") : t("contact_send_btn")}
-                </button>
-              </form>
-            )}
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -165,77 +88,106 @@ export default function ContactPage() {
             Every message sent through this page is read by <strong>Yong Jae Lee</strong>, the
             solo operator of Aussie Lunchbox. There is no support team, no ticketing system,
             and no virtual assistant in front of the inbox. Yong Jae is a Senior Product
-            Designer and a parent of school-age children — the same audience the site is
-            built for.
+            Designer based in Auckland and a parent of school-age children — the same
+            audience the site is built for.
           </p>
           <p className="text-gray-700 leading-relaxed mb-8">
             This direct line is part of what makes Aussie Lunchbox sustainable as a solo
-            project: feedback from real Australian parents shapes which articles get written
-            next, which allergy filters get refined, and which Woolworths prices
-            get checked most often. If you have already read the{" "}
-            <Link href={`/${locale}/about`} className="text-[#F5A623] underline">About page</Link>
+            project: feedback from parents shapes which articles get written next,
+            which allergy filters get refined, and which supermarket prices get checked
+            most often. If you have already read the{" "}
+            <Link href={`/${locale}/about`} className="text-[#8C4A00] underline">About page</Link>
             {" "}and the{" "}
-            <Link href={`/${locale}/faq`} className="text-[#F5A623] underline">FAQ</Link>,
+            <Link href={`/${locale}/faq`} className="text-[#8C4A00] underline">FAQ</Link>,
             this email goes straight to me.
           </p>
 
+          {/* 🔴 09-29: 「five common categories」라 했는데 폼(ContactForm.tsx)의 제목 선택지는 넷이고,
+              아래 목록은 선택지와 짝이 안 맞았다(없는 「Privacy enquiry」를 고르라고 했다).
+              선택지 이름은 폼과 같은 키에서 가져온다 — 손으로 적으면 한쪽만 바뀐다. */}
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">What you can write about</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            The contact form handles five common categories. Picking the right one helps
-            me reply faster:
+            The subject menu on the form has four options &mdash; {t("contact_subject_general")},{" "}
+            {t("contact_subject_support")}, {t("contact_subject_feedback")} and{" "}
+            {t("contact_subject_partner")}. These are the things people most often write
+            about, and which option to pick for each:
           </p>
           <ul className="list-disc pl-6 text-gray-700 space-y-3 mb-8">
             <li>
-              <strong>General questions about the planner</strong> — how it works, how to
-              save plans, why a particular menu was suggested, or how to interpret the
-              shopping list. These are usually answered within 24 hours AEST.
+              <strong>General questions about the planner</strong> ({t("contact_subject_general")})
+              — how it works, how favourites work, why a particular menu was suggested, or how
+              to interpret the shopping list. Ideas and feature requests go under{" "}
+              {t("contact_subject_feedback")}. I aim to reply within 48 hours NZT.
             </li>
             <li>
-              <strong>Content corrections</strong> — an incorrect ingredient measurement, a
-              broken external reference, an outdated Australian price, or a recipe step
-              that does not read clearly. Corrections are reviewed within 48 hours and the
-              article is updated with a new <code>lastReviewed</code> date. The original is
-              not silently overwritten — if a meaningful factual change is made, the change
+              <strong>Content corrections</strong> ({t("contact_subject_support")}) — an
+              incorrect ingredient measurement, a broken external reference, an outdated
+              price, or a recipe step that does not read clearly. I aim to review a correction
+              within 48 hours and to fix a confirmed one within one week, and the article is
+              updated with a new <code>lastReviewed</code> date. The original is not
+              silently overwritten — if a meaningful factual change is made, the change
               is noted in the article footer.
             </li>
             <li>
-              <strong>Allergy-tagging errors</strong> — the most important category.
-              Aussie Lunchbox cross-references allergy tags against FSANZ
-              Plain English Allergen Labelling (PEAL) ingredient declarations, but
-              real-world ingredient changes by manufacturers can outpace site updates.
-              If you spot a tag that does not match the latest packaging, flag it and I
-              will update the database within 24 hours.
+              <strong>Allergy-tagging errors</strong> ({t("contact_subject_support")}) — the
+              most important category. Lunch recipes are flagged by hand from their ingredient
+              lists and snacks are checked against the tracked product&apos;s allergen
+              declaration where one is on file, but manufacturers change recipes faster than
+              any site can follow. If you spot a flag that does not match the latest
+              packaging, tell me and I aim to fix a confirmed error within 48 hours.
             </li>
             <li>
-              <strong>Advertising and partnership enquiries</strong> — Aussie Lunchbox is
+              <strong>Advertising and partnership enquiries</strong> ({t("contact_subject_partner")})
+              — Aussie Lunchbox is
               monetised through Google AdSense only. The site does not currently accept
               sponsored content, affiliate partnerships, or brand-sponsored articles. If
               your enquiry is editorial-content related (a recipe collaboration or a
               guest-author piece), that is welcome — sponsored placements are not.
             </li>
             <li>
-              <strong>Privacy and data enquiries</strong> — under the Australian Privacy
-              Act 1988 and the Australian Privacy Principles, you have a right to ask what
-              personal information Aussie Lunchbox holds about you and to request
-              correction or deletion. Email the contact form with the subject "Privacy
-              enquiry" and I will respond within 30 days as required by the Office of the
-              Australian Information Commissioner (OAIC). See the{" "}
-              <Link href={`/${locale}/policies`} className="text-[#F5A623] underline">Privacy Policy</Link>
+              <strong>Privacy and data enquiries</strong> ({t("contact_subject_general")}) —
+              under the New Zealand Privacy Act 2020, you have a right to ask what personal
+              information Aussie Lunchbox holds about you and to ask for it to be corrected, and
+              I will also delete an account on request. Pick{" "}
+              {t("contact_subject_general")} and start the message with &quot;Privacy
+              request&quot;. The Act (section 44) requires a decision on an access request as
+              soon as reasonably practicable and no later than 20 working days after it
+              arrives; I aim to reply within 10 working days. See the{" "}
+              <Link href={`/${locale}/policies`} className="text-[#8C4A00] underline">Privacy Policy</Link>
               {" "}for the full data-handling overview.
             </li>
           </ul>
 
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Response times</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Aussie Lunchbox is operated from Australia. Typical reply windows:
+            Aussie Lunchbox is run from Auckland, New Zealand. Typical reply windows:
           </p>
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
-            <li><strong>Planner / general questions:</strong> within 24 hours AEST, Monday–Friday.</li>
-            <li><strong>Allergy-tagging errors:</strong> within 24 hours, including weekends. This is the highest priority category.</li>
-            <li><strong>Content corrections:</strong> within 48 hours AEST, Monday–Friday.</li>
-            <li><strong>Advertising / partnership enquiries:</strong> within 5 working days.</li>
-            <li><strong>Privacy enquiries (Privacy Act 1988):</strong> up to 30 days per OAIC guidance.</li>
-            <li>Australian public holidays may extend the above windows. School holidays do not — the operator is a parent during school holidays too.</li>
+            {/* 🔴 09-29: 이 목록이 24시간(알레르기·일반)·48시간(정정)을 약속했고 FAQ(faq_a27)는
+                알레르기 48시간·그 밖의 정정 1주를 약속했다. 한 사이트가 두 시한을 말하고 있었다.
+                FAQ·머리말(contact_subtitle 48시간)에 맞춘다. 법정 기한도 10일이 아니라 20 working days다. */}
+            <li><strong>Planner / general questions:</strong> a reply within 48 hours NZT, Monday–Friday.</li>
+            <li><strong>Allergy-tagging errors:</strong> a confirmed error fixed within 48 hours. This is the highest priority category.</li>
+            <li><strong>Content corrections:</strong> reviewed within 48 hours NZT, and a confirmed correction fixed within one week.</li>
+            <li><strong>Advertising / partnership / privacy enquiries:</strong> within 5 working days for most cases, and within 10 working days for privacy requests &mdash; well inside the Privacy Act 2020 limit of 20 working days.</li>
+            <li>NZ public holidays may extend the above windows. School holidays do not — the operator is a parent during school holidays too.</li>
+          </ul>
+
+          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">Where the operator is based</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Aussie Lunchbox is operated from Auckland, New Zealand, for families in Australia.
+            What that means for the content:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
+            {/* 🔴 09-29: 「Botany 지점을 격주로 확인」은 수집기(.github/workflows/update_prices.yml)에 없다.
+                세 열 모두 매주 온라인 매장에서 읽고, 매장을 고르는 두 체인은 Ormiston으로 고정돼 있다. */}
+            <li>Prices are read from <strong>Woolworths Australia</strong>&apos;s own online shop rather than walked in store — I don&apos;t live in Australia. Prices at your local store, and in other states, may differ.</li>
+            <li>The seasonal produce calendar describes general Australian seasons; what is in season varies a lot between the tropical north and the southern states (see the{" "}
+              <Link href={`/${locale}/guides/australian-seasonal-produce-calendar`} className="text-[#8C4A00] underline">seasonal calendar guide</Link>
+              ).
+            </li>
+            <li>School food rules are set by each state&apos;s healthy canteen framework and by individual schools, so the guides describe the common ground and point to the state documents rather than one national rule.</li>
+            <li>The site is hosted on Vercel infrastructure with content delivered from the nearest available edge node, regardless of where you are reading from.</li>
           </ul>
 
           <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 mt-10">What this contact form does not cover</h3>
@@ -245,23 +197,26 @@ export default function ContactPage() {
           <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
             <li>
               <strong>Medical or dietary advice for an individual child.</strong> Articles
-              on Aussie Lunchbox follow public NHMRC (National Health and Medical Research
-              Council) and Department of Health guidance, but I am not a registered
-              dietitian or paediatric clinician. If your child has a diagnosed condition,
-              allergy with anaphylaxis risk, growth concern, or specific nutritional need,
-              talk to your GP, an accredited practising dietitian (APD), or contact{" "}
-              <strong>Healthdirect Australia (1800 022 222)</strong>.
+              on Aussie Lunchbox follow public Australian Government and NHMRC
+              guidance, but I am not a registered dietitian or paediatric clinician. If
+              your child has a diagnosed condition, allergy with anaphylaxis risk, growth
+              concern, or specific nutritional need, talk to your GP or a registered
+              health professional.
             </li>
             <li>
-              <strong>Account or login issues for the planner.</strong> The planner uses
-              Supabase Auth — if you cannot sign in, use the password-reset flow on the
-              login page. Email recovery is not handled through this form because I do not
-              have direct access to user credentials.
+              {/* 🔴 09-29: 「로그인 페이지의 비밀번호 재설정」을 쓰라고 했지만 그런 흐름이 없다
+                  (AuthModal·AccountClient는 signIn/signUp뿐). 계정이 담는 것은 즐겨찾기 이름뿐이다. */}
+              <strong>Password recovery for the planner.</strong> The planner uses Supabase
+              Auth, I do not have access to anyone&apos;s password, and there is no
+              self-service password reset on the login page. An account only holds your
+              favourite menu names, so if you are locked out the quickest route is a new
+              account &mdash; and you can ask for the old one to be deleted as a privacy
+              request.
             </li>
             <li>
               <strong>Bulk content licensing or scraping requests.</strong> All
               Aussie Lunchbox content is original and copyrighted to the operator. Use the{" "}
-              <Link href={`/${locale}/terms`} className="text-[#F5A623] underline">Terms</Link>
+              <Link href={`/${locale}/terms`} className="text-[#8C4A00] underline">Terms</Link>
               {" "}page for the licensing details, or email with the subject "Licensing"
               and a clear use-case description.
             </li>
@@ -270,47 +225,7 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1a1a1a] text-white py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">AL</span>
-                </div>
-                <span className="font-bold">Aussie Lunchbox</span>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed">{t("footer_tagline")}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_product")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/planner`} className="block hover:text-white transition-colors">{t("nav_planner")}</Link>
-                <Link href={`/${locale}/blog`} className="block hover:text-white transition-colors">{t("footer_blog")}</Link>
-                <Link href={`/${locale}/faq`} className="block hover:text-white transition-colors">{t("footer_faq")}</Link>
-                <Link href={`/${locale}/guides`} className="block hover:text-white transition-colors">{t("nav_guides")}</Link>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_company")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/about`} className="block hover:text-white transition-colors">{t("footer_about")}</Link>
-                <Link href={`/${locale}/contact`} className="block hover:text-white transition-colors">{t("footer_contact")}</Link>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm mb-4">{t("footer_legal_label")}</p>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <Link href={`/${locale}/terms`} className="block hover:text-white transition-colors">{t("footer_terms")}</Link>
-                <Link href={`/${locale}/policies`} className="block hover:text-white transition-colors">{t("footer_privacy")}</Link>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8">
-            <p className="text-gray-500 text-sm">{t("footer_copyright", { year: new Date().getFullYear() })}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer locale={locale} />
     </main>
   );
 }

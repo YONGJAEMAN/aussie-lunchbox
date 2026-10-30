@@ -3,11 +3,11 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Aussie Lunchbox — Australian School Lunch Planner",
-    short_name: "AussieLunch",
+    short_name: "KiwiLunch",
     description: "Plan stress-free school lunches for Australian families. Weekly plans, shopping lists, allergy filters.",
     start_url: "/en/planner",
     display: "standalone",
-    background_color: "#FDFAF2",
+    background_color: "#F5F7FA",
     theme_color: "#F5A623",
     icons: [
       { src: "/icons/icon-192", sizes: "192x192", type: "image/png" },

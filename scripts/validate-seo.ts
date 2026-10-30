@@ -6,13 +6,13 @@ import { BRAND } from "../lib/brand";
 /**
  * prebuild 게이트. 배포되는 모든 글이 최소 SEO 조건을 갖췄는지 본다.
  *
- * 2026-08-06: **가이드 8편이 이 검사에서 빠져 있었다.** 블로그 13편만 보고 있었다.
- * (Kiwi도 같은 구멍이 있었고 같은 날 같이 고쳤다.) 두 컬렉션은 필드 모양이
- * 같으므로 같은 규칙을 적용한다.
+ * 2026-08-06: **가이드 8편이 이 검사에서 빠져 있었다.** 블로그 12편만 보고 있었는데,
+ * 정작 버그가 빠져나간 곳은 가이드였다 — `guides/[slug]`가 JSON-LD image를 절대 URL로
+ * 바꾸지 않던 건(`blog/[slug]`엔 있던 처리다). 지금 AdSense 근거로 내세우는 것도 그 8편이다.
+ * 두 컬렉션은 필드 모양이 같으므로 같은 규칙을 적용한다.
  *
- * 로컬 이미지(/assets/...) 파일 존재 확인도 넣었다. 경로를 잘못 적어도
- * 타입체크·빌드는 통과하고 히어로만 조용히 깨진다. 현재 21편은 전부 Unsplash라
- * 이 분기를 타지 않지만, 자체 호스팅으로 옮길 때 필요하다.
+ * image 파일 존재 확인도 같이 넣었다. 경로를 잘못 적어도 타입체크·빌드는 통과하고
+ * 히어로만 조용히 깨진다 — 이 저장소가 반복해서 물린 유형이다.
  */
 type Article = {
   title: string;
@@ -60,6 +60,7 @@ for (const [label, urlSegment, items] of COLLECTIONS) {
       errors.push(`${id}: missing category`);
     }
 
+    // 외부 https URL 또는 로컬 실사진(/assets/...) 둘 다 허용
     const image = article.image ?? "";
     if (!image.startsWith("https://") && !image.startsWith("/assets/")) {
       errors.push(`${id}: invalid image URL (must start with https:// or /assets/): ${image || "(none)"}`);
