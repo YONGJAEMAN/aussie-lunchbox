@@ -1,0 +1,147 @@
+{
+  "lastUpdated": "2026-10-30",
+  "woolworthsUpdated": "2026-10-30",
+  "woolworthsMethod": "Woolworths Australia online price feed, default guest session (fixed SKUs, regular shelf price)",
+  "items": [
+    {
+      "name": "Wholemeal Bread (700g)",
+      "category": "Bakery",
+      "unit": "per loaf",
+      "note": "Tip Top The One Wholemeal",
+      "woolworths": 4.6
+    },
+    {
+      "name": "Wraps 8-pack",
+      "category": "Bakery",
+      "unit": "per pack",
+      "note": "Mission Original",
+      "woolworths": 5.6
+    },
+    {
+      "name": "Bagels 4-pack",
+      "category": "Bakery",
+      "unit": "per pack",
+      "note": "Abe's Natural",
+      "woolworths": 5.5
+    },
+    {
+      "name": "Apples (1kg)",
+      "category": "Produce",
+      "unit": "per kg",
+      "note": "Royal Gala",
+      "woolworths": 7.9
+    },
+    {
+      "name": "Bananas",
+      "category": "Produce",
+      "unit": "each",
+      "note": "Cavendish",
+      "woolworths": 0.81
+    },
+    {
+      "name": "Carrots (1kg)",
+      "category": "Produce",
+      "unit": "per kg",
+      "note": "",
+      "woolworths": 2.2
+    },
+    {
+      "name": "Cherry Tomatoes (250g)",
+      "category": "Produce",
+      "unit": "per punnet",
+      "note": "",
+      "woolworths": 2.5
+    },
+    {
+      "name": "Cucumber",
+      "category": "Produce",
+      "unit": "each",
+      "note": "Continental",
+      "woolworths": 2.5
+    },
+    {
+      "name": "Lettuce",
+      "category": "Produce",
+      "unit": "each",
+      "note": "Iceberg",
+      "woolworths": 3
+    },
+    {
+      "name": "Sliced Chicken (250g)",
+      "category": "Meat & Deli",
+      "unit": "per pack",
+      "note": "Carved chicken breast",
+      "woolworths": 9
+    },
+    {
+      "name": "Canned Tuna (95g)",
+      "category": "Meat & Deli",
+      "unit": "per can",
+      "note": "Sirena in springwater",
+      "woolworths": 2.95
+    },
+    {
+      "name": "Sliced Ham (200g)",
+      "category": "Meat & Deli",
+      "unit": "per pack",
+      "note": "Don leg ham, shaved",
+      "woolworths": 6.6
+    },
+    {
+      "name": "Cheese Block (500g)",
+      "category": "Dairy & Eggs",
+      "unit": "per block",
+      "note": "Mainland Tasty",
+      "woolworths": 11
+    },
+    {
+      "name": "Eggs (12-pack)",
+      "category": "Dairy & Eggs",
+      "unit": "per dozen",
+      "note": "Sunny Queen free range, extra large",
+      "woolworths": 9.15
+    },
+    {
+      "name": "Yoghurt (1kg)",
+      "category": "Dairy & Eggs",
+      "unit": "per tub",
+      "note": "Jalna Greek style natural",
+      "woolworths": 9
+    },
+    {
+      "name": "Butter (500g)",
+      "category": "Dairy & Eggs",
+      "unit": "per block",
+      "note": "Western Star salted",
+      "woolworths": 8.9
+    },
+    {
+      "name": "Rice (1kg)",
+      "category": "Pantry",
+      "unit": "per kg",
+      "note": "SunRice long grain white",
+      "woolworths": 3
+    },
+    {
+      "name": "Pasta (500g)",
+      "category": "Pantry",
+      "unit": "per pack",
+      "note": "San Remo penne",
+      "woolworths": 2.95
+    },
+    {
+      "name": "Hummus (200g)",
+      "category": "Pantry",
+      "unit": "per tub",
+      "note": "Willow Farm",
+      "woolworths": 2.5
+    },
+    {
+      "name": "Peanut Butter (375g)",
+      "category": "Pantry",
+      "unit": "per jar",
+      "note": "Bega smooth",
+      "woolworths": 5.8
+    }
+  ]
+}

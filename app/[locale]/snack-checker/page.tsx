@@ -83,8 +83,9 @@ export default async function SnackCheckerPage() {
         </p>
         <p className="text-[#555] mb-3">
           {sum.labelBacked} of the {sum.total} snacks are checked against at least one packet label.
-          The other {sum.handOnly} have no allergen declaration on the tracked listing (fresh produce, for
-          example), so I flagged those by hand.
+          The other {sum.handOnly} have no Contains line on the tracked listing (fresh produce, for example), so
+          their reading comes from the ingredient list, from what the food is (fresh produce), or — for a few
+          with neither — from my own check. Each line below says which.
         </p>
         {/* 🔴 가격은 PR #120 이후 정가다(특가·회원가 아님). 그 전 캐시는 salePrice라 이 줄을 못 썼다. */}
         <p className="text-[#555] mb-3">

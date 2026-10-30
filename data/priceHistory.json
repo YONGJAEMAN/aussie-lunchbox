@@ -1,0 +1,33 @@
+{
+  "_doc": "가격지수 시계열. 점 하나 = 그 열이 실제로 그 날짜에 관측된 값. 값이 안 바뀐 주는 점이 없다 — 열 날짜로 dedupe하기 때문이다. 생성: scripts/update_price_history.mjs",
+  "columns": {
+    "woolworths": [
+      {
+        "date": "2026-10-30",
+        "items": {
+          "Wholemeal Bread (700g)": 4.6,
+          "Wraps 8-pack": 5.6,
+          "Bagels 4-pack": 5.5,
+          "Apples (1kg)": 7.9,
+          "Bananas": 0.81,
+          "Carrots (1kg)": 2.2,
+          "Cherry Tomatoes (250g)": 2.5,
+          "Cucumber": 2.5,
+          "Lettuce": 3,
+          "Sliced Chicken (250g)": 9,
+          "Canned Tuna (95g)": 2.95,
+          "Sliced Ham (200g)": 6.6,
+          "Cheese Block (500g)": 11,
+          "Eggs (12-pack)": 9.15,
+          "Yoghurt (1kg)": 9,
+          "Butter (500g)": 8.9,
+          "Rice (1kg)": 3,
+          "Pasta (500g)": 2.95,
+          "Hummus (200g)": 2.5,
+          "Peanut Butter (375g)": 5.8
+        }
+      }
+    ]
+  },
+  "generated": "2026-10-30"
+}

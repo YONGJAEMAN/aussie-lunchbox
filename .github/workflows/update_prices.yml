@@ -66,7 +66,16 @@ jobs:
               if (v !== "success") { console.error(`❌ ${name}이 통과하지 못했다 — 위 단계 로그를 볼 것.`); bad = true; }
             }
 
-            // Aussie: 가격지수(priceIndex.json)는 3단계에서 연다 — 그때 Kiwi의 지수 신선도 검사를 되살릴 것.
+            const idx = require("./data/priceIndex.json");
+            const idxAge = Math.floor((Date.now() - Date.parse(idx.lastUpdated)) / DAY);
+            console.log(`가격지수 lastUpdated=${idx.lastUpdated} (${idxAge}일 전)`);
+            if (!Number.isFinite(idxAge)) {
+              console.error(`❌ 지수 lastUpdated를 날짜로 못 읽었다(${JSON.stringify(idx.lastUpdated)}) — 나이를 모르면 통과가 아니다.`);
+              bad = true;
+            } else if (idxAge > MAX_AGE) {
+              console.error(`❌ 지수가 ${idxAge}일째 낡았다 — 로컬 수집(일 19:00 NZ)이 멈췄거나 병합이 안 됐다. ~/Library/Logs/aussielunchbox-prices.log를 볼 것.`);
+              bad = true;
+            }
 
             const cache = require("./data/price_cache.json");
             const stamps = Object.values(cache).map(v => v && v.timestamp).filter(Boolean);

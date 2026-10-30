@@ -70,7 +70,7 @@ function EvidenceLine({ e }: { e: Evidence }) {
       <li className="text-sm text-[#444]">
         <span className="font-semibold text-[#1a1a1a]">{e.ingredient}</span>{" "}
         <span className="text-[#666]">— {e.basis || "no packet label, flagged by hand"}: </span>
-        {e.flagged.length ? `contains ${e.flagged.map((t) => TAG_WORD[t]).join(", ")}` : `none of nuts, milk, egg or gluten${e.unverified.length ? "" : " or sesame"}`}
+        {e.flagged.length ? `contains ${e.flagged.map((t) => TAG_WORD[t]).join(", ")}` : (e.unverified.length ? "none of nuts, milk, egg or gluten" : "none of nuts, milk, egg, gluten or sesame")}
         {e.unverified.length ? ` · ${e.unverified.map((t) => TAG_WORD[t]).join(", ")} not checked — no label to read, so the ${e.unverified.map((t) => TAG_WORD[t]).join(", ")} filter leaves it out` : ""}
       </li>
     );

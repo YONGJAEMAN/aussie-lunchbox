@@ -18,6 +18,7 @@ const LOCALES = [
 const NAV_KEYS = [
   { href: "", key: "nav_home" },
   { href: "/planner", key: "nav_planner" },
+  { href: "/price-index", key: "nav_price_index" },
   { href: "/blog", key: "nav_blog" },
   { href: "/guides", key: "nav_guides" },
   { href: "/faq", key: "nav_faq" },

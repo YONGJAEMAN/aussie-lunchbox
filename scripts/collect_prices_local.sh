@@ -45,6 +45,20 @@ else
   exit 1
 fi
 
+# 가격지수·시계열(3단계, 2026-10-30) — 지수는 80% 미만이면 파일도 날짜도 안 바꾼다. 실패해도 플래너 캐시는 민다.
+for step in \
+  "가격지수 Woolworths:node scripts/update_price_index.mjs --write" \
+  "시계열 기록:node scripts/update_price_history.mjs --write"
+do
+  name="${step%%:*}"; cmd="${step#*:}"
+  say "▶ $name"
+  if eval "$cmd" >/tmp/aussie_price_step.log 2>&1; then
+    say "  ✅ $(grep -E '갱신 |적재 ' /tmp/aussie_price_step.log | head -1 | cut -c1-140)"
+  else
+    say "  ⚠️  $name 실패 (기존 값 유지) — $(tail -2 /tmp/aussie_price_step.log | tr '\n' ' ' | cut -c1-120)"
+  fi
+done
+
 if [[ -z "$(git status --porcelain -- data)" ]]; then
   say "변경 없음 — 커밋하지 않는다."
   exit 0
@@ -62,7 +76,7 @@ if ! npx vitest run >/tmp/aussie_price_test.log 2>&1; then
 fi
 say "  ✅ $(grep -E 'Tests ' /tmp/aussie_price_test.log | tail -1)"
 
-git add data/price_cache.json data/price_cache_review.txt
+git add data/price_cache.json data/price_cache_review.txt data/priceIndex.json data/priceHistory.json data/price_index_review.txt
 # 작성자 이메일은 GitHub 계정에 붙은 주소여야 한다 — 아니면 Vercel이 배포를 막는다(Kiwi 09-13·09-27).
 git -c user.name="Aussie price cron (local)" -c user.email="133712935+YONGJAEMAN@users.noreply.github.com" \
     commit -q -m "🛒 주간 가격 업데이트 ($(date '+%Y-%m-%d'), 로컬 수집)"
