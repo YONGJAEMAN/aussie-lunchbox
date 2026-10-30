@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync, existsSync } from "node:fs";
 import {
-  EXCLUDE_CATEGORIES, ALTER_CATEGORIES, EXCLUDE_INGREDIENTS, EXCLUDE_SNACKS, ALTER_INGREDIENTS, PREPS,
-  CHOKING_SOURCE, snackChokingFlag, dayKindyPrep, type PrepId,
+  AVOID_LINES, EXCLUDE_CATEGORIES, ALTER_CATEGORIES, FORM_LINES, EXCLUDE_INGREDIENTS, EXCLUDE_SNACKS, ALTER_INGREDIENTS,
+  PREPS, COOKED_IN_MENU, CHOKING_SOURCE, snackChokingFlag, dayKindyPrep,
 } from "./chokingRisk";
 import { buildWeeklyPlan, swapPlanDay, buildSharedPlan, PlanInputError } from "./planGenerator";
 import { dietViolations, mayContainNotes, savedPlanIsStale, snackAllowed, PLAN_SCHEMA } from "./ingredientDiet";
@@ -13,7 +13,8 @@ import { GUIDES } from "@/content/guides";
 import type { AllergyType, MenuItem, PlanItem, PriceInfo, SnackData, SnackItem } from "./types";
 
 /**
- * 「Kindy (under 5)」 — Ministry of Health (2020) 유아교육기관 질식 예방 지침 (2026-10-12).
+ * 「Kindy (under 5)」 — NSW Health 「Helping to prevent children from choking」(웹페이지, Current as at
+ * 24 August 2026)로 교체(Aussie 2026-10-30, 사용자 승인). Kiwi(NZ 보건부 2020)에서 온 구조는 그대로다.
  *
  * 🔴 기대값은 `chokingRisk.ts`에서 뽑지 않는다. 사용자가 승인한 분류를 **여기 리터럴로** 적고,
  *    데이터는 JSON 원본을 직접 읽는다(guard-expectations-from-same-source). 표를 고치면 여기도
@@ -30,65 +31,73 @@ const POOL: SnackItem[] = PLANNER_CATS.flatMap((c) => SNACKS[c as keyof SnackDat
 const ALL_SNACKS: SnackItem[] = Object.values(SNACKS).flat();
 const LOCALES = ["en", "ko", "zh"] as const;
 const MSG = Object.fromEntries(LOCALES.map((l) => [l, JSON.parse(read(`messages/${l}.json`)) as Record<string, string>]));
+const GUIDE_SLUG = "kindy-lunchbox-choking-guide-australia";
 
-/** 지침 「High-risk food to exclude」 아홉 줄 — PDF 3쪽 문구 그대로. */
-const GUIDE_EXCLUDE_LINES = [
-  "whole nuts or pieces of nuts",
-  "large seeds, like pumpkin or sunflower seeds",
-  "hard or chewy sweets or lollies",
-  "crisps or chippies and corn chips",
-  "hard rice crackers",
-  "dried fruit",
-  "sausages, saveloys and cheerios",
-  "popcorn",
-  "marshmallows",
+/**
+ * 지침 「High-risk foods — Do not serve to children under 3 years」 열 줄 — 웹페이지 문구 그대로(10-30 확인),
+ * 그 줄을 가리키는 표의 id와 함께. 화면 문구(`kindy_cat_*`)는 우리 요약이라 이 원문과 글자가 다르다.
+ */
+const NSW_LINES: [string, string][] = [
+  ["raw_hard", "raw, hard vegetables and fruit"],
+  ["nuts_seeds", "whole nuts and seeds such as watermelon, pumpkin (pepita) and sunflower seeds or kernels"],
+  ["popcorn_corn_chips", "popcorn and corn chips"],
+  ["grapes_peas", "grapes and whole peas"],
+  ["sultanas_raisins", "sultanas and raisins"],
+  ["hard_biscuits", "hard biscuits and crackers"],
+  ["skins_bones", "fish or other animal foods with skins and bones"],
+  ["meat_sausage", "large pieces of meat, bones, or sausage skins"],
+  ["lollies", "hard, jelly, and button-shaped lollies/sweets"],
+  ["chewy_sticky", "chewy, sticky, and 'gluey' textured foods such as fruit straps, fruit bars, and marshmallows"],
 ];
+const LINE = Object.fromEntries(NSW_LINES) as Record<string, string>;
+/** 10-30 승인: 손질표에 방법이 있는 「형태」 네 줄 → 손질로 다룬다. 나머지 여섯은 뺀다. */
+const APPROVED_FORM_LINES = { raw_hard: "hard", grapes_peas: "round_slippery", skins_bones: "skins_strings_bones", meat_sausage: "skins_strings_bones" };
 
-/** 승인된 「빼는」 재료 → 지침의 줄. */
+/** 승인된 「빼는」 재료 → 지침의 줄(원문). */
 const APPROVED_EXCLUDE: Record<string, string> = {
-  "Corn Chips": "crisps or chippies and corn chips",
-  "Veggie Straws": "crisps or chippies and corn chips",
-  "Rice Wheels": "crisps or chippies and corn chips",
-  "Rice Crackers": "hard rice crackers",
-  "Dried Apricots": "dried fruit",
-  "Sultanas": "dried fruit",
-  "Real Fruit Strip": "dried fruit",
-  "Dates": "dried fruit",
-  "Popcorn": "popcorn",
-  "Cocktail Sausages": "sausages, saveloys and cheerios",
-  "GF Sausages": "sausages, saveloys and cheerios",
-  // 10-12 검토: 이름이 아니라 추적 **상품**으로 판정 — 둘 다 쌀과자, 뮤즐리는 말린 베리가 든다.
-  "GF Crackers": "hard rice crackers",
-  "Wholegrain Crackers": "hard rice crackers",
-  "Muesli": "dried fruit",
+  "Corn Chips": LINE.popcorn_corn_chips,
+  "Popcorn": LINE.popcorn_corn_chips,
+  "Rice Crackers": LINE.hard_biscuits,
+  "Rice Wheels": LINE.hard_biscuits,
+  // 10-30 검토: 이름이 아니라 추적 **상품**으로 판정 — 셋 다 딱딱한 크래커, 뮤즐리는 아몬드·캐슈가 든다.
+  "Wholegrain Crackers": LINE.hard_biscuits,
+  "GF Crackers": LINE.hard_biscuits,
+  "Crackers": LINE.hard_biscuits,
+  "Muesli": LINE.nuts_seeds,
+  "Sultanas": LINE.sultanas_raisins,
+  "Real Fruit Strip": LINE.chewy_sticky,
 };
 /** 우리 판단 — 간식 이름 단위. 재료(Chickpeas)는 메뉴에서 익혀 무르므로 빼지 않는다. */
-const APPROVED_OURS_SNACKS = ["Roasted Chickpeas"];
+const APPROVED_OURS_SNACKS = ["Roasted Chickpeas", "Veggie Straws"];
 
-/** 승인된 「손질」 재료 → 손질법(전 연령 문구의 첫머리로 확인). */
+/** 승인된 「손질」 재료 → 손질법(en 문구의 첫머리로 확인). NZ의 4–6세 대안은 NSW에 없다. */
 const APPROVED_ALTER: Record<string, string[]> = {
-  "Apple": ["Grate"], "Pear": ["Grate"], "Carrot": ["Grate"], "Celery": ["Grate"], "Sugar Snap Peas": ["Grate"],
-  "Grapes": ["Quarter"], "Cherry Tomatoes": ["Quarter"], "Blueberries": ["Quarter"], "Strawberries": ["Quarter"],
-  "Berries": ["Quarter"], "Edamame": ["Quarter"],
-  "Peas": ["Cook, then squash"],
-  "Watermelon": ["Remove large seeds"],
-  "Olives": ["Remove the stone"],
-  "Tomato": ["Finely chop"],
-  "Lettuce": ["Finely slice"], "Cos Lettuce": ["Finely slice"], "Spinach": ["Finely slice"],
-  "Cabbage": ["Finely slice"], "Rocket": ["Finely slice"],
-  "Chicken": ["Remove the skin", "Cook until very tender"],
-  "Chicken Breast": ["Remove the skin", "Cook until very tender"],
-  "Chicken Thigh": ["Remove the skin", "Cook until very tender"],
-  "Cooked Chicken": ["Remove the skin", "Cook until very tender"],
-  "Ham": ["Cook until very tender"], "Beef": ["Cook until very tender"], "Roast Beef": ["Cook until very tender"],
-  "Turkey": ["Cook until very tender"], "Salami": ["Cook until very tender"], "Pork Shoulder": ["Cook until very tender"],
-  // 10-12 검토: 같은 「pieces of cooked meat」 줄 — 처음 목록에서 빠져 있던 고기들.
-  "Bacon": ["Cook until very tender"], "Ham/Bacon": ["Cook until very tender"], "Meatballs": ["Cook until very tender"],
-  "Beef Patty": ["Cook until very tender"], "Chicken Skewers": ["Cook until very tender"],
-  "Chicken/Tofu": ["Cook until very tender"], "Tuna/Chicken/Avocado": ["Cook until very tender"],
+  "Apple": ["Grate it"], "Pear": ["Grate it"],
+  "Carrot": ["Steam until soft"], "Celery": ["Steam until soft"],
+  "Sugar Snap Peas": ["Steam until soft", "Remove the strings"],
+  "Dried Apricots": ["Cut into very small"], "Dates": ["Cut into very small"],
+  "Peanut Butter": ["Use a smooth spread"],
+  "Grapes": ["Cut or squash"], "Blueberries": ["Cut or squash"], "Berries": ["Cut or squash"],
+  "Cherry Tomatoes": ["Cut or squash"], "Chickpeas": ["Cut or squash"],
+  "Olives": ["Remove tough seeds", "Cut or squash"],
+  "Peas": ["Cook, then finely mash"], "Corn": ["Cook, then finely mash"],
+  "Sweetcorn": ["Cook, then finely mash"], "Edamame": ["Cook, then finely mash"],
+  "Watermelon": ["Remove tough seeds"],
+  "Chicken": ["Remove the skin and gristle", "Cut or tear"],
+  "Chicken Breast": ["Remove the skin and gristle", "Cut or tear"],
+  "Chicken Thigh": ["Remove the skin and gristle", "Cut or tear"],
+  "Cooked Chicken": ["Remove the skin and gristle", "Cut or tear"],
+  "Ham": ["Cut or tear"], "Beef": ["Cut or tear"], "Roast Beef": ["Cut or tear"],
+  "Turkey": ["Cut or tear"], "Salami": ["Cut or tear"], "Pork Shoulder": ["Cut or tear"],
+  "Bacon": ["Cut or tear"], "Ham/Bacon": ["Cut or tear"], "Meatballs": ["Cut or tear"],
+  "Beef Patty": ["Cut or tear"], "Chicken Skewers": ["Cut or tear"],
+  "Chicken/Tofu": ["Cut or tear"], "Tuna/Chicken/Avocado": ["Cut or tear"],
+  "Cocktail Sausages": ["Remove the skin, then"], "GF Sausages": ["Remove the skin, then"],
   "Smoked Salmon": ["Remove all bones"],
-  "Peanut Butter": ["Use sparingly"],
 };
+
+/** 글이 「표시하지 않는다」고 이름을 대는 것 — NSW가 적지 않았다. */
+const NOT_FLAGGED = ["Strawberries", "Tomato", "Lettuce", "Cucumber", "Capsicum", "Cheese", "Boiled Egg", "Pretzels", "Breadsticks"];
 
 const EXCLUDED_INGS = new Set(Object.keys(APPROVED_EXCLUDE));
 const isExcludedSnack = (s: SnackItem) =>
@@ -100,7 +109,7 @@ const stubPrices = async (ings: string[]): Promise<PriceInfo[]> =>
   ings.map((name) => ({ name, price: 2, image: "", source: "test" }));
 
 /** 메뉴 안에서 익혀 무른 재료 — 재료 단위 안내를 붙이지 않는다(구운 머핀 속 블루베리). */
-const APPROVED_COOKED: Record<string, string[]> = { "Blueberry Muffins": ["Blueberries"] };
+const APPROVED_COOKED: Record<string, string[]> = { "Blueberry Muffins": ["Blueberries"], "Date & Oat Slice": ["Dates"] };
 
 /** 하루치 기대 손질 안내 — 리터럴 표와 원본 재료에서. `재료|간식|전연령 문구`. */
 const expectedPrep = (main: string[], snacks: SnackItem[], menuName = "") => [
@@ -115,16 +124,17 @@ const actualPrep = (d: PlanItem) =>
   }).sort();
 
 describe("🔴 질식 표 = 지침의 분류 + 승인된 목록", () => {
-  it("지침의 「빼라」 아홉 줄이 전부 표에 있다 — 데이터에 해당 재료가 없는 줄도", () => {
-    expect(EXCLUDE_CATEGORIES.length).toBe(GUIDE_EXCLUDE_LINES.length);
-    expect(EXCLUDE_CATEGORIES.map((c) => MSG.en[`kindy_cat_${c}`])).toEqual(GUIDE_EXCLUDE_LINES);
-    for (const l of LOCALES) for (const c of EXCLUDE_CATEGORIES) expect(MSG[l][`kindy_cat_${c}`], `${l}: kindy_cat_${c}`).toBeTruthy();
+  it("지침의 열 줄이 순서대로 표에 있고, 빼는 여섯·손질하는 넷으로 승인대로 나뉜다", () => {
+    expect([...AVOID_LINES]).toEqual(NSW_LINES.map(([id]) => id));
+    expect(FORM_LINES).toEqual(APPROVED_FORM_LINES);
+    expect([...EXCLUDE_CATEGORIES]).toEqual(AVOID_LINES.filter((id) => !(id in APPROVED_FORM_LINES)));
+    for (const l of LOCALES) for (const c of AVOID_LINES) expect(MSG[l][`kindy_cat_${c}`], `${l}: kindy_cat_${c}`).toBeTruthy();
     for (const l of LOCALES) for (const c of ALTER_CATEGORIES) expect(MSG[l][`kindy_alter_${c}`], `${l}: kindy_alter_${c}`).toBeTruthy();
   });
 
   it("빼는 재료가 승인 목록과 같고, 각자 지침의 줄을 댄다", () => {
     const got = Object.fromEntries(
-      Object.entries(EXCLUDE_INGREDIENTS).map(([i, r]) => [i, r.basis === "guide" ? MSG.en[`kindy_cat_${r.category}`] : `ours:${r.reason}`]),
+      Object.entries(EXCLUDE_INGREDIENTS).map(([i, r]) => [i, r.basis === "guide" ? LINE[r.category] : `ours:${r.reason}`]),
     );
     expect(got).toEqual(APPROVED_EXCLUDE);
   });
@@ -150,12 +160,11 @@ describe("🔴 질식 표 = 지침의 분류 + 승인된 목록", () => {
     expect(got).toEqual(APPROVED_ALTER);
     for (const [id, p] of Object.entries(PREPS)) {
       expect(ALTER_CATEGORIES as readonly string[], id).toContain(p.category);
-      for (const l of LOCALES) {
-        expect(MSG[l][`kindy_prep_${id}`], `${l}: kindy_prep_${id}`).toBeTruthy();
-        // 4–6세 대안은 지침이 준 것에만 — 없는 대안을 지어내지 않는다
-        expect(!!MSG[l][`kindy_prep_${id}_46`], `${l}: kindy_prep_${id}_46`).toBe(p.older);
-      }
+      for (const l of LOCALES) expect(MSG[l][`kindy_prep_${id}`], `${l}: kindy_prep_${id}`).toBeTruthy();
     }
+    // NSW에는 4–6세 대안이 없다 — NZ에서 온 문구가 남아 있으면 지어낸 대안이다
+    for (const l of LOCALES) expect(Object.keys(MSG[l]).filter((k) => k.endsWith("_46") || k === "planner_kindy_prep_older"), l).toEqual([]);
+    expect(COOKED_IN_MENU).toEqual(APPROVED_COOKED);
   });
 
   it("표의 이름은 전부 데이터에 글자까지 같게 있다 (오타면 아무것도 안 거른다)", () => {
@@ -166,10 +175,13 @@ describe("🔴 질식 표 = 지침의 분류 + 승인된 목록", () => {
     expect(Object.keys(EXCLUDE_SNACKS).filter((n) => !snackNames.has(n))).toEqual([]);
   });
 
-  it("지침이 말하지 않는 음식에는 아무것도 주장하지 않는다 (글이 이름을 대는 넷)", () => {
-    for (const i of ["Cucumber", "Capsicum", "Cheese", "Boiled Egg"]) {
+  it("지침이 말하지 않는 음식에는 아무것도 주장하지 않는다 (글이 이름을 대는 것들)", () => {
+    const ings = new Set([...MENUS.flatMap((m) => m.ingredients), ...ALL_SNACKS.flatMap((s) => s.ingredients ?? [])]);
+    for (const i of NOT_FLAGGED) {
+      expect(ings.has(i), `${i} — 데이터에 없는 이름이면 이 대조가 빈 집합이다`).toBe(true);
       expect(EXCLUDE_INGREDIENTS[i], i).toBeUndefined();
       expect(ALTER_INGREDIENTS[i], i).toBeUndefined();
+      expect(EXCLUDE_SNACKS[i], i).toBeUndefined();
     }
   });
 });
@@ -296,11 +308,11 @@ describe("🔴 킨디는 알레르겐이 아니다", () => {
     expect(src).toMatch(/onClick=\{\(\) => toggleAllergy\(a\)\}/);
     expect(src).toMatch(/onClick=\{\(\) => toggleAllergy\("Kindy"\)\}/);
     expect(read("lib/planGenerator.ts")).toMatch(/dayKindyPrep\(menu\.ingredients, dailySnacks, allergies, menu\.name\)/);
-    // Aussie(10-30): 호주 킨디 가이드는 4단계에서 쓴다 — 그때까지 플래너는 Kiwi 가이드(NZ 보건부 지침)로
-    //   **외부 링크**하고, 관련 글 매핑은 비워 둔다. 4단계에서 AU 가이드가 생기면 Kiwi 원래 검사로 되돌릴 것.
-    expect(FILTER_ARTICLES.Kindy, "킨디 관련 글은 4단계 전까지 없다").toHaveProperty("none");
-    expect(src).toContain('const KINDY_GUIDE_URL = "https://www.kiwilunchbox.co.nz/en/guides/kindy-lunchbox-choking-guide-nz"');
-    expect(src).toMatch(/href=\{KINDY_GUIDE_URL\} target="_blank" rel="noopener noreferrer"/);
+    // 🔴 3단계까지는 Kiwi 사이트(NZ 지침 글)로 나가는 외부 링크였다 — 클라이언트에서만 그려져 라이브 curl에 안 잡혔다.
+    expect(FILTER_ARTICLES.Kindy).toEqual({ slug: GUIDE_SLUG, kind: "guide" });
+    expect(src).toContain(`const KINDY_GUIDE_SLUG = "${GUIDE_SLUG}"`);
+    expect(src.match(/<Link href=\{kindyGuideHref\}/g)?.length, "킨디 가이드 링크 세 곳").toBe(3);
+    expect(src).not.toMatch(/kiwilunchbox/i);
   });
 
   it("dayKindyPrep: 킨디가 꺼져 있으면 빈 배열", () => {
@@ -352,9 +364,8 @@ describe("🔴 간식 확인 페이지의 Kindy 줄 = 같은 표", () => {
   });
 });
 
-// Aussie(10-30): 이 글(NZ 보건부 지침)은 옮기지 않았다 — 4단계(NSW Health 지침)에서 AU 가이드로 다시 쓰고 이 describe를 켠다.
-describe.skipIf(!GUIDES["kindy-lunchbox-choking-guide-nz"])("🔴 킨디 가이드 글 — 숫자·이름·문구가 데이터와 같다", () => {
-  const g = GUIDES["kindy-lunchbox-choking-guide-nz"] ?? { body: "" };
+describe("🔴 킨디 가이드 글 — 숫자·이름·문구가 데이터와 같다", () => {
+  const g = GUIDES[GUIDE_SLUG];
   const body = g.body;
   const menusOut = MENUS.filter(isExcludedMenu).map((m) => m.name);
   const snacksOut = POOL.filter(isExcludedSnack).map((s) => s.name);
@@ -368,22 +379,37 @@ describe.skipIf(!GUIDES["kindy-lunchbox-choking-guide-nz"])("🔴 킨디 가이�
 
   it("손질 표가 플래너 카드와 같은 문구를 쓴다 — 쓰이는 손질법 전부", () => {
     const used = new Set(Object.values(ALTER_INGREDIENTS).flat());
-    for (const p of used) {
-      expect(body, p).toContain(MSG.en[`kindy_prep_${p}`]);
-      if (PREPS[p as PrepId].older) expect(body, `${p}_46`).toContain(MSG.en[`kindy_prep_${p}_46`]);
-    }
+    for (const p of used) expect(body, p).toContain(MSG.en[`kindy_prep_${p}`]);
     for (const i of Object.keys(APPROVED_ALTER)) expect(body, i).toContain(i);
   });
 
-  it("지침의 아홉 줄을 다 싣고, 우리 판단을 우리 것이라 밝히고, 출처·라이선스·PDF를 단다", () => {
-    for (const line of GUIDE_EXCLUDE_LINES) expect(body.toLowerCase(), line).toContain(line);
-    expect(body).toMatch(/our own judgement, not something the Ministry of Health says/);
-    expect(body).toContain("Roasted Chickpeas");
+  it("지침의 열 줄을 다 싣고, 우리 판단을 우리 것이라 밝히고, 출처·라이선스·요구 표기를 단다", () => {
+    for (const id of AVOID_LINES) expect(body.toLowerCase(), id).toContain(MSG.en[`kindy_cat_${id}`].toLowerCase());
+    expect(body).toMatch(/That is our own judgement, not something NSW Health says/);
+    for (const n of APPROVED_OURS_SNACKS) expect(body, n).toContain(n);
+    for (const n of NOT_FLAGGED) expect(body.toLowerCase(), n).toContain(n.toLowerCase());
     expect(body).toContain(CHOKING_SOURCE.url);
     expect(body).toContain(CHOKING_SOURCE.licenceUrl);
-    expect(body).toMatch(/adapts and summarises/);
-    expect(body).toMatch(/has not reviewed or endorsed/);
-    expect(g.contentUpdated).toBe("2026-10-21");
+    expect(body).toContain(CHOKING_SOURCE.copyrightUrl);
+    expect(body).toContain("© State of New South Wales NSW Ministry of Health");
+    expect(body).toMatch(/summarises, in our own words/);
+    expect(body).toMatch(/NSW Health has not reviewed or endorsed/);
+    // 🔴 PDF판은 「not … for commercial usage」 — 웹페이지만 출처로 단다
+    expect(body).not.toMatch(/\.pdf/i);
+    expect(CHOKING_SOURCE.url).toBe("https://www.health.nsw.gov.au/heal/child/menu/Pages/prevent-choking.aspx");
+    expect(body).not.toMatch(/Ministry of Health says|tamariki|kaiako|kōhanga|New Zealand's Ministry/);
+    expect(g.contentUpdated).toBe("2026-10-30");
+  });
+
+  it("🔴 지침은 3세 미만, 우리는 5세 미만 — 글·화면·FAQ가 세 언어로 둘 다 밝힌다(10-30 사용자 결정)", () => {
+    expect(CHOKING_SOURCE.appliesUnder).toBe(3);
+    expect(body).toMatch(/children under 3\*\*/);
+    expect(body).toMatch(/we apply the same list to every child under 5\*\*\. That is our own call/);
+    const both: Record<(typeof LOCALES)[number], RegExp> = { en: /under 3.*under 5/, ko: /3세 미만.*5세 미만/, zh: /3岁以下.*5岁以下/ };
+    for (const l of LOCALES) for (const k of ["planner_kindy_sidebar", "planner_kindy_note", "faq_a33"]) {
+      expect(MSG[l][k], `${l}:${k}`).toMatch(both[l]);
+      expect(MSG[l][k], `${l}:${k}`).not.toMatch(/New Zealand|뉴질랜드|新西兰/);
+    }
   });
 
   it("양은 5–12세 기준이라는 것을 글·화면·FAQ가 모두 말한다", () => {
@@ -402,12 +428,20 @@ describe.skipIf(!GUIDES["kindy-lunchbox-choking-guide-nz"])("🔴 킨디 가이�
       expect(MSG[l].faq_a33, l).toBeTruthy();
     }
     expect(read("app/[locale]/faq/page.tsx")).toMatch(/keys: \[[^\]]*\b33\b[^\]]*\]/);
-    expect(ALTER_INGREDIENTS["Grapes"]).toContain("small_round");
-    expect(ALTER_INGREDIENTS["Cherry Tomatoes"]).toContain("small_round");
-    expect(MSG.en.kindy_prep_small_round).toMatch(/^Quarter/);
-    expect(MSG.en.faq_a33).toMatch(/quartering grapes and cherry tomatoes/);
-    expect(MSG.en.faq_a33).toMatch(/roasted chickpeas; that one is our own call/);
-    expect(Object.keys(EXCLUDE_SNACKS)).toContain("Roasted Chickpeas");
+    expect(ALTER_INGREDIENTS["Grapes"]).toContain("round_slippery");
+    expect(ALTER_INGREDIENTS["Cherry Tomatoes"]).toContain("round_slippery");
+    expect(MSG.en.kindy_prep_round_slippery).toMatch(/^Cut or squash into small pieces/);
+    expect(MSG.en.faq_a33).toMatch(/cutting grapes and cherry tomatoes into small pieces/);
+    expect(ALTER_INGREDIENTS["Apple"]).toEqual(["hard_fruit"]);
+    expect(MSG.en.faq_a33).toMatch(/grating raw apple/);
+    expect(ALTER_INGREDIENTS["Cocktail Sausages"]).toEqual(["sausage"]);
+    expect(MSG.en.faq_a33).toMatch(/taking the skin off sausages/);
+    expect(MSG.en.faq_a33).toMatch(/roasted chickpeas and veggie straws; those are our own call too/);
+    expect(Object.keys(EXCLUDE_SNACKS)).toEqual(["Roasted Chickpeas", "Veggie Straws"]);
+    for (const [ex, ing] of [["popcorn", "Popcorn"], ["corn chips", "Corn Chips"], ["hard crackers", "Rice Crackers"], ["sultanas", "Sultanas"], ["fruit straps", "Real Fruit Strip"]]) {
+      expect(MSG.en.faq_a33, ex).toContain(ex);
+      expect(EXCLUDE_INGREDIENTS[ing]?.basis, ing).toBe("guide");
+    }
   });
 });
 

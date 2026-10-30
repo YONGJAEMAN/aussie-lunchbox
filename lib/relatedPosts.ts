@@ -51,7 +51,7 @@ export const FILTER_ARTICLES: Record<FilterKey, RelatedLink | { none: string }> 
   Vegan: { slug: "vegetarian-vegan-school-lunch-guide-australia", kind: "guide" },
   "make-ahead": { slug: "budget-lunchbox-planning-guide-australia", kind: "guide" },
   thermosOnly: { slug: "lunchbox-food-safety-guide-australia", kind: "guide" },
-  Kindy: { none: "호주 킨디 가이드는 4단계(호주 질식 예방 지침으로 교체)에서 쓴다 — Kiwi 가이드는 NZ 보건부 지침이라 옮기지 않았다" },
+  Kindy: { slug: "kindy-lunchbox-choking-guide-australia", kind: "guide" },
   "no-cook": { none: "호주 글에 무조리 도시락만 다룬 글이 아직 없다" },
   "cook-fresh": {
     none: "글을 만들지 않는다 — '아침에 조리한다'는 별도 글의 주제가 되기 어렵고 기존 레시피 글들이 이미 다룬다",

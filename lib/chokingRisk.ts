@@ -2,12 +2,16 @@ import type { AllergyType, MenuItem, SnackItem } from "./types";
 
 /**
  * 질식 위험 표 — 플래너의 「Kindy (under 5)」 선택지, 간식 확인 페이지의 질식 칸,
- * 킨디 가이드 글이 **모두 이 표 하나**에서 읽는다(2026-10-12).
+ * 킨디 가이드 글이 **모두 이 표 하나**에서 읽는다(Kiwi 2026-10-12 구조, Aussie 2026-10-30 NSW로 교체).
  *
- * 근거: Ministry of Health (2020) 「Reducing food-related choking for babies and young
- * children at early learning services」, CC BY 4.0. 가이드가 말하지 않는 음식에는
- * 위험을 주장하지 않는다(오이·파프리카·치즈 큐브·삶은 달걀·프레첼 등은 표에 없다).
- * 가이드 밖의 판단은 `basis: "ours"`로 따로 표시하고, 화면·글이 그렇게 밝힌다.
+ * 근거: NSW Ministry of Health 「Helping to prevent children from choking」(NSW Menu Planning Guide,
+ * 웹페이지 Current as at 24 August 2026). 웹사이트 저작권 페이지가 CC BY 4.0이라고 밝힌다 —
+ * 🔴 같은 내용의 **PDF는 「not … for commercial usage」**라 PDF는 옮기지 않는다. 웹페이지를 링크하고 우리 말로 요약한다.
+ *
+ * 🔴 지침의 목록은 **3세 미만**(`appliesUnder`) 기준이다. 우리는 「Kindy (under 5)」 전체에 적용한다 —
+ *    사용자 결정(10-30). 화면·글·FAQ가 그것을 「우리 판단」이라고 밝힌다(가드가 본다).
+ * 지침이 말하지 않는 음식에는 위험을 주장하지 않는다(딸기·토마토·잎채소·오이·치즈 큐브·삶은 달걀·프레첼 등은 표에 없다).
+ * 지침 밖의 판단은 `basis: "ours"`로 따로 표시하고, 화면·글이 그렇게 밝힌다.
  *
  * 🔴 이 파일은 플래너 클라이언트 번들에 들어간다 — 데이터 JSON·글 본문을 import하지 말 것.
  *    개수 계산은 데이터를 **인자로** 받는다.
@@ -17,108 +21,120 @@ import type { AllergyType, MenuItem, SnackItem } from "./types";
 export const KINDY: AllergyType = "Kindy";
 
 export const CHOKING_SOURCE = {
-  publisher: "New Zealand Ministry of Health",
-  title: "Reducing food-related choking for babies and young children at early learning services",
-  published: "December 2020",
-  url: "https://health.govt.nz/system/files/2020-12/reducing-food-related-choking-babies-young-children-early-learning-services-apr21.pdf",
+  publisher: "NSW Ministry of Health",
+  title: "Helping to prevent children from choking",
+  partOf: "NSW Menu Planning Guide",
+  currentAt: "24 August 2026",
+  url: "https://www.health.nsw.gov.au/heal/child/menu/Pages/prevent-choking.aspx",
   licence: "CC BY 4.0",
   licenceUrl: "https://creativecommons.org/licenses/by/4.0/",
+  copyrightUrl: "https://www.health.nsw.gov.au/Pages/copyright.aspx",
+  attribution: "© State of New South Wales NSW Ministry of Health",
+  /** 지침의 「Do not serve to children under 3 years」. */
+  appliesUnder: 3,
 } as const;
 
-/** 가이드 「High-risk food to exclude」의 아홉 줄, 가이드에 적힌 순서 그대로. 문구는 messages `kindy_cat_<id>`. */
-export const EXCLUDE_CATEGORIES = [
-  "nuts", "large_seeds", "hard_lollies", "chips", "rice_crackers",
-  "dried_fruit", "sausages", "popcorn", "marshmallows",
+/**
+ * 지침 「High-risk foods」의 열 줄, 지침에 적힌 순서 그대로. 문구는 messages `kindy_cat_<id>`.
+ * 이 중 형태(날것·통째·껍질·큰 조각)를 말하는 넷은 지침의 손질표에 방법이 있다 → `FORM_LINES`, 손질로 다룬다.
+ * 나머지 여섯은 손질법이 없다 → `EXCLUDE_CATEGORIES`, 뺀다(내 해석, 10-30 승인).
+ */
+export const AVOID_LINES = [
+  "raw_hard", "nuts_seeds", "popcorn_corn_chips", "grapes_peas", "sultanas_raisins",
+  "hard_biscuits", "skins_bones", "meat_sausage", "lollies", "chewy_sticky",
 ] as const;
+export type AvoidLine = (typeof AVOID_LINES)[number];
+
+export const EXCLUDE_CATEGORIES = [
+  "nuts_seeds", "popcorn_corn_chips", "sultanas_raisins", "hard_biscuits", "lollies", "chewy_sticky",
+] as const satisfies readonly AvoidLine[];
 export type ExcludeCategory = (typeof EXCLUDE_CATEGORIES)[number];
 
-/** 가이드 「How to alter high-risk food」의 표제 여덟 개. */
-export const ALTER_CATEGORIES = [
-  "small_hard", "small_round", "fruit_skin", "skin_leaves",
-  "compressible", "bones", "fibrous", "thick_paste",
-] as const;
+/** 지침 「How to make foods safer」 표의 세 분류. */
+export const ALTER_CATEGORIES = ["hard", "skins_strings_bones", "round_slippery"] as const;
 export type AlterCategory = (typeof ALTER_CATEGORIES)[number];
 
-/**
- * 손질법. 문구는 messages의 `kindy_prep_<id>`(전 연령)와, `older`면 `kindy_prep_<id>_46`
- * (가이드의 「For tamariki aged 4–6 years you can also」)에 있다.
- * 🔴 `older: false`는 가이드가 그 음식에 4–6세 대안을 주지 않았거나, 표 배치로 어느 줄의
- *    대안인지 확정할 수 없는 경우다(수박·올리브). 대안을 빼면 덜 허용하는 쪽이라 안전하다.
- */
+/** 손질로 다루는 네 줄 → 그 줄을 받는 손질 분류(글이 「이 줄은 아래 표로」라고 잇는 데 쓴다). */
+export const FORM_LINES = {
+  raw_hard: "hard",
+  grapes_peas: "round_slippery",
+  skins_bones: "skins_strings_bones",
+  meat_sausage: "skins_strings_bones",
+} as const satisfies Record<Exclude<AvoidLine, ExcludeCategory>, AlterCategory>;
+
+/** 손질법. 문구는 messages의 `kindy_prep_<id>`. NSW에는 NZ 지침의 「4–6세 대안」이 없다. */
 export const PREPS = {
-  small_hard: { category: "small_hard", older: true },
-  small_round: { category: "small_round", older: true },
-  peas: { category: "small_round", older: true },
-  large_seeds: { category: "small_round", older: false },
-  stone: { category: "small_round", older: false },
-  tomato: { category: "fruit_skin", older: false },
-  leaves: { category: "skin_leaves", older: false },
-  chicken_skin: { category: "skin_leaves", older: false },
-  meat: { category: "compressible", older: true },
-  bones: { category: "bones", older: false },
-  paste: { category: "thick_paste", older: false },
-} as const satisfies Record<string, { category: AlterCategory; older: boolean }>;
+  hard_veg: { category: "hard" },
+  hard_fruit: { category: "hard" },
+  dried_fruit: { category: "hard" },
+  nut_butter: { category: "hard" },
+  mash_peas_corn: { category: "skins_strings_bones" },
+  bean_strings: { category: "skins_strings_bones" },
+  chicken_skin: { category: "skins_strings_bones" },
+  bones: { category: "skins_strings_bones" },
+  meat: { category: "skins_strings_bones" },
+  sausage: { category: "skins_strings_bones" },
+  fruit_seeds_skin: { category: "skins_strings_bones" },
+  round_slippery: { category: "round_slippery" },
+} as const satisfies Record<string, { category: AlterCategory }>;
 export type PrepId = keyof typeof PREPS;
 
 export type ExcludeRule =
   | { basis: "guide"; category: ExcludeCategory }
-  /** 가이드 목록에 없는 우리 판단. `like`는 가장 가까운 가이드 분류, `reason`은 messages `kindy_ours_<reason>`. */
+  /** 지침 목록에 없는 우리 판단. `like`는 가장 가까운 지침 줄, `reason`은 messages `kindy_ours_<reason>`. */
   | { basis: "ours"; like: ExcludeCategory; reason: string };
 
 const guide = (category: ExcludeCategory): ExcludeRule => ({ basis: "guide", category });
 
 /** 재료 단위로 빼는 것 — 메인이든 간식이든 이 재료가 들어 있으면 킨디 식단에서 빠진다. */
 export const EXCLUDE_INGREDIENTS: Record<string, ExcludeRule> = {
-  "Corn Chips": guide("chips"),
-  "Veggie Straws": guide("chips"),
-  "Rice Wheels": guide("chips"),
-  "Rice Crackers": guide("rice_crackers"),
-  "Dried Apricots": guide("dried_fruit"),
-  "Sultanas": guide("dried_fruit"),
-  "Real Fruit Strip": guide("dried_fruit"),
-  "Dates": guide("dried_fruit"),
-  "Popcorn": guide("popcorn"),
-  "Cocktail Sausages": guide("sausages"),
-  "GF Sausages": guide("sausages"),
-  // 🔴 아래 셋은 재료 **이름**이 아니라 우리가 추적하는 **상품**으로 판정했다(2026-10-12 검토).
-  //    GF Crackers = Woolworths brown rice & black sesame, Wholegrain Crackers = Woolworths brown rice
-  //    multigrain — 둘 다 쌀과자다. Muesli = Woolworths toasted berry — 말린 과일이 든다.
+  "Corn Chips": guide("popcorn_corn_chips"),
+  "Popcorn": guide("popcorn_corn_chips"),
+  "Rice Crackers": guide("hard_biscuits"),
+  "Rice Wheels": guide("hard_biscuits"),
+  // 🔴 아래는 재료 **이름**이 아니라 우리가 추적하는 **상품**으로 판정했다(10-30 검토).
+  //    Wholegrain Crackers = Woolworths multigrain brown rice crackers, GF Crackers = Arnott's GF Jatz,
+  //    Crackers = Captain's Table water crackers — 셋 다 딱딱한 크래커다.
+  //    Muesli = Woolworths Toasted Honey & Cinnamon — 라벨에 아몬드·캐슈가 든다.
   //    추적 상품이 바뀌면 이 판정도 다시 볼 것.
-  "GF Crackers": guide("rice_crackers"),
-  "Wholegrain Crackers": guide("rice_crackers"),
-  "Muesli": guide("dried_fruit"),
+  "Wholegrain Crackers": guide("hard_biscuits"),
+  "GF Crackers": guide("hard_biscuits"),
+  "Crackers": guide("hard_biscuits"),
+  "Muesli": guide("nuts_seeds"),
+  "Sultanas": guide("sultanas_raisins"),
+  "Real Fruit Strip": guide("chewy_sticky"),
 };
 
 /**
  * 간식 **이름** 단위로 빼는 것. 재료로 걸면 안 되는 경우다 —
- * `Chickpeas`는 메뉴(커리·병아리콩 샌드위치)에선 익혀서 무르다. 볶아서 딱딱한 것은 이 간식뿐이다.
+ * `Chickpeas`는 메뉴(커리·병아리콩 샌드위치)에선 익혀서 무르다(손질표 「으깨기」가 붙는다). 볶아서 딱딱한 것은 이 간식뿐이다.
  */
 export const EXCLUDE_SNACKS: Record<string, ExcludeRule> = {
-  "Roasted Chickpeas": { basis: "ours", like: "nuts", reason: "roasted_chickpeas" },
+  "Roasted Chickpeas": { basis: "ours", like: "nuts_seeds", reason: "roasted_chickpeas" },
+  "Veggie Straws": { basis: "ours", like: "popcorn_corn_chips", reason: "veggie_straws" },
 };
 
 /** 남기되 손질 안내를 붙이는 재료. 순서대로 보여 준다. */
 export const ALTER_INGREDIENTS: Record<string, PrepId[]> = {
-  "Apple": ["small_hard"],
-  "Pear": ["small_hard"],
-  "Carrot": ["small_hard"],
-  "Celery": ["small_hard"],
-  "Sugar Snap Peas": ["small_hard"],
-  "Grapes": ["small_round"],
-  "Cherry Tomatoes": ["small_round"],
-  "Blueberries": ["small_round"],
-  "Strawberries": ["small_round"],
-  "Berries": ["small_round"],
-  "Edamame": ["small_round"],
-  "Peas": ["peas"],
-  "Watermelon": ["large_seeds"],
-  "Olives": ["stone"],
-  "Tomato": ["tomato"],
-  "Lettuce": ["leaves"],
-  "Cos Lettuce": ["leaves"],
-  "Spinach": ["leaves"],
-  "Cabbage": ["leaves"],
-  "Rocket": ["leaves"],
+  "Apple": ["hard_fruit"],
+  "Pear": ["hard_fruit"],
+  "Carrot": ["hard_veg"],
+  "Celery": ["hard_veg"],
+  "Sugar Snap Peas": ["hard_veg", "bean_strings"],
+  "Dried Apricots": ["dried_fruit"],
+  "Dates": ["dried_fruit"],
+  "Peanut Butter": ["nut_butter"],
+  "Grapes": ["round_slippery"],
+  "Blueberries": ["round_slippery"],
+  "Berries": ["round_slippery"],
+  "Cherry Tomatoes": ["round_slippery"],
+  "Chickpeas": ["round_slippery"],
+  "Olives": ["fruit_seeds_skin", "round_slippery"],
+  "Peas": ["mash_peas_corn"],
+  "Corn": ["mash_peas_corn"],
+  "Sweetcorn": ["mash_peas_corn"],
+  "Edamame": ["mash_peas_corn"],
+  "Watermelon": ["fruit_seeds_skin"],
   "Chicken": ["chicken_skin", "meat"],
   "Chicken Breast": ["chicken_skin", "meat"],
   "Chicken Thigh": ["chicken_skin", "meat"],
@@ -136,16 +152,18 @@ export const ALTER_INGREDIENTS: Record<string, PrepId[]> = {
   "Chicken Skewers": ["meat"],
   "Chicken/Tofu": ["meat"],
   "Tuna/Chicken/Avocado": ["meat"],
+  "Cocktail Sausages": ["sausage"],
+  "GF Sausages": ["sausage"],
   "Smoked Salmon": ["bones"],
-  "Peanut Butter": ["paste"],
 };
 
 /**
  * 메뉴 안에서 익혀서 무른 재료 — 재료 단위 안내가 맞지 않는 곳. 구운 머핀 속 블루베리에
- * 「4등분하라」를 붙이면 안내가 엉터리가 된다. 간식 블루베리에는 그대로 붙는다.
+ * 「잘게 자르라」를 붙이면 안내가 엉터리가 된다. 간식 블루베리에는 그대로 붙는다.
  */
 export const COOKED_IN_MENU: Record<string, readonly string[]> = {
   "Blueberry Muffins": ["Blueberries"],
+  "Date & Oat Slice": ["Dates"],
 };
 
 export const kindyOn = (allergies: readonly AllergyType[]) => allergies.includes(KINDY);
