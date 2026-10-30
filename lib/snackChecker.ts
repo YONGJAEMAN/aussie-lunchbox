@@ -2,7 +2,7 @@ import menuData from "@/data/menuData.json";
 import PRICES from "@/data/price_cache.json";
 import { labelFor } from "./allergenLabels";
 import { productName } from "./allergenFacts";
-import { snackAllowed, dietTagsFor, mayContainNotes, SESAME_UNVERIFIED, type DietTag } from "./ingredientDiet";
+import { snackAllowed, dietTagsFor, mayContainNotes, SESAME_UNVERIFIED, AU_REVIEW, type DietTag } from "./ingredientDiet";
 import { PLANNER_CATEGORIES, serveCost } from "./snackEconomics";
 import { PORTION_BASIS } from "./planConfig";
 import { snackChokingFlag, type ChokingFlag } from "./chokingRisk";
@@ -34,10 +34,15 @@ export const CHECKER_LABEL: Record<CheckerAllergy, string> = {
 
 const ALLERGEN_TAGS: DietTag[] = ["nuts", "milk", "egg", "gluten", "sesame"];
 
+/**
+ * 🔴 Aussie(2026-10-30): `reading`·`basis`는 **승인 판정표**(`data/allergenReview.au.json`)에서 온다.
+ *    `declared`·`precautionary`는 상품 목록의 원문이다. 둘이 다를 수 있다 — Teriyaki는 원문 선언에
+ *    참깨가 없는데 원재료에 있다. 그래서 화면은 판정을 먼저, 원문을 그 아래에 「listing says」로 보인다.
+ */
 export type Evidence =
-  | { kind: "label"; ingredient: string; product: string; declared: string; precautionary: string; readOn: string }
+  | { kind: "label"; ingredient: string; product: string; reading: DietTag[]; basis: string; declared: string; precautionary: string; readOn: string }
   /** `unverified` = 라벨이 없어 **확인 못 한** 알레르겐(현재 참깨만). 「들어 있다」가 아니다 — 화면이 따로 말한다. */
-  | { kind: "hand"; ingredient: string; flagged: DietTag[]; unverified: DietTag[] }
+  | { kind: "hand"; ingredient: string; flagged: DietTag[]; unverified: DietTag[]; basis: string }
   | { kind: "unknown"; ingredient: string };
 
 /**
@@ -62,8 +67,8 @@ export type CheckerRow = {
   choking: ChokingFlag;
 };
 
-/** 관측일은 뉴질랜드 날짜로 쓴다 — 독자가 NZ에 있다. */
-export const nzDate = (ms: number) =>
+/** 관측일은 호주(시드니) 날짜로 쓴다 — 독자가 호주에 있다. */
+export const auDate = (ms: number) =>
   new Intl.DateTimeFormat("en-AU", {
     timeZone: "Australia/Sydney", day: "numeric", month: "long", year: "numeric",
   }).format(new Date(ms));
@@ -76,27 +81,40 @@ function packFor(ing: string): PackPrice {
     product: productName(ing).trim(),
     price: typeof p === "number" && p > 0 ? p : null,
     pack: PORTION_BASIS[ing]?.pack ?? null,
-    readOn: typeof ts === "number" ? nzDate(ts) : "",
+    readOn: typeof ts === "number" ? auDate(ts) : "",
   };
+}
+
+/** 판정표의 근거 종류를 독자 말로. 종류는 `allergenReview.au.test.ts`가 정해 둔 것뿐이다. */
+export function reviewBasis(ing: string): string {
+  const b = AU_REVIEW[ing]?.basis ?? "";
+  if (b.startsWith("선언 ∪ 원재료")) return "read from the Contains line and the ingredient list";
+  if (b.startsWith("선언")) return "read from the Contains line";
+  if (b.startsWith("원물")) return "fresh produce, no label";
+  if (b.startsWith("사람 판단")) return "checked by hand (the listing has no ingredient list or Contains line)";
+  if (b.startsWith("고정 상품 없음")) return "no tracked product, flagged by hand";
+  return "";
 }
 
 function evidenceFor(ing: string): Evidence {
   const label = labelFor(ing);
-  if (label) {
+  const tags = dietTagsFor(ing);
+  if (label && tags) {
     const ts = CACHE[ing]?.timestamp;
     return {
       kind: "label",
       ingredient: ing,
       product: productName(ing),
+      reading: ALLERGEN_TAGS.filter((t) => tags.has(t)),
+      basis: reviewBasis(ing),
       declared: label.declared.trim(),
       precautionary: label.precautionary.trim(),
-      readOn: typeof ts === "number" ? nzDate(ts) : "",
+      readOn: typeof ts === "number" ? auDate(ts) : "",
     };
   }
-  const tags = dietTagsFor(ing);
   if (tags === null) return { kind: "unknown", ingredient: ing };
   const unverified: DietTag[] = SESAME_UNVERIFIED.has(ing) ? ["sesame"] : [];
-  return { kind: "hand", ingredient: ing, flagged: ALLERGEN_TAGS.filter((t) => tags.has(t) && !unverified.includes(t)), unverified };
+  return { kind: "hand", ingredient: ing, flagged: ALLERGEN_TAGS.filter((t) => tags.has(t) && !unverified.includes(t)), unverified, basis: reviewBasis(ing) };
 }
 
 export function checkerRows(): CheckerRow[] {

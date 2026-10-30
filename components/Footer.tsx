@@ -78,6 +78,7 @@ export default function Footer({ locale }: { locale: string }) {
             <div className="space-y-3 text-gray-400 text-sm">
               <Link href={`/${locale}/planner`} className={link}>{t("nav_planner")}</Link>
               <Link href={`/${locale}/blog`} className={link}>{t("nav_blog")}</Link>
+              <Link href={`/${locale}/snack-checker`} className={link}>{t("nav_snack_checker")}</Link>
               {/* 🔴 Guides는 12곳 중 2곳에만 있었다 — 나머지 9개 페이지에서 가이드로 가는 길이 없었다 */}
               <Link href={`/${locale}/guides`} className={link}>{t("nav_guides")}</Link>
               <Link href={`/${locale}/faq`} className={link}>{t("nav_faq")}</Link>
