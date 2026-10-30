@@ -101,7 +101,7 @@
   "faq_q13": "Does the app work on mobile?",
   "faq_a13": "The entire site is responsive. Generate plans, browse recipes, and download PDFs on any smartphone or tablet — no app install needed.",
   "faq_q14": "How often are recipes updated?",
-  "faq_a14": "Supermarket prices are refreshed weekly — every chain column in the price index is read from that chain's own online shop in the same run. New recipes are added in batches rather than on a schedule: the database went from 63 to {menuCount} menus across July 2026 and has been at {menuCount} since. Corrections happen whenever something is found to be wrong — two gluten-free flags were fixed on 20 August 2026, for instance. If you notice a recipe that looks outdated or a price that seems wrong, please tell me via the Contact page.",
+  "faq_a14": "Supermarket prices are re-read every Sunday from Woolworths' online shop — the planner's ingredient prices and the price index in the same run. New recipes are added in batches rather than on a schedule: the database went from 63 to {menuCount} menus in October 2026. Corrections happen whenever something is found to be wrong — on 30 October 2026, for instance, nine allergen flags were corrected after every tracked product's ingredient list was checked. If you notice a recipe that looks outdated or a price that seems wrong, please tell me via the Contact page.",
   "faq_cat_getting_started": "Getting Started",
   "faq_cat_allergies": "Allergies & Dietary",
   "faq_cat_budget": "Budget & Shopping",

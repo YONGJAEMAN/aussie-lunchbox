@@ -38,7 +38,7 @@ export default function Footer({ locale }: { locale: string }) {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-full bg-primary-deep flex items-center justify-center">
-                <span className="text-white font-bold text-xs">KL</span>
+                <span className="text-white font-bold text-xs">AL</span>
               </div>
               <span className="font-bold">Aussie Lunchbox</span>
             </div>
@@ -78,6 +78,9 @@ export default function Footer({ locale }: { locale: string }) {
             <div className="space-y-3 text-gray-400 text-sm">
               <Link href={`/${locale}/planner`} className={link}>{t("nav_planner")}</Link>
               <Link href={`/${locale}/blog`} className={link}>{t("nav_blog")}</Link>
+              <Link href={`/${locale}/price-index`} className={link}>{t("nav_price_index")}</Link>
+              <Link href={`/${locale}/price-history`} className={link}>{t("nav_price_history")}</Link>
+              <Link href={`/${locale}/snack-checker`} className={link}>{t("nav_snack_checker")}</Link>
               {/* 🔴 Guides는 12곳 중 2곳에만 있었다 — 나머지 9개 페이지에서 가이드로 가는 길이 없었다 */}
               <Link href={`/${locale}/guides`} className={link}>{t("nav_guides")}</Link>
               <Link href={`/${locale}/faq`} className={link}>{t("nav_faq")}</Link>

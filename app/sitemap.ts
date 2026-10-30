@@ -3,6 +3,9 @@ import { BLOG_SLUGS, POSTS } from "@/content/posts";
 import { GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { BRAND, SITE_NOINDEX } from "@/lib/brand";
 import { lastModified } from "@/lib/contentDates";
+import { labelReadRange } from "@/lib/snackChecker";
+import { indexUpdated } from "@/lib/priceIndex";
+import { coverage } from "@/lib/priceSeries";
 
 const BASE_URL = BRAND.SITE_URL;
 // AdSense 승인 단계: 영어만 sitemap에 포함.
@@ -22,11 +25,29 @@ const STATIC_ROUTES = [
   "/faq",
   "/blog",
   "/guides",
+  "/price-index",
+  "/price-history",
+  "/snack-checker",
 ];
+
+/** 데이터 페이지만 근거 있는 날짜를 준다 — 지수는 열 갱신일, 추이는 마지막 관측일, 간식 확인은 라벨 최신 관측일. */
+function dataDate(route: string): Date | undefined {
+  if (route === "/price-index") return indexUpdated() ? new Date(`${indexUpdated()}T12:00:00+10:00`) : undefined;
+  if (route === "/price-history") {
+    const last = coverage()[0]?.last;
+    return last ? new Date(`${last}T12:00:00+10:00`) : undefined;
+  }
+  if (route === "/snack-checker") return new Date(labelReadRange().newest);
+  return undefined;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // 🔴 사이트 전체가 noindex인 동안 sitemap이 URL을 색인 요청하면 신호가 갈라진다(2026-08-23, lib/brand.ts).
-  if (SITE_NOINDEX) return [];
+  return SITE_NOINDEX ? [] : sitemapEntries();
+}
+
+/** 재런칭 때 열릴 목록. noindex 동안에도 테스트가 이것을 본다 — 스위치를 내리는 날 빈 목록이 아니게. */
+export function sitemapEntries(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of LOCALES) {
@@ -35,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // 실제 근거가 있는 날짜가 없으면 lastmod를 생략한다(가격 페이지는 3단계에서 데이터 갱신일과 함께 다시 붙는다).
       entries.push({
         url: `${BASE_URL}/${locale}${route}`,
+        ...(dataDate(route) ? { lastModified: dataDate(route) } : {}),
         changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1.0 : route === "/planner" ? 0.9 : 0.7,
       });

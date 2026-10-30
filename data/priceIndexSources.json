@@ -1,0 +1,141 @@
+{
+  "_doc": [
+    "가격지수 Woolworths 열의 고정 상품(SKU). 2026-10-30 선정 — Kiwi 20품목 틀을 AU 상품으로.",
+    "왜 고정하는가(Kiwi 2026-07-30): 검색 결과로 고르면 실행마다 다른 브랜드가 잡혀 월별 변동이 물가가 아니라 브랜드 교체를 반영한다.",
+    "선정 기준: ① 행 이름의 규격과 일치 ② 유기농·프리미엄·가향 배제 ③ 가능하면 전국 브랜드(Coles를 나중에 붙일 때 같은 상품을 잡을 수 있게).",
+    "pinnedName/pinnedSize는 고정 당시 값이다. 조회 결과가 달라지면 상품이 바뀐 것이므로 수집기가 DRIFT로 멈추고 기존 값을 둔다.",
+    "",
+    "🔴 Coles는 추적하지 않는다(2026-10-30 실측): 상품 페이지(/product/*, robots 허용)가 처음 세 건은 200·가격이 왔지만",
+    "   넷째부터 Imperva 봇 확인 「Pardon Our Interruption」이 떴다. 우회하지 않는다. /search/는 robots가 막는다.",
+    "   후보는 공개 상품 사이트맵에서 찾아 두었다(아래 coles.candidates) — 언젠가 읽을 수 있게 되면 같은 상품부터 본다."
+  ],
+  "pinnedAt": "2026-10-30",
+  "store": "Woolworths Australia online, default guest session (no store or postcode selected)",
+  "coles": {
+    "tracked": false,
+    "checkedOn": "2026-10-30",
+    "reason": "Imperva bot check (\"Pardon Our Interruption\") from the 4th product page; not bypassed. /search/ is disallowed by robots.txt.",
+    "candidates": {
+      "Wholemeal Bread (700g)": "tip-top-the-one-wholemeal-sandwich-bread-700g-1139480",
+      "Wraps 8-pack": "mission-original-wraps-8-pack-567g-6955662",
+      "Bagels 4-pack": "abe-s-bagels-natural-4-pack-360g-2901978",
+      "Apples (1kg)": "coles-royal-gala-apples-1kg-4433462",
+      "Bananas": "coles-bananas-approx-170g-409499",
+      "Carrots (1kg)": "coles-carrots-1kg-9006560",
+      "Cherry Tomatoes (250g)": "coles-cherry-tomatoes-250g-4834736",
+      "Cucumber": "coles-cucumbers-continental-loose-1-each-4575605",
+      "Lettuce": "coles-iceberg-lettuce-1-each-4584071",
+      "Canned Tuna (95g)": "sirena-tuna-in-springwater-95g-8890138",
+      "Sliced Ham (200g)": "don-leg-ham-shaved-200g-6284567",
+      "Cheese Block (500g)": "mainland-tasty-cheese-block-500g-472994",
+      "Eggs (12-pack)": "sunny-queen-free-range-extra-large-eggs-12-pack-700g-5417789",
+      "Yoghurt (1kg)": "jalna-greek-style-natural-yoghurt-1kg-7250935",
+      "Butter (500g)": "western-star-dairy-butter-500g-210604",
+      "Rice (1kg)": "sunrice-premium-long-grain-rice-1kg-122518",
+      "Pasta (500g)": "san-remo-penne-rigate-pasta-no-18-500g-170838",
+      "Peanut Butter (375g)": "bega-spread-peanut-butter-smooth-375g-130607"
+    }
+  },
+  "items": {
+    "Wholemeal Bread (700g)": {
+      "sku": "749588",
+      "pinnedName": "tip top the one wholemeal bread sandwich slice loaf bakery",
+      "pinnedSize": "700g"
+    },
+    "Wraps 8-pack": {
+      "sku": "320194",
+      "pinnedName": "mission wraps original",
+      "pinnedSize": "8 pack"
+    },
+    "Bagels 4-pack": {
+      "sku": "270580",
+      "pinnedName": "abe's bagels the natural bagels",
+      "pinnedSize": "4 pack"
+    },
+    "Apples (1kg)": {
+      "sku": "314012",
+      "pinnedName": "woolworths royal gala apple punnet",
+      "pinnedSize": "1kg"
+    },
+    "Bananas": {
+      "sku": "133211",
+      "pinnedName": "cavendish bananas",
+      "pinnedSize": "each"
+    },
+    "Carrots (1kg)": {
+      "sku": "135369",
+      "pinnedName": "woolworths australian grown carrots",
+      "pinnedSize": "1kg"
+    },
+    "Cherry Tomatoes (250g)": {
+      "sku": "149620",
+      "pinnedName": "woolworths cherry tomatoes punnet",
+      "pinnedSize": "250g"
+    },
+    "Cucumber": {
+      "sku": "137102",
+      "pinnedName": "woolworths continental cucumbers",
+      "pinnedSize": "each"
+    },
+    "Lettuce": {
+      "sku": "154340",
+      "pinnedName": "iceberg lettuce",
+      "pinnedSize": "each"
+    },
+    "Sliced Chicken (250g)": {
+      "sku": "6058715",
+      "pinnedName": "woolworths carved chicken breast",
+      "pinnedSize": "250g"
+    },
+    "Canned Tuna (95g)": {
+      "sku": "144821",
+      "pinnedName": "sirena tuna in springwater",
+      "pinnedSize": "95g"
+    },
+    "Sliced Ham (200g)": {
+      "sku": "290324",
+      "pinnedName": "don leg ham shaved",
+      "pinnedSize": "200g"
+    },
+    "Cheese Block (500g)": {
+      "sku": "32198",
+      "pinnedName": "mainland tasty cheese block cheese",
+      "pinnedSize": "500g"
+    },
+    "Eggs (12-pack)": {
+      "sku": "77170",
+      "pinnedName": "sunny queen 12 pack extra large free range eggs",
+      "pinnedSize": "700g"
+    },
+    "Yoghurt (1kg)": {
+      "sku": "331963",
+      "pinnedName": "jalna pot set greek style natural yoghurt",
+      "pinnedSize": "1kg"
+    },
+    "Butter (500g)": {
+      "sku": "41287",
+      "pinnedName": "western star salted butter block butter block",
+      "pinnedSize": "500g"
+    },
+    "Rice (1kg)": {
+      "sku": "36493",
+      "pinnedName": "sunrice white rice premium long grain",
+      "pinnedSize": "1kg"
+    },
+    "Pasta (500g)": {
+      "sku": "35742",
+      "pinnedName": "san remo penne pasta no 18",
+      "pinnedSize": "500g"
+    },
+    "Hummus (200g)": {
+      "sku": "323320",
+      "pinnedName": "willow farm dip hommus",
+      "pinnedSize": "200g"
+    },
+    "Peanut Butter (375g)": {
+      "sku": "33605",
+      "pinnedName": "bega peanut butter smooth",
+      "pinnedSize": "375g"
+    }
+  }
+}

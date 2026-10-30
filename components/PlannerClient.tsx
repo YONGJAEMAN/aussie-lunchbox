@@ -1055,6 +1055,13 @@ export default function PlannerClient({
                 ))}
               </div>
             )}
+            {/* 🔴 갱신 요일을 말하는 문구다 — 수집은 ops/aussie-prices.plist(일요일)가 한다. 요일을 옮기면 문구도 볼 것. */}
+            <a
+              href={`/${locale}/price-index`}
+              className="inline-flex items-center min-h-touch text-xs font-semibold text-[#366A1B] hover:underline"
+            >
+              {t("planner_price_index_link")}
+            </a>
           </div>
         </details>
 
