@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Aussie Lunchbox 이번 주 특가 수집 (launchd LaunchAgent) — `com.aussielunchbox.prices`(일요일 정가)와 짝.
+
+  🔴 왜 수요일인가: Woolworths·Coles 주간 특가는 수요일에 시작해 화요일에 끝난다. 일요일에 읽으면 이틀 뒤 끝난다.
+  ⚠️ 수 09:00 NZ = 07:00 시드니(AEDT) — 특가가 바뀐 뒤다. 노트북이 자고 있으면 깨어날 때 한 번 따라잡는다.
+  ★ 안 돌면 지난 주 특가가 화요일에 만료되고 플래너는 정가로 돌아간다(fail-closed) — 틀린 특가는 나가지 않는다.
+  🔴 스크립트는 **main 체크아웃**(`aussie-lunchbox`)을 쓴다 — main이 아니면 그 주는 건너뛴다.
+
+  설치:
+    cp ops/aussie-specials.plist ~/Library/LaunchAgents/com.aussielunchbox.specials.plist
+    launchctl load ~/Library/LaunchAgents/com.aussielunchbox.specials.plist
+  즉시 한 번:   launchctl start com.aussielunchbox.specials
+  상태·로그:   launchctl list | grep aussielunchbox · tail -60 ~/Library/Logs/aussielunchbox-specials.log
+  해제:        launchctl unload ~/Library/LaunchAgents/com.aussielunchbox.specials.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.aussielunchbox.specials</string>
+
+  <!-- 로그인 셸로 부른다 — launchd의 PATH는 최소라서 node·npm을 못 찾는다. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>"/Volumes/For MAC APP/Dev Projects/aussie-lunchbox/scripts/collect_prices_local.sh" specials</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>3</integer>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/yongjaelee/Library/Logs/aussielunchbox-specials.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/yongjaelee/Library/Logs/aussielunchbox-specials.log</string>
+</dict>
+</plist>

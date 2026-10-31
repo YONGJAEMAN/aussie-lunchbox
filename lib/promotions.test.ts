@@ -7,7 +7,7 @@ import {
   getActivePromotions,
   getCurrentWeekPromotions,
   getPromotionsStatus,
-  nzToday,
+  auToday,
   pricedMenuMatches,
 } from "./promotions";
 import type { Promotion, StoreId } from "@/data/promotions.types";
@@ -35,6 +35,7 @@ const fakeCandidate = (
  * currentWeek 의 validFrom 을 그대로 쓰면 데이터가 갱신돼도 항상 유효한 날짜다.
  */
 import promotionsFile from "@/data/promotions.json";
+import { PORTION_BASIS } from "@/lib/planConfig";
 const CURRENT_WEEK = (promotionsFile as { currentWeek: string; weeks: Record<string, { validFrom: string }> })
   .weeks[(promotionsFile as { currentWeek: string }).currentWeek];
 /**
@@ -49,7 +50,7 @@ describe.skipIf(HAS_PROMOS)("특가 데이터가 없으면 「없다」고 말�
   it("상태는 missing이고 특가 목록은 비어 있다 — 지난 주 것이나 지어낸 것이 나가지 않는다", () => {
     expect(getPromotionsStatus().state).toBe("missing");
     expect(getCurrentWeekPromotions()).toBeNull();
-    expect(getActivePromotions(["woolworths", "newworld"])).toEqual([]);
+    expect(getActivePromotions(["woolworths", "coles"])).toEqual([]);
   });
 });
 
@@ -83,7 +84,7 @@ describe("matchIngredient", () => {
   it("prefers exact over partial when both exist", () => {
     const c = [
       fakeCandidate("cherry tomato", "woolworths", 0.5),
-      fakeCandidate("tomato", "newworld", 1.5),
+      fakeCandidate("tomato", "coles", 1.5),
     ];
     expect(matchIngredient("tomato", c)?.matchKey).toBe("tomato");
   });
@@ -91,9 +92,9 @@ describe("matchIngredient", () => {
   it("when multiple matches, picks highest savings", () => {
     const c = [
       fakeCandidate("apple", "woolworths", 0.5),
-      fakeCandidate("apple", "newworld", 1.5),
+      fakeCandidate("apple", "coles", 1.5),
     ];
-    expect(matchIngredient("apple", c)?.store).toBe("newworld");
+    expect(matchIngredient("apple", c)?.store).toBe("coles");
   });
 
   it("returns null when no key relates to ingredient", () => {
@@ -123,11 +124,11 @@ describe("matchMenuIngredients", () => {
   });
 
   it("preserves SaleMatch shape (ingredient, promotion, store)", () => {
-    const c = [fakeCandidate("bacon", "newworld")];
+    const c = [fakeCandidate("bacon", "coles")];
     const [m] = matchMenuIngredients(["Bacon"], c);
     expect(m.ingredient).toBe("Bacon");
     expect(m.promotion.matchKey).toBe("bacon");
-    expect(m.store).toBe("newworld");
+    expect(m.store).toBe("coles");
   });
 });
 
@@ -135,7 +136,7 @@ describe("calculateSavings", () => {
   it("sums savings of all matches", () => {
     const matches = [
       { ingredient: "apple", promotion: fakeCandidate("apple", "woolworths", 1.0), store: "woolworths" as StoreId },
-      { ingredient: "bacon", promotion: fakeCandidate("bacon", "newworld", 4.09), store: "newworld" as StoreId },
+      { ingredient: "bacon", promotion: fakeCandidate("bacon", "coles", 4.09), store: "coles" as StoreId },
     ];
     expect(calculateSavings(matches)).toBeCloseTo(5.09);
   });
@@ -174,7 +175,7 @@ describe.skipIf(!HAS_PROMOS)("getCurrentWeekPromotions / getActivePromotions", (
   });
 
   it("filters out 'excluded' items by default", () => {
-    const active = getActivePromotions(["woolworths", "newworld"], WITHIN_WEEK);
+    const active = getActivePromotions(["woolworths", "coles"], WITHIN_WEEK);
     expect(active.length).toBeGreaterThan(0);
     for (const p of active) {
       expect(["lunchbox", "snack-only"]).toContain(p.lunchboxFit);
@@ -183,9 +184,9 @@ describe.skipIf(!HAS_PROMOS)("getCurrentWeekPromotions / getActivePromotions", (
 
   it("respects store selection", () => {
     const wOnly = getActivePromotions(["woolworths"], WITHIN_WEEK);
-    const nOnly = getActivePromotions(["newworld"], WITHIN_WEEK);
+    const nOnly = getActivePromotions(["coles"], WITHIN_WEEK);
     expect(wOnly.every((p) => p.store === "woolworths")).toBe(true);
-    expect(nOnly.every((p) => p.store === "newworld")).toBe(true);
+    expect(nOnly.every((p) => p.store === "coles")).toBe(true);
   });
 });
 
@@ -202,8 +203,8 @@ describe.skipIf(!HAS_PROMOS)("🔴 만료된 주의 특가는 나가지 않는�
     weeks: Record<string, { validFrom: string; validUntil: string }>;
   };
   const WEEK = FILE.weeks[FILE.currentWeek] ?? { validFrom: "2026-01-01", validUntil: "2026-01-07" };
-  /** NZ 기준 그 날짜의 오전 9시 */
-  const nzMorning = (ymd: string) => new Date(`${ymd}T09:00:00+12:00`);
+  /** 시드니 기준 그 날짜의 오전(서머타임이면 9시, 아니면 8시) */
+  const nzMorning = (ymd: string) => new Date(`${ymd}T09:00:00+11:00`);
   const plusDays = (ymd: string, n: number) => {
     const d = new Date(`${ymd}T00:00:00Z`);
     d.setUTCDate(d.getUTCDate() + n);
@@ -222,23 +223,31 @@ describe.skipIf(!HAS_PROMOS)("🔴 만료된 주의 특가는 나가지 않는�
   it("validUntil 다음 날이면 expired 이고 특가가 0건이 된다", () => {
     const after = nzMorning(plusDays(WEEK.validUntil, 1));
     expect(getPromotionsStatus(after).state).toBe("expired");
-    expect(getActivePromotions(["woolworths", "newworld"], after)).toEqual([]);
+    expect(getActivePromotions(["woolworths", "coles"], after)).toEqual([]);
   });
 
   it("validFrom 이전이면 upcoming 이고 특가가 0건이 된다", () => {
     const before = nzMorning(plusDays(WEEK.validFrom, -1));
     expect(getPromotionsStatus(before).state).toBe("upcoming");
-    expect(getActivePromotions(["woolworths", "newworld"], before)).toEqual([]);
+    expect(getActivePromotions(["woolworths", "coles"], before)).toEqual([]);
   });
 
-  it("🔴 UTC 로 비교하면 하루 밀린다 — NZ 벽시계로 판정해야 한다", () => {
-    // NZ 로 (validUntil + 1일) 00:30 = UTC 로는 아직 validUntil 당일 12:30.
+  it("🔴 UTC 로 비교하면 하루 밀린다 — 시드니 벽시계로 판정해야 한다", () => {
+    // 시드니로 (validUntil + 1일) 새벽(+11:00 01:30 = 서머타임 01:30 / 아니면 00:30) = UTC 로는 아직 validUntil 당일 14:30.
     // UTC 날짜로 보면 만료를 하루 놓친다.
     const nextDay = plusDays(WEEK.validUntil, 1);
-    const justAfterMidnightNZ = new Date(`${nextDay}T00:30:00+12:00`);
-    expect(nzToday(justAfterMidnightNZ)).toBe(nextDay);
+    const justAfterMidnightNZ = new Date(`${nextDay}T01:30:00+11:00`);
+    expect(auToday(justAfterMidnightNZ)).toBe(nextDay);
     expect(justAfterMidnightNZ.toISOString().slice(0, 10)).toBe(WEEK.validUntil);
     expect(getPromotionsStatus(justAfterMidnightNZ).state).toBe("expired");
+  });
+
+  it("🔴 오클랜드는 이미 다음 날이어도 시드니가 화요일 밤이면 아직 유효하다 (NZ 날짜로 되돌리면 잡힌다)", () => {
+    // +11:00 23:30 = 시드니 23:30(서머타임) 또는 22:30 — 둘 다 validUntil 당일.
+    // 오클랜드는 01:30 또는 00:30으로 이미 다음 날이다. Kiwi 코드 그대로(`Pacific/Auckland`)면 여기서 만료로 본다.
+    const sydneyTuesdayNight = new Date(`${WEEK.validUntil}T23:30:00+11:00`);
+    expect(auToday(sydneyTuesdayNight)).toBe(WEEK.validUntil);
+    expect(getPromotionsStatus(sydneyTuesdayNight).state).toBe("active");
   });
 });
 
@@ -274,7 +283,8 @@ describe.skipIf(!HAS_PROMOS)("🔴 note 의 금액 주장은 가격에서 다시
   };
 
   it("항목이 비어 있지 않다 — 빈 목록은 모든 검사를 공짜로 통과시킨다", () => {
-    expect(rows.length).toBeGreaterThan(20);
+    // Kiwi는 「> 20」(전단 80건)이었다. Aussie 수요일 수집분은 추적 SKU의 특가뿐이라 주마다 10~20건이다(10-28 주 18건).
+    expect(rows.length).toBeGreaterThan(0);
   });
 
   it.each(rows.map((r) => [`${r.store}: ${r.item.name}`, r] as const))(
@@ -327,8 +337,12 @@ describe.skipIf(!HAS_PROMOS)("🔴 회원 전용가는 회원가라고 밝혀야
   const items = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {})).flatMap((s) => s.items);
   const clubItems = items.filter((i) => i.promoType === "club");
 
-  it("이번 주에 회원가가 실려 있다 — 없으면 아래 검사는 공짜로 통과한다", () => {
-    expect(clubItems.length).toBeGreaterThan(0);
+  it("수요일 수집분(Woolworths)엔 회원가가 없다 — 회원가는 붙여 넣은 Coles 전단에서만 들어온다", () => {
+    // Kiwi는 「회원가가 실려 있어야 한다」였다 — 데이터 모양을 강요하는 검사라 Aussie에선 늘 빨갛다.
+    // 아래 두 검사(문구·렌더 조건)는 데이터와 무관하게 늘 돈다.
+    const wool = (FILE.weeks[FILE.currentWeek]?.stores.woolworths?.items ?? []);
+    expect(wool.filter((i) => i.promoType === "club").map((i) => i.name)).toEqual([]);
+    expect(clubItems.every((i) => !i.sku), "회원가에 추적 SKU가 붙었다 — 수집기가 IsEdrSpecial을 걸렀어야 한다").toBe(true);
   });
 
   it("고지 문구가 세 언어 모두에 있고 마트 이름 자리가 비어 있지 않다", async () => {
@@ -408,7 +422,13 @@ describe.skipIf(!HAS_PROMOS)("🔴 alsoMatches 에 적힌 이름은 실제 재�
     const named = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {}))
       .flatMap((s) => s.items)
       .flatMap((i) => (i.alsoMatches ?? []).map((n) => [i.name, n] as const));
-    expect(named.length, "alsoMatches 가 하나도 없다 — 이 검사가 무의미하다").toBeGreaterThan(0);
+    // Aussie: alsoMatches는 같은 SKU를 쓰는 다른 재료 키다 — 간식·레시피 전용 재료도 있어서 전체 재료 이름과 대조한다.
+    // 주에 따라 하나도 없을 수 있다(10-28 주 0건). 대신 대조표가 가짜 이름을 실제로 거르는지 본다.
+    for (const items of Object.values((menu as unknown as { SNACK_DATA: Record<string, { ingredients?: string[] }[]> }).SNACK_DATA)) {
+      for (const sn of items) for (const i of sn.ingredients ?? []) ings.add(i.toLowerCase());
+    }
+    for (const k of Object.keys(PORTION_BASIS)) ings.add(k.toLowerCase());
+    expect(ings.has("not a real ingredient"), "대조표가 아무 이름이나 통과시킨다").toBe(false);
     for (const [item, n] of named) {
       expect(ings.has(n.toLowerCase()), `${item}: alsoMatches "${n}" 는 존재하지 않는 재료다`).toBe(true);
     }
@@ -425,8 +445,10 @@ describe.skipIf(!HAS_PROMOS)("🔴 묶음 가격은 묶음이라고 밝혀야 �
   const items = Object.values((FILE.weeks[FILE.currentWeek]?.stores ?? {})).flatMap((s) => s.items);
   const multi = items.filter((i) => i.multibuy);
 
-  it("이번 주에 묶음 특가가 실려 있다 — 없으면 아래 검사가 공짜로 통과한다", () => {
-    expect(multi.length).toBeGreaterThan(0);
+  it("수요일 수집분(Woolworths)엔 묶음가가 없다 — 멀티바이는 진열가가 안 바뀌어 읽지 않는다", () => {
+    // Kiwi는 「묶음 특가가 실려 있어야 한다」였다(데이터 모양 강요). 묶음 고지는 아래 검사가 데이터와 무관하게 본다.
+    const wool = (FILE.weeks[FILE.currentWeek]?.stores.woolworths?.items ?? []);
+    expect(wool.filter((i) => i.multibuy).map((i) => i.name)).toEqual([]);
   });
 
   it.each(multi.map((i) => [i.name, i] as const))(

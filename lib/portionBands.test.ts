@@ -16,7 +16,7 @@ import type { MenuItem, PriceInfo, SnackData, GeneratePlanResponse } from "./typ
 import type { SaleMatch, StoreId } from "@/data/promotions.types";
 import { getActivePromotions as activePromosForGate } from "./promotions";
 // Aussie: AU 전단은 5단계 — 특가에 기대는 검사는 데이터가 들어오면 다시 켜진다(「없으면 missing」은 promotions.test).
-const HAS_PROMOS = activePromosForGate(["woolworths", "newworld"]).length > 0;
+const HAS_PROMOS = activePromosForGate(["woolworths", "coles"]).length > 0;
 
 
 /**
@@ -105,7 +105,7 @@ describe("배율 = 표에서 독립 재계산한 값", () => {
 const raw = menuData as unknown as { MENU_DATA: { en: MenuItem[] }; SNACK_DATA: SnackData };
 const MENUS = raw.MENU_DATA.en;
 const SNACKS = raw.SNACK_DATA;
-const STORES: StoreId[] = ["woolworths", "newworld"];
+const STORES: StoreId[] = ["woolworths", "coles"];
 
 /** 센트 아래가 남는 가격 — 딱 떨어지면 반올림 오차가 안 생겨 합계 검사가 알리바이가 된다. */
 function stubPrice(name: string): number {
@@ -248,7 +248,7 @@ describe("공유 링크 — 나이대", () => {
   it("🔴 옛 링크(키 b 없음)는 standard — 그리고 standard 링크는 이 기능 전과 같은 문자열이다", async () => {
     const plan = await buildWeeklyPlan(MENUS, [], [], [], "", SNACKS, stub);
     const d = plan.planData.map((x) => [x.menuName, ...x.snacks.map((s) => s.name)]);
-    // 이 기능 전의 인코더가 만들던 모양 그대로(특가 마트 0,1 인덱스 = paknsave 빼고 woolworths·newworld)
+    // 이 기능 전의 인코더가 만들던 모양 그대로(특가 마트 1,2 인덱스 = woolworths·coles — 재포크 뒤 Coles 체크박스는 내부 id newworld였다)
     const old = Buffer.from(JSON.stringify({ v: 1, d, s: [1, 2] })).toString("base64url");
     const decoded = decodeSharedPlan(old)!;
     expect(decoded).not.toBeNull();

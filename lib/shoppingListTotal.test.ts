@@ -8,7 +8,7 @@ import type { PriceInfo } from "./types";
 import type { SaleMatch } from "@/data/promotions.types";
 import { getActivePromotions as activePromosForGate } from "./promotions";
 // Aussie: AU 전단은 5단계 — 특가에 기대는 검사는 데이터가 들어오면 다시 켜진다(「없으면 missing」은 promotions.test).
-const HAS_PROMOS = activePromosForGate(["woolworths", "newworld"]).length > 0;
+const HAS_PROMOS = activePromosForGate(["woolworths", "coles"]).length > 0;
 
 
 /**
@@ -174,7 +174,7 @@ describe("🔴 주간 상단 합계와 장보기 합계가 센트까지 같다",
     for (let run = 0; run < 30; run++) {
       const plan = await buildWeeklyPlan(
         menuData.MENU_DATA.en, [], [], [], "", menuData.SNACK_DATA, stub,
-        { useSales: true, saleStores: ["woolworths", "newworld"] },
+        { useSales: true, saleStores: ["woolworths", "coles"] },
       );
       const counts: Record<string, number> = {};
       for (const ing of plan.shoppingList) counts[ing] = (counts[ing] ?? 0) + 1;
@@ -231,7 +231,7 @@ describe.skipIf(!HAS_PROMOS)("🔴 간식 재료도 특가 대조를 거친다",
 
   it("특가 대상인 간식 재료가 실제로 존재한다 — 없으면 아래 검사가 알리바이다", async () => {
     const { getActivePromotions, pricedMenuMatches } = await import("./promotions");
-    const promos = getActivePromotions(["woolworths", "newworld"]);
+    const promos = getActivePromotions(["woolworths", "coles"]);
     const snackIngs = [
       ...new Set(
         Object.values(menuData2.SNACK_DATA).flatMap((arr) =>
@@ -249,7 +249,7 @@ describe.skipIf(!HAS_PROMOS)("🔴 간식 재료도 특가 대조를 거친다",
   it("간식으로만 쓰인 특가 재료에도 할인이 닿는다", async () => {
     const { getActivePromotions, pricedMenuMatches } = await import("./promotions");
     const { buildWeeklyPlan } = await import("./planGenerator");
-    const promos = getActivePromotions(["woolworths", "newworld"]);
+    const promos = getActivePromotions(["woolworths", "coles"]);
     const stub2 = async (ings: string[]): Promise<PriceInfo[]> =>
       ings.map((name, i) => ({ name, price: 3.33 + (i % 7) * 0.47, source: "test" }) as PriceInfo);
 
@@ -257,7 +257,7 @@ describe.skipIf(!HAS_PROMOS)("🔴 간식 재료도 특가 대조를 거친다",
     for (let run = 0; run < 60 && checked < 3; run++) {
       const plan = await buildWeeklyPlan(
         menuData2.MENU_DATA.en, [], [], [], "", menuData2.SNACK_DATA, stub2,
-        { useSales: true, saleStores: ["woolworths", "newworld"] },
+        { useSales: true, saleStores: ["woolworths", "coles"] },
       );
       for (const d of plan.planData) {
         const snackIngs = (d.snacks ?? []).flatMap((s) => s.ingredients ?? []);

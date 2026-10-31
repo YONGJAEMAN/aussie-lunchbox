@@ -8,7 +8,7 @@ import type { StoreId } from "@/data/promotions.types";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 import { normalizePortionBand, normalizeExtraBoxes, portionsOf } from "@/lib/portionBands";
 
-const VALID_STORES: StoreId[] = ["paknsave", "woolworths", "newworld"];
+const VALID_STORES: StoreId[] = ["woolworths", "coles"];
 
 const VALID_PREP_STYLES: PrepStyle[] = ["no-cook", "make-ahead", "cook-fresh"];
 

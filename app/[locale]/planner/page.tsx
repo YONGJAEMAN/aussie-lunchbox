@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import PlannerClient from "@/components/PlannerClient";
-import { getPromotionsStatus } from "@/lib/promotions";
+import { getPromotionsStatus, saleStoresThisWeek } from "@/lib/promotions";
 import { MENU_COUNT, SNACK_COUNT, NUT_CONTAINING_COUNT, NUT_FREE_COUNT } from "@/lib/siteCounts";
 import Footer from "@/components/Footer";
 import { buildPageMetadata } from "@/lib/seo/pageMetadata";
@@ -99,6 +99,7 @@ export default async function PlannerPage({
       />
       <PlannerClient
         salesActive={getPromotionsStatus().state === "active"}
+        saleStoresThisWeek={saleStoresThisWeek()}
         articleMeta={ARTICLE_META}
         methodExample={methodExample()}
         exampleWeek={{ rows: exampleWeekRows(), total: exampleWeekTotal() }}

@@ -1,5 +1,7 @@
 #!/bin/zsh
 # Aussie 주간 가격 수집 — **이 기계에서** 돈다(launchd `ops/aussie-prices.plist`, 일 19:00 NZ).
+#   `specials` 인자로 부르면 이번 주 Woolworths 특가만 읽는다(launchd `ops/aussie-specials.plist`, 수 09:00 NZ).
+#   특가는 수~화라 일요일 정가 수집과 따로 돈다. 아래 안전장치(볼륨·깨끗한 트리·main·tsc·vitest)는 같다.
 #
 # 🔴 왜 로컬인가: Woolworths AU는 Akamai 뒤라 GitHub 러너에서 막힌다(Aussie 캐시가 08-16부터
 #    146개 전부 「Est. (Fallback)」이었던 이유). 이 Mac에서는 1.5초 간격으로 197개를 받아도 200이었다(2026-10-30).
@@ -9,10 +11,11 @@
 set -uo pipefail
 
 REPO="/Volumes/For MAC APP/Dev Projects/aussie-lunchbox"
+MODE="${1:-prices}"
 say() { print -r -- "$(date '+%H:%M:%S') $*"; }
 
 print -r -- ""
-print -r -- "━━ Aussie 주간 가격 수집 · $(date '+%Y-%m-%d %H:%M') ━━"
+print -r -- "━━ Aussie 주간 ${MODE} 수집 · $(date '+%Y-%m-%d %H:%M') ━━"
 
 # 🔴 저장소가 외장 볼륨에 있다. 안 붙어 있으면 조용히 성공한 척하지 않는다.
 if [[ ! -d "$REPO/.git" ]]; then
@@ -36,6 +39,18 @@ if [[ "$branch" != "main" ]]; then
 fi
 git pull -q --rebase origin main || { say "❌ pull 실패"; exit 1; }
 
+if [[ "$MODE" == "specials" ]]; then
+  # 80% 미만이면 파일을 안 쓰고 exit 1 — 그러면 지난 주 특가는 화요일에 만료되고 플래너는 정가로 돌아간다(fail-closed).
+  say "▶ 이번 주 Woolworths 특가"
+  if node scripts/update_specials.mjs --write >/tmp/aussie_price_step.log 2>&1; then
+    say "  ✅ $(grep -E '^✅|읽음' /tmp/aussie_price_step.log | tr '\n' ' ' | cut -c1-160)"
+  else
+    say "  ❌ 특가 수집 실패(파일 안 씀) — $(tail -3 /tmp/aussie_price_step.log | tr '\n' ' ' | cut -c1-160)"
+    exit 1
+  fi
+  FILES=(data/promotions.json data/specials_review.txt)
+  MESSAGE="🔖 이번 주 특가 ($(date '+%Y-%m-%d'), 로컬 수집)"
+else
 # 수집기는 성공률 80% 미만이면 파일을 안 쓰고 exit 1, 못 읽은 재료는 이전 실가격을 남긴다.
 say "▶ 플래너 캐시(Woolworths AU)"
 if node scripts/update_prices.mjs >/tmp/aussie_price_step.log 2>&1; then
@@ -59,6 +74,10 @@ do
   fi
 done
 
+FILES=(data/price_cache.json data/price_cache_review.txt data/priceIndex.json data/priceHistory.json data/price_index_review.txt)
+MESSAGE="🛒 주간 가격 업데이트 ($(date '+%Y-%m-%d'), 로컬 수집)"
+fi
+
 if [[ -z "$(git status --porcelain -- data)" ]]; then
   say "변경 없음 — 커밋하지 않는다."
   exit 0
@@ -76,10 +95,10 @@ if ! npx vitest run >/tmp/aussie_price_test.log 2>&1; then
 fi
 say "  ✅ $(grep -E 'Tests ' /tmp/aussie_price_test.log | tail -1)"
 
-git add data/price_cache.json data/price_cache_review.txt data/priceIndex.json data/priceHistory.json data/price_index_review.txt
+git add "${FILES[@]}"
 # 작성자 이메일은 GitHub 계정에 붙은 주소여야 한다 — 아니면 Vercel이 배포를 막는다(Kiwi 09-13·09-27).
 git -c user.name="Aussie price cron (local)" -c user.email="133712935+YONGJAEMAN@users.noreply.github.com" \
-    commit -q -m "🛒 주간 가격 업데이트 ($(date '+%Y-%m-%d'), 로컬 수집)"
+    commit -q -m "$MESSAGE"
 
 for attempt in 1 2 3; do
   if git pull --rebase -q origin main && git push -q origin main; then

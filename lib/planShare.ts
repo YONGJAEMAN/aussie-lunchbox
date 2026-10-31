@@ -20,7 +20,11 @@ export const SHARE_ALLERGIES: readonly AllergyType[] = [
   "Sesame Allergy", // 2026-10-22
 ];
 export const SHARE_PREP: readonly PrepStyle[] = ["no-cook", "make-ahead", "cook-fresh"];
-export const SHARE_STORES: readonly StoreId[] = ["paknsave", "woolworths", "newworld"];
+/**
+ * 🔴 Aussie(2026-10-30): 0번은 Kiwi의 Pak'nSave 자리라 비워 둔다(디코드하면 거절). 2번은 재포크 뒤
+ *    「Coles」 체크박스가 내부 id `newworld`로 쓰던 자리다 — 이미 나간 링크의 2번은 원래 Coles였다.
+ */
+export const SHARE_STORES: readonly (StoreId | null)[] = [null, "woolworths", "coles"];
 
 /** `?plan=` 값의 최대 길이. 넘는 입력은 풀어 보지도 않는다. */
 export const SHARE_PARAM_MAX = 2000;
@@ -171,8 +175,10 @@ export function decodeSharedPlan(param: unknown): SharedPlan | null {
 
   const allergies = o.a === undefined ? [] : fromIndexes(o.a, SHARE_ALLERGIES);
   const prepStyles = o.p === undefined ? [] : fromIndexes(o.p, SHARE_PREP);
-  const saleStores = o.s === undefined ? [] : fromIndexes(o.s, SHARE_STORES);
-  if (!allergies || !prepStyles || !saleStores) return null;
+  const storeSlots = o.s === undefined ? [] : fromIndexes(o.s, SHARE_STORES);
+  if (!storeSlots || storeSlots.includes(null)) return null;
+  const saleStores = storeSlots.filter((x): x is StoreId => x !== null);
+  if (!allergies || !prepStyles) return null;
   if (o.s !== undefined && saleStores.length === 0) return null;
 
   let excluded: string[] = [];

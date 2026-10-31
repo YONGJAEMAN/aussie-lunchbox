@@ -1,5 +1,290 @@
 {
-  "_comment": "Weekly supermarket promotions. Schema: data/promotions.types.ts. 🔴 Aussie: 호주 전단(Woolworths·Coles)은 5단계에서 넣는다. 재포크 때 Kiwi의 NZ 전단(Pak'nSave·New World)이 그대로 들어와 있어 비웠다 — 그대로 두면 Aussie 플래너가 NZ 특가를 이번 주 특가로 보여 준다.",
-  "currentWeek": "",
-  "weeks": {}
+  "_comment": "Weekly supermarket promotions. Schema: data/promotions.types.ts. Aussie(2026-10-30): weeks run Wednesday–Tuesday (Sydney dates). stores.woolworths is written every Wednesday by scripts/update_specials.mjs from the SKUs we track (PINNED_SKUS) — do not hand-edit. stores.coles is added by hand only when the user pastes that week's Coles catalogue; set pricesIngredients one item at a time after checking product and pack size with the user.",
+  "currentWeek": "2026-10-28",
+  "weeks": {
+    "2026-10-28": {
+      "validFrom": "2026-10-28",
+      "validUntil": "2026-11-03",
+      "stores": {
+        "woolworths": {
+          "storeName": "Woolworths",
+          "sourceUrl": "https://www.woolworths.com.au/shop/browse/specials",
+          "items": [
+            {
+              "name": "McKenzie's Baking Powder 300g",
+              "matchKey": "baking powder",
+              "category": "",
+              "regularPrice": 5.55,
+              "salePrice": 4.4,
+              "savings": 1.15,
+              "savingsPercent": 21,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Baking Powder"
+              ],
+              "sku": "574616"
+            },
+            {
+              "name": "Mt Barker Free Range Roasted Shredded Chicken 200g",
+              "matchKey": "cooked chicken",
+              "category": "",
+              "regularPrice": 8.9,
+              "salePrice": 7.9,
+              "savings": 1,
+              "savingsPercent": 11,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Cooked Chicken"
+              ],
+              "sku": "904897"
+            },
+            {
+              "name": "Philadelphia Original Cream Cheese Block 250g",
+              "matchKey": "cream cheese",
+              "category": "",
+              "regularPrice": 5.7,
+              "salePrice": 4.5,
+              "savings": 1.2,
+              "savingsPercent": 21,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Cream Cheese"
+              ],
+              "sku": "48062"
+            },
+            {
+              "name": "Lindt Excellence Dark Chocolate 70% Cocoa Block 100g",
+              "matchKey": "dark chocolate",
+              "category": "",
+              "regularPrice": 8.5,
+              "salePrice": 6.8,
+              "savings": 1.7,
+              "savingsPercent": 20,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Dark Chocolate"
+              ],
+              "sku": "19731"
+            },
+            {
+              "name": "Woolworths Dried & Diced Apricots 200g",
+              "matchKey": "dried apricots",
+              "category": "",
+              "regularPrice": 7.5,
+              "salePrice": 4.4,
+              "savings": 3.1,
+              "savingsPercent": 41,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Dried Apricots"
+              ],
+              "sku": "89722"
+            },
+            {
+              "name": "Umami Frozen Edamame Whole Baby Soy Beans 1kg",
+              "matchKey": "edamame",
+              "category": "",
+              "regularPrice": 7.5,
+              "salePrice": 6.5,
+              "savings": 1,
+              "savingsPercent": 13,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Edamame"
+              ],
+              "sku": "386006"
+            },
+            {
+              "name": "Birch & Waite Greek Lemon Dressing 250mL",
+              "matchKey": "lemon dressing",
+              "category": "",
+              "regularPrice": 6.2,
+              "salePrice": 5.7,
+              "savings": 0.5,
+              "savingsPercent": 8,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Lemon Dressing"
+              ],
+              "sku": "710191"
+            },
+            {
+              "name": "Sandhurst Olives Green Sicilian 280g",
+              "matchKey": "olives",
+              "category": "",
+              "regularPrice": 4.2,
+              "salePrice": 2.9,
+              "savings": 1.3,
+              "savingsPercent": 31,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Olives"
+              ],
+              "sku": "329746"
+            },
+            {
+              "name": "Bega Peanut Butter Smooth 375g",
+              "matchKey": "peanut butter",
+              "category": "",
+              "regularPrice": 5.8,
+              "salePrice": 4.5,
+              "savings": 1.3,
+              "savingsPercent": 22,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Peanut Butter"
+              ],
+              "sku": "33605"
+            },
+            {
+              "name": "Passage To Asia Satay Chicken 200g",
+              "matchKey": "peanut sauce",
+              "category": "",
+              "regularPrice": 3.8,
+              "salePrice": 3,
+              "savings": 0.8,
+              "savingsPercent": 21,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Peanut Sauce"
+              ],
+              "sku": "703559"
+            },
+            {
+              "name": "MEB Foods Khobz White Pita 5pack",
+              "matchKey": "pita bread",
+              "category": "",
+              "regularPrice": 3.75,
+              "salePrice": 2.75,
+              "savings": 1,
+              "savingsPercent": 27,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Pita Bread"
+              ],
+              "sku": "391891"
+            },
+            {
+              "name": "Cobs Popcorn Sea Salt Gluten Free 80g",
+              "matchKey": "popcorn",
+              "category": "",
+              "regularPrice": 3.5,
+              "salePrice": 1.75,
+              "savings": 1.75,
+              "savingsPercent": 50,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Popcorn"
+              ],
+              "sku": "377589"
+            },
+            {
+              "name": "McKenzie's Lentils Red 375g",
+              "matchKey": "red lentils",
+              "category": "",
+              "regularPrice": 2.6,
+              "salePrice": 2.3,
+              "savings": 0.3,
+              "savingsPercent": 12,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Red Lentils"
+              ],
+              "sku": "8088"
+            },
+            {
+              "name": "Fantastic Rice Crackers Original 100g",
+              "matchKey": "rice crackers",
+              "category": "",
+              "regularPrice": 2.5,
+              "salePrice": 1.85,
+              "savings": 0.65,
+              "savingsPercent": 26,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Rice Crackers"
+              ],
+              "sku": "35231"
+            },
+            {
+              "name": "Old El Paso Chunky Salsa Dip Mild Mild 312g",
+              "matchKey": "salsa",
+              "category": "",
+              "regularPrice": 5.5,
+              "salePrice": 3.85,
+              "savings": 1.65,
+              "savingsPercent": 30,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Salsa"
+              ],
+              "sku": "231416"
+            },
+            {
+              "name": "Lee Kum Kee Soy Sauce Premium 500mL",
+              "matchKey": "soy sauce",
+              "category": "",
+              "regularPrice": 4.3,
+              "salePrice": 3.7,
+              "savings": 0.6,
+              "savingsPercent": 14,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Soy Sauce"
+              ],
+              "sku": "198763"
+            },
+            {
+              "name": "Passage To Asia Teriyaki Chicken 200g",
+              "matchKey": "teriyaki sauce",
+              "category": "",
+              "regularPrice": 3.8,
+              "salePrice": 3,
+              "savings": 0.8,
+              "savingsPercent": 21,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Teriyaki Sauce"
+              ],
+              "sku": "703375"
+            },
+            {
+              "name": "Heinz Seriously Good Mayonnaise Vegan Mayo 270mL",
+              "matchKey": "vegan mayo",
+              "category": "",
+              "regularPrice": 6.3,
+              "salePrice": 5,
+              "savings": 1.3,
+              "savingsPercent": 21,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Vegan Mayo"
+              ],
+              "sku": "164531"
+            }
+          ]
+        }
+      },
+      "enteredAt": "2026-10-30T10:20:42.208Z",
+      "aiParsed": false
+    }
+  }
 }

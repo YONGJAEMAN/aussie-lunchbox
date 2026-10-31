@@ -1,19 +1,20 @@
 /**
  * Weekly supermarket promotions schema.
- * 사용자가 마트 메일을 paste → AI 파싱 → 이 구조로 저장됨.
+ * Aussie(2026-10-30): Woolworths는 수요일 수집기(`scripts/update_specials.mjs`)가 추적 SKU의 특가로 채우고,
+ * Coles는 사용자가 전단을 붙여 넣으면 그 주에만 채운다(Coles 사이트는 봇 확인이라 읽지 않는다).
  *
  * 단일 파일 (data/promotions.json) 에 주차별 keyed 로 누적.
  */
 
-export type StoreId = "paknsave" | "woolworths" | "newworld";
+export type StoreId = "woolworths" | "coles";
 
 /**
  * Promotion 종류:
- * - "sale": 정가 → 세일가 직접 할인 (Super Saver, 1/2 price 등). 누구나 즉시 적용.
- * - "club": 회원 전용 가격 (New World Club Deal 등). 회원 카드 있는 사용자에만.
- * - "points": 포인트 적립 배수 (Woolworths Boost 10x 등). 가격 할인 아니라
- *   적립이라 도시락 비용 계산엔 영향 0. 표시만 가능.
- * - "everyday-low": 정가 자체가 저렴 (New World Everyday Low Price). 매주 동일.
+ * - "sale": 정가 → 세일가 직접 할인 (Half Price, Specials 등). 누구나 즉시 적용.
+ * - "club": 회원 전용 가격 (Everyday Rewards·Flybuys 회원가). 회원 카드 있는 사용자에만.
+ *   수요일 수집기는 회원가(`IsEdrSpecial`)를 넣지 않는다.
+ * - "points": 포인트 적립 배수. 가격 할인 아니라 적립이라 도시락 비용 계산엔 영향 0. 표시만 가능.
+ * - "everyday-low": 정가 자체가 저렴 (상시 저가). 매주 동일.
  */
 export type PromoType = "sale" | "club" | "points" | "everyday-low";
 
@@ -32,9 +33,9 @@ export interface Promotion {
   matchKey: string;
   /** 식재료 카테고리 (utils.ts의 INGREDIENT_CATEGORIES 와 일치) */
   category: string;
-  /** 정가 (NZD). points 타입이면 0 또는 단가. */
+  /** 정가 (AUD). points 타입이면 0 또는 단가. */
   regularPrice: number;
-  /** 세일 가격 (NZD). points 타입이면 일반 가격. */
+  /** 세일 가격 (AUD). points 타입이면 일반 가격. */
   salePrice: number;
   /** 절약 금액 (계산값) */
   savings: number;
@@ -80,10 +81,12 @@ export interface Promotion {
   multibuy?: string;
   /** 추가 노트 (예: "회원 전용", "10x points", "nut-allergy 위반 — 학교 정책 X") */
   note?: string;
+  /** Woolworths 수요일 수집기가 읽은 추적 SKU(`PINNED_SKUS`). 붙여 넣은 전단 항목엔 없다. */
+  sku?: string;
 }
 
 export interface StorePromotions {
-  /** 마트 표시 이름 ("Pak'nSave", "Woolworths" 등) */
+  /** 마트 표시 이름 ("Woolworths", "Coles") */
   storeName: string;
   /** 메일/페이지 source URL */
   sourceUrl?: string;
@@ -94,9 +97,9 @@ export interface StorePromotions {
 }
 
 export interface WeeklyPromotions {
-  /** 유효 시작일 (YYYY-MM-DD) */
+  /** 유효 시작일 (YYYY-MM-DD, 시드니 날짜 — 수요일) */
   validFrom: string;
-  /** 유효 만료일 (YYYY-MM-DD) */
+  /** 유효 만료일 (YYYY-MM-DD, 시드니 날짜 — 화요일) */
   validUntil: string;
   /** 마트별 promo 데이터 */
   stores: Partial<Record<StoreId, StorePromotions>>;
@@ -107,7 +110,7 @@ export interface WeeklyPromotions {
 }
 
 export interface PromotionsFile {
-  /** 현재 주차 키 (YYYY-MM-DD, 월요일) */
+  /** 현재 주차 키 (YYYY-MM-DD, 그 주의 수요일) */
   currentWeek: string;
   /** 주차별 데이터 (오래된 주차도 누적, 통계/회고용) */
   weeks: Record<string, WeeklyPromotions>;
