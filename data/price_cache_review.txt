@@ -286,7 +286,7 @@ Feta                     $3        Woolworths Greek Style Fetta
 Flour                    $2.4      Woolworths Essentials Self Raising Flour
 GF Crackers              $4.9      Arnott's Gluten Free Jatz Cracker Biscuits
 GF Pasta                 $5.4      Buontempo Gluten Free Pasta Spirals
-GF Sausages              $4.4      Market Value 8 Pack Thin Honey & Herb BBQ Sausages
+GF Sausages              $3.65     Keen's Meal Base Curried Sausages
 Ginger                   $2.8      Woolworths Crushed Ginger
 Gluten-Free Bread        $5.5      Woolworths Free From Gluten White Bread Loaf
 Gluten-Free Flour        $3.6      Woolworths Free From Gluten Plain Flour
