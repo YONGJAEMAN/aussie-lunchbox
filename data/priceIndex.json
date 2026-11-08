@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-01",
-  "woolworthsUpdated": "2026-11-01",
+  "lastUpdated": "2026-11-08",
+  "woolworthsUpdated": "2026-11-08",
   "woolworthsMethod": "Woolworths Australia online price feed, default guest session (fixed SKUs, regular shelf price)",
   "items": [
     {
@@ -15,7 +15,7 @@
       "category": "Bakery",
       "unit": "per pack",
       "note": "Mission Original",
-      "woolworths": 5.6
+      "woolworths": 5.7
     },
     {
       "name": "Bagels 4-pack",
@@ -43,28 +43,28 @@
       "category": "Produce",
       "unit": "per kg",
       "note": "",
-      "woolworths": 2.2
+      "woolworths": 2.5
     },
     {
       "name": "Cherry Tomatoes (250g)",
       "category": "Produce",
       "unit": "per punnet",
       "note": "",
-      "woolworths": 2.5
+      "woolworths": 3.2
     },
     {
       "name": "Cucumber",
       "category": "Produce",
       "unit": "each",
       "note": "Continental",
-      "woolworths": 2.5
+      "woolworths": 1.5
     },
     {
       "name": "Lettuce",
       "category": "Produce",
       "unit": "each",
       "note": "Iceberg",
-      "woolworths": 3
+      "woolworths": 4.9
     },
     {
       "name": "Sliced Chicken (250g)",

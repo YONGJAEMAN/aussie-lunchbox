@@ -206,7 +206,7 @@
 #      Yoghurt
 
 Apple                    $7.9      Woolworths Royal Gala Apple Punnet
-Avocado                  $2.7      Hass Avocado
+Avocado                  $2.9      Hass Avocado
 Bacon                    $4.4      Woolworths Middle Bacon Middle Cut Rashers
 Bagel                    $5.5      Abe's Bagels The Natural Bagels
 Baking Powder            $5.55     McKenzie's Baking Powder
@@ -233,14 +233,14 @@ Butter Chicken Sauce     $2.7      Woolworths Butter Chicken Simmer Sauce
 Cabbage                  $2.1      Woolworths Green Cabbage Quarter
 Caesar Dressing          $1.8      Woolworths Caesar Salad Dressing
 Canned Tuna              $1        Woolworths Lemon & Pepper Tuna
-Capsicum                 $1.48     Red Capsicum
-Carrot                   $2.2      Woolworths Australian Grown Carrots
+Capsicum                 $2.73     Red Capsicum
+Carrot                   $2.5      Woolworths Australian Grown Carrots
 Celery                   $4.9      Woolworths Celery Sticks Punnet
 Cheese                   $6.6      Woolworths Tasty Cheese Block
 Cheese Block             $6.6      Woolworths Tasty Cheese Block
 Cheese Sauce             $1.6      Gravox Cheese Sauce Mix CHEESE
 Cheese Stick             $4.6      Woolworths Natural Cheese Sticks
-Cherry Tomatoes          $2.5      Woolworths Cherry Tomatoes Punnet
+Cherry Tomatoes          $3.2      Woolworths Cherry Tomatoes Punnet
 Chicken                  $11       Woolworths RSPCA Approved Chicken Breast Fillet
 Chicken Breast           $9.4      Woolworths RSPCA Approved Chicken Breast Fillets
 Chicken Skewers          $7.5      Woolworths 6 Pack Honey Soy Chicken Kebabs
@@ -259,7 +259,7 @@ Corn                     $2.2      Edgell Corn Kernels
 Corn Chips               $5.95     Old El Paso Nachips Tortilla Nacho Corn Chips Original
 Corn Tortilla            $5        Old El Paso Street Market White Corn Tortilla Taco Wraps
 Cos Lettuce              $3.9      Woolworths Cos Hearts Lettuce
-Cottage Cheese           $5.25     Brancourts Cottage Cheese Classic
+Cottage Cheese           $5.75     Brancourts Cottage Cheese Classic
 Courgette                $6.27     The Odd Bunch Zucchini Prepacked
 Couscous                 $2        Woolworths Cous Cous
 Crackers                 $2.2      Captain's Table Classic Water Crackers
@@ -267,7 +267,7 @@ Cream Cheese             $5.7      Philadelphia Original Cream Cheese Block
 Cream/Milk               $3.2      Woolworths Thickened Cream
 Croissant                $2.6      Woolworths All Butter Croissants
 Croutons                 $4.8      Praise Caesar Salad Croutons
-Cucumber                 $2.5      Woolworths Continental Cucumbers
+Cucumber                 $1.5      Woolworths Continental Cucumbers
 Cumin                    $2        Woolworths Cumin Ground Ground
 Curry Paste              $2.3      Mr Chen's Thai Red Curry Paste
 Curry Spices             $2.65     Hoyt's Curry Powder Mild
@@ -286,25 +286,25 @@ Feta                     $3        Woolworths Greek Style Fetta
 Flour                    $2.4      Woolworths Essentials Self Raising Flour
 GF Crackers              $4.9      Arnott's Gluten Free Jatz Cracker Biscuits
 GF Pasta                 $5.4      Buontempo Gluten Free Pasta Spirals
-GF Sausages              $3.65     Keen's Meal Base Curried Sausages
+GF Sausages              $4.4      Market Value 8 Pack Thin Honey & Herb BBQ Sausages
 Ginger                   $2.8      Woolworths Crushed Ginger
 Gluten-Free Bread        $5.5      Woolworths Free From Gluten White Bread Loaf
 Gluten-Free Flour        $3.6      Woolworths Free From Gluten Plain Flour
 Golden Syrup             $4.2      CSR Golden Syrup Squeeze
-Grapes                   $10.71    White Seedless Grapes Bag Approx. 900g
+Grapes                   $11.61    White Seedless Grapes Bag Approx. 900g
 Grated Apple             $7.9      Woolworths Royal Gala Apple Punnet
 Ham                      $6.6      Don Leg Ham Shaved
 Ham/Bacon                $6.8      Spam Ham With Real Bacon
 Herbs                    $2        Woolworths Mixed Herbs Dried
 Hoisin Sauce             $3        Lantern Alley Hoisin Sauce
-Honey                    $8.15     Adley's Nothing But Honey
+Honey                    $9        Adley's Nothing But Honey
 Hummus                   $2.5      Willow Farm Dip Hommus
 Jam                      $3.8      Cottee's Strawberry Jam
 Kidney Beans             $0.95     Woolworths Red Kidney Beans
 Kiwifruit                $7.5      Woolworths Kiwi Fruit Green
 Lemon                    $3.5      The Odd Bunch Lemon Prepacked
 Lemon Dressing           $6.2      Birch & Waite Greek Lemon Dressing
-Lettuce                  $3        Iceberg Lettuce
+Lettuce                  $4.9      Iceberg Lettuce
 Macaroni                 $1        Woolworths Pasta Macaroni
 Mandarin                 $2.8      The Odd Bunch Mandarin Prepacked
 Mango Chutney            $3.6      MasterFoods Mango Chutney Relish
@@ -349,7 +349,7 @@ Potato                   $3.25     Woolworths Washed Potatoes Bag
 Pretzels                 $4.8      Macy and Tailor Oven Baked Pressed Pretzels Sea Salt
 Probiotic Drink          $4        Yakult Probiotic Drink Light
 Puff Pastry              $3.8      Woolworths Puff Pastry Sheets
-Quinoa                   $6        Macro Organic Quinoa Tri Colour
+Quinoa                   $7.8      Macro Organic Quinoa Tri Colour
 Real Fruit Strip         $5.5      True Fruit Apple & Strawberry Straps
 Red Lentils              $2.6      McKenzie's Lentils Red
 Rice                     $1.8      Woolworths Essentials Long Grain Rice Long Grain
@@ -385,7 +385,7 @@ Sweetcorn                $4.75     Woolworths Frozen Australian Corn Cobs
 Tahini                   $5        Macro Organic Hulled Tahini Spread
 Teriyaki Sauce           $3.8      Passage To Asia Teriyaki Chicken
 Tofu                     $2.8      Macro Firm Tofu
-Tomato                   $0.65     Gourmet Tomato
+Tomato                   $0.98     Gourmet Tomato
 Tomato Paste             $0.95     Woolworths Essentials Tomato Paste
 Tomato Sauce             $1.85     Woolworths Tomato Sauce Squeeze
 Tortilla                 $2.2      Woolworths Wholegrain Wrap 8Pk
@@ -398,7 +398,7 @@ Vegemite                 $7.7      Vegemite Spread
 Vegetable Stock          $1.9      Woolworths Vegetable Liquid Stock
 Veggie Straws            $4        Infuzions Veggie Straws Sour Cream & Herb
 Vermicelli Noodles       $1.85     Double Phoenix Bean Vermicelli Noodles
-Watermelon               $6.38     Woolworths Red Watermelon Cut Quarter
+Watermelon               $7.7      Woolworths Red Watermelon Cut Quarter
 Wholegrain Crackers      $1        Woolworths Multigrain Brown Rice Crackers
 Yeast                    $4.8      Lowan Yeast Dried Instant
 Yoghurt                  $4.2      Woolworths Natural Greek Style Yoghurt
