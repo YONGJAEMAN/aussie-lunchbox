@@ -1,6 +1,6 @@
 {
   "_comment": "Weekly supermarket promotions. Schema: data/promotions.types.ts. Aussie(2026-10-30): weeks run Wednesday–Tuesday (Sydney dates). stores.woolworths is written every Wednesday by scripts/update_specials.mjs from the SKUs we track (PINNED_SKUS) — do not hand-edit. stores.coles is added by hand only when the user pastes that week's Coles catalogue; set pricesIngredients one item at a time after checking product and pack size with the user.",
-  "currentWeek": "2026-11-04",
+  "currentWeek": "2026-11-11",
   "weeks": {
     "2026-10-28": {
       "validFrom": "2026-10-28",
@@ -538,6 +538,290 @@
         }
       },
       "enteredAt": "2026-11-03T20:07:34.555Z",
+      "aiParsed": false
+    },
+    "2026-11-11": {
+      "validFrom": "2026-11-11",
+      "validUntil": "2026-11-17",
+      "stores": {
+        "woolworths": {
+          "storeName": "Woolworths",
+          "sourceUrl": "https://www.woolworths.com.au/shop/browse/specials",
+          "items": [
+            {
+              "name": "Woolworths Lean Beef Strips 500g",
+              "matchKey": "beef",
+              "category": "",
+              "regularPrice": 12,
+              "salePrice": 10.5,
+              "savings": 1.5,
+              "savingsPercent": 13,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Beef"
+              ],
+              "sku": "6044171"
+            },
+            {
+              "name": "Old El Paso Nachips Tortilla Nacho Corn Chips Original 300g",
+              "matchKey": "corn chips",
+              "category": "",
+              "regularPrice": 5.95,
+              "salePrice": 5,
+              "savings": 0.95,
+              "savingsPercent": 16,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Corn Chips"
+              ],
+              "sku": "6058084"
+            },
+            {
+              "name": "Captain's Table Classic Water Crackers 125g",
+              "matchKey": "crackers",
+              "category": "",
+              "regularPrice": 2.2,
+              "salePrice": 1.5,
+              "savings": 0.7,
+              "savingsPercent": 32,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Crackers"
+              ],
+              "sku": "140784"
+            },
+            {
+              "name": "Lindt Excellence Dark Chocolate 70% Cocoa Block 100g",
+              "matchKey": "dark chocolate",
+              "category": "",
+              "regularPrice": 8.5,
+              "salePrice": 6.8,
+              "savings": 1.7,
+              "savingsPercent": 20,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Dark Chocolate"
+              ],
+              "sku": "19731"
+            },
+            {
+              "name": "Lemnos Paneer Cheese 200g",
+              "matchKey": "paneer",
+              "category": "",
+              "regularPrice": 8.4,
+              "salePrice": 6.75,
+              "savings": 1.65,
+              "savingsPercent": 20,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Paneer"
+              ],
+              "sku": "185281"
+            },
+            {
+              "name": "Bega Peanut Butter Smooth 375g",
+              "matchKey": "peanut butter",
+              "category": "",
+              "regularPrice": 5.8,
+              "salePrice": 4.5,
+              "savings": 1.3,
+              "savingsPercent": 22,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Peanut Butter"
+              ],
+              "sku": "33605"
+            },
+            {
+              "name": "Passage To Asia Satay Chicken 200g",
+              "matchKey": "peanut sauce",
+              "category": "",
+              "regularPrice": 3.8,
+              "salePrice": 2.65,
+              "savings": 1.15,
+              "savingsPercent": 30,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Peanut Sauce"
+              ],
+              "sku": "703559"
+            },
+            {
+              "name": "MEB Foods Khobz White Pita 5pack",
+              "matchKey": "pita bread",
+              "category": "",
+              "regularPrice": 3.75,
+              "salePrice": 3.15,
+              "savings": 0.6,
+              "savingsPercent": 16,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Pita Bread"
+              ],
+              "sku": "391891"
+            },
+            {
+              "name": "MILKLAB Home Barista Oat Long Life Milk 1L",
+              "matchKey": "plant milk",
+              "category": "",
+              "regularPrice": 5.5,
+              "salePrice": 4.4,
+              "savings": 1.1,
+              "savingsPercent": 20,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Plant Milk"
+              ],
+              "sku": "899852"
+            },
+            {
+              "name": "Cobs Popcorn Sea Salt Gluten Free 80g",
+              "matchKey": "popcorn",
+              "category": "",
+              "regularPrice": 3.5,
+              "salePrice": 3,
+              "savings": 0.5,
+              "savingsPercent": 14,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Popcorn"
+              ],
+              "sku": "377589"
+            },
+            {
+              "name": "True Fruit Apple & Strawberry Straps 120g",
+              "matchKey": "real fruit strip",
+              "category": "",
+              "regularPrice": 5.5,
+              "salePrice": 5,
+              "savings": 0.5,
+              "savingsPercent": 9,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Real Fruit Strip"
+              ],
+              "sku": "119059"
+            },
+            {
+              "name": "Fantastic Rice Crackers Original 100g",
+              "matchKey": "rice crackers",
+              "category": "",
+              "regularPrice": 2.5,
+              "salePrice": 1.85,
+              "savings": 0.65,
+              "savingsPercent": 26,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Rice Crackers"
+              ],
+              "sku": "35231"
+            },
+            {
+              "name": "Erawan Rice Stick Medium 375g",
+              "matchKey": "rice noodles",
+              "category": "",
+              "regularPrice": 3,
+              "salePrice": 2.5,
+              "savings": 0.5,
+              "savingsPercent": 17,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Rice Noodles"
+              ],
+              "sku": "40313"
+            },
+            {
+              "name": "Primo Roast Beef 80g",
+              "matchKey": "roast beef",
+              "category": "",
+              "regularPrice": 4,
+              "salePrice": 3.5,
+              "savings": 0.5,
+              "savingsPercent": 13,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Roast Beef"
+              ],
+              "sku": "544698"
+            },
+            {
+              "name": "Primo Mild Hungarian Sliced Salami Mild 80g",
+              "matchKey": "salami",
+              "category": "",
+              "regularPrice": 4,
+              "salePrice": 3.5,
+              "savings": 0.5,
+              "savingsPercent": 13,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Salami"
+              ],
+              "sku": "544764"
+            },
+            {
+              "name": "Old El Paso Chunky Salsa Dip Mild Mild 312g",
+              "matchKey": "salsa",
+              "category": "",
+              "regularPrice": 5.5,
+              "salePrice": 4.4,
+              "savings": 1.1,
+              "savingsPercent": 20,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Salsa"
+              ],
+              "sku": "231416"
+            },
+            {
+              "name": "Ocean Blue Smoked Salmon 100g",
+              "matchKey": "smoked salmon",
+              "category": "",
+              "regularPrice": 9,
+              "salePrice": 7,
+              "savings": 2,
+              "savingsPercent": 22,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Smoked Salmon"
+              ],
+              "sku": "345350"
+            },
+            {
+              "name": "Passage To Asia Teriyaki Chicken 200g",
+              "matchKey": "teriyaki sauce",
+              "category": "",
+              "regularPrice": 3.8,
+              "salePrice": 2.65,
+              "savings": 1.15,
+              "savingsPercent": 30,
+              "promoType": "sale",
+              "lunchboxFit": "lunchbox",
+              "pricesIngredients": [
+                "Teriyaki Sauce"
+              ],
+              "sku": "703375"
+            }
+          ]
+        }
+      },
+      "enteredAt": "2026-11-10T20:07:07.136Z",
       "aiParsed": false
     }
   }
