@@ -1,28 +1,23 @@
 Aussie Lunchbox — 이번 주 Woolworths 특가 리포트
-기간 2026-11-11(수) ~ 2026-11-17(화)   읽음 180/183 · 특가 18 · 회원가 제외 0 · 상품변경 0 · 실패 3
+기간 2026-11-18(수) ~ 2026-11-24(화)   읽음 179/183 · 특가 12 · 회원가 제외 0 · 상품변경 0 · 실패 4
 
 특가는 우리가 추적하는 SKU의 것만이다. 가격에 붙는지는 플래너가 팩 크기·추적가로 다시 본다
 (「each」 단위 재료는 크기를 대조할 수 없어 목록에만 뜬다).
 ==========================================================================
 
-SPECIAL  Beef (sku 6044171) — $12.00 → $10.50
-FAIL     Cocktail Sausages (sku 391575) — 가격 null
+SPECIAL  Baking Powder (sku 574616) — $5.55 → $4.40
+SPECIAL  Bao Buns (sku 277300) — $16.00 → $12.00
+FAIL     Capsicum (sku 135306) — 가격 null
+SPECIAL  Cooked Chicken (sku 904897) — $8.90 → $7.90
 SPECIAL  Corn Chips (sku 6058084) — $5.95 → $5.00
 FAIL     Courgette (sku 825869) — 가격 null
-SPECIAL  Crackers (sku 140784) — $2.20 → $1.50
-SPECIAL  Dark Chocolate (sku 19731) — $8.50 → $6.80
-SPECIAL  Paneer (sku 185281) — $8.40 → $6.75
-SPECIAL  Peanut Butter (sku 33605) — $5.80 → $4.50
-SPECIAL  Peanut Sauce (sku 703559) — $3.80 → $2.65
-SPECIAL  Pita Bread (sku 391891) — $3.75 → $3.15
-SPECIAL  Plant Milk (sku 899852) — $5.50 → $4.40
-SPECIAL  Popcorn (sku 377589) — $3.50 → $3.00
-SPECIAL  Real Fruit Strip (sku 119059) — $5.50 → $5.00
-FAIL     Rice Bubbles (sku 6055324) — 가격 null
-SPECIAL  Rice Crackers (sku 35231) — $2.50 → $1.85
-SPECIAL  Rice Noodles (sku 40313) — $3.00 → $2.50
-SPECIAL  Roast Beef (sku 544698) — $4.00 → $3.50
-SPECIAL  Salami (sku 544764) — $4.00 → $3.50
-SPECIAL  Salsa (sku 231416) — $5.50 → $4.40
-SPECIAL  Smoked Salmon (sku 345350) — $9.00 → $7.00
-SPECIAL  Teriyaki Sauce (sku 703375) — $3.80 → $2.65
+SPECIAL  Ham (sku 290324) — $6.60 → $5.00
+FAIL     Lemon (sku 830353) — 가격 null
+SPECIAL  Nori (sku 185395) — $4.00 → $3.50
+SPECIAL  Pretzels (sku 695577) — $4.80 → $3.50
+SPECIAL  Rice Wheels (sku 116987) — $5.00 → $4.50
+FAIL     Ripe Bananas (sku 106218) — 가격 null
+SPECIAL  Soy Sauce (sku 198763) — $4.30 → $3.70
+SPECIAL  Turkey (sku 290982) — $6.60 → $5.00
+SPECIAL  Vanilla Essence (sku 37420) — $7.00 → $6.00
+SPECIAL  Vegan Mayo (sku 164531) — $6.30 → $4.20
