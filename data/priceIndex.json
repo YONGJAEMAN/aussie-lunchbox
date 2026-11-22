@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-15",
-  "woolworthsUpdated": "2026-11-15",
+  "lastUpdated": "2026-11-22",
+  "woolworthsUpdated": "2026-11-22",
   "woolworthsMethod": "Woolworths Australia online price feed, default guest session (fixed SKUs, regular shelf price)",
   "items": [
     {
@@ -36,42 +36,42 @@
       "category": "Produce",
       "unit": "each",
       "note": "Cavendish",
-      "woolworths": 0.81
+      "woolworths": 0.72
     },
     {
       "name": "Carrots (1kg)",
       "category": "Produce",
       "unit": "per kg",
       "note": "",
-      "woolworths": 1.7
+      "woolworths": 2.5
     },
     {
       "name": "Cherry Tomatoes (250g)",
       "category": "Produce",
       "unit": "per punnet",
       "note": "",
-      "woolworths": 3.2
+      "woolworths": 2
     },
     {
       "name": "Cucumber",
       "category": "Produce",
       "unit": "each",
       "note": "Continental",
-      "woolworths": 2.5
+      "woolworths": 1.5
     },
     {
       "name": "Lettuce",
       "category": "Produce",
       "unit": "each",
       "note": "Iceberg",
-      "woolworths": 4.9
+      "woolworths": 4.5
     },
     {
       "name": "Sliced Chicken (250g)",
       "category": "Meat & Deli",
       "unit": "per pack",
       "note": "Carved chicken breast",
-      "woolworths": 9
+      "woolworths": 8
     },
     {
       "name": "Canned Tuna (95g)",

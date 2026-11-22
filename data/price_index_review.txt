@@ -1,5 +1,5 @@
 Aussie Lunchbox — Price Index / Woolworths 열 갱신 리포트
-생성 2026-11-15   갱신 19 / 특가보류 0 / 실패 1 / 상품변경 0 / 정의없음 0
+생성 2026-11-22   갱신 20 / 특가보류 0 / 실패 0 / 상품변경 0 / 정의없음 0
 
 Woolworths 열: 고정 SKU의 **정상 진열가**(특가 주엔 WasPrice). 특가는 지수에 넣지 않는다.
 Coles: 추적하지 않는다(priceIndexSources.json `coles` — Imperva 봇 확인, 우회 안 함).
@@ -11,8 +11,8 @@ SPECIAL/FAIL/DRIFT 항목은 기존 값을 그대로 뒀다. 어긋난 상품으
 OK      Wholemeal Bread (700g) (sku 749588)
           $4.6 → $4.60
 
-FAIL    Wraps 8-pack (sku 320194)
-          가격 null — 품절이면 0/null이 온다 → 기존값 $5.7 유지
+OK      Wraps 8-pack (sku 320194)
+          $5.7 → $5.70   (이번 주 특가 $4.50 — 지수엔 정상가를 넣는다)
 
 OK      Bagels 4-pack (sku 270580)
           $5.5 → $5.50
@@ -21,28 +21,28 @@ OK      Apples (1kg) (sku 314012)
           $7.9 → $7.90
 
 OK      Bananas (sku 133211)
-          $0.81 → $0.81
+          $0.81 → $0.72
 
 OK      Carrots (1kg) (sku 135369)
-          $2.5 → $1.70
+          $1.7 → $2.50
 
 OK      Cherry Tomatoes (250g) (sku 149620)
-          $3.2 → $3.20
+          $3.2 → $2.00
 
 OK      Cucumber (sku 137102)
-          $1.5 → $2.50
+          $2.5 → $1.50
 
 OK      Lettuce (sku 154340)
-          $4.9 → $4.90
+          $4.9 → $4.50
 
 OK      Sliced Chicken (250g) (sku 6058715)
-          $9 → $9.00
+          $9 → $8.00
 
 OK      Canned Tuna (95g) (sku 144821)
           $2.95 → $2.95
 
 OK      Sliced Ham (200g) (sku 290324)
-          $6.6 → $6.60
+          $6.6 → $6.60   (이번 주 특가 $5.00 — 지수엔 정상가를 넣는다)
 
 OK      Cheese Block (500g) (sku 32198)
           $11 → $11.00
@@ -51,13 +51,13 @@ OK      Eggs (12-pack) (sku 77170)
           $9.15 → $9.15
 
 OK      Yoghurt (1kg) (sku 331963)
-          $9 → $9.00   (이번 주 특가 $7.20 — 지수엔 정상가를 넣는다)
+          $9 → $9.00
 
 OK      Butter (500g) (sku 41287)
           $8.9 → $8.90
 
 OK      Rice (1kg) (sku 36493)
-          $3 → $3.00
+          $3 → $3.00   (이번 주 특가 $2.25 — 지수엔 정상가를 넣는다)
 
 OK      Pasta (500g) (sku 35742)
           $2.95 → $2.95
@@ -66,4 +66,4 @@ OK      Hummus (200g) (sku 323320)
           $2.5 → $2.50
 
 OK      Peanut Butter (375g) (sku 33605)
-          $5.8 → $5.80   (이번 주 특가 $4.50 — 지수엔 정상가를 넣는다)
+          $5.8 → $5.80
